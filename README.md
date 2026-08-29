@@ -13,6 +13,9 @@ a relevance score.
 | Browsable inventory | [`docs/INVENTORY.md`](docs/INVENTORY.md) |
 | Full dataset (CSV) | [`data/gallica_tunisia_maps.csv`](data/gallica_tunisia_maps.csv) |
 | Full dataset (JSON) | [`data/gallica_tunisia_maps.json`](data/gallica_tunisia_maps.json) |
+| **Quality coding (CSV)** | [`data/gallica_tunisia_maps_coded.csv`](data/gallica_tunisia_maps_coded.csv) |
+| **Quality profile** | [`docs/QUALITY.md`](docs/QUALITY.md) |
+| **Variable definitions** | [`docs/CODEBOOK.md`](docs/CODEBOOK.md) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
 
@@ -40,8 +43,8 @@ a further 11 list more than one.
 
 **Rights:** 523 of 663 records are explicitly marked public domain.
 
-**Scale** is catalogued for 206 records, most commonly 1:800 000, 1:1 000 000
-and 1:2 925 000.
+**Scale** is catalogued for 203 records, most commonly 1:800 000, 1:2 925 000
+and 1:1 000 000.
 
 ## Two things to know before using the data
 
@@ -58,6 +61,45 @@ Béja is also a Portuguese district. Every record carries a `confidence` value �
 wrong rather than hidden. `medium` mostly means "a map of North Africa or the
 Mediterranean on which Tunisia appears", which may or may not be what you want.
 [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) explains the scoring.
+
+## Quality coding
+
+Every record is coded on quality indicators in
+[`data/gallica_tunisia_maps_coded.csv`](data/gallica_tunisia_maps_coded.csv).
+"Quality" here is three separate things, coded independently — see
+[`docs/CODEBOOK.md`](docs/CODEBOOK.md) for every variable and
+[`docs/QUALITY.md`](docs/QUALITY.md) for the distributions.
+
+| Family | Variables | Headline |
+| --- | --- | --- |
+| **A. Cartographic** | scale class, production mode, issuing authority, colour, genre, sheet size | 56% printed, 29% manuscript; 96 records issued by a military survey |
+| **B. Record** | 8 presence indicators, completeness 0–8, grade A–D | 219 grade A, 14 grade D; 525 carry an exact year |
+| **C. Digital access** | IIIF, scan megapixels, scan dpi, rights | Median scan 52 MP at 391 dpi; 266 records above 50 MP |
+
+Two summary constructs sit on top: `research_tier` (fitness for use) and
+`quality_index` (0–100). **Prefer the components.** Both constructs are my own
+heuristics, and `quality_index` in particular rewards *how fully an item was
+catalogued and scanned*, not how good the map is — its three top-scoring records
+are small-scale commercial maps of the whole Barbary coast.
+
+**`research_tier`** is the more defensible summary:
+
+| Tier | n | Meaning |
+| --- | --- | --- |
+| `1_analytic` | 50 | Medium/large scale with a good scan — georeferenceable, features readable |
+| `2_contextual` | 456 | Usable as visual evidence |
+| `3_reference` | 157 | Citable, not examinable at depth |
+
+### The catch that matters most
+
+**Scale is absent for 460 of 663 records, and its absence is not random.**
+Partner-library records essentially never carry a scale (151 of 157) versus 61%
+of BnF records. So the 20th century looks unscaled (132 records) almost entirely
+because 116 of those are partner items — not because 20th-century survey maps
+lack scales. Independently, early modern maps often state no scale at all.
+Filtering on `scale_class` selects on cataloguing source and period. The same
+applies to every Family C measure: all 163 `unknown` resolutions are the 157
+partner records plus 6 IIIF failures.
 
 ## Data dictionary
 
@@ -86,11 +128,13 @@ Mediterranean on which Tunisia appears", which may or may not be what you want.
 ## Reproducing or extending
 
 ```bash
-python3 scripts/harvest_gallica_maps.py   # re-query Gallica, rewrite data/
-python3 scripts/build_inventory.py        # regenerate docs/INVENTORY.md
+python3 scripts/harvest_gallica_maps.py    # re-query Gallica, rewrite data/
+python3 scripts/fetch_scan_dimensions.py   # IIIF pixel dimensions (cached)
+python3 scripts/build_inventory.py         # regenerate docs/INVENTORY.md
+python3 scripts/code_quality.py            # regenerate the quality coding
 ```
 
-Both scripts are Python 3 standard library only — no dependencies. To widen
+All scripts are Python 3 standard library only — no dependencies. To widen
 coverage, add toponyms or spelling variants to
 [`config/queries.json`](config/queries.json) and re-run; the harvester
 deduplicates across queries.
