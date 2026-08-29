@@ -1,0 +1,100 @@
+{
+  "records_coded": 663,
+  "scale_class": {
+    "unknown": 460,
+    "very_small": 96,
+    "small": 53,
+    "medium": 34,
+    "large": 20
+  },
+  "production_mode": {
+    "printed": 374,
+    "manuscript": 193,
+    "unknown": 96
+  },
+  "colour": {
+    "unknown": 348,
+    "colour": 309,
+    "monochrome": 6
+  },
+  "authority_type": {
+    "unknown": 295,
+    "commercial": 203,
+    "military_survey": 96,
+    "civil_survey": 48,
+    "hydrographic": 14,
+    "scholarly": 7
+  },
+  "genre": {
+    "map": 543,
+    "other": 48,
+    "atlas": 25,
+    "plan": 24,
+    "view": 23
+  },
+  "date_precision": {
+    "exact": 525,
+    "century": 87,
+    "multi_century": 21,
+    "none": 19,
+    "decade": 11
+  },
+  "metadata_grade": {
+    "A": 219,
+    "B": 217,
+    "C": 213,
+    "D": 14
+  },
+  "metadata_completeness": {
+    "0": 1,
+    "1": 2,
+    "2": 11,
+    "3": 104,
+    "4": 109,
+    "5": 93,
+    "6": 124,
+    "7": 109,
+    "8": 110
+  },
+  "provenance_tier": {
+    "bnf": 506,
+    "partner": 157
+  },
+  "scan_resolution_class": {
+    "high": 266,
+    "medium": 187,
+    "unknown": 163,
+    "low": 47
+  },
+  "scan_dpi_class": {
+    "standard": 373,
+    "unknown": 217,
+    "high": 56,
+    "low": 17
+  },
+  "research_tier": {
+    "2_contextual": 456,
+    "3_reference": 157,
+    "1_analytic": 50
+  },
+  "quality_index": {
+    "mean": 63.5,
+    "median": 60.8,
+    "min": 0.0,
+    "max": 100.0
+  },
+  "scan_megapixels": {
+    "n": 500,
+    "mean": 59.3,
+    "median": 52.0,
+    "min": 3.1,
+    "max": 354.3
+  },
+  "scan_dpi": {
+    "n": 446,
+    "mean": 382,
+    "median": 391,
+    "min": 154,
+    "max": 1181
+  }
+}

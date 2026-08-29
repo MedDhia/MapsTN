@@ -121,9 +121,13 @@ the link supplied by the record itself, and `iiif_manifest` is empty, because
   `sahel tunisien`); some of those places are certainly mapped, under other
   spellings the list does not yet carry. Adding terms to
   `config/queries.json` and re-running is the intended way to extend coverage.
-- **Metadata is only as good as the catalogue.** Scale is present for 206 of 663
+- **Metadata is only as good as the catalogue.** Scale is present for 203 of 663
   records; creator, publisher and language are frequently absent for early
-  material.
+  material. Parsing it needs care: the scale statement shares the description
+  field with shelfmarks (`Référence bibliographique : 41:1.2(1640)`) and often
+  embeds an ordinary fraction (`milliaria hispanica 52 1/2 [= ... 1:13 900 000]`),
+  so only the `Échelle` segment is searched and denominators below 10 are
+  rejected.
 - **Counts are a snapshot.** Gallica adds digitisations continuously. The
   `harvested_at` timestamp in `data/summary.json` records when this run was made.
 

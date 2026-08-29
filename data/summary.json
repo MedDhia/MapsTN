@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-08-29T09:31:35Z",
+  "harvested_at": "2026-08-29T09:43:12Z",
   "endpoint": "https://gallica.bnf.fr/SRU",
   "type_filter": "dc.type all \"carte\"",
   "queries_run": 59,
@@ -22,10 +22,10 @@
   "by_theme": {
     "country": 497,
     "city": 446,
-    "region": 64,
     "polity": 40,
     "island": 38,
     "historic": 17,
+    "region": 6,
     "antiquity": 5
   },
   "by_typedoc": {
@@ -34,6 +34,6 @@
   "earliest_year": 1318,
   "latest_year": 2013,
   "undated": 19,
-  "with_scale": 206,
+  "with_scale": 203,
   "public_domain": 523
 }

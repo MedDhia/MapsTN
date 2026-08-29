@@ -1,6 +1,6 @@
 # Tunisia maps in Gallica — inventory
 
-663 distinct cartographic records (1318–2013), harvested 2026-08-29T09:31:35Z from the Gallica SRU API.
+663 distinct cartographic records (1318–2013), harvested 2026-08-29T09:43:12Z from the Gallica SRU API.
 
 Records are grouped by century and sorted chronologically. `Conf.` is the
 Tunisia-relevance confidence described in [METHODOLOGY.md](METHODOLOGY.md);
@@ -82,15 +82,15 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | 1600 | Royaume de Tunis | — | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b85953419) |
 | 1600 | Tunis : pianta del forto novo de Tunis | — | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b8595374p) |
 | 1600 | Tunis, Goleta nunc distructa / [Guillelmo Blaeu] | Blaeu, Willem Jansz (1571-1638). Cartographe | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b85951384) |
-| 1602 | Barbaria | — | 1:2 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b8491904m) |
-| 1602 | Barbaria | — | 1:2 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b8492072n) |
-| 1602 | Barbaria | — | 1:2 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b531429571) |
+| 1602 | Barbaria | — | 1:13 900 000 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b8491904m) |
+| 1602 | Barbaria | — | 1:13 900 000 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b8492072n) |
+| 1602 | Barbaria | — | 1:13 900 000 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b531429571) |
 | 1602 | Cartaginis sive potius Tunetani, celeberrimi sinus nec non fortalitis Golettae typus quamvis d… | — | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b8595362g) |
 | 1602 | Natoliae, quae olim Asia Minor, nova descriptio. Aegypti recentior descriptio. Carthaginis cel… | — | 1:6 167 000 | high | [view](https://nubis.bis-sorbonne.fr/ark:/15733/pgt5) |
 | 1602 | Natoliae, quae olim Asia Minor, nova descriptio. Aegypti recentior descriptio. Carthaginis cel… | — | 1:5 842 000 | high | [view](https://nubis.bis-sorbonne.fr/ark:/15733/pkrc) |
 | 1632 | Africae nova tabula / Auct. Jud. Hondio | Hondius, Jodocus II (1593-1628). Cartographe | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b53211476h) |
-| 1635 | Tunes, Oppidum Barbarie & Regia sedes... ; Africa, olim Aphrodisium ; Peñon de Veles | Braun, Georg (1541-1622). Éditeur scientifiq… | 1:12 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b531968223) |
-| 1635 | Tunetis urbis, ac novae eius arcis, et Guletae, quae Philippo Hispan. Regi parentuti a Turcis,… | Braun, Georg (1541-1622). Éditeur scientifiq… | 1:12 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b53196821n) |
+| 1635 | Tunes, Oppidum Barbarie & Regia sedes... ; Africa, olim Aphrodisium ; Peñon de Veles | Braun, Georg (1541-1622). Éditeur scientifiq… | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b531968223) |
+| 1635 | Tunetis urbis, ac novae eius arcis, et Guletae, quae Philippo Hispan. Regi parentuti a Turcis,… | Braun, Georg (1541-1622). Éditeur scientifiq… | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b53196821n) |
 | 1640 | Africae nova descripto / Auct. Guiljelmo Blaeuw | Blaeu, Willem Jansz (1571-1638). Cartographe | 1:26 000 000 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b53196877d) |
 | 1640 | Antiquorum Africae episcopatuum geographica descriptio | — | 1:1 300 000 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b531968206) |
 | 1645 | Tunes, Oppidum Barbarie & Regia sedes... ; Africa, olim Aphrodisium ; Penon de Veles | Braun, Georg (1541-1622). Éditeur scientifiq… | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b531789910) |
@@ -654,7 +654,7 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | 1914 | Carta dimostrativa della Cirenaica / Ministero delle Colonie | — | 1:1 000 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53146701w) |
 | 1914 | Essai d'Atlas statistique de l'Indochine française : Indochine physique, population, administr… | Brenier, Henri (1867-1962). Rédacteur \| Ind… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1100178q) |
 | 1914 | Tripolitania : territorio fra la costa e l'uadi sciati / M. Checchi | — | 1:1 500 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b531466756) |
-| 1920–1929 | Carte de France : départements & chemins-de-fer, Belgique, bords du Rhin, Suisse, etc | — | 1:5 550 000 | medium | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/245789) |
+| 1920–1929 | Carte de France : départements & chemins-de-fer, Belgique, bords du Rhin, Suisse, etc | — | — | medium | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/245789) |
 | 1929 | Atlas colonial français : colonies, protectorats et pays sous mandat / cartes et texte du Comm… | Pollacchi, Paul (1862-1937). Auteur du texte… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1100182m) |
 | 1988 | Inventaire communal 1988. 53, Mayenne / Institut national de la statistique et des études écon… | Institut national de la statistique et des é… | 1:450 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k9117777g) |
 | 1900–1999 | Distrito de Beja. Planta do concelho de Cuba, extraida da planta cadastral | — | 1:25 000 | low | [view](https://gallica.bnf.fr/ark:/12148/btv1b53121094z) |

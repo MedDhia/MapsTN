@@ -168,13 +168,22 @@ def extra(record: ET.Element, tag: str) -> str:
 
 
 def parse_scale(descriptions: list[str]) -> str:
-    """Pull the map scale out of the 'Échelle(s) : 1:100 000' description field."""
+    """Pull the map scale out of the 'Échelle(s) : 1:100 000' description field.
+
+    Two traps in the catalogue text, both of which produced wrong scales before:
+    an ordinary fraction inside a verbal scale statement ('milliaria hispanica
+    52 1/2 [= ... 1:13 900 000]') and a shelfmark in a neighbouring field
+    ('Référence bibliographique : 41:1.2(1640)'). So only the 'Échelle' segment
+    is searched, and denominators below 10 are rejected as fractions.
+    """
     for description in descriptions:
-        match = SCALE_RE.search(description)
-        if match:
-            denominator = re.sub(r"[^\d]", "", match.group(1))
-            if denominator:
-                return f"1:{int(denominator):,}".replace(",", " ")
+        for segment in description.split("|"):
+            if "chelle" not in normalize(segment):
+                continue
+            for match in SCALE_RE.finditer(segment):
+                denominator = re.sub(r"[^\d]", "", match.group(1))
+                if denominator and int(denominator) >= 10:
+                    return f"1:{int(denominator):,}".replace(",", " ")
     return ""
 
 
