@@ -102,7 +102,13 @@ def parse_record(xml: str) -> dict:
             "south": parse_coordinate(codes.get("g", "")),
         }
         if all(v is not None for v in box.values()):
-            parsed["bbox"] = box
+            # Subfield order is not always respected in the source records.
+            parsed["bbox"] = {
+                "west": min(box["west"], box["east"]),
+                "east": max(box["west"], box["east"]),
+                "south": min(box["north"], box["south"]),
+                "north": max(box["north"], box["south"]),
+            }
         if codes.get("b"):
             parsed.setdefault("scale_123", codes["b"])
 

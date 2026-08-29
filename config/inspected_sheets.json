@@ -21,9 +21,18 @@
       "coverage_complete": "yes",
       "coverage_note": "Whole country on a single sheet, Bizerte to the Tripolitanian border, including Djerba and Chott el Djerid. Insets: Région de Tunis, and a city plan of Tunis.",
       "features_observed": [
-        "settlement_hierarchy", "roads", "railways", "shrines_marabouts",
-        "wells_springs", "ruins_antique", "mines", "admin_limits",
-        "ports_lighthouses", "relief", "chotts_sebkhas", "tribes"
+        "settlement_hierarchy",
+        "roads",
+        "railways",
+        "shrines_marabouts",
+        "wells_springs",
+        "ruins_antique",
+        "mines",
+        "admin_limits",
+        "ports_lighthouses",
+        "relief",
+        "chotts_sebkhas",
+        "tribes"
       ],
       "legend_note": "Carries a full 'Signes conventionnels' panel plus an 'Explication des principaux termes arabes' glossary: Aïn/Aïoun/Bir = puits, source; Bordj = poste fortifié; Kalâa/Ksar = fort, village fortifié; Koubba = chapelle; Zaouia = chapelle; Sidi = saint; Souk = marché; Oued = rivière; Chott/Sebkra = lac salé. Settlement ranks run Capitale / Ville importante / Ville secondaire / Village ou centre important / Hameau, village indigène. Distinct symbols for mines de fer, zinc et plomb, phosphate, cuivre, and a 'Limite nord du Territoire Militaire'."
     },
@@ -34,7 +43,11 @@
       "coverage_complete": "partial",
       "coverage_note": "North and centre only. The sheet is cut before the Jerid, Djerba and the far south, despite a title that implies the whole Regency.",
       "features_observed": [
-        "settlement_hierarchy", "roads", "relief", "hydrography", "admin_limits"
+        "settlement_hierarchy",
+        "roads",
+        "relief",
+        "hydrography",
+        "admin_limits"
       ],
       "legend_note": "Carries an 'Explication des termes géographiques' with separate Arabic and Kabyle glossaries, and a descriptive panel 'Tunis et la Tunisie'."
     },
@@ -45,8 +58,12 @@
       "coverage_complete": "yes",
       "coverage_note": "Sheet is captioned '1re feuille Nord', but the digitised item mounts the northern sheet together with a southern continuation reaching Ghadamès and Tripoli, so the image as digitised covers the whole country and beyond.",
       "features_observed": [
-        "settlement_hierarchy", "roads", "relief", "hydrography",
-        "chotts_sebkhas", "tracks"
+        "settlement_hierarchy",
+        "roads",
+        "relief",
+        "hydrography",
+        "chotts_sebkhas",
+        "tracks"
       ],
       "legend_note": "No conventional-signs panel; relief by hachures."
     },
@@ -57,8 +74,12 @@
       "coverage_complete": "partial",
       "coverage_note": "Captioned 'Tunisie 800 000, 1re feuille Nord' in the top margin. Covers Bizerte south to Chott el Djerid and Djerba; the far south is on a companion sheet not present in this record. The catalogue record does not mention the partition at all.",
       "features_observed": [
-        "settlement_hierarchy", "railways", "roads", "relief",
-        "hydrography", "chotts_sebkhas"
+        "settlement_hierarchy",
+        "railways",
+        "roads",
+        "relief",
+        "hydrography",
+        "chotts_sebkhas"
       ],
       "legend_note": "Legend covers railways only: lignes en exploitation, en construction, étudiées."
     },
@@ -69,9 +90,17 @@
       "coverage_complete": "no",
       "coverage_note": "Single topographic sheet covering the immediate region around Medenine, in the Djeffara.",
       "features_observed": [
-        "wells_springs", "shrines_marabouts", "forts_ksour", "ruins_henchirs",
-        "rural_settlement", "european_village", "tracks", "vegetation",
-        "contours", "wadis", "tribes"
+        "wells_springs",
+        "shrines_marabouts",
+        "forts_ksour",
+        "ruins_henchirs",
+        "rural_settlement",
+        "european_village",
+        "tracks",
+        "vegetation",
+        "contours",
+        "wadis",
+        "tribes"
       ],
       "legend_note": "No conventional-signs panel, but the sign vocabulary is legible on the sheet: wells as dense blue circles, marabouts as red dome symbols beside 'Sdi ...' names, 'Kba Sdi ben Bekr' for a koubba, 'Biar ez Ziria' for a well group, ksour and guerar granary clusters, and a separately labelled 'Village Français' beside the indigenous centre of Medenine."
     },
@@ -82,8 +111,15 @@
       "coverage_complete": "no",
       "coverage_note": "Single topographic sheet covering the region around Le Kef, in the north-west.",
       "features_observed": [
-        "wells_springs", "shrines_marabouts", "forts_ksour", "ruins_henchirs",
-        "rural_settlement", "tracks", "vegetation", "contours", "wadis"
+        "wells_springs",
+        "shrines_marabouts",
+        "forts_ksour",
+        "ruins_henchirs",
+        "rural_settlement",
+        "tracks",
+        "vegetation",
+        "contours",
+        "wadis"
       ],
       "legend_note": "Abbreviations readable on the sheet: Mvet = marabout (red symbol), Za = zaouia, Ae = aïn (spring), 'Puits' written out, Kat = kalâa (fortified height), Hr = henchir (ruined estate), Dj = djebel, Chabe = ravine. Cultivation shown by red hatching, carob and olive by tree symbols."
     },
@@ -94,10 +130,192 @@
       "coverage_complete": "no",
       "coverage_note": "Frontier zone around Guelma, Souk Ahras and Le Kef; straddles the Algeria-Tunisia border rather than covering Tunisia.",
       "features_observed": [
-        "settlement_hierarchy", "roads", "railways", "relief", "hydrography",
+        "settlement_hierarchy",
+        "roads",
+        "railways",
+        "relief",
+        "hydrography",
         "admin_limits"
       ],
       "legend_note": "Full labelled graticule at 30-minute intervals; relief in colour with contours at 20 m."
+    },
+    "btv1b53022873s": {
+      "title": "Carte des itinéraires de la Tunisie, 1/800 000",
+      "year": "1886",
+      "scale": "1:800 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Whole country on one sheet, Cap Serrat and Bizerte in the north through Chott el Djerid, Gabes and Djerba to the Tripolitanian border. Sheet is dated 1885; the catalogue year 1886 is the May 1886 printing.",
+      "features_observed": [
+        "roads",
+        "railways",
+        "settlement_hierarchy",
+        "admin_limits",
+        "forts_ksour",
+        "telegraph"
+      ],
+      "legend_note": "Legend covers chef-lieu de division and de subdivision, poste occupe militairement, centre de population, grand ksar, frontiere, route carrossable, itineraires ordinaires des colonnes with distances in kilometres, chemin de fer, and ligne telegraphique electrique."
+    },
+    "btv1b531972761": {
+      "title": "Carte des itinéraires de la Tunisie",
+      "year": "1906",
+      "scale": "1:800 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Complete national coverage, same design as the 1885 edition, with the Vilayet de Tripoli labelled to the south-east. Sheet is dated 1892; the catalogue year 1906 is a later printing. The route network is visibly denser than 1885.",
+      "features_observed": [
+        "roads",
+        "railways",
+        "settlement_hierarchy",
+        "admin_limits",
+        "forts_ksour",
+        "telegraph"
+      ],
+      "legend_note": "Legend as the 1885 edition, adding a distinction between chemin de fer a voie normale and a voie etroite."
+    },
+    "btv1b531797080": {
+      "title": "Carte des itinéraires de la Tunisie / dressée",
+      "year": "1896",
+      "scale": "1:800 000",
+      "coverage_complete": "partial",
+      "coverage_note": "Catalogued as 'Carte des itineraires de la Tunisie' but the sheet is titled 'Carte de la Tunisie, Service geographique de l'armee, 1895' and its top margin reads 'Tunisie (800 000) 1e f.e Nord'. Covers Bizerte south to Chott el Djerid and Djerba; the far south is on a companion sheet.",
+      "features_observed": [
+        "settlement_hierarchy",
+        "relief",
+        "hydrography",
+        "roads",
+        "railways"
+      ],
+      "legend_note": "No conventional-signs panel."
+    },
+    "btv1b530277289": {
+      "title": "Carte géologique provisoire de la régence de T",
+      "year": "1894",
+      "scale": "1:800 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Complete national coverage, Bizerte to the Tripolitanian border. Sheet is dated 1892; catalogued 1894.",
+      "features_observed": [
+        "geology",
+        "settlement_hierarchy",
+        "hydrography"
+      ],
+      "legend_note": "Carte geologique provisoire by F. Aubert, Ingenieur des Mines, published by order of the Tunisian government. Legend runs Quaternaire recent and ancien, Pliocene marin and lacustre, Sahelien, Miocene, Eocene superieur (etage a gypse, etage a phosphates), Eocene moyen and inferieur, Cretace superieur, moyen and inferieur, Jurassique. The phosphate-bearing Eocene is mapped as its own unit."
+    },
+    "btv1b53213324v": {
+      "title": "Les gisements miniers de l'Afrique du Nord. Tu",
+      "year": "1950",
+      "scale": "1:500 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Country fully covered, the far south in a separate inset panel rather than on the main sheet. Sheet is dated 1930; catalogued 1950.",
+      "features_observed": [
+        "mines",
+        "railways",
+        "roads",
+        "settlement_hierarchy",
+        "admin_limits"
+      ],
+      "legend_note": "Les gisements miniers de l'Afrique du Nord, Societe de Documentation Industrielle. The legend separates worked deposits from concessions and from prospecting permits, by mineral: lignite, iron, manganese, copper, lead and zinc, phosphate, plus oil boreholes, salines and marais salants, thermal springs, artesian boreholes, and quarries for lime, plaster, cement stone, marble, onyx and building stone."
+    },
+    "btv1b53066673n": {
+      "title": "Régence de Tunis. Direction générale des trava",
+      "year": "1931",
+      "scale": "1:500 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Complete national coverage on one tall sheet, Bizerte to the Grand Erg Oriental and the Tripolitanian border.",
+      "features_observed": [
+        "geology",
+        "mines",
+        "railways",
+        "roads",
+        "settlement_hierarchy"
+      ],
+      "legend_note": "Regence de Tunis, Direction generale des travaux publics, drawn by M. Solignac, Chef du Service Geologique, published by the Service des Mines. Alongside the stratigraphy the legend carries 'Gites miniers principaux': plomb, zinc, fer, cuivre, manganese, phosphate de chaux, lignite, hydrocarbures."
+    },
+    "btv1b53179710t": {
+      "title": "Tunisie au 500.000e. / dressé, héliogravé et p",
+      "year": "1943",
+      "scale": "1:500 000",
+      "coverage_complete": "partial",
+      "coverage_note": "Captioned 'Tunisie au 500.000e - Feuille 1' at the foot of the sheet. Covers the north only, Bizerte and Tunis south to about Sousse and Kairouan.",
+      "features_observed": [
+        "settlement_hierarchy",
+        "roads",
+        "railways",
+        "relief",
+        "hydrography"
+      ],
+      "legend_note": "Institut Geographique National."
+    },
+    "btv1b8442159r": {
+      "title": "Carte routière de la Tunisie / dressée par le",
+      "year": "1900",
+      "scale": "1:1 000 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Complete national coverage, Bizerte to the Tripolitanian border including Djerba, Chott el Djerid and Nefta, with an inset of the environs of Tunis at 1:400 000.",
+      "features_observed": [
+        "roads",
+        "railways",
+        "settlement_hierarchy",
+        "admin_limits",
+        "wells_springs",
+        "ports_lighthouses",
+        "telegraph"
+      ],
+      "legend_note": "Touring Club de France, under Andre Berthelot. Legend covers railways at normal and narrow gauge, under construction and projected; carriageable roads with metalled sections; principal and secondary tracks; post and telegraph offices; caravanserais; optical telegraph; lighthouses with a range over 9 miles; 'points d'eau amenages en 1897-98-99'; and, importantly, the 'limite septentrionale des Territoires du Sud' separating civil control from military command, with chef-lieu de controle civil distinguished from chef-lieu de cercle militaire."
+    },
+    "btv1b530634783": {
+      "title": "Carte de la régence de Tunis dressée au dépôt",
+      "year": "1884",
+      "scale": "1:400 000",
+      "coverage_complete": "partial",
+      "coverage_note": "Top margin reads 'Regence de Tunis (Feuille 1re)'. Covers the north down to roughly Kairouan and the Sahel. The sheet's own imprint is Paris 1857; the catalogue year 1884 is the February 1884 printing.",
+      "features_observed": [
+        "settlement_hierarchy",
+        "relief",
+        "hydrography",
+        "roads"
+      ],
+      "legend_note": "Depot de la Guerre, from the observations of Falbe and Pricot de Sainte-Marie."
+    },
+    "btv1b53179703r": {
+      "title": "Carte de la Régence de Tunis dressée au Dépôt",
+      "year": "1842",
+      "scale": "1:400 000",
+      "coverage_complete": "partial",
+      "coverage_note": "Northern portion only, Golfe de Tunis and Golfe de Hammamet south to about Sousse. An untitled proof state with no title block or legend.",
+      "features_observed": [
+        "settlement_hierarchy",
+        "relief",
+        "hydrography"
+      ],
+      "legend_note": "No title cartouche or legend on the sheet."
+    },
+    "btv1b530578955": {
+      "title": "Carte Foldex de la Tunisie",
+      "year": "1934",
+      "scale": "1:1 000 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Complete national coverage, Bizerte to Foum Tatahouine and Ben Gardane, including Djerba, Kerkennah, Chott el Djerid and Nefta.",
+      "features_observed": [
+        "roads",
+        "railways",
+        "settlement_hierarchy",
+        "relief"
+      ],
+      "legend_note": "Carte Foldex, a commercial folding road map. Road distances marked in kilometres along each section."
+    },
+    "btv1b530762364": {
+      "title": "Tunisie (Proconsulaire et Byzacène), 1:1 000 0",
+      "year": "1912",
+      "scale": "1:1 000 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Country covered between the main map and a 'Tripolitaine et Byzacene meridionale' inset that carries the south-east; a separate inset maps Carthage.",
+      "features_observed": [
+        "archaeology",
+        "ruins_henchirs",
+        "settlement_hierarchy",
+        "admin_limits",
+        "relief"
+      ],
+      "legend_note": "Afrique chretienne: eveches antiques et ruines, by Pere Mesnage of the Peres Blancs. Legend distinguishes Catholic, Catholic-and-Donatist and Donatist bishoprics, basilicas and chapels, monasteries, inscriptions and antique ruins, with the old ecclesiastical province limits drawn against modern ones."
     }
   }
 }
