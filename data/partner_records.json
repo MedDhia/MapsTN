@@ -1,0 +1,1101 @@
+{
+  "oai:patrimoine-numerique.ville-valenciennes.fr:ark:/29755/B_596066101_MS_0488/F_002": {},
+  "oai:nubis.bis-sorbonne.fr:1116087": {},
+  "oai:nubis.bis-sorbonne.fr:1116323": {},
+  "oai:nubis.bis-sorbonne.fr:1128791": {},
+  "oai:nubis.bis-sorbonne.fr:1115642": {},
+  "oai:nubis.bis-sorbonne.fr:1116050": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000852506": {},
+  "oai:u-bordeaux-montaigne.fr:203729": {
+    "scale_denominator": 2800000,
+    "bbox": {
+      "west": 6.0,
+      "east": 11.333333333333334,
+      "north": 37.5,
+      "south": 34.666666666666664
+    }
+  },
+  "oai:bibliotheque-numerique.icp.fr:1:8160": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000193532": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000856964": {},
+  "oai:u-bordeaux-montaigne.fr:218963": {
+    "scale_denominator": 1800000,
+    "bbox": {
+      "west": -2.3333333333333335,
+      "east": 12.0,
+      "north": 38.0,
+      "south": 30.0
+    }
+  },
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000856795": {},
+  "oai:u-bordeaux-montaigne.fr:245412": {},
+  "oai:u-bordeaux-montaigne.fr:340409": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.233333333333333,
+      "east": 10.586111111111112,
+      "north": 36.81666666666667,
+      "south": 36.61666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:245555": {},
+  "oai:u-bordeaux-montaigne.fr:245855": {
+    "scale_denominator": 1700000,
+    "bbox": {
+      "west": -5.5,
+      "east": 9.25,
+      "north": 51.31666666666667,
+      "south": 42.28333333333333
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340469": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.5,
+      "east": 10.866666666666667,
+      "north": 36.080555555555556,
+      "south": 35.891666666666666
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340487": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.478333333333333,
+      "east": 10.847222222222223,
+      "north": 35.90972222222222,
+      "south": 35.71194444444445
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340450": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.163055555555555,
+      "east": 10.523055555555556,
+      "north": 36.266666666666666,
+      "south": 36.083333333333336
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340467": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.145277777777777,
+      "east": 10.505277777777778,
+      "north": 36.10777777777778,
+      "south": 35.90972222222222
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340434": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.390277777777778,
+      "east": 8.75,
+      "north": 36.386944444444445,
+      "south": 36.19777777777777
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340371": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.883333333333333,
+      "east": 10.233333333333333,
+      "north": 37.18333333333333,
+      "south": 37.016666666666666
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340388": {
+    "scale_denominator": 50000
+  },
+  "oai:u-bordeaux-montaigne.fr:340390": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.233333333333333,
+      "east": 10.583333333333334,
+      "north": 37.0,
+      "south": 36.8
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340396": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.857222222222221,
+      "east": 10.226111111111111,
+      "north": 36.855000000000004,
+      "south": 36.65694444444444
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340408": {
+    "scale_denominator": 50,
+    "bbox": {
+      "west": 10.233333333333333,
+      "east": 10.586111111111112,
+      "north": 36.81666666666667,
+      "south": 36.61666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:245554": {},
+  "oai:bibliotheque-numerique.icp.fr:1:16101": {},
+  "oai:bibliotheque-numerique.icp.fr:1:16110": {},
+  "oai:u-bordeaux-montaigne.fr:219021": {
+    "scale_denominator": 1250000,
+    "bbox": {
+      "west": -6.0,
+      "east": 8.666666666666666,
+      "north": 51.416666666666664,
+      "south": 42.31666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:219020": {
+    "scale_denominator": 1250000,
+    "bbox": {
+      "west": -6.0,
+      "east": 8.666666666666666,
+      "north": 51.416666666666664,
+      "south": 42.31666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:245789": {
+    "scale_denominator": 1265000,
+    "bbox": {
+      "west": -5.5,
+      "east": 8.5,
+      "north": 51.5,
+      "south": 42.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340367": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.8,
+      "east": 9.183333333333334,
+      "north": 37.25,
+      "south": 37.06666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340374": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.8,
+      "east": 9.15,
+      "north": 37.8,
+      "south": 37.61666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340436": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.1,
+      "east": 9.45,
+      "north": 36.333333333333336,
+      "south": 36.15
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340470": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.363333333333333,
+      "east": 8.723055555555556,
+      "north": 36.026944444444446,
+      "south": 35.83777777777778
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340475": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.127222222222223,
+      "east": 10.487222222222222,
+      "north": 35.92777777777778,
+      "south": 35.730000000000004
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340493": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.109166666666667,
+      "east": 10.469166666666666,
+      "north": 35.74777777777778,
+      "south": 35.55888888888889
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340428": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.758333333333333,
+      "east": 9.127777777777778,
+      "north": 36.55,
+      "south": 36.358333333333334
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340435": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.75,
+      "east": 9.110277777777778,
+      "north": 36.36666666666667,
+      "south": 36.18
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340451": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.366666666666667,
+      "east": 8.733333333333333,
+      "north": 36.2,
+      "south": 36.016666666666666
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340471": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.723055555555556,
+      "east": 9.074166666666667,
+      "north": 36.00888888888889,
+      "south": 35.82
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340494": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.793333333333333,
+      "east": 10.820277777777777,
+      "north": 35.666666666666664,
+      "south": 35.5
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340530": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.775277777777779,
+      "east": 11.135277777777777,
+      "north": 35.34277777777778,
+      "south": 35.14472222222222
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340488": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.255277777777778,
+      "east": 8.705277777777777,
+      "north": 35.83777777777778,
+      "south": 35.657777777777774
+    }
+  },
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001956435": {},
+  "oai:u-bordeaux-montaigne.fr:340492": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.758055555555556,
+      "east": 10.118333333333334,
+      "north": 35.75,
+      "south": 35.56666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340496": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.336111111111112,
+      "east": 8.696111111111112,
+      "north": 35.666666666666664,
+      "south": 35.47777777777778
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340510": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.758055555555556,
+      "east": 10.1,
+      "north": 35.583333333333336,
+      "south": 35.4
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340472": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.074166666666667,
+      "east": 9.434166666666666,
+      "north": 35.990833333333335,
+      "south": 35.801944444444445
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340489": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.705277777777777,
+      "east": 9.065277777777778,
+      "north": 35.82888888888889,
+      "south": 35.64
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340491": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.407222222222222,
+      "east": 9.767222222222223,
+      "north": 35.79277777777778,
+      "south": 35.6
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340508": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.038333333333334,
+      "east": 9.398055555555555,
+      "north": 35.630833333333335,
+      "south": 35.44194444444444
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340507": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.687222222222223,
+      "east": 9.047222222222222,
+      "north": 35.64888888888889,
+      "south": 35.46
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340427": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.408333333333333,
+      "east": 8.768333333333334,
+      "north": 36.56666666666667,
+      "south": 36.37777777777778
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340490": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.056111111111111,
+      "east": 9.416111111111112,
+      "north": 35.81083333333333,
+      "south": 35.621944444444445
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340509": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.389166666666666,
+      "east": 9.749166666666666,
+      "north": 35.61277777777778,
+      "south": 35.42388888888889
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340452": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.733333333333333,
+      "east": 9.083333333333334,
+      "north": 36.166666666666664,
+      "south": 36.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340629": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.35,
+      "east": 10.616666666666667,
+      "north": 33.416666666666664,
+      "south": 33.21666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340616": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.55,
+      "east": 10.9,
+      "north": 34.833333333333336,
+      "south": 34.65
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340356": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.9,
+      "east": 10.266666666666667,
+      "north": 37.38333333333333,
+      "south": 37.18333333333333
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340513": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.327222222222222,
+      "east": 8.678055555555554,
+      "north": 35.48694444444445,
+      "south": 35.297777777777775
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340514": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.678055555555554,
+      "east": 9.029166666666667,
+      "north": 35.46888888888889,
+      "south": 35.28
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340447": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.46111111111111,
+      "east": 9.821111111111112,
+      "north": 36.333333333333336,
+      "south": 36.144444444444446
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340448": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.812222222222223,
+      "east": 10.172222222222222,
+      "north": 36.28333333333333,
+      "south": 36.1
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340449": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.163055555555555,
+      "east": 10.523055555555556,
+      "north": 36.266666666666666,
+      "south": 36.083333333333336
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340430": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.470277777777778,
+      "east": 9.839166666666667,
+      "north": 36.5125,
+      "south": 36.31527777777777
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340352": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 7.5,
+      "east": 12.0,
+      "north": 37.5,
+      "south": 30.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340351": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 7.5,
+      "east": 12.0,
+      "north": 37.5,
+      "south": 30.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340353": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 7.5,
+      "east": 12.0,
+      "north": 37.5,
+      "south": 30.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340412": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.127777777777778,
+      "east": 9.497222222222222,
+      "north": 36.711111111111116,
+      "south": 36.52222222222222
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340468": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.5,
+      "east": 10.866666666666667,
+      "north": 36.080555555555556,
+      "south": 35.891666666666666
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340474": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.776111111111112,
+      "east": 10.136111111111111,
+      "north": 35.94583333333333,
+      "south": 35.75694444444444
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340476": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.478333333333333,
+      "east": 10.847222222222223,
+      "north": 35.90972222222222,
+      "south": 35.71194444444445
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340495": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.811111111111112,
+      "east": 11.171111111111111,
+      "north": 35.70277777777778,
+      "south": 35.505
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340455": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.794166666666667,
+      "east": 10.154166666666667,
+      "north": 36.12583333333333,
+      "south": 35.93694444444444
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340511": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.091111111111111,
+      "east": 10.45111111111111,
+      "north": 35.56666666666667,
+      "south": 35.36666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340512": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.45111111111111,
+      "east": 10.802222222222223,
+      "north": 35.55,
+      "south": 35.35
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340529": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.433333333333334,
+      "east": 10.783333333333333,
+      "north": 35.36666666666667,
+      "south": 35.166666666666664
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340456": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.145277777777777,
+      "east": 10.505277777777778,
+      "north": 36.10777777777778,
+      "south": 35.90972222222222
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340453": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.083333333333334,
+      "east": 9.443333333333333,
+      "north": 36.170833333333334,
+      "south": 35.981944444444444
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340454": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.443333333333333,
+      "east": 9.803333333333335,
+      "north": 36.15277777777778,
+      "south": 35.955000000000005
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340413": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.488888888888889,
+      "east": 9.858333333333333,
+      "north": 36.69166666666666,
+      "south": 36.49444444444445
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340433": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.54111111111111,
+      "east": 10.901111111111112,
+      "north": 36.416666666666664,
+      "south": 36.25
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340354": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.183333333333334,
+      "east": 9.55,
+      "north": 37.416666666666664,
+      "south": 37.233333333333334
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340414": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.83888888888889,
+      "east": 10.208333333333332,
+      "north": 36.675,
+      "south": 36.47694444444445
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340473": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.425277777777778,
+      "east": 9.785277777777777,
+      "north": 35.97277777777778,
+      "south": 35.78333333333333
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340515": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.380277777777778,
+      "east": 9.695833333333333,
+      "north": 35.450833333333335,
+      "south": 35.261944444444445
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340368": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.166666666666666,
+      "east": 9.55,
+      "north": 37.25,
+      "south": 37.05
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340372": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.6,
+      "east": 10.95,
+      "north": 37.13333333333333,
+      "south": 36.95
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340389": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.233333333333333,
+      "east": 10.583333333333334,
+      "north": 37.0,
+      "south": 36.8
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340391": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.583333333333334,
+      "east": 10.933333333333334,
+      "north": 36.95,
+      "south": 36.78333333333333
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340392": {
+    "scale_denominator": 50000
+  },
+  "oai:u-bordeaux-montaigne.fr:340393": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.133333333333333,
+      "east": 9.5,
+      "north": 36.86666666666667,
+      "south": 36.7
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340407": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.233333333333333,
+      "east": 10.586111111111112,
+      "north": 36.81666666666667,
+      "south": 36.61666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340410": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.577777777777778,
+      "east": 10.945833333333333,
+      "north": 36.809999999999995,
+      "south": 36.60277777777778
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340411": {
+    "scale_denominator": 50000
+  },
+  "oai:u-bordeaux-montaigne.fr:340416": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.55,
+      "east": 10.9,
+      "north": 36.6,
+      "south": 36.416666666666664
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340429": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.119444444444445,
+      "east": 9.479166666666666,
+      "north": 36.53055555555555,
+      "south": 36.34166666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340431": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.830555555555556,
+      "east": 10.190277777777778,
+      "north": 36.486111111111114,
+      "south": 36.30555555555555
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340432": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.181111111111111,
+      "east": 10.54111111111111,
+      "north": 36.467777777777776,
+      "south": 36.26972222222222
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340375": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.166666666666666,
+      "east": 9.516666666666667,
+      "north": 37.05,
+      "south": 36.86666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340415": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.2,
+      "east": 10.566666666666666,
+      "north": 36.647777777777776,
+      "south": 36.45
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340516": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.366666666666667,
+      "east": 9.716666666666667,
+      "north": 35.416666666666664,
+      "south": 35.233333333333334
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340608": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 9.0,
+      "east": 12.0,
+      "north": 38.0,
+      "south": 36.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:494041": {},
+  "oai:u-bordeaux-montaigne.fr:494039": {},
+  "oai:u-bordeaux-montaigne.fr:340527": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.731111111111112,
+      "east": 10.082222222222223,
+      "north": 35.4,
+      "south": 35.21666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340528": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.082222222222223,
+      "east": 10.433333333333334,
+      "north": 35.36666666666667,
+      "south": 35.18333333333333
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340394": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.50611111111111,
+      "east": 9.875277777777779,
+      "north": 36.87277777777778,
+      "south": 36.675
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340370": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.883333333333333,
+      "east": 10.233333333333333,
+      "north": 37.18333333333333,
+      "south": 37.016666666666666
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340395": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.857222222222221,
+      "east": 10.226111111111111,
+      "north": 36.855000000000004,
+      "south": 36.65694444444444
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340355": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.533333333333333,
+      "east": 9.916666666666666,
+      "north": 37.4,
+      "south": 37.2
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340532": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.660277777777779,
+      "east": 9.020277777777778,
+      "north": 35.288888888888884,
+      "south": 35.1
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340369": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.533333333333333,
+      "east": 9.883333333333333,
+      "north": 37.233333333333334,
+      "south": 37.03333333333333
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340376": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.5,
+      "east": 9.85,
+      "north": 37.03333333333333,
+      "south": 36.85
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340387": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.866666666666667,
+      "east": 10.233333333333333,
+      "north": 37.016666666666666,
+      "south": 36.833333333333336
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340592": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 6.0,
+      "east": 9.0,
+      "north": 36.0,
+      "south": 34.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340590": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 9.0,
+      "east": 12.0,
+      "north": 34.0,
+      "south": 32.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340591": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 9.0,
+      "east": 12.0,
+      "north": 34.0,
+      "south": 32.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340589": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 6.0,
+      "east": 9.0,
+      "north": 34.0,
+      "south": 32.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340593": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 9.0,
+      "east": 12.0,
+      "north": 36.0,
+      "south": 34.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340654": {
+    "scale_denominator": 1000000,
+    "bbox": {
+      "west": 6.0,
+      "east": 12.0,
+      "north": 37.5,
+      "south": 32.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340373": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.95,
+      "east": 11.3,
+      "north": 37.11666666666667,
+      "south": 36.93333333333333
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340531": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.309166666666668,
+      "east": 8.669166666666666,
+      "north": 35.30694444444444,
+      "south": 35.117777777777775
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340628": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.933333333333334,
+      "east": 10.183333333333334,
+      "north": 33.983333333333334,
+      "south": 33.766666666666666
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340008": {},
+  "oai:u-bordeaux-montaigne.fr:340533": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.757222222222222,
+      "east": 11.117222222222223,
+      "north": 35.16277777777778,
+      "south": 34.965
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340627": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 8.583333333333334,
+      "east": 8.933333333333334,
+      "north": 34.483333333333334,
+      "south": 34.31666666666667
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340534": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.037222222222223,
+      "east": 10.433333333333334,
+      "north": 33.57888888888889,
+      "south": 33.371944444444445
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340535": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 10.055277777777778,
+      "east": 10.45111111111111,
+      "north": 33.776944444444446,
+      "south": 33.57
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340615": {
+    "scale_denominator": 50000,
+    "bbox": {
+      "west": 9.983333333333333,
+      "east": 10.466666666666667,
+      "north": 36.85,
+      "south": 36.68333333333333
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:168522": {
+    "scale_denominator": 5000000,
+    "bbox": {
+      "west": -2.6666666666666665,
+      "east": 13.333333333333334,
+      "north": 38.0,
+      "south": 20.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:168523": {
+    "scale_denominator": 1500000,
+    "bbox": {
+      "west": -3.1666666666666665,
+      "east": 11.833333333333334,
+      "north": 38.0,
+      "south": 32.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:168459": {
+    "scale_denominator": 2000000,
+    "bbox": {
+      "west": -2.6666666666666665,
+      "east": 11.5,
+      "north": 38.0,
+      "south": 29.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:168525": {
+    "scale_denominator": 400000,
+    "bbox": {
+      "west": 8.166666666666666,
+      "east": 12.166666666666666,
+      "north": 37.5,
+      "south": 32.666666666666664
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:168524": {
+    "scale_denominator": 400000,
+    "bbox": {
+      "west": 8.166666666666666,
+      "east": 12.166666666666666,
+      "north": 37.5,
+      "south": 32.666666666666664
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:168536": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 7.766666666666667,
+      "east": 11.6,
+      "north": 37.5,
+      "south": 33.0
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:168537": {
+    "scale_denominator": 500000,
+    "bbox": {
+      "west": 7.766666666666667,
+      "east": 11.6,
+      "north": 37.5,
+      "south": 33.0
+    }
+  },
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001993673": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000857406": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001993543": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000857407": {},
+  "oai:u-bordeaux-montaigne.fr:494017": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000855787": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000855476": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000855788": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000857408": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000857405": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000857382": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001993075": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001993081": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001993092": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001993044": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001954207": {},
+  "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001954215": {}
+}

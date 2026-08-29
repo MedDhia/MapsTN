@@ -1,11 +1,16 @@
 {
   "records_coded": 663,
   "scale_class": {
-    "unknown": 460,
-    "very_small": 96,
-    "small": 53,
-    "medium": 34,
-    "large": 20
+    "unknown": 340,
+    "medium": 130,
+    "very_small": 105,
+    "small": 67,
+    "large": 21
+  },
+  "scale_source": {
+    "none": 340,
+    "catalogue": 203,
+    "partner_page": 120
   },
   "production_mode": {
     "printed": 374,
@@ -78,7 +83,7 @@
     "1_analytic": 50
   },
   "quality_index": {
-    "mean": 63.6,
+    "mean": 66.0,
     "median": 60.8,
     "min": 0.0,
     "max": 100.0

@@ -6,9 +6,9 @@ Coding of all 663 records on the indicators defined in [CODEBOOK.md](CODEBOOK.md
 
 Two patterns govern almost every distribution below, and both are artefacts of cataloguing rather than properties of the maps.
 
-**Scale is missing far more often than it is present (460 of 663), and it is not missing at random.** Partner-library records essentially never carry a scale (151 of 157) against 61% of BnF records, so the 20th century's high missingness is a provenance artefact: of its 132 unscaled records, 116 are partner items. Separately, early modern maps often state no scale at all, which the catalogue faithfully records. Filtering on `scale_class` therefore selects on source and period, not on cartographic quality.
+**Scale is missing for 340 of 663 records, and it is not missing at random.** It was 460 until the partner libraries' own item pages were read: Gallica's aggregated records strip the scale from almost every partner item, which made that whole block look like poor-quality material. Recovering it left 31 of 157 partner records unscaled against 309 of 506 BnF ones, and `scale_source` records which route each value came by. What remains is genuine — early modern maps often state no scale at all — so filtering on `scale_class` still selects on period.
 
-**All digitisation measures exist only for BnF-held items.** The 163 `unknown` resolutions are 157 partner records plus 6 whose IIIF endpoint did not answer — systematic missingness, not zero quality.
+**All digitisation measures exist only for BnF-held items.** The 157 `unknown` resolutions are exactly the 157 partner records, whose images are not served through IIIF — systematic missingness, not zero quality.
 
 ## A. Cartographic quality
 
@@ -16,11 +16,11 @@ Two patterns govern almost every distribution below, and both are artefacts of c
 
 | Value | n | % |
 | --- | ---: | ---: |
-| `unknown` | 460 | 69% |
-| `very_small` | 96 | 14% |
-| `small` | 53 | 8% |
-| `medium` | 34 | 5% |
-| `large` | 20 | 3% |
+| `unknown` | 340 | 51% |
+| `medium` | 130 | 20% |
+| `very_small` | 105 | 16% |
+| `small` | 67 | 10% |
+| `large` | 21 | 3% |
 
 ### Production mode
 
@@ -119,7 +119,7 @@ Scan size, 506 records: median 52.0 MP (range 3.1–354.3). Effective resolution
 | `3_reference` | 157 | 24% |
 | `1_analytic` | 50 | 8% |
 
-`quality_index`: mean 63.6, median 60.8.
+`quality_index`: mean 66.0, median 60.8.
 
 Its three highest-scoring records are small-scale commercial maps of the whole Barbary coast at 1:1 600 000 and smaller — which is the clearest possible demonstration of the caveat in the codebook: the index rewards *fully catalogued and well scanned*, not *detailed*. Use `research_tier`, or the components, to rank cartographic value.
 

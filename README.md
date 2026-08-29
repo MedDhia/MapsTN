@@ -19,6 +19,9 @@ a relevance score.
 | **Georeferencing / thematic coding (CSV)** | [`data/gallica_tunisia_maps_geospatial.csv`](data/gallica_tunisia_maps_geospatial.csv) |
 | **Georeferencing report** | [`docs/GEOREFERENCING.md`](docs/GEOREFERENCING.md) |
 | **Geo variable definitions** | [`docs/CODEBOOK-GEO.md`](docs/CODEBOOK-GEO.md) |
+| **Feature / region coding (CSV)** | [`data/gallica_tunisia_maps_features.csv`](data/gallica_tunisia_maps_features.csv) |
+| **Feature / region report** | [`docs/FEATURES-REGIONS.md`](docs/FEATURES-REGIONS.md) |
+| **Feature variable definitions** | [`docs/CODEBOOK-FEATURES.md`](docs/CODEBOOK-FEATURES.md) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
 
@@ -46,8 +49,8 @@ a further 11 list more than one.
 
 **Rights:** 523 of 663 records are explicitly marked public domain.
 
-**Scale** is catalogued for 203 records, most commonly 1:800 000, 1:2 925 000
-and 1:1 000 000.
+**Scale** is known for 323 records — 203 from the Gallica record, 120 recovered
+from partner libraries' own pages (see below).
 
 ## Two things to know before using the data
 
@@ -80,7 +83,7 @@ Every record is coded on quality indicators in
 | --- | --- | --- |
 | **A. Cartographic** | scale class, production mode, issuing authority, colour, genre, sheet size | 56% printed, 29% manuscript; 96 records issued by a military survey |
 | **B. Record** | 8 presence indicators, completeness 0–8, grade A–D | 219 grade A, 14 grade D; 525 carry an exact year |
-| **C. Digital access** | IIIF, scan megapixels, scan dpi, rights | Median scan 52 MP at 391 dpi; 266 records above 50 MP |
+| **C. Digital access** | IIIF, scan megapixels, scan dpi, rights | Median scan 52 MP at 391 dpi; 269 records above 50 MP |
 
 Two summary constructs sit on top: `research_tier` (fitness for use) and
 `quality_index` (0–100). **Prefer the components.** Both constructs are my own
@@ -98,14 +101,18 @@ are small-scale commercial maps of the whole Barbary coast.
 
 ### The catch that matters most
 
-**Scale is absent for 460 of 663 records, and its absence is not random.**
-Partner-library records essentially never carry a scale (151 of 157) versus 61%
-of BnF records. So the 20th century looks unscaled (132 records) almost entirely
-because 116 of those are partner items — not because 20th-century survey maps
-lack scales. Independently, early modern maps often state no scale at all.
-Filtering on `scale_class` selects on cataloguing source and period. The same
-applies to every Family C measure: all 163 `unknown` resolutions are the 157
-partner records plus 6 IIIF failures.
+**Scale is still absent for 340 of 663 records, and its absence is not random.**
+It used to be 460. Gallica's aggregated records stripped the scale from almost
+every partner item (151 of 157), which made the 20th century look unscaled and
+made the partner block look like poor-quality material. It was a metadata
+artefact: those libraries publish the scale on their own item pages, and
+recovering it left only 31 of 157 partner records unscaled against 309 of 506
+BnF ones. `scale_source` records which route each value came by.
+
+What remains is genuine: early modern maps frequently state no scale at all, so
+filtering on `scale_class` still selects on period. And every Family C measure
+is BnF-only by construction — all 157 `unknown` resolutions are partner records,
+whose images are not served through IIIF.
 
 ## Georeferencing and thematic potential
 
@@ -116,14 +123,13 @@ Variables are defined in [`docs/CODEBOOK-GEO.md`](docs/CODEBOOK-GEO.md); full
 results with record lists are in
 [`docs/GEOREFERENCING.md`](docs/GEOREFERENCING.md).
 
-**Coordinates: 34 records, and only 2 centred on Tunisia.** Gallica's Dublin
-Core has no coordinate element at all, so coordinates were pulled from full
-UNIMARC records in the BnF catalogue général (field 123 `$d–$g`). Of the 506
-records with a catalogue notice, 31 carry a bounding box; 3 more state one in
-words. The `tunisia_extent_share` column shows why the count matters less than
-it looks: the coordinate-bearing sheets are overwhelmingly *Algerian* maps that
-catch Tunisia at their eastern edge. **For practical purposes, coordinates must
-be established by georeferencing, not read from metadata.**
+**Coordinates: 151 records, 112 of them centred on Tunisia.** Gallica's Dublin
+Core has no coordinate element at all. Coordinates come from two places: full
+UNIMARC in the BnF catalogue général (field 123 `$d–$g`), which yields 34; and
+the partner libraries' own item pages, which yield a further 117 that Gallica's
+aggregated records drop entirely. The `tunisia_extent_share` column separates
+sheets centred on the country from Mediterranean and Algerian maps that merely
+catch it at the edge.
 
 **Orientation: not catalogued.** Only 2 records mention it. The `orientation`
 column is a presumption from period and genre (post-1700 printed cartography is
@@ -132,13 +138,13 @@ pre-1700 and perspective-view material where the convention fails.
 
 | Georeferencing tier | n | Method |
 | --- | --- | --- |
-| `1_direct` | 34 | Graticule present — affine or polynomial transform |
-| `2_control_points` | 322 | Fit on ports, river mouths, known sites |
-| `3_warp_only` | 259 | Thin-plate spline; expect large residuals |
+| `1_direct` | 135 | Published corner coordinates or a graticule — affine or polynomial transform |
+| `2_control_points` | 338 | Fit on ports, river mouths, known sites |
+| `3_warp_only` | 142 | Thin-plate spline; expect large residuals |
 | `4_not_georeferenceable` | 48 | Atlas volumes and perspective views |
 
 **Content transfer is a separate question from geometry**, so it is coded
-separately: 249 records are `content_mappable = yes`, 115 `partial`, 299 `no`.
+separately: 269 records are `content_mappable = yes`, 95 `partial`, 299 `no`.
 
 ### What this corpus will and won't support
 
@@ -146,7 +152,7 @@ separately: 249 records are `content_mappable = yes`, 115 `partial`, 299 `no`.
 extractable-layer counts make that plain: coastline and bathymetry dominate,
 then fortifications. Land-use, population and economic layers are rare.
 
-So for **spatial inequality**, only **58 records** qualify as `direct` — meaning
+So for **spatial inequality**, only **61 records** qualify as `direct` — meaning
 they show a *distribution* (roads, railways, administrative limits, land use,
 urban fabric, mining), Tunisia is their subject rather than incidental, and they
 can be placed on the ground. Knowing where towns are is treated as context, not
@@ -158,6 +164,87 @@ network series (1842, 1880, 1882, 1885–87), the national coverages of 1881,
 delimitations of 1843 and 1881, and a 1950 mining-and-energy map. That is a real
 but thin time series, and it is about **infrastructure and administration** —
 not about population, land tenure or income, which this corpus does not carry.
+
+## Depicted features and regional coverage
+
+A third coding, in
+[`data/gallica_tunisia_maps_features.csv`](data/gallica_tunisia_maps_features.csv),
+records what is drawn on each sheet and which part of Tunisia it covers. See
+[`docs/CODEBOOK-FEATURES.md`](docs/CODEBOOK-FEATURES.md) and
+[`docs/FEATURES-REGIONS.md`](docs/FEATURES-REGIONS.md).
+
+**Features cannot be read from metadata.** Across all 663 records the catalogue
+names mosques in 0, tribes in 0, oases in 0, cemeteries in 0 and wells in 5.
+These things are drawn on maps, not catalogued. So the coding is a
+scale-and-series model calibrated against **seven sheets read directly through
+IIIF**, recorded in
+[`config/inspected_sheets.json`](config/inspected_sheets.json).
+
+What those sheets actually show, at 1:50 000: wells as dense blue circles,
+marabouts as red dome symbols beside `Sdi` names, `Mvet` for marabout, `Za` for
+zaouia, `Ae` for aïn, `Kat` for kalâa, `Hr` for henchir, *Puits* written out,
+ksour and guerar granary clusters — and on the Medenine sheet a separately
+labelled **"Village Français"** beside the indigenous centre, which is the
+settler/indigenous split drawn straight onto the map. The 1920 Taride sheet
+carries its own *"Explication des principaux termes arabes"*, so the map
+documents the vocabulary: *Bir/Aïn* = well, *Bordj* = fortified post,
+*Kalâa/Ksar* = fort, *Koubba* and *Zaouia* = chapel, *Sidi* = saint, *Souk* =
+market. It also marks the **Limite nord du Territoire Militaire**.
+
+| Scale band | n | Carries |
+| --- | --- | --- |
+| `topographic` (≤1:100 000) | 135 | Wells, shrines, ksour, ruins, farms, tracks, vegetation |
+| `regional` | 47 | Ranked settlements, roads, railways, relief, admin limits |
+| `synoptic` | 66 | Principal towns, railways, roads, chotts |
+| `overview` | 75 | Coastline and major towns |
+| `unknown` | 340 | No scale recorded |
+
+### The 1:50 000 series
+
+**89 records are numbered sheets of the Tunisia 1:50 000 topographic series** —
+Tunis, La Goulette, Sousse, Nabeul, Le Kef, Porto-Farina, Metline, Sebkra
+Kelbia. Gallica's aggregated records give them no scale, no coordinates and no
+catalogue notice, so they were previously invisible in every coding here. Their
+own item pages at the Bordeaux Montaigne "1886" collection state both, and
+[`scripts/fetch_partner_records.py`](scripts/fetch_partner_records.py) recovers
+them. That single fix moved 120 records from "no scale" to scaled, added 117
+bounding boxes, and quadrupled the directly-georeferenceable set from 34 to 135.
+This is the richest material in the collection for anything at village scale.
+
+### Regional coverage
+
+| Region | n | | Region | n |
+| --- | ---: | --- | --- | ---: |
+| `tunis_capital` | 213 | | `sud_est_djeffara` | 75 |
+| `nord_ouest` | 113 | | `centre` | 72 |
+| `bizerte_nord` | 107 | | `sfax_kerkennah` | 60 |
+| `sahel` | 96 | | `sud_ouest_jerid` | 37 |
+| `cap_bon` | 76 | | `national_extent` | 87 |
+
+Regions are assigned from published coordinates where available (133 records)
+and from a toponym gazetteer otherwise. The spatial method matters: the series
+names its sheets after villages no gazetteer would carry, and using coordinates
+raised the interior from 9 records to 72 for `centre` and 2 to 37 for the Jerid.
+
+### Which are complete maps of Tunisia
+
+**Only 2 are confirmed complete, and only because the images were checked.**
+Titles mislead: *Carte de la Régence de Tunis* (1881, 1:500 000) sounds like the
+whole Regency and stops before the Jerid and the south; *Carte de la Tunisie*
+(1895, 1:800 000) is captioned "1re feuille Nord" in its top margin, which its
+catalogue record never mentions.
+
+| `coverage_complete` | n |
+| --- | ---: |
+| `yes` — verified complete | 2 |
+| `partial` — verified incomplete, or names a sheet of a set | 2 |
+| `unverified` — national in title, image not checked | 114 |
+| `no` — not national in scope | 545 |
+
+Confirmed complete: **Nouvelle carte de la Tunisie** (Taride, 1920, 1:900 000)
+and **Carte de la Tunisie** (Service géographique de l'armée, 1889, 1:800 000).
+The other 114 remain open — resolving them means opening each image, and each
+one settled should be appended to `config/inspected_sheets.json`.
 
 ## Data dictionary
 
@@ -189,9 +276,11 @@ not about population, land tenure or income, which this corpus does not carry.
 python3 scripts/harvest_gallica_maps.py      # re-query Gallica, rewrite data/
 python3 scripts/fetch_scan_dimensions.py     # IIIF pixel dimensions (cached)
 python3 scripts/fetch_catalogue_records.py   # UNIMARC incl. coordinates (cached)
+python3 scripts/fetch_partner_records.py     # partner scale + coordinates (cached)
 python3 scripts/build_inventory.py           # regenerate docs/INVENTORY.md
 python3 scripts/code_quality.py              # regenerate the quality coding
 python3 scripts/code_geospatial.py           # regenerate the geo/thematic coding
+python3 scripts/code_features_regions.py     # regenerate the feature/region coding
 ```
 
 All scripts are Python 3 standard library only — no dependencies. To widen
