@@ -1,6 +1,6 @@
 # Tunisia maps in Gallica — inventory
 
-663 distinct cartographic records (1318–2013), harvested 2026-08-29T09:43:12Z from the Gallica SRU API.
+663 distinct cartographic records (1318–2013), harvested 2026-08-29T10:34:23Z from the Gallica SRU API.
 
 Records are grouped by century and sorted chronologically. `Conf.` is the
 Tunisia-relevance confidence described in [METHODOLOGY.md](METHODOLOGY.md);
@@ -64,12 +64,12 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | 1588 | Geografia di M. Livio Sanuto distinta in XII libri. Né quali oltra l'esplicatione di molti luo… | Sanuto, Livio (1520-1576). Auteur du texte \… | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b550078451) |
 | 1590 | Africae propriae tabula, in qua Punica regna uides, Tyrios et Agenoris urbem ; Sinus Carthagin… | Ortelius, Abraham (1527-1598). Cartographe | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b59641019) |
 | 1593 | Tunes Oppidum Barbarie & Regina fedes 1535 [...] / Joanne Maio | Maior, Johann (15..-15..). Cartographe | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b53143250k) |
-| 1564 | Plantz, pourtraitz et descriptions de plusieurs villes et forteresses, tant de l'Europe, Asie,… | Du Pinet, Antoine (1510?-15..). Cartographe… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b55008266c) |
-| 1574 | Theatre des principales villes de tout l'univers. Second volume | Braun, Georg (1541-1622). Auteur du texte \|… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k326845g) |
-| 1574 | Théâtre des cités du monde. Premier volume | Braun, Georg (1541-1622). Auteur du texte \|… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k326843q) |
-| 1575 | La Cosmographie universelle de tout le monde en laquelle, suivant les auteurs plus dignes de f… | Belleforest, François de (1530-1583). Auteur… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k324274q) |
-| 1575 | La Cosmographie universelle de tout le monde en laquelle, suivant les auteurs plus dignes de f… | Belleforest, François de (1530-1583). Auteur… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1505502g) |
-| 1583 | Theatre des principales villes de tout l'Univers. Liber Tertius. | Braun, Georg (1541-1622). Auteur du texte \|… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k3268443) |
+| 1564 | Plantz, pourtraitz et descriptions de plusieurs villes et forteresses, tant de l'Europe, Asie,… | Du Pinet, Antoine (1510?-15..). Cartographe… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b55008266c) |
+| 1574 | Theatre des principales villes de tout l'univers. Second volume | Braun, Georg (1541-1622). Auteur du texte \|… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k326845g) |
+| 1574 | Théâtre des cités du monde. Premier volume | Braun, Georg (1541-1622). Auteur du texte \|… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k326843q) |
+| 1575 | La Cosmographie universelle de tout le monde en laquelle, suivant les auteurs plus dignes de f… | Belleforest, François de (1530-1583). Auteur… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k324274q) |
+| 1575 | La Cosmographie universelle de tout le monde en laquelle, suivant les auteurs plus dignes de f… | Belleforest, François de (1530-1583). Auteur… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1505502g) |
+| 1583 | Theatre des principales villes de tout l'Univers. Liber Tertius. | Braun, Georg (1541-1622). Auteur du texte \|… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k3268443) |
 
 ## 17th c.
 
@@ -128,14 +128,14 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | 1699 | Plan de la rade de Bizerte en Barbarie / par Albert, pilote entretenu du Roy | Albert (16..-17.. ; pilote). Cartographe | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b532423018) |
 | 1699 | Plan de Portefarine en Barbarie... / par Albert, pilotte entretenu du Roy | Albert (16..-17.. ; pilote). Cartographe | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b532422996) |
 | 1600 | Partie d'Afrique | — | 1:6 167 000 | medium | [view](https://nubis.bis-sorbonne.fr/ark:/15733/pgpx) |
-| 1628 | Presa delle dua galere di Biserta fatta dalle galere della Sacra Relig[io]ne di S. Stefano [ ]… | Della Bella, Stefano (1610-1664). Graveur | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b531704111) |
 | 1639 | Nova totius terrarum orbis geographica ac hydrographica tabula autore N. I. Piscator | Visscher, Nicolas (1618-1679 ; aîné) | — | medium | [view](https://nubis.bis-sorbonne.fr/ark:/15733/pfkq) |
-| 1658 | Cartes generales de toutes les parties du monde, ou les empires, monarchies, republiques, esta… | Sanson, Nicolas (1600-1667). Cartographe \|… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b52510038g) |
-| 1659 | Tresor des cartes geographiques des principaux estatz de l'univers [...] | Hondius, Henricus (1597-1651). Auteur adapté… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b52511195b) |
 | 1677 | Cartes pour les itinéraires et voïages [sic] modernes qui ont esté faits tant par mer que par… | Duval, Pierre (1619-1683). Cartographe \| Br… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b525039034) |
-| 1681 | Atlas nouveau contenant toutes les parties du monde ou sont exactement remarqués les Empires,… | Jaillot, Alexis-Hubert (1632?-1712). Cartogr… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b52526874r) |
-| 1686 | L'Europe et ses descriptions Par P. Du Val geographe du Roy. Avec privilege de Sa Majesté | Duval, Pierre (1619-1683). Cartographe \| Fe… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k4324200) |
-| 1688 | La geographie universelle qui fait voir l'estat présent des 4 parties du monde c'est à dire le… | Duval, Pierre (1619-1683). Cartographe \| Au… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k8726671v) |
+| 1628 | Presa delle dua galere di Biserta fatta dalle galere della Sacra Relig[io]ne di S. Stefano [ ]… | Della Bella, Stefano (1610-1664). Graveur | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b531704111) |
+| 1658 | Cartes generales de toutes les parties du monde, ou les empires, monarchies, republiques, esta… | Sanson, Nicolas (1600-1667). Cartographe \|… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b52510038g) |
+| 1659 | Tresor des cartes geographiques des principaux estatz de l'univers [...] | Hondius, Henricus (1597-1651). Auteur adapté… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b52511195b) |
+| 1681 | Atlas nouveau contenant toutes les parties du monde ou sont exactement remarqués les Empires,… | Jaillot, Alexis-Hubert (1632?-1712). Cartogr… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b52526874r) |
+| 1686 | L'Europe et ses descriptions Par P. Du Val geographe du Roy. Avec privilege de Sa Majesté | Duval, Pierre (1619-1683). Cartographe \| Fe… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k4324200) |
+| 1688 | La geographie universelle qui fait voir l'estat présent des 4 parties du monde c'est à dire le… | Duval, Pierre (1619-1683). Cartographe \| Au… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k8726671v) |
 
 ## 18th c.
 
@@ -299,17 +299,17 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | 1700–1799 | Veüe de la Calle du côté de terre ferme | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b532375487) |
 | 1704 | Côte de Barbarie, depuis le cap Razat, jusqu'au cap Raxetin / par le Maire | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53235460d) |
 | 1704 | Plan de lille St Paul ou planne située au sud d'alicant environ 5 lieües quy est pour facillit… | Manin (16..-17..). Cartographe | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53284617f) |
-| 1706 | [L'Affrique, en plusieurs cartes nouvelles, et exactes, &c. en divers traitez de geographie, e… | Sanson, Nicolas (1600-1667). Cartographe \|… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b55013766v) |
 | 1706 | Plan de l'attaque d'Alicant | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53284620q) |
-| 1709 | Atlas ou recüeil de cartes geographiques, dressées sur les nouvelles observations de M[essieu]… | Fer, Nicolas de (1647?-1720). Cartographe \|… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53247486x) |
 | 1726 | [Ensemble de documents de travail concernant l'Afrique] / [dressés ou annotés par Guillaume De… | Delisle, Guillaume (1675-1726). Cartographe | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b52519327v) |
 | 1728 | Veüe de la place de la Calle en Barbarie... / par le Sr Jean Bigonnet... ; sous le com[m]andem… | Compagnie des Indes. Commanditaire du contenu | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b532375502) |
-| 1742 | Atlas coelestis. Phaenomena circa quantitatem dierum artificialium et solarium perpetuomutabil… | Doppelmayr, Johann Gabriel (1677-1750). Fonc… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b8592051q) |
 | 1751 | Carte réduite d'une partie de la coste de Barbarie depuis le cap de Hone jusqu'au cap Matifou… | Le Moyne, François-Pierre (1713-1795). Carto… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b532376134) |
-| 1758 | Carte generale d'Allemagne divisée en ses cercles et subdivisée en ses principaux Etats / Dres… | Eisenschmidt, Johann Caspar (1656-1712). Car… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b10678733g) |
-| 1760 | Plans parcellaires avec du quartier de la place Royale et du quartier de l'Odéon à la fin du 1… | Verniquet, Edme (1727-1804) | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000852506) |
 | 1764 | Plan du port de la Calle | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53237608z) |
 | 1799 | [Tracé d'une partie des côtes de Barbarie entre Alexandrie et le cap Razat] | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53235472q) |
+| 1706 | [L'Affrique, en plusieurs cartes nouvelles, et exactes, &c. en divers traitez de geographie, e… | Sanson, Nicolas (1600-1667). Cartographe \|… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b55013766v) |
+| 1709 | Atlas ou recüeil de cartes geographiques, dressées sur les nouvelles observations de M[essieu]… | Fer, Nicolas de (1647?-1720). Cartographe \|… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b53247486x) |
+| 1742 | Atlas coelestis. Phaenomena circa quantitatem dierum artificialium et solarium perpetuomutabil… | Doppelmayr, Johann Gabriel (1677-1750). Fonc… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b8592051q) |
+| 1758 | Carte generale d'Allemagne divisée en ses cercles et subdivisée en ses principaux Etats / Dres… | Eisenschmidt, Johann Caspar (1656-1712). Car… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b10678733g) |
+| 1760 | Plans parcellaires avec du quartier de la place Royale et du quartier de l'Odéon à la fin du 1… | Verniquet, Edme (1727-1804) | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000852506) |
 | 1700 | [Carte manuscrite du cours du Gange depuis la vache de pierre jusqu'à Patna et de ses environs… | Anville, Jean-Baptiste d' (1697-1782). Carto… | — | low | [view](https://gallica.bnf.fr/ark:/12148/btv1b8593142d) |
 
 ## 19th c.
@@ -451,29 +451,29 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | 1896 | Plan de Tunis : Atlas universel, pl. 127 / gravé par R. Hausermann | Hausermann, R. (1843-1933). Créateur de l'es… | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b84954845) |
 | 1898 | Environs de Bizerte | — | 1:50 000 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b53029646j) |
 | 1898 | Environs de Tunis | — | 1:50 000 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b530294979) |
-| 1800–1899 | Projet de construction d'une salle de dissection et dépendances à la Faculté de médecine de Mo… | — | 1:200 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b10678328s) |
 | 1816 | Plan of the coast and neighbourhood of Leptis Magna / by Capitain W.m H.y Smyth, Royal Navy | Smyth, William Henry (1788-1865). Cartographe | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b532375648) |
 | 1816 | Plan of the coast and neighbourhood of Leptis Magna / by Captain. W.m H.y Smyth, Royal Navy | Smyth, William Henry (1788-1865). Cartographe | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53237565q) |
-| 1817 | Plan figuratif du Site de l'Antique Nasium et de ses Environs Dessiné a vue d'oeil et sans toi… | Denis, Claude-François (1762-1853). Auteur d… | 1:8 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b84935785) |
-| 1830 | Carte de la Régence de Tripoli et des principales routes commerciales de l'intérieur de l'Afri… | Prax (18..-18.. ; cartographe). Cartographe… | 1:2 000 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b531797029) |
-| 1830 | Carte des principales eaux minérales de France / par C. E. S. Gaultier de Claubry, docteur en… | Gaultier de Claubry, Charles-Emmanuel-Simon… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b8446462h) |
-| 1830 | Histoire scientifique et militaire de l'expédition française en Egypte : dédiée au Roi. atlas | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k316310r) |
-| 1835 | Mines de Gabe-Gottes et de St. Jacques | — | 1:2 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53102664q) |
-| 1842 | Carte frontière du département de Haute-Garonne / par Bartro, capitaine des douanes à Luchon ;… | Bartro, Antoine (1801-1896). Cartographe du… | 1:91 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b530877105) |
-| 1851 | Plan de l'avenue Richerand. Alignements : ordonnance royale du 24 octobre 1846 | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000856964) |
-| 1867 | Atlas du Cosmos, contenant les cartes géographiques, physiques, thermiques... applicables à to… | Vuillemin, Alexandre Aimé (1812-1886). Auteu… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k9618179r) |
-| 1877 | Atlas céleste comprenant toutes les cartes de l'ancien atlas (3e éd.) / de Ch. Dien ; rectifié… | Dien, Charles (1809-1870). Auteur du texte \… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k96135733) |
-| 1882 | Carte de l'Egypte. 1/1 950 000. Tirage de juillet 1882. (Publiée par le Dépôt de la guerre.) | — | 1:1 950 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b8438941d) |
-| 1882 | Carte hydrographique de la Basse-Egypte et d'une partie de l'isthme de Suez, gravée au Dépôt d… | Linant de Bellefonds, Louis Maurice Adolphe… | 1:250 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021089h) |
-| 1882 | Carte hydrographique de la Basse-Égypte et d'une partie de l'isthme de Suez, gravée au Dépôt d… | Linant de Bellefonds, Louis Maurice Adolphe… | 1:250 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021229s) |
-| 1882 | Carte hydrographique de la Moyenne-Egypte, gravée au Dépôt de la guerre en 1854 / d'après les… | Linant de Bellefonds, Louis Maurice Adolphe… | 1:250 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021220r) |
-| 1887 | Plan de la rue de l'Ecole de Médecine. Alignements : ordonnance royale et décrets 1836 à 1884 | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000856795) |
-| 1888 | Colonie du Gabon et du Congo français. Reconnaissances préliminaires pour l'étude des voies de… | Jacob, Léon Pierre (1858-1935). Cartographe | 1:185 200 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b101236288) |
-| 1888 | Colonie du Gabon et du Congo français. Reconnaissances préliminaires pour l'étude des voies de… | Jacob, Léon Pierre (1858-1935). Cartographe | 1:185 200 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b10123629q) |
-| 1891 | Nouvel atlas des colonies françaises : dressé par ordre de l'administration des colonies / par… | Pelet, Paul (1849-1927). Cartographe | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k5790223v) |
 | 1896 | Carte des stations minérales, thermales et balnéaires de France et d'Algérie / dressée d'après… | Beyne, Maurice | — | medium | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/245855) |
 | 1897 | [Algérie]. Tracés des lignes télégraphiques de Touggourt à El Oued et d'El Oued à Nefta, par P… | Pelet, Paul (1849-1927). Cartographe | 1:100 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b108916885) |
-| 1899 | Nouvel Atlas colonial / par Henri Mager, ,... | Mager, Henri (1859-19..). Cartographe | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1100234w) |
+| 1800–1899 | Projet de construction d'une salle de dissection et dépendances à la Faculté de médecine de Mo… | — | 1:200 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b10678328s) |
+| 1817 | Plan figuratif du Site de l'Antique Nasium et de ses Environs Dessiné a vue d'oeil et sans toi… | Denis, Claude-François (1762-1853). Auteur d… | 1:8 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b84935785) |
+| 1830 | Carte de la Régence de Tripoli et des principales routes commerciales de l'intérieur de l'Afri… | Prax (18..-18.. ; cartographe). Cartographe… | 1:2 000 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b531797029) |
+| 1830 | Carte des principales eaux minérales de France / par C. E. S. Gaultier de Claubry, docteur en… | Gaultier de Claubry, Charles-Emmanuel-Simon… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b8446462h) |
+| 1830 | Histoire scientifique et militaire de l'expédition française en Egypte : dédiée au Roi. atlas | — | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k316310r) |
+| 1835 | Mines de Gabe-Gottes et de St. Jacques | — | 1:2 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b53102664q) |
+| 1842 | Carte frontière du département de Haute-Garonne / par Bartro, capitaine des douanes à Luchon ;… | Bartro, Antoine (1801-1896). Cartographe du… | 1:91 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b530877105) |
+| 1851 | Plan de l'avenue Richerand. Alignements : ordonnance royale du 24 octobre 1846 | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000856964) |
+| 1867 | Atlas du Cosmos, contenant les cartes géographiques, physiques, thermiques... applicables à to… | Vuillemin, Alexandre Aimé (1812-1886). Auteu… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k9618179r) |
+| 1877 | Atlas céleste comprenant toutes les cartes de l'ancien atlas (3e éd.) / de Ch. Dien ; rectifié… | Dien, Charles (1809-1870). Auteur du texte \… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k96135733) |
+| 1882 | Carte de l'Egypte. 1/1 950 000. Tirage de juillet 1882. (Publiée par le Dépôt de la guerre.) | — | 1:1 950 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b8438941d) |
+| 1882 | Carte hydrographique de la Basse-Egypte et d'une partie de l'isthme de Suez, gravée au Dépôt d… | Linant de Bellefonds, Louis Maurice Adolphe… | 1:250 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021089h) |
+| 1882 | Carte hydrographique de la Basse-Égypte et d'une partie de l'isthme de Suez, gravée au Dépôt d… | Linant de Bellefonds, Louis Maurice Adolphe… | 1:250 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021229s) |
+| 1882 | Carte hydrographique de la Moyenne-Egypte, gravée au Dépôt de la guerre en 1854 / d'après les… | Linant de Bellefonds, Louis Maurice Adolphe… | 1:250 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021220r) |
+| 1887 | Plan de la rue de l'Ecole de Médecine. Alignements : ordonnance royale et décrets 1836 à 1884 | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000856795) |
+| 1888 | Colonie du Gabon et du Congo français. Reconnaissances préliminaires pour l'étude des voies de… | Jacob, Léon Pierre (1858-1935). Cartographe | 1:185 200 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b101236288) |
+| 1888 | Colonie du Gabon et du Congo français. Reconnaissances préliminaires pour l'étude des voies de… | Jacob, Léon Pierre (1858-1935). Cartographe | 1:185 200 | unverified | [view](https://gallica.bnf.fr/ark:/12148/btv1b10123629q) |
+| 1891 | Nouvel atlas des colonies françaises : dressé par ordre de l'administration des colonies / par… | Pelet, Paul (1849-1927). Cartographe | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k5790223v) |
+| 1899 | Nouvel Atlas colonial / par Henri Mager, ,... | Mager, Henri (1859-19..). Cartographe | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1100234w) |
 | 1895 | Karte der Eisenbahn von Salonik nach Monastir, 1/300 000, entworfen u. gez. / C. Fr. v. d. Gol… | Goltz, Colmar von der (1843-1916). Auteur du… | 1:300 000 | low | [view](https://gallica.bnf.fr/ark:/12148/btv1b8441279j) |
 
 ## 20th c.
@@ -643,7 +643,6 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | 1951 | Djebel Zaghouan [Tunisie] carte géologique. 1 : 20 000 / G. Castany | Castany, Gilbert. Auteur du texte \| Service… | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b53071091w) |
 | 1952 | Carte-guide "Tourist", Tunisie | COMPAGNIE FRANÇAISE DE PROPAGANDE ET DE PUBL… | 1:800 000 | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b53197102z) |
 | 1967 | Italia : [carte du relief de l'Italie, de la Corse, de l'Ouest des pays des Balkans et du Nord… | Bertin, Jacques (1918-2010). Cartographe. De… | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b10841640c) |
-| 1902 | Atlas des colonies françaises : 27 planches de cartes, texte explicatif, index alphabétique /… | Pelet, Paul (1849-1927). Auteur du texte | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k11001831) |
 | 1913 | Nouvelle carte de France, Belgique, Bords du Rhin, Suisse, etc... | — | — | medium | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/219021) |
 | 1913 | Nouvelle carte de France, Belgique, Bords du Rhin, Suisse, etc... | — | — | medium | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/219020) |
 | 1914 | [Plans de ville de Libye] | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b531467922) |
@@ -652,11 +651,12 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | 1914 | [Triangolazione della Tripolitania in Cirenaicia] | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53146794z) |
 | 1914 | [Tripolitania settentrionale] | — | 1:800 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53146787w) |
 | 1914 | Carta dimostrativa della Cirenaica / Ministero delle Colonie | — | 1:1 000 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53146701w) |
-| 1914 | Essai d'Atlas statistique de l'Indochine française : Indochine physique, population, administr… | Brenier, Henri (1867-1962). Rédacteur \| Ind… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1100178q) |
 | 1914 | Tripolitania : territorio fra la costa e l'uadi sciati / M. Checchi | — | 1:1 500 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b531466756) |
 | 1920–1929 | Carte de France : départements & chemins-de-fer, Belgique, bords du Rhin, Suisse, etc | — | — | medium | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/245789) |
-| 1929 | Atlas colonial français : colonies, protectorats et pays sous mandat / cartes et texte du Comm… | Pollacchi, Paul (1862-1937). Auteur du texte… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1100182m) |
-| 1988 | Inventaire communal 1988. 53, Mayenne / Institut national de la statistique et des études écon… | Institut national de la statistique et des é… | 1:450 000 | medium | [view](https://gallica.bnf.fr/ark:/12148/bpt6k9117777g) |
+| 1902 | Atlas des colonies françaises : 27 planches de cartes, texte explicatif, index alphabétique /… | Pelet, Paul (1849-1927). Auteur du texte | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k11001831) |
+| 1914 | Essai d'Atlas statistique de l'Indochine française : Indochine physique, population, administr… | Brenier, Henri (1867-1962). Rédacteur \| Ind… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1100178q) |
+| 1929 | Atlas colonial français : colonies, protectorats et pays sous mandat / cartes et texte du Comm… | Pollacchi, Paul (1862-1937). Auteur du texte… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k1100182m) |
+| 1988 | Inventaire communal 1988. 53, Mayenne / Institut national de la statistique et des études écon… | Institut national de la statistique et des é… | 1:450 000 | unverified | [view](https://gallica.bnf.fr/ark:/12148/bpt6k9117777g) |
 | 1900–1999 | Distrito de Beja. Planta do concelho de Cuba, extraida da planta cadastral | — | 1:25 000 | low | [view](https://gallica.bnf.fr/ark:/12148/btv1b53121094z) |
 | 1908 | Vilayet de Monastir : Carte des écoles chrétiennes : [La questione rumeliota carta N° 3] | [Auteur non identifié] | — | low | [view](https://bibliotheque-numerique.icp.fr/idurl/1/16101) |
 | 1915 | Monastir : The Balkans / War office | Grande-Bretagne. War office. Fonction indéte… | 1:250 000 | low | [view](https://gallica.bnf.fr/ark:/12148/btv1b10104083z) |
@@ -702,24 +702,24 @@ and [`data/gallica_tunisia_maps.json`](../data/gallica_tunisia_maps.json).
 | n.d. | Plan de la côte et seches de Barbarie, depuis Zerbi jusques à Susa, corrigée par les latitudes… | — | — | high | [view](https://gallica.bnf.fr/ark:/12148/btv1b8441527v) |
 | n.d. | Tunisie au 500 000\|e] | — | — | high | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001954207) |
 | n.d. | Tunisie au 500 000\|e] : Feuille 2 | Service Géographique de l'armées | — | high | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001954215) |
-| 1574 | Théâtre des cités du monde. Volume 1 / par Georges Bruin | Braun, Georg (1541-1622). Auteur du texte \|… | — | medium | [view](https://gallica.bnf.fr/ark:/12148/bd6t5700000d) |
 | 1600–1799 | [Carte des côtes algériennes du cap Abatel au cap Bugarone] | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b532423124) |
 | 1600–1799 | Carte de la rade d'Alican | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53301182z) |
 | 1600–1799 | Plan de la coste depuis Alicant jusqu'au cap de St Paul | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53299904v) |
 | 1600–1799 | Plan de la rade de l'Ogue Noüa | — | 1:18 214 | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53301186r) |
 | 1600–1799 | Veue Alican estant mouille | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53284619b) |
 | 1600–1799 | Vüe d'Aliquan... | — | — | medium | [view](https://gallica.bnf.fr/ark:/12148/btv1b53284618w) |
-| n.d. | [Plan d'implantation du Théâtre de l'Odéon : projet définitif] | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993673) |
-| n.d. | [Plan montrant le prolongement du boulevard Saint-Germain, l'alignement de la rue de l'Ecole d… | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857406) |
-| n.d. | [Projet de lotissement du quartier de l'Odéon] | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993543) |
-| n.d. | Agrandissement de l'Ecole pratique de la Faculté de Médecine. Plan parcellaire : 1882-1883 | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857407) |
-| n.d. | Carte du département de la Seine. 6 zones du service médical | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000855787) |
-| n.d. | Conduite principale de l'école de Médecine. Conduites secondaires et bornes fontaines dans la… | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000855476) |
-| n.d. | Division de la Ville de Paris en circonscriptions de dispensaires anti-tuberculeux. Nombre des… | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000855788) |
-| n.d. | Ecole de médecine. Formation du périmètre. Plan parcellaire : [Vers 1878] | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857408) |
-| n.d. | Ecole Pratique de la faculté de Médecine. Formation du périmètre. Plan parcellaire : [Vers 187… | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857405) |
-| n.d. | Expropriations complémentaires du boulevard [Saint-Michel] 5e arrondt. [Espace compris à l'ang… | — | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857382) |
-| n.d. | Plan général de la nouvelle salle de Comédie française sur le terrein de l'ancien Hôtel de Con… | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993075) |
-| n.d. | Plan général de la nouvelle salle de Comédie françoise sur l'ancien terrein de l'hotel de Cond… | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993081) |
-| n.d. | Plan général de la nouvelle salle de Comédie françoise sur le terrein de l'ancien hotel de Con… | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993092) |
-| n.d. | Plan général de la nouvelle salle de Comédie françoise sur le terrein de l'ancien Hôtel de Con… | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | medium | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993044) |
+| 1574 | Théâtre des cités du monde. Volume 1 / par Georges Bruin | Braun, Georg (1541-1622). Auteur du texte \|… | — | unverified | [view](https://gallica.bnf.fr/ark:/12148/bd6t5700000d) |
+| n.d. | [Plan d'implantation du Théâtre de l'Odéon : projet définitif] | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993673) |
+| n.d. | [Plan montrant le prolongement du boulevard Saint-Germain, l'alignement de la rue de l'Ecole d… | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857406) |
+| n.d. | [Projet de lotissement du quartier de l'Odéon] | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993543) |
+| n.d. | Agrandissement de l'Ecole pratique de la Faculté de Médecine. Plan parcellaire : 1882-1883 | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857407) |
+| n.d. | Carte du département de la Seine. 6 zones du service médical | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000855787) |
+| n.d. | Conduite principale de l'école de Médecine. Conduites secondaires et bornes fontaines dans la… | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000855476) |
+| n.d. | Division de la Ville de Paris en circonscriptions de dispensaires anti-tuberculeux. Nombre des… | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000855788) |
+| n.d. | Ecole de médecine. Formation du périmètre. Plan parcellaire : [Vers 1878] | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857408) |
+| n.d. | Ecole Pratique de la faculté de Médecine. Formation du périmètre. Plan parcellaire : [Vers 187… | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857405) |
+| n.d. | Expropriations complémentaires du boulevard [Saint-Michel] 5e arrondt. [Espace compris à l'ang… | — | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000857382) |
+| n.d. | Plan général de la nouvelle salle de Comédie française sur le terrein de l'ancien Hôtel de Con… | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993075) |
+| n.d. | Plan général de la nouvelle salle de Comédie françoise sur l'ancien terrein de l'hotel de Cond… | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993081) |
+| n.d. | Plan général de la nouvelle salle de Comédie françoise sur le terrein de l'ancien hotel de Con… | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993092) |
+| n.d. | Plan général de la nouvelle salle de Comédie françoise sur le terrein de l'ancien Hôtel de Con… | Wailly, Charles de (1729-1798) \| Peyre, Mar… | — | unverified | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001993044) |

@@ -61,15 +61,15 @@
     "partner": 157
   },
   "scan_resolution_class": {
-    "high": 266,
-    "medium": 187,
-    "unknown": 163,
-    "low": 47
+    "high": 269,
+    "medium": 189,
+    "unknown": 157,
+    "low": 48
   },
   "scan_dpi_class": {
-    "standard": 373,
-    "unknown": 217,
-    "high": 56,
+    "standard": 376,
+    "unknown": 212,
+    "high": 58,
     "low": 17
   },
   "research_tier": {
@@ -78,22 +78,22 @@
     "1_analytic": 50
   },
   "quality_index": {
-    "mean": 63.5,
+    "mean": 63.6,
     "median": 60.8,
     "min": 0.0,
     "max": 100.0
   },
   "scan_megapixels": {
-    "n": 500,
-    "mean": 59.3,
+    "n": 506,
+    "mean": 59.2,
     "median": 52.0,
     "min": 3.1,
     "max": 354.3
   },
   "scan_dpi": {
-    "n": 446,
-    "mean": 382,
-    "median": 391,
+    "n": 451,
+    "mean": 383,
+    "median": 392,
     "min": 154,
     "max": 1181
   }

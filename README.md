@@ -16,6 +16,9 @@ a relevance score.
 | **Quality coding (CSV)** | [`data/gallica_tunisia_maps_coded.csv`](data/gallica_tunisia_maps_coded.csv) |
 | **Quality profile** | [`docs/QUALITY.md`](docs/QUALITY.md) |
 | **Variable definitions** | [`docs/CODEBOOK.md`](docs/CODEBOOK.md) |
+| **Georeferencing / thematic coding (CSV)** | [`data/gallica_tunisia_maps_geospatial.csv`](data/gallica_tunisia_maps_geospatial.csv) |
+| **Georeferencing report** | [`docs/GEOREFERENCING.md`](docs/GEOREFERENCING.md) |
+| **Geo variable definitions** | [`docs/CODEBOOK-GEO.md`](docs/CODEBOOK-GEO.md) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
 
@@ -56,10 +59,13 @@ BnF-held set of 506.
 
 **Relevance is scored, not assumed.** Full-text search over historical
 toponyms produces false positives, because Monastir is also a Balkan vilayet and
-Béja is also a Portuguese district. Every record carries a `confidence` value —
-`high` (551), `medium` (106), `low` (6) — and the six `low` records are visibly
-wrong rather than hidden. `medium` mostly means "a map of North Africa or the
-Mediterranean on which Tunisia appears", which may or may not be what you want.
+Béja is also a Portuguese district — and because Gallica's index normalises
+`medenine` into `médecine`, which imported 35 Paris medical-school plans. Every
+record carries a `confidence` value — `high` (551), `unverified` (55),
+`medium` (51), `low` (6). `unverified` means a query returned the record but its
+own metadata contains no Tunisian term at all: that bucket holds both genuine
+16th-century atlases whose Tunis plates are unstated, and outright false
+positives. **Filter to `high` to avoid the question.**
 [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) explains the scoring.
 
 ## Quality coding
@@ -101,6 +107,58 @@ Filtering on `scale_class` selects on cataloguing source and period. The same
 applies to every Family C measure: all 163 `unknown` resolutions are the 157
 partner records plus 6 IIIF failures.
 
+## Georeferencing and thematic potential
+
+A second coding, in
+[`data/gallica_tunisia_maps_geospatial.csv`](data/gallica_tunisia_maps_geospatial.csv),
+answers four questions about what the collection can actually be used for.
+Variables are defined in [`docs/CODEBOOK-GEO.md`](docs/CODEBOOK-GEO.md); full
+results with record lists are in
+[`docs/GEOREFERENCING.md`](docs/GEOREFERENCING.md).
+
+**Coordinates: 34 records, and only 2 centred on Tunisia.** Gallica's Dublin
+Core has no coordinate element at all, so coordinates were pulled from full
+UNIMARC records in the BnF catalogue général (field 123 `$d–$g`). Of the 506
+records with a catalogue notice, 31 carry a bounding box; 3 more state one in
+words. The `tunisia_extent_share` column shows why the count matters less than
+it looks: the coordinate-bearing sheets are overwhelmingly *Algerian* maps that
+catch Tunisia at their eastern edge. **For practical purposes, coordinates must
+be established by georeferencing, not read from metadata.**
+
+**Orientation: not catalogued.** Only 2 records mention it. The `orientation`
+column is a presumption from period and genre (post-1700 printed cartography is
+north-up), validated by eye on four sheets and flagged `uncertain` for the
+pre-1700 and perspective-view material where the convention fails.
+
+| Georeferencing tier | n | Method |
+| --- | --- | --- |
+| `1_direct` | 34 | Graticule present — affine or polynomial transform |
+| `2_control_points` | 322 | Fit on ports, river mouths, known sites |
+| `3_warp_only` | 259 | Thin-plate spline; expect large residuals |
+| `4_not_georeferenceable` | 48 | Atlas volumes and perspective views |
+
+**Content transfer is a separate question from geometry**, so it is coded
+separately: 249 records are `content_mappable = yes`, 115 `partial`, 299 `no`.
+
+### What this corpus will and won't support
+
+**It is a maritime and military collection, not a socio-economic one.** The
+extractable-layer counts make that plain: coastline and bathymetry dominate,
+then fortifications. Land-use, population and economic layers are rare.
+
+So for **spatial inequality**, only **58 records** qualify as `direct` — meaning
+they show a *distribution* (roads, railways, administrative limits, land use,
+urban fabric, mining), Tunisia is their subject rather than incidental, and they
+can be placed on the ground. Knowing where towns are is treated as context, not
+evidence, or the count would inflate to 123.
+
+For **evolution** specifically, the usable spine is the itinerary and road
+network series (1842, 1880, 1882, 1885–87), the national coverages of 1881,
+1889, 1895 and 1920, the railway maps, the Algeria–Tunisia frontier
+delimitations of 1843 and 1881, and a 1950 mining-and-energy map. That is a real
+but thin time series, and it is about **infrastructure and administration** —
+not about population, land tenure or income, which this corpus does not carry.
+
 ## Data dictionary
 
 | Column | Description |
@@ -128,10 +186,12 @@ partner records plus 6 IIIF failures.
 ## Reproducing or extending
 
 ```bash
-python3 scripts/harvest_gallica_maps.py    # re-query Gallica, rewrite data/
-python3 scripts/fetch_scan_dimensions.py   # IIIF pixel dimensions (cached)
-python3 scripts/build_inventory.py         # regenerate docs/INVENTORY.md
-python3 scripts/code_quality.py            # regenerate the quality coding
+python3 scripts/harvest_gallica_maps.py      # re-query Gallica, rewrite data/
+python3 scripts/fetch_scan_dimensions.py     # IIIF pixel dimensions (cached)
+python3 scripts/fetch_catalogue_records.py   # UNIMARC incl. coordinates (cached)
+python3 scripts/build_inventory.py           # regenerate docs/INVENTORY.md
+python3 scripts/code_quality.py              # regenerate the quality coding
+python3 scripts/code_geospatial.py           # regenerate the geo/thematic coding
 ```
 
 All scripts are Python 3 standard library only — no dependencies. To widen
