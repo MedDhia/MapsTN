@@ -224,31 +224,41 @@ def write_report(rows, summary, crosswalk, coverage, path: Path) -> None:
     lines += [
         "## The finding",
         "",
-        "**The infrastructure layers rebuild well; the fine-grained ones do not "
-        "exist in OSM at all.**",
+        "**The infrastructure layers rebuild well. The fine-grained ones are "
+        "sparse and clustered — present, but nowhere near the density the "
+        "historical sheets carry.**",
         "",
-        "Roads run to 455–1577 ways per sheet, railways to 59, administrative "
-        "boundaries appear on every sheet probed, and buildings to over 2000 in "
-        "settled areas. Against that, **every sheet probed returned zero typed "
-        "shrines, zero forts or ksour, zero ruins and zero mines**, and at most "
-        "two typed wells.",
+        "Across ten sheets: 20 756 road ways (median 1527 per sheet), 11 500 "
+        "buildings, 461 administrative boundary objects — the only layer on all "
+        "ten sheets — 344 railway ways, 209 mosques. Against that, **15 typed "
+        "wells, 19 ruins, 11 forts, 8 mines and 2 shrines in total**, most of "
+        "them concentrated on two or three sheets, with a median of 0 or 1 per "
+        "sheet.",
         "",
-        "Those absent classes are precisely what makes the 1:50 000 series "
+        "An earlier, narrower probe of four sheets returned zero for shrines, "
+        "forts, ruins and mines, which would have supported a stronger claim "
+        "than the evidence warrants. Widening it to ten shows those classes are "
+        "sparse and clustered rather than absent. The practical conclusion is "
+        "the same, but it is a difference worth stating.",
+        "",
+        "Those thin classes are precisely what makes the 1:50 000 series "
         "valuable — the marabouts, koubbas, ksour, henchirs and wells read off "
         "the Medenine and Kef sheets. So the relationship runs the other way "
-        "from what one might expect: **OSM cannot supply them, and the "
-        "historical sheets could supply OSM.**",
+        "from what one might expect: **OSM cannot supply them at usable "
+        "density, and the historical sheets could supply OSM.**",
         "",
-        "Partial recovery is possible through toponymy, because Tunisian place "
-        "names carry the feature class: 1–3 objects per sheet are named *Bir*, "
-        "2–3 *Sidi* or *Koubba*, about one *Ksar*. That is one to two orders of "
-        "magnitude below the density drawn on the sheets. A caution for anyone "
-        "matching names: in Tunisia the OSM `name` tag is usually **Arabic "
-        "script**, with the French transliteration in `name:fr` — matching Latin "
-        "forms against `name` alone finds almost nothing.",
+        "Toponymy recovers more than typing does, because Tunisian place names "
+        "carry the feature class. Across the same ten sheets: 70 objects named "
+        "*Oued*, 28 *Sidi*, 27 *Ksar*, 11 *Bir*. Note that 28 *Sidi* names sit "
+        "against 2 typed shrines, and 27 *Ksar* names against 11 typed forts — "
+        "**for these classes, searching names beats searching tags.** A trap "
+        "for anyone doing it: in Tunisia the OSM `name` tag is usually **Arabic "
+        "script**, with the French transliteration in `name:fr`; matching Latin "
+        "forms against `name` alone finds almost nothing, which is exactly how "
+        "the first pass of this probe undercounted.",
         "",
-        "Coverage is also very uneven. One probed sheet held 4134 tagged "
-        "objects; another, in the rural north-west, held **7**.",
+        "Coverage is also very uneven. The Sfax sheet held 17 239 tagged "
+        "objects; a sheet in the rural north-west held **7**.",
         "",
         "## How the corpus scores",
         "",

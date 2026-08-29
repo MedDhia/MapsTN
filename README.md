@@ -22,6 +22,9 @@ a relevance score.
 | **Feature / region coding (CSV)** | [`data/gallica_tunisia_maps_features.csv`](data/gallica_tunisia_maps_features.csv) |
 | **Feature / region report** | [`docs/FEATURES-REGIONS.md`](docs/FEATURES-REGIONS.md) |
 | **Feature variable definitions** | [`docs/CODEBOOK-FEATURES.md`](docs/CODEBOOK-FEATURES.md) |
+| **OSM rebuild coding (CSV)** | [`data/gallica_tunisia_maps_osm.csv`](data/gallica_tunisia_maps_osm.csv) |
+| **OSM rebuild report** | [`docs/OSM-REBUILD.md`](docs/OSM-REBUILD.md) |
+| **OSM layer crosswalk** | [`config/osm_crosswalk.json`](config/osm_crosswalk.json) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
 
@@ -274,6 +277,66 @@ and 1892 — so sorting by catalogue year puts them in the wrong order. One titl
 is wrong too: the record catalogued *Carte des itinéraires* (1896) is physically
 the *Carte de la Tunisie* of 1895. **Read the date off the sheet before using
 these as a series.**
+
+## What can be rebuilt from OpenStreetMap
+
+[`data/gallica_tunisia_maps_osm.csv`](data/gallica_tunisia_maps_osm.csv) scores
+each map for how much of it has a modern OSM counterpart. Full results in
+[`docs/OSM-REBUILD.md`](docs/OSM-REBUILD.md).
+
+**"Rebuild" can only mean one thing here.** OSM records the present, so no
+historical map can be recreated from it. What can be built is a modern
+counterpart of the same layers, so a sheet can be compared feature by feature —
+which road existed then and not now, which village grew, which well is gone.
+
+**Measured, not assumed.** OSM coverage was probed *inside the published extents
+of ten 1:50 000 sheets*, not inferred from tagging practice. Overpass and
+Geofabrik both refuse connections from some networks, so
+[`scripts/probe_osm_coverage.py`](scripts/probe_osm_coverage.py) uses the main
+OSM API's `/map` call, quartering sheets that exceed its node cap.
+
+| Layer | Confidence | Across 10 sheets |
+| --- | --- | --- |
+| Roads | high | 20 756 ways, median 1527/sheet |
+| Built-up area | high | 11 500 buildings |
+| Admin boundaries | high | 461 objects, the only layer on all 10 sheets |
+| Railways | medium | 344 ways, incl. `abandoned`/`disused` |
+| Mosques, water, land use, settlements | medium | 209 / 650 / 322 / 77 |
+| Wells | low | **15 typed**, median 1 |
+| Ruins, forts, mines | low | **19 / 11 / 8**, clustered on 2–3 sheets |
+| Shrines, marabouts | low | **2 typed, in total** |
+| Relief, bathymetry, geology, tribes, telegraph | none | no OSM domain |
+
+### The finding
+
+The infrastructure layers rebuild well. The fine-grained ones are sparse and
+clustered — and they are exactly what makes the 1:50 000 series valuable. So the
+relationship runs backwards from what you'd hope: **OSM cannot supply the
+marabouts, ksour, henchirs and wells at usable density, and the historical
+sheets could supply OSM.**
+
+**For those classes, searching names beats searching tags.** Tunisian place
+names carry the feature class: across the same ten sheets, 28 objects are named
+*Sidi* against 2 typed shrines, and 27 named *Ksar* against 11 typed forts. One
+trap — in Tunisia the OSM `name` tag is usually **Arabic script**, with the
+French transliteration in `name:fr`. Matching Latin forms against `name` alone
+finds almost nothing; that is how the first pass of this probe undercounted.
+
+Coverage is very uneven: the Sfax sheet held 17 239 tagged objects, a rural
+north-west sheet held **7**.
+
+| `osm_rebuild` | n |
+| --- | ---: |
+| `most_of_it` | 35 |
+| `partly` | 136 |
+| `little` | 271 |
+| `none` | 139 |
+| `unknown` | 82 |
+
+The 35 best candidates are route, railway and administrative maps that are also
+georeferenceable — the *Carte des itinéraires* sheets and the road maps. The
+hydrographic charts, the largest single block of this corpus, score `none`:
+OSM carries no soundings.
 
 ## Data dictionary
 

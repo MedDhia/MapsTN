@@ -1,0 +1,290 @@
+{
+  "oai:u-bordeaux-montaigne.fr:340494": {
+    "title": "Tunisie Flle. N° LXV-B8-C38, Djemmal / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1925)",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 35.5,
+      "west": 10.793,
+      "north": 35.667,
+      "east": 10.82
+    },
+    "area_deg2": 0.0045,
+    "tagged_objects": 715,
+    "typed_features": {
+      "settlements": 1,
+      "mosques": 4,
+      "buildings": 1,
+      "railways": 1,
+      "roads": 455,
+      "land_use": 1,
+      "water": 5,
+      "admin_boundaries": 17
+    },
+    "toponym_generics": {
+      "koubba/zaouia": 2
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340629": {
+    "title": "[Carte de Tunisie 1:50 000] / dressé, héliogravé et publié par le Service géographique de l'Armée (révisé en 1933)",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 33.217,
+      "west": 10.35,
+      "north": 33.417,
+      "east": 10.617
+    },
+    "area_deg2": 0.0534,
+    "tagged_objects": 7123,
+    "typed_features": {
+      "wells_springs": 8,
+      "settlements": 4,
+      "ruins_henchirs": 9,
+      "roads": 4234,
+      "buildings": 831,
+      "water": 157,
+      "mines": 4,
+      "admin_boundaries": 60,
+      "mosques": 23,
+      "land_use": 33,
+      "shrines_marabouts": 1
+    },
+    "toponym_generics": {
+      "ksar (fort)": 20,
+      "bir (well)": 4,
+      "henchir (ruin)": 1,
+      "oued (wadi)": 6,
+      "sidi (shrine)": 2
+    },
+    "note": "summed from 4 of 4 quadrants; single call exceeded the node cap"
+  },
+  "oai:u-bordeaux-montaigne.fr:340627": {
+    "title": "[Tunisie au 1:50 000] / dressé, héliogravé et publié par le Service Géographique de l'Armée (révision de 1934)",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 34.317,
+      "west": 8.583,
+      "north": 34.483,
+      "east": 8.933
+    },
+    "area_deg2": 0.0581,
+    "tagged_objects": 3420,
+    "typed_features": {
+      "roads": 878,
+      "railways": 119,
+      "water": 34,
+      "land_use": 24,
+      "buildings": 1379,
+      "admin_boundaries": 35,
+      "mosques": 9,
+      "settlements": 6
+    },
+    "toponym_generics": {
+      "sidi (shrine)": 4,
+      "oued (wadi)": 3
+    },
+    "note": "summed from 3 of 4 quadrants; single call exceeded the node cap"
+  },
+  "oai:u-bordeaux-montaigne.fr:340371": {
+    "title": "Tunisie Flle. N° VII.B 0-C 36, Porto-Farina / dressé, gravé et publié par Service géographique de l'armée (Révision de 1902)",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 37.017,
+      "west": 9.883,
+      "north": 37.183,
+      "east": 10.233
+    },
+    "area_deg2": 0.0581,
+    "tagged_objects": 4482,
+    "typed_features": {
+      "settlements": 12,
+      "wells_springs": 2,
+      "roads": 2564,
+      "buildings": 274,
+      "water": 203,
+      "ruins_henchirs": 8,
+      "land_use": 99,
+      "mosques": 35,
+      "admin_boundaries": 61,
+      "mines": 1,
+      "forts_ksour": 3
+    },
+    "toponym_generics": {
+      "ain (spring)": 1,
+      "oued (wadi)": 6,
+      "ksar (fort)": 1,
+      "bir (well)": 1,
+      "henchir (ruin)": 1,
+      "sidi (shrine)": 1,
+      "djebel (hill)": 1
+    },
+    "note": "summed from 4 of 4 quadrants; single call exceeded the node cap"
+  },
+  "oai:u-bordeaux-montaigne.fr:340452": {
+    "title": "Tunisie Flle. N° XLV-B6-C33, Les Salines / dressé,héliogravé et publié par le Service géographique de l'Armée en 1924 (révision partielle de 1925), complété en 1929",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 36.0,
+      "west": 8.733,
+      "north": 36.167,
+      "east": 9.083
+    },
+    "area_deg2": 0.0585,
+    "tagged_objects": 4134,
+    "typed_features": {
+      "settlements": 5,
+      "mosques": 13,
+      "wells_springs": 1,
+      "roads": 1107,
+      "land_use": 56,
+      "railways": 59,
+      "buildings": 2019,
+      "water": 12,
+      "admin_boundaries": 26
+    },
+    "toponym_generics": {
+      "oued (wadi)": 8,
+      "bir (well)": 1,
+      "ksar (fort)": 1,
+      "ain (spring)": 1
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340391": {
+    "title": "Tunisie Flle. N° XV-B 1-C 38, Tazoghrane / dressé, héliogravé et publié par Service géographique de l'armée (révisé en 1932)",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 36.783,
+      "west": 10.583,
+      "north": 36.95,
+      "east": 10.933
+    },
+    "area_deg2": 0.0585,
+    "tagged_objects": 3413,
+    "typed_features": {
+      "settlements": 23,
+      "wells_springs": 2,
+      "mosques": 26,
+      "roads": 1577,
+      "water": 40,
+      "buildings": 1314,
+      "land_use": 28,
+      "admin_boundaries": 25
+    },
+    "toponym_generics": {
+      "bir (well)": 3,
+      "koubba/zaouia": 2,
+      "sidi (shrine)": 3,
+      "oued (wadi)": 4
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340515": {
+    "title": "Tunisie Flle. N° LXXVII-B10-C34, Djebel Mrhila / dessiné, héliogravé et publié par le Service Géographique de l'Armée en 1932",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 35.262,
+      "west": 9.38,
+      "north": 35.451,
+      "east": 9.696
+    },
+    "area_deg2": 0.0597,
+    "tagged_objects": 2520,
+    "typed_features": {
+      "settlements": 4,
+      "mosques": 5,
+      "roads": 1527,
+      "railways": 29,
+      "buildings": 47,
+      "water": 52,
+      "land_use": 42,
+      "mines": 2,
+      "admin_boundaries": 66,
+      "forts_ksour": 1,
+      "wells_springs": 1
+    },
+    "toponym_generics": {
+      "oued (wadi)": 3
+    },
+    "note": "summed from 4 of 4 quadrants; single call exceeded the node cap"
+  },
+  "oai:u-bordeaux-montaigne.fr:340374": {
+    "title": "Tunisie Flle. N° X-B1-C33, Nefza / dressé, héliogravé et publié par le Service Géographique de l'Armée (complété en 1922)",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 37.617,
+      "west": 8.8,
+      "north": 37.8,
+      "east": 9.15
+    },
+    "area_deg2": 0.064,
+    "tagged_objects": 7,
+    "typed_features": {
+      "admin_boundaries": 2
+    },
+    "toponym_generics": {}
+  },
+  "oai:u-bordeaux-montaigne.fr:340375": {
+    "title": "Tunisie Flle. N°XI-B1-C34, Hedil / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1932)",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 36.867,
+      "west": 9.167,
+      "north": 37.05,
+      "east": 9.517
+    },
+    "area_deg2": 0.064,
+    "tagged_objects": 2833,
+    "typed_features": {
+      "settlements": 12,
+      "mosques": 6,
+      "water": 31,
+      "roads": 1421,
+      "land_use": 24,
+      "buildings": 11,
+      "admin_boundaries": 80,
+      "railways": 17,
+      "shrines_marabouts": 1,
+      "mines": 1
+    },
+    "toponym_generics": {
+      "oued (wadi)": 9,
+      "ain (spring)": 1,
+      "ksar (fort)": 3,
+      "sidi (shrine)": 2,
+      "djebel (hill)": 1
+    },
+    "note": "summed from 4 of 4 quadrants; single call exceeded the node cap"
+  },
+  "oai:u-bordeaux-montaigne.fr:340616": {
+    "title": "Environs de Sfax / dressé, héliogravé et publié par le Service géographique de l'Armée",
+    "scale_denominator": "50000",
+    "bbox": {
+      "south": 34.65,
+      "west": 10.55,
+      "north": 34.833,
+      "east": 10.9
+    },
+    "area_deg2": 0.064,
+    "tagged_objects": 17239,
+    "typed_features": {
+      "settlements": 10,
+      "ruins_henchirs": 2,
+      "mosques": 88,
+      "wells_springs": 1,
+      "roads": 6993,
+      "buildings": 5624,
+      "admin_boundaries": 89,
+      "water": 116,
+      "land_use": 15,
+      "railways": 119,
+      "forts_ksour": 7
+    },
+    "toponym_generics": {
+      "sidi (shrine)": 16,
+      "bir (well)": 2,
+      "oued (wadi)": 31,
+      "ksar (fort)": 2,
+      "bordj (fort)": 1,
+      "ain (spring)": 1
+    },
+    "note": "summed from 3 of 4 quadrants; single call exceeded the node cap"
+  }
+}
