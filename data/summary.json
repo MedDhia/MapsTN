@@ -1,0 +1,39 @@
+{
+  "harvested_at": "2026-08-29T09:31:35Z",
+  "endpoint": "https://gallica.bnf.fr/SRU",
+  "type_filter": "dc.type all \"carte\"",
+  "queries_run": 59,
+  "unique_records": 663,
+  "by_confidence": {
+    "high": 551,
+    "medium": 106,
+    "low": 6
+  },
+  "by_century": {
+    "14th c.": 1,
+    "16th c.": 39,
+    "17th c.": 61,
+    "18th c.": 170,
+    "19th c.": 159,
+    "20th c.": 181,
+    "21st c.": 7,
+    "undated / spans centuries": 45
+  },
+  "by_theme": {
+    "country": 497,
+    "city": 446,
+    "region": 64,
+    "polity": 40,
+    "island": 38,
+    "historic": 17,
+    "antiquity": 5
+  },
+  "by_typedoc": {
+    "cartes": 663
+  },
+  "earliest_year": 1318,
+  "latest_year": 2013,
+  "undated": 19,
+  "with_scale": 206,
+  "public_domain": 523
+}
