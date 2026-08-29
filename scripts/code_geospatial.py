@@ -146,6 +146,14 @@ def code_coordinates(record: dict, catalogue: dict, partner: dict) -> dict:
     if not box:
         return {"bbox_west": "", "bbox_east": "", "bbox_north": "", "bbox_south": "",
                 "bbox_source": "none", "tunisia_extent_share": ""}
+    # One UNIMARC record has its longitude subfields the wrong way round
+    # (W 11.783 / E 4.833), which silently gives every overlap test a zero.
+    box = {
+        "west": min(box["west"], box["east"]),
+        "east": max(box["west"], box["east"]),
+        "south": min(box["north"], box["south"]),
+        "north": max(box["north"], box["south"]),
+    }
     share = overlap_share(box)
     return {
         "bbox_west": f"{box['west']:.3f}",

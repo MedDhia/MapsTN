@@ -38,6 +38,71 @@ Abbreviations readable on the sheet: Mvet = marabout (red symbol), Za = zaouia, 
 
 Full labelled graticule at 30-minute intervals; relief in colour with contours at 20 m.
 
+**Carte des itinéraires de la Tunisie, 1/800 000** (1886, 1:800 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b53022873s)
+
+Legend covers chef-lieu de division and de subdivision, poste occupe militairement, centre de population, grand ksar, frontiere, route carrossable, itineraires ordinaires des colonnes with distances in kilometres, chemin de fer, and ligne telegraphique electrique.
+
+**Carte des itinéraires de la Tunisie** (1906, 1:800 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b531972761)
+
+Legend as the 1885 edition, adding a distinction between chemin de fer a voie normale and a voie etroite.
+
+**Carte des itinéraires de la Tunisie / dressée** (1896, 1:800 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b531797080)
+
+No conventional-signs panel.
+
+**Carte géologique provisoire de la régence de T** (1894, 1:800 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b530277289)
+
+Carte geologique provisoire by F. Aubert, Ingenieur des Mines, published by order of the Tunisian government. Legend runs Quaternaire recent and ancien, Pliocene marin and lacustre, Sahelien, Miocene, Eocene superieur (etage a gypse, etage a phosphates), Eocene moyen and inferieur, Cretace superieur, moyen and inferieur, Jurassique. The phosphate-bearing Eocene is mapped as its own unit.
+
+**Les gisements miniers de l'Afrique du Nord. Tu** (1950, 1:500 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b53213324v)
+
+Les gisements miniers de l'Afrique du Nord, Societe de Documentation Industrielle. The legend separates worked deposits from concessions and from prospecting permits, by mineral: lignite, iron, manganese, copper, lead and zinc, phosphate, plus oil boreholes, salines and marais salants, thermal springs, artesian boreholes, and quarries for lime, plaster, cement stone, marble, onyx and building stone.
+
+**Régence de Tunis. Direction générale des trava** (1931, 1:500 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b53066673n)
+
+Regence de Tunis, Direction generale des travaux publics, drawn by M. Solignac, Chef du Service Geologique, published by the Service des Mines. Alongside the stratigraphy the legend carries 'Gites miniers principaux': plomb, zinc, fer, cuivre, manganese, phosphate de chaux, lignite, hydrocarbures.
+
+**Tunisie au 500.000e. / dressé, héliogravé et p** (1943, 1:500 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b53179710t)
+
+Institut Geographique National.
+
+**Carte routière de la Tunisie / dressée par le** (1900, 1:1 000 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b8442159r)
+
+Touring Club de France, under Andre Berthelot. Legend covers railways at normal and narrow gauge, under construction and projected; carriageable roads with metalled sections; principal and secondary tracks; post and telegraph offices; caravanserais; optical telegraph; lighthouses with a range over 9 miles; 'points d'eau amenages en 1897-98-99'; and, importantly, the 'limite septentrionale des Territoires du Sud' separating civil control from military command, with chef-lieu de controle civil distinguished from chef-lieu de cercle militaire.
+
+**Carte de la régence de Tunis dressée au dépôt** (1884, 1:400 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b530634783)
+
+Depot de la Guerre, from the observations of Falbe and Pricot de Sainte-Marie.
+
+**Carte de la Régence de Tunis dressée au Dépôt** (1842, 1:400 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b53179703r)
+
+No title cartouche or legend on the sheet.
+
+**Carte Foldex de la Tunisie** (1934, 1:1 000 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b530578955)
+
+Carte Foldex, a commercial folding road map. Road distances marked in kilometres along each section.
+
+**Tunisie (Proconsulaire et Byzacène), 1:1 000 0** (1912, 1:1 000 000) — [view](https://gallica.bnf.fr/ark:/12148/btv1b530762364)
+
+Afrique chretienne: eveches antiques et ruines, by Pere Mesnage of the Peres Blancs. Legend distinguishes Catholic, Catholic-and-Donatist and Donatist bishoprics, basilicas and chapels, monasteries, inscriptions and antique ruins, with the old ecclesiastical province limits drawn against modern ones.
+
+## The catalogue year is often not the map's year
+
+Opening these sheets turned up a discrepancy that matters more than the completeness question it was meant to settle. The `year` field is frequently the date of the *printing or acquisition*, not of the map:
+
+| Catalogued | Sheet itself says |
+| --- | --- |
+| 1886 | 1885 ("tirage de mai 1886") |
+| 1896 | 1895 |
+| 1906 | 1892 |
+| 1894 | 1892 |
+| 1950 | 1930 |
+| 1884 | 1857 ("tirage de février 1884") |
+
+**This breaks any time series built on `year`.** The three *Carte des itinéraires* editions catalogued 1886, 1896 and 1906 are in fact the sheets of 1885, 1895 and 1892 — so ordering them by catalogue year puts them in the wrong sequence entirely. Read the date off the sheet before using these as a chronology.
+
+One title is wrong too: the record catalogued *Carte des itinéraires de la Tunisie* (1896) is physically the *Carte de la Tunisie* of 1895, captioned "1re feuille Nord".
+
 The 1920 Taride sheet is the most useful of these, because it carries its own glossary of Arabic feature generics — the map documents the very vocabulary this coding looks for: *Aïn / Bir* = well or spring, *Bordj* = fortified post, *Kalâa / Ksar* = fort or fortified village, *Koubba* and *Zaouia* = chapel, *Sidi* = saint, *Souk* = market, *Oued* = river, *Chott / Sebkra* = salt lake. Its settlement hierarchy runs Capitale, Ville importante, Ville secondaire, Village ou centre important, Hameau or village indigène — and it marks a **Limite nord du Territoire Militaire**, the boundary of the militarily administered south.
 
 At 1:50 000 the sign vocabulary is far richer: the Kef sheet uses `Mvet` for marabout, `Za` for zaouia, `Ae` for aïn, `Kat` for kalâa and `Hr` for henchir, with *Puits* written out. The Medenine sheet shows wells as dense blue circles, marabouts as red dome symbols, a koubba (`Kba Sdi ben Bekr`), ksour and guerar granary clusters — and a separately labelled **Village Français** beside the indigenous centre, which is the settler/indigenous distinction drawn directly on the map.
@@ -61,8 +126,8 @@ What a sheet can show is set by its scale. `topographic` (≤1:100 000) is the o
 | Value | n | % |
 | --- | ---: | ---: |
 | `none` | 340 | 51% |
-| `scale_model` | 316 | 48% |
-| `image` | 7 | 1% |
+| `scale_model` | 304 | 46% |
+| `image` | 19 | 3% |
 
 ### Feature classes named in catalogue text
 
@@ -77,6 +142,8 @@ Sparse by construction — this is what the catalogue happens to mention, not wh
 | `admin_limits` | 20 | 3% |
 | `railways` | 20 | 3% |
 | `urban_fabric` | 16 | 2% |
+| `geology` | 8 | 1% |
+| `telegraph` | 6 | 1% |
 | `rural_settlement` | 5 | 1% |
 | `wadis` | 5 | 1% |
 | `shrines_marabouts` | 5 | 1% |
@@ -119,8 +186,8 @@ A sheet can cover several. Counts are of records touching the region.
 | --- | ---: | ---: |
 | `coastal_strip` | 194 | 29% |
 | `supranational` | 171 | 26% |
-| `national` | 119 | 18% |
-| `locality` | 119 | 18% |
+| `locality` | 125 | 19% |
+| `national` | 113 | 17% |
 | `single_region` | 34 | 5% |
 | `undetermined` | 26 | 4% |
 
@@ -130,8 +197,8 @@ A sheet can cover several. Counts are of records touching the region.
 | --- | ---: | ---: |
 | `coastal_strip` | 152 | 28% |
 | `supranational` | 128 | 23% |
-| `national` | 119 | 22% |
-| `locality` | 114 | 21% |
+| `locality` | 120 | 22% |
+| `national` | 113 | 21% |
 | `single_region` | 31 | 6% |
 | `undetermined` | 7 | 1% |
 
@@ -143,36 +210,50 @@ A sheet can cover several. Counts are of records touching the region.
 
 | Value | n | % |
 | --- | ---: | ---: |
-| `no` | 545 | 82% |
-| `unverified` | 114 | 17% |
-| `yes` | 2 | 0% |
-| `partial` | 2 | 0% |
+| `no` | 557 | 84% |
+| `unverified` | 78 | 12% |
+| `yes` | 17 | 3% |
+| `partial` | 11 | 2% |
 
-### The 119 records whose scope is national
+### The 113 records whose scope is national
 
 | Date | Scale | Title | Complete | Basis | Link |
 | --- | --- | --- | --- | --- | --- |
+| 1840 | 1:3 449 000 | Carte du gouvernement d'Alger comprenant l'empire de Maro… | `yes` | bbox_geometry | [view](https://gallica.bnf.fr/ark:/12148/btv1b53088066m) |
+| 1881 | 1:2 500 000 | Carte de l'Algérie et de la Tunisie / gravée par L. Sonnet | `yes` | bbox_geometry | [view](https://gallica.bnf.fr/ark:/12148/btv1b53081303h) |
+| 1886 | 1:800 000 | Carte des itinéraires de la Tunisie, 1/800 000, 1885 | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53022873s) |
 | 1889 | 1:800 000 | Carte de la Tunisie, dressée au service géographique de l… | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53024975r) |
+| 1894 | 1:800 000 | Carte géologique provisoire de la régence de Tunis / dres… | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b530277289) |
+| 1900 | 1:1 000 000 | Carte routière de la Tunisie / dressée par le Touring Clu… | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b8442159r) |
+| 1906 | 1:800 000 | Carte des itinéraires de la Tunisie | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b531972761) |
+| 1912 | 1:1 000 000 | Tunisie (Proconsulaire et Byzacène), 1:1 000 000 / Gravé… | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b530762364) |
 | 1920 | 1:900 000 | Nouvelle carte de la Tunisie | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b530647344) |
+| 1931 | 1:500 000 | Carte géologique [de la Tunisie] / Régence de Tunis, Dire… | `yes` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340352) |
+| 1931 | 1:500 000 | Carte géologique [de la Tunisie] / Régence de Tunis, Dire… | `yes` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340351) |
+| 1931 | 1:500 000 | Carte géologique [de la Tunisie] / Régence de Tunis, Dire… | `yes` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340353) |
+| 1931 | 1:500 000 | Régence de Tunis. Direction générale des travaux publics.… | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53066673n) |
+| 1934 | 1:1 000 000 | Carte Foldex de la Tunisie | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b530578955) |
+| 1950 | 1:500 000 | Les gisements miniers de l'Afrique du Nord. Tunisie | `yes` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53213324v) |
+| 2013 | 1:5 000 000 | Algérie, Tunisie et Sahara central / carte dressée et des… | `yes` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168522) |
+| 2013 | 1:2 000 000 | Atlas de géographie générale. Afrique N°23, Algérie et Tu… | `yes` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168459) |
 | 1600 | — | Royaume de Tunis | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b85953419) |
 | 1732 | — | [Tunisie, avec les noms anciens] / [par Jean-Baptiste d'A… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530089581) |
 | 1742 | — | [Tunisie et partie de l'Algérie entre Tripoli et le Rif]… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53009003n) |
 | 1743 | — | Carte du royaume de Tunis | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b85953590) |
 | 1758 | — | Carte de l'Afrique propre, aujourd'hui le royaume de Tuni… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b84693899) |
 | 1833 | — | Carte des possessions françaises en Afrique et d'une part… | `unverified` | title_and_gazetteer | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000193532) |
-| 1836 | 1:2 499 000 | Carte de la colonie française d'Alger, de la régence de T… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530353737) |
+| 1836 | 1:2 499 000 | Carte de la colonie française d'Alger, de la régence de T… | `partial` | bbox_geometry | [view](https://gallica.bnf.fr/ark:/12148/btv1b530353737) |
 | 1840 | 1:3 334 000 | Carte du gouvernement d'Alger comprenant l'empire de Maro… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530880672) |
-| 1840 | 1:3 449 000 | Carte du gouvernement d'Alger comprenant l'empire de Maro… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53088066m) |
-| 1842 | 1:400 000 | Carte de la Régence de Tunis dressée au Dépôt général de… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53179703r) |
+| 1842 | 1:400 000 | Carte de la Régence de Tunis dressée au Dépôt général de… | `partial` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53179703r) |
 | 1843 | — | Carte de l'itinéraire suivi par M. Delaporte, élève-consu… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53063506p) |
 | 1843 | 1:100 000 | Projet de Délimitation entre l'Algérie et la Régence de T… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8494592r) |
 | 1843 | 1:100 000 | Projet de délimitation entre l'Algérie et la régence de T… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53063630m) |
 | 1844 | 1:1 720 000 | Carte de l'Algérie et de la Régence de Tunis / Publiée pa… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53119590h) |
 | 1844 | 1:4 400 000 | Carte du Nord-Ouest de l'Afrique comprenant l'empire de M… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b84693936) |
 | 1844 | 1:4 400 000 | Carte du Nord-Ouest de l'Afrique, comprenant l'empire de… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530886032) |
-| 1847 | 1:2 565 000 | Carte générale de l'Algérie comprenant l'empire de Maroc… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53088018f) |
-| 1848 | 1:2 353 000 | Carte physique de l'Algérie ou Afrique française comprena… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53088095d) |
-| 1853 | 1:800 000 | Carte de la Régence de Tunis / par E. Pellissier, membre… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53136235q) |
+| 1847 | 1:2 565 000 | Carte générale de l'Algérie comprenant l'empire de Maroc… | `partial` | bbox_geometry | [view](https://gallica.bnf.fr/ark:/12148/btv1b53088018f) |
+| 1848 | 1:2 353 000 | Carte physique de l'Algérie ou Afrique française comprena… | `partial` | bbox_geometry | [view](https://gallica.bnf.fr/ark:/12148/btv1b53088095d) |
+| 1853 | 1:800 000 | Carte de la Régence de Tunis / par E. Pellissier, membre… | `partial` | bbox_geometry | [view](https://gallica.bnf.fr/ark:/12148/btv1b53136235q) |
 | 1853 | 1:1 000 000 | Carte des possessions françaises en Afrique et d'une part… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53065122w) |
 | 1857 | 1:400 000 | Carte de la régence de Tunis, dressé au Dépôt de la guerr… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b531797046) |
 | 1860 | 1:2 965 000 | Carte de l'Algérie (provinces d'Alger et de Constantine)… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8490524p) |
@@ -181,24 +262,22 @@ A sheet can cover several. Counts are of records touching the region.
 | 1880 | 1:5 000 000 | Algérie, Tunisie et Sahara central, carte / dressée et de… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8445058x) |
 | 1880 | 1:20 000 | Environs de Bizerte (Tunisie), 1880 | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021004z) |
 | 1881 | 1:500 000 | Carte de la Régence de Tunis | `partial` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021186j) |
-| 1881 | 1:1 250 000 | Algérie - Tunisie, carte du théâtre de la guerre / gravée… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53081058p) |
-| 1881 | 1:2 500 000 | Carte de l'Algérie et de la Tunisie / gravée par L. Sonnet | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53081303h) |
 | 1881 | 1:1 500 000 | Carte de la Tunisie et de l'Algérie orientale / dressée p… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8458760m) |
 | 1881 | 1:500 000 | Carte de la Tunisie et de l'Algérie orientale / dressée p… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530789010) |
 | 1881 | — | Carte des frontières d'Algérie et de Tunisie (2e édition) | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53021168m) |
 | 1881 | 1:1 200 000 | Carte du théâtre de la guerre en Tunïsie / dressée par Ch… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b84389986) |
 | 1881 | 1:800 000 | Etude sur la frontière de la Tunisie / par le général Lew… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8439078n) |
+| 1881 | 1:1 250 000 | Algérie - Tunisie, carte du théâtre de la guerre / gravée… | `no` | bbox_geometry | [view](https://gallica.bnf.fr/ark:/12148/btv1b53081058p) |
 | 1882 | 1:400 000 | Carte d'une reconnaissance archéologique dans la région c… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8441605m) |
 | 1882 | 1:400 000 | Carte des Itinéraires de la Régence de Tunis / publiée pa… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530210435) |
 | 1883 | 1:400 000 | Carte d'une reconnaissance archéologique dans la région c… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8439057g) |
 | 1883 | — | Carte télégraphique de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b531480639) |
-| 1884 | 1:400 000 | Carte de la régence de Tunis dressée au dépôt de la guerr… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530634783) |
+| 1884 | 1:400 000 | Carte de la régence de Tunis dressée au dépôt de la guerr… | `partial` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b530634783) |
 | 1885 | 1:3 090 000 | Algérie et Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8439238t) |
 | 1885 | 1:800 000 | Algérie et Tunisie, d'après les documents fournis par le… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53022924j) |
 | 1885 | 1:13 000 000 | Algérie, Tunisie / par P. Vidal, Lablache | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b52514110t) |
 | 1885 | 1:1 000 000 | Algérie. - Carte murale de l'Algérie et de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530229930) |
 | 1885 | 1:3 200 000 | Carte des principales voies de communication de la Tunisi… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b55011149d) |
-| 1886 | 1:800 000 | Carte des itinéraires de la Tunisie, 1/800 000, 1885 | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53022873s) |
 | 1887 | — | Carte de la Tunisie pour accompagner l'ouvrage de M. de L… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b84401312) |
 | 1887 | 1:800 000 | Carte des itinéraires de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530299959) |
 | 1887 | 1:800 000 | Carte des itinéraires de la Tunisie / chef du service géo… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53179707j) |
@@ -211,19 +290,15 @@ A sheet can cover several. Counts are of records touching the region.
 | 1889 | — | Réseau postal et télégraphique de la régence de Tunis | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530252439) |
 | 1891 | 1:300 000 | Carte des chemins de fer de l'Algérie et de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8440539r) |
 | 1893 | 1:63 194 | Tunisie. Du cap Kamart au Ras-al-Fortas. Baie de Tunis | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/245555) |
-| 1894 | 1:800 000 | Carte géologique provisoire de la régence de Tunis / dres… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530277289) |
 | 1895 | 1:800 000 | Carte de la Tunisie dressée au Service géographique de l'… | `partial` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53121118t) |
-| 1896 | 1:800 000 | Carte des itinéraires de la Tunisie / dressée au Service… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b531797080) |
-| 1900 | 1:1 000 000 | Carte routière de la Tunisie / dressée par le Touring Clu… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8442159r) |
+| 1896 | 1:800 000 | Carte des itinéraires de la Tunisie / dressée au Service… | `partial` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b531797080) |
 | 1903 | 1:800 000 | Carte des itinéraires de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53197273p) |
 | 1904 | 1:500 000 | Carte routière de la Tunisie au 1er janvier 1904 / dressé… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b532508976) |
 | 1905 | 1:270 000 | Maroc, Algérie, Tunisie ; carte politique et physique...… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530605575) |
-| 1906 | 1:800 000 | Carte des itinéraires de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b531972761) |
 | 1910 | 1:1 500 000 | Algérie. - Algérie, Tunisie 1/1.500.000 (Signé : M. Maumi… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53064402v) |
 | 1912 | — | Afrique chrétienne : évêchés antiques et ruines. 1, Tunis… | `unverified` | title_and_gazetteer | [view](https://bibliotheque-numerique.icp.fr/idurl/1/16110) |
 | 1912 | 1:1 500 000 | Algérie-Tunisie / dressé par M. Maumias | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b532581549) |
 | 1912 | 1:250 000 | Main automobile routes of the British isles, central Euro… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53258144w) |
-| 1912 | 1:1 000 000 | Tunisie (Proconsulaire et Byzacène), 1:1 000 000 / Gravé… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530762364) |
 | 1913 | 1:3 000 000 | Société "les Affréteurs réunis"... Services hebdomadaires… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b84457375) |
 | 1914 | 1:3 000 000 | Carte des chemins de fer de l'Algérie et de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53057592p) |
 | 1916 | — | Atlas des départements français, y compris l'Algérie, la… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b85935614) |
@@ -233,41 +308,27 @@ A sheet can cover several. Counts are of records touching the region.
 | 1929 | 1:200 000 | Manoeuvres d'Algérie-Tunisie, 1929 | `no` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53066569j) |
 | 1930 | 1:5 000 000 | Algérie-Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8458909r) |
 | 1930 | 1:1 500 000 | Algérie-Tunisie / Dressé... sous la direction de M. De Fl… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53066610t) |
-| 1931 | 1:500 000 | Carte géologique [de la Tunisie] / Régence de Tunis, Dire… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340352) |
-| 1931 | 1:500 000 | Carte géologique [de la Tunisie] / Régence de Tunis, Dire… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340351) |
-| 1931 | 1:500 000 | Carte géologique [de la Tunisie] / Régence de Tunis, Dire… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340353) |
-| 1931 | 1:500 000 | Régence de Tunis. Direction générale des travaux publics.… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53066673n) |
-| 1931 | 1:50 000 | Tunisie Feuille n° XXVI-B3-C34, Oued-Zarga / dressé, héli… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340412) |
 | 1932 | — | [Cables sous-marins France, Algérie, Tunisie] | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53158317g) |
-| 1934 | 1:1 000 000 | Carte Foldex de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b530578955) |
 | 1935 | 1:2 250 000 | Les vins de Tunisie. Carte de vignoble | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53230723h) |
 | 1936 | — | (Algérie, Tunisie, Maroc.) Vignettes de Bernard Levanteur | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53066849v) |
-| 1940 | 1:50 000 | [Carte de Tunisie 1:50 000] / dressé, héliogravé et publi… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340628) |
-| 1941 | 1:50 000 | [Tunisie au 1:50 000] / dressé, héliogravé et publié par… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340627) |
-| 1941 | 1:50 000 | Tunisie : coupure spéciale / dressé, dessiné par le Servi… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340534) |
-| 1941 | 1:50 000 | Tunisie coupure spéciale, Mareth / dressé, dessiné par le… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340535) |
-| 1943 | 1:500 000 | Tunisie au 500.000e. / dressé, héliogravé et publié par l… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53179710t) |
+| 1943 | 1:500 000 | Tunisie au 500.000e. / dressé, héliogravé et publié par l… | `partial` | image | [view](https://gallica.bnf.fr/ark:/12148/btv1b53179710t) |
 | 1948 | 1:800 000 | Esso, Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b531893169) |
-| 1950 | 1:500 000 | Les gisements miniers de l'Afrique du Nord. Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53213324v) |
 | 1951 | — | Djebel Zaghouan [Tunisie] carte géologique. 1 : 20 000 /… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53071091w) |
 | 1952 | 1:800 000 | Carte-guide "Tourist", Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b53197102z) |
 | 1967 | — | Italia : [carte du relief de l'Italie, de la Corse, de l'… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b10841640c) |
-| 2013 | 1:5 000 000 | Algérie, Tunisie et Sahara central / carte dressée et des… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168522) |
-| 2013 | 1:1 500 000 | Algérie-Tunisie / dessiné par M. Maumias | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168523) |
-| 2013 | 1:2 000 000 | Atlas de géographie générale. Afrique N°23, Algérie et Tu… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168459) |
-| 2013 | 1:400 000 | Carte de la Régence de Tunis / dressée au Dépôt de la Gue… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168525) |
-| 2013 | 1:400 000 | Carte de la Régence de Tunis / dressée au Dépôt de la Gue… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168524) |
-| 2013 | 1:500 000 | Carte routière de la Tunisie au 1er janvier 1904 / dressé… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168536) |
-| 2013 | 1:500 000 | Carte routière de la Tunisie au 1er juillet 1905 / dressé… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168537) |
-| — | 1:2 800 000 | [Province de Constantine et Tunisie] / dressée et gravée… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/203729) |
+| 2013 | 1:1 500 000 | Algérie-Tunisie / dessiné par M. Maumias | `partial` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168523) |
+| 2013 | 1:400 000 | Carte de la Régence de Tunis / dressée au Dépôt de la Gue… | `no` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168525) |
+| 2013 | 1:400 000 | Carte de la Régence de Tunis / dressée au Dépôt de la Gue… | `no` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168524) |
+| 2013 | 1:500 000 | Carte routière de la Tunisie au 1er janvier 1904 / dressé… | `no` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168536) |
+| 2013 | 1:500 000 | Carte routière de la Tunisie au 1er juillet 1905 / dressé… | `no` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/168537) |
 | — | 1:2 500 000 | Carte de l'Algérie et de la Tunisie / éditée par l'Armée… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8438999m) |
 | — | — | Carte de la Tunisie, pour accompagner l'ouvrage de M. de… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b84394714) |
 | — | 1:2 600 000 | Tunisie et Algérie orientale / dressé et gravé par R. Hau… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8446079d) |
 | — | 1:3 000 000 | Carte des chemins de fer de l'Algérie et de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b84414923) |
 | — | 1:3 000 000 | Carte des chemins de fer de l'Algérie et de la Tunisie | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8446063j) |
 | — | — | Carte du théâtre de la guerre en Tunisie / gravé par Héme… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b8446059n) |
-| — | 1:50 000 | [Carte de Tunisie 1:50 000] / dressé, héliogravé et publi… | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/340629) |
 | — | — | La production minière et l'énergie en 1950 par Jacques Be… | `unverified` | title_and_gazetteer | [view](https://gallica.bnf.fr/ark:/12148/btv1b10841751m) |
 | — | — | Algérie et Tunisie | `unverified` | title_and_gazetteer | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/494017) |
 | — | — | Tunisie au 500 000\|e] | `unverified` | title_and_gazetteer | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001954207) |
 | — | — | Tunisie au 500 000\|e] : Feuille 2 | `unverified` | title_and_gazetteer | [view](https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0001954215) |
+| — | 1:2 800 000 | [Province de Constantine et Tunisie] / dressée et gravée… | `no` | bbox_geometry | [view](https://1886.u-bordeaux-montaigne.fr/s/1886/item/203729) |

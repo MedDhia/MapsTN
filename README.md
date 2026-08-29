@@ -234,17 +234,46 @@ whole Regency and stops before the Jerid and the south; *Carte de la Tunisie*
 (1895, 1:800 000) is captioned "1re feuille Nord" in its top margin, which its
 catalogue record never mentions.
 
-| `coverage_complete` | n |
-| --- | ---: |
-| `yes` — verified complete | 2 |
-| `partial` — verified incomplete, or names a sheet of a set | 2 |
-| `unverified` — national in title, image not checked | 114 |
-| `no` — not national in scope | 545 |
+| `coverage_complete` | n | Settled by |
+| --- | ---: | --- |
+| `yes` — verified complete | 17 | image (10), published coordinates (7) |
+| `partial` — verified incomplete, or a sheet of a set | 11 | image, coordinates, or a sheet caption |
+| `unverified` — national in title, not yet checked | 78 | — |
+| `no` — not national in scope | 557 | — |
 
-Confirmed complete: **Nouvelle carte de la Tunisie** (Taride, 1920, 1:900 000)
-and **Carte de la Tunisie** (Service géographique de l'armée, 1889, 1:800 000).
-The other 114 remain open — resolving them means opening each image, and each
-one settled should be appended to `config/inspected_sheets.json`.
+Two routes settle this without guesswork. Where a sheet publishes coordinates,
+`country_containment` measures directly what share of Tunisia's extent it
+covers — no image needed. Where it does not, the image has to be opened;
+19 sheets have been, and each is recorded in
+[`config/inspected_sheets.json`](config/inspected_sheets.json) with what it
+shows.
+
+**The complete national maps worth knowing about:**
+
+| Date on sheet | Map | Why it matters |
+| --- | --- | --- |
+| 1885, 1892 | *Carte des itinéraires de la Tunisie*, 1:800 000 | Route network, military posts, telegraph lines, kilometre distances — the same design a scholarly generation apart |
+| 1892 | Aubert, *Carte géologique provisoire*, 1:800 000 | Maps the phosphate-bearing Eocene as its own unit |
+| 1931 | Solignac, *Carte géologique*, 1:500 000 | Stratigraphy plus principal mineral occurrences |
+| 1930 | *Gisements miniers de l'Afrique du Nord: Tunisie*, 1:500 000 | Separates worked deposits from **concessions** and **prospecting permits**, by mineral |
+| 1900 | Touring Club de France, *Carte routière*, 1:1 000 000 | Post offices, caravanserais, *points d'eau aménagés*, and the **limit of the Territoires du Sud** — the civil/military administrative divide |
+| 1912 | Mesnage, *Afrique chrétienne*, 1:1 000 000 | Antique bishoprics, monasteries and ruins |
+| 1920 | Taride, *Nouvelle carte*, 1:900 000 | Full conventional-signs panel and Arabic glossary |
+| 1934 | *Carte Foldex*, 1:1 000 000 | Road network with distances |
+
+### A warning about dates
+
+Opening these sheets turned up something that matters more than the
+completeness question it was meant to answer. **The `year` field is often the
+printing date, not the map's date.** Catalogued 1886 → sheet says 1885;
+1896 → 1895; **1906 → 1892**; 1894 → 1892; 1950 → 1930; 1884 → 1857.
+
+This breaks any chronology built on `year`. The three *Carte des itinéraires*
+editions catalogued 1886, 1896 and 1906 are actually the sheets of 1885, 1895
+and 1892 — so sorting by catalogue year puts them in the wrong order. One title
+is wrong too: the record catalogued *Carte des itinéraires* (1896) is physically
+the *Carte de la Tunisie* of 1895. **Read the date off the sheet before using
+these as a series.**
 
 ## Data dictionary
 

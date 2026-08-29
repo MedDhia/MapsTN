@@ -86,6 +86,8 @@ FEATURE_TERMS = {
     "chotts_sebkhas": r"\bchott\b|\bsebkha\b|\bsebkhet\b|\bsebkra\b|saline",
     "wadis": r"\boued\b|\bwadi\b|\bwed\b|\bchaabe",
     "mines": r"\bmines?\b|miniere|phosphate|gisement|\bcarriere",
+    "geology": r"geolog|stratigraph|terrains?\b|cretace|eocene|miocene|jurassique",
+    "telegraph": r"telegraph|telegrafi|\bposte optique\b",
     "ports_lighthouses": r"\bport\b|\bports\b|mouillage|\brade\b|\bphare\b|\bquai\b",
     "railways": r"chemin[s]? de fer|voie ferree|ferroviaire|railway",
     "roads": r"\broutes?\b|itinerair|voies? de commun|\bpiste",
@@ -171,7 +173,9 @@ SHEET_PARTITION_RE = re.compile(
     # Bou Ficha'. Without this the leading 'Tunisie' made each sheet look like
     # a map of the whole country.
     r"|\bfll?e\.?\s*n[o°]|\bfeuille\s+[ivxlcdm]+\b")
-SERIES_SHEET_RE = re.compile(r"\bfll?e\.?\s*n[o°]\s*[ivxlcdm\d]")
+SERIES_SHEET_RE = re.compile(
+    r"\bfll?e\.?\s*n[o°]\s*[ivxlcdm\d]|\bfeuille\s*n[o°]\s*[ivxlcdm\d]"
+    r"|coupure speciale|\bau 1\s*[:/]\s*50\s*000\b|\b1\s*[:/]\s*50\s*000\]")
 
 # 'Tunis, Régence de' and 'Régence de Tunis' name the country, not the capital.
 # Masking them before region matching stops every coastal chart of the Regency
@@ -227,6 +231,30 @@ SUPRANATIONAL_RE = _word_re(SUPRANATIONAL_TERMS)
 # Hydrographic charts of 'Tunis, Régence de -- Côtes' carry a national-sounding
 # subject heading but map a coastal strip, not the country.
 COASTAL_RE = re.compile(r"\bcotes?\b|sondages? sous-marins?|\bhydrograph")
+
+
+TUNISIA_BBOX = {"west": 7.49, "east": 11.60, "south": 30.23, "north": 37.55}
+TUNISIA_AREA = ((TUNISIA_BBOX["east"] - TUNISIA_BBOX["west"])
+                * (TUNISIA_BBOX["north"] - TUNISIA_BBOX["south"]))
+
+
+def country_containment(box: dict) -> float:
+    """Share of Tunisia's extent that a sheet's own extent covers.
+
+    This is the reverse of `tunisia_extent_share`: that asks how much of the
+    sheet is Tunisia, this asks how much of Tunisia is on the sheet. A map of
+    the Maghreb scores 1.0 here and low there; a single 1:50 000 sheet scores
+    the opposite.
+    """
+    west = min(box["west"], box["east"])
+    east = max(box["west"], box["east"])
+    south = min(box["north"], box["south"])
+    north = max(box["north"], box["south"])
+    width = min(east, TUNISIA_BBOX["east"]) - max(west, TUNISIA_BBOX["west"])
+    height = min(north, TUNISIA_BBOX["north"]) - max(south, TUNISIA_BBOX["south"])
+    if width <= 0 or height <= 0:
+        return 0.0
+    return (width * height) / TUNISIA_AREA
 
 
 def regions_from_bbox(box: dict) -> list[str]:
@@ -308,7 +336,7 @@ FIELDS = [
     "features_observed", "features_basis", "settlement_focus",
     # B
     "regions_covered", "regions_basis", "n_regions", "coverage_scope",
-    "sheet_partition",
+    "sheet_partition", "country_containment",
     "coverage_complete", "coverage_note", "coverage_basis",
     "url",
 ]
@@ -352,6 +380,19 @@ def code_record(record: dict, geo: dict, quality: dict, catalogue: dict,
         elif partition:
             complete = "partial"
             note = "Catalogue text names a sheet of a set."
+        elif box:
+            # Published coordinates settle this without opening the image.
+            share = country_containment(box)
+            basis = "bbox_geometry"
+            if share >= 0.95:
+                complete, note = "yes", (
+                    f"Extent covers {share:.0%} of the country's bounding box.")
+            elif share >= 0.60:
+                complete, note = "partial", (
+                    f"Extent covers only {share:.0%} of the country's bounding box.")
+            else:
+                complete, note = "no", (
+                    f"Extent covers {share:.0%} of the country's bounding box.")
         else:
             # Titles claiming the country are not evidence that the sheet shows
             # all of it, so this stays open until someone looks.
@@ -379,6 +420,7 @@ def code_record(record: dict, geo: dict, quality: dict, catalogue: dict,
         "n_regions": str(len(regions)),
         "coverage_scope": scope,
         "sheet_partition": "1" if partition else "0",
+        "country_containment": (f"{country_containment(box):.3f}" if box else ""),
         "coverage_complete": complete,
         "coverage_note": note,
         "coverage_basis": basis,
@@ -404,6 +446,7 @@ def summarise(rows: list[dict]) -> dict:
         "regions_basis": distribution("regions_basis"),
         "coverage_scope": distribution("coverage_scope"),
         "coverage_complete": distribution("coverage_complete"),
+        "coverage_basis": distribution("coverage_basis"),
         "high_confidence_coverage_scope":
             dict(Counter(r["coverage_scope"] for r in tunisian).most_common()),
     }
@@ -454,6 +497,31 @@ def write_report(rows: list[dict], summary: dict, inspected: dict,
             "",
         ]
     lines += [
+        "## The catalogue year is often not the map's year",
+        "",
+        "Opening these sheets turned up a discrepancy that matters more than the "
+        "completeness question it was meant to settle. The `year` field is "
+        "frequently the date of the *printing or acquisition*, not of the map:",
+        "",
+        "| Catalogued | Sheet itself says |",
+        "| --- | --- |",
+        "| 1886 | 1885 (\"tirage de mai 1886\") |",
+        "| 1896 | 1895 |",
+        "| 1906 | 1892 |",
+        "| 1894 | 1892 |",
+        "| 1950 | 1930 |",
+        "| 1884 | 1857 (\"tirage de février 1884\") |",
+        "",
+        "**This breaks any time series built on `year`.** The three *Carte des "
+        "itinéraires* editions catalogued 1886, 1896 and 1906 are in fact the "
+        "sheets of 1885, 1895 and 1892 — so ordering them by catalogue year puts "
+        "them in the wrong sequence entirely. Read the date off the sheet before "
+        "using these as a chronology.",
+        "",
+        "One title is wrong too: the record catalogued *Carte des itinéraires de "
+        "la Tunisie* (1896) is physically the *Carte de la Tunisie* of 1895, "
+        "captioned \"1re feuille Nord\".",
+        "",
         "The 1920 Taride sheet is the most useful of these, because it carries "
         "its own glossary of Arabic feature generics — the map documents the "
         "very vocabulary this coding looks for: *Aïn / Bir* = well or spring, "

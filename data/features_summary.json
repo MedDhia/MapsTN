@@ -15,6 +15,8 @@
     "admin_limits": 20,
     "railways": 20,
     "urban_fabric": 16,
+    "geology": 8,
+    "telegraph": 6,
     "rural_settlement": 5,
     "wadis": 5,
     "shrines_marabouts": 5,
@@ -24,8 +26,8 @@
   },
   "features_basis": {
     "none": 340,
-    "scale_model": 316,
-    "image": 7
+    "scale_model": 304,
+    "image": 19
   },
   "settlement_focus": {
     "undetermined": 322,
@@ -55,22 +57,27 @@
   "coverage_scope": {
     "coastal_strip": 194,
     "supranational": 171,
-    "national": 119,
-    "locality": 119,
+    "locality": 125,
+    "national": 113,
     "single_region": 34,
     "undetermined": 26
   },
   "coverage_complete": {
-    "no": 545,
-    "unverified": 114,
-    "yes": 2,
-    "partial": 2
+    "no": 557,
+    "unverified": 78,
+    "yes": 17,
+    "partial": 11
+  },
+  "coverage_basis": {
+    "title_and_gazetteer": 626,
+    "image": 19,
+    "bbox_geometry": 18
   },
   "high_confidence_coverage_scope": {
     "coastal_strip": 152,
     "supranational": 128,
-    "national": 119,
-    "locality": 114,
+    "locality": 120,
+    "national": 113,
     "single_region": 31,
     "undetermined": 7
   }
