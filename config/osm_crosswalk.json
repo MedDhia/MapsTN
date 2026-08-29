@@ -1,0 +1,200 @@
+{
+  "_comment": [
+    "Crosswalk from the historical layer vocabulary used in",
+    "data/gallica_tunisia_maps_features.csv to OpenStreetMap tags, with a",
+    "rebuild confidence for each.",
+    "",
+    "'Rebuild' here does not mean recreating a historical map from OSM - OSM",
+    "records the present, so that is impossible. It means: can a modern",
+    "counterpart of this layer be assembled from OSM, so the historical sheet",
+    "can be compared against it feature by feature.",
+    "",
+    "The confidence values are not guesses about OSM tagging practice in",
+    "general. They come from probing OSM inside the published extents of the",
+    "1:50 000 sheets themselves (scripts/probe_osm_coverage.py, results in",
+    "data/osm_coverage.json). Counts below are per sheet of roughly 0.06",
+    "square degrees.",
+    "",
+    "Confidences were revised after widening the probe from 4 sheets to 10. On the smaller sample shrines, ksour, ruins and mines showed zero typed features and were coded 'none'; the wider sample shows them sparse and clustered rather than absent, so they are coded 'low'.",
+    "confidence: high | medium | low | none"
+  ],
+  "layers": {
+    "roads": {
+      "osm": [
+        "highway=motorway|trunk|primary|secondary|tertiary|unclassified|residential",
+        "highway=track",
+        "highway=path"
+      ],
+      "confidence": "high",
+      "observed": "20 756 across 10 sheets; median 1527 per sheet; present on 9/10",
+      "caveat": "The modern network is denser and differently routed. Historical pistes often survive as highway=track, which is the layer to compare against, not the paved network."
+    },
+    "railways": {
+      "osm": [
+        "railway=rail",
+        "railway=narrow_gauge",
+        "railway=abandoned",
+        "railway=disused"
+      ],
+      "confidence": "medium",
+      "observed": "344 ways; median 17; present on 6/10, i.e. only where a line runs",
+      "caveat": "OSM keeps abandoned and dismantled lines under railway=abandoned/disused, which is what makes the colonial network recoverable at all. Check those tags explicitly or closed lines will be missing."
+    },
+    "admin_boundaries": {
+      "osm": [
+        "boundary=administrative + admin_level=4|6|8"
+      ],
+      "confidence": "high",
+      "observed": "461 objects; median 60; the only layer present on 10/10",
+      "caveat": "Modern governorates and delegations only. Caidats, contrôles civils and the Territoires du Sud have no OSM equivalent - they can be digitised from the historical sheet but not rebuilt from OSM."
+    },
+    "settlements": {
+      "osm": [
+        "place=city|town|village|hamlet|isolated_dwelling|locality"
+      ],
+      "confidence": "medium",
+      "observed": "77 place nodes; median 6 per sheet",
+      "caveat": "Node counts look low because a settlement is one node; matching is by name, and Tunisian names in OSM are usually Arabic in `name` with the French form in `name:fr`."
+    },
+    "urban_fabric": {
+      "osm": [
+        "building=*",
+        "highway=residential",
+        "landuse=residential"
+      ],
+      "confidence": "high",
+      "observed": "11 500 buildings; median 831; present on 9/10",
+      "caveat": "Present-day fabric. Useful for measuring urban growth against the historical footprint, not for reconstructing the historical medina."
+    },
+    "coastline": {
+      "osm": [
+        "natural=coastline"
+      ],
+      "confidence": "high",
+      "caveat": "Complete and accurate. The one layer where the modern version is strictly better than the historical."
+    },
+    "water": {
+      "osm": [
+        "natural=water",
+        "natural=wetland",
+        "waterway=stream|river",
+        "natural=salt_pond"
+      ],
+      "confidence": "medium",
+      "observed": "650 objects; median 40; present on 9/10",
+      "caveat": "Chotts and sebkhas are mapped inconsistently; oueds are often absent in the interior."
+    },
+    "mosques": {
+      "osm": [
+        "amenity=place_of_worship + religion=muslim"
+      ],
+      "confidence": "medium",
+      "observed": "209; median 13; present on 9/10",
+      "caveat": "Village mosques are reasonably well covered. This is the only religious-building layer with usable OSM coverage."
+    },
+    "land_use": {
+      "osm": [
+        "landuse=farmland|orchard|vineyard|forest|meadow",
+        "crop=olive"
+      ],
+      "confidence": "medium",
+      "observed": "322 polygons; median 28; very uneven",
+      "caveat": "Very uneven. Olive groves are sometimes mapped as landuse=orchard, often not mapped at all."
+    },
+    "wells_springs": {
+      "osm": [
+        "man_made=water_well",
+        "man_made=cistern",
+        "natural=spring"
+      ],
+      "confidence": "low",
+      "observed": "15 typed across 10 sheets, median 1, present on 6/10; a further 11 objects named Bir and 4 named Ain",
+      "caveat": "Partially recoverable by name instead: 1 to 3 objects per sheet are named Bir or Aïn. Nowhere near the density the historical sheets carry."
+    },
+    "shrines_marabouts": {
+      "osm": [
+        "historic=tomb",
+        "historic=shrine",
+        "building=shrine"
+      ],
+      "confidence": "low",
+      "observed": "2 typed across all 10 sheets; but 28 objects carry a Sidi name and 4 a Koubba or Zaouia name",
+      "caveat": "Typed shrines are almost non-existent: 2 across ten sheets. Recovery is through toponymy instead - 28 objects carry a Sidi name, 4 a Koubba or Zaouia name. That locates shrines but tells you nothing about them, and is still far below the density drawn on a 1:50 000 sheet."
+    },
+    "forts_ksour": {
+      "osm": [
+        "historic=castle",
+        "historic=fort",
+        "building=castle"
+      ],
+      "confidence": "low",
+      "observed": "11 typed on 3/10 sheets, median 0; but 27 objects carry a Ksar name and 1 a Bordj name",
+      "caveat": "Typed forts appear on only 3 of 10 sheets. Toponymy does much better: 27 objects named Ksar. The ksour of the south are largely present as names and largely absent as typed features."
+    },
+    "ruins_henchirs": {
+      "osm": [
+        "historic=ruins",
+        "historic=archaeological_site"
+      ],
+      "confidence": "low",
+      "observed": "19 typed, but concentrated on 3/10 sheets and median 0; only 2 objects named Henchir",
+      "caveat": "19 typed sites, but concentrated on 3 sheets - the known archaeological sites, not the scatter of henchirs. Only 2 objects carry a Henchir name, so toponymy does not rescue this one. The historical sheets remain the better source."
+    },
+    "mines": {
+      "osm": [
+        "man_made=mineshaft",
+        "landuse=quarry",
+        "historic=mine"
+      ],
+      "confidence": "low",
+      "observed": "8 typed on 4/10 sheets, median 0",
+      "caveat": "Sparse and clustered. The 1930 Gisements miniers map and the geological sheets carry far more, and distinguish concessions from permits, which OSM has no concept of."
+    },
+    "relief": {
+      "osm": [],
+      "confidence": "none",
+      "caveat": "OSM holds no terrain. Use SRTM or Copernicus DEM instead; contours on the historical sheets can be compared against those."
+    },
+    "coastline_bathymetry": {
+      "osm": [],
+      "confidence": "none",
+      "caveat": "OSM carries no soundings. The hydrographic charts, which are the largest single block of this corpus, have no OSM counterpart for their principal content."
+    },
+    "geology": {
+      "osm": [],
+      "confidence": "none",
+      "caveat": "Not an OSM domain."
+    },
+    "tribes": {
+      "osm": [],
+      "confidence": "none",
+      "caveat": "Tribal territories are historical and contested; OSM does not carry them."
+    },
+    "european_village": {
+      "osm": [],
+      "confidence": "none",
+      "caveat": "The colonial settler villages exist today as ordinary places, so they are in OSM as settlements - but the distinction the historical map draws between 'Village Français' and the indigenous centre is gone. That distinction is only recoverable from the historical sheet."
+    },
+    "telegraph": {
+      "osm": [],
+      "confidence": "none",
+      "caveat": "The colonial telegraph network is not in OSM in any form."
+    },
+    "archaeology": {
+      "osm": [
+        "historic=archaeological_site"
+      ],
+      "confidence": "low",
+      "caveat": "Major sites such as Carthage, Dougga and El Djem are mapped; the dense scatter of minor sites on the archaeological maps is not."
+    },
+    "ports_lighthouses": {
+      "osm": [
+        "man_made=lighthouse",
+        "harbour=yes",
+        "landuse=harbour"
+      ],
+      "confidence": "medium",
+      "caveat": "Working ports and lighthouses are mapped; historical anchorages and mouillages are not."
+    }
+  }
+}
