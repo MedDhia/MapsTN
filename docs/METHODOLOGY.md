@@ -58,11 +58,38 @@ Tunisian toponyms exist elsewhere: **Monastir** is also a Balkan vilayet,
 contexts. Rather than dropping matches silently, every record carries a
 `confidence` value:
 
-| Value | Meaning | Count |
-| --- | --- | --- |
-| `high` | A Tunisia-specific toponym appears in the title, subject or coverage fields | 551 |
-| `medium` | The toponym appears only in secondary fields, **or** the map covers a wider region that contains Tunisia (North Africa, Barbary, the Mediterranean) | 106 |
-| `low` | Matched only by an ambiguous toponym, with no corroborating Tunisian signal anywhere in the metadata | 6 |
+| Value | Meaning |
+| --- | --- |
+| `high` | A Tunisia-specific toponym appears in the title, subject or coverage fields |
+| `medium` | The toponym appears only in secondary fields, **or** the map covers a wider region that contains Tunisia (North Africa, Barbary, the Mediterranean) |
+| `low` | Matched only by an ambiguous toponym, with no corroborating Tunisian signal anywhere in the metadata |
+| `unverified` | A non-ambiguous query retrieved it, yet no Tunisian signal appears anywhere in its metadata |
+
+### Why `unverified` exists
+
+Gallica's index normalises aggressively, and the consequence is not subtle:
+**searching `medenine` also returns `médecine`.** Of the 37 records the
+`medenine` query retrieved, only 2 actually concern Medenine. The other 35 are
+mostly Paris medical-school and street-alignment plans from the Bibliothèques
+spécialisées de la Ville de Paris — cadastral drawings of the Odéon quarter and
+the boulevard Saint-Michel.
+
+Because `medenine` is an unambiguous Tunisian toponym, the original scoring rule
+had no reason to distrust it and scored those records `medium`. They are not
+medium-confidence Tunisian maps; they are not Tunisian at all.
+
+`unverified` isolates exactly this case: the record was returned by a query, but
+its own metadata contains no Tunisian term. Two quite different things land in
+the bucket, which is why it is kept separate rather than folded into `low`:
+
+- **Genuine but unstated** — 16th-century atlases (Braun & Hogenberg's *Théâtre
+  des cités du monde*, Münster's *Cosmographie universelle*) that really do
+  contain Tunis, Carthage or La Goulette plates, matched on full text, with
+  catalogue records that never name them.
+- **False positives** — the médecine records above.
+
+Inspect before use. Filtering to `confidence == "high"` avoids the question
+entirely.
 
 The `low` bucket is small and inspectably wrong — it contains a Salonika–Monastir
 railway map, a Macedonian prehistoric-sites map, a Portuguese cadastral plan and

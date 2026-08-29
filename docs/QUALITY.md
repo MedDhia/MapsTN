@@ -93,21 +93,21 @@ Two patterns govern almost every distribution below, and both are artefacts of c
 
 | Value | n | % |
 | --- | ---: | ---: |
-| `high` | 266 | 40% |
-| `medium` | 187 | 28% |
-| `unknown` | 163 | 25% |
-| `low` | 47 | 7% |
+| `high` | 269 | 41% |
+| `medium` | 189 | 29% |
+| `unknown` | 157 | 24% |
+| `low` | 48 | 7% |
 
 ### Scan resolution (dpi relative to sheet)
 
 | Value | n | % |
 | --- | ---: | ---: |
-| `standard` | 373 | 56% |
-| `unknown` | 217 | 33% |
-| `high` | 56 | 8% |
+| `standard` | 376 | 57% |
+| `unknown` | 212 | 32% |
+| `high` | 58 | 9% |
 | `low` | 17 | 3% |
 
-Scan size, 500 records: median 52.0 MP (range 3.1–354.3). Effective resolution, 446 records: median 391 dpi (range 154–1181). BnF digitisation sits at or above the 300 dpi reproduction floor almost everywhere, so dpi separates items far less than total pixel count does.
+Scan size, 506 records: median 52.0 MP (range 3.1–354.3). Effective resolution, 451 records: median 392 dpi (range 154–1181). BnF digitisation sits at or above the 300 dpi reproduction floor almost everywhere, so dpi separates items far less than total pixel count does.
 
 ## Summary constructs
 
@@ -119,7 +119,7 @@ Scan size, 500 records: median 52.0 MP (range 3.1–354.3). Effective resolution
 | `3_reference` | 157 | 24% |
 | `1_analytic` | 50 | 8% |
 
-`quality_index`: mean 63.5, median 60.8.
+`quality_index`: mean 63.6, median 60.8.
 
 Its three highest-scoring records are small-scale commercial maps of the whole Barbary coast at 1:1 600 000 and smaller — which is the clearest possible demonstration of the caveat in the codebook: the index rewards *fully catalogued and well scanned*, not *detailed*. Use `research_tier`, or the components, to rank cartographic value.
 

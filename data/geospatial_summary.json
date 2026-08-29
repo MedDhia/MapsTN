@@ -1,0 +1,61 @@
+{
+  "records": 663,
+  "with_coordinates": 34,
+  "coordinate_source": {
+    "none": 629,
+    "unimarc_123": 31,
+    "math_data_text": 3
+  },
+  "coordinates_tunisia_centred": 2,
+  "orientation": {
+    "presumed_north": 501,
+    "uncertain": 160,
+    "stated_in_record": 2
+  },
+  "geometric_class": {
+    "early_modern": 333,
+    "survey": 142,
+    "sketch": 125,
+    "atlas_volume": 25,
+    "sketch_view": 23,
+    "chart": 15
+  },
+  "georef_tier": {
+    "2_control_points": 322,
+    "3_warp_only": 259,
+    "4_not_georeferenceable": 48,
+    "1_direct": 34
+  },
+  "content_mappable": {
+    "no": 299,
+    "yes": 249,
+    "partial": 115
+  },
+  "thematic_layers": {
+    "coastline_bathymetry": 198,
+    "settlements": 89,
+    "fortifications": 54,
+    "archaeology": 42,
+    "roads": 39,
+    "hydrology": 34,
+    "admin_boundaries": 21,
+    "railways": 20,
+    "relief": 19,
+    "urban_fabric": 18,
+    "geology_mines": 9,
+    "land_use": 4,
+    "economy": 4,
+    "population": 2
+  },
+  "inequality_use": {
+    "none": 491,
+    "indirect": 114,
+    "direct": 58
+  },
+  "confidence": {
+    "high": 551,
+    "unverified": 55,
+    "medium": 51,
+    "low": 6
+  }
+}

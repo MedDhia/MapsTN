@@ -17,7 +17,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-CONFIDENCE_RANK = {"high": 0, "medium": 1, "low": 2}
+CONFIDENCE_RANK = {"high": 0, "medium": 1, "unverified": 2, "low": 3}
 
 
 def century_key(century: str) -> int:

@@ -104,6 +104,7 @@ REGIONAL_SIGNALS = (
 
 SCALE_RE = re.compile(r"1\s*[:/]\s*([\d\s .,]+)")
 YEAR_RE = re.compile(r"(1[0-9]{3}|20[0-2][0-9])")
+CATALOGUE_URL_RE = re.compile(r"https?://catalogue\.bnf\.fr/\S+")
 # Gallica expresses imprecise dates as truncated numerals: '17..' means the 18th
 # century, '188.' the 1880s, '16..-17..' a range spanning two centuries.
 PARTIAL_DATE_RE = re.compile(r"^(\d{1,4})[.\s]*$")
@@ -267,8 +268,14 @@ def parse_record(record: ET.Element) -> dict | None:
     identifiers = text_values(record, "identifier")
     relations = text_values(record, "relation")
 
-    catalogue = next((r.split("Notice du catalogue : ")[-1] for r in relations
-                      if "catalogue.bnf.fr" in r), "")
+    # The label varies ('Notice du catalogue :', 'Notice de recueil :'), so take
+    # the URL itself rather than splitting on one wording.
+    catalogue = ""
+    for relation in relations:
+        found = CATALOGUE_URL_RE.search(relation)
+        if found:
+            catalogue = found.group(0)
+            break
     date_bounds = parse_date_bounds(dates)
 
     # Gallica also indexes partner libraries harvested over OAI. Those records use
@@ -325,11 +332,18 @@ def parse_record(record: ET.Element) -> dict | None:
 def score_confidence(record: dict, only_ambiguous_matches: bool) -> tuple[str, str]:
     """Return (confidence, matched_signal) for a harvested record.
 
-    high   - a Tunisia-specific toponym appears in title/subject/coverage
-    medium - the toponym appears only in secondary fields, or the record covers
-             a wider region (North Africa, Barbary, the Mediterranean)
-    low    - matched only by a toponym that also exists outside Tunisia, with no
-             corroborating Tunisian signal anywhere in the metadata
+    high       - a Tunisia-specific toponym appears in title/subject/coverage
+    medium     - the toponym appears only in secondary fields, or the record
+                 covers a wider region (North Africa, Barbary, the Mediterranean)
+    low        - matched only by a toponym that also exists outside Tunisia, with
+                 no corroborating Tunisian signal anywhere in the metadata
+    unverified - a non-ambiguous query retrieved it, yet no Tunisian signal
+                 appears anywhere in its metadata. Two very different cases land
+                 here, so it is kept separate rather than folded into medium:
+                 an atlas whose Tunis plate is only in the full text, and a false
+                 positive from Gallica's fuzzy matching (searching 'medenine'
+                 also returns 'medecine', which pulled in Paris medical-school
+                 plans). Inspect before using.
     """
     primary = normalize(" ".join(
         (record["title"], record["alt_titles"], record["subjects"], record["coverage"])
@@ -349,7 +363,7 @@ def score_confidence(record: dict, only_ambiguous_matches: bool) -> tuple[str, s
             return "medium", signal
     if only_ambiguous_matches:
         return "low", ""
-    return "medium", ""
+    return "unverified", ""
 
 
 def harvest(config: dict, limit_per_query: int | None, pause: float) -> dict[str, dict]:
