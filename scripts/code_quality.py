@@ -122,15 +122,26 @@ def to_float(value: str) -> float:
 
 # --- Family A coders -------------------------------------------------------
 
-def code_scale(record: dict) -> tuple[str, str]:
-    """Return (scale_denominator, scale_class)."""
-    if not record["scale"]:
-        return "", "unknown"
-    denominator = int(record["scale"].split(":")[1].replace(" ", ""))
+def code_scale(record: dict, partner: dict) -> tuple[str, str, str]:
+    """Return (scale_denominator, scale_class, scale_source).
+
+    Gallica strips partner records of their scale, so the 89 sheets of the
+    Tunisia 1:50 000 series arrive unscaled. Their own item pages state it, and
+    scripts/fetch_partner_records.py recovers it; that source is used only where
+    the Gallica record is silent.
+    """
+    source = "catalogue"
+    if record["scale"]:
+        denominator = int(record["scale"].split(":")[1].replace(" ", ""))
+    elif partner.get("scale_denominator"):
+        denominator = int(partner["scale_denominator"])
+        source = "partner_page"
+    else:
+        return "", "unknown", "none"
     for ceiling, label in SCALE_BANDS:
         if denominator <= ceiling:
-            return str(denominator), label
-    return str(denominator), "unknown"
+            return str(denominator), label, source
+    return str(denominator), "unknown", source
 
 
 def code_production_mode(record: dict) -> str:
@@ -343,7 +354,7 @@ def code_research_tier(row: dict) -> str:
 CODED_FIELDS = [
     "record_id", "title", "year", "century", "confidence", "provenance",
     # Family A
-    "scale_denominator", "scale_class", "production_mode", "colour",
+    "scale_denominator", "scale_class", "scale_source", "production_mode", "colour",
     "authority_type", "genre", "sheet_count", "sheet_width_cm",
     "sheet_height_cm", "sheet_area_cm2",
     # Family B
@@ -360,8 +371,8 @@ CODED_FIELDS = [
 ]
 
 
-def code_record(record: dict, scans: dict) -> dict:
-    denominator, scale_class = code_scale(record)
+def code_record(record: dict, scans: dict, partner: dict) -> dict:
+    denominator, scale_class, scale_source = code_scale(record, partner)
     sheet = code_dimensions(record)
     width, height, area = sheet
     sheet_count = code_sheet_count(record)
@@ -374,6 +385,7 @@ def code_record(record: dict, scans: dict) -> dict:
         "provenance": record["provenance"],
         "scale_denominator": denominator,
         "scale_class": scale_class,
+        "scale_source": scale_source,
         "production_mode": code_production_mode(record),
         "colour": code_colour(record),
         "authority_type": code_authority(record),
@@ -409,6 +421,7 @@ def summarise(rows: list[dict]) -> dict:
     return {
         "records_coded": len(rows),
         "scale_class": distribution("scale_class"),
+        "scale_source": distribution("scale_source"),
         "production_mode": distribution("production_mode"),
         "colour": distribution("colour"),
         "authority_type": distribution("authority_type"),
@@ -465,18 +478,19 @@ def write_report(rows: list[dict], summary: dict, path: Path) -> None:
         "Two patterns govern almost every distribution below, and both are "
         "artefacts of cataloguing rather than properties of the maps.",
         "",
-        "**Scale is missing far more often than it is present (460 of 663), and "
-        "it is not missing at random.** Partner-library records essentially never "
-        "carry a scale (151 of 157) against 61% of BnF records, so the "
-        "20th century's high missingness is a provenance artefact: of its 132 "
-        "unscaled records, 116 are partner items. Separately, early modern maps "
-        "often state no scale at all, which the catalogue faithfully records. "
-        "Filtering on `scale_class` therefore selects on source and period, not "
-        "on cartographic quality.",
+        "**Scale is missing for 340 of 663 records, and it is not missing at "
+        "random.** It was 460 until the partner libraries' own item pages were "
+        "read: Gallica's aggregated records strip the scale from almost every "
+        "partner item, which made that whole block look like poor-quality "
+        "material. Recovering it left 31 of 157 partner records unscaled "
+        "against 309 of 506 BnF ones, and `scale_source` records which route "
+        "each value came by. What remains is genuine — early modern maps often "
+        "state no scale at all — so filtering on `scale_class` still selects on "
+        "period.",
         "",
-        "**All digitisation measures exist only for BnF-held items.** The 163 "
-        "`unknown` resolutions are 157 partner records plus 6 whose IIIF "
-        "endpoint did not answer — systematic missingness, not zero quality.",
+        "**All digitisation measures exist only for BnF-held items.** The 157 "
+        "`unknown` resolutions are exactly the 157 partner records, whose images "
+        "are not served through IIIF — systematic missingness, not zero quality.",
         "",
         "## A. Cartographic quality",
         "",
@@ -557,6 +571,8 @@ def main() -> int:
                         default=REPO_ROOT / "data" / "gallica_tunisia_maps.json")
     parser.add_argument("--scans", type=Path,
                         default=REPO_ROOT / "data" / "scan_dimensions.json")
+    parser.add_argument("--partner", type=Path,
+                        default=REPO_ROOT / "data" / "partner_records.json")
     parser.add_argument("--out-dir", type=Path, default=REPO_ROOT / "data")
     parser.add_argument("--report", type=Path,
                         default=REPO_ROOT / "docs" / "QUALITY.md")
@@ -571,7 +587,11 @@ def main() -> int:
         print("! no scan_dimensions.json; resolution fields will be 'unknown'",
               file=sys.stderr)
 
-    rows = [code_record(r, scans) for r in records]
+    partner = json.loads(args.partner.read_text(encoding="utf-8")) \
+        if args.partner.exists() else {}
+
+    rows = [code_record(r, scans, partner.get(r["record_id"], {}))
+            for r in records]
     rows.sort(key=lambda r: -float(r["quality_index"]))
 
     args.out_dir.mkdir(parents=True, exist_ok=True)

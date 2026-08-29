@@ -1,0 +1,103 @@
+{
+  "_comment": [
+    "Sheets examined directly through the IIIF image, recording what is actually",
+    "drawn on them. Everything else in the feature/coverage coding is inferred",
+    "from scale and title; these records are the ground truth that inference was",
+    "calibrated against, and they override it where the two disagree.",
+    "",
+    "The reason this file exists: catalogue metadata does not say whether a sheet",
+    "covers the whole country. 'Carte de la Régence de Tunis' (1881) sounds",
+    "complete and is not; 'Carte de la Tunisie' (1895) is one sheet of a set, and",
+    "the record never mentions it. Completeness can only be settled by looking.",
+    "",
+    "coverage_complete: yes | partial | no",
+    "features_observed uses the vocabulary in scripts/code_features_regions.py"
+  ],
+  "sheets": {
+    "btv1b530647344": {
+      "title": "Nouvelle carte de la Tunisie (Taride)",
+      "year": "1920",
+      "scale": "1:900 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Whole country on a single sheet, Bizerte to the Tripolitanian border, including Djerba and Chott el Djerid. Insets: Région de Tunis, and a city plan of Tunis.",
+      "features_observed": [
+        "settlement_hierarchy", "roads", "railways", "shrines_marabouts",
+        "wells_springs", "ruins_antique", "mines", "admin_limits",
+        "ports_lighthouses", "relief", "chotts_sebkhas", "tribes"
+      ],
+      "legend_note": "Carries a full 'Signes conventionnels' panel plus an 'Explication des principaux termes arabes' glossary: Aïn/Aïoun/Bir = puits, source; Bordj = poste fortifié; Kalâa/Ksar = fort, village fortifié; Koubba = chapelle; Zaouia = chapelle; Sidi = saint; Souk = marché; Oued = rivière; Chott/Sebkra = lac salé. Settlement ranks run Capitale / Ville importante / Ville secondaire / Village ou centre important / Hameau, village indigène. Distinct symbols for mines de fer, zinc et plomb, phosphate, cuivre, and a 'Limite nord du Territoire Militaire'."
+    },
+    "btv1b53021186j": {
+      "title": "Carte de la Régence de Tunis (Garnier Frères)",
+      "year": "1881",
+      "scale": "1:500 000",
+      "coverage_complete": "partial",
+      "coverage_note": "North and centre only. The sheet is cut before the Jerid, Djerba and the far south, despite a title that implies the whole Regency.",
+      "features_observed": [
+        "settlement_hierarchy", "roads", "relief", "hydrography", "admin_limits"
+      ],
+      "legend_note": "Carries an 'Explication des termes géographiques' with separate Arabic and Kabyle glossaries, and a descriptive panel 'Tunis et la Tunisie'."
+    },
+    "btv1b53024975r": {
+      "title": "Carte de la Tunisie, Service géographique de l'armée",
+      "year": "1889",
+      "scale": "1:800 000",
+      "coverage_complete": "yes",
+      "coverage_note": "Sheet is captioned '1re feuille Nord', but the digitised item mounts the northern sheet together with a southern continuation reaching Ghadamès and Tripoli, so the image as digitised covers the whole country and beyond.",
+      "features_observed": [
+        "settlement_hierarchy", "roads", "relief", "hydrography",
+        "chotts_sebkhas", "tracks"
+      ],
+      "legend_note": "No conventional-signs panel; relief by hachures."
+    },
+    "btv1b53121118t": {
+      "title": "Carte de la Tunisie, Service géographique de l'armée",
+      "year": "1895",
+      "scale": "1:800 000",
+      "coverage_complete": "partial",
+      "coverage_note": "Captioned 'Tunisie 800 000, 1re feuille Nord' in the top margin. Covers Bizerte south to Chott el Djerid and Djerba; the far south is on a companion sheet not present in this record. The catalogue record does not mention the partition at all.",
+      "features_observed": [
+        "settlement_hierarchy", "railways", "roads", "relief",
+        "hydrography", "chotts_sebkhas"
+      ],
+      "legend_note": "Legend covers railways only: lignes en exploitation, en construction, étudiées."
+    },
+    "btv1b8445503p": {
+      "title": "Environs de Medenine",
+      "year": "1911",
+      "scale": "1:50 000",
+      "coverage_complete": "no",
+      "coverage_note": "Single topographic sheet covering the immediate region around Medenine, in the Djeffara.",
+      "features_observed": [
+        "wells_springs", "shrines_marabouts", "forts_ksour", "ruins_henchirs",
+        "rural_settlement", "european_village", "tracks", "vegetation",
+        "contours", "wadis", "tribes"
+      ],
+      "legend_note": "No conventional-signs panel, but the sign vocabulary is legible on the sheet: wells as dense blue circles, marabouts as red dome symbols beside 'Sdi ...' names, 'Kba Sdi ben Bekr' for a koubba, 'Biar ez Ziria' for a well group, ksour and guerar granary clusters, and a separately labelled 'Village Français' beside the indigenous centre of Medenine."
+    },
+    "btv1b53060313z": {
+      "title": "Environs du Kef",
+      "year": "",
+      "scale": "1:50 000",
+      "coverage_complete": "no",
+      "coverage_note": "Single topographic sheet covering the region around Le Kef, in the north-west.",
+      "features_observed": [
+        "wells_springs", "shrines_marabouts", "forts_ksour", "ruins_henchirs",
+        "rural_settlement", "tracks", "vegetation", "contours", "wadis"
+      ],
+      "legend_note": "Abbreviations readable on the sheet: Mvet = marabout (red symbol), Za = zaouia, Ae = aïn (spring), 'Puits' written out, Kat = kalâa (fortified height), Hr = henchir (ruined estate), Dj = djebel, Chabe = ravine. Cultivation shown by red hatching, carob and olive by tree symbols."
+    },
+    "btv1b53066569j": {
+      "title": "Manoeuvres d'Algérie-Tunisie",
+      "year": "1929",
+      "scale": "1:200 000",
+      "coverage_complete": "no",
+      "coverage_note": "Frontier zone around Guelma, Souk Ahras and Le Kef; straddles the Algeria-Tunisia border rather than covering Tunisia.",
+      "features_observed": [
+        "settlement_hierarchy", "roads", "railways", "relief", "hydrography",
+        "admin_limits"
+      ],
+      "legend_note": "Full labelled graticule at 30-minute intervals; relief in colour with contours at 20 m."
+    }
+  }
+}

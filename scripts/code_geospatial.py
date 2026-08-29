@@ -134,11 +134,15 @@ def overlap_share(box: dict) -> float | None:
     return (overlap_w * overlap_h) / (width * height)
 
 
-def code_coordinates(record: dict, catalogue: dict) -> dict:
+def code_coordinates(record: dict, catalogue: dict, partner: dict) -> dict:
     box, source = catalogue.get("bbox"), "unimarc_123"
     if not box:
         box = bbox_from_text(catalogue.get("math_data", ""))
         source = "math_data_text" if box else "none"
+    if not box and partner.get("bbox"):
+        # Partner libraries publish coordinates on their own item pages that
+        # Gallica's aggregated record drops entirely.
+        box, source = partner["bbox"], "partner_page"
     if not box:
         return {"bbox_west": "", "bbox_east": "", "bbox_north": "", "bbox_south": "",
                 "bbox_source": "none", "tunisia_extent_share": ""}
@@ -180,7 +184,7 @@ def code_orientation(record: dict, quality: dict) -> tuple[str, str]:
 
 # --- Q2: georeferenceability ----------------------------------------------
 
-def code_geometry(record: dict, quality: dict) -> tuple[str, str, str]:
+def code_geometry(record: dict, quality: dict, has_bbox: bool) -> tuple[str, str, str]:
     """Return (geometric_class, georef_tier, blockers)."""
     year = int(record["year_earliest"]) if record["year_earliest"] else None
     genre, authority = quality["genre"], quality["authority_type"]
@@ -219,12 +223,21 @@ def code_geometry(record: dict, quality: dict) -> tuple[str, str, str]:
         "sketch": "3_warp_only",
     }[geometric]
 
-    # A tier-1 claim needs an image good enough to place control points on.
-    if tier == "1_direct" and (quality["scan_resolution_class"] in ("low", "unknown")
-                               or not has_scale):
+    # A published bounding box hands you the corner coordinates, which is what a
+    # graticule would otherwise have to supply: a survey sheet that has one is
+    # the easiest thing in the corpus to place, whoever hosts the image.
+    if has_bbox and has_scale and geometric in ("survey", "chart"):
+        tier = "1_direct"
+    elif tier == "1_direct" and (quality["scan_resolution_class"] in ("low", "unknown")
+                                 or not has_scale):
         tier = "2_control_points"
-    if tier != "3_warp_only" and quality["provenance_tier"] == "partner":
+
+    # Being hosted off Gallica is an access problem, not a geometric one, so it
+    # only demotes a sheet that has nothing else locating it.
+    if quality["provenance_tier"] == "partner" and not has_bbox:
         tier = "3_warp_only"
+    if quality["provenance_tier"] == "partner":
+        blockers.append("image not on IIIF; fetch from the holding library")
 
     return geometric, tier, "; ".join(blockers)
 
@@ -277,7 +290,8 @@ def coverage_group(record: dict, quality: dict) -> str:
     return f"{quality['scale_class']}"
 
 
-def code_record(record: dict, quality: dict, catalogue: dict) -> dict:
+def code_record(record: dict, quality: dict, catalogue: dict,
+                partner: dict) -> dict:
     row = {
         "record_id": record["record_id"],
         "title": record["title"],
@@ -289,10 +303,11 @@ def code_record(record: dict, quality: dict, catalogue: dict) -> dict:
         "scan_resolution_class": quality["scan_resolution_class"],
         "url": record["url"],
     }
-    row.update(code_coordinates(record, catalogue))
+    row.update(code_coordinates(record, catalogue, partner))
     row["orientation"], row["orientation_basis"] = code_orientation(record, quality)
 
-    geometric, tier, blockers = code_geometry(record, quality)
+    geometric, tier, blockers = code_geometry(
+        record, quality, row["bbox_source"] != "none")
     row["geometric_class"] = geometric
     row["georef_tier"] = tier
     row["georef_blockers"] = blockers
@@ -372,10 +387,12 @@ def write_report(rows: list[dict], summary: dict, path: Path) -> None:
         "",
         "## Q1. Which maps carry explicit coordinates and a known orientation?",
         "",
-        "**Coordinates: almost none.** Gallica's Dublin Core carries no "
-        "coordinates at all, so this was checked against full UNIMARC records "
-        "from the BnF catalogue général, where cartographic material can carry a "
-        "bounding box in field 123 `$d–$g`. Across the corpus, "
+        "**Coordinates: available for a quarter of the corpus, from two "
+        "sources.** Gallica's Dublin Core carries none at all. Full UNIMARC "
+        "records in the BnF catalogue général supply a bounding box in field 123 "
+        "`$d–$g` for 34; the partner libraries publish coordinates on their own "
+        "item pages, which Gallica's aggregated records drop, and those supply a "
+        "further 117 — including the whole 1:50 000 series. Across the corpus, "
         f"**{summary['with_coordinates']} records** have one, and "
         f"**{summary['coordinates_tunisia_centred']}** of those are actually "
         "centred on Tunisia rather than clipping it at the edge of a "
@@ -384,11 +401,14 @@ def write_report(rows: list[dict], summary: dict, path: Path) -> None:
     ]
     lines += count_table("Coordinate source", summary["coordinate_source"], total)
     lines += [
-        "Practically: **coordinates are not available as metadata for this "
-        "corpus** and must be established by georeferencing against control "
-        "points. The `tunisia_extent_share` column, where a box exists, gives "
-        "the fraction of the sheet occupied by Tunisia — a direct test of "
-        "whether the country is the subject or a corner detail.",
+        "Practically: **for the other three quarters, coordinates have to be "
+        "established by georeferencing against control points.** Where a box "
+        "does exist it is worth more than its count suggests, because it hands "
+        "you the corner coordinates a transform needs. The "
+        "`tunisia_extent_share` column gives the fraction of the sheet occupied "
+        "by Tunisia — a direct test of whether the country is the subject or a "
+        "corner detail, and the reason 112 of the 151 boxed sheets count as "
+        "Tunisian while the rest are Algerian or Mediterranean maps.",
         "",
         "**Orientation: not catalogued, so this column is a presumption, not a "
         "measurement.** Only 2 records mention orientation in their text. The "
@@ -490,6 +510,8 @@ def main() -> int:
                         default=REPO_ROOT / "data" / "gallica_tunisia_maps_coded.csv")
     parser.add_argument("--catalogue", type=Path,
                         default=REPO_ROOT / "data" / "catalogue_records.json")
+    parser.add_argument("--partner", type=Path,
+                        default=REPO_ROOT / "data" / "partner_records.json")
     parser.add_argument("--out-dir", type=Path, default=REPO_ROOT / "data")
     parser.add_argument("--report", type=Path,
                         default=REPO_ROOT / "docs" / "GEOREFERENCING.md")
@@ -505,7 +527,11 @@ def main() -> int:
         print("! no catalogue_records.json; no coordinates will be available",
               file=sys.stderr)
 
-    rows = [code_record(r, quality[r["record_id"]], catalogue.get(r["record_id"], {}))
+    partner = json.loads(args.partner.read_text(encoding="utf-8")) \
+        if args.partner.exists() else {}
+
+    rows = [code_record(r, quality[r["record_id"]], catalogue.get(r["record_id"], {}),
+                        partner.get(r["record_id"], {}))
             for r in records if r["record_id"] in quality]
 
     order = {"1_direct": 0, "2_control_points": 1, "3_warp_only": 2,

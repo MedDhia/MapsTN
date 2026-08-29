@@ -1,12 +1,13 @@
 {
   "records": 663,
-  "with_coordinates": 34,
+  "with_coordinates": 151,
   "coordinate_source": {
-    "none": 629,
+    "none": 512,
+    "partner_page": 117,
     "unimarc_123": 31,
     "math_data_text": 3
   },
-  "coordinates_tunisia_centred": 2,
+  "coordinates_tunisia_centred": 112,
   "orientation": {
     "presumed_north": 501,
     "uncertain": 160,
@@ -21,15 +22,15 @@
     "chart": 15
   },
   "georef_tier": {
-    "2_control_points": 322,
-    "3_warp_only": 259,
-    "4_not_georeferenceable": 48,
-    "1_direct": 34
+    "2_control_points": 338,
+    "3_warp_only": 142,
+    "1_direct": 135,
+    "4_not_georeferenceable": 48
   },
   "content_mappable": {
     "no": 299,
-    "yes": 249,
-    "partial": 115
+    "yes": 269,
+    "partial": 95
   },
   "thematic_layers": {
     "coastline_bathymetry": 198,
@@ -49,8 +50,8 @@
   },
   "inequality_use": {
     "none": 491,
-    "indirect": 114,
-    "direct": 58
+    "indirect": 111,
+    "direct": 61
   },
   "confidence": {
     "high": 551,

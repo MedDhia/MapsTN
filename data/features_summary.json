@@ -1,0 +1,77 @@
+{
+  "records": 663,
+  "feature_band": {
+    "unknown": 340,
+    "topographic": 135,
+    "overview": 75,
+    "synoptic": 66,
+    "regional": 47
+  },
+  "features_named_in_metadata": {
+    "forts_ksour": 55,
+    "ruins_henchirs": 42,
+    "roads": 35,
+    "ports_lighthouses": 34,
+    "admin_limits": 20,
+    "railways": 20,
+    "urban_fabric": 16,
+    "rural_settlement": 5,
+    "wadis": 5,
+    "shrines_marabouts": 5,
+    "mines": 3,
+    "chotts_sebkhas": 3,
+    "wells_springs": 3
+  },
+  "features_basis": {
+    "none": 340,
+    "scale_model": 316,
+    "image": 7
+  },
+  "settlement_focus": {
+    "undetermined": 322,
+    "rural_regional": 166,
+    "small_scale_no_settlement_detail": 141,
+    "urban_plan": 23,
+    "town_and_hinterland": 11
+  },
+  "regions_covered": {
+    "tunis_capital": 213,
+    "nord_ouest": 113,
+    "bizerte_nord": 107,
+    "sahel": 96,
+    "national_extent": 87,
+    "cap_bon": 76,
+    "sud_est_djeffara": 75,
+    "centre": 72,
+    "sfax_kerkennah": 60,
+    "sud_ouest_jerid": 37
+  },
+  "regions_basis": {
+    "gazetteer": 287,
+    "none": 156,
+    "bbox": 133,
+    "scope": 87
+  },
+  "coverage_scope": {
+    "coastal_strip": 194,
+    "supranational": 171,
+    "national": 119,
+    "locality": 119,
+    "single_region": 34,
+    "undetermined": 26
+  },
+  "coverage_complete": {
+    "no": 545,
+    "unverified": 114,
+    "yes": 2,
+    "partial": 2
+  },
+  "high_confidence_coverage_scope": {
+    "coastal_strip": 152,
+    "supranational": 128,
+    "national": 119,
+    "locality": 114,
+    "single_region": 31,
+    "undetermined": 7
+  }
+}
