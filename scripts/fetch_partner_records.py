@@ -47,6 +47,20 @@ _SEP = r"\s*-{1,2}\s*"
 BBOX_RE = re.compile(
     rf"([EW])\s*{_D}{_SEP}([EW])\s*{_D}\s*/\s*([NS])\s*{_D}{_SEP}([NS])\s*{_D}")
 COORD_BLOCK_RE = re.compile(r"Coordonn[ée]es\s*:\s*(.{0,220})", re.IGNORECASE)
+# The Coordonnees line sometimes carries the projection and ellipsoid between
+# the scale and the bounding box:
+#   "1:50 000 ; proj. Bonne, ellipsoide de Clarke 1880 (E 10 14' - ...)"
+# Only some editions state it - of two records for the same La Marsa sheet, the
+# 1932 revision gives it and the 1902 one does not - but where present it is
+# exactly what a georeferencing pipeline needs.
+# "proj." and "projection" both occur; without the optional suffix the pattern
+# matches the "proj" inside "projection" and captures "ection de la ...".
+PROJECTION_RE = re.compile(
+    r"proj(?:ection)?\.?\s*([A-Za-zÀ-ÿ\- ]+?)\s*(?:,|\()", re.IGNORECASE)
+ELLIPSOID_RE = re.compile(r"ellipso[iï]de?\s+de\s+([A-Za-zÀ-ÿ]+\s*\d{0,4})", re.IGNORECASE)
+REVISION_RE = re.compile(r"r[ée]vision\s+de\s+(\d{4})", re.IGNORECASE)
+PUBLISHED_RE = re.compile(r"Date de publication\s*:\s*(\d{4})", re.IGNORECASE)
+IDENTIFIER_RE = re.compile(r"Identifiant\(s\)\s*:\s*([\w\-\.]+)", re.IGNORECASE)
 
 
 def fetch(url: str, retries: int = 3, timeout: int = 45) -> str | None:
@@ -83,6 +97,21 @@ def parse(page: str) -> dict:
     segment = block.group(1)
 
     parsed: dict = {}
+
+    projection = PROJECTION_RE.search(segment)
+    if projection:
+        parsed["projection"] = projection.group(1).strip(" .,")
+    ellipsoid = ELLIPSOID_RE.search(segment)
+    if ellipsoid:
+        parsed["ellipsoid"] = ellipsoid.group(1).strip()
+    for name, pattern in (("revision_year", REVISION_RE),
+                          ("published_year", PUBLISHED_RE),
+                          ("identifier", IDENTIFIER_RE)):
+        # These sit outside the coordinates block, so search the whole page.
+        found = pattern.search(text)
+        if found:
+            parsed[name] = found.group(1).strip()
+
     scale = SCALE_RE.search(segment)
     if scale:
         digits = re.sub(r"\D", "", scale.group(1))

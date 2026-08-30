@@ -7,6 +7,7 @@
   "oai:nubis.bis-sorbonne.fr:1116050": {},
   "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000852506": {},
   "oai:u-bordeaux-montaigne.fr:203729": {
+    "identifier": "10-02-13-04",
     "scale_denominator": 2800000,
     "bbox": {
       "west": 6.0,
@@ -19,6 +20,8 @@
   "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000193532": {},
   "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000856964": {},
   "oai:u-bordeaux-montaigne.fr:218963": {
+    "published_year": "1885",
+    "identifier": "10-02-13-03",
     "scale_denominator": 1800000,
     "bbox": {
       "west": -2.3333333333333335,
@@ -30,6 +33,7 @@
   "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000856795": {},
   "oai:u-bordeaux-montaigne.fr:245412": {},
   "oai:u-bordeaux-montaigne.fr:340409": {
+    "identifier": "07-08-01-054",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.233333333333333,
@@ -40,6 +44,8 @@
   },
   "oai:u-bordeaux-montaigne.fr:245555": {},
   "oai:u-bordeaux-montaigne.fr:245855": {
+    "published_year": "1896",
+    "identifier": "17-11-03-05",
     "scale_denominator": 1700000,
     "bbox": {
       "west": -5.5,
@@ -49,6 +55,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340469": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-02-005",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.5,
@@ -58,6 +67,7 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340487": {
+    "identifier": "07-08-02-032",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.478333333333333,
@@ -67,6 +77,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340450": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-097",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.163055555555555,
@@ -76,6 +89,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340467": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-113",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.145277777777777,
@@ -85,6 +101,7 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340434": {
+    "identifier": "07-08-01-083",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.390277777777778,
@@ -94,6 +111,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340371": {
+    "revision_year": "1902",
+    "published_year": "1902",
+    "identifier": "07-08-01-016",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.883333333333333,
@@ -103,9 +123,15 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340388": {
+    "revision_year": "1902",
+    "published_year": "1902",
+    "identifier": "07-08-01-033",
     "scale_denominator": 50000
   },
   "oai:u-bordeaux-montaigne.fr:340390": {
+    "revision_year": "1902",
+    "published_year": "1902",
+    "identifier": "07-08-01-036",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.233333333333333,
@@ -115,6 +141,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340396": {
+    "revision_year": "1902",
+    "published_year": "1902",
+    "identifier": "07-08-01-051",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.857222222222221,
@@ -124,6 +153,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340408": {
+    "revision_year": "1902",
+    "published_year": "1902",
+    "identifier": "07-08-01-053",
     "scale_denominator": 50,
     "bbox": {
       "west": 10.233333333333333,
@@ -136,6 +168,8 @@
   "oai:bibliotheque-numerique.icp.fr:1:16101": {},
   "oai:bibliotheque-numerique.icp.fr:1:16110": {},
   "oai:u-bordeaux-montaigne.fr:219021": {
+    "published_year": "1913",
+    "identifier": "10-09-03-03",
     "scale_denominator": 1250000,
     "bbox": {
       "west": -6.0,
@@ -145,6 +179,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:219020": {
+    "published_year": "1913",
+    "identifier": "10-09-03-03",
     "scale_denominator": 1250000,
     "bbox": {
       "west": -6.0,
@@ -154,6 +190,7 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:245789": {
+    "identifier": "17-08-06-01",
     "scale_denominator": 1265000,
     "bbox": {
       "west": -5.5,
@@ -163,6 +200,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340367": {
+    "projection": "Bonne",
+    "published_year": "1922",
+    "identifier": "07-08-01-009",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.8,
@@ -172,6 +212,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340374": {
+    "published_year": "1922",
+    "identifier": "07-08-01-026",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.8,
@@ -181,6 +223,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340436": {
+    "published_year": "1922",
+    "identifier": "07-08-01-089",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.1,
@@ -190,6 +234,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340470": {
+    "published_year": "1923",
+    "identifier": "07-08-02-008",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.363333333333333,
@@ -199,6 +245,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340475": {
+    "published_year": "1923",
+    "identifier": "07-08-02-026",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.127222222222223,
@@ -208,6 +256,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340493": {
+    "published_year": "1923",
+    "identifier": "07-08-02-049",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.109166666666667,
@@ -217,6 +267,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340428": {
+    "published_year": "1923",
+    "identifier": "07-08-01-073",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.758333333333333,
@@ -226,6 +278,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340435": {
+    "published_year": "1924",
+    "identifier": "07-08-01-086",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.75,
@@ -235,6 +289,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340451": {
+    "published_year": "1925",
+    "identifier": "07-08-01-100",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.366666666666667,
@@ -244,6 +300,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340471": {
+    "published_year": "1925",
+    "identifier": "07-08-02-011",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.723055555555556,
@@ -253,6 +311,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340494": {
+    "published_year": "1925",
+    "identifier": "07-08-02-052",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.793333333333333,
@@ -262,6 +322,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340530": {
+    "published_year": "1925",
+    "identifier": "07-08-02-093",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.775277777777779,
@@ -271,6 +333,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340488": {
+    "published_year": "1926",
+    "identifier": "07-08-02-034",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.255277777777778,
@@ -281,6 +345,8 @@
   },
   "oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0001956435": {},
   "oai:u-bordeaux-montaigne.fr:340492": {
+    "published_year": "1927",
+    "identifier": "07-08-02-046",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.758055555555556,
@@ -290,6 +356,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340496": {
+    "published_year": "1927",
+    "identifier": "07-08-02-057",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.336111111111112,
@@ -299,6 +367,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340510": {
+    "published_year": "1927",
+    "identifier": "07-08-02-069",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.758055555555556,
@@ -308,6 +378,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340472": {
+    "published_year": "1928",
+    "identifier": "07-08-02-015",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.074166666666667,
@@ -317,6 +389,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340489": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1928",
+    "identifier": "07-08-02-037",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.705277777777777,
@@ -326,6 +402,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340491": {
+    "published_year": "1928",
+    "identifier": "07-08-02-042",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.407222222222222,
@@ -335,6 +413,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340508": {
+    "published_year": "1928",
+    "identifier": "07-08-02-062",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.038333333333334,
@@ -344,6 +424,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340507": {
+    "published_year": "1928",
+    "identifier": "07-08-02-059",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.687222222222223,
@@ -353,6 +435,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340427": {
+    "published_year": "1928",
+    "identifier": "07-08-01-071",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.408333333333333,
@@ -362,6 +446,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340490": {
+    "published_year": "1929",
+    "identifier": "07-08-02-039",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.056111111111111,
@@ -371,6 +457,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340509": {
+    "published_year": "1929",
+    "identifier": "07-08-02-066",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.389166666666666,
@@ -380,6 +468,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340452": {
+    "published_year": "1929",
+    "identifier": "07-08-01-102",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.733333333333333,
@@ -389,6 +479,7 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340629": {
+    "identifier": "07-09-05-08",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.35,
@@ -398,6 +489,7 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340616": {
+    "identifier": "07-09-05-02",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.55,
@@ -407,6 +499,7 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340356": {
+    "identifier": "07-08-01-006",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.9,
@@ -416,6 +509,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340513": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1930",
+    "identifier": "07-08-02-077",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.327222222222222,
@@ -425,6 +522,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340514": {
+    "published_year": "1930",
+    "identifier": "07-08-02-079",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.678055555555554,
@@ -434,6 +533,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340447": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1930",
+    "identifier": "07-08-01-092",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.46111111111111,
@@ -443,6 +546,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340448": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1930",
+    "identifier": "07-08-01-094",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.812222222222223,
@@ -452,6 +559,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340449": {
+    "revision_year": "1930",
+    "published_year": "1930",
+    "identifier": "07-08-01-096",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.163055555555555,
@@ -461,6 +571,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340430": {
+    "published_year": "1930",
+    "identifier": "07-08-01-076",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.470277777777778,
@@ -470,6 +582,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340352": {
+    "published_year": "1931",
+    "identifier": "07-07-06-14",
     "scale_denominator": 500000,
     "bbox": {
       "west": 7.5,
@@ -479,6 +593,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340351": {
+    "published_year": "1931",
+    "identifier": "07-07-06-13",
     "scale_denominator": 500000,
     "bbox": {
       "west": 7.5,
@@ -488,6 +604,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340353": {
+    "published_year": "1931",
+    "identifier": "07-07-06-15",
     "scale_denominator": 500000,
     "bbox": {
       "west": 7.5,
@@ -497,6 +615,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340412": {
+    "published_year": "1931",
+    "identifier": "07-08-01-063",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.127777777777778,
@@ -506,6 +626,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340468": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1931",
+    "identifier": "07-08-02-003",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.5,
@@ -515,6 +639,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340474": {
+    "published_year": "1931",
+    "identifier": "07-08-02-022",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.776111111111112,
@@ -524,6 +650,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340476": {
+    "published_year": "1931",
+    "identifier": "07-08-02-030",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.478333333333333,
@@ -533,6 +661,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340495": {
+    "published_year": "1931",
+    "identifier": "07-08-02-055",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.811111111111112,
@@ -542,6 +672,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340455": {
+    "published_year": "1931",
+    "identifier": "07-08-01-109",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.794166666666667,
@@ -551,6 +683,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340511": {
+    "published_year": "1931",
+    "identifier": "07-08-02-071",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.091111111111111,
@@ -560,6 +694,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340512": {
+    "published_year": "1931",
+    "identifier": "07-08-02-073",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.45111111111111,
@@ -569,6 +705,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340529": {
+    "published_year": "1931",
+    "identifier": "07-08-02-091",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.433333333333334,
@@ -578,6 +716,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340456": {
+    "published_year": "1931",
+    "identifier": "07-08-01-112",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.145277777777777,
@@ -587,6 +727,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340453": {
+    "published_year": "1931",
+    "identifier": "07-08-01-104",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.083333333333334,
@@ -596,6 +738,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340454": {
+    "published_year": "1931",
+    "identifier": "07-08-01-107",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.443333333333333,
@@ -605,6 +749,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340413": {
+    "published_year": "1931",
+    "identifier": "07-08-01-065",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.488888888888889,
@@ -614,6 +760,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340433": {
+    "revision_year": "1931",
+    "published_year": "1931",
+    "identifier": "07-08-01-081",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.54111111111111,
@@ -623,6 +772,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340354": {
+    "published_year": "1931",
+    "identifier": "07-08-01-002",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.183333333333334,
@@ -632,6 +783,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340414": {
+    "revision_year": "1931",
+    "published_year": "1931",
+    "identifier": "07-08-01-066",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.83888888888889,
@@ -641,6 +795,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340473": {
+    "published_year": "1932",
+    "identifier": "07-08-02-018",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.425277777777778,
@@ -650,6 +806,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340515": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1932",
+    "identifier": "07-08-02-081",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.380277777777778,
@@ -659,6 +819,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340368": {
+    "published_year": "1932",
+    "identifier": "07-08-01-012",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.166666666666666,
@@ -668,6 +830,11 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340372": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-020",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.6,
@@ -677,6 +844,11 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340389": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-035",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.233333333333333,
@@ -686,6 +858,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340391": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1932",
+    "identifier": "07-08-01-039",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.583333333333334,
@@ -695,9 +871,17 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340392": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-042",
     "scale_denominator": 50000
   },
   "oai:u-bordeaux-montaigne.fr:340393": {
+    "revision_year": "1902",
+    "published_year": "1932",
+    "identifier": "07-08-01-046",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.133333333333333,
@@ -707,6 +891,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340407": {
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-052",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.233333333333333,
@@ -716,6 +903,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340410": {
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-056",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.577777777777778,
@@ -725,9 +915,15 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340411": {
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-058",
     "scale_denominator": 50000
   },
   "oai:u-bordeaux-montaigne.fr:340416": {
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-069",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.55,
@@ -737,6 +933,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340429": {
+    "published_year": "1932",
+    "identifier": "07-08-01-074",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.119444444444445,
@@ -746,6 +944,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340431": {
+    "revision_year": "1902",
+    "published_year": "1932",
+    "identifier": "07-08-01-078",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.830555555555556,
@@ -755,6 +956,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340432": {
+    "published_year": "1932",
+    "identifier": "07-08-01-079",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.181111111111111,
@@ -764,6 +967,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340375": {
+    "published_year": "1932",
+    "identifier": "07-08-01-027",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.166666666666666,
@@ -773,6 +978,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340415": {
+    "published_year": "1932",
+    "identifier": "07-08-01-067",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.2,
@@ -782,6 +989,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340516": {
+    "published_year": "1933",
+    "identifier": "07-08-02-083",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.366666666666667,
@@ -791,6 +1000,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340608": {
+    "projection": "de la carte internationale",
+    "published_year": "1934",
+    "identifier": "07-09-01-66",
     "scale_denominator": 500000,
     "bbox": {
       "west": 9.0,
@@ -802,6 +1014,10 @@
   "oai:u-bordeaux-montaigne.fr:494041": {},
   "oai:u-bordeaux-montaigne.fr:494039": {},
   "oai:u-bordeaux-montaigne.fr:340527": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1934",
+    "identifier": "07-08-02-086",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.731111111111112,
@@ -811,6 +1027,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340528": {
+    "published_year": "1934",
+    "identifier": "07-08-02-089",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.082222222222223,
@@ -820,6 +1038,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340394": {
+    "published_year": "1934",
+    "identifier": "07-08-01-048",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.50611111111111,
@@ -829,6 +1049,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340370": {
+    "projection": "Bonne",
+    "published_year": "1935",
+    "identifier": "07-08-01-015",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.883333333333333,
@@ -838,6 +1061,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340395": {
+    "published_year": "1935",
+    "identifier": "07-08-01-050",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.857222222222221,
@@ -847,6 +1072,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340355": {
+    "published_year": "1936",
+    "identifier": "07-08-01-005",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.533333333333333,
@@ -856,6 +1083,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340532": {
+    "published_year": "1936",
+    "identifier": "07-08-02-099",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.660277777777779,
@@ -865,6 +1094,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340369": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1936",
+    "identifier": "07-08-01-014",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.533333333333333,
@@ -874,6 +1107,10 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340376": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1936",
+    "identifier": "07-08-01-030",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.5,
@@ -883,6 +1120,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340387": {
+    "published_year": "1936",
+    "identifier": "07-08-01-032",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.866666666666667,
@@ -892,6 +1131,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340592": {
+    "projection": "de la Carte Internationale",
+    "published_year": "1938",
+    "identifier": "07-09-01-55",
     "scale_denominator": 500000,
     "bbox": {
       "west": 6.0,
@@ -901,6 +1143,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340590": {
+    "projection": "de la carte internationale",
+    "published_year": "1938",
+    "identifier": "07-09-01-53",
     "scale_denominator": 500000,
     "bbox": {
       "west": 9.0,
@@ -910,6 +1155,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340591": {
+    "projection": "de la carte internationale",
+    "published_year": "1938",
+    "identifier": "07-09-01-54",
     "scale_denominator": 500000,
     "bbox": {
       "west": 9.0,
@@ -919,6 +1167,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340589": {
+    "projection": "de la carte internationale",
+    "published_year": "1938",
+    "identifier": "07-09-01-50",
     "scale_denominator": 500000,
     "bbox": {
       "west": 6.0,
@@ -928,6 +1179,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340593": {
+    "projection": "de la carte internationale",
+    "published_year": "1938",
+    "identifier": "07-09-01-57",
     "scale_denominator": 500000,
     "bbox": {
       "west": 9.0,
@@ -937,6 +1191,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340654": {
+    "projection": "de la carte internationale",
+    "published_year": "1938",
+    "identifier": "07-10-04-24",
     "scale_denominator": 1000000,
     "bbox": {
       "west": 6.0,
@@ -946,6 +1203,11 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340373": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "revision_year": "1932",
+    "published_year": "1939",
+    "identifier": "07-08-01-023",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.95,
@@ -955,6 +1217,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340531": {
+    "published_year": "1939",
+    "identifier": "07-08-02-096",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.309166666666668,
@@ -964,6 +1228,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340628": {
+    "published_year": "1940",
+    "identifier": "07-09-05-05",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.933333333333334,
@@ -974,6 +1240,10 @@
   },
   "oai:u-bordeaux-montaigne.fr:340008": {},
   "oai:u-bordeaux-montaigne.fr:340533": {
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "published_year": "1940",
+    "identifier": "07-08-02-110",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.757222222222222,
@@ -983,6 +1253,9 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340627": {
+    "revision_year": "1934",
+    "published_year": "1941",
+    "identifier": "07-09-05-03",
     "scale_denominator": 50000,
     "bbox": {
       "west": 8.583333333333334,
@@ -992,6 +1265,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340534": {
+    "published_year": "1941",
+    "identifier": "07-08-02-145",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.037222222222223,
@@ -1001,6 +1276,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340535": {
+    "published_year": "1941",
+    "identifier": "07-08-02-146",
     "scale_denominator": 50000,
     "bbox": {
       "west": 10.055277777777778,
@@ -1010,6 +1287,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:340615": {
+    "published_year": "1946",
+    "identifier": "07-09-05-01",
     "scale_denominator": 50000,
     "bbox": {
       "west": 9.983333333333333,
@@ -1019,6 +1298,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:168522": {
+    "published_year": "2013",
+    "identifier": "10-2-13-1",
     "scale_denominator": 5000000,
     "bbox": {
       "west": -2.6666666666666665,
@@ -1028,6 +1309,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:168523": {
+    "published_year": "2013",
+    "identifier": "10-2-13-6",
     "scale_denominator": 1500000,
     "bbox": {
       "west": -3.1666666666666665,
@@ -1037,6 +1320,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:168459": {
+    "published_year": "2013",
+    "identifier": "10-2-2-2",
     "scale_denominator": 2000000,
     "bbox": {
       "west": -2.6666666666666665,
@@ -1046,6 +1331,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:168525": {
+    "published_year": "2013",
+    "identifier": "10-2-14-2",
     "scale_denominator": 400000,
     "bbox": {
       "west": 8.166666666666666,
@@ -1055,6 +1342,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:168524": {
+    "published_year": "2013",
+    "identifier": "10-2-14-1",
     "scale_denominator": 400000,
     "bbox": {
       "west": 8.166666666666666,
@@ -1064,6 +1353,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:168536": {
+    "published_year": "2013",
+    "identifier": "10-2-14-3",
     "scale_denominator": 500000,
     "bbox": {
       "west": 7.766666666666667,
@@ -1073,6 +1364,8 @@
     }
   },
   "oai:u-bordeaux-montaigne.fr:168537": {
+    "published_year": "2013",
+    "identifier": "10-2-14-4",
     "scale_denominator": 500000,
     "bbox": {
       "west": 7.766666666666667,
