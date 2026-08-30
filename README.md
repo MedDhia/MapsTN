@@ -28,6 +28,8 @@ a relevance score.
 | **1:50 000 sheet index (GeoJSON)** | [`data/tunisia_50k_index.geojson`](data/tunisia_50k_index.geojson) |
 | **1:50 000 series table** | [`data/tunisia_50k_series.csv`](data/tunisia_50k_series.csv) |
 | **1:50 000 series report** | [`docs/SERIES-50K.md`](docs/SERIES-50K.md) |
+| **Objects and coordinate precision** | [`docs/OBJECT-EXTRACTION.md`](docs/OBJECT-EXTRACTION.md) |
+| **Per-sheet precision (CSV)** | [`data/tunisia_50k_precision.csv`](data/tunisia_50k_precision.csv) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
 
@@ -387,6 +389,51 @@ cataloguing gap rather than evidence — of two records for the same La Marsa
 sheet, the 1932 revision names the projection and the 1902 one does not. Bonne
 on Clarke 1880 has no standard EPSG code and must be defined by hand; in
 practice the published corner coordinates are the way in regardless.
+
+## Objects on the sheets, and how precisely they can be placed
+
+Full analysis in [`docs/OBJECT-EXTRACTION.md`](docs/OBJECT-EXTRACTION.md),
+per-sheet figures in
+[`data/tunisia_50k_precision.csv`](data/tunisia_50k_precision.csv). Measured on
+the La Marsa sheet at full resolution (9312 × 6952 px).
+
+**The sheets carry their own control.** They are not bare images with a
+catalogue bounding box. The La Marsa header reads *"Carroyage kilométrique
+Lambert (Nord Tunisie)"*: a labelled grid at one-kilometre spacing, with the
+neatline's Lambert coordinate printed **to the metre** (`531.624 m`). There is
+also a centesimal graticule in grades from the Paris meridian. Roughly 30 usable
+control points per sheet.
+
+**Scan resolution, measured two ways that agree within 4.2%:** 311 dpi from
+sheet size and pixel count, 298 dpi from the labelled kilometre grid at
+234.7 px/km. So **1 pixel ≈ 4.1–4.3 m on the ground**.
+
+| Control used | Positional uncertainty |
+| --- | --- |
+| Printed kilometric grid | **±10–25 m** |
+| Catalogue bounding box alone | **up to ±775 m lon, ±926 m lat** on 29 of 93 sheets |
+
+The bounding box is for indexing; the printed grid is for georeferencing. Below
+about 25 m the limit stops being the georeferencing and becomes the symbol: a
+marabout drawn 1 mm across covers 50 m of ground, so a coordinate finer than
+that is not meaningful.
+
+**Object classes are rich and legible** — wells (`Bir`, blue circles), springs
+(`Aᵉ`), marabouts (`Sᵈⁱ`, `Mᵛᵉᵗ`), zaouias (`Zᵃ`), koubbas (`Kᵇᵃ`), kalâas
+(`Kᵃᵗ`), bordjs, ksour, Roman ruins (`R.R.`), henchirs (`Hʳ`), `Dar` houses,
+lighthouses, optical telegraph, `T.P.` post offices, stations, cemeteries, spot
+heights — and, on Medenine, a separately labelled **Village Français** beside
+the indigenous centre.
+
+**One sheet is simply wrong:** `B8-C38 Djemmal` is catalogued 1.62′ × 10′, a
+sheet 2.4 km wide. The source record's east bound is a typo; flagged as
+`extent_plausible = 0`.
+
+**Scaling this to all 103 sheets needs a pipeline this repo does not contain** —
+grid and neatline detection, symbol classification, and OCR of heavily
+abbreviated French (`Sᵈⁱ`, `Mᵛᵉᵗ`, `Kᵃᵗ`). Colour thresholding for the grid was
+tried and abandoned: the grid's red is the same red as roads and built-up
+hatching.
 
 ## Data dictionary
 
