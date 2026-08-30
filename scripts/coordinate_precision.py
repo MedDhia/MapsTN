@@ -19,10 +19,14 @@ So the bounding box is for indexing and the printed grid is for georeferencing.
 This script quantifies both for every sheet, and flags extents that cannot be
 right.
 
-Measured constants come from the La Marsa sheet (see docs/OBJECT-EXTRACTION.md),
-cross-checked two ways that agree within 4.2%: 9312 x 6952 px for a 56 x 76 cm
-sheet gives 311 dpi, and the labelled kilometre grid measures 234.7 px/km which
-implies 298 dpi.
+Scan resolution is no longer assumed. It used to be a single constant of 311 dpi
+inferred from La Marsa's catalogued paper size; scripts/detect_sheet_grid.py now
+measures it on every sheet from the spacing of the printed kilometre grid, and
+the two disagree by about 4%. The measurement wins: paper size is catalogued to
+the nearest centimetre and describes the sheet rather than the printed image,
+whereas the grid is a known one kilometre and is measured over thirty repeats.
+Sheets without a measurement fall back to the series median, and the source is
+recorded per sheet in `resolution_basis`.
 
 Outputs:
     data/tunisia_50k_precision.csv
@@ -42,12 +46,14 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+import numpy as np
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-SCAN_DPI = 311.0                 # from sheet size and pixel dimensions
 SCALE_DENOMINATOR = 50_000
-# Ground metres per scan pixel.
-METRES_PER_PIXEL = (25.4 / SCAN_DPI) * SCALE_DENOMINATOR / 1000
+# Used only when a sheet has no measured grid; overwritten at run time by the
+# median of the sheets that do.
+FALLBACK_METRES_PER_PIXEL = 4.24
 
 # A 1:50 000 sheet of this series should be about 21 x 11 arcminutes; anything
 # far outside that is a bad record, not an unusual sheet.
@@ -69,7 +75,7 @@ def metres_per_degree(latitude: float) -> tuple[float, float]:
     return (111_320.0 * math.cos(math.radians(latitude)), 111_132.0)
 
 
-def assess(box: dict) -> dict:
+def assess(box: dict, metres_per_pixel: float, resolution_basis: str) -> dict:
     units = {corner: stated_unit(box[corner])
              for corner in ("west", "east", "north", "south")}
     rank = {"degree": 0, "minute": 1, "second": 2, "finer": 3}
@@ -100,8 +106,10 @@ def assess(box: dict) -> dict:
         "height_arcmin": round(height, 2),
         "extent_plausible": "1" if plausible else "0",
         # Grid-based control does not depend on the catalogue corners at all.
-        "grid_uncertainty_m": round(2 * METRES_PER_PIXEL),
-        "symbol_centre_uncertainty_m": round(4 * METRES_PER_PIXEL),
+        "metres_per_pixel": round(metres_per_pixel, 2),
+        "resolution_basis": resolution_basis,
+        "grid_uncertainty_m": round(2 * metres_per_pixel),
+        "symbol_centre_uncertainty_m": round(4 * metres_per_pixel),
         "recommended_control": "kilometric_grid" if working in ("degree", "minute")
                                else "kilometric_grid (bbox usable as fallback)",
     }
@@ -110,10 +118,22 @@ def assess(box: dict) -> dict:
 FIELDS = [
     "record_id", "designation", "sheet_name", "revision_year",
     "corner_unit", "bbox_uncertainty_lon_m", "bbox_uncertainty_lat_m",
+    "metres_per_pixel", "resolution_basis",
     "grid_uncertainty_m", "symbol_centre_uncertainty_m",
     "width_arcmin", "height_arcmin", "extent_plausible",
     "recommended_control", "url",
 ]
+
+
+def load_measured_resolution(path: Path) -> dict[str, float]:
+    """record_id -> ground metres per pixel, from the detected kilometre grid."""
+    if not path.exists():
+        return {}
+    measured = {}
+    for row in csv.DictReader(path.open(encoding="utf-8")):
+        if row.get("has_kilometric_grid") == "1" and row.get("px_per_km"):
+            measured[row["record_id"]] = 1000.0 / float(row["px_per_km"])
+    return measured
 
 
 def main() -> int:
@@ -122,9 +142,15 @@ def main() -> int:
                         default=REPO_ROOT / "data" / "tunisia_50k_series.csv")
     parser.add_argument("--partner", type=Path,
                         default=REPO_ROOT / "data" / "partner_records.json")
+    parser.add_argument("--grid", type=Path,
+                        default=REPO_ROOT / "data" / "sheet_grid.csv")
     parser.add_argument("--out", type=Path,
                         default=REPO_ROOT / "data" / "tunisia_50k_precision.csv")
     args = parser.parse_args()
+
+    measured = load_measured_resolution(args.grid)
+    fallback = (float(np.median(list(measured.values()))) if measured
+                else FALLBACK_METRES_PER_PIXEL)
 
     partner = json.loads(args.partner.read_text(encoding="utf-8"))
     rows = []
@@ -139,7 +165,10 @@ def main() -> int:
             "revision_year": sheet["revision_year"] or sheet["published_year"],
             "url": sheet["url"],
         }
-        row.update(assess(box))
+        resolution = measured.get(sheet["record_id"])
+        row.update(assess(box,
+                          resolution if resolution else fallback,
+                          "measured_grid" if resolution else "series_median"))
         rows.append(row)
 
     rows.sort(key=lambda r: (-int(r["bbox_uncertainty_lon_m"]), r["designation"]))
@@ -151,12 +180,14 @@ def main() -> int:
         writer.writerows(rows)
 
     units = Counter(r["corner_unit"] for r in rows)
+    basis = Counter(r["resolution_basis"] for r in rows)
     bad = [r for r in rows if r["extent_plausible"] == "0"]
     print(f"{len(rows)} sheets -> {args.out}")
-    print(f"  scan {SCAN_DPI:.0f} dpi -> {METRES_PER_PIXEL:.2f} m per pixel")
+    print(f"  resolution: {fallback:.2f} m/px median "
+          f"({(25.4 / fallback) * SCALE_DENOMINATOR / 1000:.0f} dpi); basis {dict(basis)}")
     print(f"  corner precision: {dict(units)}")
-    print(f"  grid-based uncertainty: ~{round(2 * METRES_PER_PIXEL)} m "
-          f"| symbol centre: ~{round(4 * METRES_PER_PIXEL)} m")
+    print(f"  grid-based uncertainty: ~{round(2 * fallback)} m "
+          f"| symbol centre: ~{round(4 * fallback)} m")
     worst = max(int(r["bbox_uncertainty_lon_m"]) for r in rows)
     print(f"  worst bbox-only uncertainty: {worst} m in longitude")
     if bad:

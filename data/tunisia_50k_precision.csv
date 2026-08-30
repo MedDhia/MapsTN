@@ -1,94 +1,94 @@
-record_id,designation,sheet_name,revision_year,corner_unit,bbox_uncertainty_lon_m,bbox_uncertainty_lat_m,grid_uncertainty_m,symbol_centre_uncertainty_m,width_arcmin,height_arcmin,extent_plausible,recommended_control,url
-oai:u-bordeaux-montaigne.fr:340629,,,,minute,775,926,8,16,16.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340629
-oai:u-bordeaux-montaigne.fr:340628,,,1940,minute,770,926,8,16,15.0,13.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340628
-oai:u-bordeaux-montaigne.fr:340627,,,1934,minute,765,926,8,16,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340627
-oai:u-bordeaux-montaigne.fr:340616,,,,minute,762,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340616
-oai:u-bordeaux-montaigne.fr:340516,B10-C35,Hadjeb el Aïoun,1933,minute,757,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340516
-oai:u-bordeaux-montaigne.fr:340529,B10-C38,El Djem,1931,minute,757,926,8,16,21.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340529
-oai:u-bordeaux-montaigne.fr:340452,B6-C33,Les Salines,1929,minute,750,926,8,16,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340452
-oai:u-bordeaux-montaigne.fr:340451,B6-C32,Le Kef,1925,minute,749,926,8,16,22.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340451
-oai:u-bordeaux-montaigne.fr:340436,B5-C34,Gafour,1922,minute,748,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340436
-oai:u-bordeaux-montaigne.fr:340416,B3-C38,Nabeul,1932,minute,746,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340416
-oai:u-bordeaux-montaigne.fr:340615,,,1946,minute,743,926,8,16,29.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340615
-oai:u-bordeaux-montaigne.fr:340393,B2-C34,Béja,1902,minute,743,926,8,16,22.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340393
-oai:u-bordeaux-montaigne.fr:340387,B1-C36,Ariana,1936,minute,742,926,8,16,22.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340387
-oai:u-bordeaux-montaigne.fr:340390,B1-C37,La Marsa,1902,minute,742,926,8,16,21.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340390
-oai:u-bordeaux-montaigne.fr:340389,B1-C37,La Marsa,1932,minute,742,926,8,16,21.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340389
-oai:u-bordeaux-montaigne.fr:340391,B1-C38,Tazoghrane,1932,minute,742,926,8,16,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340391
-oai:u-bordeaux-montaigne.fr:340373,B0-C39,Cap Bon,1932,minute,741,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340373
-oai:u-bordeaux-montaigne.fr:340375,B1-C34,Hedil,1932,minute,741,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340375
-oai:u-bordeaux-montaigne.fr:340376,B1-C35,Mateur,1936,minute,741,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340376
-oai:u-bordeaux-montaigne.fr:340369,B0-C35,Djebel Ichkeul,1936,minute,740,926,8,16,21.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340369
-oai:u-bordeaux-montaigne.fr:340371,B0-C36,Porto-Farina,1902,minute,740,926,8,16,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340371
-oai:u-bordeaux-montaigne.fr:340370,B0-C36,Porto-Farina,1935,minute,740,926,8,16,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340370
-oai:u-bordeaux-montaigne.fr:340372,B0-C38,Sidi Daoud,1932,minute,740,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340372
-oai:u-bordeaux-montaigne.fr:340367,B0-C33,Cap Negro,1922,minute,739,926,8,16,23.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340367
-oai:u-bordeaux-montaigne.fr:340368,B0-C34,Oued Sedjenane,1932,minute,739,926,8,16,23.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340368
-oai:u-bordeaux-montaigne.fr:340355,B0-C35,Bizerte,1936,minute,738,926,8,16,23.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340355
-oai:u-bordeaux-montaigne.fr:340354,B00-C34,Kef Abbed,1931,minute,738,926,8,16,22.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340354
-oai:u-bordeaux-montaigne.fr:340356,B00-C36,Metline,,minute,738,926,8,16,22.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340356
-oai:u-bordeaux-montaigne.fr:340374,B1-C33,Nefza,1922,minute,734,926,8,16,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340374
-oai:u-bordeaux-montaigne.fr:340533,,Djebeniana,1940,second,13,15,8,16,21.6,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340533
-oai:u-bordeaux-montaigne.fr:340534,,,1941,second,13,15,8,16,23.77,12.42,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340534
-oai:u-bordeaux-montaigne.fr:340535,,,1941,second,13,15,8,16,23.75,12.42,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340535
-oai:u-bordeaux-montaigne.fr:340471,B1-C33,Ebba Ksour,1925,second,13,15,8,16,21.07,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340471
-oai:u-bordeaux-montaigne.fr:340513,B10-C32,Djebel Bireno,1930,second,13,15,8,16,21.05,11.35,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340513
-oai:u-bordeaux-montaigne.fr:340514,B10-C33,Djebel Semmama,1930,second,13,15,8,16,21.07,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340514
-oai:u-bordeaux-montaigne.fr:340515,B10-C34,Djebel Mrhila,1932,second,13,15,8,16,18.93,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340515
-oai:u-bordeaux-montaigne.fr:340527,B10-C36,Nasr Allah,1934,second,13,15,8,16,21.07,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340527
-oai:u-bordeaux-montaigne.fr:340528,B10-C37,Chorbane,1934,second,13,15,8,16,21.07,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340528
-oai:u-bordeaux-montaigne.fr:340530,B10-C39,Chebba,1925,second,13,15,8,16,21.6,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340530
-oai:u-bordeaux-montaigne.fr:340531,B11-C32,Bou Chebka,1939,second,13,15,8,16,21.6,11.35,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340531
-oai:u-bordeaux-montaigne.fr:340532,B11-C33,Kasserine,1936,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340532
-oai:u-bordeaux-montaigne.fr:340455,B6-C36,Djebibina,1931,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340455
-oai:u-bordeaux-montaigne.fr:340467,B6-C37,Sidi Bou Ali,,second,13,15,8,16,21.6,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340467
-oai:u-bordeaux-montaigne.fr:340474,B6-C37,Aïne Djeloula,1931,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340474
-oai:u-bordeaux-montaigne.fr:340456,B6-C37,Sidi Bou Ali,1931,second,13,15,8,16,21.6,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340456
-oai:u-bordeaux-montaigne.fr:340469,B6-C38,Halk El Mennzel,,second,13,15,8,16,22.0,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340469
-oai:u-bordeaux-montaigne.fr:340468,B6-C38,Halk El Mennzel,1931,second,13,15,8,16,22.0,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340468
-oai:u-bordeaux-montaigne.fr:340470,B7-C32,Tadjerouine,1923,second,13,15,8,16,21.58,11.35,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340470
-oai:u-bordeaux-montaigne.fr:340472,B7-C34,Maktar,1928,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340472
-oai:u-bordeaux-montaigne.fr:340473,B7-C35,Djebel Serdj,1932,second,13,15,8,16,21.6,11.37,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340473
-oai:u-bordeaux-montaigne.fr:340475,B7-C37,Sebkra Kelbia,1923,second,13,15,8,16,21.6,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340475
-oai:u-bordeaux-montaigne.fr:340487,B7-C38,Sousse,,second,13,15,8,16,22.13,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340487
-oai:u-bordeaux-montaigne.fr:340476,B7-C38,Sousse,1931,second,13,15,8,16,22.13,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340476
-oai:u-bordeaux-montaigne.fr:340488,B8-C32,Kalaat es Senam,1926,second,13,15,8,16,27.0,10.8,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340488
-oai:u-bordeaux-montaigne.fr:340489,B8-C33,Aïn El Kseïba,1928,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340489
-oai:u-bordeaux-montaigne.fr:340490,B8-C34,Rohia-Dj. Barbrou,1929,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340490
-oai:u-bordeaux-montaigne.fr:340491,B8-C35,Pichon,1928,second,13,15,8,16,21.6,11.57,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340491
-oai:u-bordeaux-montaigne.fr:340492,B8-C36,Kairouan,1927,second,13,15,8,16,21.62,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340492
-oai:u-bordeaux-montaigne.fr:340493,B8-C37,Sidi El Hani,1923,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340493
-oai:u-bordeaux-montaigne.fr:340494,B8-C38,Djemmal,1925,second,13,15,8,16,1.62,10.0,0,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340494
-oai:u-bordeaux-montaigne.fr:340495,B8-C39,Moknine,1931,second,13,15,8,16,21.6,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340495
-oai:u-bordeaux-montaigne.fr:340496,B9-C32,Thala,1927,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340496
-oai:u-bordeaux-montaigne.fr:340507,B9-C33,Ksar Tlili,1928,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340507
-oai:u-bordeaux-montaigne.fr:340508,B9-C34,Sbiba,1928,second,13,15,8,16,21.58,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340508
-oai:u-bordeaux-montaigne.fr:340509,B9-C35,Djebel Trozza,1929,second,13,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340509
-oai:u-bordeaux-montaigne.fr:340510,B9-C36,Pavillier,1927,second,13,15,8,16,20.52,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340510
-oai:u-bordeaux-montaigne.fr:340511,B9-C37,Oued Cherita,1931,second,13,15,8,16,21.6,12.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340511
-oai:u-bordeaux-montaigne.fr:340512,B9-C38,Kerker,1931,second,13,15,8,16,21.07,12.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340512
-oai:u-bordeaux-montaigne.fr:340394,B2-C35,Tebourba,1934,second,12,15,8,16,22.15,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340394
-oai:u-bordeaux-montaigne.fr:340396,B2-C36,Tunis,1902,second,12,15,8,16,22.13,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340396
-oai:u-bordeaux-montaigne.fr:340395,B2-C36,Tunis,1935,second,12,15,8,16,22.13,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340395
-oai:u-bordeaux-montaigne.fr:340409,B2-C37,La Goulette,,second,12,15,8,16,21.17,12.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340409
-oai:u-bordeaux-montaigne.fr:340407,B2-C37,La Goulette,1932,second,12,15,8,16,21.17,12.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340407
-oai:u-bordeaux-montaigne.fr:340410,B2-C38,Menzel Bou Zelfa,1932,second,12,15,8,16,22.08,12.43,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340410
-oai:u-bordeaux-montaigne.fr:340412,B3-C34,Oued-Zarga,1931,second,12,15,8,16,22.17,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340412
-oai:u-bordeaux-montaigne.fr:340413,B3-C35,Medjez-el-Bab,1931,second,12,15,8,16,22.17,11.83,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340413
-oai:u-bordeaux-montaigne.fr:340414,B3-C36,Oudna,1931,second,12,15,8,16,22.17,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340414
-oai:u-bordeaux-montaigne.fr:340415,B3-C37,Grombalia,1932,second,12,15,8,16,22.0,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340415
-oai:u-bordeaux-montaigne.fr:340427,B4-C32,Ghardimaou,1928,second,12,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340427
-oai:u-bordeaux-montaigne.fr:340428,B4-C33,Souk el Arba,1923,second,12,15,8,16,22.17,11.5,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340428
-oai:u-bordeaux-montaigne.fr:340429,B4-C34,Teboursouk,1932,second,12,15,8,16,21.58,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340429
-oai:u-bordeaux-montaigne.fr:340430,B4-C35,Bou Arada,1930,second,12,15,8,16,22.13,11.83,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340430
-oai:u-bordeaux-montaigne.fr:340431,B4-C36,Zaghouan,1902,second,12,15,8,16,21.58,10.83,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340431
-oai:u-bordeaux-montaigne.fr:340432,B4-C37,Bou Ficha,1932,second,12,15,8,16,21.6,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340432
-oai:u-bordeaux-montaigne.fr:340433,B4-C38,Hammamet,1931,second,12,15,8,16,21.6,10.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340433
-oai:u-bordeaux-montaigne.fr:340434,B5-C32,Ouargha,,second,12,15,8,16,21.58,11.35,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340434
-oai:u-bordeaux-montaigne.fr:340435,B5-C33,Nebeur,1924,second,12,15,8,16,21.62,11.2,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340435
-oai:u-bordeaux-montaigne.fr:340447,B5-C35,Djebel Mansour,1930,second,12,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340447
-oai:u-bordeaux-montaigne.fr:340448,B5-C36,Djebel Fkirine,1930,second,12,15,8,16,21.6,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340448
-oai:u-bordeaux-montaigne.fr:340450,B5-C37,Enfida,,second,12,15,8,16,21.6,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340450
-oai:u-bordeaux-montaigne.fr:340449,B5-C37,Enfidaville,1930,second,12,15,8,16,21.6,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340449
-oai:u-bordeaux-montaigne.fr:340453,B6-C34,Siliana,1931,second,12,15,8,16,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340453
-oai:u-bordeaux-montaigne.fr:340454,B6-C35,Djebel Bargou,1931,second,12,15,8,16,21.6,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340454
+record_id,designation,sheet_name,revision_year,corner_unit,bbox_uncertainty_lon_m,bbox_uncertainty_lat_m,metres_per_pixel,resolution_basis,grid_uncertainty_m,symbol_centre_uncertainty_m,width_arcmin,height_arcmin,extent_plausible,recommended_control,url
+oai:u-bordeaux-montaigne.fr:340629,,,,minute,775,926,4.27,measured_grid,9,17,16.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340629
+oai:u-bordeaux-montaigne.fr:340628,,,1940,minute,770,926,4.27,measured_grid,9,17,15.0,13.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340628
+oai:u-bordeaux-montaigne.fr:340627,,,1934,minute,765,926,4.26,series_median,9,17,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340627
+oai:u-bordeaux-montaigne.fr:340616,,,,minute,762,926,4.27,measured_grid,9,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340616
+oai:u-bordeaux-montaigne.fr:340516,B10-C35,Hadjeb el Aïoun,1933,minute,757,926,4.2,measured_grid,8,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340516
+oai:u-bordeaux-montaigne.fr:340529,B10-C38,El Djem,1931,minute,757,926,4.24,measured_grid,8,17,21.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340529
+oai:u-bordeaux-montaigne.fr:340452,B6-C33,Les Salines,1929,minute,750,926,4.27,measured_grid,9,17,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340452
+oai:u-bordeaux-montaigne.fr:340451,B6-C32,Le Kef,1925,minute,749,926,4.27,measured_grid,9,17,22.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340451
+oai:u-bordeaux-montaigne.fr:340436,B5-C34,Gafour,1922,minute,748,926,4.27,measured_grid,9,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340436
+oai:u-bordeaux-montaigne.fr:340416,B3-C38,Nabeul,1932,minute,746,926,4.27,measured_grid,9,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340416
+oai:u-bordeaux-montaigne.fr:340615,,,1946,minute,743,926,4.26,series_median,9,17,29.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340615
+oai:u-bordeaux-montaigne.fr:340393,B2-C34,Béja,1902,minute,743,926,4.27,measured_grid,9,17,22.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340393
+oai:u-bordeaux-montaigne.fr:340387,B1-C36,Ariana,1936,minute,742,926,4.24,measured_grid,8,17,22.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340387
+oai:u-bordeaux-montaigne.fr:340390,B1-C37,La Marsa,1902,minute,742,926,4.26,series_median,9,17,21.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340390
+oai:u-bordeaux-montaigne.fr:340389,B1-C37,La Marsa,1932,minute,742,926,4.27,measured_grid,9,17,21.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340389
+oai:u-bordeaux-montaigne.fr:340391,B1-C38,Tazoghrane,1932,minute,742,926,4.27,measured_grid,9,17,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340391
+oai:u-bordeaux-montaigne.fr:340373,B0-C39,Cap Bon,1932,minute,741,926,4.27,measured_grid,9,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340373
+oai:u-bordeaux-montaigne.fr:340375,B1-C34,Hedil,1932,minute,741,926,4.27,measured_grid,9,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340375
+oai:u-bordeaux-montaigne.fr:340376,B1-C35,Mateur,1936,minute,741,926,4.24,measured_grid,8,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340376
+oai:u-bordeaux-montaigne.fr:340369,B0-C35,Djebel Ichkeul,1936,minute,740,926,4.27,measured_grid,9,17,21.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340369
+oai:u-bordeaux-montaigne.fr:340371,B0-C36,Porto-Farina,1902,minute,740,926,4.26,series_median,9,17,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340371
+oai:u-bordeaux-montaigne.fr:340370,B0-C36,Porto-Farina,1935,minute,740,926,4.27,measured_grid,9,17,21.0,10.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340370
+oai:u-bordeaux-montaigne.fr:340372,B0-C38,Sidi Daoud,1932,minute,740,926,4.24,measured_grid,8,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340372
+oai:u-bordeaux-montaigne.fr:340367,B0-C33,Cap Negro,1922,minute,739,926,4.27,measured_grid,9,17,23.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340367
+oai:u-bordeaux-montaigne.fr:340368,B0-C34,Oued Sedjenane,1932,minute,739,926,4.27,measured_grid,9,17,23.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340368
+oai:u-bordeaux-montaigne.fr:340355,B0-C35,Bizerte,1936,minute,738,926,4.27,measured_grid,9,17,23.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340355
+oai:u-bordeaux-montaigne.fr:340354,B00-C34,Kef Abbed,1931,minute,738,926,4.27,measured_grid,9,17,22.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340354
+oai:u-bordeaux-montaigne.fr:340356,B00-C36,Metline,,minute,738,926,4.24,measured_grid,8,17,22.0,12.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340356
+oai:u-bordeaux-montaigne.fr:340374,B1-C33,Nefza,1922,minute,734,926,4.27,measured_grid,9,17,21.0,11.0,1,kilometric_grid,https://1886.u-bordeaux-montaigne.fr/s/1886/item/340374
+oai:u-bordeaux-montaigne.fr:340533,,Djebeniana,1940,second,13,15,4.24,measured_grid,8,17,21.6,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340533
+oai:u-bordeaux-montaigne.fr:340534,,,1941,second,13,15,4.24,measured_grid,8,17,23.77,12.42,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340534
+oai:u-bordeaux-montaigne.fr:340535,,,1941,second,13,15,4.2,measured_grid,8,17,23.75,12.42,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340535
+oai:u-bordeaux-montaigne.fr:340471,B1-C33,Ebba Ksour,1925,second,13,15,4.24,measured_grid,8,17,21.07,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340471
+oai:u-bordeaux-montaigne.fr:340513,B10-C32,Djebel Bireno,1930,second,13,15,4.24,measured_grid,8,17,21.05,11.35,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340513
+oai:u-bordeaux-montaigne.fr:340514,B10-C33,Djebel Semmama,1930,second,13,15,4.24,measured_grid,8,17,21.07,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340514
+oai:u-bordeaux-montaigne.fr:340515,B10-C34,Djebel Mrhila,1932,second,13,15,4.24,measured_grid,8,17,18.93,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340515
+oai:u-bordeaux-montaigne.fr:340527,B10-C36,Nasr Allah,1934,second,13,15,4.24,measured_grid,8,17,21.07,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340527
+oai:u-bordeaux-montaigne.fr:340528,B10-C37,Chorbane,1934,second,13,15,4.24,measured_grid,8,17,21.07,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340528
+oai:u-bordeaux-montaigne.fr:340530,B10-C39,Chebba,1925,second,13,15,4.24,measured_grid,8,17,21.6,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340530
+oai:u-bordeaux-montaigne.fr:340531,B11-C32,Bou Chebka,1939,second,13,15,4.24,measured_grid,8,17,21.6,11.35,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340531
+oai:u-bordeaux-montaigne.fr:340532,B11-C33,Kasserine,1936,second,13,15,4.24,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340532
+oai:u-bordeaux-montaigne.fr:340455,B6-C36,Djebibina,1931,second,13,15,4.27,measured_grid,9,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340455
+oai:u-bordeaux-montaigne.fr:340467,B6-C37,Sidi Bou Ali,,second,13,15,4.26,series_median,9,17,21.6,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340467
+oai:u-bordeaux-montaigne.fr:340474,B6-C37,Aïne Djeloula,1931,second,13,15,4.24,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340474
+oai:u-bordeaux-montaigne.fr:340456,B6-C37,Sidi Bou Ali,1931,second,13,15,4.27,measured_grid,9,17,21.6,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340456
+oai:u-bordeaux-montaigne.fr:340469,B6-C38,Halk El Mennzel,,second,13,15,4.26,series_median,9,17,22.0,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340469
+oai:u-bordeaux-montaigne.fr:340468,B6-C38,Halk El Mennzel,1931,second,13,15,4.24,measured_grid,8,17,22.0,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340468
+oai:u-bordeaux-montaigne.fr:340470,B7-C32,Tadjerouine,1923,second,13,15,4.24,measured_grid,8,17,21.58,11.35,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340470
+oai:u-bordeaux-montaigne.fr:340472,B7-C34,Maktar,1928,second,13,15,4.24,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340472
+oai:u-bordeaux-montaigne.fr:340473,B7-C35,Djebel Serdj,1932,second,13,15,4.24,measured_grid,8,17,21.6,11.37,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340473
+oai:u-bordeaux-montaigne.fr:340475,B7-C37,Sebkra Kelbia,1923,second,13,15,4.2,measured_grid,8,17,21.6,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340475
+oai:u-bordeaux-montaigne.fr:340487,B7-C38,Sousse,,second,13,15,4.26,series_median,9,17,22.13,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340487
+oai:u-bordeaux-montaigne.fr:340476,B7-C38,Sousse,1931,second,13,15,4.22,measured_grid,8,17,22.13,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340476
+oai:u-bordeaux-montaigne.fr:340488,B8-C32,Kalaat es Senam,1926,second,13,15,4.24,measured_grid,8,17,27.0,10.8,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340488
+oai:u-bordeaux-montaigne.fr:340489,B8-C33,Aïn El Kseïba,1928,second,13,15,4.2,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340489
+oai:u-bordeaux-montaigne.fr:340490,B8-C34,Rohia-Dj. Barbrou,1929,second,13,15,4.24,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340490
+oai:u-bordeaux-montaigne.fr:340491,B8-C35,Pichon,1928,second,13,15,4.24,measured_grid,8,17,21.6,11.57,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340491
+oai:u-bordeaux-montaigne.fr:340492,B8-C36,Kairouan,1927,second,13,15,4.2,measured_grid,8,17,21.62,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340492
+oai:u-bordeaux-montaigne.fr:340493,B8-C37,Sidi El Hani,1923,second,13,15,4.2,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340493
+oai:u-bordeaux-montaigne.fr:340494,B8-C38,Djemmal,1925,second,13,15,4.24,measured_grid,8,17,1.62,10.0,0,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340494
+oai:u-bordeaux-montaigne.fr:340495,B8-C39,Moknine,1931,second,13,15,4.24,measured_grid,8,17,21.6,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340495
+oai:u-bordeaux-montaigne.fr:340496,B9-C32,Thala,1927,second,13,15,4.24,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340496
+oai:u-bordeaux-montaigne.fr:340507,B9-C33,Ksar Tlili,1928,second,13,15,4.24,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340507
+oai:u-bordeaux-montaigne.fr:340508,B9-C34,Sbiba,1928,second,13,15,4.24,measured_grid,8,17,21.58,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340508
+oai:u-bordeaux-montaigne.fr:340509,B9-C35,Djebel Trozza,1929,second,13,15,4.24,measured_grid,8,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340509
+oai:u-bordeaux-montaigne.fr:340510,B9-C36,Pavillier,1927,second,13,15,4.24,measured_grid,8,17,20.52,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340510
+oai:u-bordeaux-montaigne.fr:340511,B9-C37,Oued Cherita,1931,second,13,15,4.24,measured_grid,8,17,21.6,12.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340511
+oai:u-bordeaux-montaigne.fr:340512,B9-C38,Kerker,1931,second,13,15,4.24,measured_grid,8,17,21.07,12.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340512
+oai:u-bordeaux-montaigne.fr:340394,B2-C35,Tebourba,1934,second,12,15,4.27,measured_grid,9,17,22.15,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340394
+oai:u-bordeaux-montaigne.fr:340396,B2-C36,Tunis,1902,second,12,15,4.26,series_median,9,17,22.13,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340396
+oai:u-bordeaux-montaigne.fr:340395,B2-C36,Tunis,1935,second,12,15,4.27,measured_grid,9,17,22.13,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340395
+oai:u-bordeaux-montaigne.fr:340409,B2-C37,La Goulette,,second,12,15,4.26,series_median,9,17,21.17,12.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340409
+oai:u-bordeaux-montaigne.fr:340407,B2-C37,La Goulette,1932,second,12,15,4.27,measured_grid,9,17,21.17,12.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340407
+oai:u-bordeaux-montaigne.fr:340410,B2-C38,Menzel Bou Zelfa,1932,second,12,15,4.27,measured_grid,9,17,22.08,12.43,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340410
+oai:u-bordeaux-montaigne.fr:340412,B3-C34,Oued-Zarga,1931,second,12,15,4.27,measured_grid,9,17,22.17,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340412
+oai:u-bordeaux-montaigne.fr:340413,B3-C35,Medjez-el-Bab,1931,second,12,15,4.26,measured_grid,9,17,22.17,11.83,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340413
+oai:u-bordeaux-montaigne.fr:340414,B3-C36,Oudna,1931,second,12,15,4.27,measured_grid,9,17,22.17,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340414
+oai:u-bordeaux-montaigne.fr:340415,B3-C37,Grombalia,1932,second,12,15,4.24,measured_grid,8,17,22.0,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340415
+oai:u-bordeaux-montaigne.fr:340427,B4-C32,Ghardimaou,1928,second,12,15,4.27,measured_grid,9,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340427
+oai:u-bordeaux-montaigne.fr:340428,B4-C33,Souk el Arba,1923,second,12,15,4.24,measured_grid,8,17,22.17,11.5,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340428
+oai:u-bordeaux-montaigne.fr:340429,B4-C34,Teboursouk,1932,second,12,15,4.27,measured_grid,9,17,21.58,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340429
+oai:u-bordeaux-montaigne.fr:340430,B4-C35,Bou Arada,1930,second,12,15,4.27,measured_grid,9,17,22.13,11.83,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340430
+oai:u-bordeaux-montaigne.fr:340431,B4-C36,Zaghouan,1902,second,12,15,4.27,measured_grid,9,17,21.58,10.83,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340431
+oai:u-bordeaux-montaigne.fr:340432,B4-C37,Bou Ficha,1932,second,12,15,4.27,measured_grid,9,17,21.6,11.88,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340432
+oai:u-bordeaux-montaigne.fr:340433,B4-C38,Hammamet,1931,second,12,15,4.27,measured_grid,9,17,21.6,10.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340433
+oai:u-bordeaux-montaigne.fr:340434,B5-C32,Ouargha,,second,12,15,4.27,measured_grid,9,17,21.58,11.35,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340434
+oai:u-bordeaux-montaigne.fr:340435,B5-C33,Nebeur,1924,second,12,15,4.27,measured_grid,9,17,21.62,11.2,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340435
+oai:u-bordeaux-montaigne.fr:340447,B5-C35,Djebel Mansour,1930,second,12,15,4.27,measured_grid,9,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340447
+oai:u-bordeaux-montaigne.fr:340448,B5-C36,Djebel Fkirine,1930,second,12,15,4.27,measured_grid,9,17,21.6,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340448
+oai:u-bordeaux-montaigne.fr:340450,B5-C37,Enfida,,second,12,15,4.26,series_median,9,17,21.6,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340450
+oai:u-bordeaux-montaigne.fr:340449,B5-C37,Enfidaville,1930,second,12,15,4.27,measured_grid,9,17,21.6,11.0,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340449
+oai:u-bordeaux-montaigne.fr:340453,B6-C34,Siliana,1931,second,12,15,4.27,measured_grid,9,17,21.6,11.33,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340453
+oai:u-bordeaux-montaigne.fr:340454,B6-C35,Djebel Bargou,1931,second,12,15,4.26,measured_grid,9,17,21.6,11.87,1,kilometric_grid (bbox usable as fallback),https://1886.u-bordeaux-montaigne.fr/s/1886/item/340454

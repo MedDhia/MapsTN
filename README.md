@@ -30,6 +30,11 @@ a relevance score.
 | **1:50 000 series report** | [`docs/SERIES-50K.md`](docs/SERIES-50K.md) |
 | **Objects and coordinate precision** | [`docs/OBJECT-EXTRACTION.md`](docs/OBJECT-EXTRACTION.md) |
 | **Per-sheet precision (CSV)** | [`data/tunisia_50k_precision.csv`](data/tunisia_50k_precision.csv) |
+| **Dataset construction plan** | [`docs/DATASET-PLAN.md`](docs/DATASET-PLAN.md) |
+| **Detected grid, per sheet (CSV)** | [`data/sheet_grid.csv`](data/sheet_grid.csv) |
+| **Marginalia, per sheet (CSV)** | [`data/sheet_margins.csv`](data/sheet_margins.csv) |
+| **Legend vocabulary** | [`config/legend_vocabulary.json`](config/legend_vocabulary.json) |
+| **Scan locations** | [`data/sheet_images.json`](data/sheet_images.json) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
 
@@ -404,13 +409,15 @@ neatline's Lambert coordinate printed **to the metre** (`531.624 m`). There is
 also a centesimal graticule in grades from the Paris meridian. Roughly 30 usable
 control points per sheet.
 
-**Scan resolution, measured two ways that agree within 4.2%:** 311 dpi from
-sheet size and pixel count, 298 dpi from the labelled kilometre grid at
-234.7 px/km. So **1 pixel ≈ 4.1–4.3 m on the ground**.
+**Scan resolution, now measured on 85 sheets** from the printed kilometre grid:
+median **298 dpi** (297–302), so **1 pixel = 4.26 m on the ground**. This
+replaces the earlier 311 dpi, which came from the catalogued paper size — that
+is rounded to the centimetre and describes the sheet rather than the printed
+image.
 
 | Control used | Positional uncertainty |
 | --- | --- |
-| Printed kilometric grid | **±10–25 m** |
+| Printed kilometric grid | **±9–25 m** |
 | Catalogue bounding box alone | **up to ±775 m lon, ±926 m lat** on 29 of 93 sheets |
 
 The bounding box is for indexing; the printed grid is for georeferencing. Below
@@ -429,11 +436,41 @@ the indigenous centre.
 sheet 2.4 km wide. The source record's east bound is a typo; flagged as
 `extent_plausible = 0`.
 
-**Scaling this to all 103 sheets needs a pipeline this repo does not contain** —
-grid and neatline detection, symbol classification, and OCR of heavily
-abbreviated French (`Sᵈⁱ`, `Mᵛᵉᵗ`, `Kᵃᵗ`). Colour thresholding for the grid was
-tried and abandoned: the grid's red is the same red as roads and built-up
-hatching.
+## Building a dataset from the whole series
+
+Plan and findings in [`docs/DATASET-PLAN.md`](docs/DATASET-PLAN.md). All 96
+partner sheets have now been downloaded and read.
+
+**Selecting on the catalogue's projection statement gives the wrong
+population.** Only 20 of 103 records state `proj. Bonne, ellipsoïde de Clarke
+1880`; the other 83 say nothing, and across all 96 cached catalogue pages the
+words *carroyage*, *Lambert*, *quadrillage*, *méridien* and *grade* never appear.
+The population has to be defined from the sheets, where **85 of 96 carry a
+printed Lambert kilometric grid** — 63 stating `(NORD TUNISIE)`, 4
+`(SUD TUNISIE)`. Bonne is the projection the sheet is drawn on; the Lambert
+carroyage is a red military grid overprinted from the 1920s. The 11 sheets
+without it are the pre-1920s editions.
+
+**Grid detection works.** [`scripts/detect_sheet_grid.py`](scripts/detect_sheet_grid.py)
+finds the grid by shear-and-project rather than by colour threshold, then OCRs
+the red margin type for the zone statement and the absolute grid labels
+(`389 390 391 …`). That is a full georeference with no human picking control
+points.
+
+**The catalogue date is not the observation date.** Reading the survey credits
+block off each sheet, the catalogue year runs a **median 23 years later than the
+fieldwork** (max 46), and **41 of 65 legible sheets record fieldwork from the
+1880s–1900s**. Kairouan is catalogued 1927 and was surveyed in 1898; Médenine is
+catalogued 1933 and was surveyed in 1900–07. See
+[`data/sheet_margins.csv`](data/sheet_margins.csv).
+
+**The content is richer than the legend admits.** Cemeteries are typed by
+confession (*chrétien*, *musulman*, *israélite*); land is divided into dashed
+parcels named by holding lineage (*Dj.ane Kouidene Oulad Nedjem*, *Henchir ech
+Cherfi*); tribal territory is named in spaced capitals (*BLED EL ARSAMA*), and
+*Bled* against *Melk* is the *arch*/*melk* tenure distinction. Olive trees and
+rural houses are drawn one by one, so density is countable. Full taxonomy in
+[`config/legend_vocabulary.json`](config/legend_vocabulary.json).
 
 ## Data dictionary
 
@@ -470,12 +507,26 @@ python3 scripts/build_inventory.py           # regenerate docs/INVENTORY.md
 python3 scripts/code_quality.py              # regenerate the quality coding
 python3 scripts/code_geospatial.py           # regenerate the geo/thematic coding
 python3 scripts/code_features_regions.py     # regenerate the feature/region coding
+python3 scripts/fetch_sheet_images.py        # locate the full-resolution scans
 ```
 
-All scripts are Python 3 standard library only — no dependencies. To widen
-coverage, add toponyms or spelling variants to
-[`config/queries.json`](config/queries.json) and re-run; the harvester
-deduplicates across queries.
+Those need only the Python 3 standard library. To widen coverage, add toponyms
+or spelling variants to [`config/queries.json`](config/queries.json) and re-run;
+the harvester deduplicates across queries.
+
+The image analysis needs `pillow`, `numpy`, `pytesseract` and the `tesseract-ocr`
+binary with French data, plus the scans on disk (0.71 GB; the URLs are in
+[`data/sheet_images.json`](data/sheet_images.json)):
+
+```bash
+python3 scripts/detect_sheet_grid.py --images <dir of record_id.jpg>
+python3 scripts/read_sheet_margins.py --images <dir of record_id.jpg>
+python3 scripts/coordinate_precision.py      # uses the measured grid spacing
+```
+
+Both image scripts cache their per-sheet measurements and take `--recompute`,
+which re-applies the current rules to the cache without re-reading the scans —
+worth knowing, because a full pass is about an hour.
 
 ## Licence
 
