@@ -1,0 +1,674 @@
+{
+  "oai:u-bordeaux-montaigne.fr:340367": {
+    "designation": "B0-C33",
+    "sheet_name": "Cap Negro",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340367",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/f3fd291975e3521dc82e6e0c9773e32c2bebae8a.jpg",
+    "stated_bytes": 5270000
+  },
+  "oai:u-bordeaux-montaigne.fr:340354": {
+    "designation": "B00-C34",
+    "sheet_name": "Kef Abbed",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340354",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/a128b5011f8b2f66fb4588aa4b0e019877b6ccf7.jpg",
+    "stated_bytes": 4380000
+  },
+  "oai:u-bordeaux-montaigne.fr:340368": {
+    "designation": "B0-C34",
+    "sheet_name": "Oued Sedjenane",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340368",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/990d143a58a87f70c9964f2b470e583ce9293150.jpg",
+    "stated_bytes": 8570000
+  },
+  "oai:u-bordeaux-montaigne.fr:340355": {
+    "designation": "B0-C35",
+    "sheet_name": "Bizerte",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340355",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/151fa32fda60b6a18fc9449ac50389b14baf0a8a.jpg",
+    "stated_bytes": 6360000
+  },
+  "oai:u-bordeaux-montaigne.fr:340369": {
+    "designation": "B0-C35",
+    "sheet_name": "Djebel Ichkeul",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340369",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/2688aecdb327cd9c44d2d0a62391477f96b000ec.jpg",
+    "stated_bytes": 7300000
+  },
+  "oai:u-bordeaux-montaigne.fr:340356": {
+    "designation": "B00-C36",
+    "sheet_name": "Metline",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340356",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/2972e3bef7718612ec38b78237ca0ddb9cddae13.jpg",
+    "stated_bytes": 4420000
+  },
+  "oai:u-bordeaux-montaigne.fr:340371": {
+    "designation": "B0-C36",
+    "sheet_name": "Porto-Farina",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340371",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/569ba68dd907bb048897e86917c986b9a58820ab.jpg",
+    "stated_bytes": 7460000
+  },
+  "oai:u-bordeaux-montaigne.fr:340370": {
+    "designation": "B0-C36",
+    "sheet_name": "Porto-Farina",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340370",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/83ca43cebb6820dc29f0663681bd11b968212c29.jpg",
+    "stated_bytes": 6440000
+  },
+  "oai:u-bordeaux-montaigne.fr:340372": {
+    "designation": "B0-C38",
+    "sheet_name": "Sidi Daoud",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340372",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/35f20957acda8cc5db3c0efdc5706069a2a3e847.jpg",
+    "stated_bytes": 4130000
+  },
+  "oai:u-bordeaux-montaigne.fr:340373": {
+    "designation": "B0-C39",
+    "sheet_name": "Cap Bon",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340373",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/d673f1435171996e797f9268d3b1a74f482b5222.jpg",
+    "stated_bytes": 5350000
+  },
+  "oai:u-bordeaux-montaigne.fr:340374": {
+    "designation": "B1-C33",
+    "sheet_name": "Nefza",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340374",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/f925e8d100ed505e2ed74c81a48aa6ab2d27948f.jpg",
+    "stated_bytes": 8109999
+  },
+  "oai:u-bordeaux-montaigne.fr:340471": {
+    "designation": "B1-C33",
+    "sheet_name": "Ebba Ksour",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340471",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/cde717a62f55238f2a796ccc5aec7192e1d3cd46.jpg",
+    "stated_bytes": 8530000
+  },
+  "oai:u-bordeaux-montaigne.fr:340375": {
+    "designation": "B1-C34",
+    "sheet_name": "Hedil",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340375",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/fc3cd2283840644a86787cb293d39cf7d828ae92.jpg",
+    "stated_bytes": 9430000
+  },
+  "oai:u-bordeaux-montaigne.fr:340376": {
+    "designation": "B1-C35",
+    "sheet_name": "Mateur",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340376",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/db852cb16156777e0ae0a9b7ba647edf4b370717.jpg",
+    "stated_bytes": 7970000
+  },
+  "oai:u-bordeaux-montaigne.fr:340388": {
+    "designation": "B1-C36",
+    "sheet_name": "El Ariana",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340388",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/8326b92a4bbe20c5f42715ee4d303f273d95e13d.jpg",
+    "stated_bytes": 6820000
+  },
+  "oai:u-bordeaux-montaigne.fr:340387": {
+    "designation": "B1-C36",
+    "sheet_name": "Ariana",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340387",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/94a027bfca835c1520c371c5a18fe749d438d569.jpg",
+    "stated_bytes": 6330000
+  },
+  "oai:u-bordeaux-montaigne.fr:340390": {
+    "designation": "B1-C37",
+    "sheet_name": "La Marsa",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340390",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/096dda7736a76a7421819dae17bb342f2323879a.jpg",
+    "stated_bytes": 6250000
+  },
+  "oai:u-bordeaux-montaigne.fr:340389": {
+    "designation": "B1-C37",
+    "sheet_name": "La Marsa",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340389",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/afb7881eb1cbd6d074109439390619b7e634a54f.jpg",
+    "stated_bytes": 4360000
+  },
+  "oai:u-bordeaux-montaigne.fr:340391": {
+    "designation": "B1-C38",
+    "sheet_name": "Tazoghrane",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340391",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/0b0c02b01346d4bd131d94036e8b53e87cb1339d.jpg",
+    "stated_bytes": 7580000
+  },
+  "oai:u-bordeaux-montaigne.fr:340392": {
+    "designation": "B1-C39",
+    "sheet_name": "Kelibia",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340392",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/e17b8742074fa49c3525b32e637baa6794a4ade9.jpg",
+    "stated_bytes": 5830000
+  },
+  "oai:u-bordeaux-montaigne.fr:340393": {
+    "designation": "B2-C34",
+    "sheet_name": "Béja",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340393",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/0e4e9127908e0757753e127ac5a7063f2944ecec.jpg",
+    "stated_bytes": 8289999
+  },
+  "oai:u-bordeaux-montaigne.fr:340394": {
+    "designation": "B2-C35",
+    "sheet_name": "Tebourba",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340394",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/826930a63753feea4dd747e25bf25940ed6a3b19.jpg",
+    "stated_bytes": 8199999
+  },
+  "oai:u-bordeaux-montaigne.fr:340396": {
+    "designation": "B2-C36",
+    "sheet_name": "Tunis",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340396",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/a50c01b201f7f6269eadd12d4bfd5171dc4af767.jpg",
+    "stated_bytes": 7130000
+  },
+  "oai:u-bordeaux-montaigne.fr:340395": {
+    "designation": "B2-C36",
+    "sheet_name": "Tunis",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340395",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/f17b68cf74ba13f0e4d64b90f9f7694ce8d2707e.jpg",
+    "stated_bytes": 7290000
+  },
+  "oai:u-bordeaux-montaigne.fr:340409": {
+    "designation": "B2-C37",
+    "sheet_name": "La Goulette",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340409",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/d5d82eafab5b20c150f5bf51312703a53bc0322d.jpg",
+    "stated_bytes": 6300000
+  },
+  "oai:u-bordeaux-montaigne.fr:340407": {
+    "designation": "B2-C37",
+    "sheet_name": "La Goulette",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340407",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/036236cb92926c10b06fd50faf060388b83155f5.jpg",
+    "stated_bytes": 6460000
+  },
+  "oai:u-bordeaux-montaigne.fr:340410": {
+    "designation": "B2-C38",
+    "sheet_name": "Menzel Bou Zelfa",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340410",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/670114679c177f56d5101f00a3c0f9fd8d375e4b.jpg",
+    "stated_bytes": 8090000
+  },
+  "oai:u-bordeaux-montaigne.fr:340411": {
+    "designation": "B2-C39",
+    "sheet_name": "Mennzel Heurr",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340411",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/30276d1f3740d938eedf78a6c6041a1daa94f5ba.jpg",
+    "stated_bytes": 4150000
+  },
+  "oai:u-bordeaux-montaigne.fr:340412": {
+    "designation": "B3-C34",
+    "sheet_name": "Oued-Zarga",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340412",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/b3f88f2db6448724303d16a1fb46bcdf9cf83121.jpg",
+    "stated_bytes": 8400000
+  },
+  "oai:u-bordeaux-montaigne.fr:340413": {
+    "designation": "B3-C35",
+    "sheet_name": "Medjez-el-Bab",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340413",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/17f2a18c561766d64ca62c17200058ae458c406f.jpg",
+    "stated_bytes": 7590000
+  },
+  "oai:u-bordeaux-montaigne.fr:340414": {
+    "designation": "B3-C36",
+    "sheet_name": "Oudna",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340414",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/5ef2060e5153f04dc2852b7a8a94924d4dc9fcfa.jpg",
+    "stated_bytes": 8300000
+  },
+  "oai:u-bordeaux-montaigne.fr:340415": {
+    "designation": "B3-C37",
+    "sheet_name": "Grombalia",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340415",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/27bb4733541b36f62d9804e15f0f8e1305098587.jpg",
+    "stated_bytes": 8890000
+  },
+  "oai:u-bordeaux-montaigne.fr:340416": {
+    "designation": "B3-C38",
+    "sheet_name": "Nabeul",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340416",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/e5eadb30978d58767831fc6022921a89dec39157.jpg",
+    "stated_bytes": 7610000
+  },
+  "oai:u-bordeaux-montaigne.fr:340427": {
+    "designation": "B4-C32",
+    "sheet_name": "Ghardimaou",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340427",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/73f8ba420102aa8d88a0ba08970b3d08bbc6f4dd.jpg",
+    "stated_bytes": 7920000
+  },
+  "oai:u-bordeaux-montaigne.fr:340428": {
+    "designation": "B4-C33",
+    "sheet_name": "Souk el Arba",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340428",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/80b23ea9c8bd5f1806cc0cf6320f08eacdfaa7fb.jpg",
+    "stated_bytes": 7800000
+  },
+  "oai:u-bordeaux-montaigne.fr:340429": {
+    "designation": "B4-C34",
+    "sheet_name": "Teboursouk",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340429",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/b22f1e84a2670babc549f64c437e9038d2d79d9a.jpg",
+    "stated_bytes": 8820000
+  },
+  "oai:u-bordeaux-montaigne.fr:340430": {
+    "designation": "B4-C35",
+    "sheet_name": "Bou Arada",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340430",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/48879763dcbf09475ba37e5a3040b1529799e7e2.jpg",
+    "stated_bytes": 7740000
+  },
+  "oai:u-bordeaux-montaigne.fr:340431": {
+    "designation": "B4-C36",
+    "sheet_name": "Zaghouan",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340431",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/ed101dc87d5c96dd85e34f34bd42b498b92fdd8a.jpg",
+    "stated_bytes": 8029999
+  },
+  "oai:u-bordeaux-montaigne.fr:340432": {
+    "designation": "B4-C37",
+    "sheet_name": "Bou Ficha",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340432",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/76c2c5d718da87adbe23381f2e593958e7a2f5cd.jpg",
+    "stated_bytes": 7800000
+  },
+  "oai:u-bordeaux-montaigne.fr:340433": {
+    "designation": "B4-C38",
+    "sheet_name": "Hammamet",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340433",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/501f11b1ba9801043a23c20161aac5209ba7925a.jpg",
+    "stated_bytes": 4070000
+  },
+  "oai:u-bordeaux-montaigne.fr:340434": {
+    "designation": "B5-C32",
+    "sheet_name": "Ouargha",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340434",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/e8c10c451ecb8893a06170e5b126353923263859.jpg",
+    "stated_bytes": 9140000
+  },
+  "oai:u-bordeaux-montaigne.fr:340435": {
+    "designation": "B5-C33",
+    "sheet_name": "Nebeur",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340435",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/041f8aa65e945a424d9c579691060c33892be188.jpg",
+    "stated_bytes": 9230000
+  },
+  "oai:u-bordeaux-montaigne.fr:340436": {
+    "designation": "B5-C34",
+    "sheet_name": "Gafour",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340436",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/84c72004d5783fb1c1a83f1fba7a88f988a408c2.jpg",
+    "stated_bytes": 7730000
+  },
+  "oai:u-bordeaux-montaigne.fr:340447": {
+    "designation": "B5-C35",
+    "sheet_name": "Djebel Mansour",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340447",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/872f6fcbaa8e298805dd92c4f2b485c753995dcb.jpg",
+    "stated_bytes": 8840000
+  },
+  "oai:u-bordeaux-montaigne.fr:340448": {
+    "designation": "B5-C36",
+    "sheet_name": "Djebel Fkirine",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340448",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/b973e2ff5e8806ad98e05f7438dd249e9ab1447e.jpg",
+    "stated_bytes": 8870000
+  },
+  "oai:u-bordeaux-montaigne.fr:340450": {
+    "designation": "B5-C37",
+    "sheet_name": "Enfida",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340450",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/374a76aca669cf0281f00d56d4bc7219221c4d84.jpg",
+    "stated_bytes": 7890000
+  },
+  "oai:u-bordeaux-montaigne.fr:340449": {
+    "designation": "B5-C37",
+    "sheet_name": "Enfidaville",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340449",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/394b893ccb48f886676737b67232c72073e793e1.jpg",
+    "stated_bytes": 7300000
+  },
+  "oai:u-bordeaux-montaigne.fr:340451": {
+    "designation": "B6-C32",
+    "sheet_name": "Le Kef",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340451",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/ce44a3d923963ead194523c7e0ba1554e428c21b.jpg",
+    "stated_bytes": 8279999
+  },
+  "oai:u-bordeaux-montaigne.fr:340452": {
+    "designation": "B6-C33",
+    "sheet_name": "Les Salines",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340452",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/20e64a553dbc7a658ac68080052087a241386353.jpg",
+    "stated_bytes": 8230000
+  },
+  "oai:u-bordeaux-montaigne.fr:340453": {
+    "designation": "B6-C34",
+    "sheet_name": "Siliana",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340453",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/e147056ad0569324018ce5dd650beaba98d6d773.jpg",
+    "stated_bytes": 8700000
+  },
+  "oai:u-bordeaux-montaigne.fr:340454": {
+    "designation": "B6-C35",
+    "sheet_name": "Djebel Bargou",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340454",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/1c080eba8cf15d6db714af2c11c1fe9340fe1ea5.jpg",
+    "stated_bytes": 9060000
+  },
+  "oai:u-bordeaux-montaigne.fr:340455": {
+    "designation": "B6-C36",
+    "sheet_name": "Djebibina",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340455",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/31eac67aefec95f9057b3d333c078864cc191d3f.jpg",
+    "stated_bytes": 7620000
+  },
+  "oai:u-bordeaux-montaigne.fr:340467": {
+    "designation": "B6-C37",
+    "sheet_name": "Sidi Bou Ali",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340467",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/a96386d54b9774ba0117cb62174db80122c7a64e.jpg",
+    "stated_bytes": 6770000
+  },
+  "oai:u-bordeaux-montaigne.fr:340474": {
+    "designation": "B6-C37",
+    "sheet_name": "Aïne Djeloula",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340474",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/20556b1ae984a4f92607d5cd72dcde60da39aa2a.jpg",
+    "stated_bytes": 6460000
+  },
+  "oai:u-bordeaux-montaigne.fr:340456": {
+    "designation": "B6-C37",
+    "sheet_name": "Sidi Bou Ali",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340456",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/0a0413baddf0cbd4039487b0ef8617719ecda7b3.jpg",
+    "stated_bytes": 6590000
+  },
+  "oai:u-bordeaux-montaigne.fr:340469": {
+    "designation": "B6-C38",
+    "sheet_name": "Halk El Mennzel",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340469",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/51f821df59a4a21fc5dd48b1c62375713cb164bb.jpg",
+    "stated_bytes": 6080000
+  },
+  "oai:u-bordeaux-montaigne.fr:340468": {
+    "designation": "B6-C38",
+    "sheet_name": "Halk El Mennzel",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340468",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/a9a38c0819eb714ebccbd4005ed9a6ed4385e18a.jpg",
+    "stated_bytes": 4120000
+  },
+  "oai:u-bordeaux-montaigne.fr:340470": {
+    "designation": "B7-C32",
+    "sheet_name": "Tadjerouine",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340470",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/befbd44c43e496f5f7b7ad6839925ea42e5e775c.jpg",
+    "stated_bytes": 8480000
+  },
+  "oai:u-bordeaux-montaigne.fr:340472": {
+    "designation": "B7-C34",
+    "sheet_name": "Maktar",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340472",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/c23edc8999e6df83833f7d1a33787add95d04143.jpg",
+    "stated_bytes": 9580000
+  },
+  "oai:u-bordeaux-montaigne.fr:340473": {
+    "designation": "B7-C35",
+    "sheet_name": "Djebel Serdj",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340473",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/0efb558d53f1c85818bcbdcf0a261fea60f12408.jpg",
+    "stated_bytes": 9190000
+  },
+  "oai:u-bordeaux-montaigne.fr:340475": {
+    "designation": "B7-C37",
+    "sheet_name": "Sebkra Kelbia",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340475",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/0b4eb535bf4695ad5b7174e8a1a8e671119237a4.jpg",
+    "stated_bytes": 7210000
+  },
+  "oai:u-bordeaux-montaigne.fr:340487": {
+    "designation": "B7-C38",
+    "sheet_name": "Sousse",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340487",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/d2469c2861a03dba5bf1b42a34570c39c3a74c31.jpg",
+    "stated_bytes": 8160000
+  },
+  "oai:u-bordeaux-montaigne.fr:340476": {
+    "designation": "B7-C38",
+    "sheet_name": "Sousse",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340476",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/ac8a605b9e5aa1e51963daec01a54083d2156eec.jpg",
+    "stated_bytes": 6350000
+  },
+  "oai:u-bordeaux-montaigne.fr:340488": {
+    "designation": "B8-C32",
+    "sheet_name": "Kalaat es Senam",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340488",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/1a48ddc905373f19599cad2836fa71fd67d34010.jpg",
+    "stated_bytes": 9580000
+  },
+  "oai:u-bordeaux-montaigne.fr:340489": {
+    "designation": "B8-C33",
+    "sheet_name": "Aïn El Kseïba",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340489",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/0ba4a6014eeb0fdb7540165d3ff520c8a30df2bc.jpg",
+    "stated_bytes": 8039999
+  },
+  "oai:u-bordeaux-montaigne.fr:340490": {
+    "designation": "B8-C34",
+    "sheet_name": "Rohia-Dj. Barbrou",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340490",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/210d384a61b227da2116a4d27093d873fcdcb3a9.jpg",
+    "stated_bytes": 8940000
+  },
+  "oai:u-bordeaux-montaigne.fr:340491": {
+    "designation": "B8-C35",
+    "sheet_name": "Pichon",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340491",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/98d6e0ec3be830dcdf967b57cee83b4abafa9d20.jpg",
+    "stated_bytes": 8990000
+  },
+  "oai:u-bordeaux-montaigne.fr:340492": {
+    "designation": "B8-C36",
+    "sheet_name": "Kairouan",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340492",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/9da7c981a848a1034d4872830d46564c951464dc.jpg",
+    "stated_bytes": 6710000
+  },
+  "oai:u-bordeaux-montaigne.fr:340493": {
+    "designation": "B8-C37",
+    "sheet_name": "Sidi El Hani",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340493",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/17edc8d92424feb45f44e6c8cade139731ab264a.jpg",
+    "stated_bytes": 6170000
+  },
+  "oai:u-bordeaux-montaigne.fr:340494": {
+    "designation": "B8-C38",
+    "sheet_name": "Djemmal",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340494",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/6b150cbf0dd2c9191aca737dcc190936015bbb48.jpg",
+    "stated_bytes": 7290000
+  },
+  "oai:u-bordeaux-montaigne.fr:340495": {
+    "designation": "B8-C39",
+    "sheet_name": "Moknine",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340495",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/bdf45d76869e49dc926743e5bbc86be8ffb1ab8b.jpg",
+    "stated_bytes": 6200000
+  },
+  "oai:u-bordeaux-montaigne.fr:340496": {
+    "designation": "B9-C32",
+    "sheet_name": "Thala",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340496",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/ce34d4d58f928ac3cae354d51b0f4906da953625.jpg",
+    "stated_bytes": 8880000
+  },
+  "oai:u-bordeaux-montaigne.fr:340507": {
+    "designation": "B9-C33",
+    "sheet_name": "Ksar Tlili",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340507",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/d9e4605bb4d92b74db7837eb514577ef9a95b8d9.jpg",
+    "stated_bytes": 8450000
+  },
+  "oai:u-bordeaux-montaigne.fr:340508": {
+    "designation": "B9-C34",
+    "sheet_name": "Sbiba",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340508",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/79af3fd15d5633f351f8582be7757d25e48323c7.jpg",
+    "stated_bytes": 8570000
+  },
+  "oai:u-bordeaux-montaigne.fr:340509": {
+    "designation": "B9-C35",
+    "sheet_name": "Djebel Trozza",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340509",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/cd8f30cb752f1c863e00e51deb47fd693a9c876b.jpg",
+    "stated_bytes": 8310000
+  },
+  "oai:u-bordeaux-montaigne.fr:340510": {
+    "designation": "B9-C36",
+    "sheet_name": "Pavillier",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340510",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/5f07ce04d25b63280fbb7e6a1c0336166881c505.jpg",
+    "stated_bytes": 6070000
+  },
+  "oai:u-bordeaux-montaigne.fr:340511": {
+    "designation": "B9-C37",
+    "sheet_name": "Oued Cherita",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340511",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/b8a38970c76e194b1f4d51194c1e6d3c66b24076.jpg",
+    "stated_bytes": 6180000
+  },
+  "oai:u-bordeaux-montaigne.fr:340512": {
+    "designation": "B9-C38",
+    "sheet_name": "Kerker",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340512",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/22a5bf7ff261e1f02a64b3ced189db66b2356eb7.jpg",
+    "stated_bytes": 6710000
+  },
+  "oai:u-bordeaux-montaigne.fr:340513": {
+    "designation": "B10-C32",
+    "sheet_name": "Djebel Bireno",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340513",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/2ad4b8fb201a2e146ec48a6533174b91337ff51e.jpg",
+    "stated_bytes": 8160000
+  },
+  "oai:u-bordeaux-montaigne.fr:340514": {
+    "designation": "B10-C33",
+    "sheet_name": "Djebel Semmama",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340514",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/59231086245477f7c3ca0e6f80cff56671279388.jpg",
+    "stated_bytes": 7910000
+  },
+  "oai:u-bordeaux-montaigne.fr:340515": {
+    "designation": "B10-C34",
+    "sheet_name": "Djebel Mrhila",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340515",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/371028102da5739a48b18f6cb0dd453c9929c085.jpg",
+    "stated_bytes": 8039999
+  },
+  "oai:u-bordeaux-montaigne.fr:340516": {
+    "designation": "B10-C35",
+    "sheet_name": "Hadjeb el Aïoun",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340516",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/957c8a2b968819f9c49503c64a9632f94e155c55.jpg",
+    "stated_bytes": 7870000
+  },
+  "oai:u-bordeaux-montaigne.fr:340527": {
+    "designation": "B10-C36",
+    "sheet_name": "Nasr Allah",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340527",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/ff2b1612f6305a72cc59f9e41c5421e7fdccdc55.jpg",
+    "stated_bytes": 7160000
+  },
+  "oai:u-bordeaux-montaigne.fr:340528": {
+    "designation": "B10-C37",
+    "sheet_name": "Chorbane",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340528",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/628bea9b302f32817423d10857e12ae87b53d599.jpg",
+    "stated_bytes": 7440000
+  },
+  "oai:u-bordeaux-montaigne.fr:340529": {
+    "designation": "B10-C38",
+    "sheet_name": "El Djem",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340529",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/29f8e766ba379368bfb21da4e4a60931765d327e.jpg",
+    "stated_bytes": 6240000
+  },
+  "oai:u-bordeaux-montaigne.fr:340530": {
+    "designation": "B10-C39",
+    "sheet_name": "Chebba",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340530",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/216c901913bf7e512cf05636808fd1c8478971b2.jpg",
+    "stated_bytes": 6410000
+  },
+  "oai:u-bordeaux-montaigne.fr:340531": {
+    "designation": "B11-C32",
+    "sheet_name": "Bou Chebka",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340531",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/0ed355c46e513016cf97c4ea75e10f26f4b7b0be.jpg",
+    "stated_bytes": 8289999
+  },
+  "oai:u-bordeaux-montaigne.fr:340532": {
+    "designation": "B11-C33",
+    "sheet_name": "Kasserine",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340532",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/6ac5795d15169bfc2a83f0cdadd552d4c410dc35.jpg",
+    "stated_bytes": 8160000
+  },
+  "oai:u-bordeaux-montaigne.fr:340629": {
+    "designation": "",
+    "sheet_name": "",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340629",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/2f8e00cd9e3dc0f3d1773926547ee9b98b044022.jpg",
+    "stated_bytes": 4250000
+  },
+  "oai:u-bordeaux-montaigne.fr:340616": {
+    "designation": "",
+    "sheet_name": "",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340616",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/d370718188d675510ffb90df975b6f4172c325b6.jpg",
+    "stated_bytes": 8220000
+  },
+  "oai:u-bordeaux-montaigne.fr:340627": {
+    "designation": "",
+    "sheet_name": "",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340627",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/bc32296518c0fce9b8c4729a32e9eeaba1033c31.jpg",
+    "stated_bytes": 6760000
+  },
+  "oai:u-bordeaux-montaigne.fr:340628": {
+    "designation": "",
+    "sheet_name": "",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340628",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/12808dfaef6caface700dcfdd0502bc71b3efab6.jpg",
+    "stated_bytes": 6320000
+  },
+  "oai:u-bordeaux-montaigne.fr:340533": {
+    "designation": "",
+    "sheet_name": "Djebeniana",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340533",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/7624aba88906ac883230df8afeb7d1c50edfdbf9.jpg",
+    "stated_bytes": 6940000
+  },
+  "oai:u-bordeaux-montaigne.fr:340534": {
+    "designation": "",
+    "sheet_name": "",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340534",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/8a7b0db0f912b1a153820f6deca4f2e2cfc7b568.jpg",
+    "stated_bytes": 9330000
+  },
+  "oai:u-bordeaux-montaigne.fr:340535": {
+    "designation": "",
+    "sheet_name": "",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340535",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/4c72579566aae6b0aa604e964ceb82e50ccb1157.jpg",
+    "stated_bytes": 7900000
+  },
+  "oai:u-bordeaux-montaigne.fr:340615": {
+    "designation": "",
+    "sheet_name": "",
+    "item_url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340615",
+    "image_url": "https://1886.u-bordeaux-montaigne.fr/files/original/92bff22e6f5546b93715682231d64bf671ffc846.jpg",
+    "stated_bytes": 8000000
+  }
+}

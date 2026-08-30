@@ -1,0 +1,97 @@
+record_id,designation,sheet_name,revision_year,has_kilometric_grid,grid_basis,lambert_zone,lambert_zone_basis,grid_wording,px_per_km,scan_dpi,metres_per_px,grid_rotation_deg,easting_lines,northing_lines,gap_iqr_px,easting_label_min_km,easting_label_max_km,width_px,height_px
+oai:u-bordeaux-montaigne.fr:340354,B00-C34,Kef Abbed,1931,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,32,23,0.0,,,9336,6984
+oai:u-bordeaux-montaigne.fr:340355,B0-C35,Bizerte,1936,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,33,21,1.0,474,481,9304,6912
+oai:u-bordeaux-montaigne.fr:340356,B00-C36,Metline,,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.5,33,22,1.0,,,9352,6992
+oai:u-bordeaux-montaigne.fr:340367,B0-C33,Cap Negro,1922,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.5,32,21,1.0,410,423,8976,6584
+oai:u-bordeaux-montaigne.fr:340368,B0-C34,Oued Sedjenane,1932,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,4.25,34,22,0.0,,,9008,6872
+oai:u-bordeaux-montaigne.fr:340369,B0-C35,Djebel Ichkeul,1936,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,4.38,32,21,0.5,485,495,9040,6888
+oai:u-bordeaux-montaigne.fr:340370,B0-C36,Porto-Farina,1935,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,4.25,30,21,0.0,,,9224,6824
+oai:u-bordeaux-montaigne.fr:340371,B0-C36,Porto-Farina,1902,0,not_detected,nord,inferred_from_latitude,,,,,3.5,21,9,30.8,,,9272,6768
+oai:u-bordeaux-montaigne.fr:340372,B0-C38,Sidi Daoud,1932,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.5,33,22,1.0,580,592,9248,6904
+oai:u-bordeaux-montaigne.fr:340373,B0-C39,Cap Bon,1932,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.38,33,23,0.0,,,9096,6872
+oai:u-bordeaux-montaigne.fr:340374,B1-C33,Nefza,1922,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,0.38,32,22,0.0,48,71,9304,6952
+oai:u-bordeaux-montaigne.fr:340375,B1-C34,Hedil,1932,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.0,33,22,0.2,,,9248,6888
+oai:u-bordeaux-montaigne.fr:340376,B1-C35,Mateur,1936,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.5,33,21,1.0,470,498,9384,6936
+oai:u-bordeaux-montaigne.fr:340387,B1-C36,Ariana,1936,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.38,33,22,1.0,500,524,9232,6936
+oai:u-bordeaux-montaigne.fr:340388,B1-C36,El Ariana,1902,0,not_detected,,,,,,,-2.38,8,12,195.0,,,9360,6992
+oai:u-bordeaux-montaigne.fr:340389,B1-C37,La Marsa,1932,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.5,27,23,1.0,,,9312,6952
+oai:u-bordeaux-montaigne.fr:340390,B1-C37,La Marsa,1902,0,not_detected,nord,inferred_from_latitude,,,,,-1.25,11,7,91.8,,,9512,7040
+oai:u-bordeaux-montaigne.fr:340391,B1-C38,Tazoghrane,1932,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,4.5,34,22,1.0,570,585,9272,6872
+oai:u-bordeaux-montaigne.fr:340392,B1-C39,Kelibia,1932,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.38,33,23,0.0,614,618,9040,6872
+oai:u-bordeaux-montaigne.fr:340393,B2-C34,Béja,1902,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.5,32,22,0.5,,,8952,6712
+oai:u-bordeaux-montaigne.fr:340394,B2-C35,Tebourba,1934,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.5,33,22,1.0,481,490,9272,6888
+oai:u-bordeaux-montaigne.fr:340395,B2-C36,Tunis,1935,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,31,21,0.0,500,514,8640,6168
+oai:u-bordeaux-montaigne.fr:340396,B2-C36,Tunis,1902,0,not_detected,nord,inferred_from_latitude,,,,,-3.75,17,14,60.5,,,8152,6136
+oai:u-bordeaux-montaigne.fr:340407,B2-C37,La Goulette,1932,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,33,23,1.0,,,9312,6928
+oai:u-bordeaux-montaigne.fr:340409,B2-C37,La Goulette,,0,not_detected,nord,inferred_from_latitude,,,,,-0.75,19,9,74.5,,,9544,6832
+oai:u-bordeaux-montaigne.fr:340410,B2-C38,Menzel Bou Zelfa,1932,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.12,33,22,0.0,580,589,9200,6904
+oai:u-bordeaux-montaigne.fr:340411,B2-C39,Mennzel Heurr,1932,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,30,23,1.0,609,620,8928,6488
+oai:u-bordeaux-montaigne.fr:340412,B3-C34,Oued-Zarga,1931,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.38,33,22,0.2,,,8984,6832
+oai:u-bordeaux-montaigne.fr:340413,B3-C35,Medjez-el-Bab,1931,1,both_axes,nord,header_text,carroyage,235.0,298,4.26,4.5,34,23,0.0,,,9360,6888
+oai:u-bordeaux-montaigne.fr:340414,B3-C36,Oudna,1931,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.5,34,23,0.0,,,9328,6912
+oai:u-bordeaux-montaigne.fr:340415,B3-C37,Grombalia,1932,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.38,34,23,1.0,544,555,9376,6872
+oai:u-bordeaux-montaigne.fr:340416,B3-C38,Nabeul,1932,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,4.38,34,22,1.0,,,9360,6640
+oai:u-bordeaux-montaigne.fr:340427,B4-C32,Ghardimaou,1928,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,32,21,1.0,,,8960,6856
+oai:u-bordeaux-montaigne.fr:340428,B4-C33,Souk el Arba,1923,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.38,32,22,1.0,,,8984,6848
+oai:u-bordeaux-montaigne.fr:340429,B4-C34,Teboursouk,1932,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.12,34,22,1.0,,,9272,6960
+oai:u-bordeaux-montaigne.fr:340430,B4-C35,Bou Arada,1930,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,33,23,0.0,,,9168,6672
+oai:u-bordeaux-montaigne.fr:340431,B4-C36,Zaghouan,1902,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,32,22,0.5,,,8928,6488
+oai:u-bordeaux-montaigne.fr:340432,B4-C37,Bou Ficha,1932,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,4.5,34,22,1.0,,,9328,6936
+oai:u-bordeaux-montaigne.fr:340433,B4-C38,Hammamet,1931,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,4.38,33,22,1.0,579,585,9272,6952
+oai:u-bordeaux-montaigne.fr:340434,B5-C32,Ouargha,,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.5,34,22,1.0,,,8992,6856
+oai:u-bordeaux-montaigne.fr:340435,B5-C33,Nebeur,1924,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.12,33,22,1.0,,,9168,7032
+oai:u-bordeaux-montaigne.fr:340436,B5-C34,Gafour,1922,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.38,33,22,1.0,447,458,9232,6768
+oai:u-bordeaux-montaigne.fr:340447,B5-C35,Djebel Mansour,1930,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.38,32,22,0.0,473,486,8928,6512
+oai:u-bordeaux-montaigne.fr:340448,B5-C36,Djebel Fkirine,1930,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,34,22,0.0,505,520,9296,6904
+oai:u-bordeaux-montaigne.fr:340449,B5-C37,Enfidaville,1930,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.38,32,22,0.0,534,540,8936,6568
+oai:u-bordeaux-montaigne.fr:340450,B5-C37,Enfida,,0,not_detected,nord,inferred_from_latitude,,,,,-3.5,22,15,35.0,,,9296,7048
+oai:u-bordeaux-montaigne.fr:340451,B6-C32,Le Kef,1925,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.38,34,22,0.0,364,381,8984,6808
+oai:u-bordeaux-montaigne.fr:340452,B6-C33,Les Salines,1929,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.38,33,21,0.2,,,8984,6832
+oai:u-bordeaux-montaigne.fr:340453,B6-C34,Siliana,1931,1,both_axes,nord,inferred_from_latitude,,234.0,297,4.27,4.25,33,22,1.0,,,9224,6952
+oai:u-bordeaux-montaigne.fr:340454,B6-C35,Djebel Bargou,1931,1,both_axes,nord,header_text,carroyage,235.0,298,4.26,4.38,33,23,1.0,,,9176,6952
+oai:u-bordeaux-montaigne.fr:340455,B6-C36,Djebibina,1931,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,33,22,0.0,495,506,9296,6888
+oai:u-bordeaux-montaigne.fr:340456,B6-C37,Sidi Bou Ali,1931,1,both_axes,nord,header_text,carroyage,234.0,297,4.27,4.25,32,22,0.0,543,550,8936,6536
+oai:u-bordeaux-montaigne.fr:340467,B6-C37,Sidi Bou Ali,,0,not_detected,nord,inferred_from_latitude,,,,,0.38,24,10,65.5,,,9432,6808
+oai:u-bordeaux-montaigne.fr:340468,B6-C38,Halk El Mennzel,1931,1,both_axes,nord,inferred_from_latitude,,236.0,300,4.24,4.25,34,23,1.0,571,580,9512,6936
+oai:u-bordeaux-montaigne.fr:340469,B6-C38,Halk El Mennzel,,0,not_detected,nord,inferred_from_latitude,,,,,2.12,12,3,52.5,,,9704,7016
+oai:u-bordeaux-montaigne.fr:340470,B7-C32,Tadjerouine,1923,1,both_axes,nord,inferred_from_latitude,,236.0,300,4.24,4.5,33,22,0.2,365,392,9144,6536
+oai:u-bordeaux-montaigne.fr:340471,B1-C33,Ebba Ksour,1925,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,33,22,0.0,404,413,9136,6560
+oai:u-bordeaux-montaigne.fr:340472,B7-C34,Maktar,1928,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.38,33,22,1.0,,,9432,6992
+oai:u-bordeaux-montaigne.fr:340473,B7-C35,Djebel Serdj,1932,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.12,33,22,1.0,,,9312,6856
+oai:u-bordeaux-montaigne.fr:340474,B6-C37,Aïne Djeloula,1931,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,34,22,0.0,505,519,9496,6720
+oai:u-bordeaux-montaigne.fr:340475,B7-C37,Sebkra Kelbia,1923,1,both_axes,nord,header_text,carroyage,238.0,302,4.2,4.25,34,22,0.0,,,9544,6912
+oai:u-bordeaux-montaigne.fr:340476,B7-C38,Sousse,1931,1,both_axes,nord,inferred_from_latitude,,237.0,301,4.22,4.25,32,23,1.0,,,9520,6936
+oai:u-bordeaux-montaigne.fr:340487,B7-C38,Sousse,,0,not_detected,nord,inferred_from_latitude,,,,,-2.75,13,11,151.0,,,9680,7088
+oai:u-bordeaux-montaigne.fr:340488,B8-C32,Kalaat es Senam,1926,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.5,41,22,1.0,365,381,11416,6616
+oai:u-bordeaux-montaigne.fr:340489,B8-C33,Aïn El Kseïba,1928,1,both_axes,nord,header_text,carroyage,238.0,302,4.2,4.25,33,23,1.0,414,423,9232,6824
+oai:u-bordeaux-montaigne.fr:340490,B8-C34,Rohia-Dj. Barbrou,1929,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,33,22,0.0,,,9176,6792
+oai:u-bordeaux-montaigne.fr:340491,B8-C35,Pichon,1928,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,33,22,1.0,,,9312,6952
+oai:u-bordeaux-montaigne.fr:340492,B8-C36,Kairouan,1927,1,both_axes,nord,header_text,carroyage,238.0,302,4.2,4.38,33,22,1.0,500,511,9496,6904
+oai:u-bordeaux-montaigne.fr:340493,B8-C37,Sidi El Hani,1923,1,both_axes,nord,header_text,carroyage,238.0,302,4.2,4.25,34,22,1.0,,,9416,6936
+oai:u-bordeaux-montaigne.fr:340494,B8-C38,Djemmal,1925,1,both_axes,nord,inferred_from_latitude,,236.0,300,4.24,4.25,34,21,0.0,560,570,9136,6536
+oai:u-bordeaux-montaigne.fr:340495,B8-C39,Moknine,1931,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,36,22,0.5,590,606,9112,6592
+oai:u-bordeaux-montaigne.fr:340496,B9-C32,Thala,1927,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,32,22,0.0,,,9088,6528
+oai:u-bordeaux-montaigne.fr:340507,B9-C33,Ksar Tlili,1928,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.38,33,23,0.2,,,9328,6952
+oai:u-bordeaux-montaigne.fr:340508,B9-C34,Sbiba,1928,1,both_axes,nord,inferred_from_latitude,,236.0,300,4.24,4.5,33,22,0.0,,,9232,6880
+oai:u-bordeaux-montaigne.fr:340509,B9-C35,Djebel Trozza,1929,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,34,22,0.0,,,9552,6992
+oai:u-bordeaux-montaigne.fr:340510,B9-C36,Pavillier,1927,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,32,22,0.0,495,515,9064,6536
+oai:u-bordeaux-montaigne.fr:340511,B9-C37,Oued Cherita,1931,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,32,21,0.0,520,524,9064,6584
+oai:u-bordeaux-montaigne.fr:340512,B9-C38,Kerker,1931,1,both_axes,nord,inferred_from_latitude,,236.0,300,4.24,4.5,33,22,0.0,,,9440,6776
+oai:u-bordeaux-montaigne.fr:340513,B10-C32,Djebel Bireno,1930,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,32,21,0.5,362,389,9072,6512
+oai:u-bordeaux-montaigne.fr:340514,B10-C33,Djebel Semmama,1930,1,both_axes,nord,header_text,quadrillage,236.0,300,4.24,4.25,32,22,0.0,392,419,9168,6752
+oai:u-bordeaux-montaigne.fr:340515,B10-C34,Djebel Mrhila,1932,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.38,34,23,1.0,,,9632,6952
+oai:u-bordeaux-montaigne.fr:340516,B10-C35,Hadjeb el Aïoun,1933,1,both_axes,nord,header_text,carroyage,238.0,302,4.2,4.38,33,22,1.2,,,9248,6880
+oai:u-bordeaux-montaigne.fr:340527,B10-C36,Nasr Allah,1934,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,33,23,1.0,,,9544,6960
+oai:u-bordeaux-montaigne.fr:340528,B10-C37,Chorbane,1934,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.38,33,22,0.2,543,550,9712,7008
+oai:u-bordeaux-montaigne.fr:340529,B10-C38,El Djem,1931,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.0,32,22,0.0,564,580,8992,6512
+oai:u-bordeaux-montaigne.fr:340530,B10-C39,Chebba,1925,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.25,35,22,0.0,,,9728,7008
+oai:u-bordeaux-montaigne.fr:340531,B11-C32,Bou Chebka,1939,1,both_axes,nord,header_text,carroyage,236.0,300,4.24,4.38,33,21,0.0,357,363,9152,6904
+oai:u-bordeaux-montaigne.fr:340532,B11-C33,Kasserine,1936,1,both_axes,nord,inferred_from_latitude,,236.0,300,4.24,4.12,33,22,0.0,397,413,9456,6992
+oai:u-bordeaux-montaigne.fr:340533,,Djebeniana,1940,1,one_axis_confirmed_by_spacing,nord,header_text,carroyage,236.0,300,4.24,4.12,28,14,0.0,590,610,9232,6904
+oai:u-bordeaux-montaigne.fr:340534,,,1941,1,both_axes,sud,header_text,quadrillage,236.0,300,4.24,4.38,34,23,1.0,522,534,9656,6880
+oai:u-bordeaux-montaigne.fr:340535,,,1941,1,both_axes,sud,header_text,quadrillage,238.0,302,4.2,4.38,34,23,1.0,,,9672,6868
+oai:u-bordeaux-montaigne.fr:340615,,,1946,0,not_detected,nord,inferred_from_latitude,,,,,0.0,21,20,121.8,,,9680,7272
+oai:u-bordeaux-montaigne.fr:340616,,,,1,both_axes,,,,234.0,297,4.27,4.25,33,23,0.0,570,584,9616,7280
+oai:u-bordeaux-montaigne.fr:340627,,,1934,0,not_detected,sud,inferred_from_latitude,,,,,-0.88,8,8,304.0,,,9120,6792
+oai:u-bordeaux-montaigne.fr:340628,,,1940,1,both_axes,sud,header_text,carroyage,234.0,297,4.27,4.12,26,24,0.0,,,9648,7256
+oai:u-bordeaux-montaigne.fr:340629,,,,1,both_axes,sud,header_text,carroyage,234.0,297,4.27,4.25,25,17,1.0,553,565,7040,5552

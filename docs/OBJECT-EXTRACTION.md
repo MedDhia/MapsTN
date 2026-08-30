@@ -135,22 +135,33 @@ the record is not. It is flagged in
 ## 4. What would be needed to do this for all 103 sheets
 
 Everything above was done by reading one sheet. Doing it across the series is a
-pipeline, not a manual task, and it is worth being explicit that this repository
-does not contain one:
+pipeline, and step 1 below has since been built — see
+[`DATASET-PLAN.md`](DATASET-PLAN.md), which supersedes this section and covers
+all 96 sheets.
 
-1. **Grid detection** — find the red kilometric lines and their intersections.
-   Attempted here by colour thresholding and abandoned: the red of the grid
-   overlaps the red of roads and built-up hatching, and the lines break where
-   they cross dark features. This needs Hough-line or template matching, not a
-   colour threshold.
-2. **Neatline detection** — the map frame, not the scan edge, is what the corner
-   coordinates describe.
+1. **Grid detection** — ~~attempted by colour thresholding and abandoned~~
+   **done**, by `scripts/detect_sheet_grid.py`, on 85 of 96 sheets. The colour
+   threshold failed for the reason given below, but the conclusion drawn from it
+   was wrong: "is this pixel grid-red" is unanswerable, while "is there a
+   direction in which the red pixels pile up into a regular comb" is not. Roads
+   contribute a smooth background to such a projection and the grid contributes
+   sharp peaks at a fixed period, so the grid is recoverable from the same mask
+   that defeats a per-pixel classifier. The eleven sheets with no detection are
+   the pre-1920s editions, which carry no Lambert overprint to find.
+2. **Neatline detection** — still open, but no longer on the critical path: the
+   grid labels give absolute coordinates directly, so the corner values the
+   neatline carries are not needed to georeference.
 3. **Symbol classification** — a small set of well-defined marks (well circle,
-   marabout dome, station, ruin) on a noisy coloured background.
+   marabout dome, station, ruin) on a noisy coloured background. Still open.
 4. **Toponym OCR** — French with heavy superscript abbreviation (`Sᵈⁱ`, `Mᵛᵉᵗ`,
    `Kᵃᵗ`, `Hʳ`), which general OCR handles badly, plus the transliteration
-   variants needed to match anything in OSM.
+   variants needed to match anything in OSM. Still open, and the long pole.
 
-Steps 1 and 2 are the ones that matter for coordinates, and they are the
-tractable ones. Steps 3 and 4 are what turn a georeferenced image into a
-dataset.
+### One number here has been corrected
+
+The 311 dpi above came from La Marsa's catalogued paper size. Measuring the
+printed kilometre grid on 85 sheets gives a median of **298 dpi** (range
+297–302), so **1 px = 4.24 m** rather than 4.08 m. The catalogued size is
+rounded to the centimetre and describes the sheet rather than the printed image;
+the grid is a known kilometre measured over thirty repeats. The error budget
+above shifts by about 4%, which changes none of its conclusions.
