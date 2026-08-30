@@ -1,0 +1,66 @@
+{
+  "records": 103,
+  "with_bbox": 93,
+  "with_designation": 88,
+  "extent": {
+    "west": 8.2553,
+    "east": 11.3,
+    "south": 33.2167,
+    "north": 37.8
+  },
+  "sheet_size_deg": {
+    "median_width": 0.36,
+    "median_height": 0.1889
+  },
+  "projection": {
+    "Bonne": 20
+  },
+  "ellipsoid": {
+    "Clarke 1880": 18
+  },
+  "revision_year": {
+    "1902": 6,
+    "1930": 1,
+    "1931": 2,
+    "1932": 8,
+    "1934": 1
+  },
+  "grid": {
+    "distinct_cells": 74,
+    "bands": "B0–B11",
+    "columns": "C32–C39",
+    "band_count": 12,
+    "column_count": 8,
+    "interior_gaps": [
+      "B0-C37",
+      "B7-C33",
+      "B7-C36"
+    ],
+    "interior_gap_count": 3,
+    "cells_with_multiple_revisions": {
+      "B0-C34": 2,
+      "B0-C35": 2,
+      "B0-C36": 3,
+      "B1-C33": 2,
+      "B1-C36": 2,
+      "B1-C37": 2,
+      "B2-C36": 2,
+      "B2-C37": 2,
+      "B5-C37": 2,
+      "B6-C37": 3,
+      "B6-C38": 2,
+      "B7-C38": 2
+    }
+  },
+  "regional_coverage": {
+    "tunis_capital": 0.87,
+    "cap_bon": 0.697,
+    "bizerte_nord": 0.616,
+    "nord_ouest": 0.728,
+    "sahel": 0.662,
+    "centre": 0.635,
+    "sfax_kerkennah": 0.121,
+    "sud_ouest_jerid": 0.014,
+    "sud_est_djeffara": 0.031
+  }
+}

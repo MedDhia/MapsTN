@@ -25,6 +25,9 @@ a relevance score.
 | **OSM rebuild coding (CSV)** | [`data/gallica_tunisia_maps_osm.csv`](data/gallica_tunisia_maps_osm.csv) |
 | **OSM rebuild report** | [`docs/OSM-REBUILD.md`](docs/OSM-REBUILD.md) |
 | **OSM layer crosswalk** | [`config/osm_crosswalk.json`](config/osm_crosswalk.json) |
+| **1:50 000 sheet index (GeoJSON)** | [`data/tunisia_50k_index.geojson`](data/tunisia_50k_index.geojson) |
+| **1:50 000 series table** | [`data/tunisia_50k_series.csv`](data/tunisia_50k_series.csv) |
+| **1:50 000 series report** | [`docs/SERIES-50K.md`](docs/SERIES-50K.md) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
 
@@ -337,6 +340,53 @@ The 35 best candidates are route, railway and administrative maps that are also
 georeferenceable — the *Carte des itinéraires* sheets and the road maps. The
 hydrographic charts, the largest single block of this corpus, score `none`:
 OSM carries no soundings.
+
+## The 1:50 000 series
+
+The most useful material here for spatial work, and the only block combining
+army survey, published per-sheet coordinates, a consistent grid, and a scale
+fine enough to carry wells, marabouts and ksour.
+[`data/tunisia_50k_index.geojson`](data/tunisia_50k_index.geojson) is a sheet
+index you can open directly in QGIS; full detail in
+[`docs/SERIES-50K.md`](docs/SERIES-50K.md).
+
+**103 records, 93 with footprints, 74 distinct grid cells** spanning B0–B11 by
+C32–C39. Sheets are ~0.36° × 0.19° (about 31 × 22 km). `B` is the row counting
+south from the north coast, `C` the column counting east — verified
+independently: column west-edges and band north-edges are both monotonic.
+
+### It does not cover the whole country
+
+| Region | Covered | | Region | Covered |
+| --- | ---: | --- | --- | ---: |
+| `tunis_capital` | 87% | | `bizerte_nord` | 62% |
+| `nord_ouest` | 73% | | `sfax_kerkennah` | 12% |
+| `cap_bon` | 70% | | `sud_est_djeffara` | 3% |
+| `sahel` | 66% | | `sud_ouest_jerid` | 1% |
+| `centre` | 64% | | | |
+
+The held footprints stop at **33.2°N**; Tunisia reaches 30.2°N, so the southern
+two fifths sits outside them. The southern sheets were made — two BnF *Environs
+de Medenine* sheets at 1:50 000 are in this corpus, in the middle of the missing
+area — but neither carries published coordinates, so neither can be placed
+automatically. Only **3 interior gaps** exist in the covered area
+(`B0-C37`, `B7-C33`, `B7-C36`).
+
+### Two revisions of the same ground
+
+**12 grid cells are held in more than one revision**, mostly 1902 and 1932. Same
+sheet lines, same extent, thirty years apart — before-and-after comparison with
+no georeferencing mismatch between the two dates. That is the cleanest change
+design available in this corpus.
+
+### Projection
+
+Stated for only 27 of the sheets, and not uniform: **Bonne on Clarke 1880** (20)
+for the older sheets, **Carte Internationale** (7) for later ones. Absence is a
+cataloguing gap rather than evidence — of two records for the same La Marsa
+sheet, the 1932 revision names the projection and the 1902 one does not. Bonne
+on Clarke 1880 has no standard EPSG code and must be defined by hand; in
+practice the published corner coordinates are the way in regardless.
 
 ## Data dictionary
 

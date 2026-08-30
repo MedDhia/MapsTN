@@ -1,0 +1,4752 @@
+{
+ "type": "FeatureCollection",
+ "name": "Tunisia 1:50 000 sheet index",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.8,
+       37.06666666666667
+      ],
+      [
+       9.183333333333334,
+       37.06666666666667
+      ],
+      [
+       9.183333333333334,
+       37.25
+      ],
+      [
+       8.8,
+       37.25
+      ],
+      [
+       8.8,
+       37.06666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340367",
+    "published_year": "1922",
+    "projection": "Bonne",
+    "identifier": "07-08-01-009",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° IV-B0-C33, Cap Negro / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1922)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340367",
+    "serial": "IV",
+    "serial_number": "4",
+    "band": "0",
+    "column": "33",
+    "sheet_name": "Cap Negro",
+    "designation": "B0-C33",
+    "bbox_west": "8.80000",
+    "bbox_east": "9.18333",
+    "bbox_south": "37.06667",
+    "bbox_north": "37.25000",
+    "width_deg": "0.3833",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.183333333333334,
+       37.233333333333334
+      ],
+      [
+       9.55,
+       37.233333333333334
+      ],
+      [
+       9.55,
+       37.416666666666664
+      ],
+      [
+       9.183333333333334,
+       37.416666666666664
+      ],
+      [
+       9.183333333333334,
+       37.233333333333334
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340354",
+    "published_year": "1931",
+    "identifier": "07-08-01-002",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N°I-B00-C34, Kef Abbed / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1931) ; les travaux sur le terrain ont été exécutés par Mr. Vicq [en] 1897",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340354",
+    "serial": "I",
+    "serial_number": "1",
+    "band": "00",
+    "column": "34",
+    "sheet_name": "Kef Abbed",
+    "designation": "B00-C34",
+    "bbox_west": "9.18333",
+    "bbox_east": "9.55000",
+    "bbox_south": "37.23333",
+    "bbox_north": "37.41667",
+    "width_deg": "0.3667",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.166666666666666,
+       37.05
+      ],
+      [
+       9.55,
+       37.05
+      ],
+      [
+       9.55,
+       37.25
+      ],
+      [
+       9.166666666666666,
+       37.25
+      ],
+      [
+       9.166666666666666,
+       37.05
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340368",
+    "published_year": "1932",
+    "identifier": "07-08-01-012",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° V-B0-C34, Oued Sedjenane / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340368",
+    "serial": "V",
+    "serial_number": "5",
+    "band": "0",
+    "column": "34",
+    "sheet_name": "Oued Sedjenane",
+    "designation": "B0-C34",
+    "bbox_west": "9.16667",
+    "bbox_east": "9.55000",
+    "bbox_south": "37.05000",
+    "bbox_north": "37.25000",
+    "width_deg": "0.3833",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.533333333333333,
+       37.2
+      ],
+      [
+       9.916666666666666,
+       37.2
+      ],
+      [
+       9.916666666666666,
+       37.4
+      ],
+      [
+       9.533333333333333,
+       37.4
+      ],
+      [
+       9.533333333333333,
+       37.2
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340355",
+    "published_year": "1936",
+    "identifier": "07-08-01-005",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° II-B0-C35, Bizerte / dressé, héliogravé et publié par le Service géographique de l'Armée en 1936",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340355",
+    "serial": "II",
+    "serial_number": "2",
+    "band": "0",
+    "column": "35",
+    "sheet_name": "Bizerte",
+    "designation": "B0-C35",
+    "bbox_west": "9.53333",
+    "bbox_east": "9.91667",
+    "bbox_south": "37.20000",
+    "bbox_north": "37.40000",
+    "width_deg": "0.3833",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.533333333333333,
+       37.03333333333333
+      ],
+      [
+       9.883333333333333,
+       37.03333333333333
+      ],
+      [
+       9.883333333333333,
+       37.233333333333334
+      ],
+      [
+       9.533333333333333,
+       37.233333333333334
+      ],
+      [
+       9.533333333333333,
+       37.03333333333333
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340369",
+    "published_year": "1936",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-014",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° VI [6] B 0 - C 35, Djebel Ichkeul / dressé, heliogravé et publié par Service géographique de l'armée en 1936",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340369",
+    "serial": "VI",
+    "serial_number": "6",
+    "band": "0",
+    "column": "35",
+    "sheet_name": "Djebel Ichkeul",
+    "designation": "B0-C35",
+    "bbox_west": "9.53333",
+    "bbox_east": "9.88333",
+    "bbox_south": "37.03333",
+    "bbox_north": "37.23333",
+    "width_deg": "0.3500",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.9,
+       37.18333333333333
+      ],
+      [
+       10.266666666666667,
+       37.18333333333333
+      ],
+      [
+       10.266666666666667,
+       37.38333333333333
+      ],
+      [
+       9.9,
+       37.38333333333333
+      ],
+      [
+       9.9,
+       37.18333333333333
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340356",
+    "identifier": "07-08-01-006",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° III - B 00 - C 36, Metline / dressé, heliogravé et publié par Service géographique de l'armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340356",
+    "serial": "III",
+    "serial_number": "3",
+    "band": "00",
+    "column": "36",
+    "sheet_name": "Metline",
+    "designation": "B00-C36",
+    "bbox_west": "9.90000",
+    "bbox_east": "10.26667",
+    "bbox_south": "37.18333",
+    "bbox_north": "37.38333",
+    "width_deg": "0.3667",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.883333333333333,
+       37.016666666666666
+      ],
+      [
+       10.233333333333333,
+       37.016666666666666
+      ],
+      [
+       10.233333333333333,
+       37.18333333333333
+      ],
+      [
+       9.883333333333333,
+       37.18333333333333
+      ],
+      [
+       9.883333333333333,
+       37.016666666666666
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340371",
+    "revision_year": "1902",
+    "published_year": "1902",
+    "identifier": "07-08-01-016",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° VII.B 0-C 36, Porto-Farina / dressé, gravé et publié par Service géographique de l'armée (Révision de 1902)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340371",
+    "serial": "VII",
+    "serial_number": "7",
+    "band": "0",
+    "column": "36",
+    "sheet_name": "Porto-Farina",
+    "designation": "B0-C36",
+    "bbox_west": "9.88333",
+    "bbox_east": "10.23333",
+    "bbox_south": "37.01667",
+    "bbox_north": "37.18333",
+    "width_deg": "0.3500",
+    "height_deg": "0.1667"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.883333333333333,
+       37.016666666666666
+      ],
+      [
+       10.233333333333333,
+       37.016666666666666
+      ],
+      [
+       10.233333333333333,
+       37.18333333333333
+      ],
+      [
+       9.883333333333333,
+       37.18333333333333
+      ],
+      [
+       9.883333333333333,
+       37.016666666666666
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340370",
+    "published_year": "1935",
+    "projection": "Bonne",
+    "identifier": "07-08-01-015",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° VII.B 0-C 36, Porto-Farina / dressé, héliogravé et publié par Service géographique de l'armée en 1935",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340370",
+    "serial": "VII",
+    "serial_number": "7",
+    "band": "0",
+    "column": "36",
+    "sheet_name": "Porto-Farina",
+    "designation": "B0-C36",
+    "bbox_west": "9.88333",
+    "bbox_east": "10.23333",
+    "bbox_south": "37.01667",
+    "bbox_north": "37.18333",
+    "width_deg": "0.3500",
+    "height_deg": "0.1667"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.6,
+       36.95
+      ],
+      [
+       10.95,
+       36.95
+      ],
+      [
+       10.95,
+       37.13333333333333
+      ],
+      [
+       10.6,
+       37.13333333333333
+      ],
+      [
+       10.6,
+       36.95
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340372",
+    "revision_year": "1932",
+    "published_year": "1932",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-020",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° VIII - B 0 - C 38, Sidi Daoud / dressé, héliogravé et publié par Service géographique de l'armée (révision de 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340372",
+    "serial": "VIII",
+    "serial_number": "8",
+    "band": "0",
+    "column": "38",
+    "sheet_name": "Sidi Daoud",
+    "designation": "B0-C38",
+    "bbox_west": "10.60000",
+    "bbox_east": "10.95000",
+    "bbox_south": "36.95000",
+    "bbox_north": "37.13333",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.95,
+       36.93333333333333
+      ],
+      [
+       11.3,
+       36.93333333333333
+      ],
+      [
+       11.3,
+       37.11666666666667
+      ],
+      [
+       10.95,
+       37.11666666666667
+      ],
+      [
+       10.95,
+       36.93333333333333
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340373",
+    "revision_year": "1932",
+    "published_year": "1939",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-023",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° IX - B 0 - C 39, Cap Bon / dressé, héliogravé et publié par Service géographique de l'armée en 1894 (révision de 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340373",
+    "serial": "IX",
+    "serial_number": "9",
+    "band": "0",
+    "column": "39",
+    "sheet_name": "Cap Bon",
+    "designation": "B0-C39",
+    "bbox_west": "10.95000",
+    "bbox_east": "11.30000",
+    "bbox_south": "36.93333",
+    "bbox_north": "37.11667",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.8,
+       37.61666666666667
+      ],
+      [
+       9.15,
+       37.61666666666667
+      ],
+      [
+       9.15,
+       37.8
+      ],
+      [
+       8.8,
+       37.8
+      ],
+      [
+       8.8,
+       37.61666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340374",
+    "published_year": "1922",
+    "identifier": "07-08-01-026",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° X-B1-C33, Nefza / dressé, héliogravé et publié par le Service Géographique de l'Armée (complété en 1922)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340374",
+    "serial": "X",
+    "serial_number": "10",
+    "band": "1",
+    "column": "33",
+    "sheet_name": "Nefza",
+    "designation": "B1-C33",
+    "bbox_west": "8.80000",
+    "bbox_east": "9.15000",
+    "bbox_south": "37.61667",
+    "bbox_north": "37.80000",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.723055555555556,
+       35.82
+      ],
+      [
+       9.074166666666667,
+       35.82
+      ],
+      [
+       9.074166666666667,
+       36.00888888888889
+      ],
+      [
+       8.723055555555556,
+       36.00888888888889
+      ],
+      [
+       8.723055555555556,
+       35.82
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340471",
+    "published_year": "1925",
+    "identifier": "07-08-02-011",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LII-B1-C33, Ebba Ksour / dressé, héliogravé et publié par le Service géographique de l'Armée en 1925",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340471",
+    "serial": "LII",
+    "serial_number": "52",
+    "band": "1",
+    "column": "33",
+    "sheet_name": "Ebba Ksour",
+    "designation": "B1-C33",
+    "bbox_west": "8.72306",
+    "bbox_east": "9.07417",
+    "bbox_south": "35.82000",
+    "bbox_north": "36.00889",
+    "width_deg": "0.3511",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.166666666666666,
+       36.86666666666667
+      ],
+      [
+       9.516666666666667,
+       36.86666666666667
+      ],
+      [
+       9.516666666666667,
+       37.05
+      ],
+      [
+       9.166666666666666,
+       37.05
+      ],
+      [
+       9.166666666666666,
+       36.86666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340375",
+    "published_year": "1932",
+    "identifier": "07-08-01-027",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N°XI-B1-C34, Hedil / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340375",
+    "serial": "XI",
+    "serial_number": "11",
+    "band": "1",
+    "column": "34",
+    "sheet_name": "Hedil",
+    "designation": "B1-C34",
+    "bbox_west": "9.16667",
+    "bbox_east": "9.51667",
+    "bbox_south": "36.86667",
+    "bbox_north": "37.05000",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.5,
+       36.85
+      ],
+      [
+       9.85,
+       36.85
+      ],
+      [
+       9.85,
+       37.03333333333333
+      ],
+      [
+       9.5,
+       37.03333333333333
+      ],
+      [
+       9.5,
+       36.85
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340376",
+    "published_year": "1936",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-030",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XII -B 1-C 35, Mateur / dressé, héliogravé et publié par Service géographique de l'armée en 1936",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340376",
+    "serial": "XII",
+    "serial_number": "12",
+    "band": "1",
+    "column": "35",
+    "sheet_name": "Mateur",
+    "designation": "B1-C35",
+    "bbox_west": "9.50000",
+    "bbox_east": "9.85000",
+    "bbox_south": "36.85000",
+    "bbox_north": "37.03333",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.866666666666667,
+       36.833333333333336
+      ],
+      [
+       10.233333333333333,
+       36.833333333333336
+      ],
+      [
+       10.233333333333333,
+       37.016666666666666
+      ],
+      [
+       9.866666666666667,
+       37.016666666666666
+      ],
+      [
+       9.866666666666667,
+       36.833333333333336
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340387",
+    "published_year": "1936",
+    "identifier": "07-08-01-032",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XIII-B1-C36, Ariana / dressé, gravé et publié par le Service géographique de l'Armée en 1936",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340387",
+    "serial": "XIII",
+    "serial_number": "13",
+    "band": "1",
+    "column": "36",
+    "sheet_name": "Ariana",
+    "designation": "B1-C36",
+    "bbox_west": "9.86667",
+    "bbox_east": "10.23333",
+    "bbox_south": "36.83333",
+    "bbox_north": "37.01667",
+    "width_deg": "0.3667",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.233333333333333,
+       36.8
+      ],
+      [
+       10.583333333333334,
+       36.8
+      ],
+      [
+       10.583333333333334,
+       37.0
+      ],
+      [
+       10.233333333333333,
+       37.0
+      ],
+      [
+       10.233333333333333,
+       36.8
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340390",
+    "revision_year": "1902",
+    "published_year": "1902",
+    "identifier": "07-08-01-036",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XIV-B 1-C 37, La Marsa / dressé, gravé et publié par Service géographique de l'armée (révision de 1902)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340390",
+    "serial": "XIV",
+    "serial_number": "14",
+    "band": "1",
+    "column": "37",
+    "sheet_name": "La Marsa",
+    "designation": "B1-C37",
+    "bbox_west": "10.23333",
+    "bbox_east": "10.58333",
+    "bbox_south": "36.80000",
+    "bbox_north": "37.00000",
+    "width_deg": "0.3500",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.233333333333333,
+       36.8
+      ],
+      [
+       10.583333333333334,
+       36.8
+      ],
+      [
+       10.583333333333334,
+       37.0
+      ],
+      [
+       10.233333333333333,
+       37.0
+      ],
+      [
+       10.233333333333333,
+       36.8
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340389",
+    "revision_year": "1932",
+    "published_year": "1932",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-035",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XIV-B 1-C 37, La Marsa / dressé, gravé et publié par Service géographique de l'armée (révision de 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340389",
+    "serial": "XIV",
+    "serial_number": "14",
+    "band": "1",
+    "column": "37",
+    "sheet_name": "La Marsa",
+    "designation": "B1-C37",
+    "bbox_west": "10.23333",
+    "bbox_east": "10.58333",
+    "bbox_south": "36.80000",
+    "bbox_north": "37.00000",
+    "width_deg": "0.3500",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.583333333333334,
+       36.78333333333333
+      ],
+      [
+       10.933333333333334,
+       36.78333333333333
+      ],
+      [
+       10.933333333333334,
+       36.95
+      ],
+      [
+       10.583333333333334,
+       36.95
+      ],
+      [
+       10.583333333333334,
+       36.78333333333333
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340391",
+    "published_year": "1932",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-039",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XV-B 1-C 38, Tazoghrane / dressé, héliogravé et publié par Service géographique de l'armée (révisé en 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340391",
+    "serial": "XV",
+    "serial_number": "15",
+    "band": "1",
+    "column": "38",
+    "sheet_name": "Tazoghrane",
+    "designation": "B1-C38",
+    "bbox_west": "10.58333",
+    "bbox_east": "10.93333",
+    "bbox_south": "36.78333",
+    "bbox_north": "36.95000",
+    "width_deg": "0.3500",
+    "height_deg": "0.1667"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.133333333333333,
+       36.7
+      ],
+      [
+       9.5,
+       36.7
+      ],
+      [
+       9.5,
+       36.86666666666667
+      ],
+      [
+       9.133333333333333,
+       36.86666666666667
+      ],
+      [
+       9.133333333333333,
+       36.7
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340393",
+    "revision_year": "1902",
+    "published_year": "1932",
+    "identifier": "07-08-01-046",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XVIII-B2-C34, Béja / dressé, héliogravé et publié par le Service géographique de l'Armée (révision de 1902) (complété en 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340393",
+    "serial": "XVIII",
+    "serial_number": "18",
+    "band": "2",
+    "column": "34",
+    "sheet_name": "Béja",
+    "designation": "B2-C34",
+    "bbox_west": "9.13333",
+    "bbox_east": "9.50000",
+    "bbox_south": "36.70000",
+    "bbox_north": "36.86667",
+    "width_deg": "0.3667",
+    "height_deg": "0.1667"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.50611111111111,
+       36.675
+      ],
+      [
+       9.875277777777779,
+       36.675
+      ],
+      [
+       9.875277777777779,
+       36.87277777777778
+      ],
+      [
+       9.50611111111111,
+       36.87277777777778
+      ],
+      [
+       9.50611111111111,
+       36.675
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340394",
+    "published_year": "1934",
+    "identifier": "07-08-01-048",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XIX-B2-C35, Tebourba / dressé, héliogravé et publié par le service géographique de l'Armée (révisé en 1934)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340394",
+    "serial": "XIX",
+    "serial_number": "19",
+    "band": "2",
+    "column": "35",
+    "sheet_name": "Tebourba",
+    "designation": "B2-C35",
+    "bbox_west": "9.50611",
+    "bbox_east": "9.87528",
+    "bbox_south": "36.67500",
+    "bbox_north": "36.87278",
+    "width_deg": "0.3692",
+    "height_deg": "0.1978"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.857222222222221,
+       36.65694444444444
+      ],
+      [
+       10.226111111111111,
+       36.65694444444444
+      ],
+      [
+       10.226111111111111,
+       36.855000000000004
+      ],
+      [
+       9.857222222222221,
+       36.855000000000004
+      ],
+      [
+       9.857222222222221,
+       36.65694444444444
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340396",
+    "revision_year": "1902",
+    "published_year": "1902",
+    "identifier": "07-08-01-051",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XX-B2-C36, Tunis / dressé, gravé et publié par le Service géographique de l'Armée (révision de 1902)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340396",
+    "serial": "XX",
+    "serial_number": "20",
+    "band": "2",
+    "column": "36",
+    "sheet_name": "Tunis",
+    "designation": "B2-C36",
+    "bbox_west": "9.85722",
+    "bbox_east": "10.22611",
+    "bbox_south": "36.65694",
+    "bbox_north": "36.85500",
+    "width_deg": "0.3689",
+    "height_deg": "0.1981"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.857222222222221,
+       36.65694444444444
+      ],
+      [
+       10.226111111111111,
+       36.65694444444444
+      ],
+      [
+       10.226111111111111,
+       36.855000000000004
+      ],
+      [
+       9.857222222222221,
+       36.855000000000004
+      ],
+      [
+       9.857222222222221,
+       36.65694444444444
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340395",
+    "published_year": "1935",
+    "identifier": "07-08-01-050",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XX-B2-C36, Tunis / dressé, dessiné et publié par le Service géographique de l'Armée (révisé en 1935)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340395",
+    "serial": "XX",
+    "serial_number": "20",
+    "band": "2",
+    "column": "36",
+    "sheet_name": "Tunis",
+    "designation": "B2-C36",
+    "bbox_west": "9.85722",
+    "bbox_east": "10.22611",
+    "bbox_south": "36.65694",
+    "bbox_north": "36.85500",
+    "width_deg": "0.3689",
+    "height_deg": "0.1981"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.233333333333333,
+       36.61666666666667
+      ],
+      [
+       10.586111111111112,
+       36.61666666666667
+      ],
+      [
+       10.586111111111112,
+       36.81666666666667
+      ],
+      [
+       10.233333333333333,
+       36.81666666666667
+      ],
+      [
+       10.233333333333333,
+       36.61666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340409",
+    "identifier": "07-08-01-054",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXI-B2-C37, La Goulette / dressé, gravé et publié par le Service géographique de l'Armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340409",
+    "serial": "XXI",
+    "serial_number": "21",
+    "band": "2",
+    "column": "37",
+    "sheet_name": "La Goulette",
+    "designation": "B2-C37",
+    "bbox_west": "10.23333",
+    "bbox_east": "10.58611",
+    "bbox_south": "36.61667",
+    "bbox_north": "36.81667",
+    "width_deg": "0.3528",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.233333333333333,
+       36.61666666666667
+      ],
+      [
+       10.586111111111112,
+       36.61666666666667
+      ],
+      [
+       10.586111111111112,
+       36.81666666666667
+      ],
+      [
+       10.233333333333333,
+       36.81666666666667
+      ],
+      [
+       10.233333333333333,
+       36.61666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340407",
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-052",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXI-B2-C37, La Goulette / dressé, gravé et publié par le Service géographique de l'Armée (révision de 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340407",
+    "serial": "XXI",
+    "serial_number": "21",
+    "band": "2",
+    "column": "37",
+    "sheet_name": "La Goulette",
+    "designation": "B2-C37",
+    "bbox_west": "10.23333",
+    "bbox_east": "10.58611",
+    "bbox_south": "36.61667",
+    "bbox_north": "36.81667",
+    "width_deg": "0.3528",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.577777777777778,
+       36.60277777777778
+      ],
+      [
+       10.945833333333333,
+       36.60277777777778
+      ],
+      [
+       10.945833333333333,
+       36.809999999999995
+      ],
+      [
+       10.577777777777778,
+       36.809999999999995
+      ],
+      [
+       10.577777777777778,
+       36.60277777777778
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340410",
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-056",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXII-B2-C38, Menzel Bou Zelfa / dressé, heliogravé et publié par le Service géographique de l'armée (révision de 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340410",
+    "serial": "XXII",
+    "serial_number": "22",
+    "band": "2",
+    "column": "38",
+    "sheet_name": "Menzel Bou Zelfa",
+    "designation": "B2-C38",
+    "bbox_west": "10.57778",
+    "bbox_east": "10.94583",
+    "bbox_south": "36.60278",
+    "bbox_north": "36.81000",
+    "width_deg": "0.3681",
+    "height_deg": "0.2072"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.127777777777778,
+       36.52222222222222
+      ],
+      [
+       9.497222222222222,
+       36.52222222222222
+      ],
+      [
+       9.497222222222222,
+       36.711111111111116
+      ],
+      [
+       9.127777777777778,
+       36.711111111111116
+      ],
+      [
+       9.127777777777778,
+       36.52222222222222
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340412",
+    "published_year": "1931",
+    "identifier": "07-08-01-063",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Feuille n° XXVI-B3-C34, Oued-Zarga / dressé, héliogravé et publié par le service géographique de l'Armée (complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340412",
+    "serial": "XXVI",
+    "serial_number": "26",
+    "band": "3",
+    "column": "34",
+    "sheet_name": "Oued-Zarga",
+    "designation": "B3-C34",
+    "bbox_west": "9.12778",
+    "bbox_east": "9.49722",
+    "bbox_south": "36.52222",
+    "bbox_north": "36.71111",
+    "width_deg": "0.3694",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.488888888888889,
+       36.49444444444445
+      ],
+      [
+       9.858333333333333,
+       36.49444444444445
+      ],
+      [
+       9.858333333333333,
+       36.69166666666666
+      ],
+      [
+       9.488888888888889,
+       36.69166666666666
+      ],
+      [
+       9.488888888888889,
+       36.49444444444445
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340413",
+    "published_year": "1931",
+    "identifier": "07-08-01-065",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXVII-B3-C35, Medjez-el-Bab / dressé, heliogravé et publié par Service géographique de l'armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340413",
+    "serial": "XXVII",
+    "serial_number": "27",
+    "band": "3",
+    "column": "35",
+    "sheet_name": "Medjez-el-Bab",
+    "designation": "B3-C35",
+    "bbox_west": "9.48889",
+    "bbox_east": "9.85833",
+    "bbox_south": "36.49444",
+    "bbox_north": "36.69167",
+    "width_deg": "0.3694",
+    "height_deg": "0.1972"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.83888888888889,
+       36.47694444444445
+      ],
+      [
+       10.208333333333332,
+       36.47694444444445
+      ],
+      [
+       10.208333333333332,
+       36.675
+      ],
+      [
+       9.83888888888889,
+       36.675
+      ],
+      [
+       9.83888888888889,
+       36.47694444444445
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340414",
+    "revision_year": "1931",
+    "published_year": "1931",
+    "identifier": "07-08-01-066",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. n°XXVIII-B3-C36, Oudna / dressé, gravé et publié par le service géographique de l'Armée (révision de 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340414",
+    "serial": "XXVIII",
+    "serial_number": "28",
+    "band": "3",
+    "column": "36",
+    "sheet_name": "Oudna",
+    "designation": "B3-C36",
+    "bbox_west": "9.83889",
+    "bbox_east": "10.20833",
+    "bbox_south": "36.47694",
+    "bbox_north": "36.67500",
+    "width_deg": "0.3694",
+    "height_deg": "0.1981"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.2,
+       36.45
+      ],
+      [
+       10.566666666666666,
+       36.45
+      ],
+      [
+       10.566666666666666,
+       36.647777777777776
+      ],
+      [
+       10.2,
+       36.647777777777776
+      ],
+      [
+       10.2,
+       36.45
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340415",
+    "published_year": "1932",
+    "identifier": "07-08-01-067",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. n°XXIX-B3-C37, Grombalia / dressé, héliogravé et publié par le service géographique de l'Armée (complété en 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340415",
+    "serial": "XXIX",
+    "serial_number": "29",
+    "band": "3",
+    "column": "37",
+    "sheet_name": "Grombalia",
+    "designation": "B3-C37",
+    "bbox_west": "10.20000",
+    "bbox_east": "10.56667",
+    "bbox_south": "36.45000",
+    "bbox_north": "36.64778",
+    "width_deg": "0.3667",
+    "height_deg": "0.1978"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.55,
+       36.416666666666664
+      ],
+      [
+       10.9,
+       36.416666666666664
+      ],
+      [
+       10.9,
+       36.6
+      ],
+      [
+       10.55,
+       36.6
+      ],
+      [
+       10.55,
+       36.416666666666664
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340416",
+    "revision_year": "1932",
+    "published_year": "1932",
+    "identifier": "07-08-01-069",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXX-B3-C38, Nabeul / dressé, gravé et publié par Service géographique de l'armée, révision de 1932",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340416",
+    "serial": "XXX",
+    "serial_number": "30",
+    "band": "3",
+    "column": "38",
+    "sheet_name": "Nabeul",
+    "designation": "B3-C38",
+    "bbox_west": "10.55000",
+    "bbox_east": "10.90000",
+    "bbox_south": "36.41667",
+    "bbox_north": "36.60000",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.408333333333333,
+       36.37777777777778
+      ],
+      [
+       8.768333333333334,
+       36.37777777777778
+      ],
+      [
+       8.768333333333334,
+       36.56666666666667
+      ],
+      [
+       8.408333333333333,
+       36.56666666666667
+      ],
+      [
+       8.408333333333333,
+       36.37777777777778
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340427",
+    "published_year": "1928",
+    "identifier": "07-08-01-071",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXI-B4-C32, Ghardimaou / dressé, héliogravé et publié par le service géographique de l'Armée (complété en 1928)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340427",
+    "serial": "XXXI",
+    "serial_number": "31",
+    "band": "4",
+    "column": "32",
+    "sheet_name": "Ghardimaou",
+    "designation": "B4-C32",
+    "bbox_west": "8.40833",
+    "bbox_east": "8.76833",
+    "bbox_south": "36.37778",
+    "bbox_north": "36.56667",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.758333333333333,
+       36.358333333333334
+      ],
+      [
+       9.127777777777778,
+       36.358333333333334
+      ],
+      [
+       9.127777777777778,
+       36.55
+      ],
+      [
+       8.758333333333333,
+       36.55
+      ],
+      [
+       8.758333333333333,
+       36.358333333333334
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340428",
+    "published_year": "1923",
+    "identifier": "07-08-01-073",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXII-B4-C33, Souk el Arba / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1923)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340428",
+    "serial": "XXXII",
+    "serial_number": "32",
+    "band": "4",
+    "column": "33",
+    "sheet_name": "Souk el Arba",
+    "designation": "B4-C33",
+    "bbox_west": "8.75833",
+    "bbox_east": "9.12778",
+    "bbox_south": "36.35833",
+    "bbox_north": "36.55000",
+    "width_deg": "0.3694",
+    "height_deg": "0.1917"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.119444444444445,
+       36.34166666666667
+      ],
+      [
+       9.479166666666666,
+       36.34166666666667
+      ],
+      [
+       9.479166666666666,
+       36.53055555555555
+      ],
+      [
+       9.119444444444445,
+       36.53055555555555
+      ],
+      [
+       9.119444444444445,
+       36.34166666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340429",
+    "published_year": "1932",
+    "identifier": "07-08-01-074",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXIII-B4-C34, Teboursouk / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340429",
+    "serial": "XXXIII",
+    "serial_number": "33",
+    "band": "4",
+    "column": "34",
+    "sheet_name": "Teboursouk",
+    "designation": "B4-C34",
+    "bbox_west": "9.11944",
+    "bbox_east": "9.47917",
+    "bbox_south": "36.34167",
+    "bbox_north": "36.53056",
+    "width_deg": "0.3597",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.470277777777778,
+       36.31527777777777
+      ],
+      [
+       9.839166666666667,
+       36.31527777777777
+      ],
+      [
+       9.839166666666667,
+       36.5125
+      ],
+      [
+       9.470277777777778,
+       36.5125
+      ],
+      [
+       9.470277777777778,
+       36.31527777777777
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340430",
+    "published_year": "1930",
+    "identifier": "07-08-01-076",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXIV-B4-C35, Bou Arada / dressé, héliogravé et publié par le Service géographique de l'Armée (révisé en 1930)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340430",
+    "serial": "XXXIV",
+    "serial_number": "34",
+    "band": "4",
+    "column": "35",
+    "sheet_name": "Bou Arada",
+    "designation": "B4-C35",
+    "bbox_west": "9.47028",
+    "bbox_east": "9.83917",
+    "bbox_south": "36.31528",
+    "bbox_north": "36.51250",
+    "width_deg": "0.3689",
+    "height_deg": "0.1972"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.830555555555556,
+       36.30555555555555
+      ],
+      [
+       10.190277777777778,
+       36.30555555555555
+      ],
+      [
+       10.190277777777778,
+       36.486111111111114
+      ],
+      [
+       9.830555555555556,
+       36.486111111111114
+      ],
+      [
+       9.830555555555556,
+       36.30555555555555
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340431",
+    "revision_year": "1902",
+    "published_year": "1932",
+    "identifier": "07-08-01-078",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXV-B4-C36, Zaghouan / dressé, gravé et publié par le Service géographique de l'Armée (révision de 1902), (complétée en 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340431",
+    "serial": "XXXV",
+    "serial_number": "35",
+    "band": "4",
+    "column": "36",
+    "sheet_name": "Zaghouan",
+    "designation": "B4-C36",
+    "bbox_west": "9.83056",
+    "bbox_east": "10.19028",
+    "bbox_south": "36.30556",
+    "bbox_north": "36.48611",
+    "width_deg": "0.3597",
+    "height_deg": "0.1806"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.181111111111111,
+       36.26972222222222
+      ],
+      [
+       10.54111111111111,
+       36.26972222222222
+      ],
+      [
+       10.54111111111111,
+       36.467777777777776
+      ],
+      [
+       10.181111111111111,
+       36.467777777777776
+      ],
+      [
+       10.181111111111111,
+       36.26972222222222
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340432",
+    "published_year": "1932",
+    "identifier": "07-08-01-079",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXVI-B4-C37, Bou Ficha / Dressé, héliogravé et publié par Service géographique de l'armée, levés de 1893, révisés en 1932 et levés de 1930",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340432",
+    "serial": "XXXVI",
+    "serial_number": "36",
+    "band": "4",
+    "column": "37",
+    "sheet_name": "Bou Ficha",
+    "designation": "B4-C37",
+    "bbox_west": "10.18111",
+    "bbox_east": "10.54111",
+    "bbox_south": "36.26972",
+    "bbox_north": "36.46778",
+    "width_deg": "0.3600",
+    "height_deg": "0.1981"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.54111111111111,
+       36.25
+      ],
+      [
+       10.901111111111112,
+       36.25
+      ],
+      [
+       10.901111111111112,
+       36.416666666666664
+      ],
+      [
+       10.54111111111111,
+       36.416666666666664
+      ],
+      [
+       10.54111111111111,
+       36.25
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340433",
+    "revision_year": "1931",
+    "published_year": "1931",
+    "identifier": "07-08-01-081",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXVII-B4-C38, Hammamet / dressé, gravé et publié par le Service géographique de l'Armée (révision de 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340433",
+    "serial": "XXXVII",
+    "serial_number": "37",
+    "band": "4",
+    "column": "38",
+    "sheet_name": "Hammamet",
+    "designation": "B4-C38",
+    "bbox_west": "10.54111",
+    "bbox_east": "10.90111",
+    "bbox_south": "36.25000",
+    "bbox_north": "36.41667",
+    "width_deg": "0.3600",
+    "height_deg": "0.1667"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.390277777777778,
+       36.19777777777777
+      ],
+      [
+       8.75,
+       36.19777777777777
+      ],
+      [
+       8.75,
+       36.386944444444445
+      ],
+      [
+       8.390277777777778,
+       36.386944444444445
+      ],
+      [
+       8.390277777777778,
+       36.19777777777777
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340434",
+    "identifier": "07-08-01-083",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXVIII-B5-C32, Ouargha / dessiné, héliogravé et publié par le Service géographique de l'Armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340434",
+    "serial": "XXXVIII",
+    "serial_number": "38",
+    "band": "5",
+    "column": "32",
+    "sheet_name": "Ouargha",
+    "designation": "B5-C32",
+    "bbox_west": "8.39028",
+    "bbox_east": "8.75000",
+    "bbox_south": "36.19778",
+    "bbox_north": "36.38694",
+    "width_deg": "0.3597",
+    "height_deg": "0.1892"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.75,
+       36.18
+      ],
+      [
+       9.110277777777778,
+       36.18
+      ],
+      [
+       9.110277777777778,
+       36.36666666666667
+      ],
+      [
+       8.75,
+       36.36666666666667
+      ],
+      [
+       8.75,
+       36.18
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340435",
+    "published_year": "1924",
+    "identifier": "07-08-01-086",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XXXIX-B5-C33, Nebeur / dessiné, héliogravé et publié par le Service géographique de l'Armée en 1924",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340435",
+    "serial": "XXXIX",
+    "serial_number": "39",
+    "band": "5",
+    "column": "33",
+    "sheet_name": "Nebeur",
+    "designation": "B5-C33",
+    "bbox_west": "8.75000",
+    "bbox_east": "9.11028",
+    "bbox_south": "36.18000",
+    "bbox_north": "36.36667",
+    "width_deg": "0.3603",
+    "height_deg": "0.1867"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.1,
+       36.15
+      ],
+      [
+       9.45,
+       36.15
+      ],
+      [
+       9.45,
+       36.333333333333336
+      ],
+      [
+       9.1,
+       36.333333333333336
+      ],
+      [
+       9.1,
+       36.15
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340436",
+    "published_year": "1922",
+    "identifier": "07-08-01-089",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XL-B5-C34, Gafour / dressé, héliogravé et publié par le Service géographique de l'Armée, en 1922",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340436",
+    "serial": "XL",
+    "serial_number": "40",
+    "band": "5",
+    "column": "34",
+    "sheet_name": "Gafour",
+    "designation": "B5-C34",
+    "bbox_west": "9.10000",
+    "bbox_east": "9.45000",
+    "bbox_south": "36.15000",
+    "bbox_north": "36.33333",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.46111111111111,
+       36.144444444444446
+      ],
+      [
+       9.821111111111112,
+       36.144444444444446
+      ],
+      [
+       9.821111111111112,
+       36.333333333333336
+      ],
+      [
+       9.46111111111111,
+       36.333333333333336
+      ],
+      [
+       9.46111111111111,
+       36.144444444444446
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340447",
+    "published_year": "1930",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-092",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLI-B5-C35, Djebel Mansour / dessiné, héliogravé et publié par le Service géographique de l'Armée en 1923 (révisé en 1930)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340447",
+    "serial": "XLI",
+    "serial_number": "41",
+    "band": "5",
+    "column": "35",
+    "sheet_name": "Djebel Mansour",
+    "designation": "B5-C35",
+    "bbox_west": "9.46111",
+    "bbox_east": "9.82111",
+    "bbox_south": "36.14444",
+    "bbox_north": "36.33333",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.812222222222223,
+       36.1
+      ],
+      [
+       10.172222222222222,
+       36.1
+      ],
+      [
+       10.172222222222222,
+       36.28333333333333
+      ],
+      [
+       9.812222222222223,
+       36.28333333333333
+      ],
+      [
+       9.812222222222223,
+       36.1
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340448",
+    "published_year": "1930",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-094",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLII-B5-C36, Djebel Fkirine / dressé, gravé et publié par Service géographique de l'armée (révisé en 1930)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340448",
+    "serial": "XLII",
+    "serial_number": "42",
+    "band": "5",
+    "column": "36",
+    "sheet_name": "Djebel Fkirine",
+    "designation": "B5-C36",
+    "bbox_west": "9.81222",
+    "bbox_east": "10.17222",
+    "bbox_south": "36.10000",
+    "bbox_north": "36.28333",
+    "width_deg": "0.3600",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.163055555555555,
+       36.083333333333336
+      ],
+      [
+       10.523055555555556,
+       36.083333333333336
+      ],
+      [
+       10.523055555555556,
+       36.266666666666666
+      ],
+      [
+       10.163055555555555,
+       36.266666666666666
+      ],
+      [
+       10.163055555555555,
+       36.083333333333336
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340450",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-097",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLIII-B5-C37, Enfida / dressé, gravé et publié par Service géographique de l'armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340450",
+    "serial": "XLIII",
+    "serial_number": "43",
+    "band": "5",
+    "column": "37",
+    "sheet_name": "Enfida",
+    "designation": "B5-C37",
+    "bbox_west": "10.16306",
+    "bbox_east": "10.52306",
+    "bbox_south": "36.08333",
+    "bbox_north": "36.26667",
+    "width_deg": "0.3600",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.163055555555555,
+       36.083333333333336
+      ],
+      [
+       10.523055555555556,
+       36.083333333333336
+      ],
+      [
+       10.523055555555556,
+       36.266666666666666
+      ],
+      [
+       10.163055555555555,
+       36.266666666666666
+      ],
+      [
+       10.163055555555555,
+       36.083333333333336
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340449",
+    "revision_year": "1930",
+    "published_year": "1930",
+    "identifier": "07-08-01-096",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLIII-B5-C37, Enfidaville / dressé, gravé et publié par le Service géographique de l'Armée (révision de 1930)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340449",
+    "serial": "XLIII",
+    "serial_number": "43",
+    "band": "5",
+    "column": "37",
+    "sheet_name": "Enfidaville",
+    "designation": "B5-C37",
+    "bbox_west": "10.16306",
+    "bbox_east": "10.52306",
+    "bbox_south": "36.08333",
+    "bbox_north": "36.26667",
+    "width_deg": "0.3600",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.366666666666667,
+       36.016666666666666
+      ],
+      [
+       8.733333333333333,
+       36.016666666666666
+      ],
+      [
+       8.733333333333333,
+       36.2
+      ],
+      [
+       8.366666666666667,
+       36.2
+      ],
+      [
+       8.366666666666667,
+       36.016666666666666
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340451",
+    "published_year": "1925",
+    "identifier": "07-08-01-100",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle N° XLIV-B6-C32, Le Kef / dessiné, héliogravé et publié par le Service géographique de l'Armée en 1924 (complété en 1925)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340451",
+    "serial": "XLIV",
+    "serial_number": "44",
+    "band": "6",
+    "column": "32",
+    "sheet_name": "Le Kef",
+    "designation": "B6-C32",
+    "bbox_west": "8.36667",
+    "bbox_east": "8.73333",
+    "bbox_south": "36.01667",
+    "bbox_north": "36.20000",
+    "width_deg": "0.3667",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.733333333333333,
+       36.0
+      ],
+      [
+       9.083333333333334,
+       36.0
+      ],
+      [
+       9.083333333333334,
+       36.166666666666664
+      ],
+      [
+       8.733333333333333,
+       36.166666666666664
+      ],
+      [
+       8.733333333333333,
+       36.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340452",
+    "published_year": "1929",
+    "identifier": "07-08-01-102",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLV-B6-C33, Les Salines / dressé,héliogravé et publié par le Service géographique de l'Armée en 1924 (révision partielle de 1925), complété en 1929",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340452",
+    "serial": "XLV",
+    "serial_number": "45",
+    "band": "6",
+    "column": "33",
+    "sheet_name": "Les Salines",
+    "designation": "B6-C33",
+    "bbox_west": "8.73333",
+    "bbox_east": "9.08333",
+    "bbox_south": "36.00000",
+    "bbox_north": "36.16667",
+    "width_deg": "0.3500",
+    "height_deg": "0.1667"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.083333333333334,
+       35.981944444444444
+      ],
+      [
+       9.443333333333333,
+       35.981944444444444
+      ],
+      [
+       9.443333333333333,
+       36.170833333333334
+      ],
+      [
+       9.083333333333334,
+       36.170833333333334
+      ],
+      [
+       9.083333333333334,
+       35.981944444444444
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340453",
+    "published_year": "1931",
+    "identifier": "07-08-01-104",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLVI-B6-C34, Siliana / dressé, héliogravé et publié par le Service géographique de l'Armée en 1926 (complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340453",
+    "serial": "XLVI",
+    "serial_number": "46",
+    "band": "6",
+    "column": "34",
+    "sheet_name": "Siliana",
+    "designation": "B6-C34",
+    "bbox_west": "9.08333",
+    "bbox_east": "9.44333",
+    "bbox_south": "35.98194",
+    "bbox_north": "36.17083",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.443333333333333,
+       35.955000000000005
+      ],
+      [
+       9.803333333333335,
+       35.955000000000005
+      ],
+      [
+       9.803333333333335,
+       36.15277777777778
+      ],
+      [
+       9.443333333333333,
+       36.15277777777778
+      ],
+      [
+       9.443333333333333,
+       35.955000000000005
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340454",
+    "published_year": "1931",
+    "identifier": "07-08-01-107",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLVII-B6-C35, Djebel Bargou / dessiné, héliogravé et publié par le Service géographique de l'Armée en 1930 (complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340454",
+    "serial": "XLVII",
+    "serial_number": "47",
+    "band": "6",
+    "column": "35",
+    "sheet_name": "Djebel Bargou",
+    "designation": "B6-C35",
+    "bbox_west": "9.44333",
+    "bbox_east": "9.80333",
+    "bbox_south": "35.95500",
+    "bbox_north": "36.15278",
+    "width_deg": "0.3600",
+    "height_deg": "0.1978"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.794166666666667,
+       35.93694444444444
+      ],
+      [
+       10.154166666666667,
+       35.93694444444444
+      ],
+      [
+       10.154166666666667,
+       36.12583333333333
+      ],
+      [
+       9.794166666666667,
+       36.12583333333333
+      ],
+      [
+       9.794166666666667,
+       35.93694444444444
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340455",
+    "published_year": "1931",
+    "identifier": "07-08-01-109",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXVIII-B6-C36, Djebibina / dressé, héliogravé et publié par le Service géographique de l'armée (complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340455",
+    "serial": "LXVIII",
+    "serial_number": "68",
+    "band": "6",
+    "column": "36",
+    "sheet_name": "Djebibina",
+    "designation": "B6-C36",
+    "bbox_west": "9.79417",
+    "bbox_east": "10.15417",
+    "bbox_south": "35.93694",
+    "bbox_north": "36.12583",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.145277777777777,
+       35.90972222222222
+      ],
+      [
+       10.505277777777778,
+       35.90972222222222
+      ],
+      [
+       10.505277777777778,
+       36.10777777777778
+      ],
+      [
+       10.145277777777777,
+       36.10777777777778
+      ],
+      [
+       10.145277777777777,
+       35.90972222222222
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340467",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-01-113",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLIX-B6-C37, Sidi Bou Ali / dressé, gravé et publié par Service géographique de l'armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340467",
+    "serial": "XLIX",
+    "serial_number": "49",
+    "band": "6",
+    "column": "37",
+    "sheet_name": "Sidi Bou Ali",
+    "designation": "B6-C37",
+    "bbox_west": "10.14528",
+    "bbox_east": "10.50528",
+    "bbox_south": "35.90972",
+    "bbox_north": "36.10778",
+    "width_deg": "0.3600",
+    "height_deg": "0.1981"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.776111111111112,
+       35.75694444444444
+      ],
+      [
+       10.136111111111111,
+       35.75694444444444
+      ],
+      [
+       10.136111111111111,
+       35.94583333333333
+      ],
+      [
+       9.776111111111112,
+       35.94583333333333
+      ],
+      [
+       9.776111111111112,
+       35.75694444444444
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340474",
+    "published_year": "1931",
+    "identifier": "07-08-02-022",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LV-B6-C37, Aïne Djeloula / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340474",
+    "serial": "LV",
+    "serial_number": "55",
+    "band": "6",
+    "column": "37",
+    "sheet_name": "Aïne Djeloula",
+    "designation": "B6-C37",
+    "bbox_west": "9.77611",
+    "bbox_east": "10.13611",
+    "bbox_south": "35.75694",
+    "bbox_north": "35.94583",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.145277777777777,
+       35.90972222222222
+      ],
+      [
+       10.505277777777778,
+       35.90972222222222
+      ],
+      [
+       10.505277777777778,
+       36.10777777777778
+      ],
+      [
+       10.145277777777777,
+       36.10777777777778
+      ],
+      [
+       10.145277777777777,
+       35.90972222222222
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340456",
+    "published_year": "1931",
+    "identifier": "07-08-01-112",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XLIX-B6-C37, Sidi Bou Ali / dressé, gravé et publié par le Service géographique de l'Armée (complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340456",
+    "serial": "XLIX",
+    "serial_number": "49",
+    "band": "6",
+    "column": "37",
+    "sheet_name": "Sidi Bou Ali",
+    "designation": "B6-C37",
+    "bbox_west": "10.14528",
+    "bbox_east": "10.50528",
+    "bbox_south": "35.90972",
+    "bbox_north": "36.10778",
+    "width_deg": "0.3600",
+    "height_deg": "0.1981"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.5,
+       35.891666666666666
+      ],
+      [
+       10.866666666666667,
+       35.891666666666666
+      ],
+      [
+       10.866666666666667,
+       36.080555555555556
+      ],
+      [
+       10.5,
+       36.080555555555556
+      ],
+      [
+       10.5,
+       35.891666666666666
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340469",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-02-005",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° L-B6-C38, Halk El Mennzel / dressé, gravé et publié par Service géographique de l'armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340469",
+    "serial": "L",
+    "serial_number": "50",
+    "band": "6",
+    "column": "38",
+    "sheet_name": "Halk El Mennzel",
+    "designation": "B6-C38",
+    "bbox_west": "10.50000",
+    "bbox_east": "10.86667",
+    "bbox_south": "35.89167",
+    "bbox_north": "36.08056",
+    "width_deg": "0.3667",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.5,
+       35.891666666666666
+      ],
+      [
+       10.866666666666667,
+       35.891666666666666
+      ],
+      [
+       10.866666666666667,
+       36.080555555555556
+      ],
+      [
+       10.5,
+       36.080555555555556
+      ],
+      [
+       10.5,
+       35.891666666666666
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340468",
+    "published_year": "1931",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-02-003",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° L-B6-C38, Halk El Mennzel / dressé, gravé et publié par Service géographique de l'armée (complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340468",
+    "serial": "L",
+    "serial_number": "50",
+    "band": "6",
+    "column": "38",
+    "sheet_name": "Halk El Mennzel",
+    "designation": "B6-C38",
+    "bbox_west": "10.50000",
+    "bbox_east": "10.86667",
+    "bbox_south": "35.89167",
+    "bbox_north": "36.08056",
+    "width_deg": "0.3667",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.363333333333333,
+       35.83777777777778
+      ],
+      [
+       8.723055555555556,
+       35.83777777777778
+      ],
+      [
+       8.723055555555556,
+       36.026944444444446
+      ],
+      [
+       8.363333333333333,
+       36.026944444444446
+      ],
+      [
+       8.363333333333333,
+       35.83777777777778
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340470",
+    "published_year": "1923",
+    "identifier": "07-08-02-008",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LI-B7-C32, Tadjerouine / dressé, héliogravé et publié par le Service Géographique de l'Armée en 1923 (révision partielle de 1923)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340470",
+    "serial": "LI",
+    "serial_number": "51",
+    "band": "7",
+    "column": "32",
+    "sheet_name": "Tadjerouine",
+    "designation": "B7-C32",
+    "bbox_west": "8.36333",
+    "bbox_east": "8.72306",
+    "bbox_south": "35.83778",
+    "bbox_north": "36.02694",
+    "width_deg": "0.3597",
+    "height_deg": "0.1892"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.074166666666667,
+       35.801944444444445
+      ],
+      [
+       9.434166666666666,
+       35.801944444444445
+      ],
+      [
+       9.434166666666666,
+       35.990833333333335
+      ],
+      [
+       9.074166666666667,
+       35.990833333333335
+      ],
+      [
+       9.074166666666667,
+       35.801944444444445
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340472",
+    "published_year": "1928",
+    "identifier": "07-08-02-015",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LIII-B7-C34, Maktar / dressé, héliogravé et publié par le Service géographique de l'Armée en 1928",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340472",
+    "serial": "LIII",
+    "serial_number": "53",
+    "band": "7",
+    "column": "34",
+    "sheet_name": "Maktar",
+    "designation": "B7-C34",
+    "bbox_west": "9.07417",
+    "bbox_east": "9.43417",
+    "bbox_south": "35.80194",
+    "bbox_north": "35.99083",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.425277777777778,
+       35.78333333333333
+      ],
+      [
+       9.785277777777777,
+       35.78333333333333
+      ],
+      [
+       9.785277777777777,
+       35.97277777777778
+      ],
+      [
+       9.425277777777778,
+       35.97277777777778
+      ],
+      [
+       9.425277777777778,
+       35.78333333333333
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340473",
+    "published_year": "1932",
+    "identifier": "07-08-02-018",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LIV-B7-C35, Djebel Serdj / dressé, héliogravé et publié par le Service Géographique de l'Armée en 1929 (complété en 1932)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340473",
+    "serial": "LIV",
+    "serial_number": "54",
+    "band": "7",
+    "column": "35",
+    "sheet_name": "Djebel Serdj",
+    "designation": "B7-C35",
+    "bbox_west": "9.42528",
+    "bbox_east": "9.78528",
+    "bbox_south": "35.78333",
+    "bbox_north": "35.97278",
+    "width_deg": "0.3600",
+    "height_deg": "0.1894"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.127222222222223,
+       35.730000000000004
+      ],
+      [
+       10.487222222222222,
+       35.730000000000004
+      ],
+      [
+       10.487222222222222,
+       35.92777777777778
+      ],
+      [
+       10.127222222222223,
+       35.92777777777778
+      ],
+      [
+       10.127222222222223,
+       35.730000000000004
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340475",
+    "published_year": "1923",
+    "identifier": "07-08-02-026",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LVI-B7-C37, Sebkra Kelbia / dressé, gravé et publié par le Service géographique de l'Armée (complété en 1923)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340475",
+    "serial": "LVI",
+    "serial_number": "56",
+    "band": "7",
+    "column": "37",
+    "sheet_name": "Sebkra Kelbia",
+    "designation": "B7-C37",
+    "bbox_west": "10.12722",
+    "bbox_east": "10.48722",
+    "bbox_south": "35.73000",
+    "bbox_north": "35.92778",
+    "width_deg": "0.3600",
+    "height_deg": "0.1978"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.478333333333333,
+       35.71194444444445
+      ],
+      [
+       10.847222222222223,
+       35.71194444444445
+      ],
+      [
+       10.847222222222223,
+       35.90972222222222
+      ],
+      [
+       10.478333333333333,
+       35.90972222222222
+      ],
+      [
+       10.478333333333333,
+       35.71194444444445
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340487",
+    "identifier": "07-08-02-032",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LVII-B7-C38, Sousse / dressé, héliogravé et publié par le Service géographique de l'Armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340487",
+    "serial": "LVII",
+    "serial_number": "57",
+    "band": "7",
+    "column": "38",
+    "sheet_name": "Sousse",
+    "designation": "B7-C38",
+    "bbox_west": "10.47833",
+    "bbox_east": "10.84722",
+    "bbox_south": "35.71194",
+    "bbox_north": "35.90972",
+    "width_deg": "0.3689",
+    "height_deg": "0.1978"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.478333333333333,
+       35.71194444444445
+      ],
+      [
+       10.847222222222223,
+       35.71194444444445
+      ],
+      [
+       10.847222222222223,
+       35.90972222222222
+      ],
+      [
+       10.478333333333333,
+       35.90972222222222
+      ],
+      [
+       10.478333333333333,
+       35.71194444444445
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340476",
+    "published_year": "1931",
+    "identifier": "07-08-02-030",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LVII-B7-C38, Sousse / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340476",
+    "serial": "LVII",
+    "serial_number": "57",
+    "band": "7",
+    "column": "38",
+    "sheet_name": "Sousse",
+    "designation": "B7-C38",
+    "bbox_west": "10.47833",
+    "bbox_east": "10.84722",
+    "bbox_south": "35.71194",
+    "bbox_north": "35.90972",
+    "width_deg": "0.3689",
+    "height_deg": "0.1978"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.255277777777778,
+       35.657777777777774
+      ],
+      [
+       8.705277777777777,
+       35.657777777777774
+      ],
+      [
+       8.705277777777777,
+       35.83777777777778
+      ],
+      [
+       8.255277777777778,
+       35.83777777777778
+      ],
+      [
+       8.255277777777778,
+       35.657777777777774
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340488",
+    "published_year": "1926",
+    "identifier": "07-08-02-034",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LIX-B8-C32, Kalaat es Senam / dressé, héliogravé et publié par le Service géographique de l'Armée en 1926",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340488",
+    "serial": "LIX",
+    "serial_number": "59",
+    "band": "8",
+    "column": "32",
+    "sheet_name": "Kalaat es Senam",
+    "designation": "B8-C32",
+    "bbox_west": "8.25528",
+    "bbox_east": "8.70528",
+    "bbox_south": "35.65778",
+    "bbox_north": "35.83778",
+    "width_deg": "0.4500",
+    "height_deg": "0.1800"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.705277777777777,
+       35.64
+      ],
+      [
+       9.065277777777778,
+       35.64
+      ],
+      [
+       9.065277777777778,
+       35.82888888888889
+      ],
+      [
+       8.705277777777777,
+       35.82888888888889
+      ],
+      [
+       8.705277777777777,
+       35.64
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340489",
+    "published_year": "1928",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-02-037",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LX-B8-C33, Aïn El Kseïba / dressé héliogravé et publié par le Service géographique de l'armée en 1928",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340489",
+    "serial": "LX",
+    "serial_number": "60",
+    "band": "8",
+    "column": "33",
+    "sheet_name": "Aïn El Kseïba",
+    "designation": "B8-C33",
+    "bbox_west": "8.70528",
+    "bbox_east": "9.06528",
+    "bbox_south": "35.64000",
+    "bbox_north": "35.82889",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.056111111111111,
+       35.621944444444445
+      ],
+      [
+       9.416111111111112,
+       35.621944444444445
+      ],
+      [
+       9.416111111111112,
+       35.81083333333333
+      ],
+      [
+       9.056111111111111,
+       35.81083333333333
+      ],
+      [
+       9.056111111111111,
+       35.621944444444445
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340490",
+    "published_year": "1929",
+    "identifier": "07-08-02-039",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXI-B8-C34, Rohia-Dj. Barbrou / dressé, héliogravé et publié par le Service géographique de l'Armée en 1929",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340490",
+    "serial": "LXI",
+    "serial_number": "61",
+    "band": "8",
+    "column": "34",
+    "sheet_name": "Rohia-Dj. Barbrou",
+    "designation": "B8-C34",
+    "bbox_west": "9.05611",
+    "bbox_east": "9.41611",
+    "bbox_south": "35.62194",
+    "bbox_north": "35.81083",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.407222222222222,
+       35.6
+      ],
+      [
+       9.767222222222223,
+       35.6
+      ],
+      [
+       9.767222222222223,
+       35.79277777777778
+      ],
+      [
+       9.407222222222222,
+       35.79277777777778
+      ],
+      [
+       9.407222222222222,
+       35.6
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340491",
+    "published_year": "1928",
+    "identifier": "07-08-02-042",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXII-B8-C35, Pichon / dressé, héliogravé et publié par le Service géographique de l'Armée en 1928",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340491",
+    "serial": "LXII",
+    "serial_number": "62",
+    "band": "8",
+    "column": "35",
+    "sheet_name": "Pichon",
+    "designation": "B8-C35",
+    "bbox_west": "9.40722",
+    "bbox_east": "9.76722",
+    "bbox_south": "35.60000",
+    "bbox_north": "35.79278",
+    "width_deg": "0.3600",
+    "height_deg": "0.1928"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.758055555555556,
+       35.56666666666667
+      ],
+      [
+       10.118333333333334,
+       35.56666666666667
+      ],
+      [
+       10.118333333333334,
+       35.75
+      ],
+      [
+       9.758055555555556,
+       35.75
+      ],
+      [
+       9.758055555555556,
+       35.56666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340492",
+    "published_year": "1927",
+    "identifier": "07-08-02-046",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXIII-B8-C36, Kairouan / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1927)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340492",
+    "serial": "LXIII",
+    "serial_number": "63",
+    "band": "8",
+    "column": "36",
+    "sheet_name": "Kairouan",
+    "designation": "B8-C36",
+    "bbox_west": "9.75806",
+    "bbox_east": "10.11833",
+    "bbox_south": "35.56667",
+    "bbox_north": "35.75000",
+    "width_deg": "0.3603",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.109166666666667,
+       35.55888888888889
+      ],
+      [
+       10.469166666666666,
+       35.55888888888889
+      ],
+      [
+       10.469166666666666,
+       35.74777777777778
+      ],
+      [
+       10.109166666666667,
+       35.74777777777778
+      ],
+      [
+       10.109166666666667,
+       35.55888888888889
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340493",
+    "published_year": "1923",
+    "identifier": "07-08-02-049",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXIV-B8-C37, Sidi El Hani / dressé, héliogravé et publié par le Service géographique de l'Armée (Complété en 1923)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340493",
+    "serial": "LXIV",
+    "serial_number": "64",
+    "band": "8",
+    "column": "37",
+    "sheet_name": "Sidi El Hani",
+    "designation": "B8-C37",
+    "bbox_west": "10.10917",
+    "bbox_east": "10.46917",
+    "bbox_south": "35.55889",
+    "bbox_north": "35.74778",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.793333333333333,
+       35.5
+      ],
+      [
+       10.820277777777777,
+       35.5
+      ],
+      [
+       10.820277777777777,
+       35.666666666666664
+      ],
+      [
+       10.793333333333333,
+       35.666666666666664
+      ],
+      [
+       10.793333333333333,
+       35.5
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340494",
+    "published_year": "1925",
+    "identifier": "07-08-02-052",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXV-B8-C38, Djemmal / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1925)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340494",
+    "serial": "LXV",
+    "serial_number": "65",
+    "band": "8",
+    "column": "38",
+    "sheet_name": "Djemmal",
+    "designation": "B8-C38",
+    "bbox_west": "10.79333",
+    "bbox_east": "10.82028",
+    "bbox_south": "35.50000",
+    "bbox_north": "35.66667",
+    "width_deg": "0.0269",
+    "height_deg": "0.1667"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.811111111111112,
+       35.505
+      ],
+      [
+       11.171111111111111,
+       35.505
+      ],
+      [
+       11.171111111111111,
+       35.70277777777778
+      ],
+      [
+       10.811111111111112,
+       35.70277777777778
+      ],
+      [
+       10.811111111111112,
+       35.505
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340495",
+    "published_year": "1931",
+    "identifier": "07-08-02-055",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXVI-B8-C39, Moknine / dressé, héliogravé et publié par le Service Géographique de l'Armée (Complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340495",
+    "serial": "LXVI",
+    "serial_number": "66",
+    "band": "8",
+    "column": "39",
+    "sheet_name": "Moknine",
+    "designation": "B8-C39",
+    "bbox_west": "10.81111",
+    "bbox_east": "11.17111",
+    "bbox_south": "35.50500",
+    "bbox_north": "35.70278",
+    "width_deg": "0.3600",
+    "height_deg": "0.1978"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.336111111111112,
+       35.47777777777778
+      ],
+      [
+       8.696111111111112,
+       35.47777777777778
+      ],
+      [
+       8.696111111111112,
+       35.666666666666664
+      ],
+      [
+       8.336111111111112,
+       35.666666666666664
+      ],
+      [
+       8.336111111111112,
+       35.47777777777778
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340496",
+    "published_year": "1927",
+    "identifier": "07-08-02-057",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXVII-B9-C32, Thala / dressé, héliogravé et publié par Service géographique de l'armée en 1927",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340496",
+    "serial": "LXVII",
+    "serial_number": "67",
+    "band": "9",
+    "column": "32",
+    "sheet_name": "Thala",
+    "designation": "B9-C32",
+    "bbox_west": "8.33611",
+    "bbox_east": "8.69611",
+    "bbox_south": "35.47778",
+    "bbox_north": "35.66667",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.687222222222223,
+       35.46
+      ],
+      [
+       9.047222222222222,
+       35.46
+      ],
+      [
+       9.047222222222222,
+       35.64888888888889
+      ],
+      [
+       8.687222222222223,
+       35.64888888888889
+      ],
+      [
+       8.687222222222223,
+       35.46
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340507",
+    "published_year": "1928",
+    "identifier": "07-08-02-059",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXVIII-B9-C33, Ksar Tlili / dressé, héliogravé et publié par le Service Géographique de l'Armée en 1928",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340507",
+    "serial": "LXVIII",
+    "serial_number": "68",
+    "band": "9",
+    "column": "33",
+    "sheet_name": "Ksar Tlili",
+    "designation": "B9-C33",
+    "bbox_west": "8.68722",
+    "bbox_east": "9.04722",
+    "bbox_south": "35.46000",
+    "bbox_north": "35.64889",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.038333333333334,
+       35.44194444444444
+      ],
+      [
+       9.398055555555555,
+       35.44194444444444
+      ],
+      [
+       9.398055555555555,
+       35.630833333333335
+      ],
+      [
+       9.038333333333334,
+       35.630833333333335
+      ],
+      [
+       9.038333333333334,
+       35.44194444444444
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340508",
+    "published_year": "1928",
+    "identifier": "07-08-02-062",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXIX-B9-C34, Sbiba / dressé, héliogravé et publié par le Service Géographique de l'Armée en 1928",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340508",
+    "serial": "LXIX",
+    "serial_number": "69",
+    "band": "9",
+    "column": "34",
+    "sheet_name": "Sbiba",
+    "designation": "B9-C34",
+    "bbox_west": "9.03833",
+    "bbox_east": "9.39806",
+    "bbox_south": "35.44194",
+    "bbox_north": "35.63083",
+    "width_deg": "0.3597",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.389166666666666,
+       35.42388888888889
+      ],
+      [
+       9.749166666666666,
+       35.42388888888889
+      ],
+      [
+       9.749166666666666,
+       35.61277777777778
+      ],
+      [
+       9.389166666666666,
+       35.61277777777778
+      ],
+      [
+       9.389166666666666,
+       35.42388888888889
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340509",
+    "published_year": "1929",
+    "identifier": "07-08-02-066",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXX-B9-C35, Djebel Trozza / dessiné, héliogravé et publié par le Service Géographique de l'Armée en 1929",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340509",
+    "serial": "LXX",
+    "serial_number": "70",
+    "band": "9",
+    "column": "35",
+    "sheet_name": "Djebel Trozza",
+    "designation": "B9-C35",
+    "bbox_west": "9.38917",
+    "bbox_east": "9.74917",
+    "bbox_south": "35.42389",
+    "bbox_north": "35.61278",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.758055555555556,
+       35.4
+      ],
+      [
+       10.1,
+       35.4
+      ],
+      [
+       10.1,
+       35.583333333333336
+      ],
+      [
+       9.758055555555556,
+       35.583333333333336
+      ],
+      [
+       9.758055555555556,
+       35.4
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340510",
+    "published_year": "1927",
+    "identifier": "07-08-02-069",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXI-B9-C36, Pavillier / dressé, héliogravé et publié par le Service géographique de l'Armée en 1923 (révision partielle en 1927)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340510",
+    "serial": "LXXI",
+    "serial_number": "71",
+    "band": "9",
+    "column": "36",
+    "sheet_name": "Pavillier",
+    "designation": "B9-C36",
+    "bbox_west": "9.75806",
+    "bbox_east": "10.10000",
+    "bbox_south": "35.40000",
+    "bbox_north": "35.58333",
+    "width_deg": "0.3419",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.091111111111111,
+       35.36666666666667
+      ],
+      [
+       10.45111111111111,
+       35.36666666666667
+      ],
+      [
+       10.45111111111111,
+       35.56666666666667
+      ],
+      [
+       10.091111111111111,
+       35.56666666666667
+      ],
+      [
+       10.091111111111111,
+       35.36666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340511",
+    "published_year": "1931",
+    "identifier": "07-08-02-071",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXII-B9-C37, Oued Cherita / dessiné, héliogravé et publié par le Service Géographique de l'Armée en 1922 (Complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340511",
+    "serial": "LXXII",
+    "serial_number": "72",
+    "band": "9",
+    "column": "37",
+    "sheet_name": "Oued Cherita",
+    "designation": "B9-C37",
+    "bbox_west": "10.09111",
+    "bbox_east": "10.45111",
+    "bbox_south": "35.36667",
+    "bbox_north": "35.56667",
+    "width_deg": "0.3600",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.45111111111111,
+       35.35
+      ],
+      [
+       10.802222222222223,
+       35.35
+      ],
+      [
+       10.802222222222223,
+       35.55
+      ],
+      [
+       10.45111111111111,
+       35.55
+      ],
+      [
+       10.45111111111111,
+       35.35
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340512",
+    "published_year": "1931",
+    "identifier": "07-08-02-073",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXIII-B9-C38, Kerker / dessiné, héliogravé et publié par le Service Géographique de l'Armée (Complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340512",
+    "serial": "LXXIII",
+    "serial_number": "73",
+    "band": "9",
+    "column": "38",
+    "sheet_name": "Kerker",
+    "designation": "B9-C38",
+    "bbox_west": "10.45111",
+    "bbox_east": "10.80222",
+    "bbox_south": "35.35000",
+    "bbox_north": "35.55000",
+    "width_deg": "0.3511",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.327222222222222,
+       35.297777777777775
+      ],
+      [
+       8.678055555555554,
+       35.297777777777775
+      ],
+      [
+       8.678055555555554,
+       35.48694444444445
+      ],
+      [
+       8.327222222222222,
+       35.48694444444445
+      ],
+      [
+       8.327222222222222,
+       35.297777777777775
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340513",
+    "published_year": "1930",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-02-077",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXV-B10-C32, Djebel Bireno / dressé, heliogravé et publié par le Service géographique de l'armée en 1930",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340513",
+    "serial": "LXXV",
+    "serial_number": "75",
+    "band": "10",
+    "column": "32",
+    "sheet_name": "Djebel Bireno",
+    "designation": "B10-C32",
+    "bbox_west": "8.32722",
+    "bbox_east": "8.67806",
+    "bbox_south": "35.29778",
+    "bbox_north": "35.48694",
+    "width_deg": "0.3508",
+    "height_deg": "0.1892"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.678055555555554,
+       35.28
+      ],
+      [
+       9.029166666666667,
+       35.28
+      ],
+      [
+       9.029166666666667,
+       35.46888888888889
+      ],
+      [
+       8.678055555555554,
+       35.46888888888889
+      ],
+      [
+       8.678055555555554,
+       35.28
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340514",
+    "published_year": "1930",
+    "identifier": "07-08-02-079",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXVI-B10-C33, Djebel Semmama / dressé, héliogravé et publié au Service Géographique de l'Armée en 1930",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340514",
+    "serial": "LXXVI",
+    "serial_number": "76",
+    "band": "10",
+    "column": "33",
+    "sheet_name": "Djebel Semmama",
+    "designation": "B10-C33",
+    "bbox_west": "8.67806",
+    "bbox_east": "9.02917",
+    "bbox_south": "35.28000",
+    "bbox_north": "35.46889",
+    "width_deg": "0.3511",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.380277777777778,
+       35.261944444444445
+      ],
+      [
+       9.695833333333333,
+       35.261944444444445
+      ],
+      [
+       9.695833333333333,
+       35.450833333333335
+      ],
+      [
+       9.380277777777778,
+       35.450833333333335
+      ],
+      [
+       9.380277777777778,
+       35.261944444444445
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340515",
+    "published_year": "1932",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-02-081",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXVII-B10-C34, Djebel Mrhila / dessiné, héliogravé et publié par le Service Géographique de l'Armée en 1932",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340515",
+    "serial": "LXXVII",
+    "serial_number": "77",
+    "band": "10",
+    "column": "34",
+    "sheet_name": "Djebel Mrhila",
+    "designation": "B10-C34",
+    "bbox_west": "9.38028",
+    "bbox_east": "9.69583",
+    "bbox_south": "35.26194",
+    "bbox_north": "35.45083",
+    "width_deg": "0.3156",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.366666666666667,
+       35.233333333333334
+      ],
+      [
+       9.716666666666667,
+       35.233333333333334
+      ],
+      [
+       9.716666666666667,
+       35.416666666666664
+      ],
+      [
+       9.366666666666667,
+       35.416666666666664
+      ],
+      [
+       9.366666666666667,
+       35.233333333333334
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340516",
+    "published_year": "1933",
+    "identifier": "07-08-02-083",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXVIII-B10-C35, Hadjeb el Aïoun / dressé, héliogravé et publié par le Service géographique de l'Armée en 1933",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340516",
+    "serial": "LXXVIII",
+    "serial_number": "78",
+    "band": "10",
+    "column": "35",
+    "sheet_name": "Hadjeb el Aïoun",
+    "designation": "B10-C35",
+    "bbox_west": "9.36667",
+    "bbox_east": "9.71667",
+    "bbox_south": "35.23333",
+    "bbox_north": "35.41667",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.731111111111112,
+       35.21666666666667
+      ],
+      [
+       10.082222222222223,
+       35.21666666666667
+      ],
+      [
+       10.082222222222223,
+       35.4
+      ],
+      [
+       9.731111111111112,
+       35.4
+      ],
+      [
+       9.731111111111112,
+       35.21666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340527",
+    "published_year": "1934",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-02-086",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXIX-B10-C36, Nasr Allah / dressé, héliogravé et publié par le Service géographique de l'armée en 1934",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340527",
+    "serial": "LXXIX",
+    "serial_number": "79",
+    "band": "10",
+    "column": "36",
+    "sheet_name": "Nasr Allah",
+    "designation": "B10-C36",
+    "bbox_west": "9.73111",
+    "bbox_east": "10.08222",
+    "bbox_south": "35.21667",
+    "bbox_north": "35.40000",
+    "width_deg": "0.3511",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.082222222222223,
+       35.18333333333333
+      ],
+      [
+       10.433333333333334,
+       35.18333333333333
+      ],
+      [
+       10.433333333333334,
+       35.36666666666667
+      ],
+      [
+       10.082222222222223,
+       35.36666666666667
+      ],
+      [
+       10.082222222222223,
+       35.18333333333333
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340528",
+    "published_year": "1934",
+    "identifier": "07-08-02-089",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXX-B10-C37, Chorbane / dressé, héliogravé et publié au Service géographique de l'Armée en 1934",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340528",
+    "serial": "LXXX",
+    "serial_number": "80",
+    "band": "10",
+    "column": "37",
+    "sheet_name": "Chorbane",
+    "designation": "B10-C37",
+    "bbox_west": "10.08222",
+    "bbox_east": "10.43333",
+    "bbox_south": "35.18333",
+    "bbox_north": "35.36667",
+    "width_deg": "0.3511",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.433333333333334,
+       35.166666666666664
+      ],
+      [
+       10.783333333333333,
+       35.166666666666664
+      ],
+      [
+       10.783333333333333,
+       35.36666666666667
+      ],
+      [
+       10.433333333333334,
+       35.36666666666667
+      ],
+      [
+       10.433333333333334,
+       35.166666666666664
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340529",
+    "published_year": "1931",
+    "identifier": "07-08-02-091",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXXI-B10-C38, El Djem / dessiné, héliogravé et publié par le Service Géographique de l'Armée (Complété en 1931)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340529",
+    "serial": "LXXXI",
+    "serial_number": "81",
+    "band": "10",
+    "column": "38",
+    "sheet_name": "El Djem",
+    "designation": "B10-C38",
+    "bbox_west": "10.43333",
+    "bbox_east": "10.78333",
+    "bbox_south": "35.16667",
+    "bbox_north": "35.36667",
+    "width_deg": "0.3500",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.775277777777779,
+       35.14472222222222
+      ],
+      [
+       11.135277777777777,
+       35.14472222222222
+      ],
+      [
+       11.135277777777777,
+       35.34277777777778
+      ],
+      [
+       10.775277777777779,
+       35.34277777777778
+      ],
+      [
+       10.775277777777779,
+       35.14472222222222
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340530",
+    "published_year": "1925",
+    "identifier": "07-08-02-093",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXXII-B10-C39, Chebba / dressé, héliogravé et publié par le Service géographique de l'Armée (complété en 1925)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340530",
+    "serial": "LXXXII",
+    "serial_number": "82",
+    "band": "10",
+    "column": "39",
+    "sheet_name": "Chebba",
+    "designation": "B10-C39",
+    "bbox_west": "10.77528",
+    "bbox_east": "11.13528",
+    "bbox_south": "35.14472",
+    "bbox_north": "35.34278",
+    "width_deg": "0.3600",
+    "height_deg": "0.1981"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.309166666666668,
+       35.117777777777775
+      ],
+      [
+       8.669166666666666,
+       35.117777777777775
+      ],
+      [
+       8.669166666666666,
+       35.30694444444444
+      ],
+      [
+       8.309166666666668,
+       35.30694444444444
+      ],
+      [
+       8.309166666666668,
+       35.117777777777775
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340531",
+    "published_year": "1939",
+    "identifier": "07-08-02-096",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXXIII-B11-C32, Bou Chebka / dressé, dessiné et publié par le Service géographique de l'Armée en 1939",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340531",
+    "serial": "LXXXIII",
+    "serial_number": "83",
+    "band": "11",
+    "column": "32",
+    "sheet_name": "Bou Chebka",
+    "designation": "B11-C32",
+    "bbox_west": "8.30917",
+    "bbox_east": "8.66917",
+    "bbox_south": "35.11778",
+    "bbox_north": "35.30694",
+    "width_deg": "0.3600",
+    "height_deg": "0.1892"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.660277777777779,
+       35.1
+      ],
+      [
+       9.020277777777778,
+       35.1
+      ],
+      [
+       9.020277777777778,
+       35.288888888888884
+      ],
+      [
+       8.660277777777779,
+       35.288888888888884
+      ],
+      [
+       8.660277777777779,
+       35.1
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340532",
+    "published_year": "1936",
+    "identifier": "07-08-02-099",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° LXXXIV-B11-C33, Kasserine / dressé, héliogravé et publié par le Service Géographique de l'Armée en 1936",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340532",
+    "serial": "LXXXIV",
+    "serial_number": "84",
+    "band": "11",
+    "column": "33",
+    "sheet_name": "Kasserine",
+    "designation": "B11-C33",
+    "bbox_west": "8.66028",
+    "bbox_east": "9.02028",
+    "bbox_south": "35.10000",
+    "bbox_north": "35.28889",
+    "width_deg": "0.3600",
+    "height_deg": "0.1889"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.35,
+       33.21666666666667
+      ],
+      [
+       10.616666666666667,
+       33.21666666666667
+      ],
+      [
+       10.616666666666667,
+       33.416666666666664
+      ],
+      [
+       10.35,
+       33.416666666666664
+      ],
+      [
+       10.35,
+       33.21666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340629",
+    "identifier": "07-09-05-08",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "[Carte de Tunisie 1:50 000] / dressé, héliogravé et publié par le Service géographique de l'Armée (révisé en 1933)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340629",
+    "bbox_west": "10.35000",
+    "bbox_east": "10.61667",
+    "bbox_south": "33.21667",
+    "bbox_north": "33.41667",
+    "width_deg": "0.2667",
+    "height_deg": "0.2000"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.55,
+       34.65
+      ],
+      [
+       10.9,
+       34.65
+      ],
+      [
+       10.9,
+       34.833333333333336
+      ],
+      [
+       10.55,
+       34.833333333333336
+      ],
+      [
+       10.55,
+       34.65
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340616",
+    "identifier": "07-09-05-02",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Environs de Sfax / dressé, héliogravé et publié par le Service géographique de l'Armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340616",
+    "bbox_west": "10.55000",
+    "bbox_east": "10.90000",
+    "bbox_south": "34.65000",
+    "bbox_north": "34.83333",
+    "width_deg": "0.3500",
+    "height_deg": "0.1833"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       8.583333333333334,
+       34.31666666666667
+      ],
+      [
+       8.933333333333334,
+       34.31666666666667
+      ],
+      [
+       8.933333333333334,
+       34.483333333333334
+      ],
+      [
+       8.583333333333334,
+       34.483333333333334
+      ],
+      [
+       8.583333333333334,
+       34.31666666666667
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340627",
+    "revision_year": "1934",
+    "published_year": "1941",
+    "identifier": "07-09-05-03",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "[Tunisie au 1:50 000] / dressé, héliogravé et publié par le Service Géographique de l'Armée (révision de 1934)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340627",
+    "bbox_west": "8.58333",
+    "bbox_east": "8.93333",
+    "bbox_south": "34.31667",
+    "bbox_north": "34.48333",
+    "width_deg": "0.3500",
+    "height_deg": "0.1667"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.933333333333334,
+       33.766666666666666
+      ],
+      [
+       10.183333333333334,
+       33.766666666666666
+      ],
+      [
+       10.183333333333334,
+       33.983333333333334
+      ],
+      [
+       9.933333333333334,
+       33.983333333333334
+      ],
+      [
+       9.933333333333334,
+       33.766666666666666
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340628",
+    "published_year": "1940",
+    "identifier": "07-09-05-05",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "[Carte de Tunisie 1:50 000] / dressé, héliogravé et publié par le Service géographique de l'Armée (révisée en 1933)",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340628",
+    "bbox_west": "9.93333",
+    "bbox_east": "10.18333",
+    "bbox_south": "33.76667",
+    "bbox_north": "33.98333",
+    "width_deg": "0.2500",
+    "height_deg": "0.2167"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.757222222222222,
+       34.965
+      ],
+      [
+       11.117222222222223,
+       34.965
+      ],
+      [
+       11.117222222222223,
+       35.16277777777778
+      ],
+      [
+       10.757222222222222,
+       35.16277777777778
+      ],
+      [
+       10.757222222222222,
+       34.965
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340533",
+    "published_year": "1940",
+    "projection": "Bonne",
+    "ellipsoid": "Clarke 1880",
+    "identifier": "07-08-02-110",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie Flle. N° XC, Djebeniana / dressé, dessiné et publié par le Service Géographique de l'Armée en 1940",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340533",
+    "serial": "XC",
+    "serial_number": "90",
+    "sheet_name": "Djebeniana",
+    "bbox_west": "10.75722",
+    "bbox_east": "11.11722",
+    "bbox_south": "34.96500",
+    "bbox_north": "35.16278",
+    "width_deg": "0.3600",
+    "height_deg": "0.1978"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.037222222222223,
+       33.371944444444445
+      ],
+      [
+       10.433333333333334,
+       33.371944444444445
+      ],
+      [
+       10.433333333333334,
+       33.57888888888889
+      ],
+      [
+       10.037222222222223,
+       33.57888888888889
+      ],
+      [
+       10.037222222222223,
+       33.371944444444445
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340534",
+    "published_year": "1941",
+    "identifier": "07-08-02-145",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie : coupure spéciale / dressé, dessiné par le Service Géographique de l'Armée en 1939-1940",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340534",
+    "bbox_west": "10.03722",
+    "bbox_east": "10.43333",
+    "bbox_south": "33.37194",
+    "bbox_north": "33.57889",
+    "width_deg": "0.3961",
+    "height_deg": "0.2069"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       10.055277777777778,
+       33.57
+      ],
+      [
+       10.45111111111111,
+       33.57
+      ],
+      [
+       10.45111111111111,
+       33.776944444444446
+      ],
+      [
+       10.055277777777778,
+       33.776944444444446
+      ],
+      [
+       10.055277777777778,
+       33.57
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340535",
+    "published_year": "1941",
+    "identifier": "07-08-02-146",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Tunisie coupure spéciale, Mareth / dressé, dessiné par le Service géographique de l'Armée en 1939-40",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340535",
+    "bbox_west": "10.05528",
+    "bbox_east": "10.45111",
+    "bbox_south": "33.57000",
+    "bbox_north": "33.77694",
+    "width_deg": "0.3958",
+    "height_deg": "0.2069"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.983333333333333,
+       36.68333333333333
+      ],
+      [
+       10.466666666666667,
+       36.68333333333333
+      ],
+      [
+       10.466666666666667,
+       36.85
+      ],
+      [
+       9.983333333333333,
+       36.85
+      ],
+      [
+       9.983333333333333,
+       36.68333333333333
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "record_id": "oai:u-bordeaux-montaigne.fr:340615",
+    "published_year": "1946",
+    "identifier": "07-09-05-01",
+    "provenance": "partner",
+    "scale_denominator": "50000",
+    "title": "Environs de Tunis / publié par le Service géographique de l'Armée",
+    "url": "https://1886.u-bordeaux-montaigne.fr/s/1886/item/340615",
+    "bbox_west": "9.98333",
+    "bbox_east": "10.46667",
+    "bbox_south": "36.68333",
+    "bbox_north": "36.85000",
+    "width_deg": "0.4833",
+    "height_deg": "0.1667"
+   }
+  }
+ ]
+}
