@@ -1791,7 +1791,7 @@
     "anchor_vs_catalogue_n_m": 25.1,
     "residual_rms_m": 12.89,
     "residual_max_m": 25.71,
-    "anchor_confident": true,
+    "anchor_confident": false,
     "corners": {
       "north_west": {
         "lon": 9.522593,
@@ -3428,7 +3428,7 @@
     "anchor_vs_catalogue_n_m": 314.7,
     "residual_rms_m": 18.12,
     "residual_max_m": 52.7,
-    "anchor_confident": true,
+    "anchor_confident": false,
     "corners": {
       "north_west": {
         "lon": 8.405283,
@@ -4495,7 +4495,7 @@
     "anchor_vs_catalogue_n_m": 307.2,
     "residual_rms_m": 25.0,
     "residual_max_m": 97.42,
-    "anchor_confident": true,
+    "anchor_confident": false,
     "corners": {
       "north_west": {
         "lon": 9.45553,
@@ -5226,7 +5226,7 @@
     "anchor_vs_catalogue_n_m": 146.1,
     "residual_rms_m": 19.55,
     "residual_max_m": 43.41,
-    "anchor_confident": true,
+    "anchor_confident": false,
     "corners": {
       "north_west": {
         "lon": 9.085604,
@@ -8027,7 +8027,7 @@
     "anchor_vs_catalogue_n_m": 245.7,
     "residual_rms_m": 11.69,
     "residual_max_m": 28.61,
-    "anchor_confident": true,
+    "anchor_confident": false,
     "corners": {
       "north_west": {
         "lon": 10.796166,

@@ -40,6 +40,7 @@ a relevance score.
 | **Extracted symbols (GeoJSON)** | [`data/symbols/`](data/symbols/) |
 | **Symbol counts per sheet** | [`data/symbols_summary.csv`](data/symbols_summary.csv) |
 | **Objects joined to modern units** | [`data/symbols_by_unit.csv`](data/symbols_by_unit.csv) |
+| **Every object, flat table** | [`data/symbols_joined.csv`](data/symbols_joined.csv) |
 | **Contemporary boundaries** | [`data/boundaries/`](data/boundaries/) |
 | **Scan locations** | [`data/sheet_images.json`](data/sheet_images.json) |
 | Run statistics | [`data/summary.json`](data/summary.json) |

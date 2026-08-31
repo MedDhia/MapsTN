@@ -572,6 +572,16 @@ def main() -> int:
         args.out_json.write_text(json.dumps(results, ensure_ascii=False, indent=2),
                                  encoding="utf-8")
 
+    # Stamp the verdict into the cached record as well, so there is exactly one
+    # definition of it. Keeping the rule here and a stale copy in the JSON let
+    # the two disagree - 44 sheets by the JSON's older rule against 39 by this
+    # one - and every downstream consumer picked whichever it happened to read.
+    for found in results.values():
+        if "affine" in found:
+            found["anchor_confident"] = anchor_is_confident(found)
+    args.out_json.write_text(json.dumps(results, ensure_ascii=False, indent=2),
+                             encoding="utf-8")
+
     rows = []
     for record_id, found in sorted(results.items()):
         sheet = sheets.get(record_id, {})

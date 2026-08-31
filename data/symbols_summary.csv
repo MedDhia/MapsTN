@@ -1,11 +1,74 @@
-record_id,sheet_name,anchor_confident,residual_rms_m,building,well,vegetation,total
-oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,1,13.57,1152,2158,0,3310
-oai:u-bordeaux-montaigne.fr:340414,Oudna,1,12.48,1611,85,0,1696
-oai:u-bordeaux-montaigne.fr:340429,Teboursouk,1,13.83,860,752,0,1612
-oai:u-bordeaux-montaigne.fr:340435,Nebeur,1,12.6,924,1000,0,1924
-oai:u-bordeaux-montaigne.fr:340455,Djebibina,1,14.11,463,1540,0,2003
-oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,1,14.3,777,649,0,1426
-oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,1,13.57,454,44,0,498
-oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,1,11.62,600,4,0,604
-oai:u-bordeaux-montaigne.fr:340529,El Djem,1,14.19,368,6,0,374
-oai:u-bordeaux-montaigne.fr:340532,Kasserine,1,14.04,1164,514,0,1678
+record_id,sheet_name,anchor_confident,residual_rms_m,building,well,vegetation,total,clipped_out
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,0,50.13,256,0,0,256,491
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,0,16.78,912,0,0,912,267
+oai:u-bordeaux-montaigne.fr:340356,Metline,0,12.67,468,0,0,468,320
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,0,8.78,929,0,0,929,440
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,1,17.24,923,0,0,923,286
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,0,15.42,1346,0,0,1346,401
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,0,15.6,726,0,0,726,660
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,0,10.45,443,0,0,443,590
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,0,49.38,586,0,0,586,439
+oai:u-bordeaux-montaigne.fr:340375,Hedil,0,61.62,704,0,0,704,605
+oai:u-bordeaux-montaigne.fr:340376,Mateur,0,11.57,1392,0,0,1392,780
+oai:u-bordeaux-montaigne.fr:340387,Ariana,0,48.75,1501,0,0,1501,507
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,0,11.37,1079,0,0,1079,385
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,0,16.69,1283,0,0,1283,530
+oai:u-bordeaux-montaigne.fr:340393,Béja,0,9.67,968,0,0,968,541
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,1,12.89,1791,0,0,1791,453
+oai:u-bordeaux-montaigne.fr:340395,Tunis,1,61.92,3515,0,0,3515,447
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,1,33.73,2294,0,0,2294,468
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,1,13.57,1176,0,0,1176,536
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,1,40.14,2544,0,0,2544,369
+oai:u-bordeaux-montaigne.fr:340414,Oudna,1,12.48,1693,0,0,1693,453
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,1,18.64,1843,0,0,1843,534
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,1,19.29,743,0,0,743,491
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,1,66.92,1335,0,0,1335,439
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,1,13.83,842,0,0,842,572
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,0,31.67,1548,0,0,1548,411
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,1,50.09,1722,0,0,1722,562
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,1,14.49,1327,0,0,1327,411
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,0,9.11,222,0,0,222,592
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,1,18.12,538,0,0,538,523
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,1,12.6,913,0,0,913,497
+oai:u-bordeaux-montaigne.fr:340436,Gafour,0,19.39,801,0,0,801,548
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,1,17.6,1503,0,0,1503,604
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,0,15.44,1020,0,0,1020,595
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,0,51.44,852,0,0,852,504
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,0,12.6,706,0,0,706,411
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,0,13.95,728,0,0,728,715
+oai:u-bordeaux-montaigne.fr:340453,Siliana,1,41.66,1093,0,0,1093,456
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,1,25.0,1243,0,0,1243,402
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,1,14.11,508,0,0,508,447
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,1,14.3,874,0,0,874,345
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,1,52.24,165,0,0,165,432
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,1,16.48,737,0,0,737,411
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,1,28.58,1447,0,0,1447,513
+oai:u-bordeaux-montaigne.fr:340472,Maktar,1,19.55,1610,0,0,1610,492
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,1,17.75,1123,0,0,1123,412
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,1,13.57,576,0,0,576,447
+oai:u-bordeaux-montaigne.fr:340476,Sousse,1,15.88,1389,0,0,1389,459
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,1,35.32,1166,0,0,1166,518
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,1,15.85,1221,0,0,1221,464
+oai:u-bordeaux-montaigne.fr:340491,Pichon,1,21.1,1951,0,0,1951,429
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,0,24.9,889,0,0,889,436
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,0,56.06,400,0,0,400,479
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,0,12.33,29,0,0,29,1175
+oai:u-bordeaux-montaigne.fr:340495,Moknine,0,16.4,1569,0,0,1569,344
+oai:u-bordeaux-montaigne.fr:340496,Thala,1,15.64,864,0,0,864,522
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,1,57.55,1223,0,0,1223,582
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,1,30.5,1127,0,0,1127,511
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,1,15.44,344,0,0,344,596
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,1,18.64,555,0,0,555,430
+oai:u-bordeaux-montaigne.fr:340512,Kerker,1,29.77,393,0,0,393,403
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,1,16.07,396,0,0,396,507
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,1,11.62,596,0,0,596,521
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,0,16.73,735,0,0,735,588
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,0,20.38,1588,0,0,1588,631
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,0,18.85,490,0,0,490,490
+oai:u-bordeaux-montaigne.fr:340529,El Djem,1,14.19,454,0,0,454,428
+oai:u-bordeaux-montaigne.fr:340530,Chebba,1,11.69,950,0,0,950,297
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,1,21.13,574,0,0,574,393
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,1,14.04,1196,0,0,1196,325
+oai:u-bordeaux-montaigne.fr:340534,,1,18.54,1143,0,0,1143,451
+oai:u-bordeaux-montaigne.fr:340535,,1,54.34,1100,0,0,1100,500
+oai:u-bordeaux-montaigne.fr:340629,,0,8.35,599,0,0,599,336

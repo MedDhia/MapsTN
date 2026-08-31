@@ -102,20 +102,18 @@ Both editions of the legend define these identically, so no per-edition
 crosswalk is needed — see
 [`config/legend_vocabulary.json`](../config/legend_vocabulary.json).
 
-On the Kasserine sheet: **1164 buildings and 514 wells**, every one carrying a
-pixel position, a Lambert easting and northing, and a WGS84 longitude and
-latitude. Their extent runs lon 8.663–9.022, lat 35.109–35.290 against a
-catalogued sheet extent of 8.660–9.020 by 35.100–35.289 — agreement to about
-180 m, which is the anchor's stated offset and not a separate error.
+**All 73 georeferenced sheets are extracted: 75 489 houses**, every one carrying
+a pixel position, a Lambert easting and northing, and a WGS84 longitude and
+latitude. 44 588 of them are on the 39 sheets whose absolute anchor is confirmed.
 
-Across ten sheets whose transforms all fit to 12–14 m, building counts run
-454–1611, which is the kind of spread settlement density should show. Well
-counts run **4 to 2158**. Part of that is real — Djebel Semmama is a dry massif
-and Oued-Zarga is the Medjerda valley — but a factor of 500 is not, and the
-overlays show the well detector firing on blue hatching in marshy ground. So
-wells are shipped where already extracted, and labelled provisional, but they
-are no longer extracted by default and should not be counted or compared across
-sheets until the detector is validated sheet by sheet.
+Across all 73 georeferenced sheets, building counts run **29 to 3515** per
+sheet, median 929 — the kind of spread settlement density should show. Well
+counts, on the ten sheets where they were extracted, ran **4 to 2158**. Part of
+that spread is real — Djebel Semmama is a dry massif and Oued-Zarga the Medjerda
+valley — but a factor of 500 is not, and the overlays show the well detector
+firing on blue hatching in marshy ground. Wells are therefore not extracted by
+default, are labelled provisional where they exist, and should not be counted or
+compared across sheets until the detector is validated sheet by sheet.
 
 ### A ring is not a blob
 
@@ -140,10 +138,33 @@ as an inked rim is what separates a ring from a filled dot.
   neighbourhood beyond the ring to be mostly empty keeps the isolated symbol and
   drops the chain.
 
-Detections are also clipped a little inside the neatline. Without that, the
-legend's own specimen symbols and the red margin labels are extracted as map
-content — the Kasserine sheet returned features up to 1.3 km outside its own
-frame.
+### The clip: the catalogue extent, not the detected frame
+
+Detections are clipped to the sheet's own catalogued extent — which is exactly
+what a sheet's *"Coordonnées (E … / N …)"* statement describes: its neatline.
+Without any clip the legend's own specimen symbols and the red margin labels come
+through as map content.
+
+The **detected** neatline was used for this first and is the wrong tool. Its box
+comes out a median 6% smaller than the catalogued one, but ranges from 40%
+smaller to larger, because each side of the frame is three rules and the detector
+picks a different one on different sheets. So the clip was discarding a border of
+real content on some sheets and letting margin in on others. Switching to the
+catalogue box — good to ~800 m, and not a function of how a scan came out —
+recovered content on most sheets: Kasserine went from 1164 houses to 1196.
+
+Across the series the clip removes **32% of raw detections**, all of it margin
+and legend.
+
+### Speed, because it decided what was possible
+
+The first full-sheet pass took 3 min 27 s per sheet, of which two minutes was
+system time: `np.mgrid` over a 66-megapixel scan is two int64 arrays of half a
+gigabyte, and then each of the ~55 grid lines makes another full-size temporary.
+Masking the grid out in 512-row blocks, finding the nearest line by
+`searchsorted` instead of one comparison per line, and building only the colour
+masks actually requested took it to **30 s per sheet** — same output, 7× faster,
+which is the difference between extracting ten sheets and extracting all 73.
 
 ### What is deliberately not shipped by default
 
@@ -213,50 +234,84 @@ Two other sources were tried. **geoBoundaries** is the obvious choice and is
 ODbL, but serves every file from GitHub through Git LFS: the pointers download
 and the objects do not, because resolving them needs the LFS batch API on
 github.com, which this environment's git proxy refuses for repositories outside
-the session's own. What arrives is a 132-byte pointer that an unchecked script
-would write out as a shapefile, so the fetcher rejects anything starting with the
-LFS header. **GADM** is reachable but its licence discourages redistribution.
+the session's own. The 132-byte "shapefile" that arrives is an LFS pointer, and a
+script that does not check would write it out as if it were data. **GADM** is
+reachable but its licence discourages redistribution.
 
 ### The join
 
-8368 of the 8373 extracted houses fall inside a gouvernorat — the five strays are
-on the coastline, where the sheet edge sits just outside the modern polygon.
+**20 of 24 gouvernorats and 146 of 264 délégations** hold extracted houses. Only
+Gafsa, Kebili, Tataouine and Tozeur — the deep south and the Djerid — have no
+sheet extracted at all.
+
+Aggregation uses the **39 anchor-confirmed sheets only**, because an unconfirmed
+anchor can be a kilometre or two out, which is more than enough to move a symbol
+into the neighbouring délégation. That is 43 737 houses over 33 225 km² of ground
+read; the other 30 901 are in the GeoJSON and drawn on the map in a second
+colour, but not counted into any unit.
 
 | Gouvernorat | Houses | km² read | Houses / km² |
 | --- | --- | --- | --- |
-| Béja | 1725 | 1076 | **1.60** |
-| Manubah | 176 | 119 | 1.48 |
-| Kassérine | 1764 | 1240 | 1.42 |
-| Le Kef | 525 | 423 | 1.24 |
-| Sousse | 1032 | 962 | 1.07 |
-| Siliana | 686 | 705 | 0.97 |
-| Mahdia | 336 | 468 | 0.72 |
-| Zaghouan | 1120 | 1796 | 0.62 |
-| Kairouan | 514 | 920 | 0.56 |
-| Sfax | 32 | 74 | 0.43 |
-| Ben Arous | 458 | 126 | **3.63** |
+| Tunis | 1747 | 161 | **10.82** |
+| Manubah | 1793 | 597 | 3.00 |
+| Ben Arous | 1265 | 506 | 2.50 |
+| Nabeul | 3815 | 1770 | 2.16 |
+| Béja | 4217 | 1959 | 2.15 |
+| Médenine | 576 | 327 | 1.76 |
+| Zaghouan | 4562 | 2771 | 1.65 |
+| Gabès | 1593 | 1124 | 1.42 |
+| Bizerte | 894 | 664 | 1.35 |
+| Sousse | 2326 | 1808 | 1.29 |
+| Jendouba | 1185 | 921 | 1.29 |
+| Siliana | 4890 | 4422 | 1.11 |
+| Kairouan | 4950 | 4777 | 1.04 |
+| Kassérine | 4522 | 4700 | 0.96 |
+| Le Kef | 3726 | 4426 | 0.84 |
+| Mahdia | 948 | 1401 | 0.68 |
+| Monastir | 456 | 699 | 0.65 |
+| Sfax | 44 | 108 | 0.41 |
 
-Ben Arous is the outlier and for a reason worth stating: only 126 km² of it has
-been read, all of it the peri-urban fringe south of Tunis, so its density is a
-statement about that fringe and not about the gouvernorat. Small denominators
-are where a density measure misleads, and the `extracted_km2` column is in the
-table so that can be seen rather than guessed.
+Sidi Bou Zid (2.56/km² on 78 km²) is the nineteenth; Ariana is read over only
+7 km² and so has no reportable density.
 
-At délégation level, 44 of 264 units have extracted houses. The densest are
-Bir Mchergua (2.86/km²), Testour (2.10) and Kasserine Sud (2.06).
+The densest délégations are **Sidi Hassine** (Tunis, 8.65/km² on 60 km²),
+Fouchana (Ben Arous, 6.06), Bou Argoub (Nabeul, 5.42) and — the one that is
+neither peri-urban nor small — **Goubellat** (Béja, 4.63/km², 1271 houses over
+274 km²).
 
-### Two things the map deliberately refuses to do
+### Three things the map deliberately refuses to do
 
-**It does not present extraction coverage as geography.** Ten sheets are
-extracted, so a raw count per gouvernorat would mostly report which sheets happen
-to be done. The denominator is therefore the *extracted* area inside each unit —
-the convex hull of that unit's own symbols, clipped to the unit — so the number
-means houses per km² of ground actually read.
+**It does not present extraction coverage as geography.** The denominator is the
+*extracted* area inside each unit — the convex hull of that unit's own symbols,
+clipped to the unit — so the number means houses per km² of ground actually read.
 
 **It does not draw no data as zero.** Units with no extracted sheet are hatched.
 The lightest step of a sequential ramp means "near zero", and near zero is a
-claim; thirteen gouvernorats have no sheet extracted and must not read as
-"no houses here".
+claim.
+
+**It does not report a density from a denominator too small to carry one.** A
+density needs at least 25 km² read; below that the unit is drawn in flat grey,
+distinct from both a value and from "no sheet". Without that floor the délégation
+table led with *Menzel Chaker, 353 houses per km²* — six houses on 0.02 km² — and
+*Saouaf, 98/km²* from four houses. A ratio with a denominator that small is
+arithmetic rather than measurement, and it sorts straight to the top of any
+ranking. 41 délégations and one gouvernorat are suppressed on this rule.
+
+### The confidence flag checks out against the coastline
+
+Nothing in the anchor test knows about Tunisia's shape — it is a vote among
+margin labels plus a comparison with the catalogue. So how often a sheet's houses
+land in the sea is an independent verdict on it:
+
+| | houses | outside any gouvernorat |
+| --- | --- | --- |
+| Anchor confirmed | 44 588 | 851 — **1.9%** |
+| Anchor unconfirmed | 30 901 | 2383 — **7.7%** |
+
+Four times the rate. The residual 1.9% is genuine: coastal sheets' catalogued
+extents run a little over water, and the boundary file generalises the shoreline.
+One unconfirmed sheet, Kef Abbed, places houses at 37.41°N — north of Cap Angela,
+which is the northernmost land in Tunisia.
 
 ### What the map is also evidence for
 
@@ -268,11 +323,26 @@ the anchor been wrong on any sheet, that sheet would sit a kilometre off the
 lattice. It is the cheapest check available on the georeferencing, and it passes
 by eye.
 
+What it does *not* test is content alignment across a shared edge. A sheet whose
+anchor is a kilometre out still gets clipped to its correct catalogued extent, so
+its footprint stays on the lattice while its content is drawn from the wrong part
+of the image. Detecting that needs feature matching across sheet edges, and is
+not done — which is why the anchor-unconfirmed sheets stay out of the counts.
+
+### Where confidence lives
+
+Whether a sheet's anchor was confirmed is recorded once, in
+[`data/sheet_georef.csv`](../data/sheet_georef.csv), and joined on `record_id`.
+It used to be stamped onto every extracted symbol as well, and the two copies
+drifted — 44 sheets by one rule against 39 by another, with each consumer
+believing whichever it happened to read. A derived fact about a sheet does not
+belong on ten thousand of its symbols.
+
 ### The joined outputs
 
 | Path | |
 | --- | --- |
-| [`data/symbols_by_unit.csv`](../data/symbols_by_unit.csv) | 288 rows: every gouvernorat and délégation, with counts, area read and density |
+| [`data/symbols_by_unit.csv`](../data/symbols_by_unit.csv) | 288 rows: every gouvernorat and délégation, with counts, area read, density and the basis for it |
 | [`data/symbols_joined.geojson`](../data/symbols_joined.geojson) | every symbol with its modern gouvernorat and délégation attached |
 | [`data/boundaries/`](../data/boundaries/) | the shapefiles themselves, levels 0–3 |
 
