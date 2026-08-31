@@ -38,6 +38,7 @@ a relevance score.
 | **Object extraction and coordinates** | [`docs/OBJECT-DATASET.md`](docs/OBJECT-DATASET.md) |
 | **Per-sheet transform (CSV)** | [`data/sheet_georef.csv`](data/sheet_georef.csv) |
 | **Corner coordinates each sheet prints (CSV)** | [`data/sheet_corners.csv`](data/sheet_corners.csv) |
+| **Graticule sheets, placed from grades (CSV)** | [`data/sheet_graticule.csv`](data/sheet_graticule.csv) |
 | **Extracted symbols (GeoJSON)** | [`data/symbols/`](data/symbols/) |
 | **Symbol counts per sheet** | [`data/symbols_summary.csv`](data/symbols_summary.csv) |
 | **Objects joined to modern units** | [`data/symbols_by_unit.csv`](data/symbols_by_unit.csv) |
@@ -554,6 +555,7 @@ python3 scripts/coordinate_precision.py      # uses the measured grid spacing
 python3 scripts/georeference_sheets.py --images <dir>   # pixel -> ground transform
 python3 scripts/read_corner_coordinates.py --images <dir>  # the sheet's own corners
 python3 scripts/georeference_sheets.py --images <dir> --csv-only  # re-anchor on them
+python3 scripts/georeference_graticule_sheets.py --images <dir>  # the 1902 sheets
 python3 scripts/extract_symbols.py --images <dir>       # symbols -> GeoJSON
 python3 scripts/fetch_boundaries.py                     # modern shapefiles
 python3 scripts/map_objects.py                          # join + render the map

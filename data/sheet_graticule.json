@@ -1,0 +1,945 @@
+{
+  "oai:u-bordeaux-montaigne.fr:340371": {
+    "neatline_px": {
+      "top": 750,
+      "bottom": 5462,
+      "left": 1108,
+      "right": 8532
+    },
+    "px_per_km_from_catalogue": 238.9,
+    "predicted_spacing_px": {
+      "longitude": 1909,
+      "latitude": 2384
+    },
+    "longitude": {
+      "angle_deg": 4.4,
+      "autocorrelation": 0.541,
+      "spacing_px": 1863.2,
+      "peaks_found": 5,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -4.45,
+      "autocorrelation": 0.266,
+      "spacing_px": 2362.0,
+      "peaks_found": 6,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "grade_reference": "same_designation_sheet",
+    "grade_basis": {
+      "longitude": "reference_extent",
+      "latitude": "reference_extent"
+    },
+    "label_agreement": {
+      "longitude": 4,
+      "latitude": 0
+    },
+    "lambert_zone": "nord",
+    "epsg": 22391,
+    "graticule": {
+      "tan_lon": 0.076946,
+      "tan_lat": -0.077824,
+      "longitude_grades": [
+        8.5,
+        8.6,
+        8.7,
+        8.8
+      ],
+      "latitude_grades": [
+        41.2,
+        41.3
+      ]
+    },
+    "control_points": 8,
+    "affine": [
+      4.292555,
+      -0.319249,
+      -0.320597,
+      -4.228702,
+      496729.07494,
+      437862.78766
+    ],
+    "residual_rms_m": 6.62,
+    "residual_max_m": 8.6,
+    "degrees_of_freedom": 10,
+    "precision_class": "graticule_coarse",
+    "corners": {
+      "north_west": {
+        "lon": 9.91459,
+        "lat": 37.212437,
+        "easting": 501244.8,
+        "northing": 434337.5
+      },
+      "north_east": {
+        "lon": 10.273559,
+        "lat": 37.190507,
+        "easting": 533112.7,
+        "northing": 431967.4
+      },
+      "south_west": {
+        "lon": 9.897575,
+        "lat": 37.032864,
+        "easting": 499734.1,
+        "northing": 414411.9
+      },
+      "south_east": {
+        "lon": 10.255723,
+        "lat": 37.010982,
+        "easting": 531602.1,
+        "northing": 412041.8
+      }
+    },
+    "twin_record_id": "oai:u-bordeaux-montaigne.fr:340370",
+    "twin_offset_m": 188.7,
+    "twin_offset_max_m": 234.4
+  },
+  "oai:u-bordeaux-montaigne.fr:340388": {
+    "neatline_px": {
+      "top": 966,
+      "bottom": 5684,
+      "left": 890,
+      "right": 8314
+    },
+    "px_per_km_from_catalogue": 223.1,
+    "predicted_spacing_px": {
+      "longitude": 1787,
+      "latitude": 2227
+    },
+    "longitude": {
+      "angle_deg": 4.7,
+      "autocorrelation": 0.282,
+      "spacing_px": 1780.0,
+      "peaks_found": 8,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": 2.3,
+      "autocorrelation": 0.137,
+      "spacing_px": 2076.0,
+      "peaks_found": 5,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "error": "no periodic graticule found"
+  },
+  "oai:u-bordeaux-montaigne.fr:340390": {
+    "neatline_px": {
+      "top": 966,
+      "bottom": 5682,
+      "left": 1044,
+      "right": 8460
+    },
+    "px_per_km_from_catalogue": 238.0,
+    "predicted_spacing_px": {
+      "longitude": 1907,
+      "latitude": 2376
+    },
+    "longitude": {
+      "angle_deg": 4.35,
+      "autocorrelation": 0.351,
+      "spacing_px": 1779.4,
+      "peaks_found": 5,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -4.5,
+      "autocorrelation": 0.367,
+      "spacing_px": 2354.0,
+      "peaks_found": 3,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "grade_reference": "same_designation_sheet",
+    "grade_basis": {
+      "longitude": "reference_extent",
+      "latitude": "reference_extent"
+    },
+    "label_agreement": {
+      "longitude": 4,
+      "latitude": 0
+    },
+    "lambert_zone": "nord",
+    "epsg": 22391,
+    "graticule": {
+      "tan_lon": 0.076068,
+      "tan_lat": -0.078702,
+      "longitude_grades": [
+        8.9,
+        9.0,
+        9.1,
+        9.2
+      ],
+      "latitude_grades": [
+        41.0,
+        41.1
+      ]
+    },
+    "control_points": 8,
+    "affine": [
+      4.499596,
+      -0.307043,
+      -0.316786,
+      -4.243922,
+      526481.045657,
+      416373.877895
+    ],
+    "residual_rms_m": 343.56,
+    "residual_max_m": 499.27,
+    "degrees_of_freedom": 10,
+    "precision_class": "graticule_coarse",
+    "corners": {
+      "north_west": {
+        "lon": 10.247522,
+        "lat": 37.010212,
+        "easting": 530872.6,
+        "northing": 411953.7
+      },
+      "north_east": {
+        "lon": 10.622337,
+        "lat": 36.98804,
+        "easting": 564241.6,
+        "northing": 409676.7
+      },
+      "south_west": {
+        "lon": 10.229971,
+        "lat": 36.829869,
+        "easting": 529378.6,
+        "northing": 391939.4
+      },
+      "south_east": {
+        "lon": 10.603928,
+        "lat": 36.80775,
+        "easting": 562747.6,
+        "northing": 389662.3
+      }
+    },
+    "twin_record_id": "oai:u-bordeaux-montaigne.fr:340389",
+    "twin_offset_m": 858.6,
+    "twin_offset_max_m": 1097.1
+  },
+  "oai:u-bordeaux-montaigne.fr:340396": {
+    "neatline_px": {
+      "top": 566,
+      "bottom": 5294,
+      "left": 400,
+      "right": 7824
+    },
+    "px_per_km_from_catalogue": 225.6,
+    "predicted_spacing_px": {
+      "longitude": 1811,
+      "latitude": 2252
+    },
+    "longitude": {
+      "angle_deg": 4.65,
+      "autocorrelation": 0.419,
+      "spacing_px": 1872.0,
+      "peaks_found": 5,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -4.75,
+      "autocorrelation": 0.242,
+      "spacing_px": 2366.0,
+      "peaks_found": 4,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "grade_reference": "same_designation_sheet",
+    "grade_basis": {
+      "longitude": "reference_extent",
+      "latitude": "reference_extent"
+    },
+    "label_agreement": {
+      "longitude": 4,
+      "latitude": 0
+    },
+    "lambert_zone": "nord",
+    "epsg": 22391,
+    "graticule": {
+      "tan_lon": 0.081336,
+      "tan_lat": -0.083094,
+      "longitude_grades": [
+        8.4,
+        8.5,
+        8.6,
+        8.7
+      ],
+      "latitude_grades": [
+        40.8,
+        40.9
+      ]
+    },
+    "control_points": 8,
+    "affine": [
+      4.291813,
+      -0.344843,
+      -0.343317,
+      -4.220587,
+      496603.650063,
+      397109.795827
+    ],
+    "residual_rms_m": 6.35,
+    "residual_max_m": 7.85,
+    "degrees_of_freedom": 10,
+    "precision_class": "graticule_coarse",
+    "corners": {
+      "north_west": {
+        "lon": 9.879544,
+        "lat": 36.854145,
+        "easting": 498126.1,
+        "northing": 394583.0
+      },
+      "north_east": {
+        "lon": 10.236812,
+        "lat": 36.830603,
+        "easting": 529988.5,
+        "northing": 392022.9
+      },
+      "south_west": {
+        "lon": 9.861427,
+        "lat": 36.674272,
+        "easting": 496502.9,
+        "northing": 374628.1
+      },
+      "south_east": {
+        "lon": 10.217882,
+        "lat": 36.650784,
+        "easting": 528365.3,
+        "northing": 372068.0
+      }
+    },
+    "twin_record_id": "oai:u-bordeaux-montaigne.fr:340395",
+    "twin_offset_m": 240.9,
+    "twin_offset_max_m": 409.0
+  },
+  "oai:u-bordeaux-montaigne.fr:340409": {
+    "neatline_px": {
+      "top": 732,
+      "bottom": 5458,
+      "left": 1030,
+      "right": 8456
+    },
+    "px_per_km_from_catalogue": 235.9,
+    "predicted_spacing_px": {
+      "longitude": 1895,
+      "latitude": 2354
+    },
+    "longitude": {
+      "angle_deg": 4.55,
+      "autocorrelation": 0.432,
+      "spacing_px": 1871.2,
+      "peaks_found": 6,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -4.7,
+      "autocorrelation": 0.353,
+      "spacing_px": 2364.0,
+      "peaks_found": 4,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "grade_reference": "catalogue",
+    "grade_basis": {
+      "longitude": "reference_extent",
+      "latitude": "reference_extent"
+    },
+    "label_agreement": {
+      "longitude": 1,
+      "latitude": 0
+    },
+    "lambert_zone": "nord",
+    "epsg": 22391,
+    "graticule": {
+      "tan_lon": 0.07958,
+      "tan_lat": -0.082215,
+      "longitude_grades": [
+        8.8,
+        8.9,
+        9.0,
+        9.1
+      ],
+      "latitude_grades": [
+        40.8,
+        40.9
+      ]
+    },
+    "control_points": 8,
+    "affine": [
+      4.294874,
+      -0.325566,
+      -0.320317,
+      -4.22536,
+      525760.878803,
+      395515.025874
+    ],
+    "residual_rms_m": 6.63,
+    "residual_max_m": 8.61,
+    "degrees_of_freedom": 10,
+    "precision_class": "graticule_coarse",
+    "corners": {
+      "north_west": {
+        "lon": 10.236384,
+        "lat": 36.83118,
+        "easting": 529950.1,
+        "northing": 392086.7
+      },
+      "north_east": {
+        "lon": 10.593798,
+        "lat": 36.807869,
+        "easting": 561843.9,
+        "northing": 389669.1
+      },
+      "south_west": {
+        "lon": 10.218679,
+        "lat": 36.65123,
+        "easting": 528436.3,
+        "northing": 372117.7
+      },
+      "south_east": {
+        "lon": 10.575279,
+        "lat": 36.627971,
+        "easting": 560330.0,
+        "northing": 369700.0
+      }
+    }
+  },
+  "oai:u-bordeaux-montaigne.fr:340450": {
+    "neatline_px": {
+      "top": 1010,
+      "bottom": 5728,
+      "left": 1078,
+      "right": 8502
+    },
+    "px_per_km_from_catalogue": 229.5,
+    "predicted_spacing_px": {
+      "longitude": 1856,
+      "latitude": 2291
+    },
+    "longitude": {
+      "angle_deg": 4.5,
+      "autocorrelation": 0.323,
+      "spacing_px": 1882.8,
+      "peaks_found": 7,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": 1.65,
+      "autocorrelation": 0.111,
+      "spacing_px": 2968.0,
+      "peaks_found": 5,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "error": "no periodic graticule found"
+  },
+  "oai:u-bordeaux-montaigne.fr:340467": {
+    "neatline_px": {
+      "top": 972,
+      "bottom": 5696,
+      "left": 1024,
+      "right": 8454
+    },
+    "px_per_km_from_catalogue": 229.2,
+    "predicted_spacing_px": {
+      "longitude": 1857,
+      "latitude": 2288
+    },
+    "longitude": {
+      "angle_deg": 4.65,
+      "autocorrelation": 0.226,
+      "spacing_px": 1875.2,
+      "peaks_found": 7,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -4.6,
+      "autocorrelation": 0.341,
+      "spacing_px": 2362.0,
+      "peaks_found": 2,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "grade_reference": "same_designation_sheet",
+    "grade_basis": {
+      "longitude": "reference_extent",
+      "latitude": "reference_extent"
+    },
+    "label_agreement": {
+      "longitude": 5,
+      "latitude": 0
+    },
+    "lambert_zone": "nord",
+    "epsg": 22391,
+    "graticule": {
+      "tan_lon": 0.081336,
+      "tan_lat": -0.080458,
+      "longitude_grades": [
+        8.7,
+        8.8,
+        8.9,
+        9.0
+      ],
+      "latitude_grades": [
+        40.0,
+        40.1
+      ]
+    },
+    "control_points": 8,
+    "affine": [
+      4.324527,
+      -0.322193,
+      -0.334188,
+      -4.227795,
+      519457.934499,
+      316773.955032
+    ],
+    "residual_rms_m": 59.18,
+    "residual_max_m": 81.76,
+    "degrees_of_freedom": 10,
+    "precision_class": "graticule_coarse",
+    "corners": {
+      "north_west": {
+        "lon": 10.162343,
+        "lat": 36.112428,
+        "easting": 523561.4,
+        "northing": 312334.6
+      },
+      "north_east": {
+        "lon": 10.519172,
+        "lat": 36.089536,
+        "easting": 555692.7,
+        "northing": 309940.7
+      },
+      "south_west": {
+        "lon": 10.144247,
+        "lat": 35.932405,
+        "easting": 521982.7,
+        "northing": 292362.5
+      },
+      "south_east": {
+        "lon": 10.50027,
+        "lat": 35.909567,
+        "easting": 554114.0,
+        "northing": 289968.6
+      }
+    },
+    "twin_record_id": "oai:u-bordeaux-montaigne.fr:340456",
+    "twin_offset_m": 221.1,
+    "twin_offset_max_m": 292.9
+  },
+  "oai:u-bordeaux-montaigne.fr:340469": {
+    "neatline_px": {
+      "top": 948,
+      "bottom": 5736,
+      "left": 1062,
+      "right": 8616
+    },
+    "px_per_km_from_catalogue": 228.7,
+    "predicted_spacing_px": {
+      "longitude": 1854,
+      "latitude": 2283
+    },
+    "longitude": {
+      "angle_deg": 4.8,
+      "autocorrelation": 0.6,
+      "spacing_px": 1926.8,
+      "peaks_found": 5,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -5.15,
+      "autocorrelation": 0.444,
+      "spacing_px": 2166.0,
+      "peaks_found": 2,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "grade_reference": "same_designation_sheet",
+    "grade_basis": {
+      "longitude": "reference_extent",
+      "latitude": "reference_extent"
+    },
+    "label_agreement": {
+      "longitude": 0,
+      "latitude": 1
+    },
+    "lambert_zone": "nord",
+    "epsg": 22391,
+    "graticule": {
+      "tan_lon": 0.083972,
+      "tan_lat": -0.090127,
+      "longitude_grades": [
+        9.1,
+        9.2,
+        9.3,
+        9.4
+      ],
+      "latitude_grades": [
+        40.0,
+        40.1
+      ]
+    },
+    "control_points": 8,
+    "affine": [
+      4.210679,
+      -0.382466,
+      -0.317269,
+      -4.611443,
+      551474.381511,
+      315957.714322
+    ],
+    "residual_rms_m": 10.72,
+    "residual_max_m": 17.03,
+    "degrees_of_freedom": 10,
+    "precision_class": "graticule_coarse",
+    "corners": {
+      "north_west": {
+        "lon": 10.518734,
+        "lat": 36.10071,
+        "easting": 555645.4,
+        "northing": 311179.9
+      },
+      "north_east": {
+        "lon": 10.871751,
+        "lat": 36.072325,
+        "easting": 587452.8,
+        "northing": 308290.7
+      },
+      "south_west": {
+        "lon": 10.500347,
+        "lat": 35.901738,
+        "easting": 554126.3,
+        "northing": 289100.3
+      },
+      "south_east": {
+        "lon": 10.852486,
+        "lat": 35.873407,
+        "easting": 585933.7,
+        "northing": 286211.1
+      }
+    },
+    "twin_record_id": "oai:u-bordeaux-montaigne.fr:340468",
+    "twin_offset_m": 1085.4,
+    "twin_offset_max_m": 1545.7
+  },
+  "oai:u-bordeaux-montaigne.fr:340487": {
+    "neatline_px": {
+      "top": 1004,
+      "bottom": 5734,
+      "left": 1030,
+      "right": 8588
+    },
+    "px_per_km_from_catalogue": 227.0,
+    "predicted_spacing_px": {
+      "longitude": 1844,
+      "latitude": 2265
+    },
+    "longitude": {
+      "angle_deg": 4.8,
+      "autocorrelation": 0.384,
+      "spacing_px": 1924.6,
+      "peaks_found": 7,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -4.75,
+      "autocorrelation": 0.335,
+      "spacing_px": 2179.0,
+      "peaks_found": 3,
+      "lines": 3,
+      "indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    "grade_reference": "same_designation_sheet",
+    "grade_basis": {
+      "longitude": "reference_extent",
+      "latitude": "reference_extent"
+    },
+    "label_agreement": {
+      "longitude": 4,
+      "latitude": 0
+    },
+    "lambert_zone": "nord",
+    "epsg": 22391,
+    "graticule": {
+      "tan_lon": 0.083972,
+      "tan_lat": -0.083094,
+      "longitude_grades": [
+        9.1,
+        9.2,
+        9.3,
+        9.4
+      ],
+      "latitude_grades": [
+        39.7,
+        39.8,
+        39.9
+      ]
+    },
+    "control_points": 12,
+    "affine": [
+      4.227186,
+      -0.347503,
+      -0.318906,
+      -4.582366,
+      549975.28013,
+      295951.407133
+    ],
+    "residual_rms_m": 145.37,
+    "residual_max_m": 208.97,
+    "degrees_of_freedom": 18,
+    "precision_class": "graticule_coarse",
+    "corners": {
+      "north_west": {
+        "lon": 10.499178,
+        "lat": 35.918806,
+        "easting": 554009.1,
+        "northing": 290992.8
+      },
+      "north_east": {
+        "lon": 10.85299,
+        "lat": 35.892835,
+        "easting": 585958.2,
+        "northing": 288366.4
+      },
+      "south_west": {
+        "lon": 10.481027,
+        "lat": 35.723477,
+        "easting": 552500.7,
+        "northing": 269318.2
+      },
+      "south_east": {
+        "lon": 10.833976,
+        "lat": 35.697559,
+        "easting": 584449.7,
+        "northing": 266691.8
+      }
+    },
+    "twin_record_id": "oai:u-bordeaux-montaigne.fr:340476",
+    "twin_offset_m": 857.7,
+    "twin_offset_max_m": 1119.6
+  },
+  "oai:u-bordeaux-montaigne.fr:340615": {
+    "neatline_px": {
+      "top": 704,
+      "bottom": 6476,
+      "left": 872,
+      "right": 9236
+    },
+    "px_per_km_from_catalogue": 194.1,
+    "predicted_spacing_px": {
+      "longitude": 1557,
+      "latitude": 1937
+    },
+    "longitude": {
+      "angle_deg": 4.8,
+      "autocorrelation": 0.197,
+      "spacing_px": 1867.8,
+      "peaks_found": 7,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -1.3,
+      "autocorrelation": 0.125,
+      "spacing_px": 1824.9,
+      "peaks_found": 6,
+      "lines": 3,
+      "indices": [
+        0,
+        2,
+        3
+      ]
+    },
+    "error": "no periodic graticule found"
+  },
+  "oai:u-bordeaux-montaigne.fr:340627": {
+    "neatline_px": {
+      "top": 846,
+      "bottom": 5590,
+      "left": 854,
+      "right": 8286
+    },
+    "px_per_km_from_catalogue": 231.2,
+    "predicted_spacing_px": {
+      "longitude": 1911,
+      "latitude": 2307
+    },
+    "longitude": {
+      "angle_deg": 3.6,
+      "autocorrelation": 0.306,
+      "spacing_px": 1926.0,
+      "peaks_found": 5,
+      "lines": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "latitude": {
+      "angle_deg": -3.9,
+      "autocorrelation": 0.273,
+      "spacing_px": 2358.0,
+      "peaks_found": 4,
+      "lines": 2,
+      "indices": [
+        0,
+        1
+      ]
+    },
+    "grade_reference": "catalogue",
+    "grade_basis": {
+      "longitude": "reference_extent",
+      "latitude": "reference_extent"
+    },
+    "label_agreement": {
+      "longitude": 6,
+      "latitude": 0
+    },
+    "lambert_zone": "sud",
+    "epsg": 22392,
+    "graticule": {
+      "tan_lon": 0.062915,
+      "tan_lat": -0.068173,
+      "longitude_grades": [
+        7.0,
+        7.1,
+        7.2,
+        7.3
+      ],
+      "latitude_grades": [
+        38.2,
+        38.3
+      ]
+    },
+    "control_points": 8,
+    "affine": [
+      4.291291,
+      -0.334984,
+      -0.315927,
+      -4.230054,
+      378581.862843,
+      439966.560551
+    ],
+    "residual_rms_m": 11.32,
+    "residual_max_m": 15.46,
+    "degrees_of_freedom": 10,
+    "precision_class": "graticule_coarse",
+    "corners": {
+      "north_west": {
+        "lon": 8.614928,
+        "lat": 34.522466,
+        "easting": 381979.4,
+        "northing": 436101.9
+      },
+      "north_east": {
+        "lon": 8.962567,
+        "lat": 34.503083,
+        "easting": 413872.2,
+        "northing": 433612.3
+      },
+      "south_west": {
+        "lon": 8.601324,
+        "lat": 34.34138,
+        "easting": 380480.6,
+        "northing": 416034.5
+      },
+      "south_east": {
+        "lon": 8.948238,
+        "lat": 34.322034,
+        "easting": 412373.5,
+        "northing": 413544.9
+      }
+    }
+  }
+}

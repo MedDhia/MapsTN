@@ -1,0 +1,12 @@
+record_id,designation,sheet_name,lambert_zone,lon_angle_deg,lat_angle_deg,lon_autocorrelation,lat_autocorrelation,lon_lines,lat_lines,lon_label_agreement,lat_label_agreement,lon_spacing_px,lon_spacing_predicted_px,lat_spacing_px,lat_spacing_predicted_px,control_points,degrees_of_freedom,residual_rms_m,residual_max_m,twin_record_id,twin_offset_m,twin_offset_max_m,error
+oai:u-bordeaux-montaigne.fr:340371,B0-C36,Porto-Farina,nord,4.4,-4.45,0.541,0.266,4,2,4,0,1863.2,1909,2362.0,2384,8,10,6.62,8.6,oai:u-bordeaux-montaigne.fr:340370,188.7,234.4,
+oai:u-bordeaux-montaigne.fr:340388,B1-C36,El Ariana,,4.7,2.3,0.282,0.137,4,2,,,1780.0,1787,2076.0,2227,,,,,,,,no periodic graticule found
+oai:u-bordeaux-montaigne.fr:340390,B1-C37,La Marsa,nord,4.35,-4.5,0.351,0.367,4,2,4,0,1779.4,1907,2354.0,2376,8,10,343.56,499.27,oai:u-bordeaux-montaigne.fr:340389,858.6,1097.1,
+oai:u-bordeaux-montaigne.fr:340396,B2-C36,Tunis,nord,4.65,-4.75,0.419,0.242,4,2,4,0,1872.0,1811,2366.0,2252,8,10,6.35,7.85,oai:u-bordeaux-montaigne.fr:340395,240.9,409.0,
+oai:u-bordeaux-montaigne.fr:340409,B2-C37,La Goulette,nord,4.55,-4.7,0.432,0.353,4,2,1,0,1871.2,1895,2364.0,2354,8,10,6.63,8.61,,,,
+oai:u-bordeaux-montaigne.fr:340450,B5-C37,Enfida,,4.5,1.65,0.323,0.111,4,2,,,1882.8,1856,2968.0,2291,,,,,,,,no periodic graticule found
+oai:u-bordeaux-montaigne.fr:340467,B6-C37,Sidi Bou Ali,nord,4.65,-4.6,0.226,0.341,4,2,5,0,1875.2,1857,2362.0,2288,8,10,59.18,81.76,oai:u-bordeaux-montaigne.fr:340456,221.1,292.9,
+oai:u-bordeaux-montaigne.fr:340469,B6-C38,Halk El Mennzel,nord,4.8,-5.15,0.6,0.444,4,2,0,1,1926.8,1854,2166.0,2283,8,10,10.72,17.03,oai:u-bordeaux-montaigne.fr:340468,1085.4,1545.7,
+oai:u-bordeaux-montaigne.fr:340487,B7-C38,Sousse,nord,4.8,-4.75,0.384,0.335,4,3,4,0,1924.6,1844,2179.0,2265,12,18,145.37,208.97,oai:u-bordeaux-montaigne.fr:340476,857.7,1119.6,
+oai:u-bordeaux-montaigne.fr:340615,,,,4.8,-1.3,0.197,0.125,4,3,,,1867.8,1557,1824.9,1937,,,,,,,,no periodic graticule found
+oai:u-bordeaux-montaigne.fr:340627,,,sud,3.6,-3.9,0.306,0.273,4,2,6,0,1926.0,1911,2358.0,2307,8,10,11.32,15.46,,,,

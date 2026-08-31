@@ -142,6 +142,7 @@ was to take the sheets whose absolute position rested on nothing checkable from
 | Control | Uncertainty |
 | --- | --- |
 | Printed corner coordinates | **to the metre, as stated** |
+| Graticule in grades, 1902 sheets | ~550 m against the sheet of the same designation |
 | Printed kilometric grid | **±9 m** relative, no absolute placement |
 | Catalogue bounding box | up to ±775 m longitude, ±926 m latitude — and 36 km on one sheet |
 

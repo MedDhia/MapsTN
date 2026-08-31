@@ -7,6 +7,8 @@ symbols in the pixels and push them through it.
 | Step | Script | Output |
 | --- | --- | --- |
 | Georeference | [`scripts/georeference_sheets.py`](../scripts/georeference_sheets.py) | `data/sheet_georef.{json,csv}`, `data/georef/*.{wld,points}` |
+| Read the printed corners | [`scripts/read_corner_coordinates.py`](../scripts/read_corner_coordinates.py) | `data/sheet_corners.{json,csv}` |
+| Georeference the graticule sheets | [`scripts/georeference_graticule_sheets.py`](../scripts/georeference_graticule_sheets.py) | `data/sheet_graticule.{json,csv}`, `data/georef_graticule/` |
 | Extract symbols | [`scripts/extract_symbols.py`](../scripts/extract_symbols.py) | `data/symbols/<record_id>.geojson`, `data/symbols_summary.csv` |
 
 ---
@@ -53,32 +55,87 @@ The **margin kilometre labels** — a vote among the red three-digit numbers alo
 the edges — remain as the third source, and the **catalogue bounding box** is now
 only a coarse sanity check. Two sheets of the 85 rest on the labels alone.
 
-### Eleven sheets have no Lambert grid to work from
+### Eleven sheets have no Lambert grid — they carry a graticule in grades
 
 Of the 96 scans, **11 carry no printed kilometric grid at all**, and no amount of
 better detection will find one. They are an earlier edition: four are catalogued
 1902, and none shows the *"CARROYAGE KILOMÉTRIQUE LAMBERT"* header that every
-gridded sheet carries. What they carry instead is a **graticule graduated in
-centesimal grades from the Paris meridian** — the north-west corner of the 1902
-La Marsa sheet reads `8°80'`, which is 8.80 grad × 0.9 = 7.92° from Paris, plus
-2.3372° to Greenwich, giving 10.257°E: right for that sheet. Their top edge is
-numbered `0 … 32 Kil.`, a graphic scale of distance from the west edge rather
-than any absolute coordinate.
+gridded sheet carries. On a sheet that has a grid the detected lines come 20 to 32
+gaps of one kilometre with a spread of 0–2 px; on these the spread is 12–120 px
+with 1 to 8, and the implied resolutions are nonsense — 196 to 740 px/km against
+the series' 234–238. There is no comb there.
 
-The measurements say the same thing quantitatively. On a sheet that has a grid,
-the detected lines have a gap spread of 0–2 px and 20–32 gaps come out a
-kilometre. On these eleven the spread is 12–120 px with 1–8, and the implied
-resolutions are nonsense — 196 to 740 px/km against the series' 234–238. There is
-no comb there.
+What they carry instead is a **graticule graduated in centesimal grades**, the
+longitude counted from the Paris meridian. The 1902 La Marsa sheet labels its top
+margin `8ᴳ80'`, then `90'`, then `9ᴳ`, then `10'` — a step of 0.10 grad — and
 
-Reaching them needs a second pipeline: detect the black graticule lines, read the
-grade labels, convert from Paris. That is not built. It is worth being precise
-about what it would add, because it is less than eleven sheets' worth: **8 of the
-11 carry the same sheet designation as a sheet already georeferenced** — B1-C36,
-B2-C36, B6-C38 and so on — so they are earlier editions of ground already
-covered. Their value is a thirty-year comparison on the same frame, which is
-interesting for a different reason than coverage. Only La Goulette (B2-C37) and
-two untitled records are ground not otherwise reached.
+> 8.80 grad × 0.9 = 7.92° from Paris, + 2.33722917 = **10.2572°E**
+
+against **10.2562** for the north-west corner of the 1932 sheet covering the same
+ground. Ninety metres. That agreement, found before any code was written, is what
+established the reading.
+
+[`scripts/georeference_graticule_sheets.py`](../scripts/georeference_graticule_sheets.py)
+places them. Two things had to change from a first attempt that found nothing at
+all. The lines are **faint and coloured** — a one-pixel blue-grey rule over a pale
+sea wash, which no absolute threshold separates from the rest of the sheet; what
+finds them is a local-contrast filter, how much darker a pixel is than the median
+of its neighbours *across* the line direction. And they are **oblique to the
+sheet**: the first search covered ±2°, assuming a graticule-cut sheet has its
+meridians parallel to its frame. These run about +4.4° and −4.6°, which is the
+same angle the Lambert grid takes on the later sheets of the same series.
+
+The angle is chosen by autocorrelation at the spacing the frame predicts, not by
+peak height: with four longitude lines and two latitude lines on a sheet, height
+picks the neatline or a long road.
+
+**Where the absolute placement comes from, after two wrong answers.** The step is
+exactly 0.10 grad, so a lattice fitted to the detected lines fixes every relative
+index and leaves one unknown per axis. The catalogue box settles that question for
+the Lambert sheets and cannot settle this one — these records carry the worst
+boxes in the collection, the 1902 Tunis sheet's some 25 km out in latitude against
+a 10 km step. The printed labels are legible and do get read, but letting one
+misread label outvote everything else put five sheets 10 to 34 km wrong while every
+internal fit still read under 15 m. What places them is the **sheet of the same
+designation**: eight of the eleven are earlier editions of ground the Lambert path
+has already placed to about 70 m, which against an 8 km step is a hundred to one.
+So the graticule supplies this scan's own geometry and the series supplies where
+that geometry sits — and the printed labels became a check on the result instead
+of the means of getting it. Longitude labels corroborate the answer on four to six
+lines of five of the eight placed sheets.
+
+**What it achieves.** Eight of eleven placed; six comparable with their twin
+corner to corner:
+
+| | |
+| --- | --- |
+| Median offset from the sheet of the same designation | **549 m** |
+| Worst | **1085 m** |
+| Best | 189 m (Porto-Farina), 221 m (Sidi Bou Ali), 241 m (Tunis) |
+| Internal fit residual | 6–344 m rms on 8 control points |
+
+That is **about twenty-five times coarser than the Lambert path**, which fits its
+own grid to 17 m rms and agrees with its neighbours' printed corners to 72 m. Two
+reasons: eight control points for a six-parameter affine leaves almost no
+redundancy, so the residual says little — Halk El Mennzel fits to 10.7 m and still
+sits 1085 m from its twin — and latitude is the weak axis throughout, two lines
+rather than four, no label agreement on any sheet, its scale resting on a single
+10 km baseline.
+
+Every placed sheet carries `precision_class = "graticule_coarse"`, and **these
+transforms are deliberately not merged into the object extraction.** Folding
+500 m-class positions into a dataset whose stated accuracy is 20 m would spoil the
+claim for all of it. They are written as world files and QGIS point files in
+[`data/georef_graticule/`](../data/georef_graticule/) so a sheet can be opened and
+read, and that is their use: these eight sheets are earlier editions of ground
+already covered, so what they offer is a thirty-year comparison on the same frame
+rather than new coverage.
+
+Three sheets are not placed: El Ariana, Enfida and the 1946 untitled sheet show
+latitude autocorrelation of 0.11–0.14 against a 0.15 floor — too few latitude
+lines survive to establish a spacing. Two of the placed eight, La Goulette and an
+untitled 1934 sheet, have no twin and rest on their own catalogue box; they are
+flagged and should be treated as unplaced until checked.
 
 ### The catalogue was the wrong arbiter, and the evidence that says so
 
