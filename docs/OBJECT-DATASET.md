@@ -34,20 +34,51 @@ margin**, with a leader line pointing at the corner. Kasserine says:
 
 Eight numbers, and they close as a parallelogram to **1 m** — width 31 897 against
 31 898, height 19 936 against 19 937. This is primary, exact, and owes nothing to
-any catalogue. It settles 57 of the 73 georeferenced sheets on both axes.
+any catalogue. It settles **61 of the 85 georeferenced sheets** on both axes, and
+on three of them — Mennzel Heurr, Nabeul, Aïne Djeloula — it is the *only* source
+of position: their margin kilometre labels could not be read at all.
 
 Where the annotation can be read at only one corner, a second source finishes the
 job, and it was not designed: **adjacent sheets print identical corner
 coordinates.** Djebel Mrhila gives its south-west corner as 420.395 m /
-220.122 m, which is exactly Kasserine's north-east. Across the series **237
-corner pairs from different sheets coincide, median 67 m apart, worst 184 m, on
-69 of the 73 sheets** — and since an anchor error is a whole kilometre by
-construction, agreement at 67 m rules one out. That rescues 9 more sheets and, as
-a by-product, validates the whole set of transforms against each other.
+220.122 m, which is exactly Kasserine's north-east. Across the series **275
+corner pairs from different sheets coincide, median 72 m apart, worst 250 m, on
+76 of the 78 placed sheets** — and since an anchor error is a whole kilometre by
+construction, agreement at 72 m rules one out. That rescues 9 more sheets and, as
+a by-product, validates the whole set of transforms against each other. Each
+sheet added later is checked the same way: the four newest land on their
+neighbours' corners at 37 to 107 m.
 
 The **margin kilometre labels** — a vote among the red three-digit numbers along
 the edges — remain as the third source, and the **catalogue bounding box** is now
-only a coarse sanity check. One sheet of the 73 rests on the labels alone.
+only a coarse sanity check. Two sheets of the 85 rest on the labels alone.
+
+### Eleven sheets have no Lambert grid to work from
+
+Of the 96 scans, **11 carry no printed kilometric grid at all**, and no amount of
+better detection will find one. They are an earlier edition: four are catalogued
+1902, and none shows the *"CARROYAGE KILOMÉTRIQUE LAMBERT"* header that every
+gridded sheet carries. What they carry instead is a **graticule graduated in
+centesimal grades from the Paris meridian** — the north-west corner of the 1902
+La Marsa sheet reads `8°80'`, which is 8.80 grad × 0.9 = 7.92° from Paris, plus
+2.3372° to Greenwich, giving 10.257°E: right for that sheet. Their top edge is
+numbered `0 … 32 Kil.`, a graphic scale of distance from the west edge rather
+than any absolute coordinate.
+
+The measurements say the same thing quantitatively. On a sheet that has a grid,
+the detected lines have a gap spread of 0–2 px and 20–32 gaps come out a
+kilometre. On these eleven the spread is 12–120 px with 1–8, and the implied
+resolutions are nonsense — 196 to 740 px/km against the series' 234–238. There is
+no comb there.
+
+Reaching them needs a second pipeline: detect the black graticule lines, read the
+grade labels, convert from Paris. That is not built. It is worth being precise
+about what it would add, because it is less than eleven sheets' worth: **8 of the
+11 carry the same sheet designation as a sheet already georeferenced** — B1-C36,
+B2-C36, B6-C38 and so on — so they are earlier editions of ground already
+covered. Their value is a thirty-year comparison on the same frame, which is
+interesting for a different reason than coverage. Only La Goulette (B2-C37) and
+two untitled records are ground not otherwise reached.
 
 ### The catalogue was the wrong arbiter, and the evidence that says so
 
@@ -100,21 +131,40 @@ a sheet are good to about 20 m.**
 Absolute position is a separate question, and `anchor_basis_e` / `_n` records
 which of the three sources established each axis of each sheet:
 
-| basis | sheets (of 73) |
+| basis | sheets (of 85) |
 | --- | --- |
-| printed corners on both axes | 57 |
-| printed corners on one axis, another source on the other | 10 |
+| printed corners on both axes | 61 |
+| printed corners on one axis, another source on the other | 5 |
 | a corner shared with a confirmed neighbour, both axes | 2 |
+| a corner shared with a neighbour on one axis | 5 |
 | margin labels on both axes | 3 |
-| nothing that settles it | **1** |
+| a transform but no position — see below | **7** |
+| nothing that settles it | **2** |
 
 A useful by-product: because the printed corner is exact, the difference between
 it and the *detected* frame measures the frame detector. It comes out at a median
-**15 m** in easting and **32 m** in northing, worst 258 m and 466 m — far better
-than the ±550 m worst case the three-rules problem suggested, and it is reported
-per sheet as `neatline_error_m_e` / `_n` rather than folded into the anchor.
+**16 m** in easting and **32 m** in northing — far better than the ±550 m worst
+case the three-rules problem suggested, and it is reported per sheet as
+`neatline_error_m_e` / `_n` rather than folded into the anchor.
 
-### Five wrong turns, each recorded in the code
+### A transform is not a position
+
+Twelve sheets have a printed grid whose spacing and rotation fit perfectly and
+whose margin labels cannot be read — no catalogue box to bound the label search
+on two of them, illegible red type on the rest. Refusing those outright, as the
+first version did, threw away a good linear part because one integer was
+missing. They now get the transform with its **translation left at zero** and a
+flag, `anchor_provisional`, which is what lets the corner reader work on them at
+all: it needs a neatline to know where in the margin to look and a linear part to
+know what to expect. Five were then anchored from their own printed corners.
+
+Nothing may consume a provisional transform. It is a scale and a rotation waiting
+for a position, and its coordinates would look exactly like everyone else's while
+being wrong by however many kilometres the anchor turns out to be, so
+`anchor_is_confident` is false for it by construction and `extract_symbols` skips
+it.
+
+### Six wrong turns, each recorded in the code
 
 These cost most of the work and each one produced a plausible-looking wrong
 answer, which is why they are written down rather than quietly fixed.
@@ -153,6 +203,27 @@ answer, which is why they are written down rather than quietly fixed.
    sheet needs three corners where one that confirms it needs two; and the result
    still has to land on Tunisia.
 
+6. **A square grid is not square in the scan.** Reaching the eleven gridless
+   sheets began with an attempt to improve the grid detector, on the reasoning
+   that the two families of lines must be perpendicular — a kilometric grid is
+   square, and an easting line `x = p + y·tan(a)` meets a northing line
+   `y = q + x·tan(b)` at right angles precisely when `tan(b) = −tan(a)`. True on
+   the paper, false in the scan: a general affine, which is what a slightly
+   skewed scan of slightly stretched paper gives, carries perpendicular lines to
+   non-perpendicular ones. The measurements had said so and were read as noise —
+   over 84 sheets the two angles summed to between −0.5° and +0.25° rather than
+   to zero, which is the shear. Imposing the constraint made **24 of 73 sheets
+   fit their own grid worse**, one going from 8.8 m rms to 110 m.
+
+   Three further attempts on the same detector were each a wash and were all
+   reverted: scoring the angle by how many gaps come out a kilometre (median fit
+   16 m → 26 m, because it is a small integer whose ties get settled by search
+   order), indexing each axis with its own measured spacing rather than the sheet
+   average (15 sheets better, 26 worse), and re-estimating the spacing from the
+   indices just assigned and repeating (8 better, 29 worse — where the first
+   indices are wrong the refit confirms them). The detector is unchanged except
+   for one bug fix, below. The eleven sheets were never a detection problem.
+
 Three preprocessing attempts on the corner annotation are also worth recording,
 because the glyphs are only about 22 px tall and the choice mattered more than
 any parameter. A **binary red mask** eroded them until `222.548` read as `2.6.`.
@@ -186,10 +257,9 @@ Both editions of the legend define these identically, so no per-edition
 crosswalk is needed — see
 [`config/legend_vocabulary.json`](../config/legend_vocabulary.json).
 
-**All 73 georeferenced sheets are extracted: 74 847 houses**, every one carrying
-a pixel position, a Lambert easting and northing, and a WGS84 longitude and
-latitude. 74 136 of them are on the 72 sheets whose absolute anchor is
-confirmed.
+**All 78 placed sheets are extracted: 85 932 houses**, every one carrying a pixel
+position, a Lambert easting and northing, and a WGS84 longitude and latitude.
+79 065 of them are on the 76 sheets whose absolute anchor is confirmed.
 
 Across all 73 georeferenced sheets, building counts run **29 to 3515** per
 sheet, median 929 — the kind of spread settlement density should show. Well
@@ -286,6 +356,10 @@ python3 scripts/georeference_sheets.py --images <dir of record_id.jpg>
 # 2. read each sheet's own printed corner coordinates (needs step 1's neatline)
 python3 scripts/read_corner_coordinates.py --images <dir>
 
+# ... or re-interpret the readings already stored, without OCR: a second in
+#     place of a quarter of an hour, for when a rule changes rather than a scan
+python3 scripts/read_corner_coordinates.py --images <dir> --from-cache
+
 # 3. re-anchor on them, corroborate from neighbours, re-apply the confidence
 #    rule. Arithmetic on the cached transforms - no scan is re-read.
 python3 scripts/georeference_sheets.py --images <dir> --csv-only
@@ -299,6 +373,28 @@ The two-pass shape is not an accident of implementation: the corner reader needs
 the detected neatline to know where to look, and the anchor needs the corner
 reader. Step 3 is cheap and idempotent, because changing an anchor is a whole
 number of kilometres of translation and nothing else.
+
+### Three bugs the state kept, not the code
+
+Each of these was silent, and each made an output disagree with the files beside
+it rather than crash.
+
+- **`detect_sheet_grid --recompute` wrote the table and not the cache.** The only
+  JSON write sat inside the loop over pending scans, which `--recompute` leaves
+  empty. So a recomputed verdict reached `sheet_grid.csv` and never
+  `sheet_grid.json` — and georeferencing reads the JSON. The Djebeniana sheet sat
+  unusable for that reason alone while the table said it had a grid.
+- **`extract_symbols --only` rewrote the whole summary from one run.** Extracting
+  five sheets cut the other seventy-three out of `symbols_summary.csv`. The
+  GeoJSON per sheet was untouched, so the data was there and the summary of it
+  was not. It merges now.
+- **Applying the printed corners was not idempotent.** The support a shift needs
+  depends on whether the sheet had an anchor to overturn, and a sheet anchored
+  from its corners on one run is no longer provisional on the next — so a second
+  identical run applied the stricter floor, refused the shift it had already
+  made, and moved the sheet back. Mennzel Heurr ended up 489 km from its
+  catalogue box. The guard is now keyed on the reading that produced the shift,
+  and a second run changes nothing.
 
 Two checks are worth more than the rest.
 
@@ -361,22 +457,23 @@ reachable but its licence discourages redistribution.
 
 ### The join
 
-**20 of 24 gouvernorats and 188 of 264 délégations** hold extracted houses. Only
+**20 of 24 gouvernorats and 192 of 264 délégations** hold extracted houses. Only
 Gafsa, Kebili, Tataouine and Tozeur — the deep south and the Djerid — have no
 sheet extracted at all.
 
-Aggregation uses the **72 anchor-confirmed sheets**, which after the
-printed-corner anchoring is all but one of the 73. That is 71 190 houses joined
-into gouvernorats over 43 646 km² of ground read. The one sheet left out is an
-untitled 1930s sheet whose anchor rests on its margin labels alone.
+Aggregation uses the **76 anchor-confirmed sheets**: 75 474 houses joined into
+gouvernorats over 44 395 km² of ground read. Two placed sheets are left out for
+an unconfirmed anchor, one of them the Sfax sheet with 6 156 houses, which is why
+the extracted total and the joined total differ by more than the sheet count
+suggests.
 
 | Gouvernorat | Houses | km² read | Houses / km² |
 | --- | --- | --- | --- |
 | Tunis | 2406 | 252 | **9.54** |
 | Manubah | 3355 | 1117 | 3.00 |
+| Nabeul | 7654 | 2715 | 2.82 |
 | Ariana | 1071 | 382 | 2.81 |
 | Ben Arous | 1380 | 517 | 2.67 |
-| Nabeul | 5831 | 2592 | 2.25 |
 | Zaghouan | 6245 | 2802 | 2.23 |
 | Siliana | 8668 | 4626 | 1.87 |
 | Béja | 6344 | 3473 | 1.83 |
@@ -384,17 +481,18 @@ untitled 1930s sheet whose anchor rests on its margin labels alone.
 | Monastir | 1694 | 982 | 1.73 |
 | Médenine | 592 | 350 | 1.69 |
 | Sidi Bou Zid | 1119 | 686 | 1.63 |
+| Sfax | 1098 | 724 | 1.52 |
+| Kairouan | 9017 | 6044 | 1.49 |
 | Sousse | 3112 | 2142 | 1.45 |
 | Gabès | 1491 | 1119 | 1.33 |
 | Jendouba | 1239 | 965 | 1.28 |
-| Kairouan | 7673 | 6044 | 1.27 |
 | Le Kef | 5586 | 4587 | 1.22 |
 | Kassérine | 4828 | 4693 | 1.03 |
-| Sfax | 153 | 177 | 0.86 |
-| Mahdia | 2111 | 2573 | 0.82 |
+| Mahdia | 2283 | 2652 | 0.86 |
 
-Four gouvernorats have a sheet but no reportable density, their read area falling
-under the 25 km² floor.
+Every gouvernorat with a sheet now has enough ground read to state a density;
+121 délégations still do not, and are drawn distinctly from both a value and from
+"no sheet at all".
 
 The densest délégations are peri-urban Tunis and its coast — **Sidi Hassine**
 (Tunis, 8.65/km² on 60 km²), Soukra (Ariana, 8.37), Cité El Khadra (Tunis, 6.47),

@@ -394,6 +394,12 @@ def main() -> int:
         if "affine" not in reference:
             print(f"  {index}/{len(targets)} {name[:22]:<22} - not georeferenced")
             continue
+        if reference.get("anchor_provisional"):
+            # Scale and rotation without a position. Extracting from it would
+            # produce coordinates that look exactly like the others and are
+            # wrong by however many kilometres the anchor turns out to be.
+            print(f"  {index}/{len(targets)} {name[:22]:<22} - anchor provisional")
+            continue
 
         window = tuple(args.window) if args.window else None
         found, image, local = extract(path, window, reference.get("grid_lines"),
@@ -429,11 +435,25 @@ def main() -> int:
         fields = ["record_id", "sheet_name", "anchor_confident",
                   "residual_rms_m", "building", "well", "vegetation", "total",
                   "clipped_out"]
+        # Merge, do not replace. The GeoJSON per sheet is written per sheet, but
+        # this table was rewritten from whatever the run happened to process, so
+        # a --only run over five sheets silently cut the other seventy-three out
+        # of it - the files were all still there and the summary of them was not.
+        merged: dict[str, dict] = {}
+        if args.out_csv.exists():
+            for row in csv.DictReader(args.out_csv.open(encoding="utf-8")):
+                for field in ("building", "well", "vegetation", "total",
+                              "clipped_out"):
+                    row[field] = int(row[field] or 0)
+                merged[row["record_id"]] = row
+        merged.update({row["record_id"]: row for row in rows})
+        ordered = [merged[key] for key in sorted(merged)]
         with args.out_csv.open("w", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=fields)
             writer.writeheader()
-            writer.writerows(rows)
-        print(f"\n{len(rows)} sheets, {sum(r['total'] for r in rows)} symbols")
+            writer.writerows(ordered)
+        print(f"\n{len(rows)} sheets this run; {len(ordered)} in the table, "
+              f"{sum(r['total'] for r in ordered)} symbols")
         print(f"  -> {args.out_dir}/\n  -> {args.out_csv}")
     return 0
 

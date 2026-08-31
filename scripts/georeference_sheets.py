@@ -173,6 +173,26 @@ def find_neatline(path: Path) -> dict:
     return {k: v * NEATLINE_DOWNSAMPLE for k, v in sides.items()}
 
 
+def grid_extent_frame(eastings: list[float], northings: list[float],
+                      tan_e: float, tan_n: float) -> dict:
+    """A frame from the outermost grid lines, for when the neatline is not found.
+
+    The four corners are where the extreme easting and northing lines cross, so
+    this is the printed grid's own bounding parallelogram reduced to an
+    upright box. It is inside the true neatline by up to a kilometre.
+    """
+    if len(eastings) < 2 or len(northings) < 2:
+        return {}
+    determinant = 1.0 - tan_e * tan_n
+    xs, ys = [], []
+    for u in (min(eastings), max(eastings)):
+        for v in (min(northings), max(northings)):
+            xs.append((u + tan_e * v) / determinant)
+            ys.append((v + tan_n * u) / determinant)
+    return {"left": int(min(xs)), "right": int(max(xs)),
+            "top": int(min(ys)), "bottom": int(max(ys))}
+
+
 LABEL_BANDS = {
     "easting": [(0.0, 0.0, 1.0, 0.13), (0.0, 0.86, 1.0, 1.0)],
     "northing": [(0.0, 0.02, 0.10, 0.98), (0.90, 0.02, 1.0, 0.98)],
@@ -295,6 +315,17 @@ def kilometre_indices(constants: list[float], px_per_km: float):
     printed grid should fit to under 30. Deriving the index from the measured
     position instead tolerates a gap, and a line that does not sit near a whole
     kilometre from the first is dropped rather than trusted.
+
+    The spacing this is given matters more than it looks, because indexing is a
+    discrete decision: a spacing wrong by one percent has accumulated a third of
+    a kilometre by the thirtieth line, enough to round one line to the wrong
+    kilometre and put a kilometre of error into the fit at that end. Three ways
+    of improving on the sheet-wide average were tried and all three were a wash
+    across the 84 sheets that have a grid - using each axis's own median gap
+    (15 sheets better, 26 worse), using a spacing fitted by least squares over
+    all of an axis's lines, and re-estimating the spacing from the indices just
+    assigned and repeating (8 better, 29 worse; where the first indices are
+    wrong the refit confirms them). The sheet-wide average stands.
     """
     kept = []
     for constant in constants:
@@ -341,11 +372,20 @@ def georeference(path: Path, found: dict, box: dict, zone: str) -> dict:
     to_lambert = Transformer.from_crs("EPSG:4326", f"EPSG:{epsg}", always_xy=True)
     to_wgs84 = Transformer.from_crs(f"EPSG:{epsg}", "EPSG:4326", always_xy=True)
 
-    frame = find_neatline(path)
-    if not frame:
-        return {"error": "neatline not found"}
-
     raw_eastings, raw_northings, tan_e, tan_n = grid_lines(found)
+
+    frame = find_neatline(path)
+    frame_basis = "detected"
+    if not frame:
+        # Fall back to the extent of the detected grid. The grid is measured on
+        # the map body, so its outermost lines sit inside the neatline but
+        # within a kilometre of it - good enough to place the corner-annotation
+        # search windows, which allow a few hundred pixels of slack either way,
+        # and the printed corners then say exactly where the frame is.
+        frame = grid_extent_frame(raw_eastings, raw_northings, tan_e, tan_n)
+        frame_basis = "grid_extent"
+        if not frame:
+            return {"error": "neatline not found"}
     px_per_km = found["px_per_km"]
     eastings = kilometre_indices(raw_eastings, px_per_km)
     northings = kilometre_indices(raw_northings, px_per_km)
@@ -371,53 +411,71 @@ def georeference(path: Path, found: dict, box: dict, zone: str) -> dict:
     # came out 5% too tall searching inward and 2% too short searching outward,
     # which is +/-400 m of anchor error either way. So the frame is kept only as
     # a cross-check, and the anchor comes from the grid labels themselves.
-    centre_latitude = (box["north"] + box["south"]) / 2
-    centre_longitude = (box["west"] + box["east"]) / 2
-    west_x, _ = to_lambert.transform(box["west"], centre_latitude)
-    east_x, _ = to_lambert.transform(box["east"], centre_latitude)
-    _, south_y = to_lambert.transform(centre_longitude, box["south"])
-    _, north_y = to_lambert.transform(centre_longitude, box["north"])
+    easting_anchor = northing_anchor = {}
+    if box:
+        centre_latitude = (box["north"] + box["south"]) / 2
+        centre_longitude = (box["west"] + box["east"]) / 2
+        west_x, _ = to_lambert.transform(box["west"], centre_latitude)
+        east_x, _ = to_lambert.transform(box["east"], centre_latitude)
+        _, south_y = to_lambert.transform(centre_longitude, box["south"])
+        _, north_y = to_lambert.transform(centre_longitude, box["north"])
 
-    labels = read_labels(path)
-    # Eastings ascend with line index; northings descend, so line 0 is the
-    # highest and its offset is value + index.
-    easting_anchor = anchor_from_labels(
-        labels["easting"], eastings, tan_e, 0,
-        (int(west_x / 1000) - LABEL_WINDOW_KM, int(east_x / 1000) + LABEL_WINDOW_KM),
-        px_per_km, -1)
-    northing_anchor = anchor_from_labels(
-        labels["northing"], northings, tan_n, 1,
-        (int(south_y / 1000) - LABEL_WINDOW_KM, int(north_y / 1000) + LABEL_WINDOW_KM),
-        px_per_km, +1)
-    if not easting_anchor or not northing_anchor:
-        return {"error": "grid labels not read"}
+        labels = read_labels(path)
+        # Eastings ascend with line index; northings descend, so line 0 is the
+        # highest and its offset is value + index.
+        easting_anchor = anchor_from_labels(
+            labels["easting"], eastings, tan_e, 0,
+            (int(west_x / 1000) - LABEL_WINDOW_KM,
+             int(east_x / 1000) + LABEL_WINDOW_KM),
+            px_per_km, -1)
+        northing_anchor = anchor_from_labels(
+            labels["northing"], northings, tan_n, 1,
+            (int(south_y / 1000) - LABEL_WINDOW_KM,
+             int(north_y / 1000) + LABEL_WINDOW_KM),
+            px_per_km, +1)
 
+    # A sheet whose labels could not be read still has a perfectly good linear
+    # part, and the coordinates it prints at its own corners can supply the rest.
+    # So the translation is left at zero and the sheet is marked provisional,
+    # rather than thrown away: read_corner_coordinates.py needs a neatline and a
+    # linear part to know where to look and what to expect, and this gives it
+    # both. Nothing may consume a provisional transform - it is not a position,
+    # it is a scale and a rotation waiting for one - so anchor_is_confident is
+    # false for it by construction and extract_symbols skips it.
+    provisional = not (easting_anchor and northing_anchor)
     solution = linear.copy()
-    solution[2, 0] += easting_anchor["origin_km"] * 1000.0
-    solution[2, 1] += northing_anchor["origin_km"] * 1000.0
+    if not provisional:
+        solution[2, 0] += easting_anchor["origin_km"] * 1000.0
+        solution[2, 1] += northing_anchor["origin_km"] * 1000.0
 
     # Cross-check: what the catalogue box would have said, at the frame centre.
     # This is the number the anchor no longer depends on, so a disagreement of
     # a few hundred metres is expected and harmless; a disagreement of a whole
     # kilometre or more means the labels were misread and is worth flagging.
-    centre_pixel = ((frame["left"] + frame["right"]) / 2,
-                    (frame["top"] + frame["bottom"]) / 2)
-    centre_fitted = apply_affine(solution, *centre_pixel)
-    centre_catalogue = to_lambert.transform(centre_longitude, centre_latitude)
-    anchor_check = (abs(centre_fitted[0] - centre_catalogue[0]),
-                    abs(centre_fitted[1] - centre_catalogue[1]))
+    if box and not provisional:
+        centre_pixel = ((frame["left"] + frame["right"]) / 2,
+                        (frame["top"] + frame["bottom"]) / 2)
+        centre_fitted = apply_affine(solution, *centre_pixel)
+        centre_catalogue = to_lambert.transform(centre_longitude, centre_latitude)
+        anchor_check = (abs(centre_fitted[0] - centre_catalogue[0]),
+                        abs(centre_fitted[1] - centre_catalogue[1]))
+    else:
+        anchor_check = (None, None)
 
     # An independent check on the frame, and so on the anchor: the frame's
     # measured size against the size the catalogue extent implies. The two come
     # from the neatline and grid spacing on one side and the catalogue and the
     # projection on the other, so agreement is not circular.
-    frame_width_km = (frame["right"] - frame["left"]) / px_per_km
-    frame_height_km = (frame["bottom"] - frame["top"]) / px_per_km
-    catalogue_width_km = abs(east_x - west_x) / 1000
-    catalogue_height_km = abs(north_y - south_y) / 1000
-    size_error = max(
-        abs(frame_width_km - catalogue_width_km) / catalogue_width_km,
-        abs(frame_height_km - catalogue_height_km) / catalogue_height_km) * 100
+    if box:
+        frame_width_km = (frame["right"] - frame["left"]) / px_per_km
+        frame_height_km = (frame["bottom"] - frame["top"]) / px_per_km
+        catalogue_width_km = abs(east_x - west_x) / 1000
+        catalogue_height_km = abs(north_y - south_y) / 1000
+        size_error = max(
+            abs(frame_width_km - catalogue_width_km) / catalogue_width_km,
+            abs(frame_height_km - catalogue_height_km) / catalogue_height_km) * 100
+    else:
+        size_error = None
 
     corners = {}
     for name, (x, y) in {
@@ -435,6 +493,7 @@ def georeference(path: Path, found: dict, box: dict, zone: str) -> dict:
         "lambert_zone": zone,
         "epsg": epsg,
         "neatline_px": frame,
+        "neatline_basis": frame_basis,
         "grid_intersections": len(points),
         # Kept so symbol extraction can cut the grid out of the red channel:
         # houses and grid lines are printed in the same ink.
@@ -450,15 +509,24 @@ def georeference(path: Path, found: dict, box: dict, zone: str) -> dict:
         "affine": [round(float(v), 6) for v in
                    (solution[0, 0], solution[0, 1], solution[1, 0],
                     solution[1, 1], solution[2, 0], solution[2, 1])],
-        "frame_size_error_pct": round(float(size_error), 2),
-        "easting_origin_km": easting_anchor["origin_km"],
-        "northing_origin_km": northing_anchor["origin_km"],
-        "label_votes_e": easting_anchor["votes"],
-        "label_votes_n": northing_anchor["votes"],
-        "labels_matched_e": easting_anchor["labels_matched"],
-        "labels_matched_n": northing_anchor["labels_matched"],
-        "anchor_vs_catalogue_e_m": round(float(anchor_check[0]), 1),
-        "anchor_vs_catalogue_n_m": round(float(anchor_check[1]), 1),
+        "frame_size_error_pct": (None if size_error is None
+                                 else round(float(size_error), 2)),
+        "anchor_provisional": provisional,
+        "anchor_note": ("" if not provisional else
+                        "no catalogue box for the label window" if not box else
+                        "grid labels not read"),
+        "easting_origin_km": easting_anchor.get("origin_km", 0),
+        "northing_origin_km": northing_anchor.get("origin_km", 0),
+        **({} if provisional else {
+            "label_votes_e": easting_anchor["votes"],
+            "label_votes_n": northing_anchor["votes"],
+            "labels_matched_e": easting_anchor["labels_matched"],
+            "labels_matched_n": northing_anchor["labels_matched"],
+        }),
+        "anchor_vs_catalogue_e_m": (None if anchor_check[0] is None
+                                    else round(float(anchor_check[0]), 1)),
+        "anchor_vs_catalogue_n_m": (None if anchor_check[1] is None
+                                    else round(float(anchor_check[1]), 1)),
         "residual_rms_m": round(float(np.sqrt((residuals ** 2).mean())), 2),
         "residual_max_m": round(float(residuals.max()), 2),
         # Confidence is not decided here - see anchor_is_confident, which is
@@ -533,6 +601,11 @@ NEIGHBOUR_CORNER_M = 250.0
 # 30 km, so it is asked only the coarse question.
 NEIGHBOUR_MAX_CATALOGUE_M = 15_000.0
 
+# A zone is only switched when the sheet then lands within this of the latitude
+# the catalogue gives it. The two zones are 300 km apart, so anything short of a
+# gross mismatch is not a zone problem.
+ZONE_MAX_LATITUDE_ERROR = 0.6
+
 # ... and the result still has to land on Tunisia. This is the envelope of every
 # catalogue box in the series, generously margined: individual boxes are wrong by
 # as much as 35 km, but the series as a whole covers the country, so a shift that
@@ -565,7 +638,7 @@ def axis_basis(found: dict, axis: str) -> str:
     # labels disagree and there is not enough of the printing to say which is
     # right. Calling that confident on the strength of the labels would be
     # ignoring the better source because it was inconvenient.
-    if found.get(f"corner_shift_refused_{axis}"):
+    if found.get(f"corner_shift_refused_{axis}") or found.get("anchor_provisional"):
         return ""
     if found.get(f"corner_support_{axis}", 0) >= MIN_CORNER_SUPPORT:
         return "printed_corners"
@@ -586,7 +659,7 @@ def axis_basis(found: dict, axis: str) -> str:
 
 
 def anchor_is_confident(found: dict) -> bool:
-    if "affine" not in found:
+    if "affine" not in found or found.get("anchor_provisional"):
         return False
     return all(axis_basis(found, axis) for axis in ("e", "n"))
 
@@ -620,18 +693,47 @@ def apply_corner_anchors(results: dict, corners: dict,
             if f"corner_{name}_km" in reading:
                 found[f"corner_{name}_km"] = reading[f"corner_{name}_km"]
 
+        # Idempotence is keyed on the reading, not on the sheet's current state,
+        # and that distinction is not academic. The support a shift needs depends
+        # on whether the sheet had an anchor to overturn - but a sheet anchored
+        # from its corners on one run is no longer provisional on the next, so
+        # re-deciding from the current state applied the stricter floor, refused
+        # the shift it had already made, and moved the sheet back. Mennzel Heurr
+        # ended up 489 km from its catalogue box on a second identical run.
+        # Recording which reading produced the applied shift makes re-running a
+        # no-op unless the reading itself has changed.
         applied = found.get("corner_shift_applied_km", {})
+        source = found.get("corner_shift_from_reading")
+        if source == {"e": shifts["e"], "n": shifts["n"]}:
+            continue
+
         delta = {}
         for axis in ("e", "n"):
             found.pop(f"corner_shift_refused_{axis}", None)
             wanted = shifts[axis] if shifts[axis] is not None else 0
             support = reading.get(f"corner_support_{axis}", 0)
-            if wanted and support < MIN_CORNER_SUPPORT_TO_MOVE:
-                found[f"corner_shift_refused_{axis}"] = (
-                    f"{wanted:+d} km on support {support}")
+            # On a provisional sheet the shift is not a correction of an
+            # independent measurement - it *is* the anchor, and there is no label
+            # vote for it to contradict. The higher bar exists to stop a pair of
+            # matching misreads overturning a good anchor; with no anchor to
+            # overturn it would only refuse the sheet a position altogether.
+            floor = (MIN_CORNER_SUPPORT if found.get("anchor_provisional")
+                     else MIN_CORNER_SUPPORT_TO_MOVE)
+            if wanted and support < floor:
+                # A reading only one corner produced is too weak to put a
+                # corroborated anchor in doubt - it is one OCR pass over one
+                # six-digit number. Below the corroboration floor the corner
+                # evidence is set aside rather than recorded as a dispute, so it
+                # cannot un-confirm a sheet the margin labels already settled.
+                # At or above it, the disagreement is real and is recorded.
+                if support >= MIN_CORNER_SUPPORT:
+                    found[f"corner_shift_refused_{axis}"] = (
+                        f"{wanted:+d} km on support {support}")
                 wanted = 0
             delta[axis] = wanted - applied.get(axis, 0)
         if not any(delta.values()):
+            found["corner_shift_from_reading"] = {"e": shifts["e"],
+                                                  "n": shifts["n"]}
             continue
 
         if not on_tunisia(found, delta, envelope):
@@ -641,31 +743,19 @@ def apply_corner_anchors(results: dict, corners: dict,
                         f"{delta[axis]:+d} km leaves Tunisia")
             continue
 
-        affine = list(found["affine"])
-        affine[4] += delta["e"] * 1000.0
-        affine[5] += delta["n"] * 1000.0
-        found["affine"] = [round(float(v), 6) for v in affine]
-        found["easting_origin_km"] += delta["e"]
-        found["northing_origin_km"] += delta["n"]
-        found["corner_shift_applied_km"] = {
-            "e": applied.get("e", 0) + delta["e"],
-            "n": applied.get("n", 0) + delta["n"]}
-
-        zone = found["lambert_zone"]
-        to_wgs84 = Transformer.from_crs(f"EPSG:{ZONE_EPSG[zone]}", "EPSG:4326",
-                                        always_xy=True)
-        for corner in found["corners"].values():
-            corner["easting"] = round(corner["easting"] + delta["e"] * 1000.0, 1)
-            corner["northing"] = round(corner["northing"] + delta["n"] * 1000.0, 1)
-            lon, lat = to_wgs84.transform(corner["easting"], corner["northing"])
-            corner["lon"], corner["lat"] = round(lon, 6), round(lat, 6)
+        translate(found, delta)
+        found["corner_shift_from_reading"] = {"e": shifts["e"], "n": shifts["n"]}
+        if found.get("anchor_provisional"):
+            found["anchor_provisional"] = False
+            found["anchor_note"] = (found.get("anchor_note", "")
+                                    + "; anchored from the printed corners")
 
         # The catalogue cross-check has to be restated against the new position;
         # leaving the old number would describe a transform that no longer
         # exists. It is recomputed from the box rather than adjusted, because it
         # is stored as a magnitude and the direction it pointed is not recorded.
         box = boxes.get(record_id)
-        if box:
+        if box and not found.get("anchor_provisional"):
             found.update(catalogue_disagreement(found, box))
         changed.append(record_id)
     return changed
@@ -693,22 +783,14 @@ def corroborate_by_neighbours(results: dict) -> list[str]:
     perfectly good enough to rule out a displacement of tens of kilometres, so
     it is required to agree coarsely.
     """
-    grounded = []
-    for record_id, found in results.items():
-        if "corners" not in found:
-            continue
-        if all(found.get(f"anchor_basis_{axis}") in PRIMARY_BASES
-               for axis in ("e", "n")):
-            grounded += [(found["lambert_zone"], corner["easting"],
-                          corner["northing"], record_id)
-                         for corner in found["corners"].values()]
-
+    grounded = grounded_corners(results)
     confirmed = []
     for record_id, found in results.items():
-        if "corners" not in found or anchor_is_confident(found):
+        if ("corners" not in found or anchor_is_confident(found)
+                or found.get("anchor_provisional")):
             continue
-        gross = max(found.get("anchor_vs_catalogue_e_m", 0.0),
-                    found.get("anchor_vs_catalogue_n_m", 0.0))
+        gross = max(found.get("anchor_vs_catalogue_e_m") or 0.0,
+                    found.get("anchor_vs_catalogue_n_m") or 0.0)
         if gross > NEIGHBOUR_MAX_CATALOGUE_M:
             continue
         best = None
@@ -727,6 +809,100 @@ def corroborate_by_neighbours(results: dict) -> list[str]:
         found["neighbour_corner_sheet"] = best[1]
         confirmed.append(record_id)
     return confirmed
+
+
+def verify_zone(results: dict, boxes: dict,
+                envelope: tuple) -> list[str]:
+    """Check each sheet's Lambert zone against where it then lands.
+
+    The two zones share a central meridian and differ by 2.7 degrees of origin
+    latitude, so reading a northing in the wrong one puts the sheet about 300 km
+    from where it belongs. That is far too coarse an error for the catalogue box
+    to miss, and it is the one question about position the box answers well.
+
+    Switching a zone costs nothing and changes no measurement. The northing the
+    sheet prints is the same number whichever zone it is a northing in, so the
+    pixel-to-metres transform is untouched; only which EPSG those metres belong
+    to, and hence the longitude and latitude, are restated. The zone had been
+    inferred from latitude and left unset wherever the two bands overlap, which
+    is exactly the region - around Sfax - where a sheet most needs it.
+    """
+    switched = []
+    for record_id, found in results.items():
+        if "corners" not in found or found.get("anchor_provisional"):
+            continue
+        box = boxes.get(record_id)
+        if box:
+            catalogue_latitude = (box["north"] + box["south"]) / 2
+        elif found.get("lambert_zone_basis") == "defaulted_pending_check":
+            # No catalogue latitude to compare against, so ask the weaker
+            # question the envelope can answer: which zone puts the sheet in
+            # the country at all.
+            catalogue_latitude = (envelope[2] + envelope[3]) / 2
+        else:
+            continue
+        best = None
+        for zone, epsg in ZONE_EPSG.items():
+            to_wgs84 = Transformer.from_crs(f"EPSG:{epsg}", "EPSG:4326",
+                                            always_xy=True)
+            corner = found["corners"]["north_west"]
+            _, latitude = to_wgs84.transform(corner["easting"],
+                                             corner["northing"])
+            error = abs(latitude - catalogue_latitude)
+            if best is None or error < best[0]:
+                best = (error, zone, epsg)
+        error, zone, epsg = best
+        tolerance = (ZONE_MAX_LATITUDE_ERROR if box
+                     else (envelope[3] - envelope[2]) / 2)
+        if zone == found["lambert_zone"] or error > tolerance:
+            continue
+        found["lambert_zone"], found["epsg"] = zone, epsg
+        found["lambert_zone_basis"] = "chosen_by_where_the_sheet_then_lands"
+        to_wgs84 = Transformer.from_crs(f"EPSG:{epsg}", "EPSG:4326",
+                                        always_xy=True)
+        for corner in found["corners"].values():
+            lon, lat = to_wgs84.transform(corner["easting"], corner["northing"])
+            corner["lon"], corner["lat"] = round(lon, 6), round(lat, 6)
+        switched.append(record_id)
+    return switched
+
+
+def translate(found: dict, delta: dict) -> None:
+    """Move a sheet by a whole number of kilometres, in place.
+
+    Everything else about the transform is untouched: scale, rotation and skew
+    all come from the printed grid, and an anchor is only ever a translation.
+    """
+    applied = found.get("corner_shift_applied_km", {})
+    affine = list(found["affine"])
+    affine[4] += delta["e"] * 1000.0
+    affine[5] += delta["n"] * 1000.0
+    found["affine"] = [round(float(v), 6) for v in affine]
+    found["easting_origin_km"] += delta["e"]
+    found["northing_origin_km"] += delta["n"]
+    found["corner_shift_applied_km"] = {"e": applied.get("e", 0) + delta["e"],
+                                        "n": applied.get("n", 0) + delta["n"]}
+    to_wgs84 = Transformer.from_crs(
+        f"EPSG:{ZONE_EPSG[found['lambert_zone']]}", "EPSG:4326", always_xy=True)
+    for corner in found["corners"].values():
+        corner["easting"] = round(corner["easting"] + delta["e"] * 1000.0, 1)
+        corner["northing"] = round(corner["northing"] + delta["n"] * 1000.0, 1)
+        lon, lat = to_wgs84.transform(corner["easting"], corner["northing"])
+        corner["lon"], corner["lat"] = round(lon, 6), round(lat, 6)
+
+
+def grounded_corners(results: dict) -> list[tuple]:
+    """Corner positions of every sheet standing on its own printing."""
+    points = []
+    for record_id, found in results.items():
+        if "corners" not in found or found.get("anchor_provisional"):
+            continue
+        if all(found.get(f"anchor_basis_{axis}") in PRIMARY_BASES
+               for axis in ("e", "n")):
+            points += [(found["lambert_zone"], corner["easting"],
+                        corner["northing"], record_id)
+                       for corner in found["corners"].values()]
+    return points
 
 
 def series_envelope(boxes: dict) -> tuple[float, float, float, float]:
@@ -766,7 +942,8 @@ def catalogue_disagreement(found: dict, box: dict) -> dict:
 
 
 CSV_FIELDS = [
-    "record_id", "designation", "sheet_name", "lambert_zone", "epsg",
+    "record_id", "designation", "sheet_name",
+    "lambert_zone", "lambert_zone_basis", "epsg",
     "grid_intersections", "frame_size_error_pct",
     "easting_origin_km", "northing_origin_km",
     "label_votes_e", "label_votes_n", "labels_matched_e", "labels_matched_n",
@@ -774,7 +951,8 @@ CSV_FIELDS = [
     "corner_support_e", "corner_support_n",
     "corner_shift_km_e", "corner_shift_km_n",
     "neatline_error_m_e", "neatline_error_m_n",
-    "anchor_basis_e", "anchor_basis_n",
+    "anchor_basis_e", "anchor_basis_n", "anchor_provisional", "anchor_note",
+    "neatline_basis",
     "neighbour_corner_m", "neighbour_corner_sheet",
     "corner_shift_refused_e", "corner_shift_refused_n",
     "residual_rms_m", "residual_max_m", "anchor_confident",
@@ -830,16 +1008,22 @@ def main() -> int:
         found = grid.get(record_id)
         box = partner.get(record_id, {}).get("bbox")
         zone = zones.get(record_id)
+        zone_defaulted = zone not in ZONE_EPSG
+        if zone_defaulted:
+            # Two sheets state no zone in their header and have no catalogue
+            # latitude to infer one from. Defaulting and then checking beats
+            # refusing: verify_zone below settles it from where the sheet lands,
+            # and the two zones are 300 km apart.
+            zone = "nord"
         name = sheets.get(record_id, {}).get("sheet_name") or record_id[-6:]
 
         if not found or not found.get("has_kilometric_grid"):
             results[record_id] = {"error": "no kilometric grid"}
-        elif not box:
-            results[record_id] = {"error": "no catalogue bounding box"}
-        elif zone not in ZONE_EPSG:
-            results[record_id] = {"error": f"no Lambert zone ({zone or 'unset'})"}
+
         else:
             results[record_id] = georeference(path, found, box, zone)
+            if zone_defaulted and "affine" in results[record_id]:
+                results[record_id]["lambert_zone_basis"] = "defaulted_pending_check"
             if "error" not in results[record_id]:
                 write_sidecars(args.sidecars, record_id, results[record_id], path)
 
@@ -848,14 +1032,21 @@ def main() -> int:
             print(f"  {index}/{len(targets)} {name[:22]:<22} - {outcome['error']}",
                   flush=True)
         else:
+            if outcome.get("anchor_provisional"):
+                state = f"PROVISIONAL ({outcome.get('anchor_note', '')})"
+                votes = "votes=-"
+            else:
+                state = ("ok" if anchor_is_confident(outcome)
+                         else "ANCHOR UNCERTAIN")
+                votes = (f"votes={outcome['label_votes_e']}/"
+                         f"{outcome['labels_matched_e']},"
+                         f"{outcome['label_votes_n']}/"
+                         f"{outcome['labels_matched_n']}")
             print(f"  {index}/{len(targets)} {name[:22]:<22} "
                   f"size_err={outcome['frame_size_error_pct']}% "
-                  f"origin=({outcome['easting_origin_km']},{outcome['northing_origin_km']})km "
-                  f"votes={outcome['label_votes_e']}/{outcome['labels_matched_e']},"
-                  f"{outcome['label_votes_n']}/{outcome['labels_matched_n']} "
-                  f"vs_cat=({outcome['anchor_vs_catalogue_e_m']},{outcome['anchor_vs_catalogue_n_m']})m "
-                  f"rms={outcome['residual_rms_m']}m "
-                  f"{'ok' if anchor_is_confident(outcome) else 'ANCHOR UNCERTAIN'}",
+                  f"origin=({outcome['easting_origin_km']},"
+                  f"{outcome['northing_origin_km']})km "
+                  f"{votes} rms={outcome['residual_rms_m']}m {state}",
                   flush=True)
         args.out_json.write_text(json.dumps(results, ensure_ascii=False, indent=2),
                                  encoding="utf-8")
@@ -864,6 +1055,7 @@ def main() -> int:
     # were read. This is arithmetic on the cached transforms - a change of anchor
     # is a whole number of kilometres of translation and nothing else - so it
     # costs nothing to re-apply and is idempotent.
+    corners: dict = {}
     if args.corners.exists():
         corners = json.loads(args.corners.read_text(encoding="utf-8"))
         boxes = {record_id: record["bbox"]
@@ -890,6 +1082,17 @@ def main() -> int:
             found.pop("neighbour_corner_sheet", None)
             for axis in ("e", "n"):
                 found[f"anchor_basis_{axis}"] = axis_basis(found, axis)
+
+    boxes_for_zone = {record_id: record["bbox"]
+                      for record_id, record in partner.items()
+                      if record.get("bbox")}
+    switched = verify_zone(results, boxes_for_zone,
+                           series_envelope(boxes_for_zone))
+    if switched:
+        print(f"\nLambert zone restated on {len(switched)} sheet(s):")
+        for record_id in switched:
+            name = sheets.get(record_id, {}).get("sheet_name") or record_id[-6:]
+            print(f"  {name[:22]:<22} -> {results[record_id]['lambert_zone']}")
 
     # Then, with the sheets that stand on their own printing settled, let each
     # of them vouch for a neighbour it shares a corner with.
@@ -920,6 +1123,7 @@ def main() -> int:
             "designation": sheet.get("designation", ""),
             "sheet_name": sheet.get("sheet_name", ""),
             "lambert_zone": found.get("lambert_zone", ""),
+            "lambert_zone_basis": found.get("lambert_zone_basis", ""),
             "epsg": found.get("epsg", ""),
             "grid_intersections": found.get("grid_intersections", ""),
             "frame_size_error_pct": found.get("frame_size_error_pct", ""),
@@ -939,6 +1143,10 @@ def main() -> int:
             "neatline_error_m_n": found.get("neatline_error_m_n", ""),
             "anchor_basis_e": found.get("anchor_basis_e", ""),
             "anchor_basis_n": found.get("anchor_basis_n", ""),
+            "anchor_provisional": (int(bool(found.get("anchor_provisional")))
+                                   if "affine" in found else ""),
+            "anchor_note": found.get("anchor_note", ""),
+            "neatline_basis": found.get("neatline_basis", ""),
             "neighbour_corner_m": found.get("neighbour_corner_m", ""),
             "neighbour_corner_sheet": found.get("neighbour_corner_sheet", ""),
             "corner_shift_refused_e": found.get("corner_shift_refused_e", ""),
@@ -957,7 +1165,9 @@ def main() -> int:
     with args.out_csv.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
         writer.writeheader()
-        writer.writerows(rows)
+        # A missing measurement is an empty cell, not the string "None".
+        writer.writerows([{k: ("" if v is None else v) for k, v in row.items()}
+                          for row in rows])
 
     good = [r for r in rows if not r["error"]]
     print(f"\n{len(rows)} sheets: {len(good)} georeferenced")
@@ -966,11 +1176,22 @@ def main() -> int:
                             ("anchor_vs_catalogue_e_m", " m"),
                             ("anchor_vs_catalogue_n_m", " m"),
                             ("residual_rms_m", " m")):
-            values = [float(r[field]) for r in good]
+            # Not every sheet has every check: the two with no catalogue box
+            # have nothing to compare against, and a provisional anchor has no
+            # position to compare. Summarise what was measured and say how many.
+            values = [float(r[field]) for r in good
+                      if r[field] not in ("", None)]
+            if not values:
+                continue
+            missing = ("" if len(values) == len(good)
+                       else f" (on {len(values)} of {len(good)})")
             print(f"  {field}: median {np.median(values):.2f}{unit}, "
-                  f"max {max(values):.2f}{unit}")
-        uncertain = [r for r in good if r["anchor_confident"] == 0]
-        print(f"  anchor uncertain on {len(uncertain)} sheet(s)")
+                  f"max {max(values):.2f}{unit}{missing}")
+        provisional = [r for r in good if r["anchor_provisional"] == 1]
+        uncertain = [r for r in good
+                     if r["anchor_confident"] == 0 and r not in provisional]
+        print(f"  anchor uncertain on {len(uncertain)} sheet(s), "
+              f"provisional on {len(provisional)}")
     print(f"  -> {args.out_json}\n  -> {args.out_csv}\n  -> {args.sidecars}/")
     return 0
 

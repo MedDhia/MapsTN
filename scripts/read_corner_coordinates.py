@@ -389,8 +389,23 @@ def resolve(readings: dict, linear: np.ndarray, corner_pixels: dict,
     return best
 
 
-def measure(path: Path, sheet: dict) -> dict:
+def measure(path: Path, sheet: dict, min_support: int = MIN_SUPPORT) -> dict:
     """Read one sheet's corners and say what they imply for its anchor."""
+    image = Image.open(path).convert("RGB")
+    readings = read_windows(image, sheet["neatline_px"])
+    return interpret(readings, sheet, min_support)
+
+
+def interpret(readings: dict, sheet: dict,
+              min_support: int = MIN_SUPPORT) -> dict:
+    """What a set of corner readings implies, given the sheet's linear part.
+
+    Split from the reading so the OCR can be done once and the interpretation
+    revisited - the same reason detect_sheet_grid keeps its verdict separate
+    from its measurements. Re-resolving 85 cached readings takes a second where
+    re-reading the scans takes a quarter of an hour, and it is the
+    interpretation, not the OCR, that changes when a rule does.
+    """
     frame = sheet["neatline_px"]
     corner_pixels = {
         "north_west": (frame["left"], frame["top"]),
@@ -403,9 +418,6 @@ def measure(path: Path, sheet: dict) -> dict:
     a, d, b, e, _, _ = sheet["affine"]
     linear = np.array([[a, d], [b, e]])
 
-    image = Image.open(path).convert("RGB")
-    readings = read_windows(image, frame)
-
     outcome: dict = {"corner_readings": readings}
     for axis, key in (("easting", "e"), ("northing", "n")):
         column = 0 if axis == "easting" else 1
@@ -415,7 +427,7 @@ def measure(path: Path, sheet: dict) -> dict:
                   for corner, (x, y) in corner_pixels.items()}
         found = resolve(readings, linear, corner_pixels, axis, stored)
         outcome[f"corner_support_{key}"] = found.get("support", 0)
-        if not found or found["support"] < MIN_SUPPORT:
+        if not found or found["support"] < min_support:
             continue
 
         def stored_at(corner: str, stored: dict = stored) -> float:
@@ -480,6 +492,11 @@ def main() -> int:
     parser.add_argument("--csv", type=Path,
                         default=REPO_ROOT / "data" / "sheet_corners.csv")
     parser.add_argument("--only", nargs="*", default=None)
+    parser.add_argument("--min-support", type=int, default=MIN_SUPPORT,
+                        help="corners that must corroborate before a reading is "
+                             "reported; 1 leaves the judgement to the consumer")
+    parser.add_argument("--from-cache", action="store_true",
+                        help="re-interpret the stored readings without OCR")
     args = parser.parse_args()
 
     georef = json.loads(args.georef.read_text(encoding="utf-8"))
@@ -495,10 +512,16 @@ def main() -> int:
         targets = [r for r in targets if r in args.only]
 
     for index, record_id in enumerate(targets, start=1):
-        path = args.images / f"{record_id}.jpg"
-        if not path.exists():
-            continue
-        outcome = measure(path, georef[record_id])
+        if args.from_cache:
+            cached = results.get(record_id, {}).get("corner_readings")
+            if not cached:
+                continue
+            outcome = interpret(cached, georef[record_id], args.min_support)
+        else:
+            path = args.images / f"{record_id}.jpg"
+            if not path.exists():
+                continue
+            outcome = measure(path, georef[record_id], args.min_support)
         results[record_id] = outcome
         shifts = (outcome.get("origin_shift_km_e"), outcome.get("origin_shift_km_n"))
         print(f"[{index}/{len(targets)}] {names.get(record_id, record_id)[:24]:24s} "
