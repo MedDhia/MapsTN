@@ -77,7 +77,7 @@
     "anchor_vs_catalogue_n_m": 1306.2,
     "residual_rms_m": 50.13,
     "residual_max_m": 86.77,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.212416,
@@ -103,7 +103,21 @@
         "easting": 469503.7,
         "northing": 436849.4
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 11.0,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 2,
+    "corner_source_n": "south_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 182.3,
+    "corner_exact_count_n": 1,
+    "corner_easting_km": 439,
+    "corner_northing_km": 439,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340355": {
     "lambert_zone": "nord",
@@ -196,7 +210,7 @@
     "anchor_vs_catalogue_n_m": 1612.9,
     "residual_rms_m": 16.78,
     "residual_max_m": 37.67,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.572734,
@@ -222,7 +236,13 @@
         "easting": 501387.3,
         "northing": 434504.8
       }
-    }
+    },
+    "corner_support_e": 1,
+    "corner_support_n": 1,
+    "anchor_basis_e": "neighbour_corner",
+    "anchor_basis_n": "neighbour_corner",
+    "neighbour_corner_m": 38.2,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340354"
   },
   "oai:u-bordeaux-montaigne.fr:340356": {
     "lambert_zone": "nord",
@@ -303,7 +323,7 @@
     "anchor_vs_catalogue_n_m": 1068.0,
     "residual_rms_m": 12.67,
     "residual_max_m": 26.89,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.933728,
@@ -329,7 +349,18 @@
         "easting": 533225.9,
         "northing": 432097.5
       }
-    }
+    },
+    "corner_support_e": 1,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 10.9,
+    "corner_exact_count_n": 2,
+    "corner_northing_km": 454,
+    "anchor_basis_e": "neighbour_corner",
+    "anchor_basis_n": "printed_corners",
+    "neighbour_corner_m": 51.9,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340370"
   },
   "oai:u-bordeaux-montaigne.fr:340367": {
     "lambert_zone": "nord",
@@ -411,7 +442,7 @@
     "anchor_vs_catalogue_n_m": 1195.0,
     "residual_rms_m": 8.78,
     "residual_max_m": 18.99,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 8.961294,
@@ -437,7 +468,13 @@
         "easting": 435921.7,
         "northing": 419133.6
       }
-    }
+    },
+    "corner_support_e": 0,
+    "corner_support_n": 1,
+    "anchor_basis_e": "neighbour_corner",
+    "anchor_basis_n": "neighbour_corner",
+    "neighbour_corner_m": 183.0,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340354"
   },
   "oai:u-bordeaux-montaigne.fr:340368": {
     "lambert_zone": "nord",
@@ -558,7 +595,21 @@
         "easting": 467918.4,
         "northing": 417058.4
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -36.1,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 2,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 36.0,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 469,
+    "corner_northing_km": 439,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340369": {
     "lambert_zone": "nord",
@@ -648,7 +699,7 @@
     "anchor_vs_catalogue_n_m": 175.6,
     "residual_rms_m": 15.42,
     "residual_max_m": 27.03,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.555492,
@@ -674,7 +725,21 @@
         "easting": 499825.2,
         "northing": 414543.4
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -27.8,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 4,
+    "corner_source_n": "south_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 57.6,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 501,
+    "corner_northing_km": 414,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340370": {
     "lambert_zone": "nord",
@@ -766,7 +831,7 @@
     "anchor_vs_catalogue_n_m": 1492.1,
     "residual_rms_m": 15.6,
     "residual_max_m": 30.56,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.915047,
@@ -792,7 +857,21 @@
         "easting": 531691.8,
         "northing": 412204.0
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "south_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -11.0,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -9.0,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 499,
+    "corner_northing_km": 434,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340371": {
     "error": "no kilometric grid"
@@ -879,7 +958,7 @@
     "anchor_vs_catalogue_n_m": 2738.2,
     "residual_rms_m": 10.45,
     "residual_max_m": 21.66,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.633851,
@@ -905,7 +984,21 @@
         "easting": 595380.8,
         "northing": 407297.4
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 12.1,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 91.6,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 565,
+    "corner_northing_km": 429,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340373": {
     "lambert_zone": "nord",
@@ -987,7 +1080,7 @@
     "anchor_vs_catalogue_n_m": 1864.3,
     "residual_rms_m": 49.38,
     "residual_max_m": 123.31,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.99241,
@@ -1013,7 +1106,18 @@
         "easting": 627284.2,
         "northing": 404956.8
       }
-    }
+    },
+    "corner_support_e": 1,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 72.9,
+    "corner_exact_count_n": 3,
+    "corner_northing_km": 427,
+    "anchor_basis_e": "neighbour_corner",
+    "anchor_basis_n": "printed_corners",
+    "neighbour_corner_m": 19.1,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340372"
   },
   "oai:u-bordeaux-montaigne.fr:340374": {
     "error": "grid labels not read"
@@ -1112,7 +1216,7 @@
     "anchor_vs_catalogue_n_m": 2117.1,
     "residual_rms_m": 61.62,
     "residual_max_m": 326.37,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.179482,
@@ -1138,7 +1242,21 @@
         "easting": 466319.9,
         "northing": 397164.9
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 59.3,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 2,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -280.6,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 435,
+    "corner_northing_km": 419,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340376": {
     "lambert_zone": "nord",
@@ -1222,7 +1340,7 @@
     "anchor_vs_catalogue_n_m": 1526.7,
     "residual_rms_m": 11.57,
     "residual_max_m": 28.85,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.539222,
@@ -1248,7 +1366,18 @@
         "easting": 498113.5,
         "northing": 394650.9
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 24.8,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 1,
+    "corner_easting_km": 499,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "neighbour_corner",
+    "neighbour_corner_m": 16.9,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340395"
   },
   "oai:u-bordeaux-montaigne.fr:340387": {
     "lambert_zone": "nord",
@@ -1331,7 +1460,7 @@
     "anchor_vs_catalogue_n_m": 982.2,
     "residual_rms_m": 48.75,
     "residual_max_m": 151.45,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.89832,
@@ -1357,7 +1486,19 @@
         "easting": 529880.9,
         "northing": 392305.1
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "south_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 45.8,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 2,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_kilometre",
+    "corner_easting_km": 498,
+    "corner_northing_km": 412,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340388": {
     "error": "no kilometric grid"
@@ -1431,7 +1572,7 @@
     "anchor_vs_catalogue_n_m": 1483.6,
     "residual_rms_m": 11.37,
     "residual_max_m": 20.63,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.256187,
@@ -1457,7 +1598,21 @@
         "easting": 561933.8,
         "northing": 389807.3
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "south_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -2.2,
+    "corner_exact_count_e": 1,
+    "corner_support_n": 3,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -442.5,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 530,
+    "corner_northing_km": 409,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340390": {
     "error": "no kilometric grid"
@@ -1552,7 +1707,7 @@
     "anchor_vs_catalogue_n_m": 2249.9,
     "residual_rms_m": 16.69,
     "residual_max_m": 44.38,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.614346,
@@ -1578,7 +1733,21 @@
         "easting": 593829.9,
         "northing": 387330.6
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -13.6,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 43.2,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 563,
+    "corner_northing_km": 407,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340392": {
     "error": "no catalogue bounding box"
@@ -1674,7 +1843,7 @@
     "anchor_vs_catalogue_n_m": 1450.3,
     "residual_rms_m": 9.67,
     "residual_max_m": 22.57,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.163914,
@@ -1700,7 +1869,21 @@
         "easting": 464668.7,
         "northing": 377117.3
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 7.2,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 17.6,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 434,
+    "corner_northing_km": 399,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340394": {
     "lambert_zone": "nord",
@@ -1791,7 +1974,7 @@
     "anchor_vs_catalogue_n_m": 25.1,
     "residual_rms_m": 12.89,
     "residual_max_m": 25.71,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.522593,
@@ -1817,7 +2000,21 @@
         "easting": 496503.1,
         "northing": 374105.8
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -18.4,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 4,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 202.4,
+    "corner_exact_count_n": 4,
+    "corner_easting_km": 466,
+    "corner_northing_km": 397,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340395": {
     "lambert_zone": "nord",
@@ -1936,7 +2133,21 @@
         "easting": 528712.1,
         "northing": 372284.8
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -116.7,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 30.3,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 498,
+    "corner_northing_km": 394,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340396": {
     "error": "no kilometric grid"
@@ -2065,7 +2276,21 @@
         "easting": 592318.0,
         "northing": 367212.8
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "south_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 257.9,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 19.1,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 560,
+    "corner_northing_km": 389,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340411": {
     "error": "no catalogue bounding box"
@@ -2188,7 +2413,21 @@
         "easting": 463405.1,
         "northing": 357151.8
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -143.3,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 4,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 78.9,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 432,
+    "corner_northing_km": 377,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340413": {
     "lambert_zone": "nord",
@@ -2292,7 +2531,21 @@
         "easting": 495022.6,
         "northing": 354835.2
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -18.8,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -27.2,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 464,
+    "corner_northing_km": 377,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340414": {
     "lambert_zone": "nord",
@@ -2412,7 +2665,16 @@
         "easting": 526850.0,
         "northing": 352330.9
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -30.3,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 1,
+    "corner_easting_km": 496,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "label_vote"
   },
   "oai:u-bordeaux-montaigne.fr:340415": {
     "lambert_zone": "nord",
@@ -2523,7 +2785,21 @@
         "easting": 558799.0,
         "northing": 349935.7
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "south_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -22.5,
+    "corner_exact_count_e": 1,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 6.3,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 526,
+    "corner_northing_km": 372,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340416": {
     "error": "grid labels not read"
@@ -2644,7 +2920,21 @@
         "easting": 397778.0,
         "northing": 342168.8
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 16.0,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 81.4,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 367,
+    "corner_northing_km": 362,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340428": {
     "lambert_zone": "nord",
@@ -2755,7 +3045,21 @@
         "easting": 429498.2,
         "northing": 339692.5
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 50.8,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 2,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 27.6,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 399,
+    "corner_northing_km": 359,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340429": {
     "lambert_zone": "nord",
@@ -2872,7 +3176,21 @@
         "easting": 461591.1,
         "northing": 337302.6
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 49.5,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 4,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 21.4,
+    "corner_exact_count_n": 4,
+    "corner_easting_km": 431,
+    "corner_northing_km": 359,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340430": {
     "lambert_zone": "nord",
@@ -2951,7 +3269,7 @@
     "anchor_vs_catalogue_n_m": 495.8,
     "residual_rms_m": 31.67,
     "residual_max_m": 95.9,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.488112,
@@ -2977,7 +3295,13 @@
         "easting": 493474.3,
         "northing": 334854.3
       }
-    }
+    },
+    "corner_support_e": 1,
+    "corner_support_n": 1,
+    "anchor_basis_e": "label_vote",
+    "anchor_basis_n": "neighbour_corner",
+    "neighbour_corner_m": 66.4,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340431"
   },
   "oai:u-bordeaux-montaigne.fr:340431": {
     "lambert_zone": "nord",
@@ -3098,7 +3422,21 @@
         "easting": 525353.0,
         "northing": 332467.2
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "south_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -25.0,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -18.2,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 493,
+    "corner_northing_km": 354,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340432": {
     "lambert_zone": "nord",
@@ -3216,7 +3554,21 @@
         "easting": 557182.2,
         "northing": 329941.9
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -7.1,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 3,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 14.1,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 526,
+    "corner_northing_km": 349,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340433": {
     "lambert_zone": "nord",
@@ -3307,7 +3659,7 @@
     "anchor_vs_catalogue_n_m": 1656.9,
     "residual_rms_m": 9.11,
     "residual_max_m": 21.61,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.556349,
@@ -3333,7 +3685,21 @@
         "easting": 589134.7,
         "northing": 327557.8
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -7.9,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 2,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -4.0,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 590,
+    "corner_northing_km": 349,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340434": {
     "lambert_zone": "nord",
@@ -3428,7 +3794,7 @@
     "anchor_vs_catalogue_n_m": 314.7,
     "residual_rms_m": 18.12,
     "residual_max_m": 52.7,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 8.405283,
@@ -3454,7 +3820,21 @@
         "easting": 396169.1,
         "northing": 322171.7
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 3.3,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 16.8,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 365,
+    "corner_northing_km": 342,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340435": {
     "lambert_zone": "nord",
@@ -3572,7 +3952,21 @@
         "easting": 428181.2,
         "northing": 319759.8
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -15.4,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 61.1,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 429,
+    "corner_northing_km": 342,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340436": {
     "lambert_zone": "nord",
@@ -3664,7 +4058,7 @@
     "anchor_vs_catalogue_n_m": 1698.4,
     "residual_rms_m": 19.39,
     "residual_max_m": 45.1,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.116042,
@@ -3690,7 +4084,18 @@
         "easting": 460015.1,
         "northing": 317315.8
       }
-    }
+    },
+    "corner_support_e": 1,
+    "corner_support_n": 4,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 30.8,
+    "corner_exact_count_n": 4,
+    "corner_northing_km": 337,
+    "anchor_basis_e": "neighbour_corner",
+    "anchor_basis_n": "printed_corners",
+    "neighbour_corner_m": 33.9,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340447"
   },
   "oai:u-bordeaux-montaigne.fr:340447": {
     "lambert_zone": "nord",
@@ -3811,7 +4216,21 @@
         "easting": 491898.7,
         "northing": 314878.9
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -0.5,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 15.3,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 461,
+    "corner_northing_km": 337,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340448": {
     "lambert_zone": "nord",
@@ -3904,7 +4323,7 @@
     "anchor_vs_catalogue_n_m": 2533.5,
     "residual_rms_m": 15.44,
     "residual_max_m": 37.23,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.826771,
@@ -3930,7 +4349,21 @@
         "easting": 523769.1,
         "northing": 312467.6
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 31.5,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 3,
+    "corner_source_n": "south_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 114.1,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 493,
+    "corner_northing_km": 314,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340449": {
     "lambert_zone": "nord",
@@ -4023,7 +4456,7 @@
     "anchor_vs_catalogue_n_m": 1902.9,
     "residual_rms_m": 51.44,
     "residual_max_m": 266.03,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.182344,
@@ -4049,7 +4482,21 @@
         "easting": 555636.7,
         "northing": 310037.7
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 64.7,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 2,
+    "corner_source_n": "south_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 37.3,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 557,
+    "corner_northing_km": 312,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340450": {
     "error": "no kilometric grid"
@@ -4143,7 +4590,7 @@
     "anchor_vs_catalogue_n_m": 742.7,
     "residual_rms_m": 12.6,
     "residual_max_m": 30.95,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 8.390746,
@@ -4169,7 +4616,19 @@
         "easting": 394696.7,
         "northing": 302217.2
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -4.7,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 2,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_kilometre",
+    "corner_easting_km": 364,
+    "corner_northing_km": 324,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340452": {
     "lambert_zone": "nord",
@@ -4259,7 +4718,7 @@
     "anchor_vs_catalogue_n_m": 1472.4,
     "residual_rms_m": 13.95,
     "residual_max_m": 31.96,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 8.745959,
@@ -4285,7 +4744,21 @@
         "easting": 426812.4,
         "northing": 299810.1
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -225.0,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 2.1,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 428,
+    "corner_northing_km": 322,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340453": {
     "lambert_zone": "nord",
@@ -4404,7 +4877,21 @@
         "easting": 458406.7,
         "northing": 297410.6
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "south_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -6.0,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 81.1,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 426,
+    "corner_northing_km": 319,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340454": {
     "lambert_zone": "nord",
@@ -4495,7 +4982,7 @@
     "anchor_vs_catalogue_n_m": 307.2,
     "residual_rms_m": 25.0,
     "residual_max_m": 97.42,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.45553,
@@ -4521,7 +5008,16 @@
         "easting": 490348.2,
         "northing": 294954.8
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "south_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -22.4,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 1,
+    "corner_easting_km": 490,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "label_vote"
   },
   "oai:u-bordeaux-montaigne.fr:340455": {
     "lambert_zone": "nord",
@@ -4638,7 +5134,21 @@
         "easting": 522231.5,
         "northing": 292598.1
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "south_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -15.5,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 4,
+    "corner_source_n": "south_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 28.8,
+    "corner_exact_count_n": 4,
+    "corner_easting_km": 522,
+    "corner_northing_km": 292,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340456": {
     "lambert_zone": "nord",
@@ -4759,7 +5269,21 @@
         "easting": 554151.4,
         "northing": 290187.0
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -3.3,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -27.0,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 523,
+    "corner_northing_km": 310,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340467": {
     "error": "no kilometric grid"
@@ -4886,7 +5410,21 @@
         "easting": 586045.1,
         "northing": 287752.8
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 5.3,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 51.2,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 555,
+    "corner_northing_km": 310,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340469": {
     "error": "no kilometric grid"
@@ -5009,7 +5547,21 @@
         "easting": 393064.8,
         "northing": 282027.0
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -13.4,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "south_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 259.1,
+    "corner_exact_count_n": 1,
+    "corner_easting_km": 394,
+    "corner_northing_km": 284,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340471": {
     "lambert_zone": "nord",
@@ -5130,7 +5682,11 @@
         "easting": 425025.8,
         "northing": 279936.1
       }
-    }
+    },
+    "corner_support_e": 0,
+    "corner_support_n": 0,
+    "anchor_basis_e": "label_vote",
+    "anchor_basis_n": "label_vote"
   },
   "oai:u-bordeaux-montaigne.fr:340472": {
     "lambert_zone": "nord",
@@ -5226,7 +5782,7 @@
     "anchor_vs_catalogue_n_m": 146.1,
     "residual_rms_m": 19.55,
     "residual_max_m": 43.41,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.085604,
@@ -5252,7 +5808,16 @@
         "easting": 456863.7,
         "northing": 277526.8
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 11.8,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 1,
+    "corner_easting_km": 458,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "label_vote"
   },
   "oai:u-bordeaux-montaigne.fr:340473": {
     "lambert_zone": "nord",
@@ -5374,7 +5939,21 @@
         "easting": 488846.5,
         "northing": 275060.2
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 13.1,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 2,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 51.6,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 490,
+    "corner_northing_km": 297,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340474": {
     "error": "grid labels not read"
@@ -5499,7 +6078,21 @@
         "easting": 552615.2,
         "northing": 270229.5
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 10.9,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 58.2,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 522,
+    "corner_northing_km": 292,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340476": {
     "lambert_zone": "nord",
@@ -5620,7 +6213,21 @@
         "easting": 584515.4,
         "northing": 267809.5
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "south_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -57.3,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 2,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 6.2,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 584,
+    "corner_northing_km": 287,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340487": {
     "error": "no kilometric grid"
@@ -5748,7 +6355,21 @@
         "easting": 423513.2,
         "northing": 259975.3
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "south_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -30.2,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 63.5,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 423,
+    "corner_northing_km": 282,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340490": {
     "lambert_zone": "nord",
@@ -5868,7 +6489,21 @@
         "easting": 455381.7,
         "northing": 257553.5
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 18.7,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 24.2,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 456,
+    "corner_northing_km": 277,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340491": {
     "lambert_zone": "nord",
@@ -5990,7 +6625,21 @@
         "easting": 487252.2,
         "northing": 255146.7
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 10.8,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 2,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 37.9,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 488,
+    "corner_northing_km": 277,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340492": {
     "lambert_zone": "nord",
@@ -6085,7 +6734,7 @@
     "anchor_vs_catalogue_n_m": 1929.7,
     "residual_rms_m": 24.9,
     "residual_max_m": 85.61,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.776499,
@@ -6111,7 +6760,18 @@
         "easting": 519154.7,
         "northing": 252685.8
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -13.0,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 1,
+    "corner_easting_km": 520,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "neighbour_corner",
+    "neighbour_corner_m": 36.3,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340511"
   },
   "oai:u-bordeaux-montaigne.fr:340493": {
     "lambert_zone": "nord",
@@ -6208,7 +6868,7 @@
     "anchor_vs_catalogue_n_m": 6.1,
     "residual_rms_m": 56.06,
     "residual_max_m": 298.74,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.129277,
@@ -6234,7 +6894,21 @@
         "easting": 551011.3,
         "northing": 250283.9
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 6.4,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 39.2,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 552,
+    "corner_northing_km": 272,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340494": {
     "lambert_zone": "nord",
@@ -6328,7 +7002,7 @@
     "anchor_vs_catalogue_n_m": 5022.1,
     "residual_rms_m": 12.33,
     "residual_max_m": 32.42,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.481615,
@@ -6354,7 +7028,21 @@
         "easting": 582952.9,
         "northing": 247872.3
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "south_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -24.9,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 4,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 3.6,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 582,
+    "corner_northing_km": 270,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340495": {
     "lambert_zone": "nord",
@@ -6447,7 +7135,7 @@
     "anchor_vs_catalogue_n_m": 560.1,
     "residual_rms_m": 16.4,
     "residual_max_m": 51.61,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.83421,
@@ -6473,7 +7161,21 @@
         "easting": 607635.5,
         "northing": 246004.9
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -6.2,
+    "corner_exact_count_e": 1,
+    "corner_support_n": 2,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -91.6,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 584,
+    "corner_northing_km": 267,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340496": {
     "lambert_zone": "nord",
@@ -6594,7 +7296,21 @@
         "easting": 390321.5,
         "northing": 242197.5
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -23.8,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 4,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 25.9,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 359,
+    "corner_northing_km": 264,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340507": {
     "error": "grid labels not read"
@@ -6714,7 +7430,21 @@
         "easting": 453816.1,
         "northing": 237552.3
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 3.8,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 4,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 50.3,
+    "corner_exact_count_n": 4,
+    "corner_easting_km": 423,
+    "corner_northing_km": 257,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340509": {
     "lambert_zone": "nord",
@@ -6837,7 +7567,21 @@
         "easting": 485775.3,
         "northing": 235180.8
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -29.3,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 4,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 17.2,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 455,
+    "corner_northing_km": 257,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340510": {
     "lambert_zone": "nord",
@@ -6958,7 +7702,21 @@
         "easting": 517619.9,
         "northing": 232784.0
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 9.8,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 2,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 34.1,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 519,
+    "corner_northing_km": 255,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340511": {
     "lambert_zone": "nord",
@@ -7077,7 +7835,21 @@
         "easting": 549526.2,
         "northing": 230312.2
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -5.6,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 4,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 37.8,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 519,
+    "corner_northing_km": 252,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340512": {
     "lambert_zone": "nord",
@@ -7199,7 +7971,11 @@
         "easting": 581387.7,
         "northing": 227879.3
       }
-    }
+    },
+    "corner_support_e": 0,
+    "corner_support_n": 0,
+    "anchor_basis_e": "label_vote",
+    "anchor_basis_n": "label_vote"
   },
   "oai:u-bordeaux-montaigne.fr:340513": {
     "lambert_zone": "nord",
@@ -7319,7 +8095,21 @@
         "easting": 388552.6,
         "northing": 222573.1
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -8.0,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 0.5,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 358,
+    "corner_northing_km": 244,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340514": {
     "lambert_zone": "nord",
@@ -7439,7 +8229,21 @@
         "easting": 420414.9,
         "northing": 220134.9
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "south_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 20.1,
+    "corner_exact_count_e": 3,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 53.2,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 388,
+    "corner_northing_km": 242,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340515": {
     "lambert_zone": "nord",
@@ -7523,47 +8327,65 @@
       -0.331741,
       -0.314585,
       -4.215174,
-      453709.362201,
+      417709.362201,
       244026.211682
     ],
     "frame_size_error_pct": 11.37,
-    "easting_origin_km": 457,
+    "easting_origin_km": 421,
     "northing_origin_km": 240,
     "label_votes_e": 1,
     "label_votes_n": 12,
     "labels_matched_e": 1,
     "labels_matched_n": 17,
-    "anchor_vs_catalogue_e_m": 6020.4,
+    "anchor_vs_catalogue_e_m": 29979.6,
     "anchor_vs_catalogue_n_m": 339.6,
     "residual_rms_m": 16.73,
     "residual_max_m": 47.08,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
-        "lon": 9.436365,
-        "lat": 35.460439,
-        "easting": 457877.8,
+        "lon": 9.039661,
+        "lat": 35.458235,
+        "easting": 421877.8,
         "northing": 240087.2
       },
       "north_east": {
-        "lon": 9.787954,
-        "lat": 35.438749,
-        "easting": 489779.6,
+        "lon": 9.391348,
+        "lat": 35.437715,
+        "easting": 453779.6,
         "northing": 237587.2
       },
       "south_west": {
-        "lon": 9.421015,
-        "lat": 35.280236,
-        "easting": 456386.6,
+        "lon": 9.025205,
+        "lat": 35.277982,
+        "easting": 420386.6,
         "northing": 220107.3
       },
       "south_east": {
-        "lon": 9.771816,
-        "lat": 35.258592,
-        "easting": 488288.4,
+        "lon": 9.376103,
+        "lat": 35.257506,
+        "easting": 452288.4,
         "northing": 217607.3
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 23.9,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 14.7,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 453,
+    "corner_northing_km": 240,
+    "corner_shift_applied_km": {
+      "e": -36,
+      "n": 0
+    },
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340516": {
     "lambert_zone": "nord",
@@ -7658,7 +8480,7 @@
     "anchor_vs_catalogue_n_m": 1390.5,
     "residual_rms_m": 20.38,
     "residual_max_m": 41.34,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 9.391729,
@@ -7684,7 +8506,21 @@
         "easting": 484155.1,
         "northing": 215218.1
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 17.8,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 29.5,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 485,
+    "corner_northing_km": 237,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340527": {
     "error": "grid labels not read"
@@ -7783,7 +8619,7 @@
     "anchor_vs_catalogue_n_m": 2109.5,
     "residual_rms_m": 18.85,
     "residual_max_m": 42.48,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.094574,
@@ -7809,7 +8645,13 @@
         "easting": 548009.0,
         "northing": 210387.2
       }
-    }
+    },
+    "corner_support_e": 0,
+    "corner_support_n": 0,
+    "anchor_basis_e": "label_vote",
+    "anchor_basis_n": "neighbour_corner",
+    "neighbour_corner_m": 6.4,
+    "neighbour_corner_sheet": "oai:u-bordeaux-montaigne.fr:340510"
   },
   "oai:u-bordeaux-montaigne.fr:340529": {
     "lambert_zone": "nord",
@@ -7930,7 +8772,11 @@
         "easting": 579949.3,
         "northing": 208052.8
       }
-    }
+    },
+    "corner_support_e": 0,
+    "corner_support_n": 0,
+    "anchor_basis_e": "label_vote",
+    "anchor_basis_n": "label_vote"
   },
   "oai:u-bordeaux-montaigne.fr:340530": {
     "lambert_zone": "nord",
@@ -8027,7 +8873,7 @@
     "anchor_vs_catalogue_n_m": 245.7,
     "residual_rms_m": 11.69,
     "residual_max_m": 28.61,
-    "anchor_confident": false,
+    "anchor_confident": true,
     "corners": {
       "north_west": {
         "lon": 10.796166,
@@ -8053,7 +8899,21 @@
         "easting": 611807.2,
         "northing": 205575.7
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -7.9,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 2,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 11.3,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 613,
+    "corner_northing_km": 225,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340531": {
     "lambert_zone": "nord",
@@ -8173,7 +9033,21 @@
         "easting": 386981.1,
         "northing": 202554.9
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 5.3,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 4,
+    "corner_source_n": "north_east",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -1.3,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 388,
+    "corner_northing_km": 222,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340532": {
     "lambert_zone": "nord",
@@ -8295,7 +9169,21 @@
         "easting": 418948.0,
         "northing": 200198.9
       }
-    }
+    },
+    "corner_support_e": 4,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": -14.6,
+    "corner_exact_count_e": 4,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -1.9,
+    "corner_exact_count_n": 3,
+    "corner_easting_km": 388,
+    "corner_northing_km": 222,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340533": {
     "error": "no kilometric grid"
@@ -8419,7 +9307,21 @@
         "easting": 548893.7,
         "northing": 307179.0
       }
-    }
+    },
+    "corner_support_e": 2,
+    "corner_source_e": "north_west",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 2.3,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 3,
+    "corner_source_n": "north_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": 32.3,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 514,
+    "corner_northing_km": 331,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340535": {
     "lambert_zone": "sud",
@@ -8543,7 +9445,21 @@
         "easting": 550465.4,
         "northing": 329115.7
       }
-    }
+    },
+    "corner_support_e": 3,
+    "corner_source_e": "south_east",
+    "shift_basis_e": "printed_metres",
+    "neatline_error_m_e": 27.4,
+    "corner_exact_count_e": 2,
+    "corner_support_n": 2,
+    "corner_source_n": "south_west",
+    "shift_basis_n": "printed_metres",
+    "neatline_error_m_n": -466.1,
+    "corner_exact_count_n": 2,
+    "corner_easting_km": 550,
+    "corner_northing_km": 331,
+    "anchor_basis_e": "printed_corners",
+    "anchor_basis_n": "printed_corners"
   },
   "oai:u-bordeaux-montaigne.fr:340615": {
     "error": "no kilometric grid"
@@ -8663,6 +9579,10 @@
         "easting": 567296.5,
         "northing": 297811.4
       }
-    }
+    },
+    "corner_support_e": 0,
+    "corner_support_n": 0,
+    "anchor_basis_e": "",
+    "anchor_basis_n": ""
   }
 }

@@ -94,17 +94,27 @@ BUILDING_MAX_ASPECT = 6.0
 # spot heights and grid labels - are the same colour and a similar size, but
 # they are strokes, so they fill much less of their bounding box.
 BUILDING_MIN_FILL = 0.55
-# Detections are clipped to the sheet's own catalogued extent, which is exactly
-# what its "Coordonnees (E ... / N ...)" statement describes: the neatline.
+# Detections are clipped to a box the size of the sheet's catalogued extent -
+# which is what its "Coordonnees (E ... / N ...)" statement describes, the
+# neatline - centred where the sheet's own transform puts its frame.
 #
-# The detected neatline was tried for this first and is the wrong tool. Its box
-# comes out a median 6% smaller than the catalogued one but ranges from 40%
-# smaller to larger, because each side of the frame is three rules and the
-# detector picks a different one on different sheets - so the clip was
-# discarding a border of real map content on some sheets and letting margin in
-# on others. The catalogue box is good to about 800 m and does not vary with how
-# a scan came out, so it is strictly the better clip. The legend and the red grid
-# labels lie outside it by construction.
+# Taking size from one source and position from the other is deliberate, because
+# each is reliable for only one of them.
+#
+#   The detected neatline is the wrong source for size. Its box comes out a
+#   median 6% smaller than the catalogued one but ranges from 40% smaller to
+#   larger, because each side of the frame is three rules and the detector picks
+#   a different one on different sheets. The catalogued size does not vary with
+#   how a scan came out.
+#
+#   The catalogue box is the wrong source for position. On Djebel Mrhila it is
+#   36 km east of where the sheet prints its own corner coordinates, and
+#   clipping on it threw away four fifths of that sheet's houses - 735 down to
+#   152 - once the anchor was corrected. The transform's position now rests on
+#   the sheet's own printing (see read_corner_coordinates.py), so it is the
+#   better centre by a wide margin.
+#
+# The legend and the red grid labels lie outside the box either way.
 CLIP_INSET_DEG = 0.002        # about 200 m, to stay clear of the neatline itself
 
 
@@ -277,6 +287,25 @@ def extract(path: Path, window: tuple[int, int, int, int] | None,
     return shifted, image, found
 
 
+def clip_box(sheet: dict, box: dict | None) -> dict | None:
+    """The catalogued extent, re-centred on where the transform puts the frame.
+
+    Keeps the catalogue's width and height and discards its position. Returns
+    None when there is no catalogued size to borrow.
+    """
+    if not box:
+        return None
+    corners = sheet.get("corners")
+    if not corners:
+        return box
+    fitted_lon = sum(c["lon"] for c in corners.values()) / 4
+    fitted_lat = sum(c["lat"] for c in corners.values()) / 4
+    east_west = (box["east"] - box["west"]) / 2
+    north_south = (box["north"] - box["south"]) / 2
+    return {"west": fitted_lon - east_west, "east": fitted_lon + east_west,
+            "south": fitted_lat - north_south, "north": fitted_lat + north_south}
+
+
 def to_geojson(found: dict, affine: list, epsg: int, record_id: str,
                box: dict | None) -> dict:
     a, d, b, e, c, f = affine
@@ -369,9 +398,9 @@ def main() -> int:
         window = tuple(args.window) if args.window else None
         found, image, local = extract(path, window, reference.get("grid_lines"),
                                       tuple(wanted))
-        collection = to_geojson(found, reference["affine"], reference["epsg"],
-                                record_id,
-                                partner.get(record_id, {}).get("bbox"))
+        collection = to_geojson(
+            found, reference["affine"], reference["epsg"], record_id,
+            clip_box(reference, partner.get(record_id, {}).get("bbox")))
         kept = len(collection["features"])
         args.out_dir.mkdir(parents=True, exist_ok=True)
         (args.out_dir / f"{record_id}.geojson").write_text(

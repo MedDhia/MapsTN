@@ -37,6 +37,7 @@ a relevance score.
 | **Legend edition, per sheet (CSV)** | [`data/sheet_legends.csv`](data/sheet_legends.csv) |
 | **Object extraction and coordinates** | [`docs/OBJECT-DATASET.md`](docs/OBJECT-DATASET.md) |
 | **Per-sheet transform (CSV)** | [`data/sheet_georef.csv`](data/sheet_georef.csv) |
+| **Corner coordinates each sheet prints (CSV)** | [`data/sheet_corners.csv`](data/sheet_corners.csv) |
 | **Extracted symbols (GeoJSON)** | [`data/symbols/`](data/symbols/) |
 | **Symbol counts per sheet** | [`data/symbols_summary.csv`](data/symbols_summary.csv) |
 | **Objects joined to modern units** | [`data/symbols_by_unit.csv`](data/symbols_by_unit.csv) |
@@ -551,13 +552,21 @@ python3 scripts/read_sheet_margins.py --images <dir of record_id.jpg>
 python3 scripts/read_sheet_legends.py --images <dir of record_id.jpg>
 python3 scripts/coordinate_precision.py      # uses the measured grid spacing
 python3 scripts/georeference_sheets.py --images <dir>   # pixel -> ground transform
+python3 scripts/read_corner_coordinates.py --images <dir>  # the sheet's own corners
+python3 scripts/georeference_sheets.py --images <dir> --csv-only  # re-anchor on them
 python3 scripts/extract_symbols.py --images <dir>       # symbols -> GeoJSON
 python3 scripts/fetch_boundaries.py                     # modern shapefiles
 python3 scripts/map_objects.py                          # join + render the map
 ```
 
-`georeference_sheets.py` needs `pyproj`, `extract_symbols.py` needs `scipy`, and
-`map_objects.py` needs `pyshp`, `shapely` and `matplotlib`.
+`georeference_sheets.py` needs `pyproj`, `extract_symbols.py` and
+`read_corner_coordinates.py` need `scipy`, and `map_objects.py` needs `pyshp`,
+`shapely` and `matplotlib`.
+
+The georeferencing runs twice on purpose. The corner reader needs the neatline
+the first pass detects in order to know where in the margin to look, and the
+anchor then wants what the corner reader found; the second pass is arithmetic on
+the cached transforms and re-reads no scan.
 Pass `--overlay <dir>` to the extractor to get the detections drawn on the
 image: that is the check that catches a detector finding grid crossings instead
 of houses, and a count never will.

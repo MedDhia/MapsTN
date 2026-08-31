@@ -1,192 +1,227 @@
 level,unit,parent_gouvernorat,sheets_extracted,building,well_provisional,extracted_km2,buildings_per_km2,density_basis
-gouvernorat,Kairouan,,10,4950,0,4776.9,1.036,measured
-gouvernorat,Siliana,,12,4890,0,4421.8,1.106,measured
-gouvernorat,Zaghouan,,7,4562,0,2771.4,1.646,measured
-gouvernorat,Kassérine,,7,4522,0,4700.4,0.962,measured
-gouvernorat,Béja,,5,4217,0,1959.0,2.153,measured
-gouvernorat,Nabeul,,3,3815,0,1770.5,2.155,measured
-gouvernorat,Le Kef,,8,3726,0,4426.4,0.842,measured
-gouvernorat,Sousse,,5,2326,0,1808.5,1.286,measured
-gouvernorat,Manubah,,3,1793,0,597.4,3.001,measured
-gouvernorat,Tunis,,1,1748,0,161.4,10.828,measured
-gouvernorat,Gabès,,2,1593,0,1123.5,1.418,measured
-gouvernorat,Ben Arous,,4,1264,0,505.6,2.5,measured
-gouvernorat,Jendouba,,2,1185,0,921.1,1.287,measured
-gouvernorat,Mahdia,,3,948,0,1400.9,0.677,measured
-gouvernorat,Bizerte,,1,894,0,663.6,1.347,measured
-gouvernorat,Médenine,,2,576,0,326.6,1.763,measured
-gouvernorat,Monastir,,2,456,0,698.8,0.653,measured
-gouvernorat,Sidi Bou Zid,,2,198,0,77.5,2.555,measured
-gouvernorat,Sfax,,1,44,0,107.5,0.409,measured
-gouvernorat,Ariana,,1,30,0,6.6,,too_little_read
+gouvernorat,Siliana,,17,8668,0,4625.5,1.874,measured
+gouvernorat,Kairouan,,17,7673,0,6044.3,1.269,measured
+gouvernorat,Béja,,9,6344,0,3473.2,1.827,measured
+gouvernorat,Bizerte,,12,6292,0,3568.5,1.763,measured
+gouvernorat,Zaghouan,,12,6245,0,2802.4,2.228,measured
+gouvernorat,Nabeul,,8,5831,0,2591.7,2.25,measured
+gouvernorat,Le Kef,,12,5586,0,4587.4,1.218,measured
+gouvernorat,Kassérine,,8,4828,0,4692.9,1.029,measured
+gouvernorat,Manubah,,6,3355,0,1116.9,3.004,measured
+gouvernorat,Sousse,,7,3112,0,2142.3,1.453,measured
+gouvernorat,Tunis,,3,2406,0,252.1,9.542,measured
+gouvernorat,Mahdia,,7,2111,0,2572.7,0.821,measured
+gouvernorat,Monastir,,4,1694,0,981.6,1.726,measured
+gouvernorat,Gabès,,2,1491,0,1118.6,1.333,measured
+gouvernorat,Ben Arous,,4,1380,0,516.7,2.671,measured
+gouvernorat,Jendouba,,3,1239,0,965.4,1.283,measured
+gouvernorat,Sidi Bou Zid,,4,1119,0,685.7,1.632,measured
+gouvernorat,Ariana,,4,1071,0,381.8,2.805,measured
+gouvernorat,Médenine,,2,592,0,349.5,1.694,measured
+gouvernorat,Sfax,,2,153,0,177.0,0.864,measured
 gouvernorat,Gafsa,,0,0,0,0.0,,no_sheet
 gouvernorat,Kebili,,0,0,0,0.0,,no_sheet
 gouvernorat,Tataouine,,0,0,0,0.0,,no_sheet
 gouvernorat,Tozeur,,0,0,0,0.0,,no_sheet
-délégation,Oueslatia,Kairouan,3,1632,0,751.2,2.173,measured
-délégation,Bir Mchergua,Zaghouan,3,1489,0,503.9,2.955,measured
-délégation,Fahs,Zaghouan,3,1432,0,814.2,1.759,measured
-délégation,Testour,Béja,3,1278,0,569.9,2.243,measured
-délégation,Goubellat,Béja,2,1271,0,274.4,4.631,measured
-délégation,Rouhia,Siliana,4,1215,0,622.5,1.952,measured
-délégation,Mareth,Gabès,2,1156,0,853.2,1.355,measured
-délégation,Dahmani,Le Kef,3,1031,0,395.1,2.609,measured
-délégation,Zaghouan,Zaghouan,4,974,0,396.1,2.459,measured
-délégation,Grombalia,Nabeul,1,924,0,227.9,4.054,measured
-délégation,Haffouz,Kairouan,3,887,0,478.2,1.855,measured
-délégation,Alaa,Kairouan,4,828,0,328.9,2.517,measured
-délégation,Ksour,Le Kef,2,827,0,423.0,1.955,measured
-délégation,Sbiba,Kassérine,1,812,0,319.6,2.541,measured
-délégation,Foussana,Kassérine,5,766,0,878.6,0.872,measured
-délégation,Kasserine Sud,Kassérine,3,763,0,392.7,1.943,measured
-délégation,Sejnane,Bizerte,1,711,0,412.7,1.723,measured
-délégation,Mornag,Ben Arous,3,708,0,288.2,2.457,measured
-délégation,El Krib,Siliana,3,637,0,344.2,1.85,measured
-délégation,Thala,Kassérine,4,617,0,652.9,0.945,measured
-délégation,Sbikha,Kairouan,4,615,0,957.6,0.642,measured
-délégation,Mornaguia,Manubah,2,612,0,247.1,2.476,measured
+délégation,Fahs,Zaghouan,6,2279,0,913.2,2.496,measured
+délégation,Oueslatia,Kairouan,5,2137,0,851.5,2.51,measured
+délégation,Goubellat,Béja,2,1622,0,406.2,3.993,measured
+délégation,Bir Mchergua,Zaghouan,5,1545,0,524.3,2.947,measured
+délégation,Testour,Béja,5,1473,0,629.1,2.341,measured
+délégation,Hajeb El Ayoun,Kairouan,2,1302,0,564.2,2.308,measured
+délégation,Dahmani,Le Kef,5,1278,0,527.0,2.425,measured
+délégation,Mejez El Bab,Béja,4,1270,0,444.2,2.859,measured
+délégation,Sejnane,Bizerte,4,1206,0,598.4,2.015,measured
+délégation,Rouhia,Siliana,5,1204,0,631.0,1.908,measured
+délégation,Mateur,Bizerte,4,1168,0,524.3,2.228,measured
+délégation,Mareth,Gabès,2,1150,0,860.2,1.337,measured
+délégation,Haffouz,Kairouan,4,1138,0,580.6,1.96,measured
+délégation,Makthar,Siliana,5,1000,0,333.6,2.998,measured
+délégation,Grombalia,Nabeul,1,945,0,232.8,4.059,measured
+délégation,Zaghouan,Zaghouan,4,945,0,393.8,2.4,measured
+délégation,Siliana Sud,Siliana,4,942,0,473.6,1.989,measured
+délégation,Sbiba,Kassérine,2,924,0,374.5,2.467,measured
+délégation,Jelma,Sidi Bou Zid,4,921,0,539.7,1.706,measured
+délégation,Haouaria,Nabeul,3,885,0,302.0,2.93,measured
+délégation,Takelsa,Nabeul,3,884,0,253.2,3.491,measured
+délégation,Bouarada,Siliana,2,850,0,355.7,2.39,measured
+délégation,Ksour,Le Kef,3,849,0,431.6,1.967,measured
+délégation,Alaa,Kairouan,4,811,0,328.6,2.468,measured
+délégation,El Krib,Siliana,4,777,0,394.8,1.968,measured
+délégation,Tebourba,Manubah,3,776,0,276.4,2.807,measured
+délégation,Bargou,Siliana,2,755,0,436.1,1.731,measured
+délégation,Tajerouine,Le Kef,3,745,0,672.2,1.108,measured
+délégation,Kasserine Sud,Kassérine,3,742,0,384.2,1.931,measured
+délégation,Foussana,Kassérine,4,737,0,855.0,0.862,measured
+délégation,Mornag,Ben Arous,4,732,0,292.9,2.499,measured
+délégation,Siliana Nord,Siliana,3,716,0,364.4,1.965,measured
+délégation,Kesra,Siliana,4,696,0,419.7,1.658,measured
+délégation,Zriba,Zaghouan,4,696,0,320.0,2.175,measured
+délégation,Borj El Amri,Manubah,4,690,0,163.4,4.222,measured
+délégation,Es Sers,Le Kef,4,686,0,416.8,1.646,measured
+délégation,Utique,Bizerte,4,671,0,368.5,1.821,measured
+délégation,Sbeitla,Kassérine,4,652,0,653.1,0.998,measured
+délégation,Nebeur,Le Kef,4,646,0,678.0,0.953,measured
+délégation,Kef Est,Le Kef,4,638,0,381.2,1.673,measured
+délégation,Thala,Kassérine,4,638,0,641.5,0.995,measured
+délégation,Mornaguia,Manubah,2,620,0,247.1,2.509,measured
+délégation,Laroussa,Siliana,4,609,0,340.2,1.79,measured
+délégation,Bizerte Sud,Bizerte,4,587,0,364.1,1.612,measured
 délégation,El Mida,Nabeul,1,586,0,143.3,4.089,measured
-délégation,Kesra,Siliana,3,554,0,337.4,1.642,measured
-délégation,Tajerouine,Le Kef,2,547,0,518.9,1.054,measured
-délégation,Zriba,Zaghouan,2,539,0,230.1,2.343,measured
-délégation,Hidra,Kassérine,2,523,0,467.3,1.119,measured
+délégation,Joumine,Bizerte,4,574,0,532.6,1.078,measured
+délégation,Sbikha,Kairouan,6,570,0,927.3,0.615,measured
+délégation,Bourouis,Siliana,4,563,0,251.9,2.235,measured
+délégation,Enfidha,Sousse,2,559,0,352.7,1.585,measured
+délégation,Gaafour,Siliana,5,556,0,428.1,1.299,measured
+délégation,Hammamet,Nabeul,3,555,0,292.3,1.899,measured
+délégation,Béja Nord,Béja,2,544,0,335.6,1.621,measured
+délégation,Téboursouk,Béja,3,534,0,372.6,1.433,measured
+délégation,Hidra,Kassérine,2,524,0,470.4,1.114,measured
 délégation,Sidi Hassine,Tunis,1,523,0,60.5,8.65,measured
-délégation,Mejez El Bab,Béja,2,521,0,214.7,2.427,measured
-délégation,Téboursouk,Béja,3,520,0,372.6,1.396,measured
-délégation,Korba,Nabeul,1,493,0,121.4,4.062,measured
-délégation,Takelsa,Nabeul,1,491,0,108.7,4.518,measured
-délégation,Borj El Amri,Manubah,3,484,0,145.2,3.334,measured
-délégation,Siliana Nord,Siliana,1,470,0,270.5,1.738,measured
-délégation,Nebeur,Le Kef,3,450,0,569.0,0.791,measured
-délégation,Hajeb El Ayoun,Kairouan,1,400,0,252.1,1.587,measured
-délégation,Sbeitla,Kassérine,3,383,0,453.6,0.844,measured
-délégation,Bouarada,Siliana,1,373,0,171.5,2.175,measured
-délégation,Hammamet,Nabeul,2,356,0,225.0,1.582,measured
-délégation,Laroussa,Siliana,2,338,0,282.4,1.197,measured
-délégation,Bourouis,Siliana,2,337,0,209.2,1.611,measured
-délégation,Kalaa Kebira,Sousse,4,330,0,192.8,1.712,measured
-délégation,Matmata Nouvelle,Gabès,2,325,0,178.3,1.823,measured
-délégation,Béja Sud,Béja,1,324,0,233.7,1.387,measured
-délégation,Bouficha,Sousse,1,318,0,117.4,2.708,measured
-délégation,Kondar,Sousse,2,318,0,156.6,2.031,measured
-délégation,Kef Est,Le Kef,1,317,0,161.5,1.963,measured
-délégation,Jendouba Sud,Jendouba,2,310,0,221.5,1.4,measured
-délégation,Makthar,Siliana,4,303,0,270.2,1.121,measured
-délégation,Thibar,Béja,3,303,0,89.5,3.385,measured
-délégation,M'Hamdia,Ben Arous,2,302,0,90.0,3.357,measured
+délégation,Moknine,Monastir,2,517,0,173.1,2.987,measured
+délégation,Menzel Bourguiba,Bizerte,2,509,0,119.3,4.268,measured
+délégation,Ghazala,Bizerte,4,496,0,378.4,1.311,measured
+délégation,Menzel Temime,Nabeul,2,494,0,165.8,2.979,measured
+délégation,Korba,Nabeul,1,492,0,121.0,4.066,measured
+délégation,Jedaida,Manubah,4,473,0,163.7,2.889,measured
+délégation,Bouficha,Sousse,2,441,0,237.5,1.857,measured
+délégation,Nasrallah,Kairouan,3,440,0,299.5,1.469,measured
+délégation,Nadhour,Zaghouan,2,425,0,335.8,1.266,measured
+délégation,Sakiet Sidi Youssef,Le Kef,3,379,0,499.4,0.759,measured
+délégation,Kairouan Sud,Kairouan,4,371,0,455.9,0.814,measured
+délégation,Sidi Alouane,Mahdia,1,370,0,178.5,2.073,measured
+délégation,Béja Sud,Béja,3,366,0,259.5,1.41,measured
+délégation,Chebika,Kairouan,2,359,0,375.9,0.955,measured
+délégation,Saouaf,Zaghouan,3,355,0,238.8,1.487,measured
+délégation,El Battan,Manubah,2,349,0,148.7,2.347,measured
+délégation,Kalaa Kebira,Sousse,4,339,0,193.4,1.753,measured
+délégation,Bouhajla,Kairouan,3,318,0,527.6,0.603,measured
+délégation,Kondar,Sousse,2,316,0,156.6,2.018,measured
+délégation,M'Hamdia,Ben Arous,2,307,0,90.0,3.412,measured
+délégation,Jendouba Sud,Jendouba,2,303,0,221.5,1.368,measured
+délégation,Thibar,Béja,3,301,0,89.5,3.363,measured
+délégation,Bousalem,Jendouba,1,297,0,122.1,2.433,measured
 délégation,Menzel Bouzelfa,Nabeul,1,297,0,107.9,2.752,measured
-délégation,Es Sers,Le Kef,2,292,0,173.1,1.687,measured
-délégation,Bousalem,Jendouba,1,282,0,118.7,2.375,measured
-délégation,Siliana Sud,Siliana,2,274,0,310.3,0.883,measured
-délégation,Bargou,Siliana,1,258,0,102.9,2.507,measured
-délégation,Ouled Chamekh,Mahdia,1,258,0,269.8,0.956,measured
-délégation,Jendouba Nord,Jendouba,2,253,0,179.2,1.412,measured
-délégation,Sidi Makhlouf,Médenine,2,251,0,125.2,2.005,measured
-délégation,Jedaida,Manubah,1,246,0,66.8,3.682,measured
-délégation,Beni Khalled,Nabeul,2,245,0,81.7,3.0,measured
-délégation,Souassi,Mahdia,3,240,0,292.7,0.82,measured
-délégation,Bou Argoub,Nabeul,1,237,0,43.7,5.42,measured
-délégation,Sidi Bou Ali,Sousse,3,234,0,116.1,2.015,measured
-délégation,Médenine Nord,Médenine,1,232,0,125.7,1.845,measured
-délégation,Monastir,Monastir,1,225,0,47.8,4.704,measured
-délégation,M'Saken,Sousse,2,212,0,93.5,2.268,measured
-délégation,Ghardimaou,Jendouba,1,208,0,146.5,1.42,measured
+délégation,M'Saken,Sousse,3,292,0,209.1,1.396,measured
+délégation,Souassi,Mahdia,4,281,0,302.2,0.93,measured
+délégation,Ouled Chamekh,Mahdia,3,272,0,314.4,0.865,measured
+délégation,Sidi Makhlouf,Médenine,2,270,0,136.9,1.972,measured
+délégation,Jendouba Nord,Jendouba,2,268,0,182.3,1.47,measured
+délégation,Matmata Nouvelle,Gabès,2,265,0,162.3,1.633,measured
+délégation,Bou Argoub,Nabeul,1,253,0,48.3,5.238,measured
+délégation,Sidi Bou Ali,Sousse,3,246,0,116.1,2.118,measured
+délégation,Beni Khalled,Nabeul,2,243,0,78.1,3.11,measured
+délégation,Ras Jebel,Bizerte,2,243,0,72.4,3.359,measured
+délégation,Médenine Nord,Médenine,1,237,0,128.9,1.839,measured
+délégation,Ghardimaou,Jendouba,2,236,0,182.3,1.295,measured
+délégation,Nefza,Béja,3,234,0,292.8,0.799,measured
+délégation,Sidi Thabet,Ariana,2,234,0,83.1,2.814,measured
+délégation,Monastir,Monastir,2,231,0,51.4,4.493,measured
+délégation,Soukra,Ariana,2,227,0,27.1,8.37,measured
+délégation,Hbira,Mahdia,2,224,0,214.1,1.046,measured
+délégation,Sidi El Heni,Sousse,2,218,0,270.4,0.806,measured
+délégation,El Jem,Mahdia,3,216,0,253.7,0.851,measured
+délégation,Carthage,Tunis,1,214,0,6.5,,too_little_read
 délégation,Kasserine Nord,Kassérine,1,207,0,80.0,2.586,measured
-délégation,Bouhajla,Kairouan,2,206,0,263.7,0.781,measured
+délégation,Chorbane,Mahdia,2,204,0,258.5,0.789,measured
+délégation,Oued Ellil,Manubah,2,203,0,49.8,4.08,measured
 délégation,Bab Bhar,Tunis,1,200,0,6.1,,too_little_read
-délégation,Jelma,Sidi Bou Zid,2,198,0,77.1,2.569,measured
+délégation,Kairouan Nord,Kairouan,3,197,0,176.5,1.116,measured
 délégation,Manouba,Manubah,1,196,0,9.9,,too_little_read
-délégation,El Jem,Mahdia,2,192,0,198.4,0.968,measured
-délégation,Oued Ellil,Manubah,1,182,0,44.3,4.109,measured
+délégation,Bizerte Nord,Bizerte,1,194,0,43.2,4.492,measured
+délégation,Fouchana,Ben Arous,2,190,0,31.7,5.989,measured
+délégation,Kalaat El Andalous,Ariana,2,181,0,153.2,1.182,measured
+délégation,La Marsa,Tunis,2,179,0,28.1,6.377,measured
+délégation,Kef Ouest,Le Kef,2,178,0,186.8,0.953,measured
 délégation,Hrairia,Tunis,1,177,0,22.6,,too_little_read
-délégation,Jedeliane,Kassérine,2,176,0,229.9,0.766,measured
-délégation,Ghazala,Bizerte,1,171,0,181.6,0.942,measured
+délégation,Raoued,Ariana,1,177,0,49.9,3.548,measured
+délégation,Menzel Jemil,Bizerte,4,173,0,74.4,2.326,measured
+délégation,Cité El Khadra,Tunis,3,169,0,26.1,6.467,measured
 délégation,Bardo,Tunis,1,165,0,6.0,,too_little_read
-délégation,Fouchana,Ben Arous,2,160,0,26.4,6.055,measured
-délégation,Enfidha,Sousse,1,153,0,141.6,1.08,measured
-délégation,Nasrallah,Kairouan,2,151,0,110.5,1.366,measured
-délégation,Feriana,Kassérine,1,150,0,179.0,0.838,measured
+délégation,Ghar El Melh,Bizerte,2,163,0,80.3,2.031,measured
+délégation,Bekalta,Monastir,1,157,0,31.8,4.932,measured
+délégation,Ksibet El Mediouni,Monastir,1,157,0,24.3,,too_little_read
+délégation,Sabalat Ouled Asker,Sidi Bou Zid,1,151,0,86.4,1.749,measured
 délégation,Kalaa Sghira,Sousse,2,150,0,72.5,2.069,measured
-délégation,Chorbane,Mahdia,1,138,0,121.1,1.139,measured
-délégation,Menzel Temime,Nabeul,1,138,0,68.5,2.015,measured
-délégation,Oued Mliz,Jendouba,1,132,0,159.9,0.826,measured
-délégation,Gaafour,Siliana,3,131,0,367.7,0.356,measured
+délégation,Chebba,Mahdia,1,138,0,81.3,1.697,measured
+délégation,Feriana,Kassérine,1,137,0,162.0,0.846,measured
+délégation,Jedeliane,Kassérine,2,136,0,229.9,0.592,measured
+délégation,Oued Mliz,Jendouba,1,133,0,161.4,0.824,measured
+délégation,Ariana Médina,Ariana,2,129,0,14.5,,too_little_read
+délégation,Tinja,Bizerte,1,129,0,50.4,2.559,measured
+délégation,El Menzah,Tunis,2,125,0,8.0,,too_little_read
 délégation,Omrane,Tunis,1,125,0,3.9,,too_little_read
-délégation,Nadhour,Zaghouan,1,124,0,178.1,0.696,measured
-délégation,Akouda,Sousse,2,120,0,35.8,3.355,measured
+délégation,El Alia,Bizerte,2,122,0,78.4,1.557,measured
+délégation,Teboulba,Monastir,1,122,0,15.7,,too_little_read
+délégation,Akouda,Sousse,3,121,0,35.8,3.383,measured
+délégation,Ksour Essef,Mahdia,1,120,0,75.0,1.6,measured
+délégation,Hergla,Sousse,2,117,0,73.1,1.6,measured
 délégation,Sousse Médina,Sousse,1,117,0,5.8,,too_little_read
-délégation,Hergla,Sousse,2,110,0,72.0,1.527,measured
-délégation,Kairouan Sud,Kairouan,2,109,0,136.3,0.8,measured
-délégation,El Menzah,Tunis,1,107,0,7.3,,too_little_read
-délégation,Cité El Khadra,Tunis,1,97,0,9.0,,too_little_read
-délégation,Ayoun,Kassérine,1,96,0,97.0,0.99,measured
-délégation,Beni Khedache,Médenine,1,93,0,44.0,2.116,measured
-délégation,Kalaat Senan,Le Kef,2,91,0,120.2,0.757,measured
-délégation,Zeramdine,Monastir,1,86,0,69.2,1.242,measured
-délégation,Jerissa,Le Kef,3,84,0,94.0,0.893,measured
-délégation,Gabès Sud,Gabès,1,81,0,43.5,1.862,measured
-délégation,Chebika,Kairouan,1,78,0,126.6,0.616,measured
+délégation,Mnihla,Ariana,2,114,0,17.3,,too_little_read
+délégation,Beni Hassen,Monastir,2,113,0,79.8,1.417,measured
+délégation,Hencha,Sfax,2,110,0,124.6,0.883,measured
+délégation,Ksar Hellal,Monastir,1,110,0,19.0,,too_little_read
+délégation,Mahdia,Mahdia,1,108,0,36.2,2.984,measured
+délégation,Hammam Ghezaz,Nabeul,1,107,0,21.0,,too_little_read
+délégation,Melloulech,Mahdia,1,106,0,81.0,1.309,measured
+délégation,Ayoun,Kassérine,1,101,0,101.2,0.998,measured
+délégation,Sayada-Lamta-Bou Hjar,Monastir,1,95,0,9.9,,too_little_read
+délégation,Le Kram,Tunis,1,92,0,7.7,,too_little_read
+délégation,Zeramdine,Monastir,2,90,0,71.0,1.267,measured
+délégation,Kalaat Senan,Le Kef,2,88,0,114.1,0.771,measured
+délégation,Beni Khedache,Médenine,1,85,0,42.6,1.995,measured
+délégation,La Goulette,Tunis,2,82,0,14.7,,too_little_read
+délégation,Jerissa,Le Kef,3,75,0,94.0,0.798,measured
 délégation,Jebel Jelloud,Tunis,1,73,0,4.5,,too_little_read
-délégation,Boumerdès,Mahdia,2,71,0,144.4,0.492,measured
+délégation,Boumerdès,Mahdia,2,72,0,149.0,0.483,measured
+délégation,Soliman,Nabeul,3,72,0,63.1,1.141,measured
 délégation,Sahline,Monastir,1,71,0,28.3,2.513,measured
-délégation,Sidi El Heni,Sousse,1,66,0,84.6,0.78,measured
 délégation,Zaouia Ksiba Thraya,Sousse,1,64,0,27.1,2.359,measured
-délégation,Sakiet Sidi Youssef,Le Kef,1,63,0,21.4,,too_little_read
+délégation,Gabès Sud,Gabès,1,61,0,45.4,1.343,measured
 délégation,Bab Souika,Tunis,1,60,0,1.2,,too_little_read
+délégation,Ben Arous,Ben Arous,1,56,0,2.5,,too_little_read
+délégation,Jarzouna,Bizerte,1,54,0,4.1,,too_little_read
+délégation,Mégrine,Ben Arous,1,52,0,2.7,,too_little_read
 délégation,Médina,Tunis,1,50,0,0.8,,too_little_read
-délégation,Beni Hassen,Monastir,1,49,0,47.7,1.028,measured
-délégation,Hbira,Mahdia,1,49,0,14.9,,too_little_read
-délégation,Soliman,Nabeul,2,48,0,36.2,1.328,measured
+délégation,Douar Hicher,Manubah,2,48,0,6.1,,too_little_read
+délégation,Sidi Bouzid Est,Sidi Bou Zid,1,47,0,14.2,,too_little_read
 délégation,Ezzouhour,Tunis,2,46,0,2.2,,too_little_read
 délégation,Ezzouhour,Kassérine,2,46,0,2.1,,too_little_read
-délégation,Kairouan Nord,Kairouan,1,44,0,32.6,1.351,measured
 délégation,Sidi El Béchir,Tunis,1,44,0,1.4,,too_little_read
-délégation,Douar Hicher,Manubah,1,42,0,5.6,,too_little_read
+délégation,El Mourouj,Ben Arous,1,42,0,11.2,,too_little_read
 délégation,El Ouardia,Tunis,1,42,0,1.9,,too_little_read
 délégation,Hammam Sousse,Sousse,2,42,0,11.7,,too_little_read
 délégation,Sousse Jaouhara,Sousse,1,40,0,8.8,,too_little_read
-délégation,Hencha,Sfax,1,38,0,97.7,0.389,measured
-délégation,El Mourouj,Ben Arous,1,35,0,9.2,,too_little_read
-délégation,Mégrine,Ben Arous,1,32,0,0.8,,too_little_read
-délégation,Matmata,Gabès,1,31,0,11.4,,too_little_read
+délégation,Jebeniana,Sfax,1,38,0,8.5,,too_little_read
 délégation,Sousse Sidi Abdelhamid,Sousse,1,31,0,10.6,,too_little_read
-délégation,Ben Arous,Ben Arous,1,27,0,1.7,,too_little_read
-délégation,Hassi El Ferid,Kassérine,1,24,0,5.3,,too_little_read
+délégation,Chrarda,Kairouan,1,30,0,12.1,,too_little_read
+délégation,Hassi El Ferid,Kassérine,1,25,0,6.8,,too_little_read
 délégation,Kalaa Khesba,Le Kef,1,24,0,4.2,,too_little_read
-délégation,Tebourba,Manubah,1,21,0,5.0,,too_little_read
 délégation,El Tahrir,Tunis,1,20,0,0.8,,too_little_read
-délégation,Moknine,Monastir,1,18,0,21.7,,too_little_read
-délégation,Mnihla,Ariana,1,14,0,2.1,,too_little_read
-délégation,Omrane Supérieur,Tunis,1,14,0,1.4,,too_little_read
-délégation,Bizerte Sud,Bizerte,1,12,0,8.8,,too_little_read
+délégation,Kelibia,Nabeul,2,18,0,10.3,,too_little_read
+délégation,Ouerdanine,Monastir,2,18,0,16.3,,too_little_read
+délégation,Matmata,Gabès,1,15,0,5.5,,too_little_read
+délégation,Omrane Supérieur,Tunis,2,15,0,2.3,,too_little_read
+délégation,Jammel,Monastir,2,12,0,29.3,0.409,measured
 délégation,Sousse Riadh,Sousse,1,11,0,5.8,,too_little_read
-délégation,El Battan,Manubah,1,10,0,1.7,,too_little_read
 délégation,Ettadhamen,Ariana,1,9,0,0.5,,too_little_read
 délégation,Sijoumi,Tunis,1,8,0,0.4,,too_little_read
-délégation,Ouerdanine,Monastir,1,7,0,1.5,,too_little_read
-délégation,Ariana Médina,Ariana,1,6,0,0.1,,too_little_read
-délégation,Menzel Chaker,Sfax,1,6,0,0.0,,too_little_read
-délégation,Saouaf,Zaghouan,1,4,0,0.0,,too_little_read
+délégation,Menzel Chaker,Sfax,1,5,0,0.0,,too_little_read
+délégation,Fernana,Jendouba,1,2,0,0.0,,no_sheet
 délégation,Kabaria,Tunis,1,2,0,0.0,,no_sheet
-délégation,Sidi Thabet,Ariana,1,1,0,0.0,,no_sheet
+délégation,Bembla,Monastir,1,1,0,0.0,,no_sheet
+délégation,Nouvelle Médina,Ben Arous,1,1,0,0.0,,no_sheet
 délégation,Agareb,Sfax,0,0,0,0.0,,no_sheet
 délégation,Amdoun,Béja,0,0,0,0.0,,no_sheet
 délégation,Aïn Draham,Jendouba,0,0,0,0.0,,no_sheet
 délégation,Balta Bou Aouane,Jendouba,0,0,0,0.0,,no_sheet
-délégation,Bekalta,Monastir,0,0,0,0.0,,no_sheet
 délégation,Belkhir,Gafsa,0,0,0,0.0,,no_sheet
-délégation,Bembla,Monastir,0,0,0,0.0,,no_sheet
 délégation,Ben Guerdane,Médenine,0,0,0,0.0,,no_sheet
 délégation,Beni Khiar,Nabeul,0,0,0,0.0,,no_sheet
 délégation,Bir Ali Ben Khélifa,Sfax,0,0,0,0.0,,no_sheet
 délégation,Bir El Hfay,Sidi Bou Zid,0,0,0,0.0,,no_sheet
 délégation,Bir Lahmar,Tataouine,0,0,0,0.0,,no_sheet
-délégation,Bizerte Nord,Bizerte,0,0,0,0.0,,no_sheet
 délégation,Boumhel,Ben Arous,0,0,0,0.0,,no_sheet
-délégation,Béja Nord,Béja,0,0,0,0.0,,no_sheet
-délégation,Carthage,Tunis,0,0,0,0.0,,no_sheet
-délégation,Chebba,Mahdia,0,0,0,0.0,,no_sheet
-délégation,Chrarda,Kairouan,0,0,0,0.0,,no_sheet
 délégation,Dar Chaabane El Fehri,Nabeul,0,0,0,0.0,,no_sheet
 délégation,Degueche,Tozeur,0,0,0,0.0,,no_sheet
 délégation,Dhiba,Tataouine,0,0,0,0.0,,no_sheet
@@ -194,96 +229,61 @@ délégation,Djerba Ajim,Médenine,0,0,0,0.0,,no_sheet
 délégation,Djerba Midoun,Médenine,0,0,0,0.0,,no_sheet
 délégation,Douz Nord,Kebili,0,0,0,0.0,,no_sheet
 délégation,Douz Sud,Kebili,0,0,0,0.0,,no_sheet
-délégation,El Alia,Bizerte,0,0,0,0.0,,no_sheet
 délégation,El Amra,Sfax,0,0,0,0.0,,no_sheet
 délégation,El Ghraiba,Sfax,0,0,0,0.0,,no_sheet
 délégation,Ezzahra,Ben Arous,0,0,0,0.0,,no_sheet
 délégation,Faouar,Kebili,0,0,0,0.0,,no_sheet
-délégation,Fernana,Jendouba,0,0,0,0.0,,no_sheet
 délégation,Gabès Médina,Gabès,0,0,0,0.0,,no_sheet
 délégation,Gabès Ouest,Gabès,0,0,0,0.0,,no_sheet
 délégation,Gafsa Nord,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Gafsa Sud,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Ghannouch,Gabès,0,0,0,0.0,,no_sheet
-délégation,Ghar El Melh,Bizerte,0,0,0,0.0,,no_sheet
 délégation,Ghomrassen,Tataouine,0,0,0,0.0,,no_sheet
 délégation,Guetar,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Hamma,Gabès,0,0,0,0.0,,no_sheet
 délégation,Hammam Chott,Ben Arous,0,0,0,0.0,,no_sheet
-délégation,Hammam Ghezaz,Nabeul,0,0,0,0.0,,no_sheet
 délégation,Hammam Lif,Ben Arous,0,0,0,0.0,,no_sheet
-délégation,Haouaria,Nabeul,0,0,0,0.0,,no_sheet
 délégation,Hazoua,Tozeur,0,0,0,0.0,,no_sheet
 délégation,Houmt Souk,Médenine,0,0,0,0.0,,no_sheet
-délégation,Jammel,Monastir,0,0,0,0.0,,no_sheet
-délégation,Jarzouna,Bizerte,0,0,0,0.0,,no_sheet
-délégation,Jebeniana,Sfax,0,0,0,0.0,,no_sheet
-délégation,Joumine,Bizerte,0,0,0,0.0,,no_sheet
-délégation,Kalaat El Andalous,Ariana,0,0,0,0.0,,no_sheet
 délégation,Kebili Nord,Kebili,0,0,0,0.0,,no_sheet
 délégation,Kebili Sud,Kebili,0,0,0,0.0,,no_sheet
-délégation,Kef Ouest,Le Kef,0,0,0,0.0,,no_sheet
-délégation,Kelibia,Nabeul,0,0,0,0.0,,no_sheet
 délégation,Kerkennah,Sfax,0,0,0,0.0,,no_sheet
 délégation,Ksar,Gafsa,0,0,0,0.0,,no_sheet
-délégation,Ksar Hellal,Monastir,0,0,0,0.0,,no_sheet
-délégation,Ksibet El Mediouni,Monastir,0,0,0,0.0,,no_sheet
-délégation,Ksour Essef,Mahdia,0,0,0,0.0,,no_sheet
-délégation,La Goulette,Tunis,0,0,0,0.0,,no_sheet
-délégation,La Marsa,Tunis,0,0,0,0.0,,no_sheet
-délégation,Le Kram,Tunis,0,0,0,0.0,,no_sheet
-délégation,Mahdia,Mahdia,0,0,0,0.0,,no_sheet
 délégation,Mahres,Sfax,0,0,0,0.0,,no_sheet
 délégation,Majel Belabbes,Kassérine,0,0,0,0.0,,no_sheet
-délégation,Mateur,Bizerte,0,0,0,0.0,,no_sheet
 délégation,Mazzouna,Sidi Bou Zid,0,0,0,0.0,,no_sheet
 délégation,Mdhilla,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Meknassi,Sidi Bou Zid,0,0,0,0.0,,no_sheet
-délégation,Melloulech,Mahdia,0,0,0,0.0,,no_sheet
-délégation,Menzel Bourguiba,Bizerte,0,0,0,0.0,,no_sheet
 délégation,Menzel Bouzaiene,Sidi Bou Zid,0,0,0,0.0,,no_sheet
 délégation,Menzel Habib,Gabès,0,0,0,0.0,,no_sheet
-délégation,Menzel Jemil,Bizerte,0,0,0,0.0,,no_sheet
 délégation,Metlaoui,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Metouia,Gabès,0,0,0,0.0,,no_sheet
 délégation,Médenine Sud,Médenine,0,0,0,0.0,,no_sheet
 délégation,Nabeul,Nabeul,0,0,0,0.0,,no_sheet
 délégation,Nefta,Tozeur,0,0,0,0.0,,no_sheet
-délégation,Nefza,Béja,0,0,0,0.0,,no_sheet
-délégation,Nouvelle Médina,Ben Arous,0,0,0,0.0,,no_sheet
 délégation,Ouled Haffouz,Sidi Bou Zid,0,0,0,0.0,,no_sheet
 délégation,Oum Larais,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Radès,Ben Arous,0,0,0,0.0,,no_sheet
-délégation,Raoued,Ariana,0,0,0,0.0,,no_sheet
-délégation,Ras Jebel,Bizerte,0,0,0,0.0,,no_sheet
 délégation,Redeyef,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Regueb,Sidi Bou Zid,0,0,0,0.0,,no_sheet
 délégation,Remada,Tataouine,0,0,0,0.0,,no_sheet
-délégation,Sabalat Ouled Asker,Sidi Bou Zid,0,0,0,0.0,,no_sheet
 délégation,Sakiet Eddaier,Sfax,0,0,0,0.0,,no_sheet
 délégation,Sakiet Ezzit,Sfax,0,0,0,0.0,,no_sheet
 délégation,Samar,Tataouine,0,0,0,0.0,,no_sheet
-délégation,Sayada-Lamta-Bou Hjar,Monastir,0,0,0,0.0,,no_sheet
 délégation,Sened,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Sfax Médina,Sfax,0,0,0,0.0,,no_sheet
 délégation,Sfax Ouest,Sfax,0,0,0,0.0,,no_sheet
 délégation,Sfax Sud,Sfax,0,0,0,0.0,,no_sheet
 délégation,Sidi Aich,Gafsa,0,0,0,0.0,,no_sheet
 délégation,Sidi Ali Ben Aoun,Sidi Bou Zid,0,0,0,0.0,,no_sheet
-délégation,Sidi Alouane,Mahdia,0,0,0,0.0,,no_sheet
-délégation,Sidi Bouzid Est,Sidi Bou Zid,0,0,0,0.0,,no_sheet
 délégation,Sidi Bouzid Ouest,Sidi Bou Zid,0,0,0,0.0,,no_sheet
 délégation,Skhira,Sfax,0,0,0,0.0,,no_sheet
 délégation,Souk El Ahed,Kebili,0,0,0,0.0,,no_sheet
 délégation,Souk Jedid,Sidi Bou Zid,0,0,0,0.0,,no_sheet
-délégation,Soukra,Ariana,0,0,0,0.0,,no_sheet
 délégation,Tabarka,Jendouba,0,0,0,0.0,,no_sheet
 délégation,Tamaghza,Tozeur,0,0,0,0.0,,no_sheet
 délégation,Tataouine Nord,Tataouine,0,0,0,0.0,,no_sheet
 délégation,Tataouine Sud,Tataouine,0,0,0,0.0,,no_sheet
-délégation,Teboulba,Monastir,0,0,0,0.0,,no_sheet
 délégation,Thyna,Sfax,0,0,0,0.0,,no_sheet
-délégation,Tinja,Bizerte,0,0,0,0.0,,no_sheet
 délégation,Tozeur,Tozeur,0,0,0,0.0,,no_sheet
-délégation,Utique,Bizerte,0,0,0,0.0,,no_sheet
 délégation,Zarzis,Médenine,0,0,0,0.0,,no_sheet

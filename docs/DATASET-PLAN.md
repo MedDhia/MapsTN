@@ -127,14 +127,27 @@ human in the loop. Roughly 30 easting and 20 northing lines per sheet give about
 600 control-point intersections, which is far more than a projective or
 polynomial fit needs.
 
+There turned out to be something better still on the sheet, and it was in plain
+sight for most of this work: **every sheet prints the exact Lambert coordinates
+of its own four neatline corners, to the metre**, in red in the margin with a
+leader line to the corner. That is a primary, exact statement of absolute
+position owing nothing to any catalogue, and adjacent sheets print identical
+values at the corners they share. `scripts/read_corner_coordinates.py` reads
+them; see [`OBJECT-DATASET.md`](OBJECT-DATASET.md) §1 for what it changed, which
+was to take the sheets whose absolute position rested on nothing checkable from
+34 of 73 down to 1.
+
 ### What this buys, against the alternative
 
 | Control | Uncertainty |
 | --- | --- |
-| Printed kilometric grid | **±9 m** |
-| Catalogue bounding box | up to ±775 m longitude, ±926 m latitude |
+| Printed corner coordinates | **to the metre, as stated** |
+| Printed kilometric grid | **±9 m** relative, no absolute placement |
+| Catalogue bounding box | up to ±775 m longitude, ±926 m latitude — and 36 km on one sheet |
 
-The bounding box is fine for indexing and useless for placing a well.
+The bounding box is fine for indexing and useless for placing a well. The 36 km
+is the Djebel Mrhila sheet, whose box is wrong by more than a sheet width; the
+sheet's own printing put it right.
 
 ### Precision floor
 

@@ -1,97 +1,97 @@
-record_id,designation,sheet_name,lambert_zone,epsg,grid_intersections,frame_size_error_pct,easting_origin_km,northing_origin_km,label_votes_e,label_votes_n,labels_matched_e,labels_matched_n,anchor_vs_catalogue_e_m,anchor_vs_catalogue_n_m,residual_rms_m,residual_max_m,anchor_confident,nw_lon,nw_lat,se_lon,se_lat,error
-oai:u-bordeaux-montaigne.fr:340354,B00-C34,Kef Abbed,nord,22391,248,2.28,440,461,13,3,16,4,1619.1,1306.2,50.13,86.77,0,9.212416,37.438856,9.556849,37.234592,
-oai:u-bordeaux-montaigne.fr:340355,B0-C35,Bizerte,nord,22391,640,8.73,471,456,15,9,21,13,1747.8,1612.9,16.78,37.67,0,9.572734,37.414929,9.916197,37.213945,
-oai:u-bordeaux-montaigne.fr:340356,B00-C36,Metline,nord,22391,396,9.35,503,454,7,19,7,23,1875.1,1068.0,12.67,26.89,0,9.933728,37.393929,10.274839,37.191675,
-oai:u-bordeaux-montaigne.fr:340367,B0-C33,Cap Negro,nord,22391,288,39.07,406,440,13,4,22,6,7029.7,1195.0,8.78,18.99,0,8.961294,37.265944,9.17984,37.073287,
-oai:u-bordeaux-montaigne.fr:340368,B0-C34,Oued Sedjenane,nord,22391,704,8.99,438,439,34,23,37,26,848.9,691.9,17.24,56.54,1,9.195449,37.256124,9.539806,37.056183,
-oai:u-bordeaux-montaigne.fr:340369,B0-C35,Djebel Ichkeul,nord,22391,558,8.76,470,436,21,26,22,28,1682.4,175.6,15.42,27.03,0,9.555492,37.235592,9.898598,37.03405,
-oai:u-bordeaux-montaigne.fr:340370,B0-C36,Porto-Farina,nord,22391,630,8.93,501,434,6,21,9,25,2466.2,1492.1,15.6,30.56,0,9.915047,37.214128,10.256738,37.012442,
-oai:u-bordeaux-montaigne.fr:340371,B0-C36,Porto-Farina,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340372,B0-C38,Sidi Daoud,nord,22391,462,1.18,565,429,2,14,6,19,2472.7,2738.2,10.45,21.66,0,10.633851,37.168027,10.971877,36.964014,
-oai:u-bordeaux-montaigne.fr:340373,B0-C39,Cap Bon,nord,22391,310,1.95,598,428,20,6,22,6,3207.1,1864.3,49.38,123.31,0,10.99241,37.143396,11.329784,36.93923,
-oai:u-bordeaux-montaigne.fr:340374,B1-C33,Nefza,,,,,,,,,,,,,,,,,,,,grid labels not read
-oai:u-bordeaux-montaigne.fr:340375,B1-C34,Hedil,nord,22391,726,1.97,436,419,7,13,11,17,870.5,2117.1,61.62,326.37,0,9.179482,37.077839,9.522696,36.876831,
-oai:u-bordeaux-montaigne.fr:340376,B1-C35,Mateur,nord,22391,462,1.05,468,416,10,25,12,26,3078.3,1526.7,11.57,28.85,0,9.539222,37.055972,9.879403,36.854757,
-oai:u-bordeaux-montaigne.fr:340387,B1-C36,Ariana,nord,22391,440,3.71,500,414,4,19,4,20,1529.1,982.2,48.75,151.45,0,9.89832,37.034272,10.235617,36.83315,
-oai:u-bordeaux-montaigne.fr:340388,B1-C36,El Ariana,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340389,B1-C37,La Marsa,nord,22391,81,8.98,531,414,13,1,13,1,1541.9,1483.6,11.37,20.63,0,10.256187,37.017247,10.594817,36.809109,
-oai:u-bordeaux-montaigne.fr:340390,B1-C37,La Marsa,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340391,B1-C38,Tazoghrane,nord,22391,594,9.55,563,409,8,11,9,12,2215.4,2249.9,16.69,44.38,0,10.614346,36.989083,10.952039,36.784211,
-oai:u-bordeaux-montaigne.fr:340392,B1-C39,Kelibia,,,,,,,,,,,,,,,,,,,,no catalogue bounding box
-oai:u-bordeaux-montaigne.fr:340393,B2-C34,Béja,nord,22391,640,9.41,435,399,17,13,18,16,1619.2,1450.3,9.67,22.57,0,9.163914,36.896667,9.505083,36.696072,
-oai:u-bordeaux-montaigne.fr:340394,B2-C35,Tebourba,nord,22391,561,3.86,466,397,12,15,18,18,137.8,25.1,12.89,25.71,0,9.522593,36.87843,9.861432,36.669564,
-oai:u-bordeaux-montaigne.fr:340395,B2-C36,Tunis,nord,22391,651,7.85,500,394,17,16,20,22,824.7,232.6,61.92,271.92,1,9.879592,36.854755,10.22177,36.652728,
-oai:u-bordeaux-montaigne.fr:340396,B2-C36,Tunis,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340407,B2-C37,La Goulette,,,,,,,,,,,,,,,,,,,,grid labels not read
-oai:u-bordeaux-montaigne.fr:340409,B2-C37,La Goulette,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340410,B2-C38,Menzel Bou Zelfa,nord,22391,660,9.58,562,389,7,17,10,19,32.6,109.7,33.73,173.05,1,10.591199,36.81148,10.932709,36.603025,
-oai:u-bordeaux-montaigne.fr:340411,B2-C39,Mennzel Heurr,,,,,,,,,,,,,,,,,,,,no catalogue bounding box
-oai:u-bordeaux-montaigne.fr:340412,B3-C34,Oued-Zarga,nord,22391,672,3.7,433,379,31,16,33,17,683.0,31.3,13.57,38.79,1,9.147965,36.716542,9.491875,36.516053,
-oai:u-bordeaux-montaigne.fr:340413,B3-C35,Medjez-el-Bab,nord,22391,286,7.81,464,378,11,10,12,11,162.1,348.3,40.14,107.31,1,9.505409,36.696307,9.844987,36.495847,
-oai:u-bordeaux-montaigne.fr:340414,B3-C36,Oudna,nord,22391,660,5.39,496,375,5,14,5,17,715.1,96.3,12.48,32.56,1,9.862514,36.680513,10.20025,36.472911,
-oai:u-bordeaux-montaigne.fr:340415,B3-C37,Grombalia,nord,22391,483,8.26,528,373,13,17,14,22,403.7,300.0,18.64,41.89,1,10.218616,36.653006,10.556668,36.449905,
-oai:u-bordeaux-montaigne.fr:340416,B3-C38,Nabeul,,,,,,,,,,,,,,,,,,,,grid labels not read
-oai:u-bordeaux-montaigne.fr:340427,B4-C32,Ghardimaou,nord,22391,608,3.48,368,363,25,10,33,13,172.4,304.0,19.29,36.63,1,8.419031,36.573427,8.760963,36.376294,
-oai:u-bordeaux-montaigne.fr:340428,B4-C33,Souk el Arba,nord,22391,484,5.65,400,363,19,19,20,23,243.3,251.3,66.92,225.56,1,8.776266,36.555872,9.114791,36.356794,
-oai:u-bordeaux-montaigne.fr:340429,B4-C34,Teboursouk,nord,22391,576,3.16,431,359,25,19,29,21,273.4,86.9,13.83,31.7,1,9.131679,36.536528,9.472588,36.337049,
-oai:u-bordeaux-montaigne.fr:340430,B4-C35,Bou Arada,nord,22391,165,7.49,463,358,23,1,26,1,313.9,495.8,31.67,95.9,0,9.488112,36.520774,9.827866,36.315714,
-oai:u-bordeaux-montaigne.fr:340431,B4-C36,Zaghouan,nord,22391,704,1.57,496,355,17,15,19,17,332.1,128.5,50.09,224.38,1,9.844906,36.495221,10.182899,36.293883,
-oai:u-bordeaux-montaigne.fr:340432,B4-C37,Bou Ficha,nord,22391,594,7.6,526,352,10,18,11,21,746.7,342.4,14.49,26.47,1,10.201302,36.473608,10.537169,36.269763,
-oai:u-bordeaux-montaigne.fr:340433,B4-C38,Hammamet,nord,22391,561,9.52,558,349,7,14,9,17,307.7,1656.9,9.11,21.61,0,10.556349,36.450392,10.892606,36.245863,
-oai:u-bordeaux-montaigne.fr:340434,B5-C32,Ouargha,nord,22391,704,3.62,366,344,19,16,28,21,502.8,314.7,18.12,52.7,0,8.405283,36.394416,8.745668,36.19586,
-oai:u-bordeaux-montaigne.fr:340435,B5-C33,Nebeur,nord,22391,594,2.04,398,341,13,11,14,14,95.7,345.2,12.6,24.73,1,8.759969,36.375654,9.101932,36.177007,
-oai:u-bordeaux-montaigne.fr:340436,B5-C34,Gafour,nord,22391,594,0.91,429,339,13,16,15,20,1022.3,1698.4,19.39,45.1,0,9.116042,36.357028,9.456042,36.156802,
-oai:u-bordeaux-montaigne.fr:340447,B5-C35,Djebel Mansour,nord,22391,704,3.73,462,337,16,27,20,29,23.5,264.1,17.6,45.92,1,9.471811,36.337158,9.810519,36.135619,
-oai:u-bordeaux-montaigne.fr:340448,B5-C36,Djebel Fkirine,nord,22391,627,1.9,493,334,19,15,21,16,330.7,2533.5,15.44,37.23,0,9.826771,36.315147,10.164655,36.113622,
-oai:u-bordeaux-montaigne.fr:340449,B5-C37,Enfidaville,nord,22391,640,2.11,526,332,13,16,17,17,675.7,1902.9,51.44,266.03,0,10.182344,36.293604,10.518557,36.090413,
-oai:u-bordeaux-montaigne.fr:340450,B5-C37,Enfida,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340451,B6-C32,Le Kef,nord,22391,576,3.75,365,324,16,13,20,14,1051.1,742.7,12.6,30.95,0,8.390746,36.214258,8.731952,36.015815,
-oai:u-bordeaux-montaigne.fr:340452,B6-C33,Les Salines,nord,22391,558,9.26,397,321,7,9,7,12,837.9,1472.4,13.95,31.96,0,8.745959,36.196067,9.088558,35.997055,
-oai:u-bordeaux-montaigne.fr:340453,B6-C34,Siliana,nord,22391,627,3.23,428,319,6,11,8,12,631.8,69.2,41.66,195.92,1,9.101056,36.176578,9.439208,35.977281,
-oai:u-bordeaux-montaigne.fr:340454,B6-C35,Djebel Bargou,nord,22391,609,8.02,460,317,4,6,8,8,127.9,307.2,25.0,97.42,0,9.45553,36.157105,9.793529,35.955978,
-oai:u-bordeaux-montaigne.fr:340455,B6-C36,Djebibina,nord,22391,576,3.48,491,314,7,5,10,6,415.7,414.1,14.11,29.54,1,9.810129,36.135478,10.147012,35.934523,
-oai:u-bordeaux-montaigne.fr:340456,B6-C37,Sidi Bou Ali,nord,22391,704,8.02,524,312,6,14,7,15,671.9,435.7,14.3,37.25,1,10.164381,36.113532,10.5007,35.911534,
-oai:u-bordeaux-montaigne.fr:340467,B6-C37,Sidi Bou Ali,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340468,B6-C38,Halk El Mennzel,nord,22391,782,4.01,555,310,3,8,3,10,270.2,309.7,52.24,272.83,1,10.518401,36.090235,10.853887,35.887295,
-oai:u-bordeaux-montaigne.fr:340469,B6-C38,Halk El Mennzel,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340470,B7-C32,Tadjerouine,nord,22391,682,2.0,364,304,10,13,14,17,386.5,339.6,16.48,35.95,1,8.377855,36.03708,8.716564,35.83362,
-oai:u-bordeaux-montaigne.fr:340471,B1-C33,Ebba Ksour,nord,22391,704,4.57,395,302,12,18,12,20,225.7,258.6,28.58,109.92,1,8.73113,36.015607,9.070613,35.817745,
-oai:u-bordeaux-montaigne.fr:340472,B7-C34,Maktar,nord,22391,726,4.01,426,299,9,16,14,19,40.1,146.1,19.55,43.41,0,9.085604,35.99723,9.423172,35.797947,
-oai:u-bordeaux-montaigne.fr:340473,B7-C35,Djebel Serdj,nord,22391,726,4.21,458,297,10,10,12,12,249.3,115.3,17.75,37.57,1,9.438505,35.97721,9.777154,35.776595,
-oai:u-bordeaux-montaigne.fr:340474,B6-C37,Aïne Djeloula,,,,,,,,,,,,,,,,,,,,grid labels not read
-oai:u-bordeaux-montaigne.fr:340475,B7-C37,Sebkra Kelbia,nord,22391,726,8.87,522,292,23,18,27,21,673.9,445.5,13.57,40.0,1,10.146625,35.933836,10.482354,35.731687,
-oai:u-bordeaux-montaigne.fr:340476,B7-C38,Sousse,nord,22391,713,8.63,554,290,7,13,8,18,445.7,144.0,15.88,46.93,1,10.500147,35.911141,10.83482,35.707631,
-oai:u-bordeaux-montaigne.fr:340487,B7-C38,Sousse,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340488,B8-C32,Kalaat es Senam,,,,,,,,,,,,,,,,,,,,neatline not found
-oai:u-bordeaux-montaigne.fr:340489,B8-C33,Aïn El Kseïba,nord,22391,736,4.65,393,283,11,14,12,15,125.4,277.8,35.32,131.51,1,8.717058,35.836011,9.055784,35.637669,
-oai:u-bordeaux-montaigne.fr:340490,B8-C34,Rohia-Dj. Barbrou,nord,22391,682,4.49,426,279,11,18,13,24,281.0,142.4,15.85,30.78,1,9.070103,35.817337,9.407887,35.617804,
-oai:u-bordeaux-montaigne.fr:340491,B8-C35,Pichon,nord,22391,726,5.95,457,277,13,17,16,18,408.4,109.6,21.1,46.37,1,9.423208,35.797503,9.759832,35.597036,
-oai:u-bordeaux-montaigne.fr:340492,B8-C36,Kairouan,nord,22391,704,2.68,489,276,9,14,10,17,563.8,1929.7,24.9,85.61,0,9.776499,35.776481,10.111941,35.574743,
-oai:u-bordeaux-montaigne.fr:340493,B8-C37,Sidi El Hani,nord,22391,748,4.54,520,272,2,10,3,12,666.0,6.1,56.06,298.74,0,10.129277,35.754329,10.463344,35.551945,
-oai:u-bordeaux-montaigne.fr:340494,B8-C38,Djemmal,nord,22391,672,1208.41,553,269,1,11,1,14,14358.6,5022.1,12.33,32.42,0,10.481615,35.731168,10.81548,35.528018,
-oai:u-bordeaux-montaigne.fr:340495,B8-C39,Moknine,nord,22391,651,24.14,585,266,6,17,8,20,2735.2,560.1,16.4,51.61,0,10.83421,35.709503,11.08744,35.508782,
-oai:u-bordeaux-montaigne.fr:340496,B9-C32,Thala,nord,22391,704,2.95,360,265,21,8,29,9,442.7,226.7,15.64,36.03,1,8.349832,35.674159,8.691659,35.474241,
-oai:u-bordeaux-montaigne.fr:340507,B9-C33,Ksar Tlili,,,,,,,,,,,,,,,,,,,,grid labels not read
-oai:u-bordeaux-montaigne.fr:340508,B9-C34,Sbiba,nord,22391,561,4.25,424,261,10,9,14,11,495.0,144.7,57.55,259.76,1,9.055111,35.637811,9.391752,35.437402,
-oai:u-bordeaux-montaigne.fr:340509,B9-C35,Djebel Trozza,nord,22391,748,4.09,455,257,11,6,14,8,616.5,120.9,30.5,135.46,1,9.407634,35.617284,9.743882,35.417002,
-oai:u-bordeaux-montaigne.fr:340510,B9-C36,Pavillier,nord,22391,704,3.14,488,255,6,23,8,25,164.8,477.4,15.44,43.71,1,9.759439,35.59637,10.094564,35.395336,
-oai:u-bordeaux-montaigne.fr:340511,B9-C37,Oued Cherita,nord,22391,651,9.61,520,251,5,17,6,20,705.7,742.9,18.64,35.27,1,10.11169,35.574488,10.445726,35.371958,
-oai:u-bordeaux-montaigne.fr:340512,B9-C38,Kerker,nord,22391,726,9.72,550,252,6,10,8,12,343.1,41.4,29.77,116.79,1,10.464285,35.552571,10.79619,35.347899,
-oai:u-bordeaux-montaigne.fr:340513,B10-C32,Djebel Bireno,nord,22391,672,4.46,359,245,25,16,34,20,299.0,383.5,16.07,47.13,1,8.33644,35.494353,8.674882,35.297121,
-oai:u-bordeaux-montaigne.fr:340514,B10-C33,Djebel Semmama,nord,22391,682,4.17,391,242,19,29,19,32,312.1,322.5,11.62,24.02,1,8.688085,35.476293,9.025514,35.278233,
-oai:u-bordeaux-montaigne.fr:340515,B10-C34,Djebel Mrhila,nord,22391,782,11.37,457,240,1,12,1,17,6020.4,339.6,16.73,47.08,0,9.436365,35.460439,9.771816,35.258592,
-oai:u-bordeaux-montaigne.fr:340516,B10-C35,Hadjeb el Aïoun,nord,22391,704,1.81,454,239,14,7,18,8,1606.8,1390.5,20.38,41.34,0,9.391729,35.437949,9.726429,35.236993,
-oai:u-bordeaux-montaigne.fr:340527,B10-C36,Nasr Allah,,,,,,,,,,,,,,,,,,,,grid labels not read
-oai:u-bordeaux-montaigne.fr:340528,B10-C37,Chorbane,nord,22391,726,1.35,517,232,14,13,19,18,323.2,2109.5,18.85,42.48,0,10.094574,35.395393,10.427838,35.192392,
-oai:u-bordeaux-montaigne.fr:340529,B10-C38,El Djem,nord,22391,704,8.54,550,230,6,13,7,16,314.6,550.7,14.19,49.84,1,10.44485,35.37372,10.778395,35.169268,
-oai:u-bordeaux-montaigne.fr:340530,B10-C39,Chebba,nord,22391,748,8.8,581,227,8,4,10,6,627.7,245.7,11.69,28.61,0,10.796166,35.347743,11.127821,35.143833,
-oai:u-bordeaux-montaigne.fr:340531,B11-C32,Bou Chebka,nord,22391,672,4.55,357,224,19,24,21,27,250.3,370.8,21.13,56.86,1,8.322895,35.314761,8.660401,35.116473,
-oai:u-bordeaux-montaigne.fr:340532,B11-C33,Kasserine,nord,22391,726,4.25,388,222,17,21,22,24,230.9,332.0,14.04,34.9,1,8.673746,35.296302,9.011384,35.098379,
-oai:u-bordeaux-montaigne.fr:340533,,Djebeniana,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340534,,,sud,22392,680,3.52,517,331,17,23,19,27,685.6,233.5,18.54,60.3,1,10.058749,33.589455,10.42611,33.365276,
-oai:u-bordeaux-montaigne.fr:340535,,,sud,22392,782,2.76,518,353,17,24,21,25,709.6,474.4,54.34,287.32,1,10.077017,33.792128,10.444233,33.563057,
-oai:u-bordeaux-montaigne.fr:340615,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340616,,,,,,,,,,,,,,,,,,,,,,no Lambert zone (unset)
-oai:u-bordeaux-montaigne.fr:340627,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
-oai:u-bordeaux-montaigne.fr:340628,,,,,,,,,,,,,,,,,,,,,,grid labels not read
-oai:u-bordeaux-montaigne.fr:340629,,,sud,22392,408,27.19,545,315,8,12,8,12,1669.1,4879.1,8.35,15.66,0,10.37969,33.441264,10.623219,33.279792,
+record_id,designation,sheet_name,lambert_zone,epsg,grid_intersections,frame_size_error_pct,easting_origin_km,northing_origin_km,label_votes_e,label_votes_n,labels_matched_e,labels_matched_n,anchor_vs_catalogue_e_m,anchor_vs_catalogue_n_m,corner_support_e,corner_support_n,corner_shift_km_e,corner_shift_km_n,neatline_error_m_e,neatline_error_m_n,anchor_basis_e,anchor_basis_n,neighbour_corner_m,neighbour_corner_sheet,corner_shift_refused_e,corner_shift_refused_n,residual_rms_m,residual_max_m,anchor_confident,nw_lon,nw_lat,se_lon,se_lat,error
+oai:u-bordeaux-montaigne.fr:340354,B00-C34,Kef Abbed,nord,22391,248,2.28,440,461,13,3,16,4,1619.1,1306.2,3,2,,,11.0,182.3,printed_corners,printed_corners,,,,,50.13,86.77,1,9.212416,37.438856,9.556849,37.234592,
+oai:u-bordeaux-montaigne.fr:340355,B0-C35,Bizerte,nord,22391,640,8.73,471,456,15,9,21,13,1747.8,1612.9,1,1,,,,,neighbour_corner,neighbour_corner,38.2,oai:u-bordeaux-montaigne.fr:340354,,,16.78,37.67,1,9.572734,37.414929,9.916197,37.213945,
+oai:u-bordeaux-montaigne.fr:340356,B00-C36,Metline,nord,22391,396,9.35,503,454,7,19,7,23,1875.1,1068.0,1,3,,,,10.9,neighbour_corner,printed_corners,51.9,oai:u-bordeaux-montaigne.fr:340370,,,12.67,26.89,1,9.933728,37.393929,10.274839,37.191675,
+oai:u-bordeaux-montaigne.fr:340367,B0-C33,Cap Negro,nord,22391,288,39.07,406,440,13,4,22,6,7029.7,1195.0,0,1,,,,,neighbour_corner,neighbour_corner,183.0,oai:u-bordeaux-montaigne.fr:340354,,,8.78,18.99,1,8.961294,37.265944,9.17984,37.073287,
+oai:u-bordeaux-montaigne.fr:340368,B0-C34,Oued Sedjenane,nord,22391,704,8.99,438,439,34,23,37,26,848.9,691.9,3,2,,,-36.1,36.0,printed_corners,printed_corners,,,,,17.24,56.54,1,9.195449,37.256124,9.539806,37.056183,
+oai:u-bordeaux-montaigne.fr:340369,B0-C35,Djebel Ichkeul,nord,22391,558,8.76,470,436,21,26,22,28,1682.4,175.6,3,4,,,-27.8,57.6,printed_corners,printed_corners,,,,,15.42,27.03,1,9.555492,37.235592,9.898598,37.03405,
+oai:u-bordeaux-montaigne.fr:340370,B0-C36,Porto-Farina,nord,22391,630,8.93,501,434,6,21,9,25,2466.2,1492.1,4,3,,,-11.0,-9.0,printed_corners,printed_corners,,,,,15.6,30.56,1,9.915047,37.214128,10.256738,37.012442,
+oai:u-bordeaux-montaigne.fr:340371,B0-C36,Porto-Farina,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340372,B0-C38,Sidi Daoud,nord,22391,462,1.18,565,429,2,14,6,19,2472.7,2738.2,4,3,,,12.1,91.6,printed_corners,printed_corners,,,,,10.45,21.66,1,10.633851,37.168027,10.971877,36.964014,
+oai:u-bordeaux-montaigne.fr:340373,B0-C39,Cap Bon,nord,22391,310,1.95,598,428,20,6,22,6,3207.1,1864.3,1,3,,,,72.9,neighbour_corner,printed_corners,19.1,oai:u-bordeaux-montaigne.fr:340372,,,49.38,123.31,1,10.99241,37.143396,11.329784,36.93923,
+oai:u-bordeaux-montaigne.fr:340374,B1-C33,Nefza,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,grid labels not read
+oai:u-bordeaux-montaigne.fr:340375,B1-C34,Hedil,nord,22391,726,1.97,436,419,7,13,11,17,870.5,2117.1,3,2,,,59.3,-280.6,printed_corners,printed_corners,,,,,61.62,326.37,1,9.179482,37.077839,9.522696,36.876831,
+oai:u-bordeaux-montaigne.fr:340376,B1-C35,Mateur,nord,22391,462,1.05,468,416,10,25,12,26,3078.3,1526.7,3,1,,,24.8,,printed_corners,neighbour_corner,16.9,oai:u-bordeaux-montaigne.fr:340395,,,11.57,28.85,1,9.539222,37.055972,9.879403,36.854757,
+oai:u-bordeaux-montaigne.fr:340387,B1-C36,Ariana,nord,22391,440,3.71,500,414,4,19,4,20,1529.1,982.2,4,2,,,45.8,,printed_corners,printed_corners,,,,,48.75,151.45,1,9.89832,37.034272,10.235617,36.83315,
+oai:u-bordeaux-montaigne.fr:340388,B1-C36,El Ariana,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340389,B1-C37,La Marsa,nord,22391,81,8.98,531,414,13,1,13,1,1541.9,1483.6,2,3,,,-2.2,-442.5,printed_corners,printed_corners,,,,,11.37,20.63,1,10.256187,37.017247,10.594817,36.809109,
+oai:u-bordeaux-montaigne.fr:340390,B1-C37,La Marsa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340391,B1-C38,Tazoghrane,nord,22391,594,9.55,563,409,8,11,9,12,2215.4,2249.9,4,3,,,-13.6,43.2,printed_corners,printed_corners,,,,,16.69,44.38,1,10.614346,36.989083,10.952039,36.784211,
+oai:u-bordeaux-montaigne.fr:340392,B1-C39,Kelibia,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no catalogue bounding box
+oai:u-bordeaux-montaigne.fr:340393,B2-C34,Béja,nord,22391,640,9.41,435,399,17,13,18,16,1619.2,1450.3,3,3,,,7.2,17.6,printed_corners,printed_corners,,,,,9.67,22.57,1,9.163914,36.896667,9.505083,36.696072,
+oai:u-bordeaux-montaigne.fr:340394,B2-C35,Tebourba,nord,22391,561,3.86,466,397,12,15,18,18,137.8,25.1,3,4,,,-18.4,202.4,printed_corners,printed_corners,,,,,12.89,25.71,1,9.522593,36.87843,9.861432,36.669564,
+oai:u-bordeaux-montaigne.fr:340395,B2-C36,Tunis,nord,22391,651,7.85,500,394,17,16,20,22,824.7,232.6,4,3,,,-116.7,30.3,printed_corners,printed_corners,,,,,61.92,271.92,1,9.879592,36.854755,10.22177,36.652728,
+oai:u-bordeaux-montaigne.fr:340396,B2-C36,Tunis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340407,B2-C37,La Goulette,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,grid labels not read
+oai:u-bordeaux-montaigne.fr:340409,B2-C37,La Goulette,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340410,B2-C38,Menzel Bou Zelfa,nord,22391,660,9.58,562,389,7,17,10,19,32.6,109.7,3,3,,,257.9,19.1,printed_corners,printed_corners,,,,,33.73,173.05,1,10.591199,36.81148,10.932709,36.603025,
+oai:u-bordeaux-montaigne.fr:340411,B2-C39,Mennzel Heurr,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no catalogue bounding box
+oai:u-bordeaux-montaigne.fr:340412,B3-C34,Oued-Zarga,nord,22391,672,3.7,433,379,31,16,33,17,683.0,31.3,4,4,,,-143.3,78.9,printed_corners,printed_corners,,,,,13.57,38.79,1,9.147965,36.716542,9.491875,36.516053,
+oai:u-bordeaux-montaigne.fr:340413,B3-C35,Medjez-el-Bab,nord,22391,286,7.81,464,378,11,10,12,11,162.1,348.3,2,3,,,-18.8,-27.2,printed_corners,printed_corners,,,,,40.14,107.31,1,9.505409,36.696307,9.844987,36.495847,
+oai:u-bordeaux-montaigne.fr:340414,B3-C36,Oudna,nord,22391,660,5.39,496,375,5,14,5,17,715.1,96.3,3,1,,,-30.3,,printed_corners,label_vote,,,,,12.48,32.56,1,9.862514,36.680513,10.20025,36.472911,
+oai:u-bordeaux-montaigne.fr:340415,B3-C37,Grombalia,nord,22391,483,8.26,528,373,13,17,14,22,403.7,300.0,2,3,,,-22.5,6.3,printed_corners,printed_corners,,,,,18.64,41.89,1,10.218616,36.653006,10.556668,36.449905,
+oai:u-bordeaux-montaigne.fr:340416,B3-C38,Nabeul,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,grid labels not read
+oai:u-bordeaux-montaigne.fr:340427,B4-C32,Ghardimaou,nord,22391,608,3.48,368,363,25,10,33,13,172.4,304.0,3,3,,,16.0,81.4,printed_corners,printed_corners,,,,,19.29,36.63,1,8.419031,36.573427,8.760963,36.376294,
+oai:u-bordeaux-montaigne.fr:340428,B4-C33,Souk el Arba,nord,22391,484,5.65,400,363,19,19,20,23,243.3,251.3,4,2,,,50.8,27.6,printed_corners,printed_corners,,,,,66.92,225.56,1,8.776266,36.555872,9.114791,36.356794,
+oai:u-bordeaux-montaigne.fr:340429,B4-C34,Teboursouk,nord,22391,576,3.16,431,359,25,19,29,21,273.4,86.9,3,4,,,49.5,21.4,printed_corners,printed_corners,,,,,13.83,31.7,1,9.131679,36.536528,9.472588,36.337049,
+oai:u-bordeaux-montaigne.fr:340430,B4-C35,Bou Arada,nord,22391,165,7.49,463,358,23,1,26,1,313.9,495.8,1,1,,,,,label_vote,neighbour_corner,66.4,oai:u-bordeaux-montaigne.fr:340431,,,31.67,95.9,1,9.488112,36.520774,9.827866,36.315714,
+oai:u-bordeaux-montaigne.fr:340431,B4-C36,Zaghouan,nord,22391,704,1.57,496,355,17,15,19,17,332.1,128.5,3,3,,,-25.0,-18.2,printed_corners,printed_corners,,,,,50.09,224.38,1,9.844906,36.495221,10.182899,36.293883,
+oai:u-bordeaux-montaigne.fr:340432,B4-C37,Bou Ficha,nord,22391,594,7.6,526,352,10,18,11,21,746.7,342.4,4,3,,,-7.1,14.1,printed_corners,printed_corners,,,,,14.49,26.47,1,10.201302,36.473608,10.537169,36.269763,
+oai:u-bordeaux-montaigne.fr:340433,B4-C38,Hammamet,nord,22391,561,9.52,558,349,7,14,9,17,307.7,1656.9,2,2,,,-7.9,-4.0,printed_corners,printed_corners,,,,,9.11,21.61,1,10.556349,36.450392,10.892606,36.245863,
+oai:u-bordeaux-montaigne.fr:340434,B5-C32,Ouargha,nord,22391,704,3.62,366,344,19,16,28,21,502.8,314.7,3,3,,,3.3,16.8,printed_corners,printed_corners,,,,,18.12,52.7,1,8.405283,36.394416,8.745668,36.19586,
+oai:u-bordeaux-montaigne.fr:340435,B5-C33,Nebeur,nord,22391,594,2.04,398,341,13,11,14,14,95.7,345.2,3,3,,,-15.4,61.1,printed_corners,printed_corners,,,,,12.6,24.73,1,8.759969,36.375654,9.101932,36.177007,
+oai:u-bordeaux-montaigne.fr:340436,B5-C34,Gafour,nord,22391,594,0.91,429,339,13,16,15,20,1022.3,1698.4,1,4,,,,30.8,neighbour_corner,printed_corners,33.9,oai:u-bordeaux-montaigne.fr:340447,,,19.39,45.1,1,9.116042,36.357028,9.456042,36.156802,
+oai:u-bordeaux-montaigne.fr:340447,B5-C35,Djebel Mansour,nord,22391,704,3.73,462,337,16,27,20,29,23.5,264.1,2,3,,,-0.5,15.3,printed_corners,printed_corners,,,,,17.6,45.92,1,9.471811,36.337158,9.810519,36.135619,
+oai:u-bordeaux-montaigne.fr:340448,B5-C36,Djebel Fkirine,nord,22391,627,1.9,493,334,19,15,21,16,330.7,2533.5,4,3,,,31.5,114.1,printed_corners,printed_corners,,,,,15.44,37.23,1,9.826771,36.315147,10.164655,36.113622,
+oai:u-bordeaux-montaigne.fr:340449,B5-C37,Enfidaville,nord,22391,640,2.11,526,332,13,16,17,17,675.7,1902.9,3,2,,,64.7,37.3,printed_corners,printed_corners,,,,,51.44,266.03,1,10.182344,36.293604,10.518557,36.090413,
+oai:u-bordeaux-montaigne.fr:340450,B5-C37,Enfida,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340451,B6-C32,Le Kef,nord,22391,576,3.75,365,324,16,13,20,14,1051.1,742.7,3,2,,,-4.7,,printed_corners,printed_corners,,,,,12.6,30.95,1,8.390746,36.214258,8.731952,36.015815,
+oai:u-bordeaux-montaigne.fr:340452,B6-C33,Les Salines,nord,22391,558,9.26,397,321,7,9,7,12,837.9,1472.4,3,3,,,-225.0,2.1,printed_corners,printed_corners,,,,,13.95,31.96,1,8.745959,36.196067,9.088558,35.997055,
+oai:u-bordeaux-montaigne.fr:340453,B6-C34,Siliana,nord,22391,627,3.23,428,319,6,11,8,12,631.8,69.2,4,3,,,-6.0,81.1,printed_corners,printed_corners,,,,,41.66,195.92,1,9.101056,36.176578,9.439208,35.977281,
+oai:u-bordeaux-montaigne.fr:340454,B6-C35,Djebel Bargou,nord,22391,609,8.02,460,317,4,6,8,8,127.9,307.2,2,1,,,-22.4,,printed_corners,label_vote,,,,,25.0,97.42,1,9.45553,36.157105,9.793529,35.955978,
+oai:u-bordeaux-montaigne.fr:340455,B6-C36,Djebibina,nord,22391,576,3.48,491,314,7,5,10,6,415.7,414.1,4,4,,,-15.5,28.8,printed_corners,printed_corners,,,,,14.11,29.54,1,9.810129,36.135478,10.147012,35.934523,
+oai:u-bordeaux-montaigne.fr:340456,B6-C37,Sidi Bou Ali,nord,22391,704,8.02,524,312,6,14,7,15,671.9,435.7,3,3,,,-3.3,-27.0,printed_corners,printed_corners,,,,,14.3,37.25,1,10.164381,36.113532,10.5007,35.911534,
+oai:u-bordeaux-montaigne.fr:340467,B6-C37,Sidi Bou Ali,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340468,B6-C38,Halk El Mennzel,nord,22391,782,4.01,555,310,3,8,3,10,270.2,309.7,3,3,,,5.3,51.2,printed_corners,printed_corners,,,,,52.24,272.83,1,10.518401,36.090235,10.853887,35.887295,
+oai:u-bordeaux-montaigne.fr:340469,B6-C38,Halk El Mennzel,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340470,B7-C32,Tadjerouine,nord,22391,682,2.0,364,304,10,13,14,17,386.5,339.6,2,3,,,-13.4,259.1,printed_corners,printed_corners,,,,,16.48,35.95,1,8.377855,36.03708,8.716564,35.83362,
+oai:u-bordeaux-montaigne.fr:340471,B1-C33,Ebba Ksour,nord,22391,704,4.57,395,302,12,18,12,20,225.7,258.6,0,0,,,,,label_vote,label_vote,,,,,28.58,109.92,1,8.73113,36.015607,9.070613,35.817745,
+oai:u-bordeaux-montaigne.fr:340472,B7-C34,Maktar,nord,22391,726,4.01,426,299,9,16,14,19,40.1,146.1,3,1,,,11.8,,printed_corners,label_vote,,,,,19.55,43.41,1,9.085604,35.99723,9.423172,35.797947,
+oai:u-bordeaux-montaigne.fr:340473,B7-C35,Djebel Serdj,nord,22391,726,4.21,458,297,10,10,12,12,249.3,115.3,4,2,,,13.1,51.6,printed_corners,printed_corners,,,,,17.75,37.57,1,9.438505,35.97721,9.777154,35.776595,
+oai:u-bordeaux-montaigne.fr:340474,B6-C37,Aïne Djeloula,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,grid labels not read
+oai:u-bordeaux-montaigne.fr:340475,B7-C37,Sebkra Kelbia,nord,22391,726,8.87,522,292,23,18,27,21,673.9,445.5,2,3,,,10.9,58.2,printed_corners,printed_corners,,,,,13.57,40.0,1,10.146625,35.933836,10.482354,35.731687,
+oai:u-bordeaux-montaigne.fr:340476,B7-C38,Sousse,nord,22391,713,8.63,554,290,7,13,8,18,445.7,144.0,2,2,,,-57.3,6.2,printed_corners,printed_corners,,,,,15.88,46.93,1,10.500147,35.911141,10.83482,35.707631,
+oai:u-bordeaux-montaigne.fr:340487,B7-C38,Sousse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340488,B8-C32,Kalaat es Senam,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,neatline not found
+oai:u-bordeaux-montaigne.fr:340489,B8-C33,Aïn El Kseïba,nord,22391,736,4.65,393,283,11,14,12,15,125.4,277.8,3,3,,,-30.2,63.5,printed_corners,printed_corners,,,,,35.32,131.51,1,8.717058,35.836011,9.055784,35.637669,
+oai:u-bordeaux-montaigne.fr:340490,B8-C34,Rohia-Dj. Barbrou,nord,22391,682,4.49,426,279,11,18,13,24,281.0,142.4,3,3,,,18.7,24.2,printed_corners,printed_corners,,,,,15.85,30.78,1,9.070103,35.817337,9.407887,35.617804,
+oai:u-bordeaux-montaigne.fr:340491,B8-C35,Pichon,nord,22391,726,5.95,457,277,13,17,16,18,408.4,109.6,3,2,,,10.8,37.9,printed_corners,printed_corners,,,,,21.1,46.37,1,9.423208,35.797503,9.759832,35.597036,
+oai:u-bordeaux-montaigne.fr:340492,B8-C36,Kairouan,nord,22391,704,2.68,489,276,9,14,10,17,563.8,1929.7,2,1,,,-13.0,,printed_corners,neighbour_corner,36.3,oai:u-bordeaux-montaigne.fr:340511,,,24.9,85.61,1,9.776499,35.776481,10.111941,35.574743,
+oai:u-bordeaux-montaigne.fr:340493,B8-C37,Sidi El Hani,nord,22391,748,4.54,520,272,2,10,3,12,666.0,6.1,2,3,,,6.4,39.2,printed_corners,printed_corners,,,,,56.06,298.74,1,10.129277,35.754329,10.463344,35.551945,
+oai:u-bordeaux-montaigne.fr:340494,B8-C38,Djemmal,nord,22391,672,1208.41,553,269,1,11,1,14,14358.6,5022.1,3,4,,,-24.9,3.6,printed_corners,printed_corners,,,,,12.33,32.42,1,10.481615,35.731168,10.81548,35.528018,
+oai:u-bordeaux-montaigne.fr:340495,B8-C39,Moknine,nord,22391,651,24.14,585,266,6,17,8,20,2735.2,560.1,2,2,,,-6.2,-91.6,printed_corners,printed_corners,,,,,16.4,51.61,1,10.83421,35.709503,11.08744,35.508782,
+oai:u-bordeaux-montaigne.fr:340496,B9-C32,Thala,nord,22391,704,2.95,360,265,21,8,29,9,442.7,226.7,3,4,,,-23.8,25.9,printed_corners,printed_corners,,,,,15.64,36.03,1,8.349832,35.674159,8.691659,35.474241,
+oai:u-bordeaux-montaigne.fr:340507,B9-C33,Ksar Tlili,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,grid labels not read
+oai:u-bordeaux-montaigne.fr:340508,B9-C34,Sbiba,nord,22391,561,4.25,424,261,10,9,14,11,495.0,144.7,3,4,,,3.8,50.3,printed_corners,printed_corners,,,,,57.55,259.76,1,9.055111,35.637811,9.391752,35.437402,
+oai:u-bordeaux-montaigne.fr:340509,B9-C35,Djebel Trozza,nord,22391,748,4.09,455,257,11,6,14,8,616.5,120.9,2,4,,,-29.3,17.2,printed_corners,printed_corners,,,,,30.5,135.46,1,9.407634,35.617284,9.743882,35.417002,
+oai:u-bordeaux-montaigne.fr:340510,B9-C36,Pavillier,nord,22391,704,3.14,488,255,6,23,8,25,164.8,477.4,2,2,,,9.8,34.1,printed_corners,printed_corners,,,,,15.44,43.71,1,9.759439,35.59637,10.094564,35.395336,
+oai:u-bordeaux-montaigne.fr:340511,B9-C37,Oued Cherita,nord,22391,651,9.61,520,251,5,17,6,20,705.7,742.9,2,4,,,-5.6,37.8,printed_corners,printed_corners,,,,,18.64,35.27,1,10.11169,35.574488,10.445726,35.371958,
+oai:u-bordeaux-montaigne.fr:340512,B9-C38,Kerker,nord,22391,726,9.72,550,252,6,10,8,12,343.1,41.4,0,0,,,,,label_vote,label_vote,,,,,29.77,116.79,1,10.464285,35.552571,10.79619,35.347899,
+oai:u-bordeaux-montaigne.fr:340513,B10-C32,Djebel Bireno,nord,22391,672,4.46,359,245,25,16,34,20,299.0,383.5,3,3,,,-8.0,0.5,printed_corners,printed_corners,,,,,16.07,47.13,1,8.33644,35.494353,8.674882,35.297121,
+oai:u-bordeaux-montaigne.fr:340514,B10-C33,Djebel Semmama,nord,22391,682,4.17,391,242,19,29,19,32,312.1,322.5,3,3,,,20.1,53.2,printed_corners,printed_corners,,,,,11.62,24.02,1,8.688085,35.476293,9.025514,35.278233,
+oai:u-bordeaux-montaigne.fr:340515,B10-C34,Djebel Mrhila,nord,22391,782,11.37,421,240,1,12,1,17,29979.6,339.6,3,3,-36,0,23.9,14.7,printed_corners,printed_corners,,,,,16.73,47.08,1,9.039661,35.458235,9.376103,35.257506,
+oai:u-bordeaux-montaigne.fr:340516,B10-C35,Hadjeb el Aïoun,nord,22391,704,1.81,454,239,14,7,18,8,1606.8,1390.5,2,3,,,17.8,29.5,printed_corners,printed_corners,,,,,20.38,41.34,1,9.391729,35.437949,9.726429,35.236993,
+oai:u-bordeaux-montaigne.fr:340527,B10-C36,Nasr Allah,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,grid labels not read
+oai:u-bordeaux-montaigne.fr:340528,B10-C37,Chorbane,nord,22391,726,1.35,517,232,14,13,19,18,323.2,2109.5,0,0,,,,,label_vote,neighbour_corner,6.4,oai:u-bordeaux-montaigne.fr:340510,,,18.85,42.48,1,10.094574,35.395393,10.427838,35.192392,
+oai:u-bordeaux-montaigne.fr:340529,B10-C38,El Djem,nord,22391,704,8.54,550,230,6,13,7,16,314.6,550.7,0,0,,,,,label_vote,label_vote,,,,,14.19,49.84,1,10.44485,35.37372,10.778395,35.169268,
+oai:u-bordeaux-montaigne.fr:340530,B10-C39,Chebba,nord,22391,748,8.8,581,227,8,4,10,6,627.7,245.7,3,2,,,-7.9,11.3,printed_corners,printed_corners,,,,,11.69,28.61,1,10.796166,35.347743,11.127821,35.143833,
+oai:u-bordeaux-montaigne.fr:340531,B11-C32,Bou Chebka,nord,22391,672,4.55,357,224,19,24,21,27,250.3,370.8,2,4,,,5.3,-1.3,printed_corners,printed_corners,,,,,21.13,56.86,1,8.322895,35.314761,8.660401,35.116473,
+oai:u-bordeaux-montaigne.fr:340532,B11-C33,Kasserine,nord,22391,726,4.25,388,222,17,21,22,24,230.9,332.0,4,3,,,-14.6,-1.9,printed_corners,printed_corners,,,,,14.04,34.9,1,8.673746,35.296302,9.011384,35.098379,
+oai:u-bordeaux-montaigne.fr:340533,,Djebeniana,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340534,,,sud,22392,680,3.52,517,331,17,23,19,27,685.6,233.5,2,3,,,2.3,32.3,printed_corners,printed_corners,,,,,18.54,60.3,1,10.058749,33.589455,10.42611,33.365276,
+oai:u-bordeaux-montaigne.fr:340535,,,sud,22392,782,2.76,518,353,17,24,21,25,709.6,474.4,3,2,,,27.4,-466.1,printed_corners,printed_corners,,,,,54.34,287.32,1,10.077017,33.792128,10.444233,33.563057,
+oai:u-bordeaux-montaigne.fr:340615,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340616,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no Lambert zone (unset)
+oai:u-bordeaux-montaigne.fr:340627,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,no kilometric grid
+oai:u-bordeaux-montaigne.fr:340628,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,grid labels not read
+oai:u-bordeaux-montaigne.fr:340629,,,sud,22392,408,27.19,545,315,8,12,8,12,1669.1,4879.1,0,0,,,,,,,,,,,8.35,15.66,0,10.37969,33.441264,10.623219,33.279792,

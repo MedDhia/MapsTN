@@ -6,32 +6,61 @@ modern map. It produces, per sheet, an affine transform from scan pixels to
 Lambert Tunisie metres, a control-point list, and a world file - all usable
 directly by GDAL or QGIS.
 
-The problem is that neither of the two available anchors is sufficient alone.
+The transform splits cleanly into two parts, and they are established quite
+differently.
 
-  The catalogue bounding box gives absolute position, but its corners are
-  rounded - to whole arcminutes on 29 of 93 sheets - so it is good to roughly
-  +/-800 m, which is worse than the sheet deserves by two orders of magnitude.
+  Scale, rotation and skew come from the printed kilometric grid alone. Its
+  lines are exact integer kilometres of Lambert, so fitting one affine to all
+  the detected intersections fixes the linear part to about 20 m rms without any
+  catalogue value entering.
 
-  The printed kilometric grid gives scale and rotation to about a tenth of a
-  percent, and its lines are at exact integer kilometres in Lambert. But the
-  detector finds where the lines are, not which kilometre each one is.
+  The absolute placement - which kilometre line zero is - is an integer, and so
+  can only ever be wrong by a whole kilometre. Three sources settle it, in this
+  order of preference:
 
-Putting them together removes both weaknesses. The bounding box predicts each
-line's easting to within a fraction of the 1 km line spacing; rounding that
-prediction to the nearest integer recovers the exact value; and refitting on the
-exact values discards the bounding box's error entirely. The snap distance is
-reported per sheet, because the argument only holds while it stays well under
-500 m - at 500 m the rounding could go to the wrong kilometre and shift the
-whole sheet by one.
+    the sheet's own printed corner coordinates, read by
+    read_corner_coordinates.py, which state each neatline corner's Lambert
+    easting and northing to the metre. This is primary and decisive, and it
+    settles 57 of the 73 sheets on both axes.
 
-Three independent checks are recorded rather than assumed:
+    a vote among the red kilometre labels along the margins, cross-checked
+    against the catalogue's bounding box.
 
+    a corner shared with a neighbouring sheet whose own printing settled it.
+    Adjacent sheets in this series print identical corner coordinates, so a
+    sheet landing on a confirmed neighbour's corner to within 250 m cannot be a
+    whole kilometre out. This rescues 9 sheets whose own corner annotations
+    could be read at only one corner.
+
+Between them these leave one sheet of the 73 with an anchor that rests on
+nothing but its own margin labels and a catalogue box that disagrees.
+
+The catalogue is now only a fallback, and that is a correction of an earlier
+mistake worth recording. It used to be the arbiter: a sheet was trusted when its
+anchor agreed with the box to better than a kilometre. But that test cannot
+separate an anchor error from a frame or catalogue error, and mostly measured the
+latter two. The disagreements it reported are continuous, where a real anchor
+error must be a whole kilometre; across the 73 sheets they cluster nowhere near
+whole kilometres (Rayleigh p = 0.45, mean residual 253 m against 250 expected by
+chance). Sheets it rejected turned out to be right where the sheet's own printing
+could be consulted - La Marsa to 17 m, Djemmal to 12 m, Djebel Ichkeul to 49 m,
+against catalogue disagreements of 1.5, 14.4 and 1.7 km. Worse, the label vote
+was never independent of the catalogue in the first place: the window of
+acceptable label values is derived from the box, so a sheet with a bad box has
+its anchor pushed into the wrong window, which is what put Djebel Mrhila 36 km
+east of where it prints its own corner.
+
+Checks recorded rather than assumed:
+
+  anchor_basis_e/n      which of the three sources established each axis
+  corner_support_e/n    how many of the four printed corners corroborated
+  neighbour_corner_m    how far a shared corner sat from the neighbour's
+  neatline_error_m_e/n  the sub-kilometre remainder between the printed corner
+                        and the detected frame. This is frame-detection error,
+                        reported rather than absorbed into the anchor, because
+                        the anchor is exact and the frame is not.
   frame_size_error_pct  the neatline's measured size against the size the
-                        catalogue extent implies. Agreement confirms the
-                        neatline detector, the grid spacing and the projection
-                        at once, since they are measured three different ways.
-  snap_max_m            how far the bounding-box prediction sat from the
-                        integer kilometre it was rounded to.
+                        catalogue extent implies.
   residual_rms_m        how well one affine fits all the grid intersections.
                         A printed grid is rigid, so this is small unless the
                         paper is distorted or the detection is wrong.
@@ -44,6 +73,10 @@ Outputs:
 
 Usage:
     python3 scripts/georeference_sheets.py --images <dir of record_id.jpg>
+
+    # re-apply the printed-corner anchors and the confidence rule to the cached
+    # transforms, without re-reading any scan
+    python3 scripts/georeference_sheets.py --images <dir> --csv-only
 """
 
 from __future__ import annotations
@@ -471,20 +504,265 @@ MIN_VOTE_SHARE = 0.70
 MIN_VOTES = 3
 MAX_ANCHOR_DISAGREEMENT_M = 1000.0
 
+# The sheet's own printed corner coordinates, where they were read and
+# corroborated, settle the anchor outright - see read_corner_coordinates.py.
+MIN_CORNER_SUPPORT = 2
+
+# Overturning an anchor takes more evidence than confirming one, and the reason
+# is a correlated failure the corroboration test cannot see. Two corners of one
+# sheet are the same printing read by the same OCR, so a digit that is
+# misread at one corner is liable to be misread the same way at another - and
+# then the two agree with each other and look like independent confirmation. The
+# Grombalia sheet did exactly this: a leading digit read high at two corners,
+# support 2, and a proposed shift of a round 100 km on a sheet whose anchor was
+# already right. A shift of zero corroborates what the labels already said and
+# needs no such guard; a non-zero shift contradicts them, and takes three.
+MIN_CORNER_SUPPORT_TO_MOVE = 3
+
+# Only these establish a sheet on its own printing; the neighbour test is not
+# allowed to corroborate from a sheet that was itself corroborated that way.
+PRIMARY_BASES = ("printed_corners", "label_vote")
+
+# A shared corner agreeing this closely rules out an anchor error, which is a
+# whole kilometre by construction. Observed across the series: median 67 m,
+# worst 184 m.
+NEIGHBOUR_CORNER_M = 250.0
+
+# ... but a sheet displaced by a whole sheet width would land on the next
+# lattice point and match. The catalogue box cannot see 200 m and can easily see
+# 30 km, so it is asked only the coarse question.
+NEIGHBOUR_MAX_CATALOGUE_M = 15_000.0
+
+# ... and the result still has to land on Tunisia. This is the envelope of every
+# catalogue box in the series, generously margined: individual boxes are wrong by
+# as much as 35 km, but the series as a whole covers the country, so a shift that
+# puts a sheet outside the envelope is a misread rather than a correction.
+ENVELOPE_MARGIN_DEG = 0.5
+
+
+def axis_basis(found: dict, axis: str) -> str:
+    """On what evidence one axis of a sheet's anchor rests, or "" for none.
+
+    Each axis is anchored separately and can be established either way, so they
+    are judged separately. Two sources:
+
+    "printed_corners"  the sheet states the Lambert coordinate of its own
+                       corners, and at least two of them corroborate. This
+                       settles the anchor rather than merely checking it.
+    "label_vote"       the margin kilometre labels agree among themselves and
+                       the result agrees with the catalogue box.
+
+    The catalogue test is kept only as the fallback, and only at a whole
+    kilometre of tolerance, because it cannot separate an anchor error from a
+    frame or catalogue error: an anchor is an integer number of kilometres, so
+    it can only ever be wrong by a whole one, and the disagreements this test
+    reports are continuous. Measured across the 73 sheets, they cluster nowhere
+    near whole kilometres (Rayleigh p = 0.45), which is what says most of what
+    it was reporting was never the anchor at all.
+    """
+    # A reading that wanted to move the sheet but was not allowed to leaves the
+    # axis in dispute, not settled: the sheet's own printing and the margin
+    # labels disagree and there is not enough of the printing to say which is
+    # right. Calling that confident on the strength of the labels would be
+    # ignoring the better source because it was inconvenient.
+    if found.get(f"corner_shift_refused_{axis}"):
+        return ""
+    if found.get(f"corner_support_{axis}", 0) >= MIN_CORNER_SUPPORT:
+        return "printed_corners"
+    votes = found.get(f"label_votes_{axis}")
+    if votes is not None:
+        matched = max(found[f"labels_matched_{axis}"], 1)
+        catalogue = found.get(f"anchor_vs_catalogue_{axis}_m")
+        if (votes >= MIN_VOTES and votes / matched >= MIN_VOTE_SHARE
+                and catalogue is not None
+                and catalogue < MAX_ANCHOR_DISAGREEMENT_M):
+            return "label_vote"
+    # A corner shared with a neighbouring sheet settles both axes at once, since
+    # it is a position rather than a coordinate. Ranked last of the three because
+    # it rests on another sheet's reading rather than on this one's.
+    if found.get("neighbour_corner_m") is not None:
+        return "neighbour_corner"
+    return ""
+
 
 def anchor_is_confident(found: dict) -> bool:
-    if "label_votes_e" not in found:
+    if "affine" not in found:
         return False
-    shares = []
-    for axis in ("e", "n"):
-        votes = found[f"label_votes_{axis}"]
-        matched = max(found[f"labels_matched_{axis}"], 1)
-        if votes < MIN_VOTES:
-            return False
-        shares.append(votes / matched)
-    return (min(shares) >= MIN_VOTE_SHARE
-            and max(found["anchor_vs_catalogue_e_m"],
-                    found["anchor_vs_catalogue_n_m"]) < MAX_ANCHOR_DISAGREEMENT_M)
+    return all(axis_basis(found, axis) for axis in ("e", "n"))
+
+
+def apply_corner_anchors(results: dict, corners: dict,
+                         boxes: dict) -> list[str]:
+    """Move each sheet onto the anchor its own printed corners imply.
+
+    A change of anchor is a whole number of kilometres of translation and
+    nothing else - the scale, rotation and skew all come from the printed grid
+    and are untouched - so this rewrites the cached transforms arithmetically
+    and re-reads no scan. Applying it is recorded on the sheet so that running
+    the step twice cannot shift a sheet twice.
+    """
+    envelope = series_envelope(boxes)
+    changed = []
+    for record_id, found in results.items():
+        if "affine" not in found:
+            continue
+        reading = corners.get(record_id)
+        if not reading:
+            continue
+        shifts = {axis: reading.get(f"origin_shift_km_{axis}")
+                  for axis in ("e", "n")}
+        for axis in ("e", "n"):
+            for field in ("corner_support", "corner_source", "shift_basis",
+                          "neatline_error_m", "corner_exact_count"):
+                if f"{field}_{axis}" in reading:
+                    found[f"{field}_{axis}"] = reading[f"{field}_{axis}"]
+        for axis, name in (("e", "easting"), ("n", "northing")):
+            if f"corner_{name}_km" in reading:
+                found[f"corner_{name}_km"] = reading[f"corner_{name}_km"]
+
+        applied = found.get("corner_shift_applied_km", {})
+        delta = {}
+        for axis in ("e", "n"):
+            found.pop(f"corner_shift_refused_{axis}", None)
+            wanted = shifts[axis] if shifts[axis] is not None else 0
+            support = reading.get(f"corner_support_{axis}", 0)
+            if wanted and support < MIN_CORNER_SUPPORT_TO_MOVE:
+                found[f"corner_shift_refused_{axis}"] = (
+                    f"{wanted:+d} km on support {support}")
+                wanted = 0
+            delta[axis] = wanted - applied.get(axis, 0)
+        if not any(delta.values()):
+            continue
+
+        if not on_tunisia(found, delta, envelope):
+            for axis in ("e", "n"):
+                if delta[axis]:
+                    found[f"corner_shift_refused_{axis}"] = (
+                        f"{delta[axis]:+d} km leaves Tunisia")
+            continue
+
+        affine = list(found["affine"])
+        affine[4] += delta["e"] * 1000.0
+        affine[5] += delta["n"] * 1000.0
+        found["affine"] = [round(float(v), 6) for v in affine]
+        found["easting_origin_km"] += delta["e"]
+        found["northing_origin_km"] += delta["n"]
+        found["corner_shift_applied_km"] = {
+            "e": applied.get("e", 0) + delta["e"],
+            "n": applied.get("n", 0) + delta["n"]}
+
+        zone = found["lambert_zone"]
+        to_wgs84 = Transformer.from_crs(f"EPSG:{ZONE_EPSG[zone]}", "EPSG:4326",
+                                        always_xy=True)
+        for corner in found["corners"].values():
+            corner["easting"] = round(corner["easting"] + delta["e"] * 1000.0, 1)
+            corner["northing"] = round(corner["northing"] + delta["n"] * 1000.0, 1)
+            lon, lat = to_wgs84.transform(corner["easting"], corner["northing"])
+            corner["lon"], corner["lat"] = round(lon, 6), round(lat, 6)
+
+        # The catalogue cross-check has to be restated against the new position;
+        # leaving the old number would describe a transform that no longer
+        # exists. It is recomputed from the box rather than adjusted, because it
+        # is stored as a magnitude and the direction it pointed is not recorded.
+        box = boxes.get(record_id)
+        if box:
+            found.update(catalogue_disagreement(found, box))
+        changed.append(record_id)
+    return changed
+
+
+def corroborate_by_neighbours(results: dict) -> list[str]:
+    """Confirm an anchor from the sheet next to it, where the two share a corner.
+
+    Adjacent sheets in this series print *identical* corner coordinates: the
+    Djebel Mrhila sheet gives its south-west corner as 420.395 m / 220.122 m,
+    which is exactly what Kasserine gives for its north-east. So a sheet's
+    corners falling on a neighbour's is a fact about the series, and across the
+    73 sheets 237 such pairs coincide - median 67 m apart, worst 184 m, on 69 of
+    the 73. That 67 m is two frame detections, not two anchors: an anchor error
+    is a whole kilometre by construction, so agreement at this scale rules one
+    out.
+
+    Two things keep this from being circular. The corroborating sheet must be
+    confident on its own printing - its printed corners or its margin labels -
+    so confidence is never passed along a chain that never touches a primary
+    source, and never traded between two sheets that confirm each other. And
+    because sheets tile a regular lattice, a sheet displaced by a whole sheet
+    width would land on its neighbour's neighbour's corners and match; the
+    catalogue box, useless at the sub-kilometre scale this test works at, is
+    perfectly good enough to rule out a displacement of tens of kilometres, so
+    it is required to agree coarsely.
+    """
+    grounded = []
+    for record_id, found in results.items():
+        if "corners" not in found:
+            continue
+        if all(found.get(f"anchor_basis_{axis}") in PRIMARY_BASES
+               for axis in ("e", "n")):
+            grounded += [(found["lambert_zone"], corner["easting"],
+                          corner["northing"], record_id)
+                         for corner in found["corners"].values()]
+
+    confirmed = []
+    for record_id, found in results.items():
+        if "corners" not in found or anchor_is_confident(found):
+            continue
+        gross = max(found.get("anchor_vs_catalogue_e_m", 0.0),
+                    found.get("anchor_vs_catalogue_n_m", 0.0))
+        if gross > NEIGHBOUR_MAX_CATALOGUE_M:
+            continue
+        best = None
+        for corner in found["corners"].values():
+            for zone, easting, northing, other in grounded:
+                if zone != found["lambert_zone"] or other == record_id:
+                    continue
+                distance = math.hypot(corner["easting"] - easting,
+                                      corner["northing"] - northing)
+                if distance <= NEIGHBOUR_CORNER_M and (best is None
+                                                       or distance < best[0]):
+                    best = (distance, other)
+        if best is None:
+            continue
+        found["neighbour_corner_m"] = round(best[0], 1)
+        found["neighbour_corner_sheet"] = best[1]
+        confirmed.append(record_id)
+    return confirmed
+
+
+def series_envelope(boxes: dict) -> tuple[float, float, float, float]:
+    """The lon/lat rectangle every sheet in the series has to sit inside."""
+    return (min(b["west"] for b in boxes.values()) - ENVELOPE_MARGIN_DEG,
+            max(b["east"] for b in boxes.values()) + ENVELOPE_MARGIN_DEG,
+            min(b["south"] for b in boxes.values()) - ENVELOPE_MARGIN_DEG,
+            max(b["north"] for b in boxes.values()) + ENVELOPE_MARGIN_DEG)
+
+
+def on_tunisia(found: dict, delta: dict, envelope: tuple) -> bool:
+    """Would the sheet still be on the country after this shift?"""
+    west, east, south, north = envelope
+    zone = found["lambert_zone"]
+    to_wgs84 = Transformer.from_crs(f"EPSG:{ZONE_EPSG[zone]}", "EPSG:4326",
+                                    always_xy=True)
+    corner = found["corners"]["north_west"]
+    lon, lat = to_wgs84.transform(corner["easting"] + delta["e"] * 1000.0,
+                                  corner["northing"] + delta["n"] * 1000.0)
+    return west <= lon <= east and south <= lat <= north
+
+
+def catalogue_disagreement(found: dict, box: dict) -> dict:
+    """How far the transform puts the frame centre from where the box does."""
+    to_lambert = Transformer.from_crs(
+        "EPSG:4326", f"EPSG:{ZONE_EPSG[found['lambert_zone']]}", always_xy=True)
+    centre_longitude = (box["west"] + box["east"]) / 2
+    centre_latitude = (box["north"] + box["south"]) / 2
+    catalogue = to_lambert.transform(centre_longitude, centre_latitude)
+    frame = found["neatline_px"]
+    a, d, b, e, c, f = found["affine"]
+    x = (frame["left"] + frame["right"]) / 2
+    y = (frame["top"] + frame["bottom"]) / 2
+    fitted = (a * x + b * y + c, d * x + e * y + f)
+    return {"anchor_vs_catalogue_e_m": round(abs(fitted[0] - catalogue[0]), 1),
+            "anchor_vs_catalogue_n_m": round(abs(fitted[1] - catalogue[1]), 1)}
 
 
 CSV_FIELDS = [
@@ -493,6 +771,12 @@ CSV_FIELDS = [
     "easting_origin_km", "northing_origin_km",
     "label_votes_e", "label_votes_n", "labels_matched_e", "labels_matched_n",
     "anchor_vs_catalogue_e_m", "anchor_vs_catalogue_n_m",
+    "corner_support_e", "corner_support_n",
+    "corner_shift_km_e", "corner_shift_km_n",
+    "neatline_error_m_e", "neatline_error_m_n",
+    "anchor_basis_e", "anchor_basis_n",
+    "neighbour_corner_m", "neighbour_corner_sheet",
+    "corner_shift_refused_e", "corner_shift_refused_n",
     "residual_rms_m", "residual_max_m", "anchor_confident",
     "nw_lon", "nw_lat", "se_lon", "se_lat", "error",
 ]
@@ -513,6 +797,10 @@ def main() -> int:
                         default=REPO_ROOT / "data" / "sheet_georef.csv")
     parser.add_argument("--sidecars", type=Path,
                         default=REPO_ROOT / "data" / "georef")
+    parser.add_argument("--corners", type=Path,
+                        default=REPO_ROOT / "data" / "sheet_corners.json",
+                        help="printed corner coordinates from "
+                             "read_corner_coordinates.py; applied when present")
     parser.add_argument("--only", nargs="*", default=None,
                         help="record ids to process")
     parser.add_argument("--csv-only", action="store_true",
@@ -572,13 +860,54 @@ def main() -> int:
         args.out_json.write_text(json.dumps(results, ensure_ascii=False, indent=2),
                                  encoding="utf-8")
 
+    # Move each sheet onto the anchor its own printed corners imply, where they
+    # were read. This is arithmetic on the cached transforms - a change of anchor
+    # is a whole number of kilometres of translation and nothing else - so it
+    # costs nothing to re-apply and is idempotent.
+    if args.corners.exists():
+        corners = json.loads(args.corners.read_text(encoding="utf-8"))
+        boxes = {record_id: record["bbox"]
+                 for record_id, record in partner.items() if record.get("bbox")}
+        moved = apply_corner_anchors(results, corners, boxes)
+        for record_id in moved:
+            write_sidecars(args.sidecars, record_id, results[record_id],
+                           args.images / f"{record_id}.jpg")
+        if moved:
+            print(f"\nprinted corners moved {len(moved)} sheet(s):")
+            for record_id in moved:
+                found = results[record_id]
+                name = sheets.get(record_id, {}).get("sheet_name") or record_id[-6:]
+                print(f"  {name[:22]:<22} "
+                      f"{found['corner_shift_applied_km']} km")
+
     # Stamp the verdict into the cached record as well, so there is exactly one
     # definition of it. Keeping the rule here and a stale copy in the JSON let
     # the two disagree - 44 sheets by the JSON's older rule against 39 by this
     # one - and every downstream consumer picked whichever it happened to read.
     for found in results.values():
         if "affine" in found:
+            found.pop("neighbour_corner_m", None)
+            found.pop("neighbour_corner_sheet", None)
+            for axis in ("e", "n"):
+                found[f"anchor_basis_{axis}"] = axis_basis(found, axis)
+
+    # Then, with the sheets that stand on their own printing settled, let each
+    # of them vouch for a neighbour it shares a corner with.
+    vouched = corroborate_by_neighbours(results)
+    for found in results.values():
+        if "affine" in found:
+            for axis in ("e", "n"):
+                found[f"anchor_basis_{axis}"] = axis_basis(found, axis)
             found["anchor_confident"] = anchor_is_confident(found)
+    if vouched:
+        print(f"\nneighbouring sheets vouched for {len(vouched)}:")
+        for record_id in vouched:
+            name = sheets.get(record_id, {}).get("sheet_name") or record_id[-6:]
+            found = results[record_id]
+            other = sheets.get(found["neighbour_corner_sheet"], {}).get(
+                "sheet_name") or found["neighbour_corner_sheet"][-6:]
+            print(f"  {name[:22]:<22} shares a corner with {other[:22]:<22} "
+                  f"to {found['neighbour_corner_m']:.0f} m")
     args.out_json.write_text(json.dumps(results, ensure_ascii=False, indent=2),
                              encoding="utf-8")
 
@@ -602,6 +931,18 @@ def main() -> int:
             "labels_matched_n": found.get("labels_matched_n", ""),
             "anchor_vs_catalogue_e_m": found.get("anchor_vs_catalogue_e_m", ""),
             "anchor_vs_catalogue_n_m": found.get("anchor_vs_catalogue_n_m", ""),
+            "corner_support_e": found.get("corner_support_e", ""),
+            "corner_support_n": found.get("corner_support_n", ""),
+            "corner_shift_km_e": found.get("corner_shift_applied_km", {}).get("e", ""),
+            "corner_shift_km_n": found.get("corner_shift_applied_km", {}).get("n", ""),
+            "neatline_error_m_e": found.get("neatline_error_m_e", ""),
+            "neatline_error_m_n": found.get("neatline_error_m_n", ""),
+            "anchor_basis_e": found.get("anchor_basis_e", ""),
+            "anchor_basis_n": found.get("anchor_basis_n", ""),
+            "neighbour_corner_m": found.get("neighbour_corner_m", ""),
+            "neighbour_corner_sheet": found.get("neighbour_corner_sheet", ""),
+            "corner_shift_refused_e": found.get("corner_shift_refused_e", ""),
+            "corner_shift_refused_n": found.get("corner_shift_refused_n", ""),
             "residual_rms_m": found.get("residual_rms_m", ""),
             "residual_max_m": found.get("residual_max_m", ""),
             "anchor_confident": int(anchor_is_confident(found))
