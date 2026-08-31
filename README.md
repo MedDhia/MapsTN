@@ -33,7 +33,8 @@ a relevance score.
 | **Dataset construction plan** | [`docs/DATASET-PLAN.md`](docs/DATASET-PLAN.md) |
 | **Detected grid, per sheet (CSV)** | [`data/sheet_grid.csv`](data/sheet_grid.csv) |
 | **Marginalia, per sheet (CSV)** | [`data/sheet_margins.csv`](data/sheet_margins.csv) |
-| **Legend vocabulary** | [`config/legend_vocabulary.json`](config/legend_vocabulary.json) |
+| **Legend, transcribed in full** | [`config/legend_vocabulary.json`](config/legend_vocabulary.json) |
+| **Legend edition, per sheet (CSV)** | [`data/sheet_legends.csv`](data/sheet_legends.csv) |
 | **Scan locations** | [`data/sheet_images.json`](data/sheet_images.json) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
@@ -464,13 +465,32 @@ fieldwork** (max 46), and **41 of 65 legible sheets record fieldwork from the
 catalogued 1933 and was surveyed in 1900–07. See
 [`data/sheet_margins.csv`](data/sheet_margins.csv).
 
+**The legend is transcribed in full** — 45 rows in each of two editions, in the
+nine printed blocks, each row with its label as printed and its symbol
+described: [`config/legend_vocabulary.json`](config/legend_vocabulary.json).
+Read by eye at full resolution, because OCR returns *"Chemin d'erploitation et
+sentier mulclier"* for *"Chemin d'exploitation et sentier muletier"*.
+
+**There are three legend regimes.** 78 sheets carry the 1936 functional edition
+(catalogue years 1922–1940), 9 the 1902 administrative edition, and **4 print no
+symbol legend at all** — only an imprint, a scale bar and the contour interval,
+relying on the series convention. `scripts/read_sheet_legends.py` assigns each
+sheet by fuzzy-matching the road ladder; see
+[`data/sheet_legends.csv`](data/sheet_legends.csv).
+
+**The two full editions differ in exactly two rows**: the maintained road ladder
+has four rungs in 1902 (*nationale*, *départementale*, *de grande
+communication*, *vicinal ou autre*) and three in 1936 (*de grand parcours*, *de
+moyenne communication*, *vicinal*); and the shrine row reads *marabout* early,
+*koubba* late. Everything else is word-for-word identical.
+
 **The content is richer than the legend admits.** Cemeteries are typed by
-confession (*chrétien*, *musulman*, *israélite*); land is divided into dashed
-parcels named by holding lineage (*Dj.ane Kouidene Oulad Nedjem*, *Henchir ech
-Cherfi*); tribal territory is named in spaced capitals (*BLED EL ARSAMA*), and
-*Bled* against *Melk* is the *arch*/*melk* tenure distinction. Olive trees and
-rural houses are drawn one by one, so density is countable. Full taxonomy in
-[`config/legend_vocabulary.json`](config/legend_vocabulary.json).
+confession (*chrétien*, *musulman*, *israélite*) — that much the legend does
+say. What it does not: land is divided into dashed parcels named by holding
+lineage (*Dj.ane Kouidene Oulad Nedjem*, *Henchir ech Cherfi*); tribal territory
+is named in spaced capitals (*BLED EL ARSAMA*), and *Bled* against *Melk* is the
+*arch*/*melk* tenure distinction; olive trees and rural houses are drawn one by
+one, so density is countable.
 
 ## Data dictionary
 
@@ -521,10 +541,11 @@ binary with French data, plus the scans on disk (0.71 GB; the URLs are in
 ```bash
 python3 scripts/detect_sheet_grid.py --images <dir of record_id.jpg>
 python3 scripts/read_sheet_margins.py --images <dir of record_id.jpg>
+python3 scripts/read_sheet_legends.py --images <dir of record_id.jpg>
 python3 scripts/coordinate_precision.py      # uses the measured grid spacing
 ```
 
-Both image scripts cache their per-sheet measurements and take `--recompute`,
+All three image scripts cache their per-sheet measurements and take `--recompute`,
 which re-applies the current rules to the cache without re-reading the scans —
 worth knowing, because a full pass is about an hour.
 

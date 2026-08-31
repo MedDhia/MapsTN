@@ -1,29 +1,262 @@
 {
   "_about": {
-    "purpose": "The controlled vocabulary for a content dataset built from the Tunisia 1:50 000 series. It is not invented here: it is the legend the sheets themselves print, transcribed from the Tunis sheet (1902 revision, Service geographique de l'Armee) and the Kasserine sheet (1936 revision, Institut geographique national print of February 1941). Those two bracket the series in date and in publisher.",
-    "why_two_editions": "The legend drifts. Roads are classified administratively in 1902 (nationale, departementale, de grande communication) and functionally in 1936 (de grand parcours, de moyenne communication, vicinal); the shrine class is labelled 'marabout' in 1902 and 'koubba' in 1936. Coding a variable across the series without recording which legend a sheet uses will silently mix two schemes, so every class below carries the wording of each edition.",
-    "extraction_difficulty": "How hard the class is to get off the scan automatically. 'easy' = a distinctive colour or a repeated glyph. 'medium' = a glyph that collides with others, or needs the label to disambiguate. 'hard' = needs toponym OCR of engraved script, or a judgement the map does not make explicitly.",
-    "sources": [
-      "oai:u-bordeaux-montaigne.fr:340396 (Tunis, 1902)",
-      "oai:u-bordeaux-montaigne.fr:340532 (Kasserine, 1936; IGN print 1941)",
-      "oai:u-bordeaux-montaigne.fr:340629 (Environs de Medenine, revised 1933)",
-      "oai:u-bordeaux-montaigne.fr:340534 (Toujane / Mareth coupure speciale, 1941)"
-    ]
+    "purpose": "The complete legend of the Tunisia 1:50 000 series, transcribed row by row from the sheets, plus the analytic classes a dataset would be coded into. Two editions are printed in the series and a third group of sheets prints no legend at all.",
+    "method": "Read by eye at full scan resolution, in overlapping panels across the whole legend band. OCR was tried and is not adequate: Tesseract returns 'Chemin d'erploitation et sentier mulclier' for 'Chemin d'exploitation et sentier muletier'. OCR is used only to decide which edition a sheet carries - see scripts/read_sheet_legends.py.",
+    "exemplars": {
+      "1902_administrative": "oai:u-bordeaux-montaigne.fr:340396 - Tunisie Flle. N° XX-B2-C36, Tunis, 1902 revision, Service geographique de l'Armee",
+      "1936_functional": "oai:u-bordeaux-montaigne.fr:340532 - Tunisie Flle. N° LXXXIV-B11-C33, Kasserine, 1936 revision, Institut geographique national print of February 1941",
+      "no_symbol_legend": [
+        "oai:u-bordeaux-montaigne.fr:340534 - Toujane / Mareth, coupure speciale, IGN 1941",
+        "oai:u-bordeaux-montaigne.fr:340629 - Environs de Medenine, SGA, revised 1933"
+      ]
+    },
+    "correction_note": "An earlier version of this file, written from lower-resolution crops, recorded three differences between the editions that do not exist. Both editions name Oliviers and Palmiers in the Bois inset; both write the boundary row as 'de commune de plein exercice'; both write 'Ravine sans eau en ete'. Reading the legends at full resolution leaves only two real differences, listed under edition_differences."
   },
 
+  "editions": {
+    "1902_administrative": {
+      "blocks": [
+        {
+          "heading": "Voies carrossables et bien entretenues",
+          "note": "A brace groups the four maintained classes. This is an administrative ladder: the class names are legal road categories, not descriptions of the surface.",
+          "rows": [
+            {"label": "Route nationale", "symbol": "double red line, heaviest"},
+            {"label": "Route departementale", "symbol": "double red line"},
+            {"label": "Chemin de grande communication et d'interet commun", "symbol": "double red line, lighter"},
+            {"label": "Chemin vicinal ou autre chemin carrossable", "symbol": "single red line"}
+          ]
+        },
+        {
+          "heading": "(unheaded, below the brace)",
+          "rows": [
+            {"label": "Chemin carrossable irregulierement entretenu", "symbol": "double black line"},
+            {"label": "Chemin d'exploitation et sentier muletier", "symbol": "single wavy black line"},
+            {"label": "Autres sentiers", "symbol": "black dashed line"},
+            {"label": "Vestiges de voies romaines", "symbol": "double dashed black line"}
+          ]
+        },
+        {
+          "heading": "Chemins de fer",
+          "rows": [
+            {"label": "A voie normale", "symbol": "heavy black line; the specimen labels St(on) with a spot height, Tunnel, Deblai, Remblai and Viaduc en fer, so cuttings, embankments, tunnels, iron viaducts and stations are each drawn"},
+            {"label": "A voie etroite et Tramway a vapeur", "symbol": "black line with cross-ticks"},
+            {"label": "sur route", "symbol": "red line beneath the track symbol"},
+            {"label": "Passages: en dessus / a niveau / en dessous", "symbol": "three crossing glyphs in red and black"}
+          ]
+        },
+        {
+          "heading": "Passages de riviere",
+          "rows": [
+            {"label": "Pont en pierre", "symbol": "red bar across a blue channel"},
+            {"label": "Pont suspendu avec piles", "symbol": "red bar with pier ticks"},
+            {"label": "Passerelle", "symbol": "thin red bar"},
+            {"label": "Bac", "symbol": "small boat glyph in the channel"},
+            {"label": "Gue praticable aux voitures", "symbol": "broken red bar"},
+            {"label": "Gue pietons", "symbol": "dotted red bar"}
+          ]
+        },
+        {
+          "heading": "Echelle",
+          "rows": [
+            {"label": "L'echelle est figuree en Kilometres sur les 4 cotes du cadre interieur", "symbol": "a statement, not a symbol - it guarantees a kilometre graduation on every side of the neatline of every sheet of this edition"},
+            {"label": "Echelle (1/50.000)", "symbol": "bar scale, 1000 m subdivided to the left of zero, then 0 to 6000 metres"}
+          ]
+        },
+        {
+          "heading": "(vegetation and terrain)",
+          "rows": [
+            {"label": "Bois", "symbol": "inset panel showing four distinct textures, labelled Bois, Broussailles, Oliviers, Palmiers"},
+            {"label": "Marais", "symbol": "blue tuft texture"},
+            {"label": "Dunes et Sables", "symbol": "blue stipple and brown stipple, two halves of one box"},
+            {"label": "Vignes", "symbol": "pink cross-hatch box on this sheet"},
+            {"label": "Ravine sans eau en ete", "symbol": "blue dashed line with arrowhead"}
+          ]
+        },
+        {
+          "heading": "(boundaries and point detail)",
+          "rows": [
+            {"label": "Limite d'Etat", "symbol": "+ + + + + +"},
+            {"label": "Limite de departement", "symbol": "- + - + - + -"},
+            {"label": "Limite d'arrondissement", "symbol": "- .. - .. - ..."},
+            {"label": "Limite de commune de plein exercice", "symbol": "fine dotted line"},
+            {"label": "Eglise, chapelle et marabout", "symbol": "three red glyphs: open circle, bulb-on-stem, bulb-on-stem with cross-bar"},
+            {"label": "Maisons", "symbol": "small solid red marks"},
+            {"label": "Puits et fontaine", "symbol": "blue open circle; blue hooked glyph"},
+            {"label": "Moulins a vent et a eau", "symbol": "two red mill glyphs"}
+          ]
+        },
+        {
+          "heading": "(coast, works, and survey)",
+          "rows": [
+            {"label": "Phare a feu fixe (portee en milles marins)", "symbol": "red target glyph with a numeral giving the range"},
+            {"label": "Phare a eclipses", "symbol": "red target glyph, second form, with numeral"},
+            {"label": "Feux de port", "symbol": "small red dot with ray and numeral"},
+            {"label": "Redoute, batterie", "symbol": "three small black plan glyphs"},
+            {"label": "Cimetieres: chretien / musulman / israelite", "symbol": "three distinct red glyph clusters - crosses, stelae, bracketed forms"},
+            {"label": "Canaux d'irrigation", "symbol": "blue channel glyph"},
+            {"label": "Point trigonometrique", "symbol": "triangle with a spot height, shown as 375"},
+            {"label": "Clocher, Marabout: points trigonometriques", "symbol": "red dot in a circle; red bulb-on-stem - the same shrine glyph, now doubling as a survey station"}
+          ]
+        },
+        {
+          "heading": "(communications and the typographic note)",
+          "rows": [
+            {"label": "Telegraphe", "symbol": "oval containing T"},
+            {"label": "Poste", "symbol": "oval containing P"},
+            {"label": "Telegraphe et poste", "symbol": "oval containing T.P."},
+            {"label": "Nota: Les ecritures droites designent les Villes, Bourgs, Villages, Hameaux, Fermes ou Usines et en general tous les lieux habites. Les ecritures penchees se rapportent aux Forets, Bois, Rivieres, Cols et Lieux-dits divers.", "symbol": "a typographic rule, not a symbol"}
+          ]
+        }
+      ]
+    },
+
+    "1936_functional": {
+      "blocks": [
+        {
+          "heading": "Voies carrossables et bien entretenues",
+          "note": "Three classes, not four, and named by traffic function rather than by legal category.",
+          "rows": [
+            {"label": "Route de grand parcours", "symbol": "double red line, heaviest"},
+            {"label": "Route de moyenne communication", "symbol": "double red line"},
+            {"label": "Chemin vicinal", "symbol": "double red line, lighter"}
+          ]
+        },
+        {
+          "heading": "(unheaded, below the brace)",
+          "rows": [
+            {"label": "Chemin carrossable irregulierement entretenu", "symbol": "double black line"},
+            {"label": "Chemin d'exploitation et sentier muletier", "symbol": "single wavy black line"},
+            {"label": "Autres sentiers", "symbol": "black dashed line"},
+            {"label": "Vestiges de voies romaines", "symbol": "double dashed black line"}
+          ]
+        },
+        {
+          "heading": "Chemins de fer",
+          "rows": [
+            {"label": "A voie normale", "symbol": "as 1902, with the same St(on) / Tunnel / Deblai / Remblai / Viaduc en fer specimen"},
+            {"label": "A voie etroite et Tramway a vapeur", "symbol": "black line with cross-ticks"},
+            {"label": "sur route", "symbol": "red line beneath the track symbol"},
+            {"label": "Passages: en dessus / a niveau / en dessous", "symbol": "three crossing glyphs in red and black"}
+          ]
+        },
+        {
+          "heading": "Passages de riviere",
+          "rows": [
+            {"label": "Pont en pierre", "symbol": "red bar across a blue channel"},
+            {"label": "Pont suspendu avec piles", "symbol": "red bar with pier ticks"},
+            {"label": "Passerelle", "symbol": "thin red bar"},
+            {"label": "Bac", "symbol": "small boat glyph in the channel"},
+            {"label": "Gue praticable aux voitures", "symbol": "broken red bar"},
+            {"label": "Gue pietons", "symbol": "dotted red bar"}
+          ]
+        },
+        {
+          "heading": "Echelle",
+          "rows": [
+            {"label": "L'echelle est figuree en Kilometres sur les 4 cotes du cadre interieur", "symbol": "statement"},
+            {"label": "Echelle (1/50.000)", "symbol": "bar scale, 0 to 6000 metres"},
+            {"label": "L'equidistance des courbes est de 10 metres", "symbol": "statement; printed in the legend band on this edition, and read per sheet by scripts/read_sheet_margins.py"}
+          ]
+        },
+        {
+          "heading": "(vegetation and terrain)",
+          "rows": [
+            {"label": "Bois", "symbol": "inset panel, four textures labelled Bois, Broussailles, Oliviers, Palmiers"},
+            {"label": "Marais", "symbol": "blue tuft texture"},
+            {"label": "Dunes et Sables", "symbol": "blue stipple and brown stipple"},
+            {"label": "Vignes", "symbol": "plain unfilled box on this sheet"},
+            {"label": "Ravine sans eau en ete", "symbol": "blue dashed line with arrowhead"}
+          ]
+        },
+        {
+          "heading": "(boundaries and point detail)",
+          "rows": [
+            {"label": "Limite d'Etat", "symbol": "+ + + + + +"},
+            {"label": "Limite de departement", "symbol": "- . - . - ."},
+            {"label": "Limite d'arrondissement", "symbol": "- .. - .. - ..."},
+            {"label": "Limite de commune de plein exercice", "symbol": "fine dotted line"},
+            {"label": "Eglise, chapelle, koubba", "symbol": "three red glyphs, as 1902"},
+            {"label": "Maisons", "symbol": "small solid red marks"},
+            {"label": "Puits et fontaine", "symbol": "blue open circle; blue hooked glyph"},
+            {"label": "Moulins a vent et a eau", "symbol": "two red mill glyphs"}
+          ]
+        },
+        {
+          "heading": "(coast, works, and survey)",
+          "rows": [
+            {"label": "Phare a feu fixe (portee en milles marins)", "symbol": "red target glyph with range numeral"},
+            {"label": "Phare a eclipses", "symbol": "red target glyph, second form, with numeral"},
+            {"label": "Feux de port", "symbol": "small red dot with ray and numeral"},
+            {"label": "Redoute, batterie", "symbol": "three small black plan glyphs"},
+            {"label": "Cimetieres: chretien / musulman / israelite", "symbol": "three distinct red glyph clusters"},
+            {"label": "Canaux d'irrigation", "symbol": "blue channel glyph"},
+            {"label": "Point trigonometrique", "symbol": "triangle with spot height, shown as 375"},
+            {"label": "Clocher, Marabout: points trigonometriques", "symbol": "red dot in a circle; red bulb-on-stem"}
+          ]
+        },
+        {
+          "heading": "(communications and the typographic note)",
+          "rows": [
+            {"label": "Telegraphe", "symbol": "oval containing T"},
+            {"label": "Poste", "symbol": "oval containing P"},
+            {"label": "Telegraphe et poste", "symbol": "oval containing T.P."},
+            {"label": "Nota: Les ecritures droites designent les Villes, Bourgs, Villages, Hameaux, Fermes ou Usines et en general tous les lieux habites. Les ecritures penchees se rapportent aux Forets, Bois, Rivieres, Cols et Lieux-dits divers.", "symbol": "typographic rule, wording identical to 1902"}
+          ]
+        }
+      ]
+    },
+
+    "no_symbol_legend": {
+      "note": "The coupures speciales and some southern sheets print no symbol legend. The margin carries only the imprint line, the scale statement and bar, the contour interval, the print run and the price. Symbols on these sheets follow the series convention and must be read from an edition that publishes it.",
+      "blocks": [
+        {
+          "heading": "(margin only)",
+          "rows": [
+            {"label": "Dresse, dessine par le Service Geographique de l'Armee en <year>. Publie par l'Institut Geographique National en <year>.", "symbol": "imprint line"},
+            {"label": "L'echelle est figuree en Kilometres sur les 4 cotes du cadre interieur", "symbol": "statement"},
+            {"label": "Echelle (1/50.000)", "symbol": "bar scale; the Medenine sheet runs to 7000 m rather than the usual 6000"},
+            {"label": "L'equidistance des courbes est de 10 metres", "symbol": "statement"},
+            {"label": "Tirage de <month> <year>", "symbol": "print run"},
+            {"label": "Reproduction interdite / Prix : N fr.", "symbol": "notices"}
+          ]
+        }
+      ]
+    }
+  },
+
+  "edition_differences": [
+    {
+      "what": "the road ladder",
+      "1902": "four maintained classes, named administratively: Route nationale; Route departementale; Chemin de grande communication et d'interet commun; Chemin vicinal ou autre chemin carrossable",
+      "1936": "three maintained classes, named functionally: Route de grand parcours; Route de moyenne communication; Chemin vicinal",
+      "consequence": "The two ladders are not the same scale with different labels; one has four rungs and the other three. Pooling them without a crosswalk mixes a legal classification with a traffic one. The four unmaintained classes below the brace are identical in both."
+    },
+    {
+      "what": "the shrine row",
+      "1902": "Eglise, chapelle et marabout",
+      "1936": "Eglise, chapelle, koubba",
+      "consequence": "Same three glyphs, different word for the third. Note that 'Marabout' also appears in both editions in 'Clocher, Marabout: points trigonometriques', so the word alone does not identify an edition."
+    },
+    {
+      "what": "the contour interval",
+      "1902": "not stated in the legend band on the Tunis sheet",
+      "1936": "L'equidistance des courbes est de 10 metres, printed above the vegetation block",
+      "consequence": "Contour interval is recoverable by script only on the later edition."
+    }
+  ],
+
   "typographic_rule": {
+    "printed_on": ["1902_administrative", "1936_functional"],
     "note_on_sheet": "Les ecritures droites designent les Villes, Bourgs, Villages, Hameaux, Fermes ou Usines et en general tous les lieux habites. Les ecritures penchees se rapportent aux Forets, Bois, Rivieres, Cols et Lieux-dits divers.",
-    "meaning": "Upright type is an inhabited place; sloped type is physical geography or a locality name. The map encodes the settlement/non-settlement distinction in the typeface itself, which is a usable feature for OCR-based extraction and a check on any classifier built from glyphs alone.",
-    "printed_on": ["1902", "1936"]
+    "meaning": "Upright type is an inhabited place; sloped type is physical geography or a locality name. The map encodes the settlement/non-settlement distinction in the typeface itself - usable as a feature for OCR-based extraction, and a check on any classifier built from glyphs alone."
   },
 
   "classes": [
     {
       "key": "shrine_koubba",
-      "label_1902": "Eglise, chapelle et marabout",
-      "label_1936": "Eglise, chapelle, koubba",
+      "legend_row": {"1902": "Eglise, chapelle et marabout", "1936": "Eglise, chapelle, koubba"},
       "geometry": "point",
-      "symbol": "small circle (church) and a red bulb-on-stem glyph (koubba/marabout)",
+      "symbol": "small red circle (church) and a red bulb-on-stem glyph (koubba / marabout)",
       "toponym_prefixes": ["Sdi", "Sidi", "Mvet", "Kba", "Za", "Lalla"],
       "extraction_difficulty": "easy",
       "osm_equivalent": "historic=wayside_shrine, place_of_worship",
@@ -31,147 +264,85 @@
     },
     {
       "key": "cemetery_confessional",
-      "label_1902": "Cimetieres: chretien, musulman, israelite",
-      "label_1936": "Cimetieres: chretien, musulman, israelite",
+      "legend_row": {"1902": "Cimetieres: chretien, musulman, israelite", "1936": "identical"},
       "geometry": "point_or_area",
       "symbol": "three distinct glyphs, one per confession",
       "extraction_difficulty": "medium",
       "osm_equivalent": "landuse=cemetery (religion tag rarely present)",
-      "research_note": "The sheets type cemeteries by confession. This is a direct, mapped, pre-independence indicator of the confessional composition of a locality, and it has no counterpart in OSM or in any contemporary Tunisian dataset."
+      "research_note": "The sheets type cemeteries by confession, in both editions. A mapped, pre-independence indicator of the confessional composition of a locality, with no counterpart in OSM or in any contemporary Tunisian dataset."
     },
     {
       "key": "well",
-      "label_1902": "Puits et fontaine",
-      "label_1936": "Puits et fontaine",
+      "legend_row": {"1902": "Puits et fontaine", "1936": "identical"},
       "geometry": "point",
-      "symbol": "small blue circle (well); hooked glyph (fountain)",
+      "symbol": "small blue open circle (well); hooked blue glyph (fountain)",
       "toponym_prefixes": ["Bir", "Biar", "Ae", "Ain", "Hassi"],
       "extraction_difficulty": "easy",
       "osm_equivalent": "man_made=water_well",
-      "research_note": "Denser in the steppe and the south than any modern layer. Water access is the binding constraint on settlement in the interior, so this is the natural covariate for pre-colonial settlement viability."
+      "research_note": "Denser in the steppe and the south than any modern layer. Water access is the binding constraint on settlement in the interior."
     },
     {
       "key": "irrigation_canal",
-      "label_1902": "Canaux d'irrigation",
-      "label_1936": "Canaux d'irrigation",
+      "legend_row": {"1902": "Canaux d'irrigation", "1936": "identical"},
       "geometry": "line",
       "extraction_difficulty": "medium",
       "osm_equivalent": "waterway=ditch/canal",
-      "research_note": "Where irrigation exists it marks capital investment in the land, which is exactly the north/interior gradient of interest."
+      "research_note": "Where irrigation exists it marks capital investment in the land, which is the north/interior gradient of interest."
     },
     {
       "key": "military_work",
-      "label_1902": "Redoute, batterie",
-      "label_1936": "Redoute, batterie",
+      "legend_row": {"1902": "Redoute, batterie", "1936": "identical"},
       "geometry": "point",
       "symbol": "three small plan glyphs",
       "toponym_prefixes": ["Bordj", "Kat", "Ksar", "Fort", "Poste optique"],
       "extraction_difficulty": "medium",
       "osm_equivalent": "military=bunker / historic=fort",
-      "research_note": "Colonial coercive infrastructure, mappable against the civil settlement pattern. 'Poste optique' (optical telegraph) marks the signalling chain across the interior."
+      "research_note": "Colonial coercive infrastructure, mappable against the civil settlement pattern. 'Poste optique' marks the optical-telegraph signalling chain across the interior, and is drawn on the map without appearing in the legend."
     },
     {
       "key": "administrative_boundary",
-      "label_1902": "Limite d'Etat, de departement, d'arrondissement, de commune ou de circonscription",
-      "label_1936": "Limite d'Etat, de departement, d'arrondissement, de commune de plein exercice",
+      "legend_row": {"1902": "Limite d'Etat / de departement / d'arrondissement / de commune de plein exercice", "1936": "identical"},
       "geometry": "line",
       "extraction_difficulty": "medium",
       "osm_equivalent": "boundary=administrative (contemporary units only)",
-      "research_note": "'Commune de plein exercice' is a status, not just a unit: it distinguishes the settler-administered communes from territory under other regimes. The Territoires du Sud boundary appears on the smaller-scale sheets in this corpus."
-    },
-    {
-      "key": "tribal_territory",
-      "label_1902": "(not in the legend)",
-      "label_1936": "(not in the legend)",
-      "geometry": "label_area",
-      "symbol": "spaced capitals across open country; often prefixed 'Bled' or 'Melk'",
-      "extraction_difficulty": "hard",
-      "examples": ["BLED EL ARSAMA", "BLED ABIDA", "ECH CHERF", "EN NEZILA", "ET TEMARA", "Melk Oulad Kralfa"],
-      "research_note": "The single most valuable class here and the one the legend does not admit to. 'Bled X' names collective tribal land and 'Melk X' names private title; the two are the arch/melk tenure distinction that structures rural inequality in Tunisia. It is printed as ordinary toponymy, so it can only be recovered by OCR plus a gazetteer, and it is absent from OSM entirely."
-    },
-    {
-      "key": "land_parcel",
-      "label_1902": "(not in the legend)",
-      "label_1936": "(not in the legend)",
-      "geometry": "polygon",
-      "symbol": "fine black dashed outline enclosing a named block of ground",
-      "toponym_prefixes": ["Djane", "Djenane", "Henchir", "Hr", "Melk", "Bled", "Oulad", "Ouled"],
-      "extraction_difficulty": "medium",
-      "examples": ["Dj.ane Kouidene Oulad Nedjem", "Oulad Youssef", "Oulad Trab", "Henchir ech Cherfi", "Henchir el Kernai"],
-      "osm_equivalent": "none",
-      "research_note": "On the Sfax hinterland sheet the ground is divided into dashed-outline parcels, each labelled with a holding type and the lineage that holds it - a djenane (irrigated garden estate) or a henchir (large estate), followed by 'Oulad X'. This is cadastral information printed on a topographic map, and it is the closest thing to a mapped land-tenure layer for the period. It is also the reason the boundary is worth extracting as geometry rather than as a label: parcel area is a distributional variable. Density varies sharply by region - dense around Sfax, absent on the steppe sheets - and that variation is itself a finding rather than a data defect."
-    },
-    {
-      "key": "olive_grove_density",
-      "label_1902": "(shown as Bois texture)",
-      "label_1936": "Oliviers (a named texture in the Bois inset)",
-      "geometry": "area_or_point_cloud",
-      "symbol": "individual green hooked glyphs, one per tree or per small group; distinct from the plain green stipple used for scrub",
-      "extraction_difficulty": "medium",
-      "osm_equivalent": "landuse=orchard (extent only, no density)",
-      "research_note": "The Sahel sheets draw olive trees individually rather than filling a polygon, so both the extent and the planting density of the groves are recoverable. Olive density is a direct measure of agricultural capital in the Sahel, and it is the variable that distinguishes the Sahel's smallholder tree economy from the steppe. Counting glyphs is a template-matching problem on a near-uniform mark, which is the easiest kind of symbol extraction on these sheets."
-    },
-    {
-      "key": "building_footprint",
-      "label_1902": "Maisons",
-      "label_1936": "Maisons",
-      "geometry": "point_or_small_polygon",
-      "symbol": "individual solid red rectangles",
-      "extraction_difficulty": "easy",
-      "osm_equivalent": "building=*",
-      "research_note": "Outside the built-up areas, houses are drawn one by one in red. Counting them gives a settlement-density measure at a far finer grain than any place-name layer, and it separates dispersed rural settlement from nucleated villages without needing to classify either."
-    },
-    {
-      "key": "settlement",
-      "label_1902": "(typographic: upright type)",
-      "label_1936": "Maisons; and the typographic note",
-      "geometry": "point_or_area",
-      "symbol": "red hatching for built-up area; a small glyph for isolated houses",
-      "toponym_prefixes": ["Douar", "Henchir", "Hr", "Dar", "Ksar", "Guerar", "Village Francais", "Ferme Ecole"],
-      "extraction_difficulty": "medium",
-      "osm_equivalent": "place=*, building=*",
-      "research_note": "The settler/indigenous distinction is drawn, not inferred: 'Village Francais' and 'Ferme Ecole' are labelled separately from the adjacent indigenous centre. 'Douar' and 'Henchir' are the rural units; a henchir is a ruined or held estate and often doubles as a land-tenure label."
+      "research_note": "A four-level hierarchy, identically worded in both editions. 'Commune de plein exercice' is a status rather than just a unit: it names the settler-administered communes as against territory under other regimes."
     },
     {
       "key": "roads",
-      "label_1902": "Route nationale; Route departementale; Chemin de grande communication et d'interet commun; Chemin vicinal ou autre chemin carrossable; Chemin carrossable irregulierement entretenu; Chemin d'exploitation et sentier muletier; Autres sentiers",
-      "label_1936": "Route de grand parcours; Route de moyenne communication; Chemin vicinal; Chemin carrossable irregulierement entretenu; Chemin d'exploitation et sentier muletier; Autres sentiers",
+      "legend_row": {"1902": "four maintained classes plus four unmaintained", "1936": "three maintained classes plus the same four unmaintained"},
       "geometry": "line",
       "extraction_difficulty": "easy",
       "osm_equivalent": "highway=*",
-      "research_note": "Ranked by construction and upkeep, so the class is a direct measure of state investment per kilometre. The 1902 and 1936 schemes are not the same ladder and must not be pooled without a crosswalk."
+      "research_note": "Ranked by construction and upkeep, so the class is a direct measure of state investment per kilometre. See edition_differences: the maintained ladder is not the same in the two editions and must not be pooled without a crosswalk."
     },
     {
       "key": "roman_remains",
-      "label_1902": "Vestiges de voies romaines (lines); R.R. (points)",
-      "label_1936": "Vestiges de voies romaines; R.R.",
+      "legend_row": {"1902": "Vestiges de voies romaines", "1936": "identical"},
       "geometry": "point_and_line",
+      "symbol": "double dashed black line for roads; R.R. lettering for sites, which the legend does not define",
       "extraction_difficulty": "easy",
       "osm_equivalent": "historic=archaeological_site (sparse)",
       "research_note": "Marked exhaustively because the survey officers were looking for them. Useful as a proxy for antique settlement density and, with the henchirs, for long-run persistence questions."
     },
     {
       "key": "railway",
-      "label_1902": "Chemins de fer: a voie normale; a voie etroite; Tramway a vapeur sur route",
-      "label_1936": "same",
+      "legend_row": {"1902": "Chemins de fer: a voie normale; a voie etroite et Tramway a vapeur; sur route; Passages en dessus / a niveau / en dessous", "1936": "identical"},
       "geometry": "line",
       "extraction_difficulty": "easy",
       "osm_equivalent": "railway=rail/narrow_gauge",
-      "research_note": "Gauge is distinguished, and narrow gauge in Tunisia is largely the phosphate and ore network - an extraction geography rather than a passenger one."
+      "research_note": "Gauge is distinguished, and narrow gauge in Tunisia is largely the phosphate and ore network - an extraction geography rather than a passenger one. The specimen also names cuttings, embankments, tunnels, iron viaducts and stations, so the engineering works are individually drawn and countable as construction effort."
     },
     {
       "key": "vegetation_landuse",
-      "label_1902": "Bois; Marais; Dunes et Sables; Vignes",
-      "label_1936": "Bois (with Broussailles, Oliviers, Palmiers as distinct textures); Marais; Dunes et Sables; Vignes",
+      "legend_row": {"1902": "Bois (with Broussailles, Oliviers, Palmiers as named textures); Marais; Dunes et Sables; Vignes", "1936": "identical"},
       "geometry": "area",
       "extraction_difficulty": "medium",
       "osm_equivalent": "landuse=forest/vineyard/orchard, natural=scrub/wetland",
-      "research_note": "Olives, palms, scrub and woodland are separately textured, and vineyards have their own class. Vineyards are close to a settler-agriculture indicator in this period; olives and palms are the indigenous tree economies of the Sahel and the Djerid."
+      "research_note": "Olives, palms, scrub and woodland are separately textured in both editions, and vineyards have their own class. Vineyards approximate settler agriculture in this period; olives and palms are the indigenous tree economies of the Sahel and the Djerid."
     },
     {
       "key": "mills",
-      "label_1902": "Moulins a vent et a eau",
-      "label_1936": "Moulins a vent et a eau",
+      "legend_row": {"1902": "Moulins a vent et a eau", "1936": "identical"},
       "geometry": "point",
       "extraction_difficulty": "easy",
       "osm_equivalent": "man_made=windmill/watermill",
@@ -179,18 +350,16 @@
     },
     {
       "key": "post_telegraph",
-      "label_1902": "Telegraphe (T); Poste (P); Telegraphe et poste (T.P.)",
-      "label_1936": "same",
+      "legend_row": {"1902": "Telegraphe (T); Poste (P); Telegraphe et poste (T.P.)", "1936": "identical"},
       "geometry": "point",
       "symbol": "lettered oval",
       "extraction_difficulty": "easy",
       "osm_equivalent": "amenity=post_office",
-      "research_note": "The clearest single marker of administrative presence in a locality, and it is a three-level ordinal rather than a binary."
+      "research_note": "The clearest single marker of administrative presence in a locality, and a three-level ordinal rather than a binary."
     },
     {
       "key": "lighthouse_port",
-      "label_1902": "Phare a feu fixe (portee en milles marins); Phare a eclipses; Feux de port",
-      "label_1936": "same",
+      "legend_row": {"1902": "Phare a feu fixe (portee en milles marins); Phare a eclipses; Feux de port", "1936": "identical"},
       "geometry": "point",
       "extraction_difficulty": "easy",
       "osm_equivalent": "man_made=lighthouse",
@@ -198,8 +367,7 @@
     },
     {
       "key": "trig_point",
-      "label_1902": "Point trigonometrique; Clocher, Marabout: points trigonometriques",
-      "label_1936": "same",
+      "legend_row": {"1902": "Point trigonometrique; Clocher, Marabout: points trigonometriques", "1936": "identical"},
       "geometry": "point",
       "symbol": "triangle with a spot height",
       "extraction_difficulty": "easy",
@@ -207,30 +375,72 @@
       "research_note": "Doubles as georeferencing control: these are the surveyed points the sheet was built on, and their heights are printed."
     },
     {
-      "key": "spot_height",
-      "label_1902": "(bare numbers in metres)",
-      "label_1936": "(bare numbers in metres)",
-      "geometry": "point",
-      "extraction_difficulty": "medium",
-      "research_note": "Numeric OCR against a known contour interval, so misreads are checkable against the surrounding contours."
-    },
-    {
-      "key": "contours",
-      "label_1902": "(interval stated in the margin)",
-      "label_1936": "L'equidistance des courbes est de N metres",
-      "geometry": "line",
-      "extraction_difficulty": "medium",
-      "research_note": "The interval is printed per sheet and is read by scripts/read_sheet_margins.py; 10 m on the southern sheets inspected."
-    },
-    {
       "key": "hydrology",
-      "label_1902": "Passages de riviere: Pont en pierre, Pont suspendu avec piles, Passerelle, Bac, Gue (praticable aux voitures / pietons); Ravin sans eau",
-      "label_1936": "same; Ravine sans eau en ete",
+      "legend_row": {"1902": "Passages de riviere: Pont en pierre, Pont suspendu avec piles, Passerelle, Bac, Gue (praticable aux voitures / pietons); Ravine sans eau en ete", "1936": "identical"},
       "geometry": "line_and_point",
       "toponym_prefixes": ["Oued", "O.", "Sebkra", "Chott", "Garaet"],
       "extraction_difficulty": "medium",
       "osm_equivalent": "waterway=*, ford=yes, bridge=yes",
       "research_note": "Crossing type is ranked by cost, from a stone bridge to a pedestrian ford, so river crossings are themselves an infrastructure-investment measure."
+    },
+    {
+      "key": "building_footprint",
+      "legend_row": {"1902": "Maisons", "1936": "identical"},
+      "geometry": "point_or_small_polygon",
+      "symbol": "individual solid red marks",
+      "extraction_difficulty": "easy",
+      "osm_equivalent": "building=*",
+      "research_note": "Outside the built-up areas, houses are drawn one by one in red. Counting them gives a settlement-density measure at a far finer grain than any place-name layer, and separates dispersed rural settlement from nucleated villages without classifying either."
+    },
+    {
+      "key": "contours",
+      "legend_row": {"1902": "(not stated in the legend band)", "1936": "L'equidistance des courbes est de 10 metres"},
+      "geometry": "line",
+      "extraction_difficulty": "medium",
+      "research_note": "The interval is printed per sheet on the later edition and is read by scripts/read_sheet_margins.py; 10 m wherever it has been read."
+    },
+
+    {
+      "_not_in_legend": "The classes below are drawn on the sheets and named in the map body, but the legend does not admit they exist. They are the most valuable and the least discoverable.",
+
+      "key": "land_parcel",
+      "legend_row": {"1902": "(not in the legend)", "1936": "(not in the legend)"},
+      "geometry": "polygon",
+      "symbol": "fine black dashed outline enclosing a named block of ground",
+      "toponym_prefixes": ["Djane", "Djenane", "Henchir", "Hr", "Melk", "Bled", "Oulad", "Ouled"],
+      "extraction_difficulty": "medium",
+      "examples": ["Dj.ane Kouidene Oulad Nedjem", "Oulad Youssef", "Oulad Trab", "Henchir ech Cherfi", "Henchir el Kernai"],
+      "osm_equivalent": "none",
+      "research_note": "On the Sfax hinterland sheet the ground is divided into dashed-outline parcels, each labelled with a holding type and the lineage that holds it - a djenane (irrigated garden estate) or a henchir (large estate), followed by 'Oulad X'. Cadastral information printed on a topographic map, and the closest thing to a mapped land-tenure layer for the period. Parcel area is a distributional variable, so the boundary is worth extracting as geometry rather than as a label. Density varies sharply by region - dense around Sfax, absent on the steppe sheets - and that variation is a finding rather than a data defect."
+    },
+    {
+      "key": "tribal_territory",
+      "legend_row": {"1902": "(not in the legend)", "1936": "(not in the legend)"},
+      "geometry": "label_area",
+      "symbol": "spaced capitals across open country; often prefixed 'Bled' or 'Melk'",
+      "extraction_difficulty": "hard",
+      "examples": ["BLED EL ARSAMA", "BLED ABIDA", "ECH CHERF", "EN NEZILA", "ET TEMARA", "Melk Oulad Kralfa"],
+      "osm_equivalent": "none",
+      "research_note": "'Bled X' names collective tribal land and 'Melk X' names private title; together the arch/melk tenure distinction that structures rural inequality in Tunisia. Printed as ordinary toponymy, so recoverable only by OCR plus a gazetteer."
+    },
+    {
+      "key": "olive_grove_density",
+      "legend_row": {"1902": "Oliviers, a named texture in the Bois inset", "1936": "identical"},
+      "geometry": "area_or_point_cloud",
+      "symbol": "individual green hooked glyphs, one per tree or small group; distinct from the plain green stipple used for scrub",
+      "extraction_difficulty": "medium",
+      "osm_equivalent": "landuse=orchard (extent only, no density)",
+      "research_note": "The legend names the texture but not what it implies: the Sahel sheets draw olive trees individually rather than filling a polygon, so both the extent and the planting density of the groves are recoverable. Counting glyphs is template matching on a near-uniform mark, the easiest kind of symbol extraction on these sheets."
+    },
+    {
+      "key": "settlement_type",
+      "legend_row": {"1902": "(only the typographic Nota)", "1936": "(only the typographic Nota)"},
+      "geometry": "point_or_area",
+      "symbol": "red hatching for built-up area; type style distinguishes inhabited places",
+      "toponym_prefixes": ["Douar", "Henchir", "Hr", "Dar", "Ksar", "Guerar", "Village Francais", "Ferme Ecole"],
+      "extraction_difficulty": "medium",
+      "osm_equivalent": "place=*",
+      "research_note": "The settler/indigenous distinction is drawn, not inferred: 'Village Francais' and 'Ferme Ecole' are labelled separately from the adjacent indigenous centre. 'Douar' and 'Henchir' are the rural units; a henchir is a ruined or held estate and often doubles as a land-tenure label. The legend offers no vocabulary for any of this beyond the typographic Nota."
     }
   ]
 }
