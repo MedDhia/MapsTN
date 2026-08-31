@@ -184,3 +184,104 @@ The `--overlay` output is the honest test and the one that caught every mistake
 listed above: a count tells you nothing about whether the detector found houses
 or grid crossings, and looking at 1200 px of sheet with the detections circled
 tells you immediately.
+
+---
+
+## 4. On contemporary Tunisia
+
+`scripts/fetch_boundaries.py` downloads the boundaries and `scripts/map_objects.py`
+does the join and draws the map.
+
+![Extracted objects on contemporary Tunisian boundaries](img/objects_on_modern_tunisia.png)
+
+### The boundaries
+
+**OCHA Common Operational Dataset for Tunisia**, via the Humanitarian Data
+Exchange, CC BY-IGO — see [`data/boundaries/SOURCE.md`](../data/boundaries/SOURCE.md).
+Its level numbering is its own and does not follow the ADM0/1/2 convention;
+assuming it does puts every label one step out, and the shape counts are what
+settle it:
+
+| Level | Unit | Count |
+| --- | --- | --- |
+| admin0 | state | 1 |
+| admin1 | grandes régions | 6 |
+| admin2 | **gouvernorats** | 24 |
+| admin3 | **délégations** | 264 |
+
+Two other sources were tried. **geoBoundaries** is the obvious choice and is
+ODbL, but serves every file from GitHub through Git LFS: the pointers download
+and the objects do not, because resolving them needs the LFS batch API on
+github.com, which this environment's git proxy refuses for repositories outside
+the session's own. What arrives is a 132-byte pointer that an unchecked script
+would write out as a shapefile, so the fetcher rejects anything starting with the
+LFS header. **GADM** is reachable but its licence discourages redistribution.
+
+### The join
+
+8368 of the 8373 extracted houses fall inside a gouvernorat — the five strays are
+on the coastline, where the sheet edge sits just outside the modern polygon.
+
+| Gouvernorat | Houses | km² read | Houses / km² |
+| --- | --- | --- | --- |
+| Béja | 1725 | 1076 | **1.60** |
+| Manubah | 176 | 119 | 1.48 |
+| Kassérine | 1764 | 1240 | 1.42 |
+| Le Kef | 525 | 423 | 1.24 |
+| Sousse | 1032 | 962 | 1.07 |
+| Siliana | 686 | 705 | 0.97 |
+| Mahdia | 336 | 468 | 0.72 |
+| Zaghouan | 1120 | 1796 | 0.62 |
+| Kairouan | 514 | 920 | 0.56 |
+| Sfax | 32 | 74 | 0.43 |
+| Ben Arous | 458 | 126 | **3.63** |
+
+Ben Arous is the outlier and for a reason worth stating: only 126 km² of it has
+been read, all of it the peri-urban fringe south of Tunis, so its density is a
+statement about that fringe and not about the gouvernorat. Small denominators
+are where a density measure misleads, and the `extracted_km2` column is in the
+table so that can be seen rather than guessed.
+
+At délégation level, 44 of 264 units have extracted houses. The densest are
+Bir Mchergua (2.86/km²), Testour (2.10) and Kasserine Sud (2.06).
+
+### Two things the map deliberately refuses to do
+
+**It does not present extraction coverage as geography.** Ten sheets are
+extracted, so a raw count per gouvernorat would mostly report which sheets happen
+to be done. The denominator is therefore the *extracted* area inside each unit —
+the convex hull of that unit's own symbols, clipped to the unit — so the number
+means houses per km² of ground actually read.
+
+**It does not draw no data as zero.** Units with no extracted sheet are hatched.
+The lightest step of a sequential ramp means "near zero", and near zero is a
+claim; thirteen gouvernorats have no sheet extracted and must not read as
+"no houses here".
+
+### What the map is also evidence for
+
+The 73 sheet footprints tile the northern half of the country as a regular
+lattice, abutting without overlaps or gaps, and every extracted house falls
+inside its own sheet. Nothing in the pipeline enforces that: the footprints come
+from each sheet's own printed grid and margin labels, fitted independently. Had
+the anchor been wrong on any sheet, that sheet would sit a kilometre off the
+lattice. It is the cheapest check available on the georeferencing, and it passes
+by eye.
+
+### The joined outputs
+
+| Path | |
+| --- | --- |
+| [`data/symbols_by_unit.csv`](../data/symbols_by_unit.csv) | 288 rows: every gouvernorat and délégation, with counts, area read and density |
+| [`data/symbols_joined.geojson`](../data/symbols_joined.geojson) | every symbol with its modern gouvernorat and délégation attached |
+| [`data/boundaries/`](../data/boundaries/) | the shapefiles themselves, levels 0–3 |
+
+### A caution on the units
+
+These are contemporary boundaries. The sheets record fieldwork from the 1880s to
+the 1930s, when the units were French civil and military circumscriptions that do
+not map onto today's gouvernorats. Aggregating to modern units is a way of
+indexing the objects and comparing them against modern statistics — not a claim
+that the unit existed. The historical boundaries the sheets themselves draw,
+*limite de commune de plein exercice* among them, are a separate extraction and
+still to be done.
