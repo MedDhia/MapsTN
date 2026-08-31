@@ -197,15 +197,59 @@ national (18 sheets) in 1940.
 
 ## 5. What the sheets actually contain
 
-Transcribed in [`config/legend_vocabulary.json`](../config/legend_vocabulary.json)
-as 22 classes, each carrying its 1902 wording, its 1936 wording, an extraction
-difficulty and an OSM equivalent where one exists.
+The legend is now transcribed in full, row by row, in
+[`config/legend_vocabulary.json`](../config/legend_vocabulary.json): **45 rows in
+each of two editions**, arranged in the nine printed blocks, each row with its
+label as printed and a description of its symbol. Read by eye at full scan
+resolution in overlapping panels across the whole legend band, because OCR is
+not adequate to it — Tesseract returns *"Chemin d'erploitation et sentier
+mulclier"* for *"Chemin d'exploitation et sentier muletier"*.
 
-The legend drifts between editions and this matters for coding. Roads are
-classified administratively in 1902 (*nationale*, *départementale*, *de grande
-communication*) and functionally in 1936 (*de grand parcours*, *de moyenne
-communication*, *vicinal*). Shrines are *marabout* in 1902 and *koubba* in 1936.
-Pooling the two schemes without a crosswalk silently mixes them.
+### There are three legend regimes, not two
+
+| | sheets | catalogue years |
+| --- | --- | --- |
+| 1936 functional edition | **78** | 1922–1940 |
+| 1902 administrative edition | **9** | 1902 |
+| **No symbol legend at all** | **4** | 1940s |
+| Legend present, edition not read | 4 | — |
+| Nothing read | 1 | — |
+
+The third regime is easy to miss and matters: the *coupures spéciales* and some
+southern sheets print **no legend whatever** — only an imprint line, the scale
+statement and bar, the contour interval, the print run and the price. Their
+symbols follow the series convention and have to be read from an edition that
+publishes it. Assuming a legend for those four sheets would be inventing one.
+
+The split between the two full editions is clean: no sheet dated 1902 carries
+the later legend and none dated 1922–1940 carries the earlier one.
+`scripts/read_sheet_legends.py` assigns each sheet by fuzzy-matching the road
+ladder, which is where the editions differ and where OCR survives best.
+
+### The editions differ in exactly two places
+
+An earlier version of this document claimed more drift than exists. Reading both
+legends at full resolution, the differences are:
+
+1. **The road ladder has four maintained rungs in 1902 and three in 1936.**
+   1902: *Route nationale · Route départementale · Chemin de grande
+   communication et d'intérêt commun · Chemin vicinal ou autre chemin
+   carrossable* — a legal classification. 1936: *Route de grand parcours · Route
+   de moyenne communication · Chemin vicinal* — a traffic one. These are not the
+   same scale relabelled; one has four rungs and the other three, so pooling
+   them needs a crosswalk. The four *unmaintained* classes below the brace are
+   identical in both.
+2. **The shrine row reads *"Église, chapelle et marabout"* in 1902 and
+   *"Église, chapelle, koubba"* in 1936** — same three glyphs, different word.
+
+Everything else is word-for-word identical, including the confessional cemetery
+row, the four-level boundary hierarchy, the *Bois* inset naming *Broussailles*,
+*Oliviers* and *Palmiers*, *Ravine sans eau en été*, and the typographic *Nota*.
+Three differences I had previously recorded — over the olive texture, the
+boundary wording and the ravine wording — were artefacts of reading from
+low-resolution crops and do not exist. The one further difference that is real
+is minor: 1936 prints the contour interval in the legend band and 1902 does not,
+which is why that field is recoverable by script only on the later edition.
 
 ### Classes that carry real research weight
 
