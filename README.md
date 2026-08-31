@@ -39,6 +39,8 @@ a relevance score.
 | **Per-sheet transform (CSV)** | [`data/sheet_georef.csv`](data/sheet_georef.csv) |
 | **Extracted symbols (GeoJSON)** | [`data/symbols/`](data/symbols/) |
 | **Symbol counts per sheet** | [`data/symbols_summary.csv`](data/symbols_summary.csv) |
+| **Objects joined to modern units** | [`data/symbols_by_unit.csv`](data/symbols_by_unit.csv) |
+| **Contemporary boundaries** | [`data/boundaries/`](data/boundaries/) |
 | **Scan locations** | [`data/sheet_images.json`](data/sheet_images.json) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
@@ -549,9 +551,12 @@ python3 scripts/read_sheet_legends.py --images <dir of record_id.jpg>
 python3 scripts/coordinate_precision.py      # uses the measured grid spacing
 python3 scripts/georeference_sheets.py --images <dir>   # pixel -> ground transform
 python3 scripts/extract_symbols.py --images <dir>       # symbols -> GeoJSON
+python3 scripts/fetch_boundaries.py                     # modern shapefiles
+python3 scripts/map_objects.py                          # join + render the map
 ```
 
-`georeference_sheets.py` also needs `pyproj`, and `extract_symbols.py` `scipy`.
+`georeference_sheets.py` needs `pyproj`, `extract_symbols.py` needs `scipy`, and
+`map_objects.py` needs `pyshp`, `shapely` and `matplotlib`.
 Pass `--overlay <dir>` to the extractor to get the detections drawn on the
 image: that is the check that catches a detector finding grid crossings instead
 of houses, and a count never will.
