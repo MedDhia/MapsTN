@@ -84,6 +84,19 @@ ZONE_RE = re.compile(r"(CARROYAGE|QUADRILLAGE)\s+KILOM[EÉ]TRIQUE\s+LAMBERT\s*\(
 THREE_DIGIT_RE = re.compile(r"\b(\d{3})\b")
 
 
+# The grid is measured on the map body only, so peak positions are relative to
+# that crop. Anything converting them back to full-image pixels needs the same
+# offsets, so they are defined once here and stored per sheet.
+BODY_MARGIN_TOP = 0.10
+BODY_MARGIN_LEFT = 0.08
+
+
+def body_offsets(width: int, height: int) -> tuple[int, int]:
+    """(column, row) offset of the measured body within the downsampled mask."""
+    columns, rows = width // DOWNSAMPLE, height // DOWNSAMPLE
+    return int(columns * BODY_MARGIN_LEFT), int(rows * BODY_MARGIN_TOP)
+
+
 def red_mask(path: Path, downsample: int = DOWNSAMPLE):
     image = Image.open(path).convert("RGB")
     width, height = image.size
@@ -253,15 +266,17 @@ def analyse(path: Path) -> dict:
     mask, (width, height) = red_mask(path)
     rows, columns = mask.shape
     # Margins carry type and the sheet edge; measure the map body only.
-    body = mask[int(rows * 0.10):int(rows * 0.90),
-                int(columns * 0.08):int(columns * 0.92)]
+    body = mask[int(rows * BODY_MARGIN_TOP):int(rows * (1 - BODY_MARGIN_TOP)),
+                int(columns * BODY_MARGIN_LEFT):int(columns * (1 - BODY_MARGIN_LEFT))]
 
     easting = measure_axis(body, 0)
     northing = measure_axis(body, 1)
 
+    column_offset, row_offset = body_offsets(width, height)
     record = {
         "width_px": width,
         "height_px": height,
+        "body_offset_px": [column_offset * DOWNSAMPLE, row_offset * DOWNSAMPLE],
         "red_density": round(float(mask.mean()), 4),
         **decide(easting, northing),
         "easting": {k: v for k, v in easting.items() if k != "peaks_px"},

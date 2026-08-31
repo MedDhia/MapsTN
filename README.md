@@ -35,6 +35,10 @@ a relevance score.
 | **Marginalia, per sheet (CSV)** | [`data/sheet_margins.csv`](data/sheet_margins.csv) |
 | **Legend, transcribed in full** | [`config/legend_vocabulary.json`](config/legend_vocabulary.json) |
 | **Legend edition, per sheet (CSV)** | [`data/sheet_legends.csv`](data/sheet_legends.csv) |
+| **Object extraction and coordinates** | [`docs/OBJECT-DATASET.md`](docs/OBJECT-DATASET.md) |
+| **Per-sheet transform (CSV)** | [`data/sheet_georef.csv`](data/sheet_georef.csv) |
+| **Extracted symbols (GeoJSON)** | [`data/symbols/`](data/symbols/) |
+| **Symbol counts per sheet** | [`data/symbols_summary.csv`](data/symbols_summary.csv) |
 | **Scan locations** | [`data/sheet_images.json`](data/sheet_images.json) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
 | How it was built, and its limits | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
@@ -543,7 +547,14 @@ python3 scripts/detect_sheet_grid.py --images <dir of record_id.jpg>
 python3 scripts/read_sheet_margins.py --images <dir of record_id.jpg>
 python3 scripts/read_sheet_legends.py --images <dir of record_id.jpg>
 python3 scripts/coordinate_precision.py      # uses the measured grid spacing
+python3 scripts/georeference_sheets.py --images <dir>   # pixel -> ground transform
+python3 scripts/extract_symbols.py --images <dir>       # symbols -> GeoJSON
 ```
+
+`georeference_sheets.py` also needs `pyproj`, and `extract_symbols.py` `scipy`.
+Pass `--overlay <dir>` to the extractor to get the detections drawn on the
+image: that is the check that catches a detector finding grid crossings instead
+of houses, and a count never will.
 
 All three image scripts cache their per-sheet measurements and take `--recompute`,
 which re-applies the current rules to the cache without re-reading the scans —
