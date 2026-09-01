@@ -1,0 +1,8 @@
+record_id,designation,sheet_name,lambert_zone,epsg,grid_easting_lines,grid_northing_lines,degenerate_axes,corners_read_e,corners_read_n,reading_residual_max_m_e,reading_residual_max_m_n,metres_per_px_x,metres_per_px_y,rotation_deg,detector_rotation_deg,rotation_gap_deg,frame_width_km,frame_height_km,neighbour_matches,neighbour_median_m,neighbour_best_m,precision_class,anchor_basis,refused
+oai:u-bordeaux-montaigne.fr:340374,B1-C33,Nefza,nord,22391,32,2,,0,0,,,,,,,,,,,,,,,"0 easting and 0 northing corner readings, needs 3 of each"
+oai:u-bordeaux-montaigne.fr:340392,B1-C39,Kelibia,nord,22391,32,9,,1,1,,,,,,,,,,,,,,,"1 easting and 1 northing corner readings, needs 3 of each"
+oai:u-bordeaux-montaigne.fr:340407,B2-C37,La Goulette,nord,22391,32,1,northing,4,3,50.0,0.0,4.317,4.218,4.32,4.25,0.07,32.08,19.99,9,117.5,55.0,corner_fit_coarse,printed_corners_only,
+oai:u-bordeaux-montaigne.fr:340488,B8-C32,Kalaat es Senam,nord,22391,40,1,northing,0,0,,,,,,,,,,,,,,,"0 easting and 0 northing corner readings, needs 3 of each"
+oai:u-bordeaux-montaigne.fr:340507,B9-C33,Ksar Tlili,nord,22391,33,1,northing,4,3,0.0,0.0,4.237,4.218,4.35,4.38,0.03,31.98,20.0,10,56.2,4.8,corner_fit,printed_corners_only,
+oai:u-bordeaux-montaigne.fr:340527,B10-C36,Nasr Allah,nord,22391,33,1,northing,2,2,,,,,,,,,,,,,,,"2 easting and 2 northing corner readings, needs 3 of each"
+oai:u-bordeaux-montaigne.fr:340628,,,sud,22392,25,5,,0,0,,,,,,,,,,,,,,,"0 easting and 0 northing corner readings, needs 3 of each"

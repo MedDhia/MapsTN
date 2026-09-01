@@ -127,14 +127,28 @@ human in the loop. Roughly 30 easting and 20 northing lines per sheet give about
 600 control-point intersections, which is far more than a projective or
 polynomial fit needs.
 
+There turned out to be something better still on the sheet, and it was in plain
+sight for most of this work: **every sheet prints the exact Lambert coordinates
+of its own four neatline corners, to the metre**, in red in the margin with a
+leader line to the corner. That is a primary, exact statement of absolute
+position owing nothing to any catalogue, and adjacent sheets print identical
+values at the corners they share. `scripts/read_corner_coordinates.py` reads
+them; see [`OBJECT-DATASET.md`](OBJECT-DATASET.md) §1 for what it changed, which
+was to take the sheets whose absolute position rested on nothing checkable from
+34 of 73 down to 1.
+
 ### What this buys, against the alternative
 
 | Control | Uncertainty |
 | --- | --- |
-| Printed kilometric grid | **±9 m** |
-| Catalogue bounding box | up to ±775 m longitude, ±926 m latitude |
+| Printed corner coordinates | **to the metre, as stated** |
+| Graticule in grades, 1902 sheets | ~550 m against the sheet of the same designation |
+| Printed kilometric grid | **±9 m** relative, no absolute placement |
+| Catalogue bounding box | up to ±775 m longitude, ±926 m latitude — and 36 km on one sheet |
 
-The bounding box is fine for indexing and useless for placing a well.
+The bounding box is fine for indexing and useless for placing a well. The 36 km
+is the Djebel Mrhila sheet, whose box is wrong by more than a sheet width; the
+sheet's own printing put it right.
 
 ### Precision floor
 
@@ -160,11 +174,11 @@ The catalogue gives one date. The sheet gives three or more.
 | Toujane / Mareth | 1941 | **1907–1937** | Sept 1941 |
 | Kasserine | 1936 | **1935** | Feb 1941 |
 
-Read across the 65 sheets where the block is legible, the pattern holds:
+Read across the 71 sheets where the block is legible, the pattern holds:
 
 | | |
 | --- | --- |
-| Catalogue year later than fieldwork by | **median 23 years**, max 46 |
+| Catalogue year later than fieldwork by | **median 26 years**, max 46 |
 | Sheets whose fieldwork is 1880s–1900s | **41 of 65** |
 | Sheets whose catalogue year is 1920s–1940s | 88 of 103 |
 

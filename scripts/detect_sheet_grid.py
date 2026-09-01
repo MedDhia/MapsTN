@@ -342,6 +342,14 @@ def main() -> int:
             changed += found["has_kilometric_grid"] != before
         print(f"recomputed {len(results)} cached measurements, "
               f"{changed} changed verdict")
+        # Write it back here. The only other write is inside the loop over
+        # pending scans, and --recompute leaves that loop empty, so a recomputed
+        # verdict reached the table and never the cache. The two then disagreed
+        # about whether the Djebeniana sheet has a grid, and georeferencing
+        # reads the cache - so the sheet stayed unusable while the table said
+        # otherwise.
+        args.out_json.write_text(json.dumps(results, ensure_ascii=False,
+                                            indent=2), encoding="utf-8")
 
     files = sorted(args.images.glob("*.jpg"))
     pending = [] if args.recompute else [f for f in files if f.stem not in results]

@@ -85,7 +85,8 @@
     ],
     "header_text": "440 : CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) De",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340355": {
     "width_px": 9304,
@@ -175,7 +176,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 474,
     "easting_label_max_km": 481,
-    "easting_labels_read": 6
+    "easting_labels_read": 6,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340356": {
     "width_px": 9352,
@@ -263,7 +265,8 @@
     ],
     "header_text": "à CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE ë",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340367": {
     "width_px": 8976,
@@ -352,7 +355,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 410,
     "easting_label_max_km": 423,
-    "easting_labels_read": 9
+    "easting_labels_read": 9,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340368": {
     "width_px": 9008,
@@ -439,7 +443,8 @@
       5164,
       5400
     ],
-    "header_text": "€: + : CARROYAGE KILOMÉTRIQUE LAMBERT {NORD TUNISIE) &"
+    "header_text": "€: + : CARROYAGE KILOMÉTRIQUE LAMBERT {NORD TUNISIE) &",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340369": {
     "width_px": 9040,
@@ -526,7 +531,8 @@
     "header_text": "€ CARROYAGE KILOMÉËTRIQUE LAMBERT (NORD TUNISIE) : 470 ai «72 473 474 479 476 471 478 479 480 “31 «82 «85 aëà 485 46 487 488 489 490 491 102 493 494 495 400 197 438 408 500 501 È | nl",
     "easting_label_min_km": 485,
     "easting_label_max_km": 495,
-    "easting_labels_read": 9
+    "easting_labels_read": 9,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340370": {
     "width_px": 9224,
@@ -608,7 +614,8 @@
       5036,
       5272
     ],
-    "header_text": "pr 1 : …"
+    "header_text": "pr 1 : …",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340372": {
     "width_px": 9248,
@@ -699,7 +706,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 580,
     "easting_label_max_km": 592,
-    "easting_labels_read": 7
+    "easting_labels_read": 7,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340373": {
     "width_px": 9096,
@@ -788,7 +796,8 @@
     ],
     "header_text": ". CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) _ ns o hé mñs nn ans ane Free) ET nn Rd ot ai ace £4% PPT\" LE AtAa +7 at 819 Dit en onn ana PE »",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340374": {
     "width_px": 9304,
@@ -876,7 +885,8 @@
     "header_text": "CARROYAGE KILOMÉTRIQUE LAMBERT (NORD ALGÉRIE) 1.048 | tue 1.050 (1 1.052 1.069 1.054 1.055 1.056 1.057 1.059 1.058 1.060 1.09! 1.002 1.063 1.06$ 1 065 1.066 1.061 1.068 1.068 1.070 1.071 5072 !. _. Lo , + | ' ; : { Ù | j : | Ù 1 Î l 1 ' : Î Î Î : 1 Ù U | | | | | | | | | | | | | ! | | | | | | | | | o",
     "easting_label_min_km": 48,
     "easting_label_max_km": 71,
-    "easting_labels_read": 18
+    "easting_labels_read": 18,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340376": {
     "width_px": 9384,
@@ -966,7 +976,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 470,
     "easting_label_max_km": 498,
-    "easting_labels_read": 21
+    "easting_labels_read": 21,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340387": {
     "width_px": 9232,
@@ -1057,7 +1068,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 500,
     "easting_label_max_km": 524,
-    "easting_labels_read": 16
+    "easting_labels_read": 16,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340388": {
     "width_px": 9360,
@@ -1108,7 +1120,8 @@
       4928,
       5248
     ],
-    "header_text": ""
+    "header_text": "",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340389": {
     "width_px": 9312,
@@ -1191,7 +1204,8 @@
     ],
     "header_text": ": CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) a = 397 838 639 540 sé1 542 543 S44 546 550 ss . ses ” _ use a: Le se 60 à",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340390": {
     "width_px": 9512,
@@ -1240,7 +1254,8 @@
       4668,
       5208
     ],
-    "header_text": ""
+    "header_text": "",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340391": {
     "width_px": 9272,
@@ -1330,7 +1345,8 @@
     "header_text": ": | CARROYAGE RILOMÉTRIQUE LAMBERT (NORD TUNISIE) - à 565 see se7 se 606 570 571 STè 373 574 575 576 571 578 670 580 )) 581 583 584 585 538 57 ses sg9 590 ko! a i T 4 4 , 4 Û Ù i , + Ù | Ù 6 4 ——*— | : Û , | i t sp? cps ___# _—— | D | | | | | | | | | | | | << | | | | | | | | | à 55 |",
     "easting_label_min_km": 570,
     "easting_label_max_km": 585,
-    "easting_labels_read": 11
+    "easting_labels_read": 11,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340392": {
     "width_px": 9040,
@@ -1422,7 +1438,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 614,
     "easting_label_max_km": 618,
-    "easting_labels_read": 5
+    "easting_labels_read": 5,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340393": {
     "width_px": 8952,
@@ -1509,7 +1526,8 @@
     ],
     "header_text": "+ | E- ü = CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) 8 Re ee M Su a eu ee ee ue & æ u m e @ m e em 6 . | Le oo FU BR | | V nn —— T— , | | ne | | . | | L — — | | | | . 33 £3em- 4 | | | : _ i | | | L: — L | . e_——— - -847107\" | | à | | | ct . D due ps 777 oo | | | | n ee |",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340394": {
     "width_px": 9272,
@@ -1600,7 +1618,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 481,
     "easting_label_max_km": 490,
-    "easting_labels_read": 7
+    "easting_labels_read": 7,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340396": {
     "width_px": 8152,
@@ -1662,7 +1681,8 @@
       4572,
       4840
     ],
-    "header_text": "| L 2 ». | _ .# ï . « h ‘s- CES ° 4 Ÿ , EE a En ; p Ÿ ° n° L, L PS os Si So, !, RS + + CL] + é : _S ee : | n 55 227 ‘e # SN : \"4 # . A\" À Ë me LT . … ° : be” == ° Le a Ph # ù . te _ JA |; a"
+    "header_text": "| L 2 ». | _ .# ï . « h ‘s- CES ° 4 Ÿ , EE a En ; p Ÿ ° n° L, L PS os Si So, !, RS + + CL] + é : _S ee : | n 55 227 ‘e # SN : \"4 # . A\" À Ë me LT . … ° : be” == ° Le a Ph # ù . te _ JA |; a",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340407": {
     "width_px": 9312,
@@ -1751,7 +1771,8 @@
     ],
     "header_text": "® CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) a 630 a | pre &kaq «ea En 526 537 538 539 ELÔ pat 542 343 su 1 + saë 4? 366 ag een ssi ss? 553 B£4 5s6 an? 68 . s",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340409": {
     "width_px": 9544,
@@ -1810,7 +1831,8 @@
       4416,
       4808
     ],
-    "header_text": "f ac », ? e CU { ?"
+    "header_text": "f ac », ? e CU { ?",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340410": {
     "width_px": 9200,
@@ -1901,7 +1923,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 580,
     "easting_label_max_km": 589,
-    "easting_labels_read": 5
+    "easting_labels_read": 5,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340411": {
     "width_px": 8928,
@@ -1990,7 +2013,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 609,
     "easting_label_max_km": 620,
-    "easting_labels_read": 8
+    "easting_labels_read": 8,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340412": {
     "width_px": 8984,
@@ -2078,7 +2102,8 @@
     ],
     "header_text": "A CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) à n ne . nn e En Ag __- . n SC ee . LA . oo @",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340413": {
     "width_px": 9360,
@@ -2168,7 +2193,8 @@
     ],
     "header_text": "| É CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) :",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340415": {
     "width_px": 9376,
@@ -2261,7 +2287,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 544,
     "easting_label_max_km": 555,
-    "easting_labels_read": 8
+    "easting_labels_read": 8,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340416": {
     "width_px": 9360,
@@ -2348,7 +2375,8 @@
       4836,
       5072
     ],
-    "header_text": "é CARROYAGE KILOMETRIQUE LAMBERT {NORD TUNISIE) & 4 B 2 _ nn cn nn un Ce 170 0 con re Ce a"
+    "header_text": "é CARROYAGE KILOMETRIQUE LAMBERT {NORD TUNISIE) & 4 B 2 _ nn cn nn un Ce 170 0 con re Ce a",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340427": {
     "width_px": 8960,
@@ -2434,7 +2462,8 @@
     ],
     "header_text": ": CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) 3",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340428": {
     "width_px": 8984,
@@ -2521,7 +2550,8 @@
     ],
     "header_text": "4OÛ 1 > & 115 CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) x a . un . | | | . L | 5 | | nu . | on | L 5",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340429": {
     "width_px": 9272,
@@ -2610,7 +2640,8 @@
     ],
     "header_text": "CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) ;",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340430": {
     "width_px": 9168,
@@ -2699,7 +2730,8 @@
     ],
     "header_text": "£ CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) ; | 468 489 470 471 472 73 a74 415 416 u7? 478 179 480 at 482 ‘83 si 895 486 as7 488 480 490 wi : us ‘",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340432": {
     "width_px": 9328,
@@ -2786,7 +2818,8 @@
       5148,
       5388
     ],
-    "header_text": ": CARROYACGE KILOMÈTRIQUE LAMBERT (NORD TUNISIE) æ En 578 529 830 531 531 513 ù de | us u Fe N ® _ \" \" à + 4h se n 4e 548 0 #51 2 si és 555 SEA 55? san E"
+    "header_text": ": CARROYACGE KILOMÈTRIQUE LAMBERT (NORD TUNISIE) æ En 578 529 830 531 531 513 ù de | us u Fe N ® _ \" \" à + 4h se n 4e 548 0 #51 2 si és 555 SEA 55? san E",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340433": {
     "width_px": 9272,
@@ -2875,7 +2908,8 @@
     "header_text": "u CARROYAGE KILOMÉTRIQUE LAMBERT {NORD TUNISIE) 5 563 #64 565 560 #1 664 569 570 571 s72 573 574 376 571 DB 579 580 581 582 ses 584 585 sas 7” _ \" | 3",
     "easting_label_min_km": 579,
     "easting_label_max_km": 585,
-    "easting_labels_read": 6
+    "easting_labels_read": 6,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340434": {
     "width_px": 8992,
@@ -2964,7 +2998,8 @@
     ],
     "header_text": "= CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) : s | nu .. .. ns s me An ons 382 à ani n0E _— ac ana qnn son 204 . 2m 40% Ps re a",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340435": {
     "width_px": 9168,
@@ -3052,7 +3087,8 @@
     ],
     "header_text": "£. @ à CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) à pi ann am A Are aña ane afs En9 ann ane LAN 244 aan 14€ LA Ps on au es un n un a æ",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340447": {
     "width_px": 8928,
@@ -3142,7 +3178,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 473,
     "easting_label_max_km": 486,
-    "easting_labels_read": 9
+    "easting_labels_read": 9,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340448": {
     "width_px": 9296,
@@ -3234,7 +3271,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 505,
     "easting_label_max_km": 520,
-    "easting_labels_read": 10
+    "easting_labels_read": 10,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340449": {
     "width_px": 8936,
@@ -3324,7 +3362,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 534,
     "easting_label_max_km": 540,
-    "easting_labels_read": 5
+    "easting_labels_read": 5,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340450": {
     "width_px": 9296,
@@ -3392,7 +3431,8 @@
       4724,
       5252
     ],
-    "header_text": ""
+    "header_text": "",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340451": {
     "width_px": 8984,
@@ -3484,7 +3524,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 364,
     "easting_label_max_km": 381,
-    "easting_labels_read": 12
+    "easting_labels_read": 12,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340452": {
     "width_px": 8984,
@@ -3571,7 +3612,8 @@
     ],
     "header_text": "€ CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) : a 7 se 39 400 wo! «02 #3 44 405 407 es \" us ui “ 1 da 415 416 ur +18 ‘19 os 21 2 de ea 425 us «7 | $ [ ; { | | | : : l | : L A (l : I | ( (| | | Il (| Ï U Vos",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340453": {
     "width_px": 9224,
@@ -3657,7 +3699,8 @@
       5196,
       5436
     ],
-    "header_text": "| 42 450 481 | x | 43 : CAR ROYA ue GE KILO MÉÊT . RIQUE LAMBERT | 437 = (NORD TU NISIE n | | 440 | tit 2 ne ” | té | 447 | pr 5. | a (4 450 | &1 | 482 | | 453 | sa | 465 | 458 as? | a | . wo:"
+    "header_text": "| 42 450 481 | x | 43 : CAR ROYA ue GE KILO MÉÊT . RIQUE LAMBERT | 437 = (NORD TU NISIE n | | 440 | tit 2 ne ” | té | 447 | pr 5. | a (4 450 | &1 | 482 | | 453 | sa | 465 | 458 as? | a | . wo:",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340454": {
     "width_px": 9176,
@@ -3746,7 +3789,8 @@
     ],
     "header_text": "< CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) É : = $ 415 476 : , ES | | ( | | | Vo +\" | | | | D | | | | | | l | | Ù ———— | à | î A c | | : | + ù : : JS",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340455": {
     "width_px": 9296,
@@ -3837,7 +3881,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 495,
     "easting_label_max_km": 506,
-    "easting_labels_read": 8
+    "easting_labels_read": 8,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340467": {
     "width_px": 9432,
@@ -3902,7 +3947,8 @@
       5036,
       5300
     ],
-    "header_text": ""
+    "header_text": "",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340468": {
     "width_px": 9512,
@@ -3993,7 +4039,8 @@
     "header_text": "a CARROYAGE KILOMÉTRIQUE LAMBERT {NORD TUNISIE) = * 558 539 560 ti 52 [SX | séà 565 5% 567 564 3689 370 571 stè 973 574 575 578 977 578 579 580 6ui EU 3 5 595 56 e i ‘ : | : _—_—_———— | ! ! nn — | «dx 7 | | 5 | | | | | | \\ A —— | ; | | , 97 it",
     "easting_label_min_km": 571,
     "easting_label_max_km": 580,
-    "easting_labels_read": 6
+    "easting_labels_read": 6,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340469": {
     "width_px": 9704,
@@ -4039,7 +4086,8 @@
       4488,
       5300
     ],
-    "header_text": ""
+    "header_text": "",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340470": {
     "width_px": 9144,
@@ -4128,7 +4176,8 @@
     "header_text": "J CARROYAGE KILOMÊTRIQUE LAMBERT (NORD TUNISIE) , : 369 384 365 368 387 368 369 370 371 372 373 37 375 378 371 378 319 380 381 382 383 384 385 366 387 368 389 0 391 392 39 194 £ _ | | | | | | | | | RE | | | | | | | + TT | 1 | me) | | | | | | | | | [| [| | | | | | | Vo ur | oo | ds: À | | a. | | pi r",
     "easting_label_min_km": 365,
     "easting_label_max_km": 392,
-    "easting_labels_read": 20
+    "easting_labels_read": 20,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340371": {
     "width_px": 9272,
@@ -4189,7 +4238,8 @@
       4368,
       5076
     ],
-    "header_text": "K7 ee. | “ | : ._"
+    "header_text": "K7 ee. | “ | : ._",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340375": {
     "width_px": 9248,
@@ -4277,7 +4327,8 @@
     ],
     "header_text": "2 CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) : Fo une Me ou OS MS ue un ue ue mo uw Ce 6 ww OO us æ w * D EE SE | | | ee 7 k \\",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340395": {
     "width_px": 8640,
@@ -4365,7 +4416,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 500,
     "easting_label_max_km": 514,
-    "easting_labels_read": 11
+    "easting_labels_read": 11,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340414": {
     "width_px": 9328,
@@ -4455,7 +4507,8 @@
     ],
     "header_text": "ë CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE; ; À | | | | | : | _ d + TT | | | | | | 1 1. SE | L SET | | ps | | | | | | __)_—-— | ot LL oe",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340431": {
     "width_px": 8928,
@@ -4542,7 +4595,8 @@
     ],
     "header_text": "£ CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) X SE Ra | | | | | | | | | SE | 354809 - | | | | | | | | | | | | | | | | | | | | | a | | } | | | OÙ gt - | ÿ \" | | 7 | | D n__——— |, U \\ . Ni 739256",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340436": {
     "width_px": 9232,
@@ -4633,7 +4687,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 447,
     "easting_label_max_km": 458,
-    "easting_labels_read": 9
+    "easting_labels_read": 9,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340456": {
     "width_px": 8936,
@@ -4723,7 +4778,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 543,
     "easting_label_max_km": 550,
-    "easting_labels_read": 6
+    "easting_labels_read": 6,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340471": {
     "width_px": 9136,
@@ -4814,7 +4870,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 404,
     "easting_label_max_km": 413,
-    "easting_labels_read": 6
+    "easting_labels_read": 6,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340472": {
     "width_px": 9432,
@@ -4902,7 +4959,8 @@
     ],
     "header_text": "CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) Fu . æ go 4 “ ù se EE “ + * 45 _# we us se wi “2 “s 4 556 we #7 w . , | | | | s | À | | k \\ { D | | | ‘ l | { l ' nn ———— | =",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340473": {
     "width_px": 9312,
@@ -4990,7 +5048,8 @@
     ],
     "header_text": "490 8 CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) £ 2 iso 480 ai 462 ‘es 164 465 406 401 +68 400 470 47 472 473 ad AT6 416 477 #18 179 460 «ei we és 464 485 +66 # ue æ | | | | | , __— TT. . | | | | : | D ————-! —, | | | | | | | + | | | | | | + — 5 7 | | | | | |",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340474": {
     "width_px": 9496,
@@ -5082,7 +5141,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 505,
     "easting_label_max_km": 519,
-    "easting_labels_read": 10
+    "easting_labels_read": 10,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340475": {
     "width_px": 9544,
@@ -5171,7 +5231,8 @@
     ],
     "header_text": ": CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) ;",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340476": {
     "width_px": 9520,
@@ -5257,7 +5318,8 @@
       5228,
       5460
     ],
-    "header_text": "LE) T (NORD TUNIS u : : ÉTRIQUE LAMBER : : RROYAGE KILOM Le CA 576 877 570 ST | L ‘ 566 569 570 . | | | | — —:; 50! 682 | ’ : | | | R 559 | LL ; Fe 887 658 | ù ; | + (| 566 i ® :"
+    "header_text": "LE) T (NORD TUNIS u : : ÉTRIQUE LAMBER : : RROYAGE KILOM Le CA 576 877 570 ST | L ‘ 566 569 570 . | | | | — —:; 50! 682 | ’ : | | | R 559 | LL ; Fe 887 658 | ù ; | + (| 566 i ® :",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340487": {
     "width_px": 9680,
@@ -5312,7 +5374,8 @@
       5288,
       5628
     ],
-    "header_text": ""
+    "header_text": "",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340488": {
     "width_px": 11416,
@@ -5411,7 +5474,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 365,
     "easting_label_max_km": 381,
-    "easting_labels_read": 10
+    "easting_labels_read": 10,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340489": {
     "width_px": 9232,
@@ -5503,7 +5567,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 414,
     "easting_label_max_km": 423,
-    "easting_labels_read": 6
+    "easting_labels_read": 6,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340490": {
     "width_px": 9176,
@@ -5591,7 +5656,8 @@
     ],
     "header_text": "429 . CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) , 34 125 «1 428 430 «st su un # ‘35 “ Ÿ s h N N \" n s \" \" “. n n “ n n h : : ‘ Ù ; ' t _—_——— : . ; ‘ Ù 1 Û er L | l | | | | | | | | | | | de À | | | | | | | RS DS",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340491": {
     "width_px": 9312,
@@ -5679,7 +5745,8 @@
     ],
     "header_text": "| CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) TS £ 5 «? ue iso 460 et der 7 4, 466 466 47 468 ge 410 ur! 472 3 «7 475 i78 a77 478 an 480 sm un ‘88 18 | we #7 «s ; s : | : ' { k } LE ——— TT | ' Il | | | l | { | | Eu | | | | f |",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340492": {
     "width_px": 9496,
@@ -5770,7 +5837,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 500,
     "easting_label_max_km": 511,
-    "easting_labels_read": 7
+    "easting_labels_read": 7,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340493": {
     "width_px": 9416,
@@ -5859,7 +5927,8 @@
     ],
     "header_text": "m1 sa . CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) £ 2 = _ 2 LE 5% 62? 528 52 530 ss 0 53 584 535 536 #97 SE 5e 540 ga au us su 245 a 4 ou no L » #è : | , ' ‘ k , ‘ ° Li ° Ù Û Ù Ù Ù i N l : . | | | | | | | | | | | on _ h —— = | | | | | | | | | : | + — RE ‘ | it pute —— \\ | | | on : | ne — +7 | | ",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340494": {
     "width_px": 9136,
@@ -5948,7 +6017,8 @@
     "header_text": "€: £ ë CARROYAGE KILOMÊTRIQUE LAMBERT (NORD TUNISIE) ‘ 3 565 56: 556 552 560 s&t 562 583 sè 585 566 567 se8 564 570 s71 s72 513 se 575 576 577 516 579 580 set Ë , i ‘ ; i ; Ù i } : + 1 1 ' | ù ! ‘ | + 53 | 55e | | | | | | | | | | | | | | | | | | se 3% sh | OEM -——à : a | — | | | | | K | | | | | | LL",
     "easting_label_min_km": 560,
     "easting_label_max_km": 570,
-    "easting_labels_read": 7
+    "easting_labels_read": 7,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340495": {
     "width_px": 9112,
@@ -6042,7 +6112,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 590,
     "easting_label_max_km": 606,
-    "easting_labels_read": 11
+    "easting_labels_read": 11,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340496": {
     "width_px": 9088,
@@ -6129,7 +6200,8 @@
     ],
     "header_text": "5 375 6 CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) | = 7 360 mi sé # x 365 + #7 #4 30 s10 7: sé 173 dh | | 3v 576 9 _#_ # #4 * #4 #49 ni % a ni % wm asset | | | | L | | | Lo | on | — SE | | | | | Cd | | | D | | | | Un | | to: | | | SR | | | | | |",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340507": {
     "width_px": 9328,
@@ -6218,7 +6290,8 @@
     ],
     "header_text": "CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) s",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340508": {
     "width_px": 9232,
@@ -6304,7 +6377,8 @@
       5040,
       5276
     ],
-    "header_text": "CABROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) ; , rs ’ . « | 455 À _ Li . de L: a mn 430 ss: wr 150 … 435 138 un ou 460 As a43 ‘49 45 ME ___ 446 447 44 sus &SU as 16? re Re |"
+    "header_text": "CABROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) ; , rs ’ . « | 455 À _ Li . de L: a mn 430 ss: wr 150 … 435 138 un ou 460 As a43 ‘49 45 ME ___ 446 447 44 sus &SU as 16? re Re |",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340509": {
     "width_px": 9552,
@@ -6393,7 +6467,8 @@
     ],
     "header_text": "_ CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) à ue À | \"m À nn ms Lien En dat 4h AA? ÉAA &es IT. :4 &x? ER 480 an a %4 4199 AT4 FC LT TE 4 190 asû Lo ne 12 ina PPT LQE —",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340510": {
     "width_px": 9064,
@@ -6483,7 +6558,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 495,
     "easting_label_max_km": 515,
-    "easting_labels_read": 12
+    "easting_labels_read": 12,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340511": {
     "width_px": 9064,
@@ -6572,7 +6648,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 520,
     "easting_label_max_km": 524,
-    "easting_labels_read": 5
+    "easting_labels_read": 5,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340512": {
     "width_px": 9440,
@@ -6658,7 +6735,8 @@
       5060,
       5296
     ],
-    "header_text": "552 CARROYACE KIIOMÉTRIOLE I'AMRERT INNRD TUNISIF)"
+    "header_text": "552 CARROYACE KIIOMÉTRIOLE I'AMRERT INNRD TUNISIF)",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340513": {
     "width_px": 9072,
@@ -6747,7 +6825,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 362,
     "easting_label_max_km": 389,
-    "easting_labels_read": 16
+    "easting_labels_read": 16,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340514": {
     "width_px": 9168,
@@ -6837,7 +6916,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 392,
     "easting_label_max_km": 419,
-    "easting_labels_read": 19
+    "easting_labels_read": 19,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340515": {
     "width_px": 9632,
@@ -6927,7 +7007,8 @@
     ],
     "header_text": ": CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) ë ee gs gg ue RO eg Se SR & | | | EE I | | I | | 5 | | | |__| -» | QD | | | | | LL | | À —À— D",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340516": {
     "width_px": 9248,
@@ -7015,7 +7096,8 @@
     ],
     "header_text": "e CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) : # | 870 2",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340527": {
     "width_px": 9544,
@@ -7104,7 +7186,8 @@
     ],
     "header_text": ": CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) !",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340528": {
     "width_px": 9712,
@@ -7195,7 +7278,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 543,
     "easting_label_max_km": 550,
-    "easting_labels_read": 5
+    "easting_labels_read": 5,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340529": {
     "width_px": 8992,
@@ -7285,7 +7369,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 564,
     "easting_label_max_km": 580,
-    "easting_labels_read": 9
+    "easting_labels_read": 9,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340530": {
     "width_px": 9728,
@@ -7375,7 +7460,8 @@
     ],
     "header_text": "552 563 584 585 ë CARROYAGE KILOMÉTRIQUE LAMBERT (NORD TUNISIE) 810 AT 8t2 ë3 æ ä ses 561 568 ses 590 set be 5és mA 595 506 sur 506 500 600 ent 602 603 et 605 eos 801 os cos Ë à s . ° i s a n t I t L , | 1 4 [| , | ' A — ! ] { ” \" ( Ô { { { | ,",
     "grid_wording": "carroyage",
-    "lambert_zone": "nord"
+    "lambert_zone": "nord",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340531": {
     "width_px": 9152,
@@ -7465,7 +7551,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 357,
     "easting_label_max_km": 363,
-    "easting_labels_read": 5
+    "easting_labels_read": 5,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340532": {
     "width_px": 9456,
@@ -7554,16 +7641,17 @@
     "header_text": "w S £ 404 405 » 389 390 391 39? 393 304 305 3% 397 +96 39% 400 401 +02 405 408 a? 4108 409 #10 UE 412 413 an M6 «te 417 A18 19 429 3",
     "easting_label_min_km": 397,
     "easting_label_max_km": 413,
-    "easting_labels_read": 9
+    "easting_labels_read": 9,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340533": {
     "width_px": 9232,
     "height_px": 6904,
     "red_density": 0.0133,
-    "has_kilometric_grid": false,
-    "px_per_km": null,
-    "scan_dpi": null,
-    "metres_per_px": null,
+    "has_kilometric_grid": true,
+    "px_per_km": 236.0,
+    "scan_dpi": 300,
+    "metres_per_px": 4.24,
     "grid_rotation_deg": 4.12,
     "easting": {
       "angle_deg": 4.0,
@@ -7632,7 +7720,8 @@
     "lambert_zone": "nord",
     "easting_label_min_km": 590,
     "easting_label_max_km": 610,
-    "easting_labels_read": 11
+    "easting_labels_read": 11,
+    "grid_basis": "one_axis_confirmed_by_spacing"
   },
   "oai:u-bordeaux-montaigne.fr:340534": {
     "width_px": 9656,
@@ -7725,7 +7814,8 @@
     "lambert_zone": "sud",
     "easting_label_min_km": 522,
     "easting_label_max_km": 534,
-    "easting_labels_read": 9
+    "easting_labels_read": 9,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340535": {
     "width_px": 9672,
@@ -7815,7 +7905,8 @@
     ],
     "header_text": "; QUADRILLAGE KILOMÉTRIQUE LAMBERT (SUD TUNISIE . s17 318 s19 520 s21 521 133 B2A 525 526 327 538 5m 590 531 533 3133 334 335 556 631 53% 330 540) LL bAaî 343 544 545 346 $47 48 24? 550 31 547 : | Ù _—— +- | ol oi Li TT EE | : dt | | Te | | £ ‘ | . LE —— - À ———° à | | | » — ‘ TT | | | | | | y = = 3",
     "grid_wording": "quadrillage",
-    "lambert_zone": "sud"
+    "lambert_zone": "sud",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340615": {
     "width_px": 9680,
@@ -7887,7 +7978,8 @@
       5668,
       5780
     ],
-    "header_text": ", . DA a | | | . | ? & | .… | \\ °"
+    "header_text": ", . DA a | | | . | ? & | .… | \\ °",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340616": {
     "width_px": 9616,
@@ -7977,7 +8069,8 @@
     "header_text": "CARROYAGE KILOMÉTRIQUE - PROJECTION LAMBERT (NORD TUNISIE) 562 583 sb4 sus 508 807 588 583 570 571 572 513 s74 575 578 577 578 578 580 sa! 502 589 584 sas 580 su? 588 589 5) ga 501 533",
     "easting_label_min_km": 570,
     "easting_label_max_km": 584,
-    "easting_labels_read": 9
+    "easting_labels_read": 9,
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340627": {
     "width_px": 9120,
@@ -8024,7 +8117,8 @@
       4540,
       5156
     ],
-    "header_text": ""
+    "header_text": "",
+    "grid_basis": "not_detected"
   },
   "oai:u-bordeaux-montaigne.fr:340628": {
     "width_px": 9648,
@@ -8107,7 +8201,8 @@
     ],
     "header_text": "CARROYAGE KILOMÉTRIQUE LAMBERT (SUD TUNISIE) 535 … : . 0 sto ss 10 ns ss 515 se s1? se 519 520 521 s21 sn ”e 525 ç2 sa1 52 528 “®° ss We \" sue | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ! | | | | | | | | | 376 . LL. r un. \\ | | à | | À : a =—— | - ST8 L Vs | | | : | | dE [ | .",
     "grid_wording": "carroyage",
-    "lambert_zone": "sud"
+    "lambert_zone": "sud",
+    "grid_basis": "both_axes"
   },
   "oai:u-bordeaux-montaigne.fr:340629": {
     "width_px": 7040,
@@ -8185,6 +8280,7 @@
     "lambert_zone": "sud",
     "easting_label_min_km": 553,
     "easting_label_max_km": 565,
-    "easting_labels_read": 12
+    "easting_labels_read": 12,
+    "grid_basis": "both_axes"
   }
 }

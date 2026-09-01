@@ -88,6 +88,47 @@ CREDITS_WINDOWS = [
 ]
 CREDITS_ANCHOR_RE = re.compile(r"travau|terrain|ex[ée]cut", re.IGNORECASE)
 
+# A third window, taken from the detected neatline instead of the page. The two
+# fixed windows above are set at page fractions, and between them they classify
+# the credits block on 35 of the 96 scans. The block actually sits just above the
+# neatline's top-left corner on every layout in the series, and adding a window
+# cropped there takes it to 50, the anchor phrase from 67 sheets to 86, and the
+# fieldwork year from 65 to 71 - among the seven newly read are Porto-Farina
+# 1900, Enfida 1893 and Halk El Mennzel 1892, all three confirming a block that
+# had been read by eye. Every one of the seven also moves from an unanchored
+# reading to an anchored one.
+#
+# It costs one year: Nebeur's 1914 was an unanchored reading, and the neatline
+# crop reads its block properly but OCRs the date as "19/4". That is the right
+# trade - an anchored no-answer over an unanchored guess.
+#
+# Measured against eighteen blocks read by eye: 10 agree, 0 contradict, 8 the OCR
+# still cannot read - so the window only ever adds, and its misses stay misses
+# rather than becoming wrong answers.
+#
+# It needs the neatline, which comes from the georeferencing, so it is skipped
+# when that is not available - which is why it supplements the page windows
+# rather than replacing them.
+CREDITS_NEATLINE_ABOVE = (0.085, 0.003)   # page-height fractions above the top
+CREDITS_NEATLINE_WIDTH = 0.26             # page-width fraction from the left
+CREDITS_NEATLINE_LEFT_PAD = 140           # px left of the neatline
+# Below this the window is degenerate and is skipped rather than cropped.
+CREDITS_NEATLINE_MIN_PX = 60
+
+# The two forms the block is set in, and the difference matters: an original
+# survey lists the officers who did it, a revised or compiled sheet indexes
+# sub-areas with their dates. On the nine sheets held in two printings, the form
+# is what distinguishes the two that were really resurveyed (Porto-Farina,
+# Ariana) from the seven that are reprints of one survey - see
+# scripts/difference_editions.py.
+# "apres les travaux" without the leading "D'": the apostrophe comes back as a
+# typographic quote, a backtick or nothing at all, and Bizerte OCRs the whole
+# opening as "| | D D 'apres les travaux :" - which the stricter pattern missed.
+# Dropping the D' costs nothing, because "apres les travaux" does not occur in
+# the officers form ("Les Travaux sur le Terrain ont ete executes par...").
+CREDITS_COMPILED_RE = re.compile(r"apr[eèéêë]s\s+l?e?s?\s*travau", re.IGNORECASE)
+CREDITS_OFFICERS_RE = re.compile(r"travau.{0,20}terr?ain", re.IGNORECASE)
+
 WINDOWS = {
     "footer": [(0.00, 0.820, 0.35, 1.000),
                (0.35, 0.820, 0.70, 1.000),
@@ -138,7 +179,29 @@ def ocr(image: Image.Image, window: tuple[float, float, float, float],
         binary, lang="fra", config="--psm 6").split())
 
 
-def read_text(path: Path) -> dict:
+def neatline_window(image: Image.Image,
+                    neatline: dict) -> tuple[float, float, float, float] | None:
+    """The credits window as page fractions, derived from the detected neatline.
+
+    None when the neatline leaves no room above it. Kalaat es Senam's detected
+    frame has top = -60 - the detector put it just off the page - so both edges
+    of the window clamp to zero, and a zero-height crop is not a crop: Tesseract
+    raises and the sheet loses every field, not just this one. Guarding here
+    rather than at the call site because the window is what is degenerate.
+    """
+    width, height = image.size
+    x0 = max(neatline["left"] - CREDITS_NEATLINE_LEFT_PAD, 0) / width
+    y0 = max(neatline["top"] - CREDITS_NEATLINE_ABOVE[0] * height, 0) / height
+    x1 = min(neatline["left"] / width + CREDITS_NEATLINE_WIDTH, 1.0)
+    y1 = max(neatline["top"] - CREDITS_NEATLINE_ABOVE[1] * height, 0) / height
+    if (x1 - x0) * width < CREDITS_NEATLINE_MIN_PX:
+        return None
+    if (y1 - y0) * height < CREDITS_NEATLINE_MIN_PX:
+        return None
+    return (x0, y0, x1, y1)
+
+
+def read_text(path: Path, neatline: dict | None = None) -> dict:
     """Everything that costs a Tesseract call. Kept apart from the parsing so a
     changed rule can be re-applied to the cached text - see --recompute."""
     image = Image.open(path).convert("RGB")
@@ -152,8 +215,13 @@ def read_text(path: Path) -> dict:
     # credits block. Without the anchor test, a window that caught the grid
     # labels instead returned a "fieldwork year" of 1951 for a sheet surveyed
     # in the 1890s.
+    windows = list(CREDITS_WINDOWS)
+    if neatline:
+        from_neatline = neatline_window(image, neatline)
+        if from_neatline:
+            windows.append(from_neatline)
     candidates = [ocr(image, window, CREDITS_UPSCALE, CREDITS_THRESHOLD)
-                  for window in CREDITS_WINDOWS]
+                  for window in windows]
     anchored = [c for c in candidates if CREDITS_ANCHOR_RE.search(c)]
     # Falling back to an unanchored window keeps the sheets whose anchor phrase
     # OCR'd badly - the block is there, "Les Travaux" is not legible - but those
@@ -161,6 +229,10 @@ def read_text(path: Path) -> dict:
     text["credits_text"] = (anchored[0] if anchored
                             else max(candidates, key=len))[:400]
     text["survey_years_basis"] = "anchored" if anchored else "unanchored"
+    text["credits_window"] = ("neatline"
+                              if neatline and anchored
+                              and anchored[0] == candidates[-1]
+                              else "page_fraction")
     return text
 
 
@@ -173,6 +245,15 @@ def extract(text: dict) -> dict:
         found["survey_year_min"] = survey_years[0]
         found["survey_year_max"] = survey_years[-1]
         found["survey_years_read"] = len(survey_years)
+
+    # Which of the two forms the block is set in. "compiled" is tested first:
+    # a revised sheet's block often still contains the word "travaux", so the
+    # officers pattern would match it too.
+    credits = text["credits_text"]
+    if CREDITS_COMPILED_RE.search(credits):
+        found["credit_form"] = "compiled"
+    elif CREDITS_OFFICERS_RE.search(credits):
+        found["credit_form"] = "officers"
 
     footer = text["footer_text"]
     equidistance = EQUIDISTANCE_RE.search(footer)
@@ -209,14 +290,14 @@ def extract(text: dict) -> dict:
     return found
 
 
-def analyse(path: Path) -> dict:
-    return extract(read_text(path))
+def analyse(path: Path, neatline: dict | None = None) -> dict:
+    return extract(read_text(path, neatline))
 
 
 CSV_FIELDS = [
     "record_id", "designation", "sheet_name",
     "catalogue_year", "survey_year_min", "survey_year_max", "survey_years_read",
-    "survey_years_basis",
+    "survey_years_basis", "credit_form", "credits_window",
     "revised_on_sheet", "imprint_year", "print_run_month", "print_run_year",
     "publisher_on_sheet", "contour_interval_m", "declination_epoch",
     "price_francs", "catalogue_to_survey_gap_years",
@@ -232,6 +313,13 @@ def main() -> int:
                         default=REPO_ROOT / "data" / "sheet_margins.json")
     parser.add_argument("--out-csv", type=Path,
                         default=REPO_ROOT / "data" / "sheet_margins.csv")
+    parser.add_argument("--neatlines", type=Path, nargs="*",
+                        default=[REPO_ROOT / "data" / "sheet_georef.json",
+                                 REPO_ROOT / "data" / "sheet_graticule.json",
+                                 REPO_ROOT / "data" / "sheet_corner_fit.json",
+                                 REPO_ROOT / "data" / "sheet_grid.json"],
+                        help="where to look for a detected neatline, for the "
+                             "credits window taken from it")
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--recompute", action="store_true",
                         help="re-parse the cached OCR text without re-reading "
@@ -240,6 +328,18 @@ def main() -> int:
 
     sheets = {r["record_id"]: r
               for r in csv.DictReader(args.series.open(encoding="utf-8"))}
+
+    # The neatline the georeferencing detected, for the third credits window.
+    # Absent on the first pass over a fresh checkout, which is why the two page
+    # windows stay: this only ever adds coverage.
+    neatlines: dict = {}
+    for source in args.neatlines:
+        if not source.exists():
+            continue
+        for key, value in json.loads(
+                source.read_text(encoding="utf-8")).items():
+            if isinstance(value, dict) and "neatline_px" in value:
+                neatlines.setdefault(key, value["neatline_px"])
 
     results: dict = {}
     if args.out_json.exists():
@@ -262,7 +362,7 @@ def main() -> int:
 
     for index, path in enumerate(pending, 1):
         try:
-            results[path.stem] = analyse(path)
+            results[path.stem] = analyse(path, neatlines.get(path.stem))
         except Exception as error:
             results[path.stem] = {"error": str(error)}
         found = results[path.stem]
@@ -271,9 +371,17 @@ def main() -> int:
               f"survey={found.get('survey_year_min', '-')}-{found.get('survey_year_max', '-')} "
               f"tirage={found.get('print_run_year', '-')} "
               f"equid={found.get('contour_interval_m', '-')}m "
-              f"pub={found.get('publisher_on_sheet', '-')}", flush=True)
+              f"pub={found.get('publisher_on_sheet', '-')} "
+              f"form={found.get('credit_form', '-')}", flush=True)
         args.out_json.write_text(json.dumps(results, ensure_ascii=False, indent=2),
                                  encoding="utf-8")
+
+    # Write it back here too. The only other write is inside the loop over
+    # pending scans, and --recompute leaves that loop empty - so a re-parse used
+    # to update the CSV and leave the JSON holding the previous rules, exactly
+    # the bug detect_sheet_grid.py had.
+    args.out_json.write_text(json.dumps(results, ensure_ascii=False, indent=2),
+                             encoding="utf-8")
 
     rows = []
     dropped = 0

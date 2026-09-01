@@ -1,0 +1,86 @@
+record_id,sheet_name,corner_easting_km,corner_northing_km,corner_easting_m,corner_northing_m,corner_source_e,corner_source_n,corner_support_e,corner_support_n,corner_exact_count_e,corner_exact_count_n,shift_basis_e,shift_basis_n,origin_shift_km_e,origin_shift_km_n,neatline_error_m_e,neatline_error_m_n
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,439,439,439132,439409,north_west,south_west,3,2,3,1,printed_metres,printed_metres,0,0,11.0,182.3
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,,,,,,,1,1,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340356,Metline,,454,,454495,,north_west,1,3,,2,,printed_metres,,0,,10.9
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,,,,,,,0,1,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,469,439,469433,439409,north_east,north_west,3,2,2,2,printed_metres,printed_metres,0,0,-36.1,36.0
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,501,414,501326,414617,north_east,south_east,3,4,3,3,printed_metres,printed_metres,0,0,-27.8,57.6
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,499,434,499734,434555,south_west,north_west,4,3,4,3,printed_metres,printed_metres,0,0,-11.0,-9.0
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,565,429,565113,429713,north_west,north_west,4,3,4,3,printed_metres,printed_metres,0,0,12.1,91.6
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,,427,,427293,,north_west,1,3,,3,,printed_metres,,0,,72.9
+oai:u-bordeaux-montaigne.fr:340374,Nefza,,,,,,,0,0,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340375,Hedil,435,419,435953,419472,north_west,north_west,3,2,3,2,printed_metres,printed_metres,0,0,59.3,-280.6
+oai:u-bordeaux-montaigne.fr:340376,Mateur,499,,499734,,north_east,,3,1,2,,printed_metres,,0,,24.8,
+oai:u-bordeaux-montaigne.fr:340387,Ariana,498,412,498149,,south_west,north_east,4,2,4,,printed_metres,printed_kilometre,0,0,45.8,
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,530,409,530039,409774,south_west,north_east,2,3,1,3,printed_metres,printed_metres,0,0,-2.2,-442.5
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,563,407,563516,407357,north_west,north_east,4,3,3,3,printed_metres,printed_metres,0,0,-13.6,43.2
+oai:u-bordeaux-montaigne.fr:340392,Kelibia,,,,,,,1,1,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340393,Béja,434,399,434365,399536,north_west,north_west,3,3,3,3,printed_metres,printed_metres,0,0,7.2,17.6
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,466,397,466258,397107,north_west,north_west,3,4,3,4,printed_metres,printed_metres,0,0,-18.4,202.4
+oai:u-bordeaux-montaigne.fr:340395,Tunis,498,394,498149,394681,north_west,north_west,4,3,4,3,printed_metres,printed_metres,0,0,-116.7,30.3
+oai:u-bordeaux-montaigne.fr:340407,La Goulette,,,,,,,1,1,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,560,389,560347,389837,south_west,north_west,3,3,2,2,printed_metres,printed_metres,0,0,257.9,19.1
+oai:u-bordeaux-montaigne.fr:340411,Mennzel Heurr,625,387,625717,387420,north_east,north_west,2,3,2,3,printed_metres,printed_metres,594,388,-5.3,60.8
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,432,377,432769,377172,north_west,north_east,4,4,4,3,printed_metres,printed_metres,0,0,-143.3,78.9
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,464,377,464681,377172,north_west,north_west,2,3,2,3,printed_metres,printed_metres,0,0,-18.8,-27.2
+oai:u-bordeaux-montaigne.fr:340414,Oudna,496,,496570,,north_west,,3,1,3,,printed_metres,,0,,-30.3,
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,526,372,526895,372321,south_west,north_west,2,3,1,3,printed_metres,printed_metres,0,0,-22.5,6.3
+oai:u-bordeaux-montaigne.fr:340416,Nabeul,560,347,560347,347543,north_west,south_east,3,2,3,2,printed_metres,printed_metres,560,371,-27.0,3.1
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,367,362,367433,362094,north_west,north_east,3,3,2,3,printed_metres,printed_metres,0,0,16.0,81.4
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,399,359,399325,359662,north_west,north_east,4,2,4,2,printed_metres,printed_metres,0,0,50.8,27.6
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,431,359,431220,359663,north_west,north_west,3,4,3,4,printed_metres,printed_metres,0,0,49.5,21.4
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,,,,,,,1,1,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,493,354,493436,354809,south_west,north_west,3,3,3,3,printed_metres,printed_metres,0,0,-25.0,-18.2
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,526,349,526895,349963,north_west,north_east,4,3,4,3,printed_metres,printed_metres,0,0,-7.1,14.1
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,590,349,590673,349963,north_east,north_west,2,2,2,2,printed_metres,printed_metres,0,0,-7.9,-4.0
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,365,342,365869,342160,north_west,north_east,3,3,3,3,printed_metres,printed_metres,0,0,3.3,16.8
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,429,342,429658,342160,north_east,north_west,3,3,2,3,printed_metres,printed_metres,0,0,-15.4,61.1
+oai:u-bordeaux-montaigne.fr:340436,Gafour,,337,,337300,,north_east,1,4,,4,,printed_metres,,0,,30.8
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,461,337,461546,337300,north_west,north_west,2,3,2,3,printed_metres,printed_metres,0,0,-0.5,15.3
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,493,314,493498,314939,north_west,south_west,4,3,4,2,printed_metres,printed_metres,0,0,31.5,114.1
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,557,312,557216,312514,north_east,south_west,3,2,3,2,printed_metres,printed_metres,0,0,64.7,37.3
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,364,324,364312,,north_west,north_west,3,2,3,,printed_metres,printed_kilometre,0,0,-4.7,
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,428,322,428094,322227,north_east,north_west,3,3,3,3,printed_metres,printed_metres,0,0,-225.0,2.1
+oai:u-bordeaux-montaigne.fr:340453,Siliana,426,319,426542,319794,south_west,north_west,4,3,3,3,printed_metres,printed_metres,0,0,-6.0,81.1
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,490,,490326,,south_east,,2,1,2,,printed_metres,,0,,-22.4,
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,522,292,522216,292580,south_east,south_east,4,4,3,4,printed_metres,printed_metres,0,0,-15.5,28.8
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,523,310,523769,310093,north_west,north_east,3,3,3,3,printed_metres,printed_metres,0,0,-3.3,-27.0
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,555,310,555659,310093,north_west,north_west,3,3,2,3,printed_metres,printed_metres,0,0,5.3,51.2
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,394,284,394653,284793,north_east,south_west,2,3,2,1,printed_metres,printed_metres,0,0,-13.4,259.1
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,,,,,,,0,0,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340472,Maktar,458,,458435,,north_east,,3,1,2,,printed_metres,,0,,11.8,
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,490,297,490326,297431,north_east,north_west,4,2,4,2,printed_metres,printed_metres,0,0,13.1,51.6
+oai:u-bordeaux-montaigne.fr:340474,Aïne Djeloula,490,292,490326,292580,north_west,north_east,2,2,2,2,printed_metres,printed_metres,490,296,39.7,-157.4
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,522,292,522218,292580,north_west,north_west,2,3,2,3,printed_metres,printed_metres,0,0,10.9,58.2
+oai:u-bordeaux-montaigne.fr:340476,Sousse,584,287,584452,287740,south_east,north_east,2,2,2,2,printed_metres,printed_metres,0,0,-57.3,6.2
+oai:u-bordeaux-montaigne.fr:340488,Kalaat es Senam,,,,,,,0,0,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,423,282,423457,282355,south_east,north_west,3,3,2,3,printed_metres,printed_metres,0,0,-30.2,63.5
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,456,277,456890,277498,north_east,north_east,3,3,3,2,printed_metres,printed_metres,0,0,18.7,24.2
+oai:u-bordeaux-montaigne.fr:340491,Pichon,488,277,488782,277498,north_east,north_west,3,2,3,2,printed_metres,printed_metres,0,0,10.8,37.9
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,520,,520673,,north_east,,2,1,2,,printed_metres,,0,,-13.0,
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,552,272,552561,272647,north_east,north_west,2,3,2,3,printed_metres,printed_metres,0,0,6.4,39.2
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,582,270,582928,270226,south_east,north_west,3,4,3,3,printed_metres,printed_metres,0,0,-24.9,3.6
+oai:u-bordeaux-montaigne.fr:340495,Moknine,584,267,584452,267805,north_west,north_west,2,2,1,2,printed_metres,printed_metres,0,0,-6.2,-91.6
+oai:u-bordeaux-montaigne.fr:340496,Thala,359,264,359671,264859,north_west,north_west,3,4,3,2,printed_metres,printed_metres,0,0,-23.8,25.9
+oai:u-bordeaux-montaigne.fr:340507,Ksar Tlili,,,,,,,1,1,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,423,257,423457,257585,north_west,north_east,3,4,2,4,printed_metres,printed_metres,0,0,3.8,50.3
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,455,257,455351,257565,north_west,north_west,2,4,2,3,printed_metres,printed_metres,0,0,-29.3,17.2
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,519,255,519142,255136,north_east,north_west,2,2,2,2,printed_metres,printed_metres,0,0,9.8,34.1
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,519,252,519142,252709,north_west,north_west,2,4,2,3,printed_metres,printed_metres,0,0,-5.6,37.8
+oai:u-bordeaux-montaigne.fr:340512,Kerker,,,,,,,0,0,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,358,244,358135,244923,north_west,north_west,3,3,3,2,printed_metres,printed_metres,0,0,-8.0,0.5
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,388,242,388498,242484,south_west,north_west,3,3,3,2,printed_metres,printed_metres,0,0,20.1,53.2
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,453,240,453819,240057,north_east,north_west,3,3,2,3,printed_metres,printed_metres,-36,0,23.9,14.7
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,485,237,485714,237626,north_east,north_west,2,3,2,2,printed_metres,printed_metres,0,0,17.8,29.5
+oai:u-bordeaux-montaigne.fr:340527,Nasr Allah,,,,,,,1,1,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,,,,,,,0,0,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340529,El Djem,,,,,,,0,0,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340530,Chebba,613,225,613297,225516,north_east,north_east,3,2,2,2,printed_metres,printed_metres,0,0,-7.9,11.3
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,388,222,388498,222548,north_east,north_east,2,4,2,3,printed_metres,printed_metres,0,0,5.3,-1.3
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,388,222,388498,222548,north_west,north_west,4,3,4,3,printed_metres,printed_metres,0,0,-14.6,-1.9
+oai:u-bordeaux-montaigne.fr:340533,Djebeniana,610,205,610263,205579,south_east,north_east,3,4,3,4,printed_metres,printed_metres,0,0,-62.2,20.3
+oai:u-bordeaux-montaigne.fr:340534,,514,331,514643,331918,north_west,north_west,2,3,2,2,printed_metres,printed_metres,0,0,2.3,32.3
+oai:u-bordeaux-montaigne.fr:340535,,550,331,550535,331918,south_east,south_west,3,2,2,2,printed_metres,printed_metres,0,0,27.4,-466.1
+oai:u-bordeaux-montaigne.fr:340616,,,,,,,,0,0,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340628,,,,,,,,0,0,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340629,,,,,,,,0,0,,,,,,,,

@@ -21,7 +21,7 @@ would render as a confident zero and read as "no houses here". Two guards:
 
 Outputs:
     data/symbols_by_unit.csv        per gouvernorat and délégation
-    data/symbols_joined.geojson     every symbol with its modern unit attached
+    data/symbols_joined.csv         every symbol with its modern unit attached
     docs/img/objects_on_modern_tunisia.png
 
 Usage:
@@ -51,6 +51,11 @@ from shapely.strtree import STRtree
 warnings.filterwarnings("ignore")
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+# Five decimal places is about a metre. Seven, the default of the first version,
+# implies a centimetre on coordinates whose stated accuracy is twenty metres, and
+# spends a third of the file size saying so.
+COORD_DECIMALS = 5
+
 # From the data-viz reference palette. Sequential encoding uses one hue,
 # light to dark; no-data is a hatch rather than the lightest step.
 SURFACE = "#fcfcfb"
@@ -59,12 +64,21 @@ INK_SECONDARY = "#52514e"
 INK_MUTED = "#898781"
 GRIDLINE = "#e1e0d9"
 BASELINE = "#c3c2b7"
-SERIES_1 = "#2a78d6"
+SERIES_1 = "#2a78d6"     # anchor confirmed
+SERIES_2 = "#eb6834"     # anchor unconfirmed (validated all-pairs against slot 1)
 SEQUENTIAL = ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5",
               "#256abf", "#184f95", "#0d366b"]
-NO_DATA_FACE = "#f0efec"
+NO_DATA_FACE = "#f0efec"      # no sheet extracted - hatched
+THIN_DATA_FACE = "#e1e0d9"    # read, but too little of it to state a density
 
 LEVELS = {2: ("gouvernorat", "adm2_name"), 3: ("délégation", "adm3_name")}
+
+# Below this much ground read, a density is not reported. Without a floor the
+# delegation table led with "Menzel Chaker, 353 houses per km2" computed from six
+# houses on 0.02 km2, and "Saouaf, 98/km2" from four. A ratio with a denominator
+# that small is arithmetic, not a measurement, and it sorts straight to the top
+# of any ranking.
+MIN_DENSITY_AREA_KM2 = 25.0
 
 
 def read_units(path: Path, name_field: str) -> list[dict]:
@@ -82,7 +96,21 @@ def read_units(path: Path, name_field: str) -> list[dict]:
     return units
 
 
-def load_symbols(directory: Path) -> list[dict]:
+def load_confidence(path: Path) -> dict[str, bool]:
+    """record_id -> was the sheet's absolute anchor confirmed.
+
+    Read from the georeferencing table, which is the single definition. It used
+    to be copied onto every symbol as well, and the two copies drifted: 44
+    sheets by one rule against 39 by the other, with each consumer believing
+    whichever it happened to read.
+    """
+    if not path.exists():
+        return {}
+    return {r["record_id"]: r["anchor_confident"] == "1"
+            for r in csv.DictReader(path.open(encoding="utf-8"))}
+
+
+def load_symbols(directory: Path, confidence: dict[str, bool]) -> list[dict]:
     symbols = []
     for path in sorted(directory.glob("*.geojson")):
         collection = json.loads(path.read_text(encoding="utf-8"))
@@ -92,6 +120,11 @@ def load_symbols(directory: Path) -> list[dict]:
                 "lon": lon, "lat": lat,
                 "symbol_class": feature["properties"]["symbol_class"],
                 "record_id": feature["properties"]["record_id"],
+                # A sheet whose absolute anchor could not be confirmed may sit
+                # a kilometre or two off: invisible at national scale, not
+                # acceptable inside a unit whose boundary it might cross.
+                "anchor_confident": confidence.get(
+                    feature["properties"]["record_id"], False),
             })
     return symbols
 
@@ -146,6 +179,12 @@ def summarise(symbols: list[dict], units: list[dict], level_name: str) -> list[d
         counts = by_unit.get(name, {})
         area = extracted_area_km2(unit, points.get(name, []))
         buildings = counts.get("building", 0)
+        if area >= MIN_DENSITY_AREA_KM2:
+            basis, density = "measured", round(buildings / area, 3)
+        elif area > 0:
+            basis, density = "too_little_read", ""
+        else:
+            basis, density = "no_sheet", ""
         rows.append({
             "level": level_name,
             "unit": name,
@@ -154,7 +193,8 @@ def summarise(symbols: list[dict], units: list[dict], level_name: str) -> list[d
             "building": buildings,
             "well_provisional": counts.get("well", 0),
             "extracted_km2": round(area, 1),
-            "buildings_per_km2": round(buildings / area, 3) if area > 0 else "",
+            "buildings_per_km2": density,
+            "density_basis": basis,
         })
     rows.sort(key=lambda r: (-r["building"], r["unit"]))
     return rows
@@ -176,6 +216,7 @@ def draw(units2: list[dict], rows2: list[dict], symbols: list[dict],
     figure, axes = plt.subplots(1, 2, figsize=(9.6, 10.4), facecolor=SURFACE)
 
     density = {r["unit"]: r["buildings_per_km2"] for r in rows2}
+    basis = {r["unit"]: r["density_basis"] for r in rows2}
     values = sorted(v for v in density.values() if v != "")
     # Quantile breaks: the distribution is skewed, so equal intervals would put
     # almost every unit in one class.
@@ -194,11 +235,23 @@ def draw(units2: list[dict], rows2: list[dict], symbols: list[dict],
         xs = [c[0] for c in corners] + [corners[0][0]]
         ys = [c[1] for c in corners] + [corners[0][1]]
         ax.plot(xs, ys, color=BASELINE, linewidth=0.7, zorder=2)
-    buildings = [(s["lon"], s["lat"]) for s in symbols
-                 if s["symbol_class"] == "building"]
-    if buildings:
-        ax.scatter([p[0] for p in buildings], [p[1] for p in buildings],
-                   s=1.6, c=SERIES_1, linewidths=0, alpha=0.8, zorder=3)
+    houses = [s for s in symbols if s["symbol_class"] == "building"]
+    sure = [(s["lon"], s["lat"]) for s in houses if s["anchor_confident"]]
+    unsure = [(s["lon"], s["lat"]) for s in houses if not s["anchor_confident"]]
+    if unsure:
+        ax.scatter([p[0] for p in unsure], [p[1] for p in unsure],
+                   s=1.4, c=SERIES_2, linewidths=0, alpha=0.75, zorder=3,
+                   label=f"anchor unconfirmed ({len(unsure):,})".replace(",", "\u2009"))
+    if sure:
+        ax.scatter([p[0] for p in sure], [p[1] for p in sure],
+                   s=1.4, c=SERIES_1, linewidths=0, alpha=0.8, zorder=4,
+                   label=f"anchor confirmed ({len(sure):,})".replace(",", "\u2009"))
+    buildings = sure + unsure
+    if sure and unsure:
+        legend = ax.legend(loc="lower left", frameon=False, fontsize=8.5,
+                           labelcolor=INK_SECONDARY, markerscale=6,
+                           borderaxespad=0.0, handletextpad=0.4)
+        legend.set_zorder(6)
     # Counted, not typed in: a number written into a title goes stale silently
     # the first time the extraction is re-run.
     sheets_done = len({s["record_id"] for s in symbols})
@@ -214,7 +267,10 @@ def draw(units2: list[dict], rows2: list[dict], symbols: list[dict],
         value = density.get(unit["name"], "")
         for polygon in getattr(unit["geometry"], "geoms", [unit["geometry"]]):
             x, y = polygon.exterior.xy
-            if value == "":
+            if value == "" and basis.get(unit["name"]) == "too_little_read":
+                ax.fill(x, y, facecolor=THIN_DATA_FACE, edgecolor=GRIDLINE,
+                        linewidth=0.6)
+            elif value == "":
                 ax.fill(x, y, facecolor=NO_DATA_FACE, edgecolor=GRIDLINE,
                         linewidth=0.6, hatch="///")
             else:
@@ -227,6 +283,8 @@ def draw(units2: list[dict], rows2: list[dict], symbols: list[dict],
                               label=("≤ %.1f" % breaks[i]) if i < len(breaks)
                               else "> %.1f" % breaks[-1])
                for i in range(len(SEQUENTIAL))]
+    handles.append(mpatches.Patch(facecolor=THIN_DATA_FACE, edgecolor=GRIDLINE,
+                                  label=f"< {MIN_DENSITY_AREA_KM2:.0f} km² read"))
     handles.append(mpatches.Patch(facecolor=NO_DATA_FACE, edgecolor=GRIDLINE,
                                   hatch="///", label="no sheet extracted"))
     ax.legend(handles=handles, loc="lower left", frameon=False, fontsize=8,
@@ -246,8 +304,8 @@ def draw(units2: list[dict], rows2: list[dict], symbols: list[dict],
                 "Dots: individual houses, from the legend's “Maisons” mark.",
                 fontsize=8.5, color=INK_SECONDARY, va="top")
     figure.text(0.53, 0.115,
-                "Denominator is extracted area, not gouvernorat area.\n"
-                "Hatched units are not zero — no sheet extracted there yet.",
+                f"Denominator is extracted area, not gouvernorat area; a density\n"
+                f"needs {MIN_DENSITY_AREA_KM2:.0f} km² read. Hatched is not zero — nothing extracted yet.",
                 fontsize=8.5, color=INK_SECONDARY, va="top")
     figure.suptitle("Objects from the Tunisia 1:50 000 series, on contemporary boundaries",
                     fontsize=13.5, color=INK_PRIMARY, x=0.03, ha="left", y=0.978)
@@ -271,17 +329,24 @@ def main() -> int:
                         default=REPO_ROOT / "data" / "boundaries")
     parser.add_argument("--georef", type=Path,
                         default=REPO_ROOT / "data" / "sheet_georef.json")
+    parser.add_argument("--georef-csv", type=Path,
+                        default=REPO_ROOT / "data" / "sheet_georef.csv")
     parser.add_argument("--out-csv", type=Path,
                         default=REPO_ROOT / "data" / "symbols_by_unit.csv")
-    parser.add_argument("--out-geojson", type=Path,
-                        default=REPO_ROOT / "data" / "symbols_joined.geojson")
+    parser.add_argument("--out-table", type=Path,
+                        default=REPO_ROOT / "data" / "symbols_joined.csv")
     parser.add_argument("--out-png", type=Path,
                         default=REPO_ROOT / "docs" / "img"
                                 / "objects_on_modern_tunisia.png")
     args = parser.parse_args()
 
-    symbols = load_symbols(args.symbols)
-    print(f"{len(symbols)} symbols from {len(set(s['record_id'] for s in symbols))} sheets")
+    confidence = load_confidence(args.georef_csv)
+    symbols = load_symbols(args.symbols, confidence)
+    sure = [s for s in symbols if s["anchor_confident"]]
+    print(f"{len(symbols)} symbols from "
+          f"{len(set(s['record_id'] for s in symbols))} sheets; "
+          f"{len(sure)} on {len(set(s['record_id'] for s in sure))} "
+          f"anchor-confirmed sheets")
 
     all_rows = []
     for level, (level_name, name_field) in LEVELS.items():
@@ -289,8 +354,12 @@ def main() -> int:
         join(symbols, units)
         for symbol in symbols:
             symbol[level_name] = symbol.pop("unit")
+        # Counts and densities use the anchor-confirmed sheets only: an
+        # unconfirmed anchor can be a kilometre or two out, which is more than
+        # enough to move a symbol into the neighbouring delegation.
         rows = summarise(
-            [{**s, "unit": s[level_name]} for s in symbols], units, level_name)
+            [{**s, "unit": s[level_name]} for s in symbols
+             if s["anchor_confident"]], units, level_name)
         all_rows.extend(rows)
         with_any = [r for r in rows if r["building"] > 0]
         print(f"  admin{level} ({level_name}): {len(units)} units, "
@@ -300,22 +369,31 @@ def main() -> int:
 
     fields = ["level", "unit", "parent_gouvernorat", "sheets_extracted",
               "building", "well_provisional", "extracted_km2",
-              "buildings_per_km2"]
+              "buildings_per_km2", "density_basis"]
     with args.out_csv.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
         writer.writerows(all_rows)
 
-    args.out_geojson.write_text(json.dumps({
-        "type": "FeatureCollection",
-        "features": [{
-            "type": "Feature",
-            "geometry": {"type": "Point", "coordinates": [s["lon"], s["lat"]]},
-            "properties": {k: s[k] for k in
-                           ("symbol_class", "record_id", "gouvernorat",
-                            "délégation")},
-        } for s in symbols],
-    }, ensure_ascii=False), encoding="utf-8")
+    # A flat table rather than a second GeoJSON. The per-sheet GeoJSONs already
+    # exist for GIS; repeating all 75 000 of them with two extra properties cost
+    # 18 MB, most of it JSON key names, and a CSV is what gets loaded into R or
+    # Stata anyway.
+    with args.out_table.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=[
+            "record_id", "symbol_class", "lon", "lat",
+            "gouvernorat", "délégation", "anchor_confident"])
+        writer.writeheader()
+        for symbol in symbols:
+            writer.writerow({
+                "record_id": symbol["record_id"],
+                "symbol_class": symbol["symbol_class"],
+                "lon": round(symbol["lon"], COORD_DECIMALS),
+                "lat": round(symbol["lat"], COORD_DECIMALS),
+                "gouvernorat": symbol.get("gouvernorat") or "",
+                "délégation": symbol.get("délégation") or "",
+                "anchor_confident": int(symbol["anchor_confident"]),
+            })
 
     georef = json.loads(args.georef.read_text(encoding="utf-8"))
     footprints = []
@@ -329,13 +407,14 @@ def main() -> int:
 
     draw(units2, rows2, symbols, footprints, args.out_png)
 
-    top = [r for r in all_rows if r["level"] == "gouvernorat"][:6]
+    top = [r for r in all_rows if r["level"] == "gouvernorat"
+           and r["density_basis"] == "measured"][:6]
     print("\n  busiest gouvernorats by extracted houses:")
     for row in top:
         print(f"    {row['unit'][:20]:<20} {row['building']:>5} houses  "
               f"{row['extracted_km2']:>7} km²  "
               f"{row['buildings_per_km2'] or '—':>7} /km²")
-    print(f"\n  -> {args.out_csv}\n  -> {args.out_geojson}\n  -> {args.out_png}")
+    print(f"\n  -> {args.out_csv}\n  -> {args.out_table}\n  -> {args.out_png}")
     return 0
 
 

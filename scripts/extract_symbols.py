@@ -40,6 +40,11 @@ Coordinates come from scripts/georeference_sheets.py, so every symbol carries a
 Lambert easting and northing and a WGS84 longitude and latitude, and inherits
 that sheet's stated accuracy.
 
+Whether a sheet's absolute anchor was confirmed is deliberately NOT copied onto
+each symbol. It is a property of the sheet, and duplicating it per feature is
+what let two copies drift apart. Consumers join it from
+data/sheet_georef.csv on record_id.
+
 Outputs:
     data/symbols/<record_id>.geojson   EPSG:4326, one feature per symbol
     data/symbols_summary.csv           counts per sheet and class
@@ -70,6 +75,11 @@ warnings.filterwarnings("ignore", message=".*lose important projection.*")
 Image.MAX_IMAGE_PIXELS = None
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+# Five decimal places is about a metre. Seven, the default of the first version,
+# implies a centimetre on coordinates whose stated accuracy is twenty metres, and
+# spends a third of the file size saying so.
+COORD_DECIMALS = 5
+
 # Ring radii in pixels, at the series' measured 236 px/km. A legend ring is
 # about 0.5 mm on paper, so 10 px across.
 RING_RADII = (4.5, 5.0, 5.5, 6.0)
@@ -84,33 +94,62 @@ BUILDING_MAX_ASPECT = 6.0
 # spot heights and grid labels - are the same colour and a similar size, but
 # they are strokes, so they fill much less of their bounding box.
 BUILDING_MIN_FILL = 0.55
-# Keep detections a little inside the neatline. Without this the legend's own
-# symbols and the red margin labels are extracted as map content, and the
-# Kasserine sheet returned features up to 1.3 km outside its own frame.
-FRAME_INSET_PX = 8
+# Detections are clipped to a box the size of the sheet's catalogued extent -
+# which is what its "Coordonnees (E ... / N ...)" statement describes, the
+# neatline - centred where the sheet's own transform puts its frame.
+#
+# Taking size from one source and position from the other is deliberate, because
+# each is reliable for only one of them.
+#
+#   The detected neatline is the wrong source for size. Its box comes out a
+#   median 6% smaller than the catalogued one but ranges from 40% smaller to
+#   larger, because each side of the frame is three rules and the detector picks
+#   a different one on different sheets. The catalogued size does not vary with
+#   how a scan came out.
+#
+#   The catalogue box is the wrong source for position. On Djebel Mrhila it is
+#   36 km east of where the sheet prints its own corner coordinates, and
+#   clipping on it threw away four fifths of that sheet's houses - 735 down to
+#   152 - once the anchor was corrected. The transform's position now rests on
+#   the sheet's own printing (see read_corner_coordinates.py), so it is the
+#   better centre by a wide margin.
+#
+# The legend and the red grid labels lie outside the box either way.
+CLIP_INSET_DEG = 0.002        # about 200 m, to stay clear of the neatline itself
 
 
 GRID_EXCLUDE_PX = 6           # how far from a grid line to ignore red ink
+GRID_BLOCK_ROWS = 512         # rows per pass when masking out the grid
 ISOLATION_RADIUS = 2.6        # multiples of the ring radius
 ISOLATION_MAX_DENSITY = 0.12  # ink share allowed around an isolated ring
 
 
-def masks(array: np.ndarray) -> dict[str, np.ndarray]:
+def masks(array: np.ndarray, wanted: set[str]) -> dict[str, np.ndarray]:
+    """Colour masks, built only for the classes asked for.
+
+    Building all three costs three full-resolution int16 channels and three
+    boolean masks of a 66-megapixel scan whether they are used or not, which on
+    a default run that wants houses alone is most of the memory traffic.
+    """
     red, green, blue = (array[..., 0].astype(np.int16),
                         array[..., 1].astype(np.int16),
                         array[..., 2].astype(np.int16))
-    return {
+    recipes = {
         # Solid printed red - the same red as the grid, which is why the grid is
         # masked out geometrically rather than by colour.
-        "building": (red - green > 45) & (red - blue > 40) & (red > 110),
+        "building": lambda: ((red - green > 45) & (red - blue > 40)
+                            & (red > 110)),
         # Blue above green: this is what separates a well from an olive tree.
-        "well": (blue - red > 25) & (blue - green > 12) & (blue > 80),
+        "well": lambda: ((blue - red > 25) & (blue - green > 12) & (blue > 80)),
         # Green must actually be green, not merely the greenest channel of a
         # grey edge: relaxing this to catch fainter stipple made the detector
         # trace the black lettering and the tracks instead.
-        "vegetation": ((green - red > 16) & (green - blue > 4) & (green > 80)
-                       & (green - np.minimum(red, blue) > 24)),
+        "vegetation": lambda: ((green - red > 16) & (green - blue > 4)
+                               & (green > 80)
+                               & (green - np.minimum(red, blue) > 24)),
     }
+    return {name: recipe() for name, recipe in recipes.items()
+            if name in wanted}
 
 
 def grid_stripe(shape: tuple[int, int], lines: dict,
@@ -124,15 +163,42 @@ def grid_stripe(shape: tuple[int, int], lines: dict,
     georeferencing, so it can simply be cut out.
     """
     rows, columns = shape
-    y, x = np.mgrid[0:rows, 0:columns]
-    x = x + origin[0]
-    y = y + origin[1]
     stripe = np.zeros(shape, bool)
-    for constant in lines["easting_constants"]:
-        stripe |= np.abs(x - lines["tan_e"] * y - constant) < GRID_EXCLUDE_PX
-    for constant in lines["northing_constants"]:
-        stripe |= np.abs(y - lines["tan_n"] * x - constant) < GRID_EXCLUDE_PX
+    columns_axis = np.arange(columns, dtype=np.float32) + origin[0]
+    eastings = np.asarray(lines["easting_constants"], dtype=np.float32)
+    northings = np.asarray(lines["northing_constants"], dtype=np.float32)
+
+    # In row blocks rather than whole-image index grids. np.mgrid over a
+    # 66-megapixel scan is two int64 arrays of half a gigabyte each, and then
+    # every one of the ~55 grid lines makes another full-size temporary: on the
+    # Kasserine sheet that was two minutes of system time per sheet, more than
+    # the detection itself. A block of a few hundred rows fits in cache.
+    for start in range(0, rows, GRID_BLOCK_ROWS):
+        stop = min(start + GRID_BLOCK_ROWS, rows)
+        rows_axis = (np.arange(start, stop, dtype=np.float32)
+                     + origin[1])[:, None]
+        block = stripe[start:stop]
+
+        # Distance to the nearest easting line, via its line constant.
+        u = columns_axis[None, :] - lines["tan_e"] * rows_axis
+        block |= nearest_distance(u, eastings) < GRID_EXCLUDE_PX
+        v = rows_axis - lines["tan_n"] * columns_axis[None, :]
+        block |= nearest_distance(v, northings) < GRID_EXCLUDE_PX
     return stripe
+
+
+def nearest_distance(values: np.ndarray, sorted_lines: np.ndarray) -> np.ndarray:
+    """Distance from each value to the closest entry of `sorted_lines`.
+
+    One searchsorted plus two subtractions, instead of one full-size comparison
+    per line.
+    """
+    if sorted_lines.size == 0:
+        return np.full(values.shape, np.inf, dtype=np.float32)
+    index = np.searchsorted(sorted_lines, values)
+    left = sorted_lines[np.clip(index - 1, 0, sorted_lines.size - 1)]
+    right = sorted_lines[np.clip(index, 0, sorted_lines.size - 1)]
+    return np.minimum(np.abs(values - left), np.abs(values - right))
 
 
 def ring_template(outer: float, thickness: float):
@@ -201,7 +267,7 @@ def find_blobs(mask: np.ndarray) -> list[tuple[float, float]]:
 
 
 def extract(path: Path, window: tuple[int, int, int, int] | None,
-            lines: dict | None = None, frame: dict | None = None):
+            lines: dict | None = None, wanted: tuple[str, ...] = ("building",)):
     image = Image.open(path).convert("RGB")
     if window:
         image = image.crop(window)
@@ -209,30 +275,39 @@ def extract(path: Path, window: tuple[int, int, int, int] | None,
     else:
         origin = (0, 0)
     array = np.asarray(image)
-    layers = masks(array)
+    layers = masks(array, set(wanted))
     if lines:
         layers["building"] &= ~grid_stripe(layers["building"].shape, lines, origin)
 
-    found = {
-        "building": find_blobs(layers["building"]),
-        "well": find_rings(layers["well"]),
-        "vegetation": find_rings(layers["vegetation"]),
-    }
+    finders = {"building": find_blobs, "well": find_rings,
+               "vegetation": find_rings}
+    found = {name: finders[name](layer) for name, layer in layers.items()}
     shifted = {name: [(x + origin[0], y + origin[1]) for x, y in points]
                for name, points in found.items()}
-    if frame:
-        limits = (frame["left"] + FRAME_INSET_PX, frame["top"] + FRAME_INSET_PX,
-                  frame["right"] - FRAME_INSET_PX, frame["bottom"] - FRAME_INSET_PX)
-        inside = {name: [(x, y) for x, y in points
-                         if limits[0] <= x <= limits[2] and limits[1] <= y <= limits[3]]
-                  for name, points in shifted.items()}
-        local = {name: [(x - origin[0], y - origin[1]) for x, y in points]
-                 for name, points in inside.items()}
-        return inside, image, local
     return shifted, image, found
 
 
-def to_geojson(found: dict, affine: list, epsg: int, record_id: str) -> dict:
+def clip_box(sheet: dict, box: dict | None) -> dict | None:
+    """The catalogued extent, re-centred on where the transform puts the frame.
+
+    Keeps the catalogue's width and height and discards its position. Returns
+    None when there is no catalogued size to borrow.
+    """
+    if not box:
+        return None
+    corners = sheet.get("corners")
+    if not corners:
+        return box
+    fitted_lon = sum(c["lon"] for c in corners.values()) / 4
+    fitted_lat = sum(c["lat"] for c in corners.values()) / 4
+    east_west = (box["east"] - box["west"]) / 2
+    north_south = (box["north"] - box["south"]) / 2
+    return {"west": fitted_lon - east_west, "east": fitted_lon + east_west,
+            "south": fitted_lat - north_south, "north": fitted_lat + north_south}
+
+
+def to_geojson(found: dict, affine: list, epsg: int, record_id: str,
+               box: dict | None) -> dict:
     a, d, b, e, c, f = affine
     to_wgs84 = Transformer.from_crs(f"EPSG:{epsg}", "EPSG:4326", always_xy=True)
     features = []
@@ -241,10 +316,16 @@ def to_geojson(found: dict, affine: list, epsg: int, record_id: str) -> dict:
             easting = a * x + b * y + c
             northing = d * x + e * y + f
             lon, lat = to_wgs84.transform(easting, northing)
+            if box and not (box["west"] + CLIP_INSET_DEG <= lon
+                            <= box["east"] - CLIP_INSET_DEG
+                            and box["south"] + CLIP_INSET_DEG <= lat
+                            <= box["north"] - CLIP_INSET_DEG):
+                continue
             features.append({
                 "type": "Feature",
                 "geometry": {"type": "Point",
-                             "coordinates": [round(lon, 7), round(lat, 7)]},
+                             "coordinates": [round(lon, COORD_DECIMALS),
+                                             round(lat, COORD_DECIMALS)]},
                 "properties": {
                     "record_id": record_id,
                     "symbol_class": name,
@@ -278,6 +359,8 @@ def main() -> int:
     parser.add_argument("--images", type=Path, required=True)
     parser.add_argument("--georef", type=Path,
                         default=REPO_ROOT / "data" / "sheet_georef.json")
+    parser.add_argument("--partner", type=Path,
+                        default=REPO_ROOT / "data" / "partner_records.json")
     parser.add_argument("--series", type=Path,
                         default=REPO_ROOT / "data" / "tunisia_50k_series.csv")
     parser.add_argument("--out-dir", type=Path,
@@ -294,6 +377,7 @@ def main() -> int:
     args = parser.parse_args()
 
     georef = json.loads(args.georef.read_text(encoding="utf-8"))
+    partner = json.loads(args.partner.read_text(encoding="utf-8"))
     sheets = {r["record_id"]: r
               for r in csv.DictReader(args.series.open(encoding="utf-8"))}
 
@@ -302,6 +386,7 @@ def main() -> int:
         targets = [t for t in targets if t.stem in set(args.only)]
 
     rows = []
+    wanted = [c.strip() for c in args.classes.split(",") if c.strip()]
     for index, path in enumerate(targets, 1):
         record_id = path.stem
         reference = georef.get(record_id, {})
@@ -309,15 +394,20 @@ def main() -> int:
         if "affine" not in reference:
             print(f"  {index}/{len(targets)} {name[:22]:<22} - not georeferenced")
             continue
+        if reference.get("anchor_provisional"):
+            # Scale and rotation without a position. Extracting from it would
+            # produce coordinates that look exactly like the others and are
+            # wrong by however many kilometres the anchor turns out to be.
+            print(f"  {index}/{len(targets)} {name[:22]:<22} - anchor provisional")
+            continue
 
         window = tuple(args.window) if args.window else None
-        wanted = [c.strip() for c in args.classes.split(",") if c.strip()]
         found, image, local = extract(path, window, reference.get("grid_lines"),
-                                      reference.get("neatline_px"))
-        found = {k: v for k, v in found.items() if k in wanted}
-        local = {k: v for k, v in local.items() if k in wanted}
-        collection = to_geojson(found, reference["affine"], reference["epsg"],
-                                record_id)
+                                      tuple(wanted))
+        collection = to_geojson(
+            found, reference["affine"], reference["epsg"], record_id,
+            clip_box(reference, partner.get(record_id, {}).get("bbox")))
+        kept = len(collection["features"])
         args.out_dir.mkdir(parents=True, exist_ok=True)
         (args.out_dir / f"{record_id}.geojson").write_text(
             json.dumps(collection), encoding="utf-8")
@@ -325,26 +415,45 @@ def main() -> int:
         if args.overlay:
             draw_overlay(image, local, args.overlay / f"{record_id}.jpg")
 
-        counts = {k: len(found.get(k, [])) for k in ("building", "well", "vegetation")}
+        # Counted after the clip, so the table matches the GeoJSON.
+        counts = {k: 0 for k in ("building", "well", "vegetation")}
+        for feature in collection["features"]:
+            counts[feature["properties"]["symbol_class"]] += 1
         rows.append({
             "record_id": record_id,
             "sheet_name": sheets.get(record_id, {}).get("sheet_name", ""),
             "anchor_confident": int(bool(reference.get("anchor_confident"))),
+            "clipped_out": sum(len(v) for v in found.values()) - kept,
             "residual_rms_m": reference.get("residual_rms_m", ""),
             **counts,
-            "total": sum(len(v) for v in found.values()),
+            "total": kept,
         })
         print(f"  {index}/{len(targets)} {name[:22]:<22} "
               + " ".join(f"{k}={counts[k]}" for k in wanted), flush=True)
 
     if rows:
         fields = ["record_id", "sheet_name", "anchor_confident",
-                  "residual_rms_m", "building", "well", "vegetation", "total"]
+                  "residual_rms_m", "building", "well", "vegetation", "total",
+                  "clipped_out"]
+        # Merge, do not replace. The GeoJSON per sheet is written per sheet, but
+        # this table was rewritten from whatever the run happened to process, so
+        # a --only run over five sheets silently cut the other seventy-three out
+        # of it - the files were all still there and the summary of them was not.
+        merged: dict[str, dict] = {}
+        if args.out_csv.exists():
+            for row in csv.DictReader(args.out_csv.open(encoding="utf-8")):
+                for field in ("building", "well", "vegetation", "total",
+                              "clipped_out"):
+                    row[field] = int(row[field] or 0)
+                merged[row["record_id"]] = row
+        merged.update({row["record_id"]: row for row in rows})
+        ordered = [merged[key] for key in sorted(merged)]
         with args.out_csv.open("w", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=fields)
             writer.writeheader()
-            writer.writerows(rows)
-        print(f"\n{len(rows)} sheets, {sum(r['total'] for r in rows)} symbols")
+            writer.writerows(ordered)
+        print(f"\n{len(rows)} sheets this run; {len(ordered)} in the table, "
+              f"{sum(r['total'] for r in ordered)} symbols")
         print(f"  -> {args.out_dir}/\n  -> {args.out_csv}")
     return 0
 

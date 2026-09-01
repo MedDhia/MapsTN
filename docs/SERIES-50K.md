@@ -42,9 +42,20 @@ Cells with sheets to both east and west in the same row, but no sheet held here.
 
 `B0-C37`, `B7-C33`, `B7-C36`
 
-### 12 cells held in more than one revision
+### 11 cells hold more than one record — but only 8 are two printings of one sheet
 
-The same ground, surveyed twice. These are the sheets that support before-and-after work directly, with no georeferencing mismatch between the two dates because the sheet lines are identical:
+**The B-C designation is not a unique sheet identifier.** Three of the eleven cells below hold two *different* sheets that both print the same B-C: Bizerte and Djebel Ichkeul are 20 km apart, Aïne Djeloula and Sidi Bou Ali 38 km, Nefza and Ebba Ksour **199 km**. A genuine pair of printings sits 0.2 km apart.
+
+What identifies the sheet is the **Roman serial number** in its title. Every real pair shares it; none of the three collisions does:
+
+| Cell | Serials | Two printings of one sheet? |
+| --- | --- | --- |
+| `B0-C35` | II / VI | no — Bizerte and Djebel Ichkeul, 20 km apart |
+| `B1-C33` | X / LII | no — Nefza and Ebba Ksour, 199 km apart |
+| `B6-C37` | XLIX / LV / XLIX | Sidi Bou Ali twice, plus Aïne Djeloula 38 km away |
+| the other 8 | matched | yes |
+
+**And a shared sheet is not two dates.** Of the nine real pairs (eight cells, one of which holds three records), **seven print the identical fieldwork credit** above the frame — same officers, same year. Only Porto-Farina and Ariana were really resurveyed, and both say so by changing the form of the credit block. The catalogue years below are publication dates. Read the credit block before treating a pair as a time series: [`OBJECT-DATASET.md`](OBJECT-DATASET.md#the-thirty-year-comparison-is-not-there--seven-of-nine-pairs-are-one-survey).
 
 | Cell | Revisions |
 | --- | --- |

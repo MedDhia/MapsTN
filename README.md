@@ -37,9 +37,12 @@ a relevance score.
 | **Legend edition, per sheet (CSV)** | [`data/sheet_legends.csv`](data/sheet_legends.csv) |
 | **Object extraction and coordinates** | [`docs/OBJECT-DATASET.md`](docs/OBJECT-DATASET.md) |
 | **Per-sheet transform (CSV)** | [`data/sheet_georef.csv`](data/sheet_georef.csv) |
+| **Corner coordinates each sheet prints (CSV)** | [`data/sheet_corners.csv`](data/sheet_corners.csv) |
+| **Graticule sheets, placed from grades (CSV)** | [`data/sheet_graticule.csv`](data/sheet_graticule.csv) |
 | **Extracted symbols (GeoJSON)** | [`data/symbols/`](data/symbols/) |
 | **Symbol counts per sheet** | [`data/symbols_summary.csv`](data/symbols_summary.csv) |
 | **Objects joined to modern units** | [`data/symbols_by_unit.csv`](data/symbols_by_unit.csv) |
+| **Every object, flat table** | [`data/symbols_joined.csv`](data/symbols_joined.csv) |
 | **Contemporary boundaries** | [`data/boundaries/`](data/boundaries/) |
 | **Scan locations** | [`data/sheet_images.json`](data/sheet_images.json) |
 | Run statistics | [`data/summary.json`](data/summary.json) |
@@ -386,12 +389,26 @@ area — but neither carries published coordinates, so neither can be placed
 automatically. Only **3 interior gaps** exist in the covered area
 (`B0-C37`, `B7-C33`, `B7-C36`).
 
-### Two revisions of the same ground
+### Two printings of the same ground — and why they are not two dates
 
-**12 grid cells are held in more than one revision**, mostly 1902 and 1932. Same
-sheet lines, same extent, thirty years apart — before-and-after comparison with
-no georeferencing mismatch between the two dates. That is the cleanest change
-design available in this corpus.
+**11 grid cells hold more than one record, but only 9 are two printings of one
+sheet.** The B–C designation is not a unique sheet identifier: three cells hold
+two *different* sheets that both print the same B–C, up to **199 km** apart
+(Nefza and Ebba Ksour). What identifies the sheet is the **Roman serial number**
+in its title, and every real pair shares it while none of the collisions does.
+
+Of the nine real pairs — catalogued mostly 1902 against 1931–36, same sheet
+lines — **seven print the identical fieldwork credit above the frame**, same
+officers, same year, character for character. The later printing adds the red
+Lambert grid; it does not add a survey. Only Porto-Farina and Ariana were really
+resurveyed, and **both say so by changing the form of the credit block**. Neither
+the house counts nor the spatial match can tell the two resurveys apart from the
+seven reprints.
+
+So the pairs are useful as a **control on the extraction**, not as a time series.
+Measured: [`docs/OBJECT-DATASET.md`](docs/OBJECT-DATASET.md#the-thirty-year-comparison-is-not-there--seven-of-nine-pairs-are-one-survey),
+[`data/edition_difference.csv`](data/edition_difference.csv),
+[`data/edition_credits.csv`](data/edition_credits.csv).
 
 ### Projection
 
@@ -465,7 +482,7 @@ the red margin type for the zone statement and the absolute grid labels
 points.
 
 **The catalogue date is not the observation date.** Reading the survey credits
-block off each sheet, the catalogue year runs a **median 23 years later than the
+block off each sheet, the catalogue year runs a **median 26 years later than the
 fieldwork** (max 46), and **41 of 65 legible sheets record fieldwork from the
 1880s–1900s**. Kairouan is catalogued 1927 and was surveyed in 1898; Médenine is
 catalogued 1933 and was surveyed in 1900–07. See
@@ -550,13 +567,36 @@ python3 scripts/read_sheet_margins.py --images <dir of record_id.jpg>
 python3 scripts/read_sheet_legends.py --images <dir of record_id.jpg>
 python3 scripts/coordinate_precision.py      # uses the measured grid spacing
 python3 scripts/georeference_sheets.py --images <dir>   # pixel -> ground transform
+python3 scripts/read_corner_coordinates.py --images <dir>  # the sheet's own corners
+python3 scripts/georeference_sheets.py --images <dir> --csv-only  # re-anchor on them
+python3 scripts/georeference_from_corners.py --images <dir>  # corners, no grid
+python3 scripts/georeference_graticule_sheets.py --images <dir>  # the 1902 sheets
 python3 scripts/extract_symbols.py --images <dir>       # symbols -> GeoJSON
+python3 scripts/extract_symbols.py --images <dir> \
+    --georef data/sheet_graticule.json \
+    --out-dir data/symbols_graticule \
+    --out-csv data/symbols_graticule_summary.csv    # the early printings
+python3 scripts/extract_symbols.py --images <dir> \
+    --georef data/sheet_corner_fit.json \
+    --out-dir data/symbols_corner_fit \
+    --out-csv data/symbols_corner_fit_summary.csv   # the corner-fitted sheets
+python3 scripts/difference_editions.py [--scans <dir>]  # the two-printing control
 python3 scripts/fetch_boundaries.py                     # modern shapefiles
 python3 scripts/map_objects.py                          # join + render the map
 ```
 
-`georeference_sheets.py` needs `pyproj`, `extract_symbols.py` needs `scipy`, and
-`map_objects.py` needs `pyshp`, `shapely` and `matplotlib`.
+`difference_editions.py` needs no scans and no arguments — the early-edition
+symbols are in [`data/symbols_graticule/`](data/symbols_graticule/); `--scans`
+only renders the credit-block figure.
+
+`georeference_sheets.py` needs `pyproj`, `extract_symbols.py` and
+`read_corner_coordinates.py` need `scipy`, and `map_objects.py` needs `pyshp`,
+`shapely` and `matplotlib`.
+
+The georeferencing runs twice on purpose. The corner reader needs the neatline
+the first pass detects in order to know where in the margin to look, and the
+anchor then wants what the corner reader found; the second pass is arithmetic on
+the cached transforms and re-reads no scan.
 Pass `--overlay <dir>` to the extractor to get the detections drawn on the
 image: that is the check that catches a detector finding grid crossings instead
 of houses, and a count never will.
