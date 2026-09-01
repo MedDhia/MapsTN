@@ -10,6 +10,7 @@ symbols in the pixels and push them through it.
 | Read the printed corners | [`scripts/read_corner_coordinates.py`](../scripts/read_corner_coordinates.py) | `data/sheet_corners.{json,csv}` |
 | Georeference the graticule sheets | [`scripts/georeference_graticule_sheets.py`](../scripts/georeference_graticule_sheets.py) | `data/sheet_graticule.{json,csv}`, `data/georef_graticule/` |
 | Extract symbols | [`scripts/extract_symbols.py`](../scripts/extract_symbols.py) | `data/symbols/<record_id>.geojson`, `data/symbols_summary.csv` |
+| Difference the two printings | [`scripts/difference_editions.py`](../scripts/difference_editions.py) | `data/edition_difference.csv`, `data/edition_credits.csv`, `docs/img/edition_*.png` |
 
 ---
 
@@ -128,14 +129,110 @@ transforms are deliberately not merged into the object extraction.** Folding
 claim for all of it. They are written as world files and QGIS point files in
 [`data/georef_graticule/`](../data/georef_graticule/) so a sheet can be opened and
 read, and that is their use: these eight sheets are earlier editions of ground
-already covered, so what they offer is a thirty-year comparison on the same frame
-rather than new coverage.
+already covered, so what they offer is a comparison on the same frame rather than
+new coverage. What that comparison turns out to be worth is the next section,
+and the answer is not what the catalogue dates suggest.
 
 Three sheets are not placed: El Ariana, Enfida and the 1946 untitled sheet show
 latitude autocorrelation of 0.11–0.14 against a 0.15 floor — too few latitude
 lines survive to establish a spacing. Two of the placed eight, La Goulette and an
 untitled 1934 sheet, have no twin and rest on their own catalogue box; they are
 flagged and should be treated as unplaced until checked.
+
+### The thirty-year comparison is not there — five of six pairs are one survey
+
+Six of the eight placed graticule sheets have a Lambert twin with houses already
+extracted, so the obvious next move is to difference them: houses catalogued 1902
+against houses catalogued 1931–35, on identical sheet lines. Thirty years of
+settlement in the Sahel, for free.
+
+The sheets refuse the offer, in the credit block **both printings set above the
+frame**. Five of the six pairs print it character for character identical:
+
+| Pair | Fieldwork credit, on *both* printings |
+| --- | --- |
+| La Marsa | Sauret Cap.ⁿᵉ {a,b} **1891** |
+| Tunis | Roget, Corniot, Martinez, Bonnefoy, Espinasse, Lachouque, Delaunay **1889** |
+| Sidi Bou Ali | Balland, Moreau, Montagnon, Clerc, Vuillemin **1892** |
+| Halk El Mennzel | Moreau Capitaine a **1892**, Wary Lieut.ᵗ b id |
+| Sousse | Wary, Corniot, Esnol **1892** |
+
+Same officers, same year, same wording, same abbreviations. The later printing
+adds the red grid and the red corner coordinates; **it does not add a survey.**
+The catalogue's 1902 and 1931–35 are two publication dates on one field campaign —
+the same trap [the catalogue set for dates elsewhere in this
+project](../README.md#a-warning-about-dates), where its years run a median 23
+later than the fieldwork the sheets print.
+
+The sixth pair is the exception, and it says so in a different form of words —
+a block index rather than a list of officers:
+
+| Porto-Farina | |
+| --- | --- |
+| early | Corniot, Tantot, Thiébaut, Soulié **1891** |
+| later | *"D'après les travaux : a,b,c,d,e, levés en **1900**, révisés en **1931-32**; f,g,h,i,j,k,l,m,n, levés en **1930-31 et 1932**"* |
+
+![The fieldwork credit each printing sets above its frame](img/edition_credits.png)
+
+*The crops are rendered by the same script that reports the comparison, from the
+neatline rather than from a fraction of the page — which is why they land on the
+block on both layouts, where the general margin OCR's fixed windows miss four of
+the twelve. Transcriptions in [`data/edition_credits.csv`](../data/edition_credits.csv).*
+
+**So the six pairs are five controls and one experiment**, which is a better
+design than six experiments would have been. The controls say what "no change on
+the ground" looks like when measured this way.
+
+What they say is that it looks like anything.
+
+![What differencing two printings of one survey measures](img/edition_difference.png)
+
+On the four reprint pairs with at least 100 houses on the shared ground, the later
+printing of a sheet that is provably **one survey** carries between **0.86× and
+2.20×** as many detected houses, and reproduces only **40–50%** of the early
+drawing inside the 400 m match radius. (Halk El Mennzel is left out of the range:
+23 houses on the shared ground, ratio 3.91×, which is a small sample talking.)
+
+Porto-Farina — the one pair with forty years of new fieldwork between the
+printings — sits at **1.12×**, nearer unchanged than any reprint, and at **38%**,
+two points below the lowest reprint against a ten-point spread among sheets that
+are the same drawing. **Neither statistic separates the resurvey from the
+reprints.**
+
+Two things rule out the obvious explanation that this is just the coarse
+graticule placement:
+
+- The matched share **barely moves** between a 250 m and a 600 m radius on five
+  of the six pairs — 47→50%, 44→51%, 38→42%, 35→45%, 32→41%. If the unmatched
+  houses were the same houses displaced by the placement, a radius half again as
+  large would find them. They are not there to find. (The sixth curve, 13→65%,
+  is Halk El Mennzel's 23 points.) The houses that *do* match sit a median
+  101–306 m apart, comfortably inside the radius rather than up against it.
+- The count *ratio* needs no registration at all, and it still ranges 0.86× to
+  2.20× on one survey.
+
+What the difference is made of, then, is the printing and the scan rather than the
+ground. One measurement makes that concrete without needing to name the mechanism:
+**every later printing carries 2 to 20 times the red-ink density of its early
+twin** (`red_density` in `data/sheet_grid.json` — 0.0031 → 0.0165 on La Marsa,
+0.001 → 0.02 on Halk El Mennzel, 0.0247 → 0.0554 on Tunis). Some of that is the
+red grid itself, but a detector that works on red ink is plainly not looking at
+comparable images. Beyond that: plate redrawing between printings, paper, foxing
+and exposure. The red-density ratio does not track the count ratio across the six
+pairs — Sidi Bou Ali has the second-highest density ratio and the *lowest* count
+ratio — so this is not offered as the explanation, only as proof that the two
+inputs differ in the thing the detector measures.
+
+**The consequence for anyone using this corpus.** The 12 multiply-held grid cells
+are not a change dataset. Anyone who dates these sheets from the catalogue and
+differences the counts will measure the print shop and report it as settlement —
+and on Halk El Mennzel would report a 3.9× growth in houses between two printings
+of the same 1892 survey. Read the credit block first.
+
+What the pairs *are* good for is the control they turned out to be: the noise
+floor of this extraction, measured against ground truth that is exactly zero
+change. Any claim of change from these sheets has to clear 0.86–2.20× on counts
+and 10 points on matched share before it is a claim about Tunisia.
 
 ### The catalogue was the wrong arbiter, and the evidence that says so
 
@@ -424,6 +521,15 @@ python3 scripts/georeference_sheets.py --images <dir> --csv-only
 # symbols, with the detections drawn on the image for inspection by eye
 python3 scripts/extract_symbols.py --images <dir> --overlay data/overlays \
     --window 4200 3400 5400 4600
+
+# 4. the graticule sheets, and the two-printing comparison. The early-edition
+#    symbols are in data/symbols_graticule/ already, so this needs no scans -
+#    except --scans, which only renders the credit-block figure.
+python3 scripts/georeference_graticule_sheets.py --images <dir>
+python3 scripts/extract_symbols.py --images <dir> \
+    --georef data/sheet_graticule.json --out-dir data/symbols_graticule \
+    --out-csv data/symbols_graticule_summary.csv
+python3 scripts/difference_editions.py [--scans <dir>]
 ```
 
 The two-pass shape is not an accident of implementation: the corner reader needs

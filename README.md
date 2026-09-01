@@ -389,12 +389,19 @@ area — but neither carries published coordinates, so neither can be placed
 automatically. Only **3 interior gaps** exist in the covered area
 (`B0-C37`, `B7-C33`, `B7-C36`).
 
-### Two revisions of the same ground
+### Two printings of the same ground — and why they are not two dates
 
-**12 grid cells are held in more than one revision**, mostly 1902 and 1932. Same
-sheet lines, same extent, thirty years apart — before-and-after comparison with
-no georeferencing mismatch between the two dates. That is the cleanest change
-design available in this corpus.
+**12 grid cells are held in more than one printing**, catalogued mostly 1902 and
+1931–35. Same sheet lines, same extent: it looks like the cleanest before-and-after
+design in the corpus, and it isn't one. On the six pairs that can be measured,
+**five print the identical fieldwork credit above the frame** — same officers,
+same year, character for character. The later printing adds the red Lambert grid;
+it does not add a survey. Only Porto-Farina really was resurveyed, and the counts
+cannot tell it apart from the five reprints.
+
+So the pairs are useful as a **control on the extraction**, not as a time series.
+Measured: [`docs/OBJECT-DATASET.md`](docs/OBJECT-DATASET.md#the-thirty-year-comparison-is-not-there--five-of-six-pairs-are-one-survey),
+[`data/edition_difference.csv`](data/edition_difference.csv).
 
 ### Projection
 
@@ -557,9 +564,18 @@ python3 scripts/read_corner_coordinates.py --images <dir>  # the sheet's own cor
 python3 scripts/georeference_sheets.py --images <dir> --csv-only  # re-anchor on them
 python3 scripts/georeference_graticule_sheets.py --images <dir>  # the 1902 sheets
 python3 scripts/extract_symbols.py --images <dir>       # symbols -> GeoJSON
+python3 scripts/extract_symbols.py --images <dir> \
+    --georef data/sheet_graticule.json \
+    --out-dir data/symbols_graticule \
+    --out-csv data/symbols_graticule_summary.csv    # the early printings
+python3 scripts/difference_editions.py [--scans <dir>]  # the two-printing control
 python3 scripts/fetch_boundaries.py                     # modern shapefiles
 python3 scripts/map_objects.py                          # join + render the map
 ```
+
+`difference_editions.py` needs no scans and no arguments — the early-edition
+symbols are in [`data/symbols_graticule/`](data/symbols_graticule/); `--scans`
+only renders the credit-block figure.
 
 `georeference_sheets.py` needs `pyproj`, `extract_symbols.py` and
 `read_corner_coordinates.py` need `scipy`, and `map_objects.py` needs `pyshp`,

@@ -42,9 +42,9 @@ Cells with sheets to both east and west in the same row, but no sheet held here.
 
 `B0-C37`, `B7-C33`, `B7-C36`
 
-### 12 cells held in more than one revision
+### 12 cells held in more than one printing
 
-The same ground, surveyed twice. These are the sheets that support before-and-after work directly, with no georeferencing mismatch between the two dates because the sheet lines are identical:
+The same ground, printed twice, on identical sheet lines. **Not, in general, surveyed twice** — on the six pairs that have been measured, five print the identical fieldwork credit above the frame, and only Porto-Farina really was resurveyed. The catalogue years below are publication dates, not survey dates; read the credit block before treating a pair as two dates. See [`OBJECT-DATASET.md`](OBJECT-DATASET.md#the-thirty-year-comparison-is-not-there--five-of-six-pairs-are-one-survey).
 
 | Cell | Revisions |
 | --- | --- |
