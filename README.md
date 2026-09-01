@@ -391,17 +391,24 @@ automatically. Only **3 interior gaps** exist in the covered area
 
 ### Two printings of the same ground — and why they are not two dates
 
-**12 grid cells are held in more than one printing**, catalogued mostly 1902 and
-1931–35. Same sheet lines, same extent: it looks like the cleanest before-and-after
-design in the corpus, and it isn't one. On the six pairs that can be measured,
-**five print the identical fieldwork credit above the frame** — same officers,
-same year, character for character. The later printing adds the red Lambert grid;
-it does not add a survey. Only Porto-Farina really was resurveyed, and the counts
-cannot tell it apart from the five reprints.
+**11 grid cells hold more than one record, but only 9 are two printings of one
+sheet.** The B–C designation is not a unique sheet identifier: three cells hold
+two *different* sheets that both print the same B–C, up to **199 km** apart
+(Nefza and Ebba Ksour). What identifies the sheet is the **Roman serial number**
+in its title, and every real pair shares it while none of the collisions does.
+
+Of the nine real pairs — catalogued mostly 1902 against 1931–36, same sheet
+lines — **seven print the identical fieldwork credit above the frame**, same
+officers, same year, character for character. The later printing adds the red
+Lambert grid; it does not add a survey. Only Porto-Farina and Ariana were really
+resurveyed, and **both say so by changing the form of the credit block**. Neither
+the house counts nor the spatial match can tell the two resurveys apart from the
+seven reprints.
 
 So the pairs are useful as a **control on the extraction**, not as a time series.
-Measured: [`docs/OBJECT-DATASET.md`](docs/OBJECT-DATASET.md#the-thirty-year-comparison-is-not-there--five-of-six-pairs-are-one-survey),
-[`data/edition_difference.csv`](data/edition_difference.csv).
+Measured: [`docs/OBJECT-DATASET.md`](docs/OBJECT-DATASET.md#the-thirty-year-comparison-is-not-there--seven-of-nine-pairs-are-one-survey),
+[`data/edition_difference.csv`](data/edition_difference.csv),
+[`data/edition_credits.csv`](data/edition_credits.csv).
 
 ### Projection
 
@@ -562,12 +569,17 @@ python3 scripts/coordinate_precision.py      # uses the measured grid spacing
 python3 scripts/georeference_sheets.py --images <dir>   # pixel -> ground transform
 python3 scripts/read_corner_coordinates.py --images <dir>  # the sheet's own corners
 python3 scripts/georeference_sheets.py --images <dir> --csv-only  # re-anchor on them
+python3 scripts/georeference_from_corners.py --images <dir>  # corners, no grid
 python3 scripts/georeference_graticule_sheets.py --images <dir>  # the 1902 sheets
 python3 scripts/extract_symbols.py --images <dir>       # symbols -> GeoJSON
 python3 scripts/extract_symbols.py --images <dir> \
     --georef data/sheet_graticule.json \
     --out-dir data/symbols_graticule \
     --out-csv data/symbols_graticule_summary.csv    # the early printings
+python3 scripts/extract_symbols.py --images <dir> \
+    --georef data/sheet_corner_fit.json \
+    --out-dir data/symbols_corner_fit \
+    --out-csv data/symbols_corner_fit_summary.csv   # the corner-fitted sheets
 python3 scripts/difference_editions.py [--scans <dir>]  # the two-printing control
 python3 scripts/fetch_boundaries.py                     # modern shapefiles
 python3 scripts/map_objects.py                          # join + render the map

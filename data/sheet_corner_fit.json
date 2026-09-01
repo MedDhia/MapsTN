@@ -1,0 +1,224 @@
+{
+  "oai:u-bordeaux-montaigne.fr:340374": {
+    "neatline_px": {
+      "top": 926,
+      "bottom": 5670,
+      "left": 946,
+      "right": 8382
+    },
+    "epsg": 22391,
+    "lambert_zone": "nord",
+    "grid_easting_lines": 32,
+    "grid_northing_lines": 2,
+    "degenerate_axes": "",
+    "corners_read_e": 0,
+    "corners_read_n": 0,
+    "refused": "0 easting and 0 northing corner readings, needs 3 of each"
+  },
+  "oai:u-bordeaux-montaigne.fr:340392": {
+    "neatline_px": {
+      "top": 876,
+      "bottom": 5604,
+      "left": 832,
+      "right": 8242
+    },
+    "epsg": 22391,
+    "lambert_zone": "nord",
+    "grid_easting_lines": 32,
+    "grid_northing_lines": 9,
+    "degenerate_axes": "",
+    "corners_read_e": 1,
+    "corners_read_n": 1,
+    "refused": "1 easting and 1 northing corner readings, needs 3 of each"
+  },
+  "oai:u-bordeaux-montaigne.fr:340407": {
+    "neatline_px": {
+      "top": 1010,
+      "bottom": 5750,
+      "left": 930,
+      "right": 8362
+    },
+    "epsg": 22391,
+    "lambert_zone": "nord",
+    "grid_easting_lines": 32,
+    "grid_northing_lines": 1,
+    "degenerate_axes": "northing",
+    "corners_read_e": 4,
+    "corners_read_n": 3,
+    "affine": [
+      4.304225,
+      -0.325484,
+      -0.312447,
+      -4.206329,
+      526301.642505,
+      396810.092889
+    ],
+    "corners": {
+      "north_west": {
+        "lon": 10.236827,
+        "lat": 36.832731,
+        "easting": 529989.0,
+        "northing": 392259.0
+      },
+      "north_east": {
+        "lon": 10.595315,
+        "lat": 36.809401,
+        "easting": 561978.0,
+        "northing": 389840.0
+      },
+      "south_east": {
+        "lon": 10.577162,
+        "lat": 36.629781,
+        "easting": 560497.0,
+        "northing": 369902.0
+      },
+      "south_west": {
+        "lon": 10.219488,
+        "lat": 36.653061,
+        "easting": 528508.0,
+        "northing": 372321.0
+      }
+    },
+    "reading_residual_max_m_e": 50.0,
+    "reading_residual_max_m_n": 0.0,
+    "metres_per_px_x": 4.317,
+    "metres_per_px_y": 4.218,
+    "rotation_deg": 4.32,
+    "detector_rotation_deg": 4.25,
+    "frame_width_km": 32.08,
+    "frame_height_km": 19.99,
+    "rotation_gap_deg": 0.07,
+    "neighbour_matches": 9,
+    "neighbour_median_m": 117.5,
+    "neighbour_best_m": 55.0,
+    "neighbour_detail": [
+      "north_east ~ 340389.south_east 55m",
+      "north_east ~ 340391.south_west 70m",
+      "south_west ~ 340415.north_west 78m",
+      "north_west ~ 340389.south_west 86m",
+      "north_west ~ 340387.south_east 118m",
+      "south_east ~ 340415.north_east 190m"
+    ],
+    "precision_class": "corner_fit_coarse",
+    "anchor_basis": "printed_corners_only"
+  },
+  "oai:u-bordeaux-montaigne.fr:340488": {
+    "neatline_px": {
+      "left": 1076,
+      "right": 10766,
+      "top": -60,
+      "bottom": 5691
+    },
+    "epsg": 22391,
+    "lambert_zone": "nord",
+    "grid_easting_lines": 40,
+    "grid_northing_lines": 1,
+    "degenerate_axes": "northing",
+    "corners_read_e": 0,
+    "corners_read_n": 0,
+    "refused": "0 easting and 0 northing corner readings, needs 3 of each"
+  },
+  "oai:u-bordeaux-montaigne.fr:340507": {
+    "neatline_px": {
+      "top": 1074,
+      "bottom": 5814,
+      "left": 876,
+      "right": 8424
+    },
+    "epsg": 22391,
+    "lambert_zone": "nord",
+    "grid_easting_lines": 33,
+    "grid_northing_lines": 1,
+    "degenerate_axes": "northing",
+    "corners_read_e": 4,
+    "corners_read_n": 3,
+    "affine": [
+      4.225225,
+      -0.321542,
+      -0.32384,
+      -4.205907,
+      388211.5065,
+      267218.81521
+    ],
+    "corners": {
+      "north_west": {
+        "lon": 8.702626,
+        "lat": 35.656693,
+        "easting": 391565.0,
+        "northing": 262420.0
+      },
+      "north_east": {
+        "lon": 9.055162,
+        "lat": 35.637824,
+        "easting": 423457.0,
+        "northing": 259993.0
+      },
+      "south_east": {
+        "lon": 9.040151,
+        "lat": 35.457966,
+        "easting": 421922.0,
+        "northing": 240057.0
+      },
+      "south_west": {
+        "lon": 8.688407,
+        "lat": 35.476792,
+        "easting": 390030.0,
+        "northing": 242484.0
+      }
+    },
+    "reading_residual_max_m_e": 0.0,
+    "reading_residual_max_m_n": 0.0,
+    "metres_per_px_x": 4.237,
+    "metres_per_px_y": 4.218,
+    "rotation_deg": 4.35,
+    "detector_rotation_deg": 4.38,
+    "frame_width_km": 31.98,
+    "frame_height_km": 20.0,
+    "rotation_gap_deg": 0.03,
+    "neighbour_matches": 10,
+    "neighbour_median_m": 56.2,
+    "neighbour_best_m": 4.8,
+    "neighbour_detail": [
+      "north_east ~ 340508.north_west 5m",
+      "south_east ~ 340514.north_east 23m",
+      "south_west ~ 340513.north_east 37m",
+      "south_east ~ 340508.south_west 45m",
+      "south_east ~ 340515.north_west 54m",
+      "north_east ~ 340489.south_east 59m"
+    ],
+    "precision_class": "corner_fit",
+    "anchor_basis": "printed_corners_only"
+  },
+  "oai:u-bordeaux-montaigne.fr:340527": {
+    "neatline_px": {
+      "top": 1090,
+      "bottom": 5830,
+      "left": 976,
+      "right": 8530
+    },
+    "epsg": 22391,
+    "lambert_zone": "nord",
+    "grid_easting_lines": 33,
+    "grid_northing_lines": 1,
+    "degenerate_axes": "northing",
+    "corners_read_e": 2,
+    "corners_read_n": 2,
+    "refused": "2 easting and 2 northing corner readings, needs 3 of each"
+  },
+  "oai:u-bordeaux-montaigne.fr:340628": {
+    "neatline_px": {
+      "top": 790,
+      "bottom": 6206,
+      "left": 1390,
+      "right": 8342
+    },
+    "epsg": 22392,
+    "lambert_zone": "sud",
+    "grid_easting_lines": 25,
+    "grid_northing_lines": 5,
+    "degenerate_axes": "",
+    "corners_read_e": 0,
+    "corners_read_n": 0,
+    "refused": "0 easting and 0 northing corner readings, needs 3 of each"
+  }
+}

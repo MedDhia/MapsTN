@@ -9,6 +9,7 @@ symbols in the pixels and push them through it.
 | Georeference | [`scripts/georeference_sheets.py`](../scripts/georeference_sheets.py) | `data/sheet_georef.{json,csv}`, `data/georef/*.{wld,points}` |
 | Read the printed corners | [`scripts/read_corner_coordinates.py`](../scripts/read_corner_coordinates.py) | `data/sheet_corners.{json,csv}` |
 | Georeference the graticule sheets | [`scripts/georeference_graticule_sheets.py`](../scripts/georeference_graticule_sheets.py) | `data/sheet_graticule.{json,csv}`, `data/georef_graticule/` |
+| Place the sheets whose grid fit is degenerate | [`scripts/georeference_from_corners.py`](../scripts/georeference_from_corners.py) | `data/sheet_corner_fit.{json,csv}`, `data/georef_corner_fit/` |
 | Extract symbols | [`scripts/extract_symbols.py`](../scripts/extract_symbols.py) | `data/symbols/<record_id>.geojson`, `data/symbols_summary.csv` |
 | Difference the two printings | [`scripts/difference_editions.py`](../scripts/difference_editions.py) | `data/edition_difference.csv`, `data/edition_credits.csv`, `docs/img/edition_*.png` |
 
@@ -55,6 +56,52 @@ neighbours' corners at 37 to 107 m.
 The **margin kilometre labels** — a vote among the red three-digit numbers along
 the edges — remain as the third source, and the **catalogue bounding box** is now
 only a coarse sanity check. Two sheets of the 85 rest on the labels alone.
+
+### Four sheets have a grid on one axis only, and the corners alone place two of them
+
+A distinct failure, and it hid behind a good-looking residual. On four sheets the
+grid detector finds plenty of lines on one axis and **one** on the other:
+
+    La Goulette   easting_lines 32, northing_lines 1
+    Ksar Tlili    easting_lines 33, northing_lines 1
+    Kalaat es Senam  40 / 1        Nasr Allah  33 / 1
+
+A single line has no spacing, so that axis has no scale, and the affine's whole
+row for it comes out zero — La Goulette's is
+`[3.95963, 0.0, -4.792149, 0.0, -0.00549, 0.0]`. The stored residual of **7.08 m
+rms is real and meaningless**: it is the fit of the easting axis to itself. This
+is the counterpart of the lesson in the wrong turns below — a residual only
+measures what was fitted.
+
+But the sheet prints its four corners to the metre, and the corner reader already
+reads them. Four corners are twelve numbers where a six-parameter affine needs
+six, so **the corners alone over-determine the transform, with no grid at all.**
+[`scripts/georeference_from_corners.py`](../scripts/georeference_from_corners.py)
+does that for the two of the four whose corners were read at three or more
+corners on both axes, and checks the result against four things it did not use:
+
+| | Ksar Tlili | La Goulette |
+| --- | --- | --- |
+| Corner readings close to | **0 m** | 50 m |
+| Scale, against the detector's | 4.237 / 4.218 vs 4.24 | 4.317 / 4.218 vs 4.27 |
+| Rotation, against the detector's | +4.35° vs **+4.38°** | +4.32° vs **+4.25°** |
+| Frame | 31.98 × 20.00 km | 32.08 × 19.99 km |
+| Shared corners with confirmed neighbours | 10, median **56 m** | 9, median 118 m |
+| `precision_class` | `corner_fit` | `corner_fit_coarse` |
+
+The rotation agreement is the strongest check, because the detector's angle comes
+from the line *directions*, which survive a missing spacing, and nothing about it
+entered the fit. Ksar Tlili's 56 m beats the series' own 72 m shared-corner
+median. La Goulette is a notch coarser because its four printed eastings do not
+close as a parallelogram, leaving a 200 m saddle the fit spreads as ±50 m — on
+Kasserine the same eight numbers close to 1 m, and since this sheet also reports
+`frame_size_error_pct` 8.7 the neatline is the suspect rather than the printing.
+Either way **the anchor is certain**: an anchor error is a whole kilometre by
+construction, and 118 m rules one out.
+
+Like the graticule sheets, these are **not merged into `data/sheet_georef.json`**.
+They carry their own precision class and are consumed only where it is
+acceptable — which is what let La Goulette's edition pair be differenced below.
 
 ### Eleven sheets have no Lambert grid — they carry a graticule in grades
 
@@ -138,101 +185,169 @@ latitude autocorrelation of 0.11–0.14 against a 0.15 floor — too few latitud
 lines survive to establish a spacing. Two of the placed eight, La Goulette and an
 untitled 1934 sheet, have no twin and rest on their own catalogue box; they are
 flagged and should be treated as unplaced until checked.
+### The thirty-year comparison is not there — seven of nine pairs are one survey
 
-### The thirty-year comparison is not there — five of six pairs are one survey
+Some grid cells hold the same ground twice, an early printing carrying only the
+graticule and a later one with the Lambert grid. Differencing them looks free:
+houses catalogued 1902 against houses catalogued 1931–36, on identical sheet
+lines. Thirty years of settlement in the Sahel, for free.
 
-Six of the eight placed graticule sheets have a Lambert twin with houses already
-extracted, so the obvious next move is to difference them: houses catalogued 1902
-against houses catalogued 1931–35, on identical sheet lines. Thirty years of
-settlement in the Sahel, for free.
+Three things had to be established before that could even be attempted, and each
+one shrank the claim.
 
-The sheets refuse the offer, in the credit block **both printings set above the
-frame**. Five of the six pairs print it character for character identical:
+**First: which records are actually two printings of one sheet.** The B–C
+designation a sheet prints is *not* a unique identifier. Three of the eleven
+multiply-held cells hold two different sheets that both print the same B–C:
+
+| Cell | Two records | Apart |
+| --- | --- | --- |
+| `B0-C35` | Bizerte / Djebel Ichkeul | **20.0 km** |
+| `B6-C37` | Sidi Bou Ali / Aïne Djeloula | **37.7 km** |
+| `B1-C33` | Nefza / Ebba Ksour | **199 km** |
+
+A real pair of printings sits 0.2 km apart. What identifies the sheet is the
+**Roman serial number** in its title, and it separates the two cases without
+exception — every real pair shares it (VII, XIII, XIV, XX, XXI, XLIII, XLIX, L,
+LVII), none of the collisions does (II/VI, XLIX/LV, X/LII). Fitting the B–C
+designation against position confirms it is only loosely a grid: excluding the
+coastal B0 row, which follows the coast rather than a latitude line, the residual
+is 7.4 km rms in longitude and 14.7 km in latitude, and the only two gross outliers
+are Ebba Ksour (106 km) and Aïne Djeloula (41 km) — the two sheets whose printed
+B–C collides with another sheet's.
+
+So the corpus holds **nine** edition pairs, not twelve.
+
+**Second: the sheets say they are the same survey.** Both printings set a
+fieldwork credit block above the frame, and on seven of the nine pairs it is
+identical character for character:
 
 | Pair | Fieldwork credit, on *both* printings |
 | --- | --- |
 | La Marsa | Sauret Cap.ⁿᵉ {a,b} **1891** |
 | Tunis | Roget, Corniot, Martinez, Bonnefoy, Espinasse, Lachouque, Delaunay **1889** |
+| La Goulette | Lachouque, Delaunay, Maumené, Hairon, Corbières **1889** |
+| Enfida / Enfidaville | Lamborot, Meillon, Maire, Lallemand, Cros, Colombat **1893** |
 | Sidi Bou Ali | Balland, Moreau, Montagnon, Clerc, Vuillemin **1892** |
 | Halk El Mennzel | Moreau Capitaine a **1892**, Wary Lieut.ᵗ b id |
 | Sousse | Wary, Corniot, Esnol **1892** |
 
 Same officers, same year, same wording, same abbreviations. The later printing
 adds the red grid and the red corner coordinates; **it does not add a survey.**
-The catalogue's 1902 and 1931–35 are two publication dates on one field campaign —
-the same trap [the catalogue set for dates elsewhere in this
-project](../README.md#a-warning-about-dates), where its years run a median 23
+The catalogue's 1902 against 1931–36 is two publication dates on one field
+campaign — the same trap [its dates set elsewhere in this
+project](../README.md#a-warning-about-dates), where they run a median 23 years
 later than the fieldwork the sheets print.
 
-The sixth pair is the exception, and it says so in a different form of words —
-a block index rather than a list of officers:
+Two pairs really were resurveyed, and **both say so by changing the form of the
+block** — a dated index of sub-areas instead of a list of officers:
 
-| Porto-Farina | |
+| Pair | |
 | --- | --- |
-| early | Corniot, Tantot, Thiébaut, Soulié **1891** |
-| later | *"D'après les travaux : a,b,c,d,e, levés en **1900**, révisés en **1931-32**; f,g,h,i,j,k,l,m,n, levés en **1930-31 et 1932**"* |
+| Porto-Farina, early | Corniot, Tantot, Thiébaut, Soulié **1891** |
+| Porto-Farina, later | *"D'après les travaux : a,b,c,d,e, levés en **1900**, révisés en **1931-32**; f…n, levés en **1930-31 et 1932**"* |
+| El Ariana, early | Tantot, Meauzé, Soulié, V. de Beaupré, Lachouque, Sauret **1890-1891** |
+| Ariana, later | *"D'après les travaux : a,b,c,d,e ; levés en **1890-1891**, révisés en **1935**; 1,2 ; levés en **1931**; 3,4 ; levés en **1931-32**"*|
 
 ![The fieldwork credit each printing sets above its frame](img/edition_credits.png)
 
-*The crops are rendered by the same script that reports the comparison, from the
-neatline rather than from a fraction of the page — which is why they land on the
-block on both layouts, where the general margin OCR's fixed windows miss four of
-the twelve. Transcriptions in [`data/edition_credits.csv`](../data/edition_credits.csv).*
+*Rendered by the same script that reports the comparison, cropped from the
+neatline rather than from a fraction of the page — which is why it lands on the
+block on every layout. Transcriptions in
+[`data/edition_credits.csv`](../data/edition_credits.csv).*
 
-**So the six pairs are five controls and one experiment**, which is a better
-design than six experiments would have been. The controls say what "no change on
-the ground" looks like when measured this way.
+**The form of the block is a reusable screen**, and it is now a `credit_form`
+column on every sheet: "Les Travaux sur le Terrain ont été exécutés par MM.ʳˢ"
+plus officers is an original survey; "D'après les travaux :" plus dated
+sub-areas is a revised or compiled one.
 
-What they say is that it looks like anything.
+Reading it at series scale needed a third crop window in
+[`read_sheet_margins.py`](../scripts/read_sheet_margins.py). Its two existing
+windows are set at fractions of the page, and between them they classify the
+block on **35 of the 96** sheets. The block actually sits just above the
+*detected neatline* on every layout in the series, and cropping there classifies
+**54 of 96** — measured directly with the same crop geometry the script now
+uses. Against the eighteen blocks read by eye that window agrees on 10,
+contradicts on **0**, and simply fails to read 8, so it only ever adds: its
+misses stay misses rather than becoming wrong answers. Both windows are kept,
+because the neatline one needs a transform the first pass has not produced yet.
+
+Series-wide the compiled form is rare — four sheets: Porto-Farina, Ariana, and
+the two that collide in `B0-C35`, Bizerte and Djebel Ichkeul, both reading
+*"levés en 1890, révisés en 1902, complété en 1932"*.
+
+One caveat the data forces, and it matters: **"reprint" means no new fieldwork
+was credited, not that the plate is untouched.** La Goulette is the demonstration
+— the same credited 1889 officers on both printings, and 4.00× as many detected
+houses on the later one. Either the plate was re-engraved from sources that
+earned no fieldwork credit (town plans, the harbour works) or the printing and
+scan differ that much. Either way it is not surveyed change, which is the point.
+
+**Third: two of the nine cannot be placed at all.** El Ariana and Enfida are two
+of the three graticule sheets whose latitude lines are too few to establish a
+spacing, so they have no transform and never will from their own graticule. They
+still support the statistic that needs no transform: houses inside each sheet's
+own detected neatline. On the seven placed pairs that registration-free ratio
+differs from the shared-ground ratio by 0.00–0.77 (median 0.12), which is what
+licenses quoting it for the two that have nothing else.
+
+A third pair was rescued rather than lost. La Goulette's *later* sheet was the
+blocked one — `northing_lines: 1`, so no northing scale and an affine with a row
+of zeros — and it is now placed from its four printed corners alone by
+[`scripts/georeference_from_corners.py`](../scripts/georeference_from_corners.py).
+
+**So the nine pairs are seven controls and two experiments**, which is a better
+design than nine experiments would have been. The controls say what "no change on
+the ground" looks like when measured this way, and what they say is that it looks
+like anything.
 
 ![What differencing two printings of one survey measures](img/edition_difference.png)
 
-On the four reprint pairs with at least 100 houses on the shared ground, the later
-printing of a sheet that is provably **one survey** carries between **0.86× and
-2.20×** as many detected houses, and reproduces only **40–50%** of the early
-drawing inside the 400 m match radius. (Halk El Mennzel is left out of the range:
-23 houses on the shared ground, ratio 3.91×, which is a small sample talking.)
+On the five placed reprint pairs with at least 100 houses on the shared ground,
+the later printing of a sheet that is provably one survey carries between
+**0.86× and 4.00×** as many detected houses, and reproduces **40–59%** of the
+early drawing inside the 400 m match radius. (Halk El Mennzel is left out of the
+range: 23 houses on the shared ground, ratio 3.91×, a small sample talking.)
 
-Porto-Farina — the one pair with forty years of new fieldwork between the
-printings — sits at **1.12×**, nearer unchanged than any reprint, and at **38%**,
-two points below the lowest reprint against a ten-point spread among sheets that
-are the same drawing. **Neither statistic separates the resurvey from the
-reprints.**
+Both resurveyed pairs land inside those ranges. Porto-Farina sits at **1.12×**,
+nearer unchanged than any reprint, and at **38%** matched, two points below the
+lowest reprint against a nineteen-point spread among sheets that are the same
+drawing. Ariana, on the registration-free count, sits at **2.37×** against the
+reprints' 0.86–3.76× on the same statistic. **Neither statistic separates forty
+years of new fieldwork from a reprint.**
 
-Two things rule out the obvious explanation that this is just the coarse
-graticule placement:
+Two things rule out the coarse placement as the cause:
 
-- The matched share **barely moves** between a 250 m and a 600 m radius on five
-  of the six pairs — 47→50%, 44→51%, 38→42%, 35→45%, 32→41%. If the unmatched
-  houses were the same houses displaced by the placement, a radius half again as
-  large would find them. They are not there to find. (The sixth curve, 13→65%,
-  is Halk El Mennzel's 23 points.) The houses that *do* match sit a median
-  101–306 m apart, comfortably inside the radius rather than up against it.
+- The matched share **barely moves** between a 250 m and a 600 m radius on six
+  of the seven placed pairs — 53→60%, 47→50%, 44→51%, 38→42%, 35→45%, 32→41%. If
+  the unmatched houses were the same houses displaced by the placement, a radius
+  half again as large would find them. They are not there to find. (The seventh
+  curve, 13→65%, is Halk El Mennzel's 23 points.) The houses that *do* match sit
+  a median 101–306 m apart, well inside the radius rather than up against it.
 - The count *ratio* needs no registration at all, and it still ranges 0.86× to
-  2.20× on one survey.
+  4.00× on sheets that are one survey.
 
-What the difference is made of, then, is the printing and the scan rather than the
-ground. One measurement makes that concrete without needing to name the mechanism:
-**every later printing carries 2 to 20 times the red-ink density of its early
-twin** (`red_density` in `data/sheet_grid.json` — 0.0031 → 0.0165 on La Marsa,
-0.001 → 0.02 on Halk El Mennzel, 0.0247 → 0.0554 on Tunis). Some of that is the
-red grid itself, but a detector that works on red ink is plainly not looking at
-comparable images. Beyond that: plate redrawing between printings, paper, foxing
-and exposure. The red-density ratio does not track the count ratio across the six
-pairs — Sidi Bou Ali has the second-highest density ratio and the *lowest* count
-ratio — so this is not offered as the explanation, only as proof that the two
-inputs differ in the thing the detector measures.
+What differs instead is the detector's input: **every later printing carries 2 to
+20 times the red-ink density of its early twin** (`red_density` in
+`data/sheet_grid.json` — 0.0031 → 0.0165 on La Marsa, 0.0051 → 0.0438 on La
+Goulette, 0.001 → 0.02 on Halk El Mennzel). Some of that is the red grid itself.
+Across the nine pairs the density ratio and the house-count ratio rise together,
+Spearman ρ **+0.75, p = 0.02** — but drop the 23-house sheet and it falls to
++0.64, p = 0.09 on eight pairs, so this is an association worth recording, not a
+mechanism established.
 
-**The consequence for anyone using this corpus.** The 12 multiply-held grid cells
-are not a change dataset. Anyone who dates these sheets from the catalogue and
-differences the counts will measure the print shop and report it as settlement —
-and on Halk El Mennzel would report a 3.9× growth in houses between two printings
-of the same 1892 survey. Read the credit block first.
+**The consequence for anyone using this corpus.** The multiply-held cells are not
+a change dataset, and they are not even reliably pairs. Anyone who reads the B–C
+designation as a sheet identity will difference Nefza against Ebba Ksour, 199 km
+apart. Anyone who dates a real pair from the catalogue and differences the counts
+will measure the print shop and report it as settlement — and on Halk El Mennzel
+would report a 3.9× growth in houses between two printings of the same 1892
+survey. Read the serial, then read the credit block.
 
 What the pairs *are* good for is the control they turned out to be: the noise
-floor of this extraction, measured against ground truth that is exactly zero
-change. Any claim of change from these sheets has to clear 0.86–2.20× on counts
-and 10 points on matched share before it is a claim about Tunisia.
+floor of this extraction, measured against ground truth that is as close to zero
+change as this corpus offers. Any claim of change from these sheets has to clear
+0.86–4.00× on counts and 19 points on matched share before it is a claim about
+Tunisia.
 
 ### The catalogue was the wrong arbiter, and the evidence that says so
 
@@ -415,6 +530,16 @@ crosswalk is needed — see
 position, a Lambert easting and northing, and a WGS84 longitude and latitude.
 79 065 of them are on the 76 sheets whose absolute anchor is confirmed.
 
+Three sets sit deliberately outside that total, each in its own directory with
+its own precision class, because folding a coarser position into a dataset whose
+accuracy is claimed at 20 m would spoil the claim for all of it:
+
+| Set | Sheets | Houses | Precision |
+| --- | --- | --- | --- |
+| [`data/symbols/`](../data/symbols/) — the dataset | 78 | **85 932** | 20 m class |
+| [`data/symbols_corner_fit/`](../data/symbols_corner_fit/) | 2 | 4 885 | 56 m and 118 m against neighbours |
+| [`data/symbols_graticule/`](../data/symbols_graticule/) | 8 | 6 205 | ~549 m against the later printing |
+
 Across all 73 georeferenced sheets, building counts run **29 to 3515** per
 sheet, median 929 — the kind of spread settlement density should show. Well
 counts, on the ten sheets where they were extracted, ran **4 to 2158**. Part of
@@ -522,13 +647,20 @@ python3 scripts/georeference_sheets.py --images <dir> --csv-only
 python3 scripts/extract_symbols.py --images <dir> --overlay data/overlays \
     --window 4200 3400 5400 4600
 
-# 4. the graticule sheets, and the two-printing comparison. The early-edition
-#    symbols are in data/symbols_graticule/ already, so this needs no scans -
-#    except --scans, which only renders the credit-block figure.
+# 4. the sheets the grid path left unfinished, placed from their corners alone
+python3 scripts/georeference_from_corners.py --images <dir>
+
+# 5. the graticule sheets, and the two-printing comparison. Both sets of
+#    early-edition symbols are in the repository already, so the comparison
+#    needs no scans - --scans only re-renders the credit-block figure and
+#    rebuilds the registration-free neatline counts.
 python3 scripts/georeference_graticule_sheets.py --images <dir>
 python3 scripts/extract_symbols.py --images <dir> \
     --georef data/sheet_graticule.json --out-dir data/symbols_graticule \
     --out-csv data/symbols_graticule_summary.csv
+python3 scripts/extract_symbols.py --images <dir> \
+    --georef data/sheet_corner_fit.json --out-dir data/symbols_corner_fit \
+    --out-csv data/symbols_corner_fit_summary.csv
 python3 scripts/difference_editions.py [--scans <dir>]
 ```
 
