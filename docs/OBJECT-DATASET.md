@@ -235,7 +235,7 @@ Same officers, same year, same wording, same abbreviations. The later printing
 adds the red grid and the red corner coordinates; **it does not add a survey.**
 The catalogue's 1902 against 1931–36 is two publication dates on one field
 campaign — the same trap [its dates set elsewhere in this
-project](../README.md#a-warning-about-dates), where they run a median 23 years
+project](../README.md#a-warning-about-dates), where they run a median 26 years
 later than the fieldwork the sheets print.
 
 Two pairs really were resurveyed, and **both say so by changing the form of the
@@ -262,14 +262,30 @@ sub-areas is a revised or compiled one.
 
 Reading it at series scale needed a third crop window in
 [`read_sheet_margins.py`](../scripts/read_sheet_margins.py). Its two existing
-windows are set at fractions of the page, and between them they classify the
-block on **35 of the 96** sheets. The block actually sits just above the
-*detected neatline* on every layout in the series, and cropping there classifies
-**54 of 96** — measured directly with the same crop geometry the script now
-uses. Against the eighteen blocks read by eye that window agrees on 10,
-contradicts on **0**, and simply fails to read 8, so it only ever adds: its
-misses stay misses rather than becoming wrong answers. Both windows are kept,
-because the neatline one needs a transform the first pass has not produced yet.
+windows are set at fractions of the page; the block actually sits just above the
+*detected neatline* on every layout in the series. Adding a window cropped there:
+
+| | page windows only | with the neatline window |
+| --- | --- | --- |
+| `credit_form` classified | 35 / 96 | **50 / 96** |
+| Anchor phrase found | 67 | **86** |
+| Fieldwork year read | 65 | **71** |
+
+Seven sheets gain a fieldwork year and every one of them also moves from an
+*unanchored* reading to an anchored one. Three of the seven — Porto-Farina 1900,
+Enfida 1893, Halk El Mennzel 1892 — confirm a block this work had already read by
+eye, which is the check that matters. It costs exactly one year: Nebeur's 1914
+was unanchored, and the neatline crop reads its block properly but OCRs the date
+as "19/4" — an anchored no-answer in place of an unanchored guess, which is the
+right trade. Against the eighteen blocks read by eye the window agrees on 10,
+contradicts on **0**, and fails to read 8.
+
+Both windows are kept: the neatline one needs a transform the first pass has not
+produced yet, and one sheet (Kalaat es Senam) has a detected neatline `top` of
+**−60** — just off the page — which leaves no room above it. That case first
+appeared as a zero-height crop, which Tesseract raises on, costing the sheet
+*every* field rather than just this one; the window is now skipped when it would
+be degenerate.
 
 Series-wide the compiled form is rare — four sheets: Porto-Farina, Ariana, and
 the two that collide in `B0-C35`, Bizerte and Djebel Ichkeul, both reading

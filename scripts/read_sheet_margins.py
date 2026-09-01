@@ -89,12 +89,22 @@ CREDITS_WINDOWS = [
 CREDITS_ANCHOR_RE = re.compile(r"travau|terrain|ex[ée]cut", re.IGNORECASE)
 
 # A third window, taken from the detected neatline instead of the page. The two
-# fixed windows above are set at page fractions and between them classify the
-# credits block on 30 of the 96 scans; the block actually sits just above the
-# neatline's top-left corner on every layout in the series, and cropping there
-# reads 54. Measured against eighteen blocks read by eye: 10 agree, 0 contradict,
-# 8 the OCR still cannot read - so this window only ever adds, and its misses
-# stay misses rather than becoming wrong answers.
+# fixed windows above are set at page fractions, and between them they classify
+# the credits block on 35 of the 96 scans. The block actually sits just above the
+# neatline's top-left corner on every layout in the series, and adding a window
+# cropped there takes it to 50, the anchor phrase from 67 sheets to 86, and the
+# fieldwork year from 65 to 71 - among the seven newly read are Porto-Farina
+# 1900, Enfida 1893 and Halk El Mennzel 1892, all three confirming a block that
+# had been read by eye. Every one of the seven also moves from an unanchored
+# reading to an anchored one.
+#
+# It costs one year: Nebeur's 1914 was an unanchored reading, and the neatline
+# crop reads its block properly but OCRs the date as "19/4". That is the right
+# trade - an anchored no-answer over an unanchored guess.
+#
+# Measured against eighteen blocks read by eye: 10 agree, 0 contradict, 8 the OCR
+# still cannot read - so the window only ever adds, and its misses stay misses
+# rather than becoming wrong answers.
 #
 # It needs the neatline, which comes from the georeferencing, so it is skipped
 # when that is not available - which is why it supplements the page windows
@@ -102,6 +112,8 @@ CREDITS_ANCHOR_RE = re.compile(r"travau|terrain|ex[ée]cut", re.IGNORECASE)
 CREDITS_NEATLINE_ABOVE = (0.085, 0.003)   # page-height fractions above the top
 CREDITS_NEATLINE_WIDTH = 0.26             # page-width fraction from the left
 CREDITS_NEATLINE_LEFT_PAD = 140           # px left of the neatline
+# Below this the window is degenerate and is skipped rather than cropped.
+CREDITS_NEATLINE_MIN_PX = 60
 
 # The two forms the block is set in, and the difference matters: an original
 # survey lists the officers who did it, a revised or compiled sheet indexes
@@ -164,13 +176,25 @@ def ocr(image: Image.Image, window: tuple[float, float, float, float],
 
 
 def neatline_window(image: Image.Image,
-                    neatline: dict) -> tuple[float, float, float, float]:
-    """The credits window as page fractions, derived from the detected neatline."""
+                    neatline: dict) -> tuple[float, float, float, float] | None:
+    """The credits window as page fractions, derived from the detected neatline.
+
+    None when the neatline leaves no room above it. Kalaat es Senam's detected
+    frame has top = -60 - the detector put it just off the page - so both edges
+    of the window clamp to zero, and a zero-height crop is not a crop: Tesseract
+    raises and the sheet loses every field, not just this one. Guarding here
+    rather than at the call site because the window is what is degenerate.
+    """
     width, height = image.size
-    return (max(neatline["left"] - CREDITS_NEATLINE_LEFT_PAD, 0) / width,
-            max(neatline["top"] - CREDITS_NEATLINE_ABOVE[0] * height, 0) / height,
-            min(neatline["left"] / width + CREDITS_NEATLINE_WIDTH, 1.0),
-            max(neatline["top"] - CREDITS_NEATLINE_ABOVE[1] * height, 0) / height)
+    x0 = max(neatline["left"] - CREDITS_NEATLINE_LEFT_PAD, 0) / width
+    y0 = max(neatline["top"] - CREDITS_NEATLINE_ABOVE[0] * height, 0) / height
+    x1 = min(neatline["left"] / width + CREDITS_NEATLINE_WIDTH, 1.0)
+    y1 = max(neatline["top"] - CREDITS_NEATLINE_ABOVE[1] * height, 0) / height
+    if (x1 - x0) * width < CREDITS_NEATLINE_MIN_PX:
+        return None
+    if (y1 - y0) * height < CREDITS_NEATLINE_MIN_PX:
+        return None
+    return (x0, y0, x1, y1)
 
 
 def read_text(path: Path, neatline: dict | None = None) -> dict:
@@ -189,7 +213,9 @@ def read_text(path: Path, neatline: dict | None = None) -> dict:
     # in the 1890s.
     windows = list(CREDITS_WINDOWS)
     if neatline:
-        windows.append(neatline_window(image, neatline))
+        from_neatline = neatline_window(image, neatline)
+        if from_neatline:
+            windows.append(from_neatline)
     candidates = [ocr(image, window, CREDITS_UPSCALE, CREDITS_THRESHOLD)
                   for window in windows]
     anchored = [c for c in candidates if CREDITS_ANCHOR_RE.search(c)]

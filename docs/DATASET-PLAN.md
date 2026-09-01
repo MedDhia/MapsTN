@@ -174,11 +174,11 @@ The catalogue gives one date. The sheet gives three or more.
 | Toujane / Mareth | 1941 | **1907–1937** | Sept 1941 |
 | Kasserine | 1936 | **1935** | Feb 1941 |
 
-Read across the 65 sheets where the block is legible, the pattern holds:
+Read across the 71 sheets where the block is legible, the pattern holds:
 
 | | |
 | --- | --- |
-| Catalogue year later than fieldwork by | **median 23 years**, max 46 |
+| Catalogue year later than fieldwork by | **median 26 years**, max 46 |
 | Sheets whose fieldwork is 1880s–1900s | **41 of 65** |
 | Sheets whose catalogue year is 1920s–1940s | 88 of 103 |
 

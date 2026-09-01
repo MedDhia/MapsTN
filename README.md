@@ -482,7 +482,7 @@ the red margin type for the zone statement and the absolute grid labels
 points.
 
 **The catalogue date is not the observation date.** Reading the survey credits
-block off each sheet, the catalogue year runs a **median 23 years later than the
+block off each sheet, the catalogue year runs a **median 26 years later than the
 fieldwork** (max 46), and **41 of 65 legible sheets record fieldwork from the
 1880s–1900s**. Kairouan is catalogued 1927 and was surveyed in 1898; Médenine is
 catalogued 1933 and was surveyed in 1900–07. See
