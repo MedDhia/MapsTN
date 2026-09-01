@@ -267,7 +267,7 @@ windows are set at fractions of the page; the block actually sits just above the
 
 | | page windows only | with the neatline window |
 | --- | --- | --- |
-| `credit_form` classified | 35 / 96 | **50 / 96** |
+| `credit_form` classified | 35 / 96 | **51 / 96** |
 | Anchor phrase found | 67 | **86** |
 | Fieldwork year read | 65 | **71** |
 
@@ -287,9 +287,14 @@ appeared as a zero-height crop, which Tesseract raises on, costing the sheet
 *every* field rather than just this one; the window is now skipped when it would
 be degenerate.
 
-Series-wide the compiled form is rare — four sheets: Porto-Farina, Ariana, and
-the two that collide in `B0-C35`, Bizerte and Djebel Ichkeul, both reading
-*"levés en 1890, révisés en 1902, complété en 1932"*.
+Series-wide the compiled form is rare — **five** of the 51 sheets that classify:
+Porto-Farina, Ariana, Mateur, and the two that collide in `B0-C35`, Bizerte and
+Djebel Ichkeul, both reading *"levés en 1890, révisés en 1902, complété en
+1932"*. Bizerte took a second pass to find: its opening OCRs as
+`| | D D 'aprés les travaux :`, and the pattern originally required a straight
+apostrophe directly after the `D`. Matching "après les travaux" on its own
+recovers it and costs nothing, because that phrase never appears in the officers
+form.
 
 One caveat the data forces, and it matters: **"reprint" means no new fieldwork
 was credited, not that the plate is untouched.** La Goulette is the demonstration

@@ -121,8 +121,12 @@ CREDITS_NEATLINE_MIN_PX = 60
 # is what distinguishes the two that were really resurveyed (Porto-Farina,
 # Ariana) from the seven that are reprints of one survey - see
 # scripts/difference_editions.py.
-CREDITS_COMPILED_RE = re.compile(r"d\s?[' ]?\s?apr[eèé]s\s+l?e?s?\s*travau",
-                                 re.IGNORECASE)
+# "apres les travaux" without the leading "D'": the apostrophe comes back as a
+# typographic quote, a backtick or nothing at all, and Bizerte OCRs the whole
+# opening as "| | D D 'apres les travaux :" - which the stricter pattern missed.
+# Dropping the D' costs nothing, because "apres les travaux" does not occur in
+# the officers form ("Les Travaux sur le Terrain ont ete executes par...").
+CREDITS_COMPILED_RE = re.compile(r"apr[eèéêë]s\s+l?e?s?\s*travau", re.IGNORECASE)
 CREDITS_OFFICERS_RE = re.compile(r"travau.{0,20}terr?ain", re.IGNORECASE)
 
 WINDOWS = {

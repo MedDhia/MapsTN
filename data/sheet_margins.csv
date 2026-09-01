@@ -1,97 +1,97 @@
 record_id,designation,sheet_name,catalogue_year,survey_year_min,survey_year_max,survey_years_read,survey_years_basis,credit_form,credits_window,revised_on_sheet,imprint_year,print_run_month,print_run_year,publisher_on_sheet,contour_interval_m,declination_epoch,price_francs,catalogue_to_survey_gap_years
-oai:u-bordeaux-montaigne.fr:340354,B00-C34,Kef Abbed,1931,,,,anchored,,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340355,B0-C35,Bizerte,1936,,,,anchored,,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340356,B00-C36,Metline,,,,,unanchored,,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340367,B0-C33,Cap Negro,1922,1900,1900,1,anchored,,page_fraction,,,,,,,,,22
-oai:u-bordeaux-montaigne.fr:340368,B0-C34,Oued Sedjenane,1932,1897,1897,1,anchored,officers,page_fraction,,,,,,,,,35
-oai:u-bordeaux-montaigne.fr:340369,B0-C35,Djebel Ichkeul,1936,1890,1932,5,anchored,compiled,page_fraction,,1936,,,,,,,46
-oai:u-bordeaux-montaigne.fr:340370,B0-C36,Porto-Farina,1935,1900,1931,2,anchored,compiled,neatline,,1935,,,,,,,35
-oai:u-bordeaux-montaigne.fr:340371,B0-C36,Porto-Farina,1902,,,,anchored,officers,page_fraction,,,,,SGA,,,,
-oai:u-bordeaux-montaigne.fr:340372,B0-C38,Sidi Daoud,1932,1894,1894,1,anchored,officers,neatline,,,,,,,,,38
-oai:u-bordeaux-montaigne.fr:340373,B0-C39,Cap Bon,1932,,,,anchored,officers,neatline,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340374,B1-C33,Nefza,1922,1900,1900,1,anchored,officers,page_fraction,,,,,SGA,,,,22
-oai:u-bordeaux-montaigne.fr:340375,B1-C34,Hedil,1932,1899,1899,1,anchored,,page_fraction,,,,,,,,,33
-oai:u-bordeaux-montaigne.fr:340376,B1-C35,Mateur,1936,1900,1932,3,anchored,compiled,page_fraction,,,,,,,,,36
-oai:u-bordeaux-montaigne.fr:340387,B1-C36,Ariana,1936,1890,1935,4,anchored,compiled,page_fraction,,1936,,,,,,,46
-oai:u-bordeaux-montaigne.fr:340388,B1-C36,El Ariana,1902,,,,anchored,officers,neatline,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340389,B1-C37,La Marsa,1932,,,,anchored,,neatline,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340390,B1-C37,La Marsa,1902,,,,anchored,officers,page_fraction,,,,,SGA,,,,
-oai:u-bordeaux-montaigne.fr:340391,B1-C38,Tazoghrane,1932,1894,1894,1,anchored,officers,neatline,,,,,,,,,38
-oai:u-bordeaux-montaigne.fr:340392,B1-C39,Kelibia,1932,,,,anchored,officers,page_fraction,,,,,,,1931,,
-oai:u-bordeaux-montaigne.fr:340393,B2-C34,Béja,1902,1894,1894,1,anchored,,page_fraction,,,,,,,,,8
-oai:u-bordeaux-montaigne.fr:340394,B2-C35,Tebourba,1934,,,,anchored,officers,page_fraction,1934,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340395,B2-C36,Tunis,1935,1889,1889,1,anchored,,page_fraction,,,,,,,,,46
-oai:u-bordeaux-montaigne.fr:340396,B2-C36,Tunis,1902,,,,unanchored,,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340407,B2-C37,La Goulette,1932,,,,anchored,officers,neatline,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340409,B2-C37,La Goulette,,1889,1889,1,anchored,officers,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340410,B2-C38,Menzel Bou Zelfa,1932,1889,1894,3,anchored,officers,page_fraction,,,,,,,,,43
-oai:u-bordeaux-montaigne.fr:340411,B2-C39,Mennzel Heurr,1932,1894,1894,1,anchored,,page_fraction,,1896,,,,,,,38
-oai:u-bordeaux-montaigne.fr:340412,B3-C34,Oued-Zarga,1931,,,,unanchored,,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340413,B3-C35,Medjez-el-Bab,1931,1896,1896,1,anchored,officers,neatline,,,,,,,,,35
-oai:u-bordeaux-montaigne.fr:340414,B3-C36,Oudna,1931,1889,1889,1,anchored,officers,page_fraction,,,,,,,,,42
-oai:u-bordeaux-montaigne.fr:340415,B3-C37,Grombalia,1932,,,,anchored,officers,neatline,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340416,B3-C38,Nabeul,1932,,,,anchored,officers,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340427,B4-C32,Ghardimaou,1928,1902,1902,1,anchored,,neatline,,,,,,,,,26
-oai:u-bordeaux-montaigne.fr:340428,B4-C33,Souk el Arba,1923,1904,1904,1,anchored,officers,page_fraction,,,,,,,,,19
-oai:u-bordeaux-montaigne.fr:340429,B4-C34,Teboursouk,1932,1896,1901,2,unanchored,,page_fraction,,,,,,,,,36
-oai:u-bordeaux-montaigne.fr:340430,B4-C35,Bou Arada,1930,1907,1907,1,anchored,officers,page_fraction,,,,,,,,,23
-oai:u-bordeaux-montaigne.fr:340431,B4-C36,Zaghouan,1902,1883,1893,2,anchored,,page_fraction,,,,,,,,,19
-oai:u-bordeaux-montaigne.fr:340432,B4-C37,Bou Ficha,1932,1893,1893,1,anchored,officers,page_fraction,,1893,,,,,,,39
-oai:u-bordeaux-montaigne.fr:340433,B4-C38,Hammamet,1931,1890,1890,1,anchored,,page_fraction,,,,,SGA,,1889,,41
-oai:u-bordeaux-montaigne.fr:340434,B5-C32,Ouargha,,1897,1897,1,anchored,officers,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340435,B5-C33,Nebeur,1924,,,,anchored,officers,neatline,,1924,,,SGA,,,,
-oai:u-bordeaux-montaigne.fr:340436,B5-C34,Gafour,1922,1921,1921,1,anchored,officers,page_fraction,,,,,SGA,,,,1
-oai:u-bordeaux-montaigne.fr:340447,B5-C35,Djebel Mansour,1930,1911,1911,1,anchored,officers,page_fraction,1930,,,,,,,,19
-oai:u-bordeaux-montaigne.fr:340448,B5-C36,Djebel Fkirine,1930,,,,anchored,officers,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340449,B5-C37,Enfidaville,1930,1893,1893,1,anchored,,page_fraction,,,,,,,1888,,37
-oai:u-bordeaux-montaigne.fr:340450,B5-C37,Enfida,,1893,1893,1,anchored,,neatline,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340451,B6-C32,Le Kef,1925,1918,1918,1,anchored,,page_fraction,,,,,,,,,7
-oai:u-bordeaux-montaigne.fr:340452,B6-C33,Les Salines,1929,,,,unanchored,,page_fraction,,1924,,,SGA,,,,
-oai:u-bordeaux-montaigne.fr:340453,B6-C34,Siliana,1931,1921,1921,1,anchored,,page_fraction,,,,,,,,,10
-oai:u-bordeaux-montaigne.fr:340454,B6-C35,Djebel Bargou,1931,1922,1922,1,anchored,,page_fraction,,,,,,,,,9
-oai:u-bordeaux-montaigne.fr:340455,B6-C36,Djebibina,1931,1893,1893,1,anchored,,page_fraction,,,,,,,,,38
-oai:u-bordeaux-montaigne.fr:340456,B6-C37,Sidi Bou Ali,1931,1892,1892,1,anchored,officers,page_fraction,,,,,,,,,39
-oai:u-bordeaux-montaigne.fr:340467,B6-C37,Sidi Bou Ali,,1892,1892,1,anchored,,page_fraction,,,,,SGA,,,,
-oai:u-bordeaux-montaigne.fr:340468,B6-C38,Halk El Mennzel,1931,1892,1892,1,anchored,,page_fraction,,,,,SGA,,,,39
-oai:u-bordeaux-montaigne.fr:340469,B6-C38,Halk El Mennzel,,1892,1892,1,anchored,officers,neatline,,,,,SGA,,,,
-oai:u-bordeaux-montaigne.fr:340470,B7-C32,Tadjerouine,1923,1912,1912,1,anchored,,page_fraction,,,,,,,,,11
-oai:u-bordeaux-montaigne.fr:340471,B1-C33,Ebba Ksour,1925,1921,1921,1,anchored,officers,page_fraction,,,,,,,,,4
-oai:u-bordeaux-montaigne.fr:340472,B7-C34,Maktar,1928,1922,1922,1,anchored,officers,page_fraction,,1928,,,,,,,6
-oai:u-bordeaux-montaigne.fr:340473,B7-C35,Djebel Serdj,1932,1922,1923,2,anchored,officers,page_fraction,,1929,,,SGA,,1889,,10
-oai:u-bordeaux-montaigne.fr:340474,B6-C37,Aïne Djeloula,1931,1899,1899,1,anchored,,page_fraction,,,,,,,,,32
-oai:u-bordeaux-montaigne.fr:340475,B7-C37,Sebkra Kelbia,1923,,,,anchored,officers,neatline,,,,,,,1938,,
-oai:u-bordeaux-montaigne.fr:340476,B7-C38,Sousse,1931,1892,1892,1,anchored,,page_fraction,,,,,SGA,,,,39
-oai:u-bordeaux-montaigne.fr:340487,B7-C38,Sousse,,1892,1892,1,unanchored,,page_fraction,,,,,SGA,,,,
-oai:u-bordeaux-montaigne.fr:340488,B8-C32,Kalaat es Senam,1926,1921,1921,1,anchored,,neatline,,,,,,,,,5
-oai:u-bordeaux-montaigne.fr:340489,B8-C33,Aïn El Kseïba,1928,1925,1925,1,anchored,officers,page_fraction,,1928,,,,,,,3
-oai:u-bordeaux-montaigne.fr:340490,B8-C34,Rohia-Dj. Barbrou,1929,1923,1923,1,anchored,,page_fraction,,1929,,,SGA,,1858,,6
-oai:u-bordeaux-montaigne.fr:340491,B8-C35,Pichon,1928,,,,anchored,officers,page_fraction,,1928,,,,,1939,,
-oai:u-bordeaux-montaigne.fr:340492,B8-C36,Kairouan,1927,1898,1898,1,anchored,officers,page_fraction,,1927,,,,,,,29
-oai:u-bordeaux-montaigne.fr:340493,B8-C37,Sidi El Hani,1923,,,,anchored,,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340494,B8-C38,Djemmal,1925,1895,1898,2,anchored,,page_fraction,,,,,,,,,30
-oai:u-bordeaux-montaigne.fr:340495,B8-C39,Moknine,1931,1895,1898,2,anchored,,page_fraction,,,,,,,,,36
-oai:u-bordeaux-montaigne.fr:340496,B9-C32,Thala,1927,1925,1925,1,anchored,officers,page_fraction,,,,,,,1888,,2
-oai:u-bordeaux-montaigne.fr:340507,B9-C33,Ksar Tlili,1928,1926,1926,1,anchored,officers,neatline,,,,,,,1928,,2
-oai:u-bordeaux-montaigne.fr:340508,B9-C34,Sbiba,1928,1926,1926,1,anchored,,neatline,,1928,,,,,,,2
-oai:u-bordeaux-montaigne.fr:340509,B9-C35,Djebel Trozza,1929,1927,1927,1,anchored,officers,page_fraction,,,,,,,,,2
-oai:u-bordeaux-montaigne.fr:340510,B9-C36,Pavillier,1927,,,,anchored,officers,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340511,B9-C37,Oued Cherita,1931,1912,1912,1,anchored,officers,page_fraction,,,,,,,,,19
-oai:u-bordeaux-montaigne.fr:340512,B9-C38,Kerker,1931,1895,1895,1,anchored,officers,neatline,,,,,,,,,36
-oai:u-bordeaux-montaigne.fr:340513,B10-C32,Djebel Bireno,1930,1926,1926,1,anchored,officers,neatline,,,,,,,,,4
-oai:u-bordeaux-montaigne.fr:340514,B10-C33,Djebel Semmama,1930,1928,1929,2,unanchored,,page_fraction,,1930,,,SGA,,,,2
-oai:u-bordeaux-montaigne.fr:340515,B10-C34,Djebel Mrhila,1932,1929,1929,1,anchored,officers,page_fraction,,1932,,,,,,,3
-oai:u-bordeaux-montaigne.fr:340516,B10-C35,Hadjeb el Aïoun,1933,1930,1930,1,anchored,,page_fraction,,,,,,,,,3
-oai:u-bordeaux-montaigne.fr:340527,B10-C36,Nasr Allah,1934,,,,anchored,,page_fraction,,1934,,,,,,,
-oai:u-bordeaux-montaigne.fr:340528,B10-C37,Chorbane,1934,1932,1933,2,anchored,officers,page_fraction,,,,,,,,,2
-oai:u-bordeaux-montaigne.fr:340529,B10-C38,El Djem,1931,1895,1895,1,anchored,officers,page_fraction,,,,,,,,,36
-oai:u-bordeaux-montaigne.fr:340530,B10-C39,Chebba,1925,1895,1895,1,anchored,officers,neatline,,,,,,,,,30
-oai:u-bordeaux-montaigne.fr:340531,B11-C32,Bou Chebka,1939,1935,1935,1,unanchored,,page_fraction,,1930,,,,,,,4
-oai:u-bordeaux-montaigne.fr:340532,B11-C33,Kasserine,1936,1935,1935,1,anchored,,page_fraction,,,,,,,,,1
-oai:u-bordeaux-montaigne.fr:340533,,Djebeniana,1940,,,,anchored,,page_fraction,,1940,,,,,,,
-oai:u-bordeaux-montaigne.fr:340534,,,1941,1907,1937,2,anchored,,page_fraction,,,,,,,1942,,34
-oai:u-bordeaux-montaigne.fr:340535,,,1941,1937,1938,2,anchored,,page_fraction,,,,,,,,,4
-oai:u-bordeaux-montaigne.fr:340615,,,1946,,,,unanchored,,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340616,,,,1896,1896,1,unanchored,,page_fraction,,,,,,,,,
-oai:u-bordeaux-montaigne.fr:340627,,,1934,1903,1903,1,anchored,,page_fraction,,,,,,,,,31
-oai:u-bordeaux-montaigne.fr:340628,,,1940,1907,1907,1,anchored,officers,page_fraction,,,,,,,,,33
-oai:u-bordeaux-montaigne.fr:340629,,,,1900,1907,2,anchored,,page_fraction,,,MAI,1940,SGA,,1934,,
+oai:u-bordeaux-montaigne.fr:340354,B00-C34,Kef Abbed,1931,,,,anchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340355,B0-C35,Bizerte,1936,,,,anchored,compiled,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340356,B00-C36,Metline,,,,,unanchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340367,B0-C33,Cap Negro,1922,1900,1900,1,anchored,,,,,,,,,,,22
+oai:u-bordeaux-montaigne.fr:340368,B0-C34,Oued Sedjenane,1932,1897,1897,1,anchored,officers,,,,,,,,,,35
+oai:u-bordeaux-montaigne.fr:340369,B0-C35,Djebel Ichkeul,1936,1890,1932,5,anchored,compiled,,,1936,,,,,,,46
+oai:u-bordeaux-montaigne.fr:340370,B0-C36,Porto-Farina,1935,1900,1931,2,anchored,compiled,,,1935,,,,,,,35
+oai:u-bordeaux-montaigne.fr:340371,B0-C36,Porto-Farina,1902,,,,anchored,officers,,,,,,SGA,,,,
+oai:u-bordeaux-montaigne.fr:340372,B0-C38,Sidi Daoud,1932,1894,1894,1,anchored,officers,,,,,,,,,,38
+oai:u-bordeaux-montaigne.fr:340373,B0-C39,Cap Bon,1932,,,,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340374,B1-C33,Nefza,1922,1900,1900,1,anchored,officers,,,,,,SGA,,,,22
+oai:u-bordeaux-montaigne.fr:340375,B1-C34,Hedil,1932,1899,1899,1,anchored,,,,,,,,,,,33
+oai:u-bordeaux-montaigne.fr:340376,B1-C35,Mateur,1936,1900,1932,3,anchored,compiled,,,,,,,,,,36
+oai:u-bordeaux-montaigne.fr:340387,B1-C36,Ariana,1936,1890,1935,4,anchored,compiled,,,1936,,,,,,,46
+oai:u-bordeaux-montaigne.fr:340388,B1-C36,El Ariana,1902,,,,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340389,B1-C37,La Marsa,1932,,,,anchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340390,B1-C37,La Marsa,1902,,,,anchored,officers,,,,,,SGA,,,,
+oai:u-bordeaux-montaigne.fr:340391,B1-C38,Tazoghrane,1932,1894,1894,1,anchored,officers,,,,,,,,,,38
+oai:u-bordeaux-montaigne.fr:340392,B1-C39,Kelibia,1932,,,,anchored,officers,,,,,,,,1931,,
+oai:u-bordeaux-montaigne.fr:340393,B2-C34,Béja,1902,1894,1894,1,anchored,,,,,,,,,,,8
+oai:u-bordeaux-montaigne.fr:340394,B2-C35,Tebourba,1934,,,,anchored,officers,,1934,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340395,B2-C36,Tunis,1935,1889,1889,1,anchored,,,,,,,,,,,46
+oai:u-bordeaux-montaigne.fr:340396,B2-C36,Tunis,1902,,,,unanchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340407,B2-C37,La Goulette,1932,,,,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340409,B2-C37,La Goulette,,1889,1889,1,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340410,B2-C38,Menzel Bou Zelfa,1932,1889,1894,3,anchored,officers,,,,,,,,,,43
+oai:u-bordeaux-montaigne.fr:340411,B2-C39,Mennzel Heurr,1932,1894,1894,1,anchored,,,,1896,,,,,,,38
+oai:u-bordeaux-montaigne.fr:340412,B3-C34,Oued-Zarga,1931,,,,unanchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340413,B3-C35,Medjez-el-Bab,1931,1896,1896,1,anchored,officers,,,,,,,,,,35
+oai:u-bordeaux-montaigne.fr:340414,B3-C36,Oudna,1931,1889,1889,1,anchored,officers,,,,,,,,,,42
+oai:u-bordeaux-montaigne.fr:340415,B3-C37,Grombalia,1932,,,,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340416,B3-C38,Nabeul,1932,,,,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340427,B4-C32,Ghardimaou,1928,1902,1902,1,anchored,,,,,,,,,,,26
+oai:u-bordeaux-montaigne.fr:340428,B4-C33,Souk el Arba,1923,1904,1904,1,anchored,officers,,,,,,,,,,19
+oai:u-bordeaux-montaigne.fr:340429,B4-C34,Teboursouk,1932,1896,1901,2,unanchored,,,,,,,,,,,36
+oai:u-bordeaux-montaigne.fr:340430,B4-C35,Bou Arada,1930,1907,1907,1,anchored,officers,,,,,,,,,,23
+oai:u-bordeaux-montaigne.fr:340431,B4-C36,Zaghouan,1902,1883,1893,2,anchored,,,,,,,,,,,19
+oai:u-bordeaux-montaigne.fr:340432,B4-C37,Bou Ficha,1932,1893,1893,1,anchored,officers,,,1893,,,,,,,39
+oai:u-bordeaux-montaigne.fr:340433,B4-C38,Hammamet,1931,1890,1890,1,anchored,,,,,,,SGA,,1889,,41
+oai:u-bordeaux-montaigne.fr:340434,B5-C32,Ouargha,,1897,1897,1,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340435,B5-C33,Nebeur,1924,,,,anchored,officers,,,1924,,,SGA,,,,
+oai:u-bordeaux-montaigne.fr:340436,B5-C34,Gafour,1922,1921,1921,1,anchored,officers,,,,,,SGA,,,,1
+oai:u-bordeaux-montaigne.fr:340447,B5-C35,Djebel Mansour,1930,1911,1911,1,anchored,officers,,1930,,,,,,,,19
+oai:u-bordeaux-montaigne.fr:340448,B5-C36,Djebel Fkirine,1930,,,,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340449,B5-C37,Enfidaville,1930,1893,1893,1,anchored,,,,,,,,,1888,,37
+oai:u-bordeaux-montaigne.fr:340450,B5-C37,Enfida,,1893,1893,1,anchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340451,B6-C32,Le Kef,1925,1918,1918,1,anchored,,,,,,,,,,,7
+oai:u-bordeaux-montaigne.fr:340452,B6-C33,Les Salines,1929,,,,unanchored,,,,1924,,,SGA,,,,
+oai:u-bordeaux-montaigne.fr:340453,B6-C34,Siliana,1931,1921,1921,1,anchored,,,,,,,,,,,10
+oai:u-bordeaux-montaigne.fr:340454,B6-C35,Djebel Bargou,1931,1922,1922,1,anchored,,,,,,,,,,,9
+oai:u-bordeaux-montaigne.fr:340455,B6-C36,Djebibina,1931,1893,1893,1,anchored,,,,,,,,,,,38
+oai:u-bordeaux-montaigne.fr:340456,B6-C37,Sidi Bou Ali,1931,1892,1892,1,anchored,officers,,,,,,,,,,39
+oai:u-bordeaux-montaigne.fr:340467,B6-C37,Sidi Bou Ali,,1892,1892,1,anchored,,,,,,,SGA,,,,
+oai:u-bordeaux-montaigne.fr:340468,B6-C38,Halk El Mennzel,1931,1892,1892,1,anchored,,,,,,,SGA,,,,39
+oai:u-bordeaux-montaigne.fr:340469,B6-C38,Halk El Mennzel,,1892,1892,1,anchored,officers,,,,,,SGA,,,,
+oai:u-bordeaux-montaigne.fr:340470,B7-C32,Tadjerouine,1923,1912,1912,1,anchored,,,,,,,,,,,11
+oai:u-bordeaux-montaigne.fr:340471,B1-C33,Ebba Ksour,1925,1921,1921,1,anchored,officers,,,,,,,,,,4
+oai:u-bordeaux-montaigne.fr:340472,B7-C34,Maktar,1928,1922,1922,1,anchored,officers,,,1928,,,,,,,6
+oai:u-bordeaux-montaigne.fr:340473,B7-C35,Djebel Serdj,1932,1922,1923,2,anchored,officers,,,1929,,,SGA,,1889,,10
+oai:u-bordeaux-montaigne.fr:340474,B6-C37,Aïne Djeloula,1931,1899,1899,1,anchored,,,,,,,,,,,32
+oai:u-bordeaux-montaigne.fr:340475,B7-C37,Sebkra Kelbia,1923,,,,anchored,officers,,,,,,,,1938,,
+oai:u-bordeaux-montaigne.fr:340476,B7-C38,Sousse,1931,1892,1892,1,anchored,,,,,,,SGA,,,,39
+oai:u-bordeaux-montaigne.fr:340487,B7-C38,Sousse,,1892,1892,1,unanchored,,,,,,,SGA,,,,
+oai:u-bordeaux-montaigne.fr:340488,B8-C32,Kalaat es Senam,1926,1921,1921,1,anchored,,,,,,,,,,,5
+oai:u-bordeaux-montaigne.fr:340489,B8-C33,Aïn El Kseïba,1928,1925,1925,1,anchored,officers,,,1928,,,,,,,3
+oai:u-bordeaux-montaigne.fr:340490,B8-C34,Rohia-Dj. Barbrou,1929,1923,1923,1,anchored,,,,1929,,,SGA,,1858,,6
+oai:u-bordeaux-montaigne.fr:340491,B8-C35,Pichon,1928,,,,anchored,officers,,,1928,,,,,1939,,
+oai:u-bordeaux-montaigne.fr:340492,B8-C36,Kairouan,1927,1898,1898,1,anchored,officers,,,1927,,,,,,,29
+oai:u-bordeaux-montaigne.fr:340493,B8-C37,Sidi El Hani,1923,,,,anchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340494,B8-C38,Djemmal,1925,1895,1898,2,anchored,,,,,,,,,,,30
+oai:u-bordeaux-montaigne.fr:340495,B8-C39,Moknine,1931,1895,1898,2,anchored,,,,,,,,,,,36
+oai:u-bordeaux-montaigne.fr:340496,B9-C32,Thala,1927,1925,1925,1,anchored,officers,,,,,,,,1888,,2
+oai:u-bordeaux-montaigne.fr:340507,B9-C33,Ksar Tlili,1928,1926,1926,1,anchored,officers,,,,,,,,1928,,2
+oai:u-bordeaux-montaigne.fr:340508,B9-C34,Sbiba,1928,1926,1926,1,anchored,,,,1928,,,,,,,2
+oai:u-bordeaux-montaigne.fr:340509,B9-C35,Djebel Trozza,1929,1927,1927,1,anchored,officers,,,,,,,,,,2
+oai:u-bordeaux-montaigne.fr:340510,B9-C36,Pavillier,1927,,,,anchored,officers,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340511,B9-C37,Oued Cherita,1931,1912,1912,1,anchored,officers,,,,,,,,,,19
+oai:u-bordeaux-montaigne.fr:340512,B9-C38,Kerker,1931,1895,1895,1,anchored,officers,,,,,,,,,,36
+oai:u-bordeaux-montaigne.fr:340513,B10-C32,Djebel Bireno,1930,1926,1926,1,anchored,officers,,,,,,,,,,4
+oai:u-bordeaux-montaigne.fr:340514,B10-C33,Djebel Semmama,1930,1928,1929,2,unanchored,,,,1930,,,SGA,,,,2
+oai:u-bordeaux-montaigne.fr:340515,B10-C34,Djebel Mrhila,1932,1929,1929,1,anchored,officers,,,1932,,,,,,,3
+oai:u-bordeaux-montaigne.fr:340516,B10-C35,Hadjeb el Aïoun,1933,1930,1930,1,anchored,,,,,,,,,,,3
+oai:u-bordeaux-montaigne.fr:340527,B10-C36,Nasr Allah,1934,,,,anchored,,,,1934,,,,,,,
+oai:u-bordeaux-montaigne.fr:340528,B10-C37,Chorbane,1934,1932,1933,2,anchored,officers,,,,,,,,,,2
+oai:u-bordeaux-montaigne.fr:340529,B10-C38,El Djem,1931,1895,1895,1,anchored,officers,,,,,,,,,,36
+oai:u-bordeaux-montaigne.fr:340530,B10-C39,Chebba,1925,1895,1895,1,anchored,officers,,,,,,,,,,30
+oai:u-bordeaux-montaigne.fr:340531,B11-C32,Bou Chebka,1939,1935,1935,1,unanchored,,,,1930,,,,,,,4
+oai:u-bordeaux-montaigne.fr:340532,B11-C33,Kasserine,1936,1935,1935,1,anchored,,,,,,,,,,,1
+oai:u-bordeaux-montaigne.fr:340533,,Djebeniana,1940,,,,anchored,,,,1940,,,,,,,
+oai:u-bordeaux-montaigne.fr:340534,,,1941,1907,1937,2,anchored,,,,,,,,,1942,,34
+oai:u-bordeaux-montaigne.fr:340535,,,1941,1937,1938,2,anchored,,,,,,,,,,,4
+oai:u-bordeaux-montaigne.fr:340615,,,1946,,,,unanchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340616,,,,1896,1896,1,unanchored,,,,,,,,,,,
+oai:u-bordeaux-montaigne.fr:340627,,,1934,1903,1903,1,anchored,,,,,,,,,,,31
+oai:u-bordeaux-montaigne.fr:340628,,,1940,1907,1907,1,anchored,officers,,,,,,,,,,33
+oai:u-bordeaux-montaigne.fr:340629,,,,1900,1907,2,anchored,,,,,MAI,1940,SGA,,1934,,
