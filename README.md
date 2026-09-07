@@ -494,6 +494,16 @@ described: [`config/legend_vocabulary.json`](config/legend_vocabulary.json).
 Read by eye at full resolution, because OCR returns *"Chemin d'erploitation et
 sentier mulclier"* for *"Chemin d'exploitation et sentier muletier"*.
 
+Each row also carries an `extraction_difficulty`, and one of those is now a
+measured **negative**: the trigonometric points looked like the best next class
+to build — a triangle with a printed height, and the survey control the sheets
+were built on — and they turn out to be below the resolution floor of these
+scans. 200 010 pixels of one sheet score higher under a purpose-built detector
+than a real trig point does. [The
+measurements](docs/OBJECT-DATASET.md#trig-points-are-below-the-floor-of-these-scans),
+reproducible with
+[`scripts/probe_trig_points.py`](scripts/probe_trig_points.py).
+
 **There are three legend regimes.** 78 sheets carry the 1936 functional edition
 (catalogue years 1922–1940), 9 the 1902 administrative edition, and **4 print no
 symbol legend at all** — only an imprint, a scale bar and the contour interval,
