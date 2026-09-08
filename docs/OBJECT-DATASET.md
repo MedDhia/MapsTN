@@ -12,6 +12,7 @@ symbols in the pixels and push them through it.
 | Place the sheets whose grid fit is degenerate | [`scripts/georeference_from_corners.py`](../scripts/georeference_from_corners.py) | `data/sheet_corner_fit.{json,csv}`, `data/georef_corner_fit/` |
 | Extract symbols | [`scripts/extract_symbols.py`](../scripts/extract_symbols.py) | `data/symbols/<record_id>.geojson`, `data/symbols_summary.csv` |
 | Difference the two printings | [`scripts/difference_editions.py`](../scripts/difference_editions.py) | `data/edition_difference.csv`, `data/edition_credits.csv`, `docs/img/edition_*.png` |
+| Probe a class before building it | [`scripts/probe_trig_points.py`](../scripts/probe_trig_points.py) | printed measurements; no data file — see *Trig points are below the floor of these scans* |
 
 ---
 
@@ -636,11 +637,101 @@ lettering. Counts that swing by two orders of magnitude on a threshold nudge are
 not data. It needs per-sheet calibration first, and until then
 `--classes building,well,vegetation` is opt-in.
 
-Still unbuilt, in the order worth doing: **trig points** (a triangle with a
-printed height, and they double as survey control), **shrines and cemeteries**
-(the confessional cemetery glyphs are the highest-value class in the legend),
-**parcel boundaries** (dashed polygons named by holding lineage), and **toponym
-OCR**, which remains the long pole.
+### Trig points are below the floor of these scans
+
+**Trig points were the next class to build, and they cannot be built.** They
+looked like the best candidate in the legend: a triangle with a printed height,
+and — as the legend vocabulary noted — the surveyed stations the sheet was
+constructed on, so extracting them would have given an *independent* check on
+every transform rather than merely more dots. That is why they were chosen. The
+attempt failed, and it failed for a reason worth recording rather than a
+threshold worth tuning.
+
+First, the symbol is not what the legend draws. The legend shows a solid black
+triangle beside a height, `375 ▲`. On the map body the glyph is an **open**
+triangle about 13 px across with 1–2 px strokes and a **dot at its centre** —
+the surveyor's convention, where the dot is the station. The legend simplifies.
+
+Three measurements then rule out three routes.
+[`scripts/probe_trig_points.py`](../scripts/probe_trig_points.py) reproduces all
+of them.
+
+**1. Colour separates nothing.** Median chroma (max channel − min channel) over
+ink pixels, on the Kasserine sheet:
+
+| ink | median chroma |
+| --- | --- |
+| black spot-height digits | 20 |
+| brown contours | 28 |
+| black lettering | 29 |
+| red grid line | 29 |
+| **the trig triangle** | **41** |
+
+The glyph is *more* saturated than the contours it has to be told apart from,
+and the black digits are *less* saturated than the black lettering. There is no
+threshold in that table. Only strongly saturated red separates — which is
+exactly why the house and well detectors work and this one cannot.
+
+**2. A purpose-built template scores a real one below the sheet's own noise.**
+An open triangle with a centre dot invites the same three-part test the well
+detector uses for a ring: inked on the rim, empty in the gap, inked at the
+centre. Against a trig point confirmed by eye at (7226, 1369):
+
+| | score |
+| --- | --- |
+| the confirmed trig point | 1.655 |
+| 99.0th percentile of the sheet | 1.396 |
+| 99.9th percentile | 1.782 |
+| maximum | 2.000 |
+
+**200 010 pixels of that one sheet score higher than a real trig point does.**
+The ordering is wrong, not the cut-off, so no threshold recovers the class.
+
+**3. The red variants cannot be separated from a house.** Both editions also
+designate a church (solid red disc) and a marabout (red bulb on a forked stem)
+as trigonometric points, and those are in saturated red. But they sit in the
+house mark's size band, and the obvious roundness test is arithmetically
+incapable of the job — a square scores
+
+> IoU(square, inscribed disc) = π r² / 4 r² = **π/4 = 0.785**
+
+against its own inscribed disc, at *any* size. A 0.75 threshold admitted every
+house on the sheet. Replacing it with an empty-corners test reached about **18%
+precision** — 5 real glyphs in 28 candidates — because a house drawn as a
+diamond also leaves its bounding-box corners empty. Convex-hull solidity, which
+would separate the non-convex marabout and windmill glyphs properly, is swamped
+by the red grid crossings unless the grid is masked first.
+
+**The root cause is resolution, and it is worth stating plainly** because it
+bounds what else is possible here. The house mark is a *solid* 0.4 mm block of
+saturated red — 16 px of ink no thin line can imitate. The well is a 0.5 mm ring
+in saturated blue, and isolated. The trig point is a 1.1 mm *outline* whose
+strokes are 0.15 mm, which is **1.8 px** at the series' median 298 dpi, drawn in
+an ink shared with the contours, in the densest ink on the sheet, and routinely
+overprinted by the dashed tracks crossing it — the confirmed Kasserine example
+has one running straight through the glyph.
+
+A 600 dpi rescan would put the strokes at 4 px and make the compound template
+viable. Short of that, the tractable route is to **invert the problem**: find the
+printed height labels first, which are large and legible, and test only their
+immediate neighbourhoods for a triangle. That cuts the false-positive
+opportunity from 66 million pixels to a few hundred small windows. It needs a
+digit-cluster finder and OCR — most of the toponym machinery below — so it is a
+real piece of work, not a parameter change.
+
+`config/legend_vocabulary.json` now records this against the class in place of
+the `"easy"` it used to claim.
+
+### What is still unbuilt
+
+In the order worth doing: **shrines and cemeteries** (the confessional cemetery
+glyphs are the highest-value class in the legend, and the measurements above
+suggest attacking the *non-convex* glyphs — the marabout's forked stem, the
+windmill's asterisk — since convexity is the one shape test that does not
+collapse at 13 px, once the grid is masked), **parcel boundaries** (dashed
+polygons named by holding lineage), **spot heights** (hundreds per sheet, each
+with a printed elevation, and the same digit-cluster machinery the trig-point
+route needs), and **toponym OCR**, which remains the long pole.
 
 ---
 
