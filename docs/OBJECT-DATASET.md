@@ -10,7 +10,7 @@ symbols in the pixels and push them through it.
 | Read the printed corners | [`scripts/read_corner_coordinates.py`](../scripts/read_corner_coordinates.py) | `data/sheet_corners.{json,csv}` |
 | Georeference the graticule sheets | [`scripts/georeference_graticule_sheets.py`](../scripts/georeference_graticule_sheets.py) | `data/sheet_graticule.{json,csv}`, `data/georef_graticule/` |
 | Place the sheets whose grid fit is degenerate | [`scripts/georeference_from_corners.py`](../scripts/georeference_from_corners.py) | `data/sheet_corner_fit.{json,csv}`, `data/georef_corner_fit/` |
-| Extract symbols | [`scripts/extract_symbols.py`](../scripts/extract_symbols.py) | `data/symbols/<record_id>.geojson`, `data/symbols_summary.csv` |
+| Extract symbols | [`scripts/extract_symbols.py`](../scripts/extract_symbols.py) | `data/symbols/<record_id>.geojson`, `data/symbols_summary.csv`; `--classes building,shrine` adds the provisional koubba layer |
 | Difference the two printings | [`scripts/difference_editions.py`](../scripts/difference_editions.py) | `data/edition_difference.csv`, `data/edition_credits.csv`, `docs/img/edition_*.png` |
 | Probe a class before building it | [`scripts/probe_trig_points.py`](../scripts/probe_trig_points.py) | printed measurements; no data file — see *Trig points are below the floor of these scans* |
 
@@ -722,16 +722,84 @@ real piece of work, not a parameter change.
 `config/legend_vocabulary.json` now records this against the class in place of
 the `"easy"` it used to claim.
 
+### The koubba: 40% right, which makes it a candidate list
+
+The trig-point measurements pointed at the *non-convex* red glyphs as the next
+thing to try, since convexity is the one shape test that does not collapse at
+13 px. That was the right direction and it produced a working finder — but at
+40% precision, which is a different kind of deliverable from the house layer.
+
+The marabout is a **dome on a narrow stem above a disc**, and every threshold
+comes from the glyph the sheet prints in its own legend row: 27 × 16 px, 262 px
+of ink, dome 10 wide over a stem of 6 above a disc of 16. The discriminator is
+that **waist**. Four cheaper tests were tried first and each failed for a reason
+now recorded in the code:
+
+| test | why it failed |
+| --- | --- |
+| colour | the koubba is the same red as a house |
+| roundness | IoU(square, inscribed disc) = **π/4 = 0.785** at any size |
+| empty corners | a house drawn as a diamond also has empty corners — ~18% |
+| convex-hull solidity | two touching houses merge into one non-convex component, as does a red road junction — ~30% |
+
+A filled quadrilateral has no local minimum in its row-width profile; a merged
+pair of houses has no *narrow* one between two lobes of the right proportions.
+The disc must also be the lower and larger lobe, which orients the glyph.
+
+**The waist alone was not enough, and only sampling showed it.** The counts from
+the first full run looked entirely plausible — Bizerte 7, Hedil 5, Metline 4,
+Kef Abbed 0. Rendering 24 random detections showed **18 were red type**: the
+kilometric labels printed along the grid lines (`49`, `50`, `59`) and red
+place-name lettering (`QU`, `ISI`, `NORU`). A digit is exactly a narrow neck
+above a wide bowl. No count would ever have revealed that.
+
+The fix is that **type is set in lines and a map symbol is not**. A blanket
+distance cut was tried first and was too blunt — it discarded 12 of 13
+candidates on the Sousse sheet, and a koubba beside a village is not type. What
+works is testing for what *makes* something type: a neighbour beside it, close,
+on the same baseline, at the same height. That recovered recall (4 on Sousse
+rather than 1) while still rejecting 9 of 13.
+
+**What it achieves, and the honest figure.** 132 candidates on 78 sheets. A
+random sample of 30, checked against their **pixel masks** rather than
+thumbnails:
+
+| | |
+| --- | --- |
+| clear marabouts | **12** |
+| clearly not | 13 |
+| looked plausible in profile, were not | 5 |
+| **precision** | **40%** — about 53 real among the 132 |
+
+The survivors that are wrong are track and road junctions, red hatching in
+built-up areas, and dense clusters of touching houses. Recall is bounded too,
+and deliberately: a koubba inside a hatched town fails the isolation cut by
+design.
+
+So `shrine` ships the way `well` and `vegetation` already do — **available,
+off by default**, behind `--classes building,shrine`. At 40% it is a list worth
+a researcher's afternoon with the overlays, and not a number anyone should cite.
+It is better characterised than either of the other two provisional classes,
+whose counts vary by a factor of 500 and two orders of magnitude respectively.
+
+One finding worth carrying forward: **the legend simplifies the glyph**, exactly
+as it does for the trig point. The legend draws the marabout with a *filled*
+bulb; the map body usually draws a hollow ring with a fork above it. The finder
+catches both because it measures ink per row rather than assuming a solid lobe —
+luck rather than design, but it is why one set of thresholds works on both.
+
+The **clocher**, the plain red disc the same legend row also designates, is
+deliberately not attempted. It is a disc in the house mark's size band, and the
+π/4 identity says no roundness threshold separates the two.
+
 ### What is still unbuilt
 
-In the order worth doing: **shrines and cemeteries** (the confessional cemetery
-glyphs are the highest-value class in the legend, and the measurements above
-suggest attacking the *non-convex* glyphs — the marabout's forked stem, the
-windmill's asterisk — since convexity is the one shape test that does not
-collapse at 13 px, once the grid is masked), **parcel boundaries** (dashed
-polygons named by holding lineage), **spot heights** (hundreds per sheet, each
-with a printed elevation, and the same digit-cluster machinery the trig-point
-route needs), and **toponym OCR**, which remains the long pole.
+In the order worth doing: **cemeteries** (the confessional glyphs are the
+highest-value class in the legend and are compound marks rather than single
+blobs, so they may separate better than the koubba did), **spot heights**
+(hundreds per sheet, each with a printed elevation, and the same digit-cluster
+machinery the trig-point route needs), **parcel boundaries** (dashed polygons
+named by holding lineage), and **toponym OCR**, which remains the long pole.
 
 ---
 

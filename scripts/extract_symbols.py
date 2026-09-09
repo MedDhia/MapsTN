@@ -14,6 +14,15 @@ them cleanly at this scan resolution:
              fewer wells than the Medjerda valley - but a factor of 500 is not,
              and the overlays show the detector firing on blue hatching in
              marshy ground. Pass --classes building,well to include it.
+  shrine     "Eglise, chapelle, koubba" - the marabout glyph, a dome on a narrow
+             stem above a disc. PROVISIONAL, and not extracted by default.
+             132 candidates on 78 sheets, and a random sample of 30 checked
+             against their pixel masks is **40% right** - 12 clear marabouts,
+             13 clearly not, and 5 that looked plausible in profile and turned
+             out to be track junctions or hatching when the masks were printed.
+             So it is a candidate list to check by eye, not a count to cite:
+             about 53 of the 132 are expected to be real. Pass
+             --classes building,shrine to include it.
   vegetation "Bois / Broussailles / Oliviers / Palmiers" - the teal stipple, one
              ring per tree or small group. Available but NOT extracted by
              default, because it is not yet reliable: the stipple is dense and
@@ -340,6 +349,19 @@ def find_koubbas(mask: np.ndarray) -> list[tuple[float, float]]:
     Returns the centroid of the *disc*, not of the whole glyph: the disc is the
     koubba and the dome is drawn above it, so the whole-glyph centroid sits
     high by about 6 px, which is 26 m on the ground.
+
+    **The legend simplifies the glyph, as it does for the trig point.** The
+    legend row draws the marabout with a *filled* bulb; on the map body it is
+    usually a hollow ring with a fork above it. This finder catches both because
+    it measures ink per row rather than assuming a solid lobe, which is luck
+    rather than design - but it is why the same thresholds work on both forms.
+
+    **What it still gets wrong**, measured on a random sample of 30 of its 132
+    detections, checked against pixel masks: 40% are real. The survivors that
+    are not are track and road junctions, red hatching in built-up areas, and
+    dense clusters of touching houses - all of which can present a narrow neck
+    over a wider lobe. Recall is bounded too, and deliberately: a koubba inside
+    a hatched town fails the isolation cut by design.
     """
     labels, count = ndimage.label(mask)
     if count == 0:
