@@ -494,8 +494,13 @@ described: [`config/legend_vocabulary.json`](config/legend_vocabulary.json).
 Read by eye at full resolution, because OCR returns *"Chemin d'erploitation et
 sentier mulclier"* for *"Chemin d'exploitation et sentier muletier"*.
 
-Each row also carries an `extraction_difficulty`, and one of those is now a
-measured **negative**: the trigonometric points looked like the best next class
+Each row also carries an `extraction_difficulty`, and two of those are now
+measured. The **koubba** (*"Eglise, chapelle, koubba"*) is extractable but only
+at **40% precision** — 132 candidates across 78 sheets, of which a random sample
+of 30 checked against pixel masks was 12 right, so it ships off by default as a
+list to check rather than a count to cite
+([details](docs/OBJECT-DATASET.md#the-koubba-40-right-which-makes-it-a-candidate-list)).
+The other is a **negative**: the trigonometric points looked like the best next class
 to build — a triangle with a printed height, and the survey control the sheets
 were built on — and they turn out to be below the resolution floor of these
 scans. 200 010 pixels of one sheet score higher under a purpose-built detector
