@@ -70,6 +70,7 @@ from PIL import Image, ImageDraw
 from pyproj import Transformer
 from scipy import ndimage
 from scipy.signal import fftconvolve
+from scipy.spatial import cKDTree
 
 warnings.filterwarnings("ignore", message=".*lose important projection.*")
 Image.MAX_IMAGE_PIXELS = None
@@ -86,6 +87,41 @@ RING_RADII = (4.5, 5.0, 5.5, 6.0)
 RING_THICKNESS = 1.8
 RING_SCORE = 0.30
 RING_SUPPRESS_PX = 9          # no two ring centres closer than this
+
+# Classes printed in the same red as the kilometric grid, so the grid has to be
+# cut out of each of them geometrically before anything is measured.
+RED_CLASSES = {"building", "shrine"}
+
+# The koubba, all of it measured off the legend glyph the sheet prints: 27 x 16
+# px, 262 px of ink, a dome 10 px wide over a stem of 6 above a disc of 16.
+# Bands are that shape with room for scan variation and for the ink bleeding
+# into a contour it touches.
+KOUBBA_MIN_PX = 120
+KOUBBA_MAX_PX = 700
+KOUBBA_HEIGHT_PX = (20, 40)
+KOUBBA_WIDTH_PX = (9, 28)
+KOUBBA_DISC_MIN_PX = 9        # narrower than this and the lobe is not a disc
+KOUBBA_STEM_MIN_PX = 3        # rows the stem must occupy between the two lobes
+# The legend gives waist/disc = 6/16 = 0.375 and dome/disc = 10/16 = 0.625.
+KOUBBA_WAIST_SHARE = 0.50
+KOUBBA_DOME_SHARE = (0.40, 0.90)
+# A koubba stands alone; red TEXT does not. This is the test that mattered most,
+# and it was found by checking a random sample rather than by reasoning: of 24
+# detections without it, 18 were red type - the kilometric labels printed along
+# the grid lines ("49", "50", "59") and the red place-name lettering ("QU",
+# "ISI", "NORU"). A digit or a letter is exactly a narrow neck above a wide
+# bowl, so the waist test cannot see the difference. What separates them is that
+# type is set in lines: its neighbours sit a character-width away. The glyph is
+# a standalone map symbol in open country.
+#
+# Measured over 7 087 glyph-sized red components on four sheets, the nearest
+# such neighbour is a median 29 px away and 72% are within 46 px. The two
+# koubbas confirmed by eye sit 192 px and 171 px from any company. So this cut
+# discards most of the population and leaves the real glyphs a fourfold margin.
+KOUBBA_ISOLATION_PX = 46.0
+# The company searched is only components in the same size band, so a koubba
+# beside one house is still isolated - a house is smaller than this band.
+KOUBBA_COMPANY_PX = (60, 900)
 
 BUILDING_MIN_PX = 12          # a 0.4 mm mark is about 16 px of ink
 BUILDING_MAX_PX = 400
@@ -139,6 +175,10 @@ def masks(array: np.ndarray, wanted: set[str]) -> dict[str, np.ndarray]:
         # masked out geometrically rather than by colour.
         "building": lambda: ((red - green > 45) & (red - blue > 40)
                             & (red > 110)),
+        # The koubba is printed in the same red as the house, so the mask is the
+        # same and all the work is in the shape - see find_koubbas.
+        "shrine": lambda: ((red - green > 45) & (red - blue > 40)
+                           & (red > 110)),
         # Blue above green: this is what separates a well from an olive tree.
         "well": lambda: ((blue - red > 25) & (blue - green > 12) & (blue > 80)),
         # Green must actually be green, not merely the greenest channel of a
@@ -242,6 +282,103 @@ def find_rings(mask: np.ndarray) -> list[tuple[float, float]]:
     return [(float(x), float(y)) for x, y in zip(columns, rows)]
 
 
+def find_koubbas(mask: np.ndarray) -> list[tuple[float, float]]:
+    """The marabout: a dome on a narrow stem above a disc.
+
+    Measured off the sheet's own legend row, which prints the glyph at 27 x 16
+    px with 262 px of ink. Its row-width profile, top to bottom, is
+
+        1 3 5 5 5 4 3 3 3 3 3 3 4 5 6 6 7 7 8 8 8 7 7 6 4   (halved, as drawn)
+
+    - a dome about 10 px wide, a stem that narrows to 6, then a disc that
+    widens to 16. That **waist** is the whole discriminator, and it is what
+    every cheaper test lacked:
+
+      * Colour cannot help. The koubba is the same red as the house mark.
+      * Roundness cannot help. IoU(square, inscribed disc) = pi/4 = 0.785 at
+        any size, so no threshold separates a disc from a house.
+      * Convex-hull solidity alone cannot help. Two houses drawn touching merge
+        into one non-convex component, and so does a red road junction; on
+        Kasserine that left about 30% precision.
+
+    The waist is structural rather than statistical: a filled quadrilateral has
+    no local minimum in its width profile, a merged pair of houses has no
+    *narrow* one between two lobes of the right proportions, and a road
+    fragment has no lobes at all. The disc must also be the larger lobe, which
+    is what orients the glyph and rejects the head-heavy blobs.
+
+    Returns the centroid of the *disc*, not of the whole glyph: the disc is the
+    koubba and the dome is drawn above it, so the whole-glyph centroid sits
+    high by about 6 px, which is 26 m on the ground.
+    """
+    labels, count = ndimage.label(mask)
+    if count == 0:
+        return []
+    sizes = ndimage.sum(mask, labels, range(1, count + 1))
+    boxes = ndimage.find_objects(labels)
+    centres = ndimage.center_of_mass(mask, labels, range(1, count + 1))
+
+    # Every glyph-sized red component, so a candidate can be asked whether it
+    # has company. Type does; a koubba does not.
+    company = np.array([(centres[i][1], centres[i][0]) for i in range(count)
+                        if KOUBBA_COMPANY_PX[0] <= sizes[i]
+                        <= KOUBBA_COMPANY_PX[1]]).reshape(-1, 2)
+    tree = cKDTree(company) if len(company) else None
+
+    found = []
+    for index, box in enumerate(boxes):
+        area = sizes[index]
+        if not KOUBBA_MIN_PX <= area <= KOUBBA_MAX_PX:
+            continue
+        height = box[0].stop - box[0].start
+        width = box[1].stop - box[1].start
+        if not KOUBBA_HEIGHT_PX[0] <= height <= KOUBBA_HEIGHT_PX[1]:
+            continue
+        if not KOUBBA_WIDTH_PX[0] <= width <= KOUBBA_WIDTH_PX[1]:
+            continue
+
+        component = labels[box] == index + 1
+        widths = component.sum(axis=1).astype(float)
+        # The disc is the widest row of the lower half; the dome the widest
+        # above it; the waist the narrowest row between the two.
+        middle = len(widths) // 2
+        disc_row = int(np.argmax(widths[middle:])) + middle
+        disc = widths[disc_row]
+        if disc < KOUBBA_DISC_MIN_PX or disc_row < KOUBBA_STEM_MIN_PX:
+            continue
+        dome_row = int(np.argmax(widths[:disc_row]))
+        dome = widths[dome_row]
+        if disc_row - dome_row < KOUBBA_STEM_MIN_PX:
+            continue
+        waist_row = int(np.argmin(widths[dome_row:disc_row + 1])) + dome_row
+        waist = widths[waist_row]
+
+        if waist > KOUBBA_WAIST_SHARE * disc:
+            continue
+        if not (KOUBBA_DOME_SHARE[0] * disc <= dome <= KOUBBA_DOME_SHARE[1] * disc):
+            continue
+        # The disc is the lower and the larger lobe. Without this the detector
+        # accepts the same profile upside down, which is a house with a track
+        # leaving it.
+        if disc <= dome:
+            continue
+
+        # Company: the second nearest glyph-sized component, because the
+        # nearest is this candidate itself.
+        if tree is not None:
+            here = (centres[index][1], centres[index][0])
+            distances, _ = tree.query(here, k=min(2, len(company)))
+            nearest = float(np.atleast_1d(distances)[-1])
+            if len(company) > 1 and nearest < KOUBBA_ISOLATION_PX:
+                continue
+
+        lobe = component[waist_row:, :]
+        rows, columns = np.nonzero(lobe)
+        found.append((float(box[1].start + columns.mean()),
+                      float(box[0].start + waist_row + rows.mean())))
+    return found
+
+
 def find_blobs(mask: np.ndarray) -> list[tuple[float, float]]:
     """Compact solid marks: the houses, with roads and grid lines rejected."""
     labels, count = ndimage.label(mask)
@@ -276,11 +413,18 @@ def extract(path: Path, window: tuple[int, int, int, int] | None,
         origin = (0, 0)
     array = np.asarray(image)
     layers = masks(array, set(wanted))
+    # Every class drawn in the same red as the grid needs the grid cut out, not
+    # just the houses: a grid crossing is a wildly non-convex compound blob, and
+    # the koubba finder looks for exactly that shape.
     if lines:
-        layers["building"] &= ~grid_stripe(layers["building"].shape, lines, origin)
+        stripe = None
+        for name in RED_CLASSES & set(layers):
+            if stripe is None:
+                stripe = grid_stripe(layers[name].shape, lines, origin)
+            layers[name] = layers[name] & ~stripe
 
     finders = {"building": find_blobs, "well": find_rings,
-               "vegetation": find_rings}
+               "vegetation": find_rings, "shrine": find_koubbas}
     found = {name: finders[name](layer) for name, layer in layers.items()}
     shifted = {name: [(x + origin[0], y + origin[1]) for x, y in points]
                for name, points in found.items()}
@@ -416,7 +560,7 @@ def main() -> int:
             draw_overlay(image, local, args.overlay / f"{record_id}.jpg")
 
         # Counted after the clip, so the table matches the GeoJSON.
-        counts = {k: 0 for k in ("building", "well", "vegetation")}
+        counts = {k: 0 for k in ("building", "shrine", "well", "vegetation")}
         for feature in collection["features"]:
             counts[feature["properties"]["symbol_class"]] += 1
         rows.append({
@@ -433,7 +577,7 @@ def main() -> int:
 
     if rows:
         fields = ["record_id", "sheet_name", "anchor_confident",
-                  "residual_rms_m", "building", "well", "vegetation", "total",
+                  "residual_rms_m", "building", "shrine", "well", "vegetation", "total",
                   "clipped_out"]
         # Merge, do not replace. The GeoJSON per sheet is written per sheet, but
         # this table was rewritten from whatever the run happened to process, so
@@ -442,7 +586,7 @@ def main() -> int:
         merged: dict[str, dict] = {}
         if args.out_csv.exists():
             for row in csv.DictReader(args.out_csv.open(encoding="utf-8")):
-                for field in ("building", "well", "vegetation", "total",
+                for field in ("building", "shrine", "well", "vegetation", "total",
                               "clipped_out"):
                     row[field] = int(row[field] or 0)
                 merged[row["record_id"]] = row
