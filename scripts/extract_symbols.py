@@ -116,9 +116,21 @@ KOUBBA_DOME_SHARE = (0.40, 0.90)
 #
 # Measured over 7 087 glyph-sized red components on four sheets, the nearest
 # such neighbour is a median 29 px away and 72% are within 46 px. The two
-# koubbas confirmed by eye sit 192 px and 171 px from any company. So this cut
-# discards most of the population and leaves the real glyphs a fourfold margin.
-KOUBBA_ISOLATION_PX = 46.0
+# koubbas confirmed by eye sit 192 px and 171 px from any company.
+#
+# A blanket distance cut at 46 px was tried and is too blunt: on the Sousse
+# sheet it threw away 12 of 13 waist-passing candidates, and a koubba drawn
+# beside a village is not type. Type is better identified by what makes it type
+# - a shared baseline and a shared height with the character next to it - so
+# that test does the work and this distance is relaxed to catch only the
+# densest hatching.
+KOUBBA_ISOLATION_PX = 26.0
+# Type set in a line shares a bottom edge to within a few px and a height to
+# within a third. A house or a patch of hatching beside a koubba shares
+# neither.
+KOUBBA_TEXT_GAP_PX = 70.0
+KOUBBA_TEXT_BASELINE_PX = 5
+KOUBBA_TEXT_HEIGHT_SHARE = 0.30
 # The company searched is only components in the same size band, so a koubba
 # beside one house is still isolated - a house is smaller than this band.
 KOUBBA_COMPANY_PX = (60, 900)
@@ -282,6 +294,24 @@ def find_rings(mask: np.ndarray) -> list[tuple[float, float]]:
     return [(float(x), float(y)) for x, y in zip(columns, rows)]
 
 
+def is_same_line(box, other, height: int) -> bool:
+    """Whether `other` reads as the next character along from `box`.
+
+    Type is identified by what makes it type: a neighbour sitting beside it,
+    close, on the same baseline, at the same height. This is what separates a
+    red kilometric label or place name - which has exactly the koubba's
+    narrow-neck-over-wide-bowl profile in characters like 4, 9, Q and U - from
+    a map symbol standing on its own.
+    """
+    gap = max(other[1].start - box[1].stop, box[1].start - other[1].stop)
+    if gap > KOUBBA_TEXT_GAP_PX:
+        return False
+    if abs(other[0].stop - box[0].stop) > KOUBBA_TEXT_BASELINE_PX:
+        return False
+    other_height = other[0].stop - other[0].start
+    return abs(other_height - height) <= KOUBBA_TEXT_HEIGHT_SHARE * height
+
+
 def find_koubbas(mask: np.ndarray) -> list[tuple[float, float]]:
     """The marabout: a dome on a narrow stem above a disc.
 
@@ -320,9 +350,10 @@ def find_koubbas(mask: np.ndarray) -> list[tuple[float, float]]:
 
     # Every glyph-sized red component, so a candidate can be asked whether it
     # has company. Type does; a koubba does not.
-    company = np.array([(centres[i][1], centres[i][0]) for i in range(count)
-                        if KOUBBA_COMPANY_PX[0] <= sizes[i]
-                        <= KOUBBA_COMPANY_PX[1]]).reshape(-1, 2)
+    glyph_sized = [i for i in range(count)
+                   if KOUBBA_COMPANY_PX[0] <= sizes[i] <= KOUBBA_COMPANY_PX[1]]
+    company = np.array([(centres[i][1], centres[i][0])
+                        for i in glyph_sized]).reshape(-1, 2)
     tree = cKDTree(company) if len(company) else None
 
     found = []
@@ -364,13 +395,19 @@ def find_koubbas(mask: np.ndarray) -> list[tuple[float, float]]:
             continue
 
         # Company: the second nearest glyph-sized component, because the
-        # nearest is this candidate itself.
-        if tree is not None:
+        # nearest is this candidate itself. Only the densest hatching is cut
+        # here; type is caught by the baseline test below.
+        if tree is not None and len(company) > 1:
             here = (centres[index][1], centres[index][0])
-            distances, _ = tree.query(here, k=min(2, len(company)))
-            nearest = float(np.atleast_1d(distances)[-1])
-            if len(company) > 1 and nearest < KOUBBA_ISOLATION_PX:
+            distances, _ = tree.query(here, k=2)
+            if float(np.atleast_1d(distances)[-1]) < KOUBBA_ISOLATION_PX:
                 continue
+
+        # Is this a character in a line of type? Its neighbour would sit beside
+        # it on the same baseline at the same height.
+        if any(is_same_line(box, boxes[other], height)
+               for other in glyph_sized if other != index):
+            continue
 
         lobe = component[waist_row:, :]
         rows, columns = np.nonzero(lobe)
