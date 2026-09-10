@@ -509,6 +509,29 @@ measurements](docs/OBJECT-DATASET.md#trig-points-are-below-the-floor-of-these-sc
 reproducible with
 [`scripts/probe_trig_points.py`](scripts/probe_trig_points.py).
 
+**One printing plate separates cleanly, and it is the useful one.** The sheets
+are lithographs, so a pixel is paper seen through some amount of one ink, and by
+Beer-Lambert optical densities add where reflectances multiply: `D = -log10(I /
+I_paper)` is linear in ink laid down, an ink is a *direction* in that space, and
+separating the plates is a question about direction that raw RGB thresholds
+answer only by accident. Done that way, the **red plate** comes out clean at
+sheet scale — 1.14% of the Kasserine map face, holding the kilometric grid, the
+maintained roads as printed double lines, and the settlement clusters, with no
+relief, no contours, no lettering. Because the 1936 legend prints maintained
+roads red and tracks black, that is half of the road classification for free.
+Across the 85 sheets with a detected neatline the red plate is a median 1.67% of
+the face and a median **58% of it links into traced runs** — 0.90 on Cap Bon,
+0.18 on Djebel Bireno, so the completeness tracks terrain. The blue plate reads
+as drainage by eye but links at only 9%, so it is not yet a traced product; and
+**the other four inks do not separate at all**, because the scans are JPEG 4:2:0
+— chroma at half resolution, strokes 2 px wide — so the density directions form
+a continuum rather than modes. The black plate is emphatically *not* the road
+network: over a whole face it is 22.8% of the pixels because it carries the
+relief hachuring, which a first pass missed by testing only one window of flat
+desert.
+[`scripts/separate_ink_plates.py`](scripts/separate_ink_plates.py),
+[the measurements and the four wrong turns](docs/OBJECT-DATASET.md#the-ink-not-the-rgb).
+
 **There are three legend regimes.** 78 sheets carry the 1936 functional edition
 (catalogue years 1922–1940), 9 the 1902 administrative edition, and **4 print no
 symbol legend at all** — only an imprint, a scale bar and the contour interval,
@@ -596,6 +619,9 @@ python3 scripts/extract_symbols.py --images <dir> \
     --out-dir data/symbols_corner_fit \
     --out-csv data/symbols_corner_fit_summary.csv   # the corner-fitted sheets
 python3 scripts/difference_editions.py [--scans <dir>]  # the two-printing control
+python3 scripts/separate_ink_plates.py --images <dir> --survey   # plates per sheet
+python3 scripts/separate_ink_plates.py --images <dir> \
+    --demo <record_id> --window 3300 2400 3900 2800   # trace one window
 python3 scripts/fetch_boundaries.py                     # modern shapefiles
 python3 scripts/map_objects.py                          # join + render the map
 ```
@@ -605,8 +631,9 @@ symbols are in [`data/symbols_graticule/`](data/symbols_graticule/); `--scans`
 only renders the credit-block figure.
 
 `georeference_sheets.py` needs `pyproj`, `extract_symbols.py` and
-`read_corner_coordinates.py` need `scipy`, and `map_objects.py` needs `pyshp`,
-`shapely` and `matplotlib`.
+`read_corner_coordinates.py` need `scipy`, `separate_ink_plates.py` needs
+`scikit-image` and `pytesseract`, and `map_objects.py` needs `pyshp`, `shapely`
+and `matplotlib`.
 
 The georeferencing runs twice on purpose. The corner reader needs the neatline
 the first pass detects in order to know where in the margin to look, and the

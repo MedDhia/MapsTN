@@ -1,0 +1,596 @@
+record_id,sheet_name,plate,ink_share,width_median_px,width_p10_px,width_p90_px,components,components_over_200px,network_px,network_share_of_plate,network_skeleton_px
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,black,0.04065,2.0,2.0,5.7,38875,628,,,
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,red,0.01034,2.0,2.0,2.8,39008,122,184303,0.505,84681
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,brown,0.02196,2.0,2.0,2.8,56150,589,,,
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,blue,0.00089,2.0,2.0,2.0,12742,5,2529,0.08,1125
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,green,0.00403,2.0,2.0,2.8,28231,0,,,
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,wash,0.00671,2.0,2.0,2.8,34163,44,,,
+oai:u-bordeaux-montaigne.fr:340354,Kef Abbed,dark,0.07335,2.0,2.0,6.0,33232,520,2419594,0.935,829070
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,black,0.08725,2.0,2.0,4.5,198320,2449,,,
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,red,0.02529,2.0,2.0,4.0,62918,705,663321,0.745,234080
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,brown,0.07104,2.0,2.0,4.0,180251,1439,,,
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,blue,0.00535,2.0,2.0,2.0,81263,17,10628,0.056,3782
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,green,0.01545,2.0,2.0,4.0,70236,104,,,
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,wash,0.0236,2.0,2.0,2.8,157522,293,,,
+oai:u-bordeaux-montaigne.fr:340355,Bizerte,dark,0.19734,2.8,2.0,6.0,187245,710,6216578,0.894,1935566
+oai:u-bordeaux-montaigne.fr:340356,Metline,black,0.05981,2.8,2.0,8.2,52820,634,,,
+oai:u-bordeaux-montaigne.fr:340356,Metline,red,0.00868,2.0,2.0,4.0,33232,154,146621,0.479,56209
+oai:u-bordeaux-montaigne.fr:340356,Metline,brown,0.02127,2.0,2.0,2.8,52960,537,,,
+oai:u-bordeaux-montaigne.fr:340356,Metline,blue,0.0017,2.0,2.0,2.0,29107,1,402,0.007,215
+oai:u-bordeaux-montaigne.fr:340356,Metline,green,0.01012,2.0,2.0,4.5,26012,147,,,
+oai:u-bordeaux-montaigne.fr:340356,Metline,wash,0.00964,2.0,2.0,2.8,48914,158,,,
+oai:u-bordeaux-montaigne.fr:340356,Metline,dark,0.10084,2.8,2.0,8.0,45001,462,3311976,0.932,924256
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,black,0.08883,2.0,2.0,4.5,87254,872,,,
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,red,0.01688,2.0,2.0,4.0,29982,216,305939,0.793,125561
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,brown,0.03365,2.0,2.0,2.8,100088,223,,,
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,blue,0.00435,2.0,2.0,2.0,49895,2,13623,0.137,6207
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,green,0.03992,2.0,2.0,4.0,62469,268,,,
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,wash,0.02197,2.0,2.0,2.8,86522,120,,,
+oai:u-bordeaux-montaigne.fr:340367,Cap Negro,dark,0.18437,2.8,2.0,6.3,51677,254,3906809,0.926,1116625
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,black,0.19906,2.0,2.0,5.7,288838,2495,,,
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,red,0.0146,2.0,2.0,4.0,88720,186,234907,0.458,88071
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,brown,0.0854,2.0,2.0,4.0,311390,1655,,,
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,blue,0.00935,2.0,2.0,2.8,107437,104,78081,0.238,26523
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,green,0.07134,2.0,2.0,4.5,179328,24,,,
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,wash,0.02744,2.0,2.0,2.8,179988,133,,,
+oai:u-bordeaux-montaigne.fr:340368,Oued Sedjenane,dark,0.38324,2.8,2.0,6.3,160297,957,12530307,0.931,3721072
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,black,0.12132,2.8,2.0,4.5,92648,3476,,,
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,red,0.02256,2.0,2.0,4.5,68727,430,538607,0.678,161116
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,brown,0.04997,2.0,2.0,2.8,258299,627,,,
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,blue,0.00865,2.0,2.0,2.8,72315,75,75046,0.246,28310
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,green,0.00861,2.0,2.0,2.8,72195,33,,,
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,wash,0.02163,2.0,2.0,2.8,113787,266,,,
+oai:u-bordeaux-montaigne.fr:340369,Djebel Ichkeul,dark,0.20153,4.0,2.0,6.0,78999,928,6742573,0.95,1921410
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,black,0.13147,2.0,2.0,4.5,178776,2140,,,
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,red,0.0108,2.0,2.0,4.0,38420,262,221305,0.585,67715
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,brown,0.02753,2.0,2.0,2.8,118975,487,,,
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,blue,0.00645,2.0,2.0,2.0,77019,43,39020,0.173,13720
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,green,0.01353,2.0,2.0,4.0,92972,101,,,
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,wash,0.02402,2.0,2.0,2.0,182555,90,,,
+oai:u-bordeaux-montaigne.fr:340370,Porto-Farina,dark,0.19655,2.0,2.0,5.7,167757,1305,6100987,0.887,2039243
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,black,0.02149,2.0,2.0,4.5,35840,614,,,
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,red,0.01273,2.0,2.0,2.8,38657,132,243651,0.543,113697
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,brown,0.01765,2.0,2.0,2.8,42796,288,,,
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,blue,0.00144,2.0,2.0,2.0,19919,0,4016,0.079,1775
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,green,0.0089,2.0,2.0,4.5,22680,73,,,
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,wash,0.00713,2.0,2.0,2.8,31734,95,,,
+oai:u-bordeaux-montaigne.fr:340372,Sidi Daoud,dark,0.05517,2.0,2.0,5.7,39534,585,1726895,0.888,581929
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,black,0.02246,2.0,2.0,4.5,34697,726,,,
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,red,0.03399,2.8,2.0,6.0,31719,503,1072959,0.896,314135
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,brown,0.02001,2.0,2.0,4.0,64967,237,,,
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,blue,0.00492,2.0,2.0,2.0,33321,63,88427,0.51,46884
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,green,0.00985,2.0,2.0,5.7,25324,47,,,
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,wash,0.00989,2.0,2.0,2.8,26357,280,,,
+oai:u-bordeaux-montaigne.fr:340373,Cap Bon,dark,0.06221,2.8,2.0,6.0,46341,532,1871156,0.854,566030
+oai:u-bordeaux-montaigne.fr:340374,Nefza,black,0.2085,2.0,2.0,4.5,367595,3566,,,
+oai:u-bordeaux-montaigne.fr:340374,Nefza,red,0.01547,2.0,2.0,4.0,68475,401,309335,0.567,108378
+oai:u-bordeaux-montaigne.fr:340374,Nefza,brown,0.09064,2.0,2.0,4.0,259805,1992,,,
+oai:u-bordeaux-montaigne.fr:340374,Nefza,blue,0.01137,2.0,2.0,2.8,130335,131,112556,0.281,41405
+oai:u-bordeaux-montaigne.fr:340374,Nefza,green,0.04999,2.0,2.0,2.8,245731,511,,,
+oai:u-bordeaux-montaigne.fr:340374,Nefza,wash,0.03584,2.0,2.0,2.8,292799,165,,,
+oai:u-bordeaux-montaigne.fr:340374,Nefza,dark,0.38498,2.8,2.0,6.3,312443,664,12631701,0.93,3914415
+oai:u-bordeaux-montaigne.fr:340375,Hedil,black,0.20189,2.0,2.0,4.5,414601,4512,,,
+oai:u-bordeaux-montaigne.fr:340375,Hedil,red,0.01534,2.0,2.0,4.0,95583,221,231972,0.425,73033
+oai:u-bordeaux-montaigne.fr:340375,Hedil,brown,0.11148,2.0,2.0,4.0,434194,1974,,,
+oai:u-bordeaux-montaigne.fr:340375,Hedil,blue,0.01095,2.0,2.0,2.0,140630,36,32759,0.084,12323
+oai:u-bordeaux-montaigne.fr:340375,Hedil,green,0.03419,2.0,2.0,4.0,180234,245,,,
+oai:u-bordeaux-montaigne.fr:340375,Hedil,wash,0.03768,2.0,2.0,2.8,275698,146,,,
+oai:u-bordeaux-montaigne.fr:340375,Hedil,dark,0.38525,2.8,2.0,5.7,289675,462,12878215,0.939,4172257
+oai:u-bordeaux-montaigne.fr:340376,Mateur,black,0.23216,2.0,2.0,4.5,445369,3404,,,
+oai:u-bordeaux-montaigne.fr:340376,Mateur,red,0.01602,2.0,2.0,4.0,60204,310,310545,0.55,100647
+oai:u-bordeaux-montaigne.fr:340376,Mateur,brown,0.05263,2.0,2.0,2.8,255466,986,,,
+oai:u-bordeaux-montaigne.fr:340376,Mateur,blue,0.0075,2.0,2.0,2.8,75049,107,57603,0.218,18828
+oai:u-bordeaux-montaigne.fr:340376,Mateur,green,0.01663,2.0,2.0,4.0,123246,61,,,
+oai:u-bordeaux-montaigne.fr:340376,Mateur,wash,0.03107,2.0,2.0,2.8,222933,140,,,
+oai:u-bordeaux-montaigne.fr:340376,Mateur,dark,0.33249,2.0,2.0,5.7,397378,1060,10531164,0.898,3520409
+oai:u-bordeaux-montaigne.fr:340387,Ariana,black,0.11318,2.0,2.0,5.7,148659,2062,,,
+oai:u-bordeaux-montaigne.fr:340387,Ariana,red,0.02086,2.0,2.0,4.0,38190,598,494452,0.672,164836
+oai:u-bordeaux-montaigne.fr:340387,Ariana,brown,0.0328,2.0,2.0,4.0,155746,451,,,
+oai:u-bordeaux-montaigne.fr:340387,Ariana,blue,0.01046,2.0,2.0,2.0,83724,91,127523,0.346,56665
+oai:u-bordeaux-montaigne.fr:340387,Ariana,green,0.01695,2.0,2.0,4.0,69403,94,,,
+oai:u-bordeaux-montaigne.fr:340387,Ariana,wash,0.02719,2.0,2.0,2.0,143731,326,,,
+oai:u-bordeaux-montaigne.fr:340387,Ariana,dark,0.19013,2.8,2.0,6.0,150867,1041,6094307,0.909,1854055
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,black,0.0314,2.8,2.0,5.7,34588,700,,,
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,red,0.01417,2.0,2.0,4.0,40691,279,314852,0.634,117179
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,brown,0.02188,2.0,2.0,2.8,57006,444,,,
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,blue,0.00555,2.0,2.0,2.8,38571,86,90079,0.463,39496
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,green,0.00489,2.0,2.0,4.0,26205,23,,,
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,wash,0.01134,2.0,2.0,2.8,49340,177,,,
+oai:u-bordeaux-montaigne.fr:340389,La Marsa,dark,0.06951,2.0,2.0,6.0,49924,693,2124165,0.872,679622
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,black,0.14418,2.0,2.0,4.5,200492,2907,,,
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,red,0.01736,2.0,2.0,4.0,63990,261,380392,0.623,143115
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,brown,0.03888,2.0,2.0,2.8,229382,578,,,
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,blue,0.00455,2.0,2.0,2.0,79736,6,5828,0.036,2373
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,green,0.05616,2.0,2.0,4.0,153508,556,,,
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,wash,0.02402,2.0,2.0,2.8,204278,80,,,
+oai:u-bordeaux-montaigne.fr:340391,Tazoghrane,dark,0.26325,2.8,2.0,6.0,147829,892,8431266,0.911,2741342
+oai:u-bordeaux-montaigne.fr:340392,Kelibia,black,0.07217,2.8,2.0,6.0,56290,1650,,,
+oai:u-bordeaux-montaigne.fr:340392,Kelibia,red,0.02234,2.0,2.0,4.0,29861,655,613048,0.783,234954
+oai:u-bordeaux-montaigne.fr:340392,Kelibia,brown,0.02122,2.0,2.0,4.0,84533,309,,,
+oai:u-bordeaux-montaigne.fr:340392,Kelibia,blue,0.00415,2.0,2.0,2.0,53210,25,13492,0.093,6670
+oai:u-bordeaux-montaigne.fr:340392,Kelibia,green,0.01558,2.0,2.0,4.5,53634,229,,,
+oai:u-bordeaux-montaigne.fr:340392,Kelibia,wash,0.01804,2.0,2.0,2.8,75003,289,,,
+oai:u-bordeaux-montaigne.fr:340392,Kelibia,dark,0.127,2.8,2.0,7.2,68842,796,3981344,0.895,1035337
+oai:u-bordeaux-montaigne.fr:340393,Béja,black,0.13582,2.0,2.0,4.0,197007,3381,,,
+oai:u-bordeaux-montaigne.fr:340393,Béja,red,0.01781,2.0,2.0,4.0,68745,434,360567,0.575,107373
+oai:u-bordeaux-montaigne.fr:340393,Béja,brown,0.0782,2.0,2.0,2.8,287703,756,,,
+oai:u-bordeaux-montaigne.fr:340393,Béja,blue,0.0102,2.0,2.0,2.8,109668,94,62282,0.174,22412
+oai:u-bordeaux-montaigne.fr:340393,Béja,green,0.01146,2.0,2.0,2.8,113061,0,,,
+oai:u-bordeaux-montaigne.fr:340393,Béja,wash,0.02634,2.0,2.0,2.0,243645,32,,,
+oai:u-bordeaux-montaigne.fr:340393,Béja,dark,0.25181,2.8,2.0,4.5,61876,794,8128490,0.918,2755914
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,black,0.23675,2.8,2.0,5.7,213232,3864,,,
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,red,0.01269,2.0,2.0,4.0,85854,175,158032,0.339,56107
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,brown,0.06197,2.0,2.0,4.0,333941,1067,,,
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,blue,0.01043,2.0,2.0,2.8,115283,121,122539,0.32,42480
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,green,0.02485,2.0,2.0,4.0,122600,180,,,
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,wash,0.03422,2.0,2.0,2.8,241583,287,,,
+oai:u-bordeaux-montaigne.fr:340394,Tebourba,dark,0.3578,2.8,2.0,6.3,143973,790,12378719,0.943,3778904
+oai:u-bordeaux-montaigne.fr:340395,Tunis,black,0.15778,2.0,2.0,4.5,263866,3327,,,
+oai:u-bordeaux-montaigne.fr:340395,Tunis,red,0.03076,2.0,2.0,4.5,95157,854,725986,0.666,214957
+oai:u-bordeaux-montaigne.fr:340395,Tunis,brown,0.0506,2.0,2.0,4.0,245594,792,,,
+oai:u-bordeaux-montaigne.fr:340395,Tunis,blue,0.00669,2.0,2.0,2.0,88286,20,36593,0.154,14259
+oai:u-bordeaux-montaigne.fr:340395,Tunis,green,0.01456,2.0,2.0,2.8,125655,34,,,
+oai:u-bordeaux-montaigne.fr:340395,Tunis,wash,0.02842,2.0,2.0,2.0,211370,336,,,
+oai:u-bordeaux-montaigne.fr:340395,Tunis,dark,0.25136,2.8,2.0,4.5,270442,1045,7869052,0.884,2506409
+oai:u-bordeaux-montaigne.fr:340407,La Goulette,black,0.09522,2.0,2.0,4.5,159574,2143,,,
+oai:u-bordeaux-montaigne.fr:340407,La Goulette,red,0.0328,2.0,2.0,4.5,54045,1023,906535,0.785,299530
+oai:u-bordeaux-montaigne.fr:340407,La Goulette,brown,0.04332,2.0,2.0,4.0,190573,652,,,
+oai:u-bordeaux-montaigne.fr:340407,La Goulette,blue,0.00746,2.0,2.0,2.8,70882,49,35708,0.136,13575
+oai:u-bordeaux-montaigne.fr:340407,La Goulette,green,0.02495,2.0,2.0,4.0,106921,36,,,
+oai:u-bordeaux-montaigne.fr:340407,La Goulette,wash,0.02,2.0,2.0,2.8,131723,133,,,
+oai:u-bordeaux-montaigne.fr:340407,La Goulette,dark,0.18349,2.8,2.0,6.0,153972,1014,5537359,0.857,1727005
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,black,0.24577,2.0,2.0,5.7,246931,2957,,,
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,red,0.01783,2.0,2.0,4.0,63209,419,346056,0.532,130595
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,brown,0.05372,2.0,2.0,4.0,251418,1061,,,
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,blue,0.00527,2.0,2.0,2.0,71799,50,32471,0.169,11870
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,green,0.05488,2.0,2.0,4.5,166297,494,,,
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,wash,0.02595,2.0,2.0,2.8,200902,113,,,
+oai:u-bordeaux-montaigne.fr:340410,Menzel Bou Zelfa,dark,0.38032,2.8,2.0,7.2,192159,1231,12732711,0.918,3878214
+oai:u-bordeaux-montaigne.fr:340411,Mennzel Heurr,black,0.01175,2.0,2.0,4.5,14821,294,,,
+oai:u-bordeaux-montaigne.fr:340411,Mennzel Heurr,red,0.01462,2.0,2.0,4.0,35462,374,361806,0.704,146970
+oai:u-bordeaux-montaigne.fr:340411,Mennzel Heurr,brown,0.01267,2.0,2.0,2.0,32901,168,,,
+oai:u-bordeaux-montaigne.fr:340411,Mennzel Heurr,blue,0.0023,2.0,2.0,2.8,18721,22,35136,0.434,14258
+oai:u-bordeaux-montaigne.fr:340411,Mennzel Heurr,green,0.0031,2.0,2.0,4.5,11169,15,,,
+oai:u-bordeaux-montaigne.fr:340411,Mennzel Heurr,wash,0.0046,2.0,2.0,2.8,14750,100,,,
+oai:u-bordeaux-montaigne.fr:340411,Mennzel Heurr,dark,0.03212,2.0,2.0,4.5,31603,308,969159,0.859,353291
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,black,0.23577,2.0,2.0,4.5,288097,4665,,,
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,red,0.01862,2.0,2.0,4.0,78589,303,383956,0.585,126623
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,brown,0.09643,2.0,2.0,4.0,367171,1861,,,
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,blue,0.01038,2.0,2.0,4.5,74591,171,183574,0.501,49476
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,green,0.05088,2.0,2.0,4.5,189317,117,,,
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,wash,0.03046,2.0,2.0,2.8,201996,168,,,
+oai:u-bordeaux-montaigne.fr:340412,Oued-Zarga,dark,0.41353,2.8,2.0,6.3,168693,636,13786554,0.945,4127872
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,black,0.2045,2.0,2.0,5.7,234922,3706,,,
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,red,0.01945,2.0,2.0,5.7,59154,356,410697,0.6,108815
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,brown,0.07269,2.0,2.0,4.0,259180,1511,,,
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,blue,0.00565,2.0,2.0,2.8,62375,59,64597,0.325,18609
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,green,0.02822,2.0,2.0,4.5,103030,284,,,
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,wash,0.02609,2.0,2.0,2.8,170688,90,,,
+oai:u-bordeaux-montaigne.fr:340413,Medjez-el-Bab,dark,0.3315,2.8,2.0,6.3,167084,778,10874988,0.931,3221184
+oai:u-bordeaux-montaigne.fr:340414,Oudna,black,0.27884,2.0,2.0,4.5,306673,2965,,,
+oai:u-bordeaux-montaigne.fr:340414,Oudna,red,0.01938,2.0,2.0,4.0,70925,473,410246,0.587,137051
+oai:u-bordeaux-montaigne.fr:340414,Oudna,brown,0.06703,2.0,2.0,4.0,323083,1339,,,
+oai:u-bordeaux-montaigne.fr:340414,Oudna,blue,0.0021,2.0,2.0,2.0,40126,2,1528,0.02,629
+oai:u-bordeaux-montaigne.fr:340414,Oudna,green,0.02495,2.0,2.0,4.5,109014,265,,,
+oai:u-bordeaux-montaigne.fr:340414,Oudna,wash,0.01652,2.0,2.0,2.0,153876,80,,,
+oai:u-bordeaux-montaigne.fr:340414,Oudna,dark,0.38735,2.8,2.0,6.3,238386,821,12976058,0.928,4291577
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,black,0.20484,2.0,2.0,4.5,367695,4849,,,
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,red,0.01338,2.0,2.0,4.0,80915,236,211135,0.447,58490
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,brown,0.06639,2.0,2.0,4.0,326177,1060,,,
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,blue,0.01365,2.0,2.0,2.8,148466,106,73864,0.153,26340
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,green,0.07936,2.0,2.0,4.0,278566,946,,,
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,wash,0.04709,2.0,2.0,2.8,292031,369,,,
+oai:u-bordeaux-montaigne.fr:340415,Grombalia,dark,0.39768,2.8,2.0,6.0,254619,1121,12973577,0.923,4283132
+oai:u-bordeaux-montaigne.fr:340416,Nabeul,black,0.17006,2.0,2.0,4.5,277763,3425,,,
+oai:u-bordeaux-montaigne.fr:340416,Nabeul,red,0.01641,2.0,2.0,4.5,56196,319,335630,0.582,98943
+oai:u-bordeaux-montaigne.fr:340416,Nabeul,brown,0.04219,2.0,2.0,2.8,238841,690,,,
+oai:u-bordeaux-montaigne.fr:340416,Nabeul,blue,0.00537,2.0,2.0,2.0,73096,1,2518,0.013,980
+oai:u-bordeaux-montaigne.fr:340416,Nabeul,green,0.03822,2.0,2.0,4.0,153138,132,,,
+oai:u-bordeaux-montaigne.fr:340416,Nabeul,wash,0.02768,2.0,2.0,2.8,216622,74,,,
+oai:u-bordeaux-montaigne.fr:340416,Nabeul,dark,0.27815,2.8,2.0,6.0,244237,849,8647907,0.885,2747990
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,black,0.1916,2.0,2.0,4.5,314933,3311,,,
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,red,0.02318,2.0,2.0,4.0,68937,637,535685,0.658,173213
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,brown,0.07559,2.0,2.0,4.0,323720,1230,,,
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,blue,0.01233,2.0,2.0,4.0,93150,197,181344,0.419,58336
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,green,0.04881,2.0,2.0,4.0,195360,396,,,
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,wash,0.03231,2.0,2.0,2.8,181580,200,,,
+oai:u-bordeaux-montaigne.fr:340427,Ghardimaou,dark,0.3483,2.8,2.0,6.0,222824,870,11518863,0.941,3549805
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,black,0.20257,2.0,2.0,4.5,274031,3151,,,
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,red,0.01748,2.0,2.0,4.0,84471,288,335777,0.547,133514
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,brown,0.0516,2.0,2.0,4.0,275493,759,,,
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,blue,0.00866,2.0,2.0,2.8,84264,135,120048,0.395,40205
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,green,0.03936,2.0,2.0,4.5,125669,46,,,
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,wash,0.02603,2.0,2.0,2.8,200830,71,,,
+oai:u-bordeaux-montaigne.fr:340428,Souk el Arba,dark,0.31955,2.8,2.0,6.3,215948,570,10432201,0.929,3142290
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,black,0.21424,2.0,2.0,4.5,350927,4301,,,
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,red,0.0123,2.0,2.0,4.0,61908,292,239910,0.554,70516
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,brown,0.064,2.0,2.0,2.8,374224,838,,,
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,blue,0.00617,2.0,2.0,2.0,84504,24,24909,0.115,8112
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,green,0.03842,2.0,2.0,4.5,161248,49,,,
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,wash,0.02923,2.0,2.0,2.8,202472,114,,,
+oai:u-bordeaux-montaigne.fr:340429,Teboursouk,dark,0.3459,2.8,2.0,6.0,287950,548,11368183,0.933,3603416
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,black,0.17549,2.0,2.0,4.5,258777,3396,,,
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,red,0.02027,2.0,2.0,4.0,64571,496,440969,0.618,161586
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,brown,0.03605,2.0,2.0,2.8,209947,506,,,
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,blue,0.00865,2.0,2.0,2.0,128245,9,16980,0.056,8185
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,green,0.02833,2.0,2.0,2.8,159990,384,,,
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,wash,0.03507,2.0,2.0,2.8,222318,149,,,
+oai:u-bordeaux-montaigne.fr:340430,Bou Arada,dark,0.27493,2.8,2.0,5.7,259964,808,8892136,0.919,2802346
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,black,0.19984,2.0,2.0,4.5,268747,3927,,,
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,red,0.02747,2.0,2.0,4.5,79712,709,647299,0.67,203457
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,brown,0.05362,2.0,2.0,4.0,287314,792,,,
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,blue,0.00911,2.0,2.0,2.0,122840,26,17743,0.055,6323
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,green,0.03773,2.0,2.0,4.0,170677,288,,,
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,wash,0.04749,2.0,2.0,4.0,231114,272,,,
+oai:u-bordeaux-montaigne.fr:340431,Zaghouan,dark,0.33868,2.8,2.0,6.0,190630,921,11026363,0.926,3531158
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,black,0.20841,2.0,2.0,4.5,414433,3424,,,
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,red,0.02272,2.0,2.0,4.0,43464,656,539065,0.673,178918
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,brown,0.04247,2.0,2.0,4.0,231143,720,,,
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,blue,0.00475,2.0,2.0,2.0,70079,17,11414,0.068,4077
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,green,0.05164,2.0,2.0,4.5,136582,733,,,
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,wash,0.02901,2.0,2.0,2.8,196626,96,,,
+oai:u-bordeaux-montaigne.fr:340432,Bou Ficha,dark,0.33152,2.8,2.0,6.3,370542,1470,10419539,0.892,3060801
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,black,0.03559,2.8,2.0,8.2,25572,407,,,
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,red,0.01813,2.0,2.0,4.0,27277,466,497038,0.779,197350
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,brown,0.0152,2.0,2.0,2.8,48629,231,,,
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,blue,0.0011,2.0,2.0,2.0,12127,1,2006,0.052,903
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,green,0.00354,2.0,2.0,4.0,18297,5,,,
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,wash,0.00542,2.0,2.0,2.8,20635,49,,,
+oai:u-bordeaux-montaigne.fr:340433,Hammamet,dark,0.05975,2.0,2.0,8.2,35145,406,1858365,0.883,513470
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,black,0.22095,2.0,2.0,4.0,658832,4220,,,
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,red,0.01307,2.0,2.0,2.8,109109,156,156086,0.34,62422
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,brown,0.08746,2.0,2.0,4.0,367003,1896,,,
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,blue,0.00999,2.0,2.0,2.0,140120,67,56672,0.161,21253
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,green,0.05748,2.0,2.0,2.8,371503,572,,,
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,wash,0.04204,2.0,2.0,2.8,264729,147,,,
+oai:u-bordeaux-montaigne.fr:340434,Ouargha,dark,0.40794,2.0,2.0,4.5,601726,830,12906766,0.9,4724787
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,black,0.24798,2.0,2.0,4.5,503904,3975,,,
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,red,0.01494,2.0,2.0,4.0,100185,199,226451,0.429,66925
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,brown,0.05479,2.0,2.0,4.0,293697,883,,,
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,blue,0.01315,2.0,2.0,2.0,209423,48,35232,0.076,11717
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,green,0.05725,2.0,2.0,4.0,299589,399,,,
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,wash,0.04596,2.0,2.0,2.8,360256,140,,,
+oai:u-bordeaux-montaigne.fr:340435,Nebeur,dark,0.40598,2.0,2.0,5.7,462420,774,13111719,0.914,4440011
+oai:u-bordeaux-montaigne.fr:340436,Gafour,black,0.08951,2.0,2.0,4.5,173657,2196,,,
+oai:u-bordeaux-montaigne.fr:340436,Gafour,red,0.01744,2.0,2.0,4.0,44016,440,421588,0.689,152880
+oai:u-bordeaux-montaigne.fr:340436,Gafour,brown,0.05135,2.0,2.0,4.0,133935,856,,,
+oai:u-bordeaux-montaigne.fr:340436,Gafour,blue,0.02461,2.0,2.0,2.0,318293,61,201894,0.234,76425
+oai:u-bordeaux-montaigne.fr:340436,Gafour,green,0.082,2.0,2.0,4.0,261271,1559,,,
+oai:u-bordeaux-montaigne.fr:340436,Gafour,wash,0.04322,2.0,2.0,2.0,465808,22,,,
+oai:u-bordeaux-montaigne.fr:340436,Gafour,dark,0.26609,2.8,2.0,5.7,143480,1560,8586072,0.92,2775116
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,black,0.2255,2.0,2.0,4.5,328993,5126,,,
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,red,0.01237,2.0,2.0,2.8,84721,113,153564,0.354,55484
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,brown,0.07025,2.0,2.0,4.0,305781,1348,,,
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,blue,0.01131,2.0,2.0,2.0,172753,20,18844,0.048,8904
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,green,0.06213,2.0,2.0,4.0,298429,778,,,
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,wash,0.04938,2.0,2.0,2.8,317993,68,,,
+oai:u-bordeaux-montaigne.fr:340447,Djebel Mansour,dark,0.40726,2.8,2.0,5.7,252959,439,13496437,0.946,4409845
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,black,0.33549,2.8,2.0,6.0,274017,2779,,,
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,red,0.0105,2.0,2.0,4.0,78570,123,126386,0.341,46036
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,brown,0.06801,2.0,2.0,4.0,277602,1485,,,
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,blue,0.00498,2.0,2.0,2.0,86650,0,2919,0.017,1089
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,green,0.04673,2.0,2.0,2.8,258430,199,,,
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,wash,0.02817,2.0,2.0,2.8,234734,80,,,
+oai:u-bordeaux-montaigne.fr:340448,Djebel Fkirine,dark,0.4784,2.8,2.0,7.2,194727,427,16046223,0.95,4998171
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,black,0.18938,2.0,2.0,5.7,196958,3160,,,
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,red,0.02075,2.0,2.0,4.0,53364,550,477255,0.657,161830
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,brown,0.06123,2.0,2.0,4.0,256865,1086,,,
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,blue,0.01039,2.0,2.0,2.0,110330,91,87646,0.241,46379
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,green,0.03263,2.0,2.0,4.0,140057,202,,,
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,wash,0.04104,2.0,2.0,2.8,198783,272,,,
+oai:u-bordeaux-montaigne.fr:340449,Enfidaville,dark,0.32427,2.8,2.0,6.3,142977,921,10557955,0.929,3242913
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,black,0.22016,2.0,2.0,4.5,417104,3665,,,
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,red,0.01572,2.0,2.0,4.0,86321,239,262718,0.474,74558
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,brown,0.05675,2.0,2.0,4.0,268156,1150,,,
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,blue,0.0047,2.0,2.0,2.0,83186,6,7835,0.047,3153
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,green,0.08235,2.0,2.0,4.0,314494,1202,,,
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,wash,0.02536,2.0,2.0,2.8,194951,104,,,
+oai:u-bordeaux-montaigne.fr:340451,Le Kef,dark,0.38462,2.8,2.0,5.7,381164,717,12462003,0.92,4197448
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,black,0.19155,2.0,2.0,4.5,447882,3189,,,
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,red,0.01776,2.0,2.0,4.0,75033,306,368956,0.587,128810
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,brown,0.06197,2.0,2.0,2.8,329586,885,,,
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,blue,0.0063,2.0,2.0,2.0,92273,7,5763,0.026,2142
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,green,0.02346,2.0,2.0,4.0,154541,208,,,
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,wash,0.03011,2.0,2.0,2.8,208106,56,,,
+oai:u-bordeaux-montaigne.fr:340452,Les Salines,dark,0.30709,2.0,2.0,5.7,429371,684,9838247,0.905,3131484
+oai:u-bordeaux-montaigne.fr:340453,Siliana,black,0.21434,2.0,2.0,4.5,307944,4229,,,
+oai:u-bordeaux-montaigne.fr:340453,Siliana,red,0.0129,2.0,2.0,4.0,67695,178,161923,0.356,58356
+oai:u-bordeaux-montaigne.fr:340453,Siliana,brown,0.04137,2.0,2.0,2.8,243939,527,,,
+oai:u-bordeaux-montaigne.fr:340453,Siliana,blue,0.01,2.0,2.0,2.0,140938,67,48688,0.138,16666
+oai:u-bordeaux-montaigne.fr:340453,Siliana,green,0.04487,2.0,2.0,2.8,211779,645,,,
+oai:u-bordeaux-montaigne.fr:340453,Siliana,wash,0.03904,2.0,2.0,2.8,319738,207,,,
+oai:u-bordeaux-montaigne.fr:340453,Siliana,dark,0.33962,2.8,2.0,5.7,290779,438,11271573,0.941,3593776
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,black,0.27971,2.0,2.0,4.5,385085,4499,,,
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,red,0.01536,2.0,2.0,2.8,138403,155,115208,0.213,38987
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,brown,0.08277,2.0,2.0,4.0,351089,1414,,,
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,blue,0.01681,2.0,2.0,2.0,208369,34,53661,0.091,20999
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,green,0.06963,2.0,2.0,4.0,305870,744,,,
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,wash,0.0467,2.0,2.0,2.8,295676,239,,,
+oai:u-bordeaux-montaigne.fr:340454,Djebel Bargou,dark,0.47881,2.8,2.0,6.0,313880,216,16033159,0.95,4956797
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,black,0.22233,2.0,2.0,5.7,195982,2495,,,
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,red,0.00719,2.0,2.0,2.8,52328,75,95395,0.378,42093
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,brown,0.06743,2.0,2.0,4.0,283427,1268,,,
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,blue,0.00399,2.0,2.0,2.8,48098,67,36844,0.263,12429
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,green,0.02907,2.0,2.0,4.5,100762,51,,,
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,wash,0.01994,2.0,2.0,2.8,131313,96,,,
+oai:u-bordeaux-montaigne.fr:340455,Djebibina,dark,0.33877,2.8,2.0,8.0,145054,645,11263313,0.947,3245640
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,black,0.1513,2.8,2.0,6.0,129143,2208,,,
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,red,0.01849,2.0,2.0,4.0,36770,550,464817,0.716,173043
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,brown,0.02234,2.0,2.0,4.0,95418,396,,,
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,blue,0.00655,2.0,2.0,2.0,63819,64,68345,0.297,35846
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,green,0.0146,2.0,2.0,2.8,95702,52,,,
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,wash,0.01992,2.0,2.0,2.0,148744,216,,,
+oai:u-bordeaux-montaigne.fr:340456,Sidi Bou Ali,dark,0.20816,2.8,2.0,6.0,161667,1455,6529485,0.894,1962591
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,black,0.02174,2.8,2.0,6.0,22656,357,,,
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,red,0.01755,2.0,2.0,4.0,23492,468,548898,0.872,241323
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,brown,0.01113,2.0,2.0,2.8,39096,139,,,
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,blue,0.00097,2.0,2.0,2.0,12022,6,8373,0.24,3859
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,green,0.00515,2.0,2.0,4.5,15777,78,,,
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,wash,0.0044,2.0,2.0,2.8,12634,88,,,
+oai:u-bordeaux-montaigne.fr:340468,Halk El Mennzel,dark,0.04243,2.0,2.0,6.0,39308,198,1269650,0.834,416381
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,black,0.28038,2.0,2.0,4.5,842399,2991,,,
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,red,0.01219,2.0,2.0,4.0,66455,206,190062,0.426,71652
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,brown,0.03764,2.0,2.0,4.0,183738,967,,,
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,blue,0.00371,2.0,2.0,2.0,80317,0,4648,0.034,1734
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,green,0.03552,2.0,2.0,2.8,254569,497,,,
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,wash,0.03467,2.0,2.0,2.8,329411,104,,,
+oai:u-bordeaux-montaigne.fr:340470,Tadjerouine,dark,0.38821,2.0,2.0,5.7,877222,437,12477583,0.878,4247141
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,black,0.21706,2.0,2.0,4.5,485737,3595,,,
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,red,0.01541,2.0,2.0,4.0,90644,219,196521,0.358,68188
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,brown,0.04247,2.0,2.0,4.0,241042,690,,,
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,blue,0.00665,2.0,2.0,2.0,129574,0,2439,0.01,991
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,green,0.01979,2.0,2.0,2.8,193961,172,,,
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,wash,0.03089,2.0,2.0,2.8,265157,190,,,
+oai:u-bordeaux-montaigne.fr:340471,Ebba Ksour,dark,0.31021,2.8,2.0,5.7,532609,606,9992576,0.904,3108503
+oai:u-bordeaux-montaigne.fr:340472,Maktar,black,0.27497,2.0,2.0,4.5,543609,3526,,,
+oai:u-bordeaux-montaigne.fr:340472,Maktar,red,0.01672,2.0,2.0,4.0,92101,260,227356,0.379,71492
+oai:u-bordeaux-montaigne.fr:340472,Maktar,brown,0.03829,2.0,2.0,4.0,191340,928,,,
+oai:u-bordeaux-montaigne.fr:340472,Maktar,blue,0.00842,2.0,2.0,2.0,130686,49,34892,0.115,9849
+oai:u-bordeaux-montaigne.fr:340472,Maktar,green,0.05008,2.0,2.0,2.8,299386,658,,,
+oai:u-bordeaux-montaigne.fr:340472,Maktar,wash,0.03378,2.0,2.0,2.8,304199,192,,,
+oai:u-bordeaux-montaigne.fr:340472,Maktar,dark,0.39712,2.0,2.0,4.5,530436,488,13069615,0.916,4653811
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,black,0.25935,2.0,2.0,4.5,543594,4217,,,
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,red,0.01688,2.0,2.0,4.0,119191,269,253191,0.418,95638
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,brown,0.04681,2.0,2.0,4.0,272807,961,,,
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,blue,0.00842,2.0,2.0,2.0,152520,6,6755,0.022,2813
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,green,0.08717,2.0,2.0,4.0,353559,1017,,,
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,wash,0.03421,2.0,2.0,2.8,299017,73,,,
+oai:u-bordeaux-montaigne.fr:340473,Djebel Serdj,dark,0.42755,2.0,2.0,5.7,535192,596,14000886,0.912,4825234
+oai:u-bordeaux-montaigne.fr:340474,Aïne Djeloula,black,0.06342,2.0,2.0,4.5,84192,2248,,,
+oai:u-bordeaux-montaigne.fr:340474,Aïne Djeloula,red,0.02323,2.0,2.0,4.0,32820,698,686764,0.829,245014
+oai:u-bordeaux-montaigne.fr:340474,Aïne Djeloula,brown,0.02872,2.0,2.0,4.0,91342,376,,,
+oai:u-bordeaux-montaigne.fr:340474,Aïne Djeloula,blue,0.00459,2.0,2.0,2.0,79710,5,4703,0.029,2022
+oai:u-bordeaux-montaigne.fr:340474,Aïne Djeloula,green,0.02697,2.0,2.0,4.0,101301,32,,,
+oai:u-bordeaux-montaigne.fr:340474,Aïne Djeloula,wash,0.01834,2.0,2.0,2.8,185273,34,,,
+oai:u-bordeaux-montaigne.fr:340474,Aïne Djeloula,dark,0.13745,2.8,2.0,5.7,60320,1423,4348481,0.887,1333690
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,black,0.19888,2.0,2.0,6.0,208866,1771,,,
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,red,0.01085,2.0,2.0,4.0,36516,239,197144,0.505,69315
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,brown,0.03191,2.0,2.0,4.0,127655,767,,,
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,blue,0.00313,2.0,2.0,2.0,56477,0,1006,0.009,434
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,green,0.00857,2.0,2.0,2.8,86265,32,,,
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,wash,0.02787,2.0,2.0,2.0,166752,275,,,
+oai:u-bordeaux-montaigne.fr:340475,Sebkra Kelbia,dark,0.26723,2.0,2.0,6.3,191663,1259,9078027,0.944,2989527
+oai:u-bordeaux-montaigne.fr:340476,Sousse,black,0.09448,2.8,2.0,4.5,130538,1914,,,
+oai:u-bordeaux-montaigne.fr:340476,Sousse,red,0.01965,2.0,2.0,4.5,42883,410,477959,0.678,137771
+oai:u-bordeaux-montaigne.fr:340476,Sousse,brown,0.02709,2.0,2.0,4.0,94613,554,,,
+oai:u-bordeaux-montaigne.fr:340476,Sousse,blue,0.00843,2.0,2.0,2.8,71952,100,102076,0.337,48913
+oai:u-bordeaux-montaigne.fr:340476,Sousse,green,0.04737,2.0,2.0,5.7,107543,862,,,
+oai:u-bordeaux-montaigne.fr:340476,Sousse,wash,0.01834,2.0,2.0,2.8,114816,132,,,
+oai:u-bordeaux-montaigne.fr:340476,Sousse,dark,0.18728,2.8,2.0,6.0,155138,1291,5634078,0.838,1744749
+oai:u-bordeaux-montaigne.fr:340488,Kalaat es Senam,black,0.21149,2.0,2.0,4.5,625451,3632,,,
+oai:u-bordeaux-montaigne.fr:340488,Kalaat es Senam,red,0.01291,2.0,2.0,4.0,71859,487,339280,0.471,109337
+oai:u-bordeaux-montaigne.fr:340488,Kalaat es Senam,brown,0.02842,2.0,2.0,2.8,285558,738,,,
+oai:u-bordeaux-montaigne.fr:340488,Kalaat es Senam,blue,0.00143,2.0,2.0,2.0,48513,0,434,0.005,169
+oai:u-bordeaux-montaigne.fr:340488,Kalaat es Senam,green,0.02098,2.0,2.0,4.0,127769,538,,,
+oai:u-bordeaux-montaigne.fr:340488,Kalaat es Senam,wash,0.01543,2.0,2.0,4.0,187120,131,,,
+oai:u-bordeaux-montaigne.fr:340488,Kalaat es Senam,dark,0.27632,2.8,2.0,5.7,606761,1254,13884203,0.902,3919719
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,black,0.18664,2.8,2.0,4.5,172479,3832,,,
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,red,0.01527,2.0,2.0,4.0,51558,267,287130,0.523,115737
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,brown,0.03441,2.0,2.0,4.0,206100,585,,,
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,blue,0.00268,2.0,2.0,2.0,48822,0,995,0.01,435
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,green,0.01989,2.0,2.0,2.8,128753,363,,,
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,wash,0.01912,2.0,2.0,2.8,137873,18,,,
+oai:u-bordeaux-montaigne.fr:340489,Aïn El Kseïba,dark,0.26006,4.0,2.0,6.0,169503,608,8708539,0.931,2462835
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,black,0.19268,2.0,2.0,4.5,500018,4449,,,
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,red,0.01512,2.0,2.0,4.0,111413,186,181389,0.336,71260
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,brown,0.0611,2.0,2.0,4.0,302382,1121,,,
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,blue,0.01063,2.0,2.0,2.0,192176,7,3364,0.009,1433
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,green,0.11003,2.0,2.0,4.0,303658,1304,,,
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,wash,0.04413,2.0,2.0,2.8,333167,136,,,
+oai:u-bordeaux-montaigne.fr:340490,Rohia-Dj. Barbrou,dark,0.40795,2.8,2.0,5.7,444395,620,13420202,0.923,4476963
+oai:u-bordeaux-montaigne.fr:340491,Pichon,black,0.2123,2.0,2.0,4.5,396352,4627,,,
+oai:u-bordeaux-montaigne.fr:340491,Pichon,red,0.02098,2.0,2.0,4.0,72523,402,393432,0.523,131086
+oai:u-bordeaux-montaigne.fr:340491,Pichon,brown,0.04418,2.0,2.0,4.0,250826,630,,,
+oai:u-bordeaux-montaigne.fr:340491,Pichon,blue,0.00904,2.0,2.0,2.0,136090,36,28000,0.086,11002
+oai:u-bordeaux-montaigne.fr:340491,Pichon,green,0.06773,2.0,2.0,4.0,214900,718,,,
+oai:u-bordeaux-montaigne.fr:340491,Pichon,wash,0.03101,2.0,2.0,2.8,252220,70,,,
+oai:u-bordeaux-montaigne.fr:340491,Pichon,dark,0.35521,2.8,2.0,5.7,333311,1533,11311368,0.888,3704468
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,black,0.12347,2.8,2.0,5.7,171523,2817,,,
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,red,0.01957,2.0,2.0,4.0,37997,467,493020,0.702,170511
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,brown,0.03601,2.0,2.0,4.0,131850,598,,,
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,blue,0.00363,2.0,2.0,2.0,65482,6,3479,0.027,1454
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,green,0.01704,2.0,2.0,4.0,95247,91,,,
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,wash,0.01921,2.0,2.0,2.8,143911,12,,,
+oai:u-bordeaux-montaigne.fr:340492,Kairouan,dark,0.19572,2.8,2.0,6.0,156712,1429,6417345,0.913,1889992
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,black,0.10953,2.0,2.0,4.0,379954,1828,,,
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,red,0.01639,2.0,2.0,4.0,38074,436,383314,0.65,139743
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,brown,0.02503,2.0,2.0,4.0,95535,505,,,
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,blue,0.00428,2.0,2.0,2.0,57313,9,10873,0.071,5310
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,green,0.00777,2.0,2.0,2.8,70381,10,,,
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,wash,0.02385,2.0,2.0,2.0,115593,237,,,
+oai:u-bordeaux-montaigne.fr:340493,Sidi El Hani,dark,0.16618,2.0,2.0,4.5,381163,1405,5105212,0.853,2051532
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,black,0.11957,2.8,2.0,5.7,107510,2892,,,
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,red,0.0146,2.0,2.0,4.0,43182,277,294810,0.569,102071
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,brown,0.02042,2.0,2.0,4.0,71228,355,,,
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,blue,0.0041,2.0,2.0,2.0,51150,29,34239,0.235,17883
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,green,0.04808,2.0,2.0,4.0,187525,817,,,
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,wash,0.02288,2.0,2.0,2.8,223758,105,,,
+oai:u-bordeaux-montaigne.fr:340494,Djemmal,dark,0.21096,2.8,2.0,6.0,124654,1229,6697109,0.894,2009777
+oai:u-bordeaux-montaigne.fr:340495,Moknine,black,0.07226,2.0,2.0,4.5,91740,1641,,,
+oai:u-bordeaux-montaigne.fr:340495,Moknine,red,0.01657,2.0,2.0,4.0,39312,245,278420,0.603,98252
+oai:u-bordeaux-montaigne.fr:340495,Moknine,brown,0.02021,2.0,2.0,4.0,47548,225,,,
+oai:u-bordeaux-montaigne.fr:340495,Moknine,blue,0.00765,2.0,2.0,2.0,81525,9,12243,0.057,5551
+oai:u-bordeaux-montaigne.fr:340495,Moknine,green,0.05368,2.0,2.0,4.0,130613,77,,,
+oai:u-bordeaux-montaigne.fr:340495,Moknine,wash,0.03598,2.0,2.0,2.0,147321,505,,,
+oai:u-bordeaux-montaigne.fr:340495,Moknine,dark,0.18213,2.0,2.0,4.5,99775,1170,4151537,0.818,1451376
+oai:u-bordeaux-montaigne.fr:340496,Thala,black,0.23148,2.0,2.0,4.5,439573,4506,,,
+oai:u-bordeaux-montaigne.fr:340496,Thala,red,0.01088,2.0,2.0,4.0,54775,173,154867,0.389,57604
+oai:u-bordeaux-montaigne.fr:340496,Thala,brown,0.03363,2.0,2.0,4.0,190334,720,,,
+oai:u-bordeaux-montaigne.fr:340496,Thala,blue,0.00748,2.0,2.0,2.0,149857,0,2988,0.011,1179
+oai:u-bordeaux-montaigne.fr:340496,Thala,green,0.06585,2.0,2.0,4.0,247515,1630,,,
+oai:u-bordeaux-montaigne.fr:340496,Thala,wash,0.05187,2.0,2.0,2.8,362019,197,,,
+oai:u-bordeaux-montaigne.fr:340496,Thala,dark,0.38283,2.8,2.0,6.0,427343,450,13060519,0.933,3918915
+oai:u-bordeaux-montaigne.fr:340507,Ksar Tlili,black,0.2197,2.0,2.0,4.5,366180,4616,,,
+oai:u-bordeaux-montaigne.fr:340507,Ksar Tlili,red,0.01097,2.0,2.0,4.0,58298,130,131724,0.336,54018
+oai:u-bordeaux-montaigne.fr:340507,Ksar Tlili,brown,0.05462,2.0,2.0,4.0,322406,1022,,,
+oai:u-bordeaux-montaigne.fr:340507,Ksar Tlili,blue,0.00516,2.0,2.0,2.0,75903,3,3808,0.021,1435
+oai:u-bordeaux-montaigne.fr:340507,Ksar Tlili,green,0.0519,2.0,2.0,2.8,294508,719,,,
+oai:u-bordeaux-montaigne.fr:340507,Ksar Tlili,wash,0.02835,2.0,2.0,4.0,125657,77,,,
+oai:u-bordeaux-montaigne.fr:340507,Ksar Tlili,dark,0.35458,2.8,2.0,5.7,375780,463,11674446,0.92,3730608
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,black,0.19394,2.0,2.0,4.5,483858,3358,,,
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,red,0.01106,2.0,2.0,4.0,61413,89,129142,0.326,55958
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,brown,0.06872,2.0,2.0,4.0,283482,1412,,,
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,blue,0.00794,2.0,2.0,2.0,128646,5,12863,0.045,4970
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,green,0.03983,2.0,2.0,4.0,160958,437,,,
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,wash,0.03809,2.0,2.0,4.0,217090,258,,,
+oai:u-bordeaux-montaigne.fr:340508,Sbiba,dark,0.34058,2.8,2.0,6.0,412428,609,11077869,0.91,3350603
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,black,0.11704,2.0,2.0,5.7,159673,3018,,,
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,red,0.01943,2.0,2.0,4.0,47536,421,429505,0.617,156147
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,brown,0.05773,2.0,2.0,4.0,189802,1025,,,
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,blue,0.0074,2.0,2.0,2.0,117031,25,23519,0.089,9932
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,green,0.03871,2.0,2.0,4.0,135111,368,,,
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,wash,0.02684,2.0,2.0,2.8,196285,65,,,
+oai:u-bordeaux-montaigne.fr:340509,Djebel Trozza,dark,0.24032,2.8,2.0,5.7,85248,1680,7784921,0.904,2374368
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,black,0.09477,2.0,2.0,4.0,262490,1658,,,
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,red,0.0071,2.0,2.0,2.8,38274,63,82866,0.328,33742
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,brown,0.01619,2.0,2.0,2.0,59297,371,,,
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,blue,0.00115,2.0,2.0,2.0,24273,0,1153,0.028,445
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,green,0.01466,2.0,2.0,4.0,92787,6,,,
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,wash,0.01254,2.0,2.0,2.0,153947,36,,,
+oai:u-bordeaux-montaigne.fr:340510,Pavillier,dark,0.13815,2.0,2.0,4.5,268590,1213,4038257,0.821,1360408
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,black,0.07157,2.0,2.0,4.0,158027,1892,,,
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,red,0.00809,2.0,2.0,4.0,32716,145,119918,0.415,46831
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,brown,0.01283,2.0,2.0,2.0,35724,183,,,
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,blue,0.00375,2.0,2.0,2.0,55629,3,14339,0.107,8710
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,green,0.015,2.0,2.0,4.0,93281,6,,,
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,wash,0.02778,2.0,2.0,2.0,181768,862,,,
+oai:u-bordeaux-montaigne.fr:340511,Oued Cherita,dark,0.12718,2.0,2.0,4.5,166097,1808,3530590,0.777,1251730
+oai:u-bordeaux-montaigne.fr:340512,Kerker,black,0.06872,2.0,2.0,4.5,155062,1994,,,
+oai:u-bordeaux-montaigne.fr:340512,Kerker,red,0.0216,2.0,2.0,4.0,34135,687,604908,0.785,219278
+oai:u-bordeaux-montaigne.fr:340512,Kerker,brown,0.03483,2.0,2.0,4.0,94445,724,,,
+oai:u-bordeaux-montaigne.fr:340512,Kerker,blue,0.00681,2.0,2.0,2.0,86236,10,71038,0.293,36947
+oai:u-bordeaux-montaigne.fr:340512,Kerker,green,0.02179,2.0,2.0,2.8,146151,50,,,
+oai:u-bordeaux-montaigne.fr:340512,Kerker,wash,0.02935,2.0,2.0,2.0,258789,238,,,
+oai:u-bordeaux-montaigne.fr:340512,Kerker,dark,0.1547,2.0,2.0,4.5,161609,2069,4663979,0.846,1669212
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,black,0.2139,2.8,2.0,5.7,241487,3387,,,
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,red,0.00648,2.0,2.0,2.0,70010,43,42606,0.184,16703
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,brown,0.04743,2.0,2.0,4.0,230208,1115,,,
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,blue,0.0048,2.0,2.0,2.0,96034,0,971,0.006,358
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,green,0.06886,2.0,2.0,4.0,234993,1492,,,
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,wash,0.02835,2.0,2.0,2.8,267313,36,,,
+oai:u-bordeaux-montaigne.fr:340513,Djebel Bireno,dark,0.35853,2.8,2.0,6.0,185916,477,12285710,0.96,3853042
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,black,0.2145,2.0,2.0,4.5,284960,3501,,,
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,red,0.00624,2.0,2.0,2.8,57900,93,62660,0.281,24232
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,brown,0.03799,2.0,2.0,2.8,221480,858,,,
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,blue,0.00152,2.0,2.0,2.0,32989,0,926,0.017,341
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,green,0.0516,2.0,2.0,2.8,296323,410,,,
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,wash,0.01354,2.0,2.0,2.0,150535,0,,,
+oai:u-bordeaux-montaigne.fr:340514,Djebel Semmama,dark,0.31762,2.8,2.0,5.7,292153,691,10542919,0.927,3527346
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,black,0.10923,2.0,2.0,4.5,151845,3082,,,
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,red,0.02537,2.0,2.0,4.5,55119,979,723038,0.798,229661
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,brown,0.06745,2.0,2.0,4.0,164432,1788,,,
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,blue,0.00488,2.0,2.0,2.0,89854,0,934,0.005,326
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,green,0.04221,2.0,2.0,4.0,172767,586,,,
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,wash,0.02163,2.0,2.0,2.0,227174,8,,,
+oai:u-bordeaux-montaigne.fr:340515,Djebel Mrhila,dark,0.24052,2.8,2.0,6.0,55732,1231,8124424,0.946,2456733
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,black,0.18477,2.8,2.0,5.7,158397,3754,,,
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,red,0.02276,2.0,2.0,4.5,42778,868,598970,0.733,195320
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,brown,0.03349,2.0,2.0,4.0,174212,694,,,
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,blue,0.00673,2.0,2.0,2.8,78232,96,76192,0.316,35375
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,green,0.02439,2.0,2.0,4.0,120325,441,,,
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,wash,0.02509,2.0,2.0,2.8,158101,78,,,
+oai:u-bordeaux-montaigne.fr:340516,Hadjeb el Aïoun,dark,0.26774,2.8,2.0,6.0,157984,1157,8836664,0.92,2577032
+oai:u-bordeaux-montaigne.fr:340527,Nasr Allah,black,0.09093,2.8,2.0,4.5,99321,2850,,,
+oai:u-bordeaux-montaigne.fr:340527,Nasr Allah,red,0.02453,2.0,2.0,4.0,40282,966,671096,0.764,228889
+oai:u-bordeaux-montaigne.fr:340527,Nasr Allah,brown,0.03925,2.0,2.0,4.0,126988,679,,,
+oai:u-bordeaux-montaigne.fr:340527,Nasr Allah,blue,0.00212,2.0,2.0,2.0,35714,0,4234,0.056,1857
+oai:u-bordeaux-montaigne.fr:340527,Nasr Allah,green,0.03445,2.0,2.0,4.5,115907,74,,,
+oai:u-bordeaux-montaigne.fr:340527,Nasr Allah,wash,0.01023,2.0,2.0,2.8,104893,2,,,
+oai:u-bordeaux-montaigne.fr:340527,Nasr Allah,dark,0.17486,4.0,2.0,5.7,74227,1367,5678590,0.907,1663692
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,black,0.08475,2.8,2.0,4.0,95593,2705,,,
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,red,0.02165,2.0,2.0,4.0,23214,938,644928,0.833,233705
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,brown,0.02044,2.0,2.0,4.0,73777,162,,,
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,blue,0.00452,2.0,2.0,2.0,85765,0,2803,0.017,1419
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,green,0.0185,2.0,2.0,2.8,126355,3,,,
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,wash,0.02461,2.0,2.0,2.0,284952,134,,,
+oai:u-bordeaux-montaigne.fr:340528,Chorbane,dark,0.1483,2.8,2.0,4.5,84107,1770,4426508,0.835,1389834
+oai:u-bordeaux-montaigne.fr:340529,El Djem,black,0.09468,2.8,2.0,4.5,108542,2751,,,
+oai:u-bordeaux-montaigne.fr:340529,El Djem,red,0.01492,2.0,2.0,4.0,40092,293,325836,0.604,119502
+oai:u-bordeaux-montaigne.fr:340529,El Djem,brown,0.02001,2.0,2.0,4.0,69698,406,,,
+oai:u-bordeaux-montaigne.fr:340529,El Djem,blue,0.00115,2.0,2.0,2.0,26292,0,512,0.012,251
+oai:u-bordeaux-montaigne.fr:340529,El Djem,green,0.0281,2.0,2.0,4.0,96725,784,,,
+oai:u-bordeaux-montaigne.fr:340529,El Djem,wash,0.00938,2.0,2.0,2.0,121490,12,,,
+oai:u-bordeaux-montaigne.fr:340529,El Djem,dark,0.15217,2.8,2.0,5.7,103083,752,4956883,0.901,1551190
+oai:u-bordeaux-montaigne.fr:340530,Chebba,black,0.04741,2.8,2.0,4.5,69074,1537,,,
+oai:u-bordeaux-montaigne.fr:340530,Chebba,red,0.01837,2.0,2.0,4.0,30376,518,476318,0.726,166641
+oai:u-bordeaux-montaigne.fr:340530,Chebba,brown,0.0181,2.0,2.0,4.0,58188,270,,,
+oai:u-bordeaux-montaigne.fr:340530,Chebba,blue,0.00603,2.0,2.0,2.0,63831,90,68270,0.317,30733
+oai:u-bordeaux-montaigne.fr:340530,Chebba,green,0.03375,2.0,2.0,4.0,129279,5,,,
+oai:u-bordeaux-montaigne.fr:340530,Chebba,wash,0.01406,2.0,2.0,2.0,169403,24,,,
+oai:u-bordeaux-montaigne.fr:340530,Chebba,dark,0.11332,2.8,2.0,4.5,119593,1184,3060504,0.756,954978
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,black,0.19548,2.8,2.0,4.5,203458,4067,,,
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,red,0.00986,2.0,2.0,4.0,69644,162,137486,0.391,43615
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,brown,0.03406,2.0,2.0,4.0,171360,834,,,
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,blue,0.00441,2.0,2.0,2.0,83498,0,532,0.003,220
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,green,0.10295,2.0,2.0,2.8,430028,1456,,,
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,wash,0.02325,2.0,2.0,2.8,205498,38,,,
+oai:u-bordeaux-montaigne.fr:340531,Bou Chebka,dark,0.35574,2.8,2.0,4.5,270131,342,11915193,0.94,4091766
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,black,0.18782,2.0,2.0,4.5,256779,3966,,,
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,red,0.01138,2.0,2.0,4.0,67203,132,121582,0.299,44374
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,brown,0.05871,2.0,2.0,4.0,242276,1195,,,
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,blue,0.00789,2.0,2.0,2.0,126365,26,20347,0.072,7798
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,green,0.05722,2.0,2.0,4.0,153296,833,,,
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,wash,0.03745,2.0,2.0,4.0,217463,174,,,
+oai:u-bordeaux-montaigne.fr:340532,Kasserine,dark,0.3412,2.8,2.0,6.0,188031,821,11484592,0.943,3482517
+oai:u-bordeaux-montaigne.fr:340533,Djebeniana,black,0.11362,2.8,2.0,5.7,153046,2472,,,
+oai:u-bordeaux-montaigne.fr:340533,Djebeniana,red,0.01402,2.0,2.0,4.5,33775,312,288647,0.573,89058
+oai:u-bordeaux-montaigne.fr:340533,Djebeniana,brown,0.03973,2.0,2.0,4.0,122831,760,,,
+oai:u-bordeaux-montaigne.fr:340533,Djebeniana,blue,0.00499,2.0,2.0,2.8,45662,73,61045,0.341,23470
+oai:u-bordeaux-montaigne.fr:340533,Djebeniana,green,0.06454,2.8,2.0,4.5,96083,909,,,
+oai:u-bordeaux-montaigne.fr:340533,Djebeniana,wash,0.01439,2.0,2.0,4.0,69722,166,,,
+oai:u-bordeaux-montaigne.fr:340533,Djebeniana,dark,0.23228,4.0,2.0,6.3,137512,1634,7324469,0.878,1951524
+oai:u-bordeaux-montaigne.fr:340534,,black,0.18121,2.0,2.0,4.5,230303,6046,,,
+oai:u-bordeaux-montaigne.fr:340534,,red,0.02294,2.0,2.0,4.0,50284,1019,794718,0.781,274246
+oai:u-bordeaux-montaigne.fr:340534,,brown,0.04989,2.0,2.0,4.0,343604,994,,,
+oai:u-bordeaux-montaigne.fr:340534,,blue,0.00435,2.0,2.0,2.0,104169,1,7709,0.04,3377
+oai:u-bordeaux-montaigne.fr:340534,,green,0.02067,2.0,2.0,4.0,169435,178,,,
+oai:u-bordeaux-montaigne.fr:340534,,wash,0.02775,2.0,2.0,2.8,294481,23,,,
+oai:u-bordeaux-montaigne.fr:340534,,dark,0.27952,2.8,2.0,4.5,132777,1843,11456024,0.924,3816717
+oai:u-bordeaux-montaigne.fr:340535,,black,0.13902,2.8,2.0,4.5,164971,3685,,,
+oai:u-bordeaux-montaigne.fr:340535,,red,0.01766,2.0,2.0,4.0,47017,649,580954,0.723,221253
+oai:u-bordeaux-montaigne.fr:340535,,brown,0.03289,2.0,2.0,4.0,190785,874,,,
+oai:u-bordeaux-montaigne.fr:340535,,blue,0.0212,2.0,2.0,6.0,75177,206,838376,0.869,302208
+oai:u-bordeaux-montaigne.fr:340535,,green,0.01654,2.0,2.0,4.0,110914,180,,,
+oai:u-bordeaux-montaigne.fr:340535,,wash,0.01843,2.0,2.0,4.0,128350,226,,,
+oai:u-bordeaux-montaigne.fr:340535,,dark,0.20688,2.8,2.0,6.0,168284,1632,8537359,0.907,2404427
+oai:u-bordeaux-montaigne.fr:340616,,black,0.07728,2.0,2.0,4.0,199506,2477,,,
+oai:u-bordeaux-montaigne.fr:340616,,red,0.03451,2.0,2.0,5.7,55110,938,866328,0.652,274143
+oai:u-bordeaux-montaigne.fr:340616,,brown,0.02758,2.0,2.0,4.0,114313,286,,,
+oai:u-bordeaux-montaigne.fr:340616,,blue,0.01554,2.0,2.0,2.0,187541,111,176157,0.294,84661
+oai:u-bordeaux-montaigne.fr:340616,,green,0.05592,2.0,2.0,4.0,196004,127,,,
+oai:u-bordeaux-montaigne.fr:340616,,wash,0.03777,2.0,2.0,2.8,348023,133,,,
+oai:u-bordeaux-montaigne.fr:340616,,dark,0.19855,2.8,2.0,5.7,226343,2639,5935983,0.776,1674845
+oai:u-bordeaux-montaigne.fr:340628,,black,0.06488,2.8,2.0,4.5,82177,1924,,,
+oai:u-bordeaux-montaigne.fr:340628,,red,0.02046,2.0,2.0,4.5,41436,434,538059,0.699,163958
+oai:u-bordeaux-montaigne.fr:340628,,brown,0.02652,2.0,2.0,4.0,99550,456,,,
+oai:u-bordeaux-montaigne.fr:340628,,blue,0.00568,2.0,2.0,2.0,80949,20,24307,0.114,9235
+oai:u-bordeaux-montaigne.fr:340628,,green,0.00873,2.0,2.0,4.0,59209,5,,,
+oai:u-bordeaux-montaigne.fr:340628,,wash,0.02143,2.0,2.0,2.8,131317,198,,,
+oai:u-bordeaux-montaigne.fr:340628,,dark,0.12155,2.8,2.0,6.0,77574,818,4158908,0.909,1155921
+oai:u-bordeaux-montaigne.fr:340629,,black,0.09004,2.0,2.0,4.0,126225,1580,,,
+oai:u-bordeaux-montaigne.fr:340629,,red,0.02127,2.0,2.0,4.0,26096,271,307048,0.686,114612
+oai:u-bordeaux-montaigne.fr:340629,,brown,0.01847,2.0,2.0,2.8,62675,62,,,
+oai:u-bordeaux-montaigne.fr:340629,,blue,0.00383,2.0,2.0,2.0,51351,0,0,0.0,0
+oai:u-bordeaux-montaigne.fr:340629,,green,0.00933,2.0,2.0,2.8,48468,10,,,
+oai:u-bordeaux-montaigne.fr:340629,,wash,0.02716,2.0,2.0,2.8,137106,8,,,
+oai:u-bordeaux-montaigne.fr:340629,,dark,0.145,2.0,2.0,4.5,125305,630,2651258,0.869,864709

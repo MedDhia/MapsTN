@@ -13,6 +13,7 @@ symbols in the pixels and push them through it.
 | Extract symbols | [`scripts/extract_symbols.py`](../scripts/extract_symbols.py) | `data/symbols/<record_id>.geojson`, `data/symbols_summary.csv`; `--classes building,shrine` adds the provisional koubba layer |
 | Difference the two printings | [`scripts/difference_editions.py`](../scripts/difference_editions.py) | `data/edition_difference.csv`, `data/edition_credits.csv`, `docs/img/edition_*.png` |
 | Probe a class before building it | [`scripts/probe_trig_points.py`](../scripts/probe_trig_points.py) | printed measurements; no data file — see *Trig points are below the floor of these scans* |
+| Separate the printing plates | [`scripts/separate_ink_plates.py`](../scripts/separate_ink_plates.py) | `data/ink_plates.csv`, `docs/img/ink_plates_network.png` — see *The ink, not the RGB* |
 
 ---
 
@@ -792,14 +793,158 @@ The **clocher**, the plain red disc the same legend row also designates, is
 deliberately not attempted. It is a disc in the house mark's size band, and the
 π/4 identity says no roundness threshold separates the two.
 
+### The ink, not the RGB
+
+Everything above this section finds features with hand-set inequalities on raw
+RGB — `(r - g > 45) & (r - b > 40) & (r > 110)` for the red plate — and then
+hunts symbols inside the result with fixed-size templates. That reached 40% on
+the koubba and 0% on the trigonometric point, and each round of patching turned
+up a new confusable. The mistake was skipping the physics.
+
+These are lithographic sheets printed from a few ink plates. A scanned pixel is
+paper seen through some amount of one ink, and by Beer-Lambert reflectances
+multiply while optical **densities add**:
+
+```
+D = -log10(I / I_paper)     linear in how much ink was laid down
+```
+
+An ink is therefore a *direction* in density space and the amount is the length
+along it, which is a question raw RGB thresholds answer only by accident. And it
+is a **classification, not an unmixing**: solving for the amount of every ink at
+every pixel is underdetermined — RGB gives three numbers, the series uses six
+inks — and least squares returns a minimum-norm answer that smears the plates
+together. But lithography is *sparse*: away from an overprint a pixel carries
+one ink over paper. So the well-posed question is "which ink, and how much of
+it", answered by the nearest ink direction.
+
+[`scripts/separate_ink_plates.py`](../scripts/separate_ink_plates.py) does this,
+and the honest result is that **one plate separates cleanly, one is usable, and
+the rest do not separate at all on these scans.**
+
+**The red plate is clean at sheet scale.** 1.14% of the Kasserine map face,
+carrying the kilometric grid, the maintained roads as the double lines they are
+printed as, and the settlement clusters — with no relief, no contours and no
+lettering. Red lies 25–30° off every other ink direction, which is why it
+survives when nothing else does. Since the 1936 legend prints maintained roads
+in red and tracks in black, this much of the road classification comes free.
+The **blue plate** is legibly the drainage network by eye — the oueds — but it is
+*not* a traced product: across the 85 sheets the linker recovers a median of only
+**8.6%** of it into runs, against 58% for red. It is faint (median 0.60% of the
+face) and broken, so it needs its own work rather than a re-run of the road
+machinery.
+
+Across the 85 sheets with a detected neatline
+([`data/ink_plates.csv`](../data/ink_plates.csv), one row per ink per sheet):
+
+| plate | ink, median % of face | p10–p90 | median share linked into runs |
+| --- | --- | --- | --- |
+| red | 1.67 | 1.06–2.32 | **0.58** |
+| blue | 0.60 | 0.19–1.12 | 0.09 |
+| dark (black+brown+green+wash) | 26.77 | 11.66–39.75 | 0.91 |
+
+The dark plate's 0.91 is the number that says it is not a network: nearly all of
+it links, because hachures and contours chain into everything. Red's 0.58 tracks
+terrain in the way you would want — it runs 0.18 on Djebel Bireno, 0.21 on Djebel
+Bargou and 0.28 on Djebel Semmama, against 0.90 on Cap Bon, 0.87 on Halk El
+Mennzel and 0.83 on Chorbane. Mountain sheets have fewer roads and a red plate
+broken into shorter pieces; the flat coastal sheets are where the traced network
+is most complete.
+
+**The rest cannot be told apart, and the scans are the reason.** These are JPEG
+**4:2:0** files — chroma stored at half resolution — while the strokes are 2 px
+wide. A stroke's colour is smeared across its neighbours, so the density
+directions form a *continuum* instead of modes: k-means centroids move as k goes
+from 5 to 8, and restricting to the darkest stroke cores does not sharpen them,
+it collapses five of six clusters toward neutral. Any claim to have "measured"
+five ink directions by clustering is k-means slicing a continuum.
+
+So black, brown, green and wash are reported as one **dark** plate wherever a
+mask is going to be used rather than measured. They sit within about 7° of each
+other, and splitting them does not just fail to help, it costs: with green split
+out of black, part of the spot height 652 in the demo window moves to the other
+plate and the digit stops reading. The survey table keeps all six inks as
+separate rows anyway, so the continuum is visible in the data.
+
+![The red plate traced](img/ink_plates_network.png)
+
+That is the red plate of Kasserine on a 600×400 window, with the linked network
+in green. The maintained road is traced along both of the printed double lines
+that represent it and the kilometric grid lines are traced too — 82% of the
+plate links into runs here — while the black tracks, the blue oueds, the brown
+contours and the red spot-height numerals are all correctly outside it. The
+numerals stay out because type does not chain collinearly; the grid does need
+removing for a road product, and the georeferencing step already knows where
+every grid line is.
+
+Three things this got wrong first, each found by running on a whole sheet what
+had only been checked on one 600×400 window of flat desert:
+
+- **The black plate is not the road network.** Over the whole Kasserine face it
+  is 22.8% of the pixels, because it carries all of the relief hachuring. In the
+  flat window first tested there was no relief, so it looked like a clean
+  network of tracks and lettering.
+- **A green ink was missing entirely.** The vegetation wash is ~12% of inked
+  pixels, direction (0.631, 0.489, 0.603) — about 7° from black. Adding it does
+  not fix the black plate; it explains it, and drops black from 22.8% to 18.8%
+  while leaving red at 1.14%.
+- **The paper white cannot be one number.** Across a single map face it runs 154
+  to 230 in red, and paper darkening is near-neutral, so one bright value makes
+  every toned region read as faint black ink. It has to be a smooth field, and
+  the plate has to be measured inside the detected neatline rather than over the
+  whole scan, which otherwise counts the title block and the scanner surround as
+  map.
+
+**What is extractable is the linear class, not point symbols.** The symbol work
+above only ever tried point symbols, and those sit at the resolution floor — a
+13 px glyph with 1–2 px strokes. Tracing a line off a plate is a different
+problem, and the module's `network()` does it by linking dashes as a graph.
+
+Two wrong turns there are worth recording, because both are the sort of thing
+that looks right on the window you tuned it on:
+
+- **Closing the mask with a disk is wrong twice over.** A disk large enough to
+  bridge a 20 px dash gap also welds together two tracks running 40 px apart,
+  and it does nothing about the size filter deleting individual dashes first — a
+  dash is 16–19 px long and 30–80 px in area, so a 400 px threshold removes
+  every one. On a held-out sheet the prominent dashed track was not traced at
+  all: 423 fragments went to 5 components, and the track was in neither.
+- **"Collinear" must be a corridor in pixels, not a tolerance in degrees.**
+  Across a 10 px gap an ordinary 4 px lateral offset is already 22°, so an
+  angular test left 0.64 candidates per endpoint and broke every curving track.
+  Bounding the *perpendicular* offset instead — the quantity that stays small
+  however long the gap — and iterating the linking (a linked chain's axis is far
+  better determined than one dash's; it converges in three passes) recovers
+  37–75% of the black plate into runs across four windows, against 11% before.
+
+And the ordering matters in a way that is easy to get backwards: masking the
+type *before* tracing destroys the network, because `--psm 11` reads a row of
+dashes as punctuation — on one window it returned `'-'`, `'=,'`, `'aan,'`,
+`'FEES.'` and blocked 6319 of the plate's 8041 pixels. Dashes chain collinearly
+and type does not, so the two are read off the same plate independently and
+neither is subtracted from the other. Reading the type needs the plate upscaled
+2× before OCR, since the digits are 16–18 px tall: at 1:1 the spot height 656
+comes back as "636".
+
 ### What is still unbuilt
 
-In the order worth doing: **cemeteries** (the confessional glyphs are the
-highest-value class in the legend and are compound marks rather than single
-blobs, so they may separate better than the koubba did), **spot heights**
-(hundreds per sheet, each with a printed elevation, and the same digit-cluster
-machinery the trig-point route needs), **parcel boundaries** (dashed polygons
-named by holding lineage), and **toponym OCR**, which remains the long pole.
+In the order worth doing, and the order has changed now that the plates are
+separated: **the road network off the red plate**, which is the one plate that
+separates cleanly and where `network()` already links the runs — this is the
+nearest thing to a finished class the project has and nothing yet writes it out
+as geometry; **the drainage network off the blue plate**, the same machinery on
+a fainter plate; **cemeteries** (the confessional glyphs are the highest-value
+class in the legend and are compound marks rather than single blobs, so they may
+separate better than the koubba did); **spot heights**, which are readable off a
+plate at 2× but only where the terrain gives them two or more digits — on flat
+coastal sheets they are 1–2 digits and indistinguishable from grid labels by
+digit count alone; **parcel boundaries** (dashed polygons named by holding
+lineage); and **toponym OCR**, which remains the long pole.
+
+A warning for anything built on the plates: only red and blue are trustworthy
+per pixel. Anything keyed on the black, brown, green or wash plates inherits the
+4:2:0 continuum problem above, and needs its own validation on a hachured sheet
+rather than a flat one.
 
 ---
 
