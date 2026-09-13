@@ -18,8 +18,8 @@
   "                       country it holds, with no boundary drawn",
   "  marked_tribe         a territory label carrying an explicit marker, (Tribu),",
   "                       (Tribu des), (Tribus), TERRITOIRE DES",
-  "  tribal_ksour         'Kt des X' / 'Ksour des X' - the tribe named through",
-  "                       its fortified granaries, the southern form",
+  "  caidat_label         the caidat - the administrative unit built on the",
+  "                       tribe - named across its ground, abbreviated Kt des X",
   "  douar_toponym        a settlement printed Dr / Douar + a lineage name",
   "  lineage_toponym      any place name carrying Ouled / Oulad / Beni / ben",
   "  smala                a settlement named as a tribe's smala",
@@ -27,10 +27,14 @@
   "                       vocabulary the map uses",
   "  thematic_distribution  the map's subject is the distribution of a mode of",
   "                       habitation or population, mapped as areas",
-  "  caidat_label         the caidat - the administrative unit built on the",
-  "                       tribe - named across its territory",
   "  admin_limit          drawn limits of caidats, controles civils, annexes,",
-  "                       or the territoire militaire"
+  "                       or the territoire militaire",
+  "",
+  "A correction worth keeping: the 1889 'Kt des X' labels were first read as",
+  "Ksour des X, the tribe named through its granaries. They are caidats. What",
+  "settles it is that they tile the whole country rather than the south - Kt",
+  "des Riah, Kt des Ouled Yahia, Kt des Ouled Khalifa, Kt de Sfax - and that",
+  "one of them is Kt des Arrouch en Sendjac, arch being the Arabic for tribe."
  ],
  "maps": {
   "btv1b53136235q": {
@@ -172,22 +176,31 @@
    "scale": "1:800 000",
    "provenance": "Gallica",
    "annotation_forms": [
-    "tribal_ksour",
+    "caidat_label",
+    "admin_limit",
     "lineage_toponym"
    ],
    "windows_read": [
-    "pct:38,35,24,20"
+    "pct:38,35,24,20",
+    "2600,2300,2400,1500",
+    "3250,3000,750,550",
+    "4700,6650,1000,560"
    ],
    "tribes_seen": [
+    "Kt des Riah",
+    "Kt des Ouled Yahia",
+    "Kt des Ouled Khalifa",
+    "Kt des Arrouch en Sendjac",
+    "Kt des Ouled Saïd",
     "Kt des Neffet",
     "Kt des Aguerba",
     "Kt des Mahedba",
     "Kt des Hamerna",
     "Kt des Mehabel",
     "Kt des Acara",
-    "Beni Maguel"
+    "Kt de Sfax"
    ],
-   "note": "The southern form: the tribe is named through its ksour, 'Kt des X', and the label sits on the granaries rather than on the grazing. Same tribes as the Taride thirty years later, named a different way."
+   "note": "The administrative form, and eight years into the protectorate. Every label is K(t) des X - caidat of X - and they tile the whole country, most of them named for the tribe the caidat was built on. This sheet also does what no earlier one does: it draws the limits, as dotted lines. The tribe is not bounded anywhere in this collection; the caidat named after the tribe is bounded from 1889.\n\nFirst read as 'Ksour des X', the tribe named through its granaries, which was wrong. Three things settle it: the labels tile the Tell as well as the south, one of them is Kt de Sfax, which has no ksour, and one is Kt des Arrouch en Sendjac - arch is the Arabic for tribe."
   },
   "btv1b530647344": {
    "title": "Nouvelle carte de la Tunisie (Taride)",

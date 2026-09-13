@@ -55,14 +55,13 @@ random.
 | --- | --- | --- |
 | `territory_label` | The tribe's name in letterspaced capitals across the country it holds, no boundary drawn | 1842, 1853, 1857, 1881 ×3, 1900, 1911, 1920 |
 | `marked_tribe` | A territory label carrying an explicit `(Tribu)`, `(Tribu des)`, `(Tribus)`, `TERRITOIRE DES` | 1881 Lasailly only |
-| `tribal_ksour` | `Kt des X` — the tribe named through its fortified granaries | 1889 SGA 1:800 000 |
 | `douar_toponym` | A settlement printed `Dr` / `Douar` + a lineage name | 1857, 1881 Garnier, and both 1:50 000 sheets read |
 | `lineage_toponym` | Any place name carrying Ouled / Oulad / Beni / ben | Almost everything |
 | `smala` | A settlement named as a tribe's smala | 1900, 1920 |
 | `glossary` | A legend panel translating the tribal and settlement vocabulary the map uses | 1881 *Voltaire* |
 | `thematic_distribution` | The map's subject is the distribution of a mode of habitation, mapped as areas | 1930 *Habitation rurale des indigènes* |
-| `caidat_label` | The caïdat — the administrative unit built on the tribe — named across its ground | 1943 |
-| `admin_limit` | Drawn limits of caïdats, contrôles civils, annexes, the territoire militaire | 1900, 1930, 1943 |
+| `caidat_label` | The caïdat — the administrative unit built on the tribe — named across its ground, abbreviated `Kt des X` on the 1889 sheet and written out by 1943 | 1889, 1943 |
+| `admin_limit` | Drawn limits of caïdats, contrôles civils, annexes, the territoire militaire. The only boundaries in this collection that enclose a named native unit — no sheet bounds a tribe | 1889, 1900, 1930, 1943 |
 
 A form is recorded when it was seen in the windows read, so the absence of a form
 from a row is absence of evidence at that grain. `lineage_toponym` in particular

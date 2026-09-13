@@ -26,11 +26,14 @@ So the coding has three routes, and every row says which one it rests on:
               right publisher, no tribes in the window read - is why.
 
 What the inspected maps show, which is the finding docs/TRIBES.md is written
-around: the annotation does not fade out, it changes grain. 1842-1881 prints the
-tribe as a country. 1889 prints it as its ksour. 1900-1920 keeps the name but
-sets it in type so spaced it is barely a name. 1943 prints the caidat instead.
-And the 1:50 000 sheets, at every date, print neither - they print the douar,
-the lineage, the henchir, the grain below the tribe.
+around: the annotation does not fade out, it changes what it names. 1842-1881
+prints the tribe as a country, unbounded. By 1889, eight years into the
+protectorate, the Service geographique prints the *caidat* instead - Kt des Riah,
+Kt des Ouled Yahia - and draws its limits, which nobody ever drew for a tribe.
+Commercial sheets keep the tribe names into the 1920s; by 1943 most caidats are
+named for a market town rather than for a people. And the 1:50 000 sheets, at
+every date, print none of it - they print the douar, the lineage, the henchir,
+the grain below the tribe.
 
 Outputs:
     data/gallica_tunisia_maps_tribes.csv
@@ -327,13 +330,17 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
     add("")
     add("## What the annotation looks like, and how it changed")
     add("")
-    add("A tribe is never drawn as a polygon. Not once, on any sheet read for this "
-        "coding. What the maps print is a **name in letterspaced capitals laid "
-        "across the country the tribe holds**, and where the name stops the "
-        "annotation stops. Whoever engraved these knew roughly where a tribe was and "
-        "did not pretend to know where it ended — which is a more honest map of a "
-        "pastoral society than a boundary would have been, and a harder one to turn "
-        "into data.")
+    add("**A tribe is never drawn as a polygon.** Not once, on any sheet read for "
+        "this coding. What the maps print is a *name in letterspaced capitals laid "
+        "across the country the tribe holds*, and where the name stops the annotation "
+        "stops. Whoever engraved these knew roughly where a tribe was and did not "
+        "pretend to know where it ended — which is a more honest map of a pastoral "
+        "society than a boundary would have been, and a harder one to turn into data.")
+    add("")
+    add("What does get a boundary is the caïdat. From 1889 the Service géographique "
+        "draws dotted limits around units named for the tribes — and that is the "
+        "whole administrative story in one typographic difference: a tribe is a name "
+        "without edges, a caïdat is a name with them.")
     add("")
     add("Read in date order, the inspected maps show the grain of the annotation "
         "changing while the ground stays the same:")
@@ -365,20 +372,31 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
         "de la guerre en Tunisie* prints `(Tribu)` under the name. It is transcribed "
         "in full below.")
     add("")
-    add("**1889, the tribe as its granaries.** The Service géographique's 1:800 000 "
-        "names the southern tribes not by their grazing but by their ksour — `Kt des "
-        "Neffet`, `Kt des Aguerba`, `Kt des Mahedba`, `Kt des Acara`. Same tribes as "
-        "the Taride map thirty years later; a different thing pointed at. A ksar is a "
-        "building with coordinates. Grazing is not.")
+    add("**1889, the tribe becomes the caïdat — and acquires an edge.** The Service "
+        "géographique's 1:800 000, eight years into the protectorate, tiles the whole "
+        "country with `Kt des X`: *caïdat des Riah*, *des Ouled Yahia*, *des Ouled "
+        "Khalifa*, *des Neffet*, *des Aguerba*, *des Acara*, and — the label that "
+        "settles what the abbreviation means — *Kt des Arrouch en Sendjac*, `arch` "
+        "being the Arabic for tribe. Most caïdats are still named for the tribe they "
+        "were built on, so the names survive; what changes is that they are now the "
+        "names of administrative units, and the sheet draws their limits as dotted "
+        "lines. Nobody ever drew a limit around a tribe.")
     add("")
-    add("**1900–1943, the tribe becomes the caidat.** The Touring Club sheet of 1900 "
-        "still prints the names but sets them so widely that a letter can stand 8 km "
-        "from its neighbour, while the administrative limits are inked more strongly "
-        "than the names. By 1943 the Service géographique's 1:500 000 prints CAÏDAT DE "
-        "TEBOURSOUK, CAÏDAT DE SOUK EL KHEMIS across the same Tell in the same "
-        "letterspaced capitals — the annotation survives, the tribe is replaced by the "
-        "unit the protectorate built on it, and most of those units are named for a "
-        "market town rather than for a people.")
+    add("*(An earlier reading of this sheet took `Kt` for `Ksour` — the tribe named "
+        "through its granaries. It is recorded because it was a tidy story and it was "
+        "wrong. Three things break it: the labels tile the Tell as well as the south, "
+        "one of them is `Kt de Sfax`, which has no ksour, and one is `Kt des "
+        "Arrouch`.)*")
+    add("")
+    add("**1900–1943, the name detaches from the people.** Commercial sheets keep the "
+        "tribes: the Touring Club map of 1900 and the Taride of 1920 both still print "
+        "Souassi, Metellith, Neffet, though the Touring Club sets them so widely that "
+        "a letter can stand 8 km from its neighbour while the administrative limits "
+        "are inked more strongly than the names. The military sheets do not. By 1943 "
+        "the Service géographique's 1:500 000 prints CAÏDAT DE TEBOURSOUK, CAÏDAT DE "
+        "SOUK EL KHEMIS across the same Tell in the same letterspaced capitals — same "
+        "unit as 1889, and now named for the market town rather than for the people. "
+        "Fifty-four years to go from *caïdat des Riah* to *caïdat de Teboursouk*.")
     add("")
     add("**And at 1:50 000, none of the above.** The large-scale series never names a "
         "tribe. It names the grain below: `Dr en Nouilia`, `Dr Krelifa b. Slimane` — "

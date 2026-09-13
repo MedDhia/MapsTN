@@ -26,6 +26,7 @@ a relevance score.
 | **Tribal annotation report** | [`docs/TRIBES.md`](docs/TRIBES.md) |
 | **Tribal variable definitions** | [`docs/CODEBOOK-TRIBES.md`](docs/CODEBOOK-TRIBES.md) |
 | **Tribe names placed on the ground** | [`data/tribal_territories.csv`](data/tribal_territories.csv), [`.geojson`](data/tribal_territories.geojson) |
+| **Do two sheets agree on where a tribe is?** | [`data/tribal_map_agreement.csv`](data/tribal_map_agreement.csv) |
 | **OSM rebuild coding (CSV)** | [`data/gallica_tunisia_maps_osm.csv`](data/gallica_tunisia_maps_osm.csv) |
 | **OSM rebuild report** | [`docs/OSM-REBUILD.md`](docs/OSM-REBUILD.md) |
 | **OSM layer crosswalk** | [`config/osm_crosswalk.json`](config/osm_crosswalk.json) |
@@ -322,7 +323,9 @@ argument in [`docs/TRIBES.md`](docs/TRIBES.md).
 print is the tribe's name in letterspaced capitals laid across the country it
 holds, and where the name stops the annotation stops — which is a more honest map
 of a pastoral society than a boundary would have been, and a harder one to turn
-into data.
+into data. What does get a boundary is the **caïdat**: from 1889 the Service
+géographique draws dotted limits around units named for the tribes. A tribe is a
+name without edges; a caïdat is a name with them.
 
 What changes across a century is the grain, not the presence:
 
@@ -330,8 +333,8 @@ What changes across a century is the grain, not the presence:
 | --- | --- | --- |
 | 1842–1881 | The tribe as a country | `MADJER`, `HAMEMA`, `OULED TRABERSI`, and on the 1857 Dépôt de la guerre sheet `DOUARS OULED ARFA` |
 | 1881 | The tribe marked explicitly | Lasailly's war-theatre map prints `(Tribu)` under each name |
-| 1889 | The tribe as its granaries | `Kt des Neffet`, `Kt des Aguerba`, `Kt des Acara` — a ksar has coordinates, grazing does not |
-| 1900–1943 | The tribe becomes the caïdat | `CAÏDAT DE TEBOURSOUK` in the same letterspaced capitals across the same Tell |
+| 1889 | The tribe becomes the caïdat, and acquires an edge | `Kt des Riah`, `Kt des Ouled Yahia`, `Kt des Arrouch` — caïdats named for tribes, with their limits drawn as dotted lines |
+| 1900–1943 | The caïdat's name detaches from the people | `CAÏDAT DE TEBOURSOUK` in the same letterspaced capitals across the same Tell, now named for the market town |
 | any date, 1:50 000 | Neither — the grain below the tribe | `Dr en Nouilia`, `Hr Ouled el Hadj`, `Bir Oulad Achour` |
 
 Two sheets were then transcribed label by label and placed on the ground: the
