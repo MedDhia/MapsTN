@@ -366,11 +366,19 @@ that north-western corner.
 
 **How many people was a tribe?** No sheet says — a map gives location, never
 size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the
-sources that do carry numbers and what each of them counts: Pellissier's own 1853
-text, whose map is the one transcribed here, gives 21 of these tribes in souls
-and four more in horsemen; the 1931 census gives nine of them as caïdats. 33 of
-the 60 Tunisian-side tribes have a figure, 27 have none, and souls, tents,
-horsemen and taxpayers are four different things that must not be mixed.
+sources that do carry numbers and what each of them counts. Three have been read
+rather than cited: Pellissier's own 1853 text, whose map is the one transcribed
+here; Ganiage's reconstruction from the *mejba* tax registers of c. 1860; and the
+1931 census by caïdat. **35 of the 60 Tunisian-side tribes have a figure, 25 have
+none**, and souls, tents, horsemen and taxpayers are four different things that
+must not be mixed.
+
+The two nineteenth-century sources disagree by a factor of four on the steppe.
+Pellissier counts warriors and multiplies by five, a rule he states himself;
+Ganiage counts taxpayers and calls the older estimates *« dénuées de fondement »*
+for the centre and south. For the four great steppe tribes together that is
+50,000 people against about 196,000 — and it is Ganiage's order of magnitude, not
+Pellissier's, that the 1931 census finds in the same places.
 
 ## What can be rebuilt from OpenStreetMap
 
