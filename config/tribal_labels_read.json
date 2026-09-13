@@ -585,6 +585,423 @@
      "read_confidence": "high"
     }
    ]
+  },
+  "btv1b53136235q": {
+   "title": "Carte de la Régence de Tunis / par E. Pellissier",
+   "year": 1853,
+   "scale": "1:800 000",
+   "image": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b53136235q/f1/full/full/0/native.jpg",
+   "scan_width": 7208,
+   "scan_height": 9942,
+   "face_px": {
+    "left": 300,
+    "top": 400,
+    "right": 6950,
+    "bottom": 9150
+   },
+   "excluded_px": [],
+   "marker_style": "Nothing is marked. Tribe names are set in letterspaced capitals across the country they hold and look exactly like the region and massif names set the same way, so every label here is classed by judgement rather than read off a tag - which is why the 1881 sheet, not this one, is the reference transcription. Labels that could be a village rather than a tribe are recorded at medium confidence.",
+   "reading_note": "Two labels were read twice from overlapping tiles. HAMEMA came out 80 px apart (5.5 km). MADJER was worse and is the instructive case: it runs along an arc of about 1500 px and its letters were read at three widely separated points before they resolved into one name, so its anchor is the arc midpoint and carries a note. On this sheet the repeat-reading error is an order of magnitude larger than on the 1881 one, where the (Tribu) tag fixes where the label ends.",
+   "control_points": [
+    {
+     "place": "Tunis",
+     "lon": 10.181,
+     "lat": 36.806,
+     "x": 4684,
+     "y": 2388
+    },
+    {
+     "place": "Bizerte",
+     "lon": 9.873,
+     "lat": 37.275,
+     "x": 4248,
+     "y": 1629
+    },
+    {
+     "place": "Tabarka",
+     "lon": 8.758,
+     "lat": 36.954,
+     "x": 2817,
+     "y": 2165
+    },
+    {
+     "place": "Béja",
+     "lon": 9.181,
+     "lat": 36.725,
+     "x": 3291,
+     "y": 2358
+    },
+    {
+     "place": "Le Kef",
+     "lon": 8.705,
+     "lat": 36.174,
+     "x": 2862,
+     "y": 3438
+    },
+    {
+     "place": "Tébessa",
+     "lon": 8.124,
+     "lat": 35.404,
+     "x": 1994,
+     "y": 4677
+    },
+    {
+     "place": "Kairouan",
+     "lon": 10.096,
+     "lat": 35.678,
+     "x": 4630,
+     "y": 4179
+    },
+    {
+     "place": "Sousse",
+     "lon": 10.64,
+     "lat": 35.826,
+     "x": 5280,
+     "y": 3938
+    },
+    {
+     "place": "Mahdia",
+     "lon": 11.062,
+     "lat": 35.504,
+     "x": 5892,
+     "y": 4387
+    },
+    {
+     "place": "Sfax",
+     "lon": 10.76,
+     "lat": 34.74,
+     "x": 5305,
+     "y": 5701
+    }
+   ],
+   "control_note": "Gafsa and Tozeur are not among the control points because neither could be found within 300 px of where a fit on the other ten predicts it. The south-west of this sheet is the part Pellissier had least survey for, and the failure to place Gafsa is the measurement of that.",
+   "labels": [
+    {
+     "text": "El Mogod",
+     "marker": null,
+     "x": 3400,
+     "y": 1994,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Khemir",
+     "marker": null,
+     "x": 2805,
+     "y": 2387,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Nefza",
+     "marker": null,
+     "x": 2986,
+     "y": 2266,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Merassen",
+     "marker": null,
+     "x": 2607,
+     "y": 2614,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Ouchtata",
+     "marker": null,
+     "x": 2271,
+     "y": 2887,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Oulad Sedira",
+     "marker": null,
+     "x": 2469,
+     "y": 2939,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Hakim",
+     "marker": null,
+     "x": 2770,
+     "y": 2939,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Oulad bou Salem",
+     "marker": null,
+     "x": 3090,
+     "y": 2809,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Djendouba",
+     "marker": null,
+     "x": 3047,
+     "y": 2870,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Zouaka",
+     "marker": null,
+     "x": 3322,
+     "y": 2797,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Grezouani",
+     "marker": null,
+     "x": 2788,
+     "y": 2614,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Riah",
+     "marker": null,
+     "x": 3374,
+     "y": 2063,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Trabelsia",
+     "marker": null,
+     "x": 4060,
+     "y": 2671,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Drid et autres Arabes melés",
+     "marker": null,
+     "x": 4069,
+     "y": 2844,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Oulad Khiar",
+     "marker": null,
+     "x": 4483,
+     "y": 2732,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Charen",
+     "marker": null,
+     "x": 2374,
+     "y": 3227,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Hanecha",
+     "marker": null,
+     "x": 2064,
+     "y": 3477,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Oulad bou Ghanem",
+     "marker": null,
+     "x": 2417,
+     "y": 3736,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Ouartan",
+     "marker": null,
+     "x": 2641,
+     "y": 3546,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Oulad Doufan",
+     "marker": null,
+     "x": 2417,
+     "y": 3926,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Yahia bou Taleb",
+     "marker": null,
+     "x": 2029,
+     "y": 4063,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Oulad Yacoub",
+     "marker": null,
+     "x": 3090,
+     "y": 3736,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Zeralma",
+     "marker": null,
+     "x": 2357,
+     "y": 4081,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Oulad Aoun",
+     "marker": null,
+     "x": 3690,
+     "y": 3219,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Oulad Said",
+     "marker": null,
+     "x": 4828,
+     "y": 3400,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Djelas",
+     "marker": null,
+     "x": 4181,
+     "y": 3994,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Frachiche Oulad Ali",
+     "marker": null,
+     "x": 2503,
+     "y": 4697,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Frachiche Ouazaz",
+     "marker": null,
+     "x": 2417,
+     "y": 5050,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Madjer",
+     "marker": null,
+     "x": 3300,
+     "y": 4780,
+     "read_confidence": "medium",
+     "note": "The longest label on the sheet: MADJER follows an arc of about 1500 px from Sbiba round to Djilma, and the letters were read at three points 1000 px apart before it was clear they were one name. The anchor is the midpoint of the arc, and is worth less than the others."
+    },
+    {
+     "text": "Methelith",
+     "marker": null,
+     "x": 4776,
+     "y": 4921,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Hamema",
+     "marker": null,
+     "x": 4151,
+     "y": 5574,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Oulad el Goussem",
+     "marker": null,
+     "x": 4345,
+     "y": 5430,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Oulad Khalifa",
+     "marker": null,
+     "x": 4586,
+     "y": 4792,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Oulad Amer",
+     "marker": null,
+     "x": 4871,
+     "y": 4671,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Redouan",
+     "marker": null,
+     "x": 4569,
+     "y": 5223,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Djelas Senrassin",
+     "marker": null,
+     "x": 4509,
+     "y": 4447,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Methelith Oulad Alia",
+     "marker": null,
+     "x": 5738,
+     "y": 4593,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Methelith Oulad Merab",
+     "marker": null,
+     "x": 5402,
+     "y": 4964,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Methelith Meraïah",
+     "marker": null,
+     "x": 5574,
+     "y": 5050,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Methelith Oulad Zid",
+     "marker": null,
+     "x": 5712,
+     "y": 5050,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Methelith Nadjem",
+     "marker": null,
+     "x": 5350,
+     "y": 5343,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Mahedeba",
+     "marker": null,
+     "x": 4362,
+     "y": 6348,
+     "read_confidence": "high"
+    },
+    {
+     "text": "Agherba",
+     "marker": null,
+     "x": 4957,
+     "y": 5761,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Taïfa",
+     "marker": null,
+     "x": 4129,
+     "y": 5779,
+     "read_confidence": "medium"
+    },
+    {
+     "text": "Hamema Oulad Aziz",
+     "marker": null,
+     "x": 3776,
+     "y": 6244,
+     "read_confidence": "medium"
+    }
+   ],
+   "transcribed_extent": {
+    "read_px": {
+     "left": 1900,
+     "top": 1680,
+     "right": 6720,
+     "bottom": 6920
+    },
+    "note": "Not the whole face. The tiles read cover the Tell, the Kroumirie, the steppe and the Sahel down to about latitude 34 - the country the 1881 sheet also labels. The Jerid, the Nefzaoua, the Dahar and the Matmata were not transcribed, so this sheet's label count is not comparable with the 1881 sheet's and the two must not be differenced as coverage. The Ouerghemma, visible on the overview in the far south-east, is one of the labels left unread."
+   }
   }
  }
 }

@@ -73,8 +73,11 @@ noted where it was looked for.
 
 One row per label read off a map face, in
 [`data/tribal_territories.csv`](../data/tribal_territories.csv) and
-[`.geojson`](../data/tribal_territories.geojson). 69 rows, all from the 1881
-Lasailly sheet.
+[`.geojson`](../data/tribal_territories.geojson). 114 rows: 69 from the 1881
+Lasailly sheet, whose face was read whole, and 45 from the 1853 Pellissier, read
+over the Tell, the steppe and the Sahel down to about 34°N. **The two do not
+cover the same ground**, so the label counts are not a measure of how much each
+sheet annotates.
 
 | Variable | Definition |
 | --- | --- |
@@ -83,12 +86,12 @@ Lasailly sheet.
 | `tribe` | The gazetteer's canonical name for it. `O. Riah`, `Ouled Riah` and `Riah` all resolve to `Riah`. |
 | `in_gazetteer` | 1 if the printed text resolved to a gazetteer entry, 0 if it is carried through unresolved. |
 | `marker` | The marker as printed: `Tribu`, `Tribu des`, `Tribus`, `Territoire des`, or empty. |
-| `marked_tribe` | 1 if any marker is present. 40 of 69. |
+| `marked_tribe` | 1 if any marker is present. 40 of 114 — all of them on the 1881 sheet, since the 1853 one marks nothing. |
 | `x_px`, `y_px` | Where the label centre sits on the full-resolution scan. Kept so that any reading can be checked against the image. |
 | `lon`, `lat` | WGS84, three decimals. **Not a territory centroid** — see below. |
-| `gouvernorat` | The modern gouvernorat the point falls in, or empty for the 29 labels west of the frontier. |
+| `gouvernorat` | The modern gouvernorat the point falls in, or empty for the 31 labels west of the frontier. |
 | `inside_tunisia` | 1 if the point falls inside the modern border. |
-| `read_confidence` | `high` — read without hesitation at full resolution. `medium` — the letters are broken or the name unfamiliar, and the transcription could be wrong by a letter or two. 15 of 69 are `medium`. |
+| `read_confidence` | `high` — read without hesitation at full resolution. `medium` — the letters are broken, the name is unfamiliar, or the label could be a village rather than a tribe. 31 of 114 are `medium`, and 16 of those are on the 1853 sheet, which marks nothing and so leaves the class to judgement. |
 
 ### What `lon`/`lat` mean, and what they do not
 
@@ -98,14 +101,19 @@ collection draws a tribal boundary.
 
 Two error terms, both in [`data/tribal_fit.json`](../data/tribal_fit.json):
 
-* **Transform.** An affine fitted to seven towns with known modern coordinates.
-  In-sample RMS 39.6 px (3.16 km); leave-one-out RMS 77.3 px (6.17 km). Use the
-  leave-one-out figure — it is the one that applies to a label the fit never saw.
-  It contains the 1881 compilation's own error and the error in reading a printed
-  dot, and does not separate them.
+* **Transform.** An affine per sheet, fitted to towns with known modern
+  coordinates — seven on the 1881 sheet, ten on the 1853. Leave-one-out RMS, which
+  is the figure that applies to a label the fit never saw, is **6.17 km** for 1881
+  and **8.17 km** for 1853. Each contains the compilation's own error and the error
+  in reading a printed dot, and does not separate them.
 * **Annotation.** Six labels measured run 175 to 400 px, 14 to 32 km. This is the
   larger term, it is irreducible, and it is a property of the map rather than of
   the method.
+* **Reading, on an unmarked sheet.** On the 1881 sheet, where `(Tribu)` fixes where
+  a label ends, the same label read twice from two tiles agreed to 3–5 px. On the
+  1853 sheet the same check gives 80 px for HAMEMA, and MADJER runs along an arc of
+  some 1500 px whose centre is a judgement call. Its anchor carries a note in
+  [`config/tribal_labels_read.json`](../config/tribal_labels_read.json).
 
 So: a label anchor is good to roughly 6 km of where the name is printed, and the
 name covers 14–32 km of ground. Do not join these points to modern boundaries and
@@ -116,8 +124,9 @@ the points findable, not to assign a tribe to a governorate.
 
 | File | What it holds |
 | --- | --- |
-| [`config/tribal_gazetteer.json`](../config/tribal_gazetteer.json) | The marker vocabulary as regexes, and 75 tribe names with their observed spellings. Built bottom-up from the sheets; not an ethnography of Tunisia. |
+| [`config/tribal_gazetteer.json`](../config/tribal_gazetteer.json) | The marker vocabulary as regexes, and 86 tribe names with their observed spellings. Built bottom-up from the sheets; not an ethnography of Tunisia. Six entries are fractions — five of the M'Talith and one of the Hammama — which only the 1853 sheet maps separately. |
 | [`config/inspected_tribal_maps.json`](../config/inspected_tribal_maps.json) | What each of the sixteen inspected maps carries, which windows were read, and which tribes were seen. |
 | [`config/tribal_labels_read.json`](../config/tribal_labels_read.json) | Every transcribed label with its scan pixel, and the control points used to place them. |
 | [`data/tribal_fit.json`](../data/tribal_fit.json) | Per-map transform coefficients, px per degree, RMS and leave-one-out RMS, and the residual at each control town. |
 | [`data/tribal_annotation_summary.json`](../data/tribal_annotation_summary.json) | Distributions of every coded variable, and the forms by decade. |
+| [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) | The 30 tribes named on both transcribed sheets, and how far apart the two sheets put each one. Median 23 km, which is about one label length. The 197 km outlier, Ouled Khiar, is two different groups sharing a name. |

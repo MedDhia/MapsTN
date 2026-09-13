@@ -11,32 +11,47 @@ edges.
 
 What a point means, precisely: *the engraver centred this tribe's name here*.
 Six labels measured on the tiles run 175 to 400 px - 14 to 32 km of ground - so
-the point locates the tribe to within a tribe's width. Reading the same label
-twice from two overlapping tiles agreed to 3-5 px, and the two towns read twice
-agreed to 3 px, so transcription is not what limits this. The annotation is.
+the point locates the tribe to within a tribe's width. On the 1881 sheet, where
+a (Tribu) tag fixes where a label ends, reading the same label twice from two
+overlapping tiles agreed to 3-5 px. On the 1853 sheet, which marks nothing, the
+same check gives 80 px, and its longest label runs along an arc of some 1500 px
+whose centre is a judgement. Transcription is not what limits either; the
+annotation is.
 
 **Georeferencing.** From towns, not from the printed graticule, for a reason
-worth stating: the graticule is legible but the frame is not square on the scan
-- the 8 degree tick on the top border and the one on the bottom border are 141 px
-apart in x - so a transform fitted to the border ticks inherits the frame's own
-skew. Seven towns with known modern coordinates give an affine instead, and the
-residual is then a measurement rather than a leftover: it is how far the 1881
-compilation sits from the ground, plus how well I read a printed dot.
+worth stating: both sheets have a legible graticule, and on the 1881 one the
+scan carries a rotation and the frame is not square - the 8 degree tick on the
+top border and the one on the bottom border are 141 px apart in x - so a
+transform fitted to the border ticks inherits the frame's own skew. Towns with
+known modern coordinates give an affine instead, and the residual is then a
+measurement rather than a leftover: how far the compilation sits from the ground,
+plus how well I read a printed dot, not separable into the two.
+
+Where a town cannot be found is a measurement too. On the 1853 sheet neither
+Gafsa nor Tozeur is within 300 px of where a fit on the other ten towns predicts
+it, and the south-west is the part Pellissier had least survey for.
 
 The residual is reported two ways. In-sample RMS is what the fit achieves on the
 points it was given. Leave-one-out RMS refits without each town and predicts it,
 which is the number that means anything for a label the fit has never seen - and
-on seven points it is the larger of the two. Both are printed.
+on this few points it is the larger of the two. Both are written out.
 
 An affine is the right model and not a neutral one: it absorbs rotation, scale
 and shear but cannot bend, so on a sheet drawn on a conic projection the
-curvature it cannot follow ends up inside the residual. At this scale, over this
-extent, that is small compared with the thing being measured.
+curvature it cannot follow ends up inside the residual. At these scales, over
+this extent, that is small compared with the thing being measured.
+
+**The one external check.** No ground truth exists for where a tribe was. What
+does exist is a second compiler: 30 tribes are named on both sheets, twenty-eight
+years and one conquest apart, and agreement() reports how far apart the two put
+each. The median is about one label length, and the outliers are worth reading -
+the largest, at 197 km, is two different groups sharing a name.
 
 Outputs:
     data/tribal_territories.csv        one row per label, with lon/lat
     data/tribal_territories.geojson    EPSG:4326 points
-    data/tribal_fit.json               per-map transform and residuals
+    data/tribal_fit.json               per-map transform, residuals, agreement
+    data/tribal_map_agreement.csv      tribes named on both sheets, and the gap
     docs/img/tribal_territories.png    the labels on contemporary boundaries
 
 Usage:
@@ -79,6 +94,9 @@ COORD_DECIMALS = 3
 # happen to fall outside the modern border.
 INK = "#2f5f8f"
 INK_OUTSIDE = "#9aaec4"
+# One hue per sheet, so that a pair of points and the hairline between them read
+# as one tribe placed twice rather than as two tribes.
+YEAR_INK = {1853: "#a5642a", 1881: "#2f5f8f"}
 LAND = "#f2efe9"
 LINE = "#c9c2b6"
 
@@ -115,7 +133,7 @@ def canonical(text: str, lookup: dict) -> tuple[str, bool]:
     expanded = re.sub(r"^(o|od|oulad|ouled)\b", "ouled", key)
     if expanded in lookup:
         return lookup[expanded]["name"], True
-    stripped = re.sub(r"^ouled\s+", "", key)
+    stripped = re.sub(r"^ouled\s+", "", expanded)
     if stripped in lookup:
         return lookup[stripped]["name"], True
     return text, False
@@ -233,6 +251,54 @@ def place(config: dict, gazetteer: dict) -> tuple[list[dict], dict]:
     return rows, fits
 
 
+def haversine_km(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
+    radius = 6371.0
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    dphi = phi2 - phi1
+    dlambda = math.radians(lon2 - lon1)
+    a = (math.sin(dphi / 2) ** 2
+         + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2)
+    return 2 * radius * math.asin(math.sqrt(a))
+
+
+def agreement(rows: list[dict]) -> list[dict]:
+    """Tribes named on more than one sheet, and how far apart the two sheets put
+    them. This is the only external check available on either transcription: no
+    ground truth exists for where a tribe was, but two independent compilers
+    agreeing to a few kilometres is evidence that both were describing the same
+    thing, and a large disagreement marks a label to go back and look at."""
+    by_tribe: dict[str, dict[str, list[dict]]] = {}
+    for row in rows:
+        by_tribe.setdefault(row["tribe"], {}).setdefault(row["record_id"], []).append(row)
+    out = []
+    for tribe, by_map in sorted(by_tribe.items()):
+        if len(by_map) < 2:
+            # One sheet only, or several labels on one sheet - the Frechiche and
+            # the Zlass each carry two labels on the 1853 face, and comparing
+            # those to each other would measure the width of a tribe, not the
+            # agreement of two compilers.
+            continue
+        sheets = sorted(by_map.items(), key=lambda kv: kv[1][0]["year"])[:2]
+        (_, group_a), (_, group_b) = sheets
+        first, second = group_a[0], group_b[0]
+        out.append({
+            "tribe": tribe,
+            "year_a": first["year"],
+            "label_a": first["label_as_printed"],
+            "lon_a": first["lon"],
+            "lat_a": first["lat"],
+            "labels_a": len(group_a),
+            "year_b": second["year"],
+            "label_b": second["label_as_printed"],
+            "lon_b": second["lon"],
+            "lat_b": second["lat"],
+            "labels_b": len(group_b),
+            "distance_km": round(haversine_km(first["lon"], first["lat"],
+                                              second["lon"], second["lat"]), 1),
+        })
+    return sorted(out, key=lambda r: r["distance_km"])
+
+
 def write_csv(rows: list[dict], path: Path) -> None:
     fields = ["record_id", "year", "label_as_printed", "tribe", "in_gazetteer",
               "marker", "marked_tribe", "x_px", "y_px", "lon", "lat",
@@ -265,7 +331,12 @@ def write_geojson(rows: list[dict], fits: dict, path: Path) -> None:
     path.write_text(json.dumps(collection, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-def draw(rows: list[dict], fits: dict, path: Path) -> None:
+def map_fits(fits: dict) -> dict:
+    """The per-map entries. Keys starting with an underscore hold summaries."""
+    return {k: v for k, v in fits.items() if not k.startswith("_")}
+
+
+def draw(rows: list[dict], fits: dict, pairs: list[dict], path: Path) -> None:
     reader0 = shapefile.Reader(str(REPO_ROOT / "data" / "boundaries" / "tun_admin0.shp"))
     country = shape(reader0.shapeRecords()[0].shape.__geo_interface__)
     _, units2 = load_units(REPO_ROOT / "data" / "boundaries" / "tun_admin2.shp",
@@ -281,40 +352,64 @@ def draw(rows: list[dict], fits: dict, path: Path) -> None:
         xs, ys = geom.exterior.xy
         ax.plot(xs, ys, color="#8d8579", linewidth=0.9, zorder=2)
 
-    inside = [r for r in rows if r["inside_tunisia"]]
-    outside = [r for r in rows if not r["inside_tunisia"]]
-    ax.scatter([r["lon"] for r in outside], [r["lat"] for r in outside], s=16,
-               facecolor=INK_OUTSIDE, edgecolor="none", zorder=3)
-    ax.scatter([r["lon"] for r in inside], [r["lat"] for r in inside], s=26,
-               facecolor=INK, edgecolor="white", linewidth=0.4, zorder=4)
+    # A line between the two sheets' placements of one tribe. Drawn first and
+    # thin, because its length is the finding and the points are the evidence.
+    for pair in pairs:
+        ax.plot([pair["lon_a"], pair["lon_b"]], [pair["lat_a"], pair["lat_b"]],
+                color="#b6a894", linewidth=0.6, zorder=3)
+
+    years = sorted({r["year"] for r in rows})
+    for year in years:
+        colour = YEAR_INK.get(year, INK)
+        group = [r for r in rows if r["year"] == year]
+        inside = [r for r in group if r["inside_tunisia"]]
+        outside = [r for r in group if not r["inside_tunisia"]]
+        ax.scatter([r["lon"] for r in outside], [r["lat"] for r in outside], s=14,
+                   facecolor=colour, edgecolor="none", alpha=0.35, zorder=4)
+        ax.scatter([r["lon"] for r in inside], [r["lat"] for r in inside], s=24,
+                   facecolor=colour, edgecolor="white", linewidth=0.4, zorder=5,
+                   label=f"{year}")
+
     # The north-west is where the annotation is densest, which is the finding and
-    # also what makes the names collide. Offsets alternate side and height for
-    # points that sit within half a degree of one already labelled.
+    # also what makes the names collide. Names are written once per tribe, at the
+    # latest sheet that carries it, with offsets alternating for crowded points.
+    latest: dict[str, dict] = {}
+    for row in rows:
+        if not row["inside_tunisia"]:
+            continue
+        current = latest.get(row["tribe"])
+        if current is None or row["year"] > current["year"]:
+            latest[row["tribe"]] = row
     placed: list[tuple[float, float]] = []
-    for row in sorted(inside, key=lambda r: (-r["lat"], r["lon"])):
+    for row in sorted(latest.values(), key=lambda r: (-r["lat"], r["lon"])):
         crowded = sum(1 for lon, lat in placed
                       if abs(lon - row["lon"]) < 0.45 and abs(lat - row["lat"]) < 0.25)
         dx, dy = (6, 2) if crowded % 2 == 0 else (-6, -8)
         ax.annotate(row["tribe"], (row["lon"], row["lat"]),
-                    textcoords="offset points", xytext=(dx, dy), fontsize=4.6,
-                    ha="left" if dx > 0 else "right", color="#1d3d52", zorder=5)
+                    textcoords="offset points", xytext=(dx, dy), fontsize=4.5,
+                    ha="left" if dx > 0 else "right", color="#3a352d", zorder=6)
         placed.append((row["lon"], row["lat"]))
 
-    fit = next(iter(fits.values()))
+    fits_by_map = map_fits(fits)
+    summary = fits.get("_agreement", {})
     ax.set_xlim(7.3, 11.9)
     ax.set_ylim(32.9, 37.7)
     ax.set_aspect(1 / math.cos(math.radians(35.3)))
     ax.set_axis_off()
-    years = sorted({str(f["year"]) for f in fits.values()})
-    ax.set_title(f"Where the {', '.join(years)} sheet puts each tribe's name"
-                 if len(years) == 1 else
-                 f"Where the {', '.join(years)} sheets put each tribe's name",
+    ax.legend(loc="lower left", frameon=False, fontsize=7, title="sheet",
+              title_fontsize=7, scatterpoints=1)
+    ax.set_title("Where two sheets put each tribe's name",
                  fontsize=10, color="#26231e", loc="left", pad=10)
+    inside_n = sum(1 for r in rows if r["inside_tunisia"])
+    accuracy = ", ".join(f"{f['year']} leave-one-out {f['loo_rms_km']} km"
+                         for f in fits_by_map.values())
     ax.text(0.0, -0.02,
-            f"{len(inside)} labels inside modern Tunisia, {len(outside)} west of the "
-            f"frontier (pale).\nPoints are label centres, not territory centroids: no "
-            f"tribal boundary is drawn on the sheet.\nFit to {fit['control_points']} towns, "
-            f"leave-one-out RMS {fit['loo_rms_km']} km.",
+            f"{len(rows)} labels, {inside_n} inside modern Tunisia; the paler points "
+            f"lie west of the frontier.\nPoints are label centres, not territory "
+            f"centroids: no sheet draws a tribal boundary.\nA hairline joins the two "
+            f"sheets' placements of one tribe — {summary.get('tribes_on_two_sheets', 0)} "
+            f"tribes, median {summary.get('median_km', 0)} km apart.\nTransform "
+            f"accuracy: {accuracy}.",
             transform=ax.transAxes, fontsize=6.2, color="#57534a", va="top")
     figure.tight_layout()
     figure.savefig(path, bbox_inches="tight", facecolor="white")
@@ -333,15 +428,30 @@ def main(argv: list[str] | None = None) -> int:
     config = json.loads(args.config.read_text(encoding="utf-8"))
     gazetteer = load_gazetteer(args.gazetteer)
     rows, fits = place(config, gazetteer)
+    pairs = agreement(rows)
+    if pairs:
+        distances = sorted(p["distance_km"] for p in pairs)
+        fits["_agreement"] = {
+            "tribes_on_two_sheets": len(pairs),
+            "median_km": distances[len(distances) // 2],
+            "max_km": distances[-1],
+            "within_10_km": sum(1 for d in distances if d <= 10),
+            "within_20_km": sum(1 for d in distances if d <= 20),
+        }
+        with (REPO_ROOT / "data" / "tribal_map_agreement.csv").open(
+                "w", newline="", encoding="utf-8") as handle:
+            writer = csv.DictWriter(handle, fieldnames=list(pairs[0]))
+            writer.writeheader()
+            writer.writerows(pairs)
 
     write_csv(rows, REPO_ROOT / "data" / "tribal_territories.csv")
     write_geojson(rows, fits, REPO_ROOT / "data" / "tribal_territories.geojson")
     (REPO_ROOT / "data" / "tribal_fit.json").write_text(
         json.dumps(fits, ensure_ascii=False, indent=1), encoding="utf-8")
     if not args.no_figure:
-        draw(rows, fits, REPO_ROOT / "docs" / "img" / "tribal_territories.png")
+        draw(rows, fits, pairs, REPO_ROOT / "docs" / "img" / "tribal_territories.png")
 
-    for record_id, fit in fits.items():
+    for record_id, fit in map_fits(fits).items():
         print(f"{record_id} {fit['year']} {fit['labels']} labels, "
               f"RMS {fit['rms_px']} px ({fit['rms_km']} km), "
               f"leave-one-out {fit['loo_rms_px']} px ({fit['loo_rms_km']} km)")

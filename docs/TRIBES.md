@@ -11,10 +11,11 @@ Which maps in this collection say where a tribe is, how each one says it, and wh
 | Labels transcribed, with pixels | [`config/tribal_labels_read.json`](../config/tribal_labels_read.json) |
 | Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |
 | Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |
+| Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |
 
 ## The catalogue does not know
 
-Across 663 records — their Dublin Core, the BnF catalogue notices behind them and the partner libraries' own item pages — the word *tribu* occurs **zero** times. A gazetteer of 75 tribe names, every one of them read off a map in this collection, matches **3** records:
+Across 663 records — their Dublin Core, the BnF catalogue notices behind them and the partner libraries' own item pages — the word *tribu* occurs **zero** times. A gazetteer of 86 tribe names, every one of them read off a map in this collection, matches **3** records:
 
 | Record | Year | What matched | Is it a tribal map? |
 | --- | --- | --- | --- |
@@ -35,7 +36,7 @@ Read in date order, the inspected maps show the grain of the annotation changing
 | Year | Map | Form | What it prints |
 | --- | --- | --- | --- |
 | 1842 | Carte de la Régence de Tunis dressée au Dépôt généra | `territory_label`, `lineage_toponym` | Dakhela; Ouled Zemlass (reading uncertain); Beni Khiar |
-| 1853 | Carte de la Régence de Tunis / par E. Pellissier | `territory_label`, `lineage_toponym` | Madjer; Oulad; Hamema |
+| 1853 | Carte de la Régence de Tunis / par E. Pellissier | `territory_label`, `lineage_toponym` | Madjer; Hamema; Frachiche Ouled Ali |
 | 1857 | Carte de la régence de Tunis, dressée au Dépôt de la | `territory_label`, `douar_toponym`, `lineage_toponym` | Ouled Trabersi; Ouled Riahh; Ouled Arfa |
 | 1881 | Carte de la Régence de Tunis (Garnier Frères) | `territory_label`, `douar_toponym`, `lineage_toponym` | Ouled Trabersi; Ouled Riahh; Ouled Arfa |
 | 1881 | Carte du théâtre de la guerre en Tunisie / dressée p | `marked_tribe`, `territory_label` | 69 labels, transcribed |
@@ -65,21 +66,51 @@ Four stages, and the third is the one worth pausing on.
 
 One map does something else entirely. *Habitation rurale des indigènes* (1930), a plate from the Atlas d'Algérie et de Tunisie, maps six classes of dwelling as coloured areas — tentes, gourbis, maisons à terrasse, maisons à toit de tuiles, maisons à l'européenne, grottes et ghorfas. It is the only thematic ethnographic map in the collection, and the only one that treats the distribution itself as the subject rather than as annotation.
 
-## The 1881 sheet, transcribed
+## Two sheets, transcribed
 
-69 labels were read off the face of [Lasailly's 1881 war-theatre map](https://gallica.bnf.fr/ark:/12148/btv1b84389986) — the whole map face in 20 overlapping tiles at full scan resolution — and each was given a coordinate. 40 of them carry an explicit `(Tribu)`-family marker and 29 do not; 40 fall inside modern Tunisia and 29 west of the frontier, in what the sheet labels the Province de Constantine. The two groups nearly coincide — the engraver marked the tribes inside the Regency and left the Constantine ones as bare capitals — but not quite: Mogod and Charen sit inside Tunisia unmarked, and two marked tribes, the Beni Mtir and the Ouled bou Ghanem, fall just west of a frontier that in 1881 was still being argued over, as General Lewal's *Etude sur la frontière de la Tunisie* in this same collection attests.
+Two of the inspected maps were read label by label and every tribe name given a coordinate: the 1881 Lasailly war-theatre sheet, because it marks its tribes with `(Tribu)` and so needs no judgement, and the 1853 Pellissier, because it is the densest tribal annotation in the collection and the earliest that is systematic. 114 labels in total, 83 of them inside modern Tunisia.
 
-![Where the 1881 sheet puts each tribe's name](img/tribal_territories.png)
+**The two transcriptions do not cover the same ground.** The 1881 face was read whole, in 20 tiles. The 1853 was read over the Tell, the Kroumirie, the steppe and the Sahel down to about latitude 34 — the country the other sheet also labels — and the Jerid, the Nefzaoua and the Dahar were left unread, the Ouerghemma among them. So the label counts below are not a measure of how much each sheet annotates, and differencing them as coverage would be differencing my reading, not the maps.
 
-**How accurate is a point?** Two different questions, and both answers are small compared with a tribe.
+| Sheet | Labels | Marked `(Tribu)` | Control towns | In-sample RMS | Leave-one-out RMS |
+| --- | --- | --- | --- | --- | --- |
+| 1853 Carte de la Régence de Tunis / par E. Pellis | 45 | 0 | 10 | 84.7 px (5.8 km) | 119.4 px (8.17 km) |
+| 1881 Carte du théâtre de la guerre en Tunisie / d | 69 | 40 | 7 | 39.6 px (3.16 km) | 77.3 px (6.17 km) |
 
-The transform is an affine fitted to 7 towns whose modern coordinates are known — Tunis, Bizerte, Le Kef, Kairouan, Sousse, Sfax, Gafsa — read off the sheet the same way the labels were. In-sample RMS is **39.6 px (3.16 km)**; leave-one-out, which is the honest number for a label the fit never saw, is **77.3 px (6.17 km)**. That figure is the 1881 compilation's own error plus mine, and it is not separable into the two.
+![Where two sheets put each tribe's name](img/tribal_territories.png)
 
-The graticule was not used, though it is printed and legible, and the reason is worth recording: the sheet is scanned with a slight rotation and its frame is not square — the 8° tick on the top border and the 8° tick on the bottom border are 141 px apart in x. A transform fitted to the border inherits the frame's skew. Towns do not have that problem.
+**How accurate is a point?** Two questions, and the smaller answer is the one people would misuse.
 
-**The larger error is not positional at all.** Six labels measured across the tiles run 175 to 400 px — ZLAAS the shortest, OUERGAMA the longest — which at this sheet's scale is **14 to 32 km of ground**. The point records where the name is *centred*, so it locates the tribe to within a tribe's width and no finer. Reading the same label twice from two overlapping tiles agreed to 3–5 px, and the two towns read twice agreed to 3 px, so transcription is not the limit. The annotation is.
+Each transform is an affine fitted to towns whose modern coordinates are known, read off the sheet the same way the labels were. Leave-one-out RMS — the figure that applies to a label the fit never saw — is 6.17 km for 1881 and 8.17 km for 1853. Each contains the compilation's own error and the error in reading a printed dot, and does not separate them. The 1853 sheet is drawn at 1:800 000 against the 1881 sheet's 1:1 200 000 and is nonetheless the less accurate of the two, which is what twenty-eight years of survey between them buys.
 
-Where the named tribes fall, by modern gouvernorat:
+Neither used the printed graticule, though both have one. On the 1881 sheet the scan carries a slight rotation and the frame is not square — the 8° tick on the top border and the 8° tick on the bottom border are 141 px apart in x — so a transform fitted to the border inherits the frame's skew. Towns do not have that problem.
+
+Where a town could *not* be found is a measurement too. On the 1853 sheet neither Gafsa nor Tozeur is within 300 px of where a fit on the other ten towns predicts it. The south-west is the part Pellissier had least survey for, and that is what the failure says.
+
+**The larger error is not positional at all.** Six labels measured across the tiles run 175 to 400 px — ZLAAS the shortest, OUERGAMA the longest — which at the 1881 sheet's scale is **14 to 32 km of ground**. The point records where the name is *centred*, so it locates the tribe to within a tribe's width and no finer. On the 1881 sheet, reading the same label twice from two overlapping tiles agreed to 3–5 px and the two towns read twice agreed to 3 px. On the 1853 sheet the same check gives 80 px for HAMEMA, and MADJER — which runs along an arc of some 1500 px from Sbiba round to Djilma — had its letters read at three points 1000 px apart before they resolved into one name. A `(Tribu)` tag tells you where a label ends. Without one, nothing does.
+
+### Do the two sheets agree?
+
+This is the only external check available on either transcription. There is no ground truth for where a tribe was, but two compilers working twenty-eight years apart, one before the conquest and one during it, are independent. **30 tribes are named on both sheets**, and the distance between the two placements has a median of **23.0 km** — about one label length. 7 agree to within 10 km, 12 to within 20 km. Full table in [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv).
+
+| Tribe | 1853 prints | 1881 prints | Apart |
+| --- | --- | --- | --- |
+| Ghezoran | Grezouani | Ghezoran | 4.3 km |
+| Drid | Drid et autres Arabes melés | Drid | 5.8 km |
+| Mehadhba | Mahedeba | Mahadeba | 6.5 km |
+| Mogod | El Mogod | El Mogod | 6.7 km |
+| Djendouba | Djendouba | Djendouba | 6.8 km |
+| Meressen | Merassen | Meressen | 7.0 km |
+| … | | | |
+| Mejers | Madjer | Mejers | 43.8 km |
+| Riah | Riah | Riah | 46.8 km |
+| Ouled Khiar | Oulad Khiar | Ouled Khiar | 197.3 km |
+
+The outlier is the finding. **Ouled Khiar sits 197 km apart** because the two sheets are not naming the same people: Pellissier's Oulad Khiar is east of Tunis below Zaghouan, and Lasailly's is in the Constantine province west of the frontier. Two groups, one name, and a gazetteer that matches on names merges them. It is left merged in the data, flagged here, because splitting it would be a claim about the tribes rather than about the maps. Riah, at 47 km, may be the same case: the 1853 sheet prints it in the Mogods behind Bizerte and the 1881 sheet by Medjez el Bab. Mejers, at 44 km, is not — it is the MADJER arc, and the gap is the width of my uncertainty about where that label is centred, not a disagreement between the sheets.
+
+### Where the 1881 labels fall
+
+By modern gouvernorat, for the sheet whose face was read in full:
 
 | Gouvernorat | Labels |
 | --- | --- |
@@ -98,7 +129,7 @@ Where the named tribes fall, by modern gouvernorat:
 | Médenine | 1 |
 | *west of the frontier* | 29 |
 
-The north-west carries the annotation and the south barely does. Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels between them, while south of Sfax the entire country — the Jerid, the Nefzaoua, the Dahar, the Matmata — carries exactly one, the Ouerghemma. That is not a map of where tribes were. It is a map of where a French compiler in 1881 had names for them, and 1881 is the year of the Kroumir campaign in exactly that north-western corner.
+The north-west carries the annotation and the south barely does. Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels between them, while south of Sfax the entire country — the Jerid, the Nefzaoua, the Dahar, the Matmata — carries exactly one, the Ouerghemma. That is not a map of where tribes were. It is a map of where a French compiler in 1881 had names for them, and 1881 is the year of the Kroumir campaign in exactly that north-western corner. Over the same latitudes the 1853 sheet is less lopsided — its median label sits at 35.9°N against the 1881 sheet's 36.6°N, and seven of its labels fall south of 35°N against four — though part of that is simply that Pellissier names the fractions of the M'Talith and the Hamema where Lasailly names the parent.
 
 ## Coding
 
@@ -115,7 +146,7 @@ The north-west carries the annotation and the south barely does. Jendouba, Béja
 
 **Sixteen maps out of 663.** The inspected set was chosen for the highest prior — medium-scale French maps of the Regency between 1840 and 1950 — so the hit rate among them says nothing about the collection. The honest count is: 14 maps in this collection are known to annotate tribes, and an unknown number of the rest do.
 
-**One map transcribed.** The 1853 Pellissier is denser in tribal names than the 1881 sheet and is not transcribed here, because it marks none of them and each would have to be classified by eye against a gazetteer rather than read off a tag. The comparison it would allow — the same country named twice, twenty-eight years and one conquest apart — is the obvious next piece of work.
+**Two maps transcribed, and one of them by judgement.** The 1853 Pellissier marks nothing: every label from it was classed as a tribe by eye, against a gazetteer built partly from that same reading, which is a shorter loop than anyone would like. Labels that could be villages — Oulad Amer, Oulad Khalifa, Taïfa — are held at medium confidence and flagged in the data. The 1881 sheet needs none of that, and is why it is the reference.
 
 **A point is not a territory.** Nothing in `data/tribal_territories.csv` should be joined to a modern boundary and reported as a tribe's extent. The gouvernorat column exists to make the points findable, not to assign a tribe to a governorate.
 

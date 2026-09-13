@@ -32,14 +32,16 @@
   {
    "name": "Kroumirs",
    "variants": [
-    "kroumir",
-    "kroumirs",
-    "khroumir",
-    "khroumirs",
-    "krumir",
+    "khemir",
+    "khemirs",
     "khmir",
+    "khroumir",
+    "khroumirie",
+    "khroumirs",
+    "kroumir",
     "kroumirie",
-    "khroumirie"
+    "kroumirs",
+    "krumir"
    ],
    "region": "nord_ouest",
    "note": "Printed as a territory ('Territoire des Kroumirs', 'Pays des Kroumirs') more often than as a tribe name; the 1881 expedition is named after it."
@@ -47,10 +49,10 @@
   {
    "name": "Mogod",
    "variants": [
-    "mogod",
-    "mogods",
     "el mogod",
-    "mogodh"
+    "mogod",
+    "mogodh",
+    "mogods"
    ],
    "region": "bizerte_nord"
   },
@@ -68,8 +70,8 @@
    "name": "Ouchtata",
    "variants": [
     "ouchtata",
-    "ouchteta",
-    "ouchtata khezara"
+    "ouchtata khezara",
+    "ouchteta"
    ],
    "region": "nord_ouest"
   },
@@ -111,6 +113,7 @@
    "name": "Zouagha",
    "variants": [
     "zouagha",
+    "zouaka",
     "zouarha"
    ],
    "region": "nord_ouest"
@@ -137,9 +140,9 @@
   {
    "name": "Trabelsi",
    "variants": [
+    "ouled trabersi",
     "trabelsi",
     "trabelsia",
-    "ouled trabersi",
     "trabersi"
    ],
    "region": "nord_ouest"
@@ -175,14 +178,16 @@
   {
    "name": "Ghezoran",
    "variants": [
+    "gherzoran",
     "ghezoran",
-    "gherzoran"
+    "grezouani"
    ],
    "region": "nord_ouest"
   },
   {
    "name": "Meressen",
    "variants": [
+    "merassen",
     "meressen",
     "merissen"
    ],
@@ -200,10 +205,12 @@
   {
    "name": "Ouled Sdira",
    "variants": [
-    "ouled sdira",
     "o sdira",
-    "sedjera",
-    "ouled sedjera"
+    "oulad sedira",
+    "ouled sdira",
+    "ouled sedjera",
+    "sedira",
+    "sedjera"
    ],
    "region": "nord_ouest"
   },
@@ -227,9 +234,11 @@
   {
    "name": "Ouled Yakoub",
    "variants": [
-    "ouled yakoub",
     "o yakoub",
-    "od yakoub"
+    "od yakoub",
+    "oulad yacoub",
+    "ouled yakoub",
+    "yacoub"
    ],
    "region": "nord_ouest"
   },
@@ -279,32 +288,36 @@
   {
    "name": "Mejers",
    "variants": [
-    "mejers",
     "madjer",
     "majer",
-    "medjeurs"
+    "medjeurs",
+    "mejers"
    ],
    "region": "centre"
   },
   {
    "name": "Zlass",
    "variants": [
-    "zlass",
-    "zlaas",
+    "djelas",
+    "djelas senrassin",
     "djelass",
+    "djlass",
     "jlass",
-    "djlass"
+    "zlaas",
+    "zlass"
    ],
    "region": "centre"
   },
   {
    "name": "Frechiche",
    "variants": [
-    "frechiche",
+    "ferchichi",
     "frachiche",
+    "frachiche ouazaz",
+    "frachiche oulad ali",
     "fraichiche",
     "frechich",
-    "ferchichi"
+    "frechiche"
    ],
    "region": "centre"
   },
@@ -319,8 +332,9 @@
   {
    "name": "Drid",
    "variants": [
-    "drid",
     "dreid",
+    "drid",
+    "drid et autres arabes meles",
     "ed drid"
    ],
    "region": "nord_ouest"
@@ -366,10 +380,11 @@
    "name": "M'Talith",
    "variants": [
     "m talith",
-    "mtalith",
-    "metellith",
-    "methellith",
     "metallith",
+    "metellith",
+    "methelith",
+    "methellith",
+    "mtalith",
     "mthalith"
    ],
    "region": "sahel"
@@ -377,8 +392,9 @@
   {
    "name": "Hammama",
    "variants": [
-    "hammama",
     "hamama",
+    "hamema",
+    "hammama",
     "hmama"
    ],
    "region": "centre"
@@ -396,9 +412,11 @@
   {
    "name": "Mehadhba",
    "variants": [
-    "mehadhba",
     "mahadeba",
     "mahedba",
+    "mahedeb",
+    "mahedeba",
+    "mehadhba",
     "mehedba"
    ],
    "region": "sfax"
@@ -406,8 +424,8 @@
   {
    "name": "Aguerba",
    "variants": [
-    "aguerba",
-    "agherba"
+    "agherba",
+    "aguerba"
    ],
    "region": "sfax"
   },
@@ -483,6 +501,7 @@
   {
    "name": "Hanencha",
    "variants": [
+    "hanecha",
     "hanencha",
     "hanenchas",
     "henanecha"
@@ -549,9 +568,10 @@
   {
    "name": "Ouled Sidi Yahia ben Taleb",
    "variants": [
-    "ouled sidi yaya ben taleb",
+    "o sidi yahia ben taleb",
     "ouled sidi yahia ben taleb",
-    "o sidi yahia ben taleb"
+    "ouled sidi yaya ben taleb",
+    "yahia bou taleb"
    ],
    "region": "frontier"
   },
@@ -687,6 +707,98 @@
     "o dean"
    ],
    "region": "frontier"
+  },
+  {
+   "name": "M'Talith — Oulad Alia",
+   "variants": [
+    "methelith oulad alia"
+   ],
+   "region": "sahel",
+   "parent": "M'Talith",
+   "note": "A fraction. The 1853 sheet maps five fractions of the M'Talith separately, each across its own strip of the Sahel; every later sheet prints the parent tribe alone."
+  },
+  {
+   "name": "M'Talith — Oulad Merab",
+   "variants": [
+    "methelith oulad merab"
+   ],
+   "region": "sahel",
+   "parent": "M'Talith"
+  },
+  {
+   "name": "M'Talith — Meraïah",
+   "variants": [
+    "methelith meraiah"
+   ],
+   "region": "sahel",
+   "parent": "M'Talith"
+  },
+  {
+   "name": "M'Talith — Oulad Zid",
+   "variants": [
+    "methelith oulad zid"
+   ],
+   "region": "sahel",
+   "parent": "M'Talith"
+  },
+  {
+   "name": "M'Talith — Nadjem",
+   "variants": [
+    "methelith nadjem"
+   ],
+   "region": "sahel",
+   "parent": "M'Talith"
+  },
+  {
+   "name": "Hammama — Oulad Aziz",
+   "variants": [
+    "hamema oulad aziz",
+    "hamema o aziz"
+   ],
+   "region": "centre",
+   "parent": "Hammama"
+  },
+  {
+   "name": "Oulad Khalifa",
+   "variants": [
+    "oulad khalifa"
+   ],
+   "region": "centre",
+   "note": "Read on the 1853 sheet only."
+  },
+  {
+   "name": "Oulad Amer",
+   "variants": [
+    "oulad amer"
+   ],
+   "region": "sahel",
+   "note": "Read on the 1853 sheet only; the same name is also a common village name, so the reading is held at medium confidence."
+  },
+  {
+   "name": "Ouled Redouan",
+   "variants": [
+    "redouan",
+    "oulad redouan"
+   ],
+   "region": "centre",
+   "note": "Read on the 1853 sheet only."
+  },
+  {
+   "name": "Taïfa",
+   "variants": [
+    "taifa"
+   ],
+   "region": "sud",
+   "note": "Read on the 1853 sheet only."
+  },
+  {
+   "name": "Ouled el Goussem",
+   "variants": [
+    "oulad el goussem",
+    "el goussem"
+   ],
+   "region": "centre",
+   "note": "Read on the 1853 sheet only."
   }
  ]
 }

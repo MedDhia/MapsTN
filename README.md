@@ -334,20 +334,27 @@ What changes across a century is the grain, not the presence:
 | 1900–1943 | The tribe becomes the caïdat | `CAÏDAT DE TEBOURSOUK` in the same letterspaced capitals across the same Tell |
 | any date, 1:50 000 | Neither — the grain below the tribe | `Dr en Nouilia`, `Hr Ouled el Hadj`, `Bir Oulad Achour` |
 
-The 1881 sheet, being the one that marks its tribes, was transcribed in full: **69
-labels** read off the map face in 20 overlapping tiles and placed on the ground
-from seven control towns, in
-[`data/tribal_territories.csv`](data/tribal_territories.csv). Leave-one-out RMS
-of the transform is **6.2 km**, and the labels themselves run 14–32 km long, so a
-point locates a tribe to within a tribe's width and no finer.
+Two sheets were then transcribed label by label and placed on the ground: the
+1881 Lasailly, whose face was read whole in 20 tiles, and the 1853 Pellissier,
+read from the Kroumirie down to about 34°N. **114 labels** in
+[`data/tribal_territories.csv`](data/tribal_territories.csv), placed from control
+towns read off each sheet — leave-one-out RMS **6.2 km** for 1881 and **8.2 km**
+for 1853. The labels themselves run 14–32 km long, so a point locates a tribe to
+within a tribe's width and no finer.
 
-![Where the 1881 sheet puts each tribe's name](docs/img/tribal_territories.png)
+![Where two sheets put each tribe's name](docs/img/tribal_territories.png)
 
-Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels between them, while
-south of Sfax the entire country carries one, the Ouerghemma. That is not a map
-of where tribes were; it is a map of where a French compiler in 1881 had names
-for them, and 1881 is the year of the Kroumir campaign in exactly that
-north-western corner.
+**Thirty tribes are named on both sheets, and the two placements sit a median of
+23 km apart** — about one label length, which is as close to agreement as this
+kind of annotation can come. The outlier is instructive: Ouled Khiar is 197 km
+apart because the two sheets are naming different people, Pellissier's by
+Zaghouan and Lasailly's in the Constantine province.
+
+On the 1881 sheet Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels
+between them, while south of Sfax the entire country carries one, the Ouerghemma.
+That is not a map of where tribes were; it is a map of where a French compiler in
+1881 had names for them, and 1881 is the year of the Kroumir campaign in exactly
+that north-western corner.
 
 **645 of 663 records are coded `unknown`, and unknown means unknown, not no.**
 

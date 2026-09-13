@@ -251,15 +251,19 @@ def write_csv(rows: list[dict], path: Path) -> None:
 
 
 def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
-              placed_rows: list[dict], path: Path) -> None:
+              placed_rows: list[dict], pairs_rows: list[dict], path: Path) -> None:
     inspected_maps = inspected["maps"]
     order = sorted(inspected_maps.items(),
                    key=lambda kv: (str(kv[1].get("year") or "9999"), kv[0]))
-    fit = next(iter(fits.values())) if fits else {}
+    fits_by_map = {k: v for k, v in fits.items() if not k.startswith("_")}
+    summary_agree = fits.get("_agreement", {})
 
     inside = [r for r in placed_rows if r["inside_tunisia"] == "1"]
-    marked = [r for r in placed_rows if r["marked_tribe"] == "1"]
-    by_gov = Counter(r["gouvernorat"] for r in inside)
+    # The gouvernorat table is the 1881 sheet alone: its whole face was read, so a
+    # count per unit means something. Mixing in the 1853 labels would make the
+    # north-west look denser still for no reason but that two maps cover it.
+    by_gov = Counter(r["gouvernorat"] for r in inside
+                     if r["record_id"] == "btv1b84389986")
 
     lines = []
     add = lines.append
@@ -277,6 +281,7 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
     add("| Labels transcribed, with pixels | [`config/tribal_labels_read.json`](../config/tribal_labels_read.json) |")
     add("| Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |")
     add("| Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |")
+    add("| Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |")
     add("")
     add("## The catalogue does not know")
     add("")
@@ -390,67 +395,127 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
         "thematic ethnographic map in the collection, and the only one that treats "
         "the distribution itself as the subject rather than as annotation.")
     add("")
-    add("## The 1881 sheet, transcribed")
+    add("## Two sheets, transcribed")
     add("")
-    add(f"{fit.get('labels', 0)} labels were read off the face of "
-        f"[Lasailly's 1881 war-theatre map]({[r['url'] for r in rows if r['record_id'] == 'btv1b84389986'][0]}) "
-        f"— the whole map face in {20} overlapping tiles at full scan resolution — and "
-        f"each was given a coordinate. {len(marked)} of them carry an explicit "
-        f"`(Tribu)`-family marker and {len(placed_rows) - len(marked)} do not; "
-        f"{len(inside)} fall inside modern Tunisia and "
-        f"{len(placed_rows) - len(inside)} west of the frontier, in what the sheet "
-        f"labels the Province de Constantine. The two groups nearly coincide — the "
-        f"engraver marked the tribes inside the Regency and left the Constantine "
-        f"ones as bare capitals — but not quite: Mogod and Charen sit inside Tunisia "
-        f"unmarked, and two marked tribes, the Beni Mtir and the Ouled bou Ghanem, "
-        f"fall just west of a frontier that in 1881 was still being argued over, as "
-        f"General Lewal's *Etude sur la frontière de la Tunisie* in this same "
-        f"collection attests.")
+    add(f"Two of the inspected maps were read label by label and every tribe name "
+        f"given a coordinate: the 1881 Lasailly war-theatre sheet, because it marks "
+        f"its tribes with `(Tribu)` and so needs no judgement, and the 1853 "
+        f"Pellissier, because it is the densest tribal annotation in the collection "
+        f"and the earliest that is systematic. {len(placed_rows)} labels in total, "
+        f"{len(inside)} of them inside modern Tunisia.")
     add("")
-    add("![Where the 1881 sheet puts each tribe's name](img/tribal_territories.png)")
+    add("**The two transcriptions do not cover the same ground.** The 1881 face was "
+        "read whole, in 20 tiles. The 1853 was read over the Tell, the Kroumirie, the "
+        "steppe and the Sahel down to about latitude 34 — the country the other sheet "
+        "also labels — and the Jerid, the Nefzaoua and the Dahar were left unread, "
+        "the Ouerghemma among them. So the label counts below are not a measure of "
+        "how much each sheet annotates, and differencing them as coverage would be "
+        "differencing my reading, not the maps.")
     add("")
-    add("**How accurate is a point?** Two different questions, and both answers are "
-        "small compared with a tribe.")
+    add("| Sheet | Labels | Marked `(Tribu)` | Control towns | In-sample RMS | Leave-one-out RMS |")
+    add("| --- | --- | --- | --- | --- | --- |")
+    for record_id, f in sorted(fits_by_map.items(), key=lambda kv: kv[1]["year"]):
+        marked_here = sum(1 for r in placed_rows
+                          if r["record_id"] == record_id and r["marked_tribe"] == "1")
+        add(f"| {f['year']} {f['title'][:44]} | {f['labels']} | {marked_here} | "
+            f"{f['control_points']} | {f['rms_px']} px ({f['rms_km']} km) | "
+            f"{f['loo_rms_px']} px ({f['loo_rms_km']} km) |")
     add("")
-    add(f"The transform is an affine fitted to {fit.get('control_points')} towns whose "
-        f"modern coordinates are known — Tunis, Bizerte, Le Kef, Kairouan, Sousse, "
-        f"Sfax, Gafsa — read off the sheet the same way the labels were. In-sample RMS "
-        f"is **{fit.get('rms_px')} px ({fit.get('rms_km')} km)**; leave-one-out, which "
-        f"is the honest number for a label the fit never saw, is "
-        f"**{fit.get('loo_rms_px')} px ({fit.get('loo_rms_km')} km)**. That figure is "
-        f"the 1881 compilation's own error plus mine, and it is not separable into the "
-        f"two.")
+    add("![Where two sheets put each tribe's name](img/tribal_territories.png)")
     add("")
-    add("The graticule was not used, though it is printed and legible, and the reason "
-        "is worth recording: the sheet is scanned with a slight rotation and its frame "
-        "is not square — the 8° tick on the top border and the 8° tick on the bottom "
-        "border are 141 px apart in x. A transform fitted to the border inherits the "
-        "frame's skew. Towns do not have that problem.")
+    add("**How accurate is a point?** Two questions, and the smaller answer is the "
+        "one people would misuse.")
+    add("")
+    add("Each transform is an affine fitted to towns whose modern coordinates are "
+        "known, read off the sheet the same way the labels were. Leave-one-out RMS — "
+        "the figure that applies to a label the fit never saw — is "
+        f"{fits_by_map['btv1b84389986']['loo_rms_km']} km for 1881 and "
+        f"{fits_by_map['btv1b53136235q']['loo_rms_km']} km for 1853. Each contains "
+        "the compilation's own error and the error in reading a printed dot, and does "
+        "not separate them. The 1853 sheet is drawn at 1:800 000 against the 1881 "
+        "sheet's 1:1 200 000 and is nonetheless the less accurate of the two, which is "
+        "what twenty-eight years of survey between them buys.")
+    add("")
+    add("Neither used the printed graticule, though both have one. On the 1881 sheet "
+        "the scan carries a slight rotation and the frame is not square — the 8° tick "
+        "on the top border and the 8° tick on the bottom border are 141 px apart in x "
+        "— so a transform fitted to the border inherits the frame's skew. Towns do "
+        "not have that problem.")
+    add("")
+    add("Where a town could *not* be found is a measurement too. On the 1853 sheet "
+        "neither Gafsa nor Tozeur is within 300 px of where a fit on the other ten "
+        "towns predicts it. The south-west is the part Pellissier had least survey "
+        "for, and that is what the failure says.")
     add("")
     add("**The larger error is not positional at all.** Six labels measured across the "
         "tiles run 175 to 400 px — ZLAAS the shortest, OUERGAMA the longest — which at "
-        "this sheet's scale is **14 to 32 km of ground**. The point records where the "
-        "name is *centred*, so it locates the tribe to within a tribe's width and no "
-        "finer. Reading the same label twice from two overlapping tiles agreed to 3–5 "
-        "px, and the two towns read twice agreed to 3 px, so transcription is not the "
-        "limit. The annotation is.")
+        "the 1881 sheet's scale is **14 to 32 km of ground**. The point records where "
+        "the name is *centred*, so it locates the tribe to within a tribe's width and "
+        "no finer. On the 1881 sheet, reading the same label twice from two "
+        "overlapping tiles agreed to 3–5 px and the two towns read twice agreed to 3 "
+        "px. On the 1853 sheet the same check gives 80 px for HAMEMA, and MADJER — "
+        "which runs along an arc of some 1500 px from Sbiba round to Djilma — had its "
+        "letters read at three points 1000 px apart before they resolved into one "
+        "name. A `(Tribu)` tag tells you where a label ends. Without one, nothing does.")
     add("")
-    add("Where the named tribes fall, by modern gouvernorat:")
+    add("### Do the two sheets agree?")
+    add("")
+    add(f"This is the only external check available on either transcription. There is "
+        f"no ground truth for where a tribe was, but two compilers working "
+        f"twenty-eight years apart, one before the conquest and one during it, are "
+        f"independent. **{summary_agree.get('tribes_on_two_sheets', 0)} tribes are "
+        f"named on both sheets**, and the distance between the two placements has a "
+        f"median of **{summary_agree.get('median_km', 0)} km** — about one label "
+        f"length. {summary_agree.get('within_10_km', 0)} agree to within 10 km, "
+        f"{summary_agree.get('within_20_km', 0)} to within 20 km. Full table in "
+        f"[`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv).")
+    add("")
+    add("| Tribe | 1853 prints | 1881 prints | Apart |")
+    add("| --- | --- | --- | --- |")
+    for pair in pairs_rows[:6]:
+        add(f"| {pair['tribe']} | {pair['label_a']} | {pair['label_b']} | "
+            f"{pair['distance_km']} km |")
+    add("| … | | | |")
+    for pair in pairs_rows[-3:]:
+        add(f"| {pair['tribe']} | {pair['label_a']} | {pair['label_b']} | "
+            f"{pair['distance_km']} km |")
+    add("")
+    add("The outlier is the finding. **Ouled Khiar sits 197 km apart** because the two "
+        "sheets are not naming the same people: Pellissier's Oulad Khiar is east of "
+        "Tunis below Zaghouan, and Lasailly's is in the Constantine province west of "
+        "the frontier. Two groups, one name, and a gazetteer that matches on names "
+        "merges them. It is left merged in the data, flagged here, because splitting "
+        "it would be a claim about the tribes rather than about the maps. Riah, at 47 km, may be the "
+        "same case: the 1853 sheet prints it in the Mogods behind Bizerte and the "
+        "1881 sheet by Medjez el Bab. Mejers, at 44 km, is not — it is the MADJER arc, "
+        "and the gap is the width of my uncertainty about where that label is centred, "
+        "not a disagreement between the sheets.")
+    add("")
+    add("### Where the 1881 labels fall")
+    add("")
+    add("By modern gouvernorat, for the sheet whose face was read in full:")
     add("")
     add("| Gouvernorat | Labels |")
     add("| --- | --- |")
     for name, count in by_gov.most_common():
         add(f"| {name} | {count} |")
-    add(f"| *west of the frontier* | {len(placed_rows) - len(inside)} |")
+    outside_1881 = sum(1 for r in placed_rows
+                       if r["record_id"] == "btv1b84389986" and r["inside_tunisia"] != "1")
+    add(f"| *west of the frontier* | {outside_1881} |")
     add("")
     north_west = sum(by_gov[name] for name in ("Jendouba", "Béja", "Le Kef"))
+    inside_1881 = sum(by_gov.values())
     add(f"The north-west carries the annotation and the south barely does. Jendouba, "
-        f"Béja and Le Kef hold {north_west} of the {len(inside)} Tunisian labels "
+        f"Béja and Le Kef hold {north_west} of the {inside_1881} Tunisian labels "
         f"between them, while south of Sfax the entire country — the Jerid, the "
         f"Nefzaoua, the Dahar, the Matmata — carries exactly one, the Ouerghemma. "
         f"That is not a map of where tribes were. It is a map of where a French "
         f"compiler in 1881 had names for them, and 1881 is the year of the Kroumir "
-        f"campaign in exactly that north-western corner.")
+        f"campaign in exactly that north-western corner. Over the same latitudes the "
+        f"1853 sheet is less lopsided — its median label sits at 35.9°N against the "
+        f"1881 sheet's 36.6°N, and seven of its labels fall south of 35°N against "
+        f"four — though part of that is simply that Pellissier names the fractions "
+        f"of the M'Talith and the Hamema where Lasailly names the parent.")
     add("")
     add("## Coding")
     add("")
@@ -482,11 +547,12 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
         f"{summary['inspected_with_annotation']} maps in this collection are known to "
         "annotate tribes, and an unknown number of the rest do.")
     add("")
-    add("**One map transcribed.** The 1853 Pellissier is denser in tribal names than "
-        "the 1881 sheet and is not transcribed here, because it marks none of them and "
-        "each would have to be classified by eye against a gazetteer rather than read "
-        "off a tag. The comparison it would allow — the same country named twice, "
-        "twenty-eight years and one conquest apart — is the obvious next piece of work.")
+    add("**Two maps transcribed, and one of them by judgement.** The 1853 Pellissier "
+        "marks nothing: every label from it was classed as a tribe by eye, against a "
+        "gazetteer built partly from that same reading, which is a shorter loop than "
+        "anyone would like. Labels that could be villages — Oulad Amer, Oulad "
+        "Khalifa, Taïfa — are held at medium confidence and flagged in the data. The "
+        "1881 sheet needs none of that, and is why it is the reference.")
     add("")
     add("**A point is not a territory.** Nothing in `data/tribal_territories.csv` "
         "should be joined to a modern boundary and reported as a tribe's extent. The "
@@ -532,7 +598,12 @@ def main(argv: list[str] | None = None) -> int:
     write_csv(rows, args.data / "gallica_tunisia_maps_tribes.csv")
     (args.data / "tribal_annotation_summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
-    write_doc(rows, summary, inspected, fits, placed_rows, args.docs / "TRIBES.md")
+    pairs_rows: list[dict] = []
+    pairs_path = args.data / "tribal_map_agreement.csv"
+    if pairs_path.exists():
+        pairs_rows = list(csv.DictReader(pairs_path.open(encoding="utf-8")))
+    write_doc(rows, summary, inspected, fits, placed_rows, pairs_rows,
+              args.docs / "TRIBES.md")
 
     print(f"{summary['records']} records coded")
     for key, value in summary["tribal_annotation"].items():
