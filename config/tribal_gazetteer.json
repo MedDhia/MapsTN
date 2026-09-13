@@ -1,0 +1,692 @@
+{
+ "_about": {
+  "purpose": "The vocabulary used to find tribal annotation in this collection: the generic terms a French cartographer used to mark a tribe, and the tribe names these maps actually print.",
+  "how_the_tribe_list_was_built": [
+   "Bottom-up, from the sheets. Every name in `tribes` was read off a map in",
+   "this collection and is recorded in config/tribal_labels_read.json with the",
+   "pixel it was read at. This is deliberately not an ethnography of Tunisia:",
+   "it is a list of what these maps annotate, which is a different and smaller",
+   "thing. A tribe absent from the list may well be absent only from the maps.",
+   "",
+   "Spelling is the second reason to keep it bottom-up. One tribe is printed",
+   "Khroumir, Kroumir, Krumir and Chromir across four sheets; Frechiche is also",
+   "Fraichiche and Frechich; Ouled is O., Od., Oulad and Ouled. `variants` holds",
+   "the spellings observed plus the obvious transliteration neighbours, all",
+   "matched after stripping accents and collapsing whitespace."
+  ],
+  "marker_terms": "A French map marks a tribe in one of a few ways, and which one it uses is itself the finding - see docs/TRIBES.md. `generic_terms` lists them as regexes, applied to accent-stripped lowercase text.",
+  "caution": "`generic_terms` is tuned for map faces and catalogue text, not for prose. 'population' and 'race' in particular fire on anything statistical, so the coding script treats them as weak signals and never as sufficient evidence on their own."
+ },
+ "generic_terms": {
+  "tribe_word": "\\btribus?\\b|\\btribal(?:e|es|aux)?\\b|\\bfractions?\\b|\\bconfederations?\\b|\\barch\\b|\\bferkas?\\b",
+  "ethnography": "\\bethnograph\\w*|\\bpeuplement\\b|\\brepartition des\\b|\\bhabitation rurale\\b|\\bgroupes? ethni\\w*",
+  "nomadism": "\\bnomades?\\b|\\bsemi-nomades?\\b|\\bsedentaires?\\b|\\btranshuman\\w*|\\bcampements?\\b|\\bdouars?\\b|\\bmechtas?\\b|\\btentes\\b|\\bgourbis?\\b",
+  "native_administration": "\\bcaidats?\\b|\\bcheikhats?\\b|\\bkhalifats?\\b|\\bannexes? des affaires indigenes\\b|\\baffaires indigenes\\b|\\bterritoires? militaires?\\b|\\bcontroles? civils?\\b",
+  "colonial_person_terms": "\\bindigenes?\\b|\\bbedouins?\\b|\\braces?\\b|\\bpopulations?\\b",
+  "lineage_prefix": "\\boule?d\\b|\\bolad\\b|\\bawlad\\b|\\bbeni\\b|\\bbni\\b|\\bait\\b|\\bouerghemma\\b"
+ },
+ "weak_terms": [
+  "colonial_person_terms"
+ ],
+ "tribes": [
+  {
+   "name": "Kroumirs",
+   "variants": [
+    "kroumir",
+    "kroumirs",
+    "khroumir",
+    "khroumirs",
+    "krumir",
+    "khmir",
+    "kroumirie",
+    "khroumirie"
+   ],
+   "region": "nord_ouest",
+   "note": "Printed as a territory ('Territoire des Kroumirs', 'Pays des Kroumirs') more often than as a tribe name; the 1881 expedition is named after it."
+  },
+  {
+   "name": "Mogod",
+   "variants": [
+    "mogod",
+    "mogods",
+    "el mogod",
+    "mogodh"
+   ],
+   "region": "bizerte_nord"
+  },
+  {
+   "name": "Nefza",
+   "variants": [
+    "nefza",
+    "nefsa",
+    "nefzaoua_nord"
+   ],
+   "region": "bizerte_nord",
+   "note": "Distinct from the Nefzaoua of the Djerid, which these maps spell out in full."
+  },
+  {
+   "name": "Ouchtata",
+   "variants": [
+    "ouchtata",
+    "ouchteta",
+    "ouchtata khezara"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Mekena",
+   "variants": [
+    "mekena",
+    "mekna"
+   ],
+   "region": "nord_ouest",
+   "note": "Read in the Kroumirie on the 1881 sheet. Makna, printed 70 km east of it on the same sheet, is kept as a separate entry: the two spellings are close enough to be one tribe and far enough apart on the page that merging them would invent a migration."
+  },
+  {
+   "name": "Makna",
+   "variants": [
+    "makna"
+   ],
+   "region": "bizerte_nord",
+   "note": "Printed beside Mater on the 1881 sheet. See the note on Mekena."
+  },
+  {
+   "name": "Djeladjela",
+   "variants": [
+    "djeladjela",
+    "djelad jela",
+    "jeladjela"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Chehida",
+   "variants": [
+    "chehida",
+    "chehida"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Zouagha",
+   "variants": [
+    "zouagha",
+    "zouarha"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Beni Mtir",
+   "variants": [
+    "beni mtir",
+    "beni metir",
+    "beni mazer",
+    "beni m tir"
+   ],
+   "region": "nord_ouest",
+   "note": "Read as 'Beni Mazer' on the 1881 sheet; the Kroumirie tribe is Beni Mtir. The reading is recorded as uncertain."
+  },
+  {
+   "name": "Hezil",
+   "variants": [
+    "hezil",
+    "hezel"
+   ],
+   "region": "bizerte_nord"
+  },
+  {
+   "name": "Trabelsi",
+   "variants": [
+    "trabelsi",
+    "trabelsia",
+    "ouled trabersi",
+    "trabersi"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Riah",
+   "variants": [
+    "riah",
+    "riahh",
+    "ouled riah",
+    "o riah",
+    "od riah"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouled bou Salem",
+   "variants": [
+    "ouled bou salem",
+    "o bou salem",
+    "bou salem"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouled Ali",
+   "variants": [
+    "ouled ali",
+    "o ali"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ghezoran",
+   "variants": [
+    "ghezoran",
+    "gherzoran"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Meressen",
+   "variants": [
+    "meressen",
+    "merissen"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouled Soltan",
+   "variants": [
+    "ouled soltan",
+    "o soltan",
+    "od soltan"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouled Sdira",
+   "variants": [
+    "ouled sdira",
+    "o sdira",
+    "sedjera",
+    "ouled sedjera"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Hakim",
+   "variants": [
+    "hakim",
+    "el hakim"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouargha",
+   "variants": [
+    "ouargha",
+    "ouarrha",
+    "ouarga"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouled Yakoub",
+   "variants": [
+    "ouled yakoub",
+    "o yakoub",
+    "od yakoub"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Khememsa",
+   "variants": [
+    "khememsa",
+    "khemamsa",
+    "khememsa et doufan"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Doufan",
+   "variants": [
+    "doufan",
+    "doufana"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouartan",
+   "variants": [
+    "ouartan",
+    "ouertane",
+    "ouerten"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Zeghalma",
+   "variants": [
+    "zeghalma",
+    "zeralma"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouled bou Ghanem",
+   "variants": [
+    "ouled bou ghanem",
+    "o bou ghanem",
+    "bou ghanem"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Mejers",
+   "variants": [
+    "mejers",
+    "madjer",
+    "majer",
+    "medjeurs"
+   ],
+   "region": "centre"
+  },
+  {
+   "name": "Zlass",
+   "variants": [
+    "zlass",
+    "zlaas",
+    "djelass",
+    "jlass",
+    "djlass"
+   ],
+   "region": "centre"
+  },
+  {
+   "name": "Frechiche",
+   "variants": [
+    "frechiche",
+    "frachiche",
+    "fraichiche",
+    "frechich",
+    "ferchichi"
+   ],
+   "region": "centre"
+  },
+  {
+   "name": "Djendouba",
+   "variants": [
+    "djendouba"
+   ],
+   "region": "nord_ouest",
+   "note": "Printed as a tribe on the 1881 sheet, before the name settled onto the town."
+  },
+  {
+   "name": "Drid",
+   "variants": [
+    "drid",
+    "dreid",
+    "ed drid"
+   ],
+   "region": "nord_ouest"
+  },
+  {
+   "name": "Ouled Ayar",
+   "variants": [
+    "ouled ayar",
+    "o ayar",
+    "oulad ayar"
+   ],
+   "region": "centre"
+  },
+  {
+   "name": "Ouled Aoun",
+   "variants": [
+    "ouled aoun",
+    "o aoun",
+    "od aoun",
+    "hamada el ouled aoun"
+   ],
+   "region": "centre"
+  },
+  {
+   "name": "Ouled Saïd",
+   "variants": [
+    "ouled said",
+    "o said",
+    "od said"
+   ],
+   "region": "cap_bon"
+  },
+  {
+   "name": "Souassi",
+   "variants": [
+    "souassi",
+    "souassia",
+    "smala des souassi"
+   ],
+   "region": "sahel"
+  },
+  {
+   "name": "M'Talith",
+   "variants": [
+    "m talith",
+    "mtalith",
+    "metellith",
+    "methellith",
+    "metallith",
+    "mthalith"
+   ],
+   "region": "sahel"
+  },
+  {
+   "name": "Hammama",
+   "variants": [
+    "hammama",
+    "hamama",
+    "hmama"
+   ],
+   "region": "centre"
+  },
+  {
+   "name": "Neffat",
+   "variants": [
+    "neffat",
+    "nefat",
+    "neffet",
+    "neffatia"
+   ],
+   "region": "sfax"
+  },
+  {
+   "name": "Mehadhba",
+   "variants": [
+    "mehadhba",
+    "mahadeba",
+    "mahedba",
+    "mehedba"
+   ],
+   "region": "sfax"
+  },
+  {
+   "name": "Aguerba",
+   "variants": [
+    "aguerba",
+    "agherba"
+   ],
+   "region": "sfax"
+  },
+  {
+   "name": "Ouerghemma",
+   "variants": [
+    "ouerghemma",
+    "ouergama",
+    "ourghamma",
+    "ouergamma",
+    "werghemma"
+   ],
+   "region": "sud_est",
+   "note": "A confederation, printed as one label."
+  },
+  {
+   "name": "Accara",
+   "variants": [
+    "accara",
+    "akara",
+    "acara"
+   ],
+   "region": "sud_est"
+  },
+  {
+   "name": "Hamarna",
+   "variants": [
+    "hamarna",
+    "hamerna"
+   ],
+   "region": "sud_est"
+  },
+  {
+   "name": "Mehabel",
+   "variants": [
+    "mehabel",
+    "mehabla"
+   ],
+   "region": "sud_est"
+  },
+  {
+   "name": "Matmata",
+   "variants": [
+    "matmata",
+    "matmatas"
+   ],
+   "region": "sud_est"
+  },
+  {
+   "name": "Iddir",
+   "variants": [
+    "iddir"
+   ],
+   "region": "sahel"
+  },
+  {
+   "name": "Regab",
+   "variants": [
+    "regab",
+    "rgab"
+   ],
+   "region": "sfax"
+  },
+  {
+   "name": "Charen",
+   "variants": [
+    "charen",
+    "chiaren"
+   ],
+   "region": "nord_ouest",
+   "note": "Printed in capitals without a marker; may be a place name."
+  },
+  {
+   "name": "Hanencha",
+   "variants": [
+    "hanencha",
+    "hanenchas",
+    "henanecha"
+   ],
+   "region": "frontier",
+   "note": "Straddles the frontier; printed on the Constantine side."
+  },
+  {
+   "name": "Nemencha",
+   "variants": [
+    "nemencha",
+    "nemenchas",
+    "nememcha"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Ouled Sidi Abid",
+   "variants": [
+    "ouled sidi abid",
+    "o sidi abid"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Ouled Khiar",
+   "variants": [
+    "ouled khiar",
+    "o khiar"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Sellaouas",
+   "variants": [
+    "sellaouas",
+    "sellaoua"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Allaounas",
+   "variants": [
+    "allaounas",
+    "allaoua"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Brarchas",
+   "variants": [
+    "brarchas",
+    "brarcha"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Beni Salah",
+   "variants": [
+    "beni salah"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Ouled Sidi Yahia ben Taleb",
+   "variants": [
+    "ouled sidi yaya ben taleb",
+    "ouled sidi yahia ben taleb",
+    "o sidi yahia ben taleb"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Ouled Daoud",
+   "variants": [
+    "ouled daoud",
+    "o daoud"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Beni Ahmar",
+   "variants": [
+    "beni ahmar"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Merdès",
+   "variants": [
+    "merdes",
+    "merdess"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Cheefia",
+   "variants": [
+    "cheefia",
+    "chefia"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Ouled Dhiab",
+   "variants": [
+    "ouled dhiab",
+    "o dhiab"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Beni Ourghine",
+   "variants": [
+    "beni ourghine",
+    "beni ourjine"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Beni Mezzeline",
+   "variants": [
+    "beni mezzeline",
+    "beni mezline"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Braktia",
+   "variants": [
+    "braktia",
+    "brakta"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Sbetsa",
+   "variants": [
+    "sbetsa",
+    "sbeitsa"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Ouillen",
+   "variants": [
+    "ouillen",
+    "ouillene"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Mahatla",
+   "variants": [
+    "mahatla"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Sefia",
+   "variants": [
+    "sefia"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Nbails",
+   "variants": [
+    "nbails",
+    "nbail"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Dra Menna",
+   "variants": [
+    "dra menna",
+    "dramenna"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Chiebna",
+   "variants": [
+    "chiebna",
+    "chiabna"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Ouled Ahmar ben Ali",
+   "variants": [
+    "ouled ahmar ben ali",
+    "ouled ahmar b ali"
+   ],
+   "region": "frontier"
+  },
+  {
+   "name": "Ouled Dean",
+   "variants": [
+    "ouled dean",
+    "o dean"
+   ],
+   "region": "frontier"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "btv1b84389986": {
+  "title": "Carte du théâtre de la guerre en Tunisie / dressée par Ch. Lasailly",
+  "year": 1881,
+  "scale": "1:1 200 000",
+  "control_points": 7,
+  "px_per_degree_lon": 1104.2,
+  "px_per_degree_lat": 1390.9,
+  "km_per_px": 0.0798,
+  "rms_px": 39.6,
+  "rms_km": 3.16,
+  "max_px": 55.6,
+  "loo_rms_px": 77.3,
+  "loo_rms_km": 6.17,
+  "per_town": {
+   "Tunis": 44.0,
+   "Bizerte": 26.1,
+   "Le Kef": 32.7,
+   "Kairouan": 36.3,
+   "Sousse": 55.6,
+   "Sfax": 39.7,
+   "Gafsa": 36.0
+  },
+  "labels": 69
+ }
+}

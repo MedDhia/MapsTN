@@ -1,0 +1,70 @@
+record_id,year,label_as_printed,tribe,in_gazetteer,marker,marked_tribe,x_px,y_px,lon,lat,gouvernorat,inside_tunisia,read_confidence
+btv1b84389986,1881,Mekena,Mekena,1,Tribu des,1,2508,2498,8.909,37.001,Béja,1,high
+btv1b84389986,1881,Nefsa,Nefza,1,Tribu des,1,2733,2440,9.113,37.043,Béja,1,high
+btv1b84389986,1881,El Mogod,Mogod,1,,0,2820,2365,9.193,37.097,Bizerte,1,high
+btv1b84389986,1881,Djeladjela,Djeladjela,1,Tribu des,1,2808,2523,9.181,36.984,Béja,1,high
+btv1b84389986,1881,Kroumirs,Kroumirs,1,Territoire des,1,2417,2682,8.825,36.868,Jendouba,1,high
+btv1b84389986,1881,Chehida,Chehida,1,Tribu des,1,2533,2807,8.929,36.779,Béja,1,high
+btv1b84389986,1881,Zouagha,Zouagha,1,Tribu,1,2612,2916,9.0,36.701,Jendouba,1,high
+btv1b84389986,1881,Hezil,Hezil,1,Tribu,1,3175,2420,9.514,37.058,Bizerte,1,high
+btv1b84389986,1881,Makna,Makna,1,Tribu,1,3367,2420,9.688,37.059,Bizerte,1,high
+btv1b84389986,1881,Trabelsi,Trabelsi,1,Tribu,1,3517,2615,9.822,36.919,Manubah,1,high
+btv1b84389986,1881,Riah,Riah,1,Tribu,1,3238,2900,9.567,36.713,Béja,1,high
+btv1b84389986,1881,Ghezoran,Ghezoran,1,Tribu,1,2358,2957,8.77,36.671,Jendouba,1,medium
+btv1b84389986,1881,O. bou Salem,Ouled bou Salem,1,Tribu,1,2658,2985,9.041,36.651,Béja,1,high
+btv1b84389986,1881,Ouled Ali,Ouled Ali,1,Tribu des,1,2275,2857,8.695,36.742,Jendouba,1,medium
+btv1b84389986,1881,Beni Mazer,Beni Mtir,1,Tribu des,1,2255,2731,8.678,36.833,,0,medium
+btv1b84389986,1881,Meressen,Meressen,1,Tribu,1,2067,2965,8.506,36.664,Jendouba,1,medium
+btv1b84389986,1881,Ouchtata Khezara,Ouchtata,1,Tribu,1,2083,2980,8.521,36.653,Jendouba,1,high
+btv1b84389986,1881,O. Soltan,Ouled Soltan,1,Tribu,1,2200,2993,8.627,36.644,Jendouba,1,high
+btv1b84389986,1881,O. Sdira,Ouled Sdira,1,Tribu,1,1867,3102,8.324,36.565,Jendouba,1,high
+btv1b84389986,1881,Hakim,Hakim,1,Tribu,1,1950,3385,8.397,36.362,Jendouba,1,high
+btv1b84389986,1881,Ouargha,Ouargha,1,Tribu,1,2017,3593,8.456,36.213,Le Kef,1,high
+btv1b84389986,1881,Charen,Charen,1,,0,2067,3777,8.5,36.08,Le Kef,1,medium
+btv1b84389986,1881,O. Yakoub,Ouled Yakoub,1,Tribu,1,2275,3898,8.688,35.994,Le Kef,1,high
+btv1b84389986,1881,Khememsa et Doufan,Khememsa,1,Tribus,1,2383,4052,8.785,35.883,Le Kef,1,high
+btv1b84389986,1881,Ouartan,Ouartan,1,Tribu,1,2433,4151,8.829,35.812,Le Kef,1,high
+btv1b84389986,1881,Zeghalma,Zeghalma,1,Tribu,1,2292,4197,8.701,35.779,Kassérine,1,high
+btv1b84389986,1881,O. bou Ghanem,Ouled bou Ghanem,1,Tribu,1,1796,4120,8.253,35.833,,0,high
+btv1b84389986,1881,Mejers,Mejers,1,Tribu,1,2400,4430,8.797,35.612,Kassérine,1,high
+btv1b84389986,1881,Zlaas,Zlass,1,Tribu,1,3100,4427,9.431,35.615,Kairouan,1,high
+btv1b84389986,1881,Frechiche,Frechiche,1,Tribu,1,2050,4610,8.479,35.481,Kassérine,1,high
+btv1b84389986,1881,Djendouba,Djendouba,1,Tribu,1,2583,3127,8.972,36.549,Jendouba,1,high
+btv1b84389986,1881,Drid,Drid,1,Tribu,1,3400,3118,9.712,36.557,Béja,1,high
+btv1b84389986,1881,O. Riah,Riah,1,Tribu,1,3233,3518,9.558,36.269,Siliana,1,high
+btv1b84389986,1881,O. Ayar,Ouled Ayar,1,Tribu,1,2808,3643,9.173,36.178,Siliana,1,high
+btv1b84389986,1881,O. Aoun,Ouled Aoun,1,Tribu,1,3150,3785,9.481,36.077,Siliana,1,high
+btv1b84389986,1881,Ouled Saïd,Ouled Saïd,1,Tribu,1,4150,3468,10.389,36.307,Sousse,1,high
+btv1b84389986,1881,Souassi,Souassi,1,Tribu,1,3933,3790,10.19,36.075,Kairouan,1,high
+btv1b84389986,1881,M'Talith,M'Talith,1,Tribu,1,4125,4947,10.356,35.244,Mahdia,1,high
+btv1b84389986,1881,Hammama,Hammama,1,Tribu,1,3017,5513,9.348,34.834,Sidi Bou Zid,1,high
+btv1b84389986,1881,Nefat,Neffat,1,Tribu,1,3650,5808,9.92,34.624,Sfax,1,high
+btv1b84389986,1881,Mahadeba,Mehadhba,1,Tribu,1,3600,6200,9.872,34.342,Sfax,1,high
+btv1b84389986,1881,Ouergama,Ouerghemma,1,Tribu,1,4292,7512,10.489,33.4,Médenine,1,high
+btv1b84389986,1881,Beni Ourghine,Beni Ourghine,1,,0,1292,2690,7.806,36.86,,0,medium
+btv1b84389986,1881,Ouled Dhiab,Ouled Dhiab,1,,0,1500,2640,7.995,36.897,,0,medium
+btv1b84389986,1881,Braktia,Braktia,1,,0,1700,2603,8.176,36.924,,0,medium
+btv1b84389986,1881,Beni Ahmar,Beni Ahmar,1,,0,1567,2732,8.055,36.831,,0,high
+btv1b84389986,1881,Sbetsa,Sbetsa,1,,0,1700,2815,8.175,36.771,,0,medium
+btv1b84389986,1881,Ouled Ahmar ben Ali,Ouled Ahmar ben Ali,1,,0,1700,2910,8.174,36.703,,0,medium
+btv1b84389986,1881,Dra Menna,Dra Menna,1,,0,858,2910,7.412,36.701,,0,medium
+btv1b84389986,1881,Merdès,Merdès,1,,0,1292,2918,7.805,36.696,,0,high
+btv1b84389986,1881,Cheefia,Cheefia,1,,0,1517,2935,8.008,36.685,,0,high
+btv1b84389986,1881,Chiebna,Chiebna,1,,0,1542,3093,8.03,36.571,,0,medium
+btv1b84389986,1881,Beni Mezzeline,Beni Mezzeline,1,,0,933,3072,7.478,36.585,,0,medium
+btv1b84389986,1881,Beni Salah,Beni Salah,1,,0,1200,3157,7.72,36.524,,0,high
+btv1b84389986,1881,Nbails,Nbails,1,,0,967,3202,7.508,36.491,,0,medium
+btv1b84389986,1881,Ouled Dean,Ouled Dean,1,,0,875,3302,7.424,36.419,,0,medium
+btv1b84389986,1881,Sefia,Sefia,1,,0,1058,3352,7.59,36.384,,0,high
+btv1b84389986,1881,Ouillen,Ouillen,1,,0,1617,3490,8.095,36.286,,0,high
+btv1b84389986,1881,Ouled Daoud,Ouled Daoud,1,,0,942,3585,7.483,36.216,,0,high
+btv1b84389986,1881,Hanenchas,Hanencha,1,,0,1400,3693,7.897,36.139,,0,high
+btv1b84389986,1881,Mahatla,Mahatla,1,,0,958,3773,7.496,36.081,,0,high
+btv1b84389986,1881,Ouled Khiar,Ouled Khiar,1,,0,1458,3888,7.948,35.999,,0,high
+btv1b84389986,1881,Sellaouas,Sellaouas,1,,0,1025,4010,7.555,35.91,,0,high
+btv1b84389986,1881,Ouled Sidi Yaya ben Taleb,Ouled Sidi Yahia ben Taleb,1,,0,1408,4118,7.901,35.834,,0,high
+btv1b84389986,1881,Ouled Sedjera,Ouled Sdira,1,,0,1058,4297,7.583,35.704,,0,high
+btv1b84389986,1881,Nemenchas,Nemencha,1,,0,1058,4543,7.581,35.527,,0,high
+btv1b84389986,1881,Allaounas,Allaounas,1,,0,1067,4660,7.588,35.443,,0,high
+btv1b84389986,1881,Ouled Sidi Abid,Ouled Sidi Abid,1,,0,1450,4905,7.934,35.268,,0,high
+btv1b84389986,1881,Brarchas,Brarchas,1,,0,1058,5347,7.575,34.949,,0,high

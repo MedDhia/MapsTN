@@ -1,0 +1,80 @@
+{
+ "records": 663,
+ "tribal_annotation": {
+  "unknown": 645,
+  "observed": 14,
+  "none_seen": 2,
+  "catalogued": 2
+ },
+ "evidence_basis": {
+  "none": 645,
+  "inspected": 16,
+  "catalogue": 2
+ },
+ "annotation_forms": {
+  "lineage_toponym": 11,
+  "territory_label": 9,
+  "douar_toponym": 4,
+  "admin_limit": 3,
+  "smala": 2,
+  "glossary": 1,
+  "marked_tribe": 1,
+  "tribal_ksour": 1,
+  "thematic_distribution": 1,
+  "caidat_label": 1
+ },
+ "metadata_term_families": {
+  "colonial_person_terms": 4,
+  "ethnography": 1
+ },
+ "records_with_tribe_name_in_metadata": 3,
+ "inspected_maps": 16,
+ "inspected_with_annotation": 14,
+ "forms_by_decade": {
+  "1840s": {
+   "territory_label": 1,
+   "lineage_toponym": 1
+  },
+  "1850s": {
+   "territory_label": 2,
+   "lineage_toponym": 2,
+   "douar_toponym": 1
+  },
+  "1880s": {
+   "marked_tribe": 1,
+   "territory_label": 3,
+   "glossary": 1,
+   "lineage_toponym": 3,
+   "douar_toponym": 1,
+   "tribal_ksour": 1,
+   "none_seen": 2
+  },
+  "1900s": {
+   "territory_label": 1,
+   "smala": 1,
+   "admin_limit": 1
+  },
+  "1910s": {
+   "territory_label": 1,
+   "lineage_toponym": 1
+  },
+  "1920s": {
+   "territory_label": 1,
+   "smala": 1,
+   "lineage_toponym": 1
+  },
+  "1930s": {
+   "thematic_distribution": 1,
+   "admin_limit": 1
+  },
+  "1940s": {
+   "caidat_label": 1,
+   "admin_limit": 1,
+   "lineage_toponym": 1
+  },
+  "undated": {
+   "douar_toponym": 2,
+   "lineage_toponym": 2
+  }
+ }
+}
