@@ -30,6 +30,8 @@ a relevance score.
 | **Who counted the tribes, and how many** | [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) |
 | **Population figures, with their sources** | [`data/tribal_population_sources.csv`](data/tribal_population_sources.csv) |
 | **1931 census, by caïdat** | [`data/census_1931_caidats.csv`](data/census_1931_caidats.csv) |
+| **The 1277 mejba tax schedule, line by line** | [`data/ganiage_mejba_1277.csv`](data/ganiage_mejba_1277.csv) |
+| **The same, gathered into tribes** | [`data/ganiage_mejba_groups.csv`](data/ganiage_mejba_groups.csv) |
 | **OSM rebuild coding (CSV)** | [`data/gallica_tunisia_maps_osm.csv`](data/gallica_tunisia_maps_osm.csv) |
 | **OSM rebuild report** | [`docs/OSM-REBUILD.md`](docs/OSM-REBUILD.md) |
 | **OSM layer crosswalk** | [`config/osm_crosswalk.json`](config/osm_crosswalk.json) |
@@ -369,9 +371,23 @@ size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the
 sources that do carry numbers and what each of them counts. Three have been read
 rather than cited: Pellissier's own 1853 text, whose map is the one transcribed
 here; Ganiage's reconstruction from the *mejba* tax registers of c. 1860; and the
-1931 census by caïdat. **35 of the 60 Tunisian-side tribes have a figure, 25 have
+1931 census by caïdat. **40 of the 60 Tunisian-side tribes have a figure, 20 have
 none**, and souls, tents, horsemen and taxpayers are four different things that
 must not be mixed.
+
+**The tax schedule behind Ganiage's article is transcribed.** *Annexe I* of his
+1966 paper, p. 882, is the mejba assessment of every fiscal circumscription in
+the Regency's first regular budget, for the fiscal year 1277, July 1860 to July
+1861. Its 78 lines were read off the page image by eye, twice, and are in
+[`data/ganiage_mejba_1277.csv`](data/ganiage_mejba_1277.csv); his own fourteen
+footnotes gather them into 22 gazetteer tribes in
+[`data/ganiage_mejba_groups.csv`](data/ganiage_mejba_groups.csv). Two results
+worth stating on their own. **The printed lines do not add to the printed
+total**: 215,607 against 221,664, a gap of 2.7% that is in the source and is not
+reconciled here. And setting the taxpayer counts against the population figures
+Ganiage publishes recovers the multiplier he used, tribe by tribe: **3.8 to 5.2
+individuals per taxpayer, median 4.1**, against the rate of four he states on
+p. 864. The convention is not hidden, but it is a convention.
 
 The two nineteenth-century sources disagree by a factor of four on the steppe.
 Pellissier counts warriors and multiplies by five, a rule he states himself;

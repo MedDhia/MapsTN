@@ -10,9 +10,9 @@ reaches.
 Figures collected so far are in
 [`data/tribal_population_sources.csv`](../data/tribal_population_sources.csv),
 one row per tribe per source, each with the sentence or table row it came from.
-**35 of the 60 Tunisian-side tribes in the gazetteer have at least one figure;
-25 have none.** Fourteen have two sources and nine have three, which is what makes
-the disagreements below legible.
+**40 of the 60 Tunisian-side tribes in the gazetteer have at least one figure;
+20 have none.** Twelve have two sources, six have three and six have four, which
+is what makes the disagreements below legible.
 
 ## The sources, and what they count
 
@@ -28,7 +28,11 @@ the disagreements below legible.
 
 Persée serves neither the PDF nor a full-text view to a script, but it does
 serve one page at a time at `/doc/page/<article-id>/<page-id>`, and the thirty
-pages of Ganiage fetched that way are what the figures below are read from.
+pages of Ganiage fetched that way are what the prose figures below are read from.
+That endpoint linearises the page, so on the two-column table of *Annexe I* it
+interleaves the columns and the name-to-number pairing it returns is wrong. The
+annexe was therefore read off the page image instead, at
+`/renderPage/<article-id>/<page-id>_1400.jpg`.
 
 **The unit is the first thing to check and the easiest thing to get wrong.**
 Souls, tents, horsemen and taxpayers are four different quantities, and the
@@ -167,6 +171,107 @@ into a population: *« On sent trop le caractère aventureux de telles déductio
 dans une région où la frontière était bien proche et bien précaire l'autorité du
 gouvernement. »*
 
+### Annexe I, read off the page
+
+His article ends with the table the prose is built on. *Annexe I*, p. 882, is
+the general schedule of *mejba* assessments in the first regular budget of the
+Regency, the fiscal year 1277 of the Hegira, July 1860 to July 1861: every
+fiscal circumscription of the country with the number of men assessed against
+it, in two columns, 78 lines and a printed TOTAL of 221,664. It is transcribed
+in [`data/ganiage_mejba_1277.csv`](../data/ganiage_mejba_1277.csv), one row per
+line, with the footnote that ties each line to a tribe.
+
+It was read by eye. The page image was fetched at 1148 px wide, read left column
+then right, then read a second time in four crops enlarged 2.6×; the TOTAL row
+was read a third time at 4×. The reading and its provenance are in
+[`config/ganiage_annexe1_read.json`](../config/ganiage_annexe1_read.json).
+
+**The printed lines do not add to the printed total.** They sum to 215,607
+against a TOTAL of 221,664, a gap of 6,057 or 2.7%. Every line was verified twice
+and the total three times, so the gap is in the source. Tunis is not on the list,
+which is one candidate for what the total counts and the lines do not. The
+annexe does not say, and this is reported rather than reconciled.
+
+Two of Ganiage's own footnotes quote figures from this table, and both come back
+exactly: p. 877 gives 11,131 taxpayers among the Drid and 1,944 among the Arab
+Majour, and the same page gives 9,240 Majeur in July 1861, which is the sum of
+the three Majeur lines here: Ouled Mehanna 4,780, Fouad 2,616, Chaktma 1,844.
+That is an external check on the reading, not a restatement of it.
+
+**Not every line is a tribe.** The list runs towns (Sousse, Sfax, Monastir,
+Bizerte), districts under their old names (*Outhan el Kabli*, the Cap Bon),
+oasis groups (*El Oudiane*, Tamerza and Chebika), two corps of *arouch* of
+service at Kairouan, and one line, *Algériens* at 247, that is a nationality.
+The largest single line, *Aradh* at 21,938, is the whole south-east. The
+smallest, *Beit ech-Chéria* at 51, is one tribe settled around Gafsa.
+
+The tribal work is done by the fourteen footnotes, which say which fiscal units
+belong to which tribe: footnote 2 gathers four lines into the Zlass, footnote 5
+three into the Hammama, footnote 9 three into the Frèchich, footnote 10 three
+into the Majeur, footnote 12 five into the Ounifa league of the north-west. On
+that authority the 78 lines reach 22 gazetteer tribes, in
+[`data/ganiage_mejba_groups.csv`](../data/ganiage_mejba_groups.csv):
+
+| Tribe | Taxpayers, 1277 | Lines | Ganiage's own figure, individuals | Individuals per taxpayer |
+| --- | --- | --- | --- | --- |
+| Zlass | 15,706 | 4 | more than 60,000 | 3.82 |
+| Drid | 13,075 | 2 | about 50,000 | 3.82 |
+| Hammama | 12,313 | 3 | 50,000 | 4.06 |
+| Frechiche | 11,057 | 4 | about 46,500 | 4.21 |
+| Mejers | 9,240 | 3 | about 40,000 | 4.33 |
+| M'Talith | 6,411 | 1 | more than 25,000 | 3.90 |
+| Ouled Ayar | 5,797 | 1 | about 24,000 | 4.14 |
+| Souassi | 4,955 | 1 | 20,000 | 4.04 |
+| Ouartan | 3,953 | 1 | not stated | |
+| Trabelsi | 3,883 | 1 | not stated | |
+| Ouled bou Ghanem | 2,930 | 1 | not stated | |
+| Ouled Aoun | 2,769 | 1 | about 12,000 | 4.33 |
+| Djendouba | 2,674 | 1 | not stated | |
+| Charen | 2,164 | 1 | not stated | |
+| Ouled Sidi Abid | 1,500 | 1 | not stated | |
+| Ouargha | 1,480 | 1 | not stated | |
+| Zeghalma | 1,393 | 1 | not stated | |
+| Neffat | 1,287 | 1 | not stated | |
+| Ouled Saïd | 1,185 | 1 | not stated | |
+| Ouled bou Salem | 1,040 | 1 | not stated | |
+| Ouled Yakoub | 863 | 1 | about 4,500 | 5.21 |
+| Ouled Khiar | 266 | 1 | not stated | |
+
+Four lines name a gazetteer entry finer than the tribe above them and so get
+their own row in the sources file: Ouled Khalifa 3,618 and Ouled Aziz 3,847,
+Ouled Redouane 5,132, and the joint line *Khamemsa et Doufane* 2,200, whose
+figure belongs to the pair and which the annexe does not split. Five tribes that
+had no figure at all before now have one: Trabelsi, Khememsa, Oulad Khalifa,
+Ouled Redouan and the Oulad Aziz fraction of the Hammama. So do two frontier
+tribes, the Ouled Khiar and the Ouled Sidi Abid.
+
+Those 33 attributable lines carry 105,941 of the 215,607 taxpayers on the page.
+A little under half the assessed men of the Regency sit in a line this repository
+can put a tribe's name to; the rest are in towns, districts and composite
+circumscriptions, which is the shape of the country's fiscal geography and not a
+defect of the reading.
+
+**The last column is the whole argument of the article, exposed.** Ganiage
+states his rate on p. 864, note 4: *« En règle générale, nous avons retenu le
+taux de quatre habitants pour un imposé à la mejba, toutes dispenses
+comprises. »* Setting his published tribe totals against the taxpayer counts
+recovers what he actually used, tribe by tribe: 3.82 to 5.21, median 4.14. The
+convention is visible, it is roughly four, and it is a convention: the same
+kind of multiplier as Pellissier's ×5 on warriors, applied to a better base.
+
+**The annexe is a tax roll, not a census, and Ganiage says so.** On p. 864 he
+calls the 1277 table *« en définitive peu utilisable »*: it mixes figures that
+are hard to compare, it leaves out the mass of exemptions, and, being the fifth
+year of collection, its lists are already thinned against the first
+enumerations. His documents tell him nothing about the Kroumirs, nor about
+Tunis, Kairouan and Sfax, to which he allots 110,000 between them. 221,664 at
+his own rate of four gives 886,656, against the 1,100,000 he puts on the
+Regency. The gap is the exempt, the uncounted and the three great towns.
+
+The citation: Jean Ganiage, « La population de la Tunisie vers 1860. Essai
+d'évaluation d'après les registres fiscaux », *Population*, 21ᵉ année, n° 5,
+1966, pp. 857–886, DOI [10.2307/1528138](https://doi.org/10.2307/1528138).
+
 ## The two nineteenth-century sources disagree by a factor of four
 
 Pellissier and Ganiage are describing the same decade, and on the steppe tribes
@@ -221,16 +326,12 @@ are not out of line at all.
 
 ## What has not been retrieved
 
-**Ganiage's annexe** is the part still on the table. *Annexe I*, pp. 882–883,
-prints the mejba assessment of every fiscal unit in the 1277 budget — 221,664
-taxpayers in about eighty lines, tribe by tribe and fraction by fraction, with
-footnotes tying each fiscal unit to its tribe. Read as text the two columns
-interleave, so the name-to-number pairing cannot be trusted without reading the
-page image, and it is not entered here for that reason. It is the single richest
-unexploited table found in this search. The citation: Jean Ganiage, « La
-population de la Tunisie vers 1860. Essai d'évaluation d'après les registres
-fiscaux », *Population*, 21ᵉ année, n° 5, 1966, pp. 857–886, DOI
-[10.2307/1528138](https://doi.org/10.2307/1528138).
+**Ganiage's *Annexe II*, p. 883,** was not transcribed. It is a *Recensement des
+hommes du cap Bon*, the men of each Cap Bon locality by five-year age group,
+which is a register of a district's towns and villages and resolves to no tribe
+at all. It is the better table for anyone working on age structure, and the
+wrong one for this repository. *Annexe I*, which ends on p. 882, is read in full
+above.
 
 **FR MAE 1TU/600** is the richest unexploited seam: 253 files of tribal notices
 written by intelligence officers from 1884, held at the Centre des archives
@@ -266,15 +367,30 @@ counts tribes is unverified.
 
 ## Tribes with no figure from any source yet
 
-Of the 60 Tunisian-side gazetteer tribes, 25 have nothing: Aguerba, Chehida,
-Hezil, Iddir, Khememsa, Makna, Mehabel, Mehadhba, Mekena, Meressen, Oulad Amer,
-Oulad Khalifa, Ouled Redouan, Ouled Soltan, Ouled el Goussem, Regab, Riah,
-Taïfa, Trabelsi, and the six fractions that only the 1853 map names separately
-(five of the M'Talith, one of the Hammama). The Riah are the interesting one:
-they are missing not because nobody looked but because the tax circumscription
-that held them held three towns as well, and Ganiage says so.
+Of the 60 Tunisian-side gazetteer tribes, 20 have nothing: Aguerba, Chehida,
+Hezil, Iddir, Makna, Mehabel, Mehadhba, Mekena, Meressen, Oulad Amer, Ouled
+Soltan, Ouled el Goussem, Regab, Riah, Taïfa, and the five M'Talith fractions
+that only the 1853 map names separately. The Riah are the interesting one: they
+are missing not because nobody looked but because the tax circumscription that
+held them held three towns as well, and Ganiage says so.
 
-The fractions are the interesting gap. Pellissier counts the M'Talith whole, at
-15,000, and names its six *berada* without counting them; his map draws five of
-them across their own strips of the Sahel. Whoever wants those five numbers will
-find them, if anywhere, in the *mejba* registers or in a Nantes notice.
+The fractions are the interesting gap, and the annexe has just shown what closes
+it. Pellissier counts the M'Talith whole, at 15,000, and names its six *berada*
+without counting them; his map draws five of them across their own strips of the
+Sahel. The 1277 schedule assesses the M'Talith as a single circumscription of
+6,411 men and splits none of them, which is why those five are still empty while
+the Zlass and the Hammama fractions are not. Whoever wants those five numbers
+will find them, if anywhere, in the registers behind the budget rather than in
+the budget, or in a Nantes notice.
+
+## Files
+
+| File | What it holds |
+| --- | --- |
+| [`data/tribal_population_sources.csv`](../data/tribal_population_sources.csv) | One row per tribe per source, 85 rows. `figure` is a string because sources give ranges and bounds; `unit` says what is being counted and must be read before `figure`; `quote` carries the sentence or table row it came from, `page` and `url` say where. |
+| [`data/ganiage_mejba_1277.csv`](../data/ganiage_mejba_1277.csv) | The 78 lines of Ganiage's *Annexe I*, in printed order. `name_as_printed` is the fiscal unit as engraved, `taxpayers` the men assessed, `footnote` and `footnote_text` his own note on the line, `tribe` the gazetteer name it belongs to and `attribution_basis` how that was decided: `footnote` on his authority, `name` on the printed name alone, `none` for the lines that are towns, districts or oasis groups. `also_gazetteer` names a finer entry the line matches, and `joint_line` marks the one line covering two tribes. |
+| [`data/ganiage_mejba_groups.csv`](../data/ganiage_mejba_groups.csv) | The same lines gathered into the 22 tribes they reach, with Ganiage's own published figure for the tribe where he gives one and the individuals-per-taxpayer that implies. `at_ganiage_rate_of_4` applies his stated rate instead, for tribes where he publishes nothing. |
+| [`data/ganiage_mejba_summary.json`](../data/ganiage_mejba_summary.json) | The arithmetic, including the 6,057 discrepancy and what the annexe does not cover. |
+| [`config/ganiage_annexe1_read.json`](../config/ganiage_annexe1_read.json) | The reading itself, with how the page was read and how many times. |
+| [`data/census_1931_caidats.csv`](../data/census_1931_caidats.csv) | Tableau II of the 1931 census, 37 caïdats. |
+| [`scripts/read_ganiage_annexe.py`](../scripts/read_ganiage_annexe.py) | Builds the three Ganiage outputs from the reading and refreshes the annexe rows of the sources file. It reads nothing off the page; the reading is in the config. |
