@@ -27,6 +27,9 @@ a relevance score.
 | **Tribal variable definitions** | [`docs/CODEBOOK-TRIBES.md`](docs/CODEBOOK-TRIBES.md) |
 | **Tribe names placed on the ground** | [`data/tribal_territories.csv`](data/tribal_territories.csv), [`.geojson`](data/tribal_territories.geojson) |
 | **Do two sheets agree on where a tribe is?** | [`data/tribal_map_agreement.csv`](data/tribal_map_agreement.csv) |
+| **Who counted the tribes, and how many** | [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) |
+| **Population figures, with their sources** | [`data/tribal_population_sources.csv`](data/tribal_population_sources.csv) |
+| **1931 census, by caïdat** | [`data/census_1931_caidats.csv`](data/census_1931_caidats.csv) |
 | **OSM rebuild coding (CSV)** | [`data/gallica_tunisia_maps_osm.csv`](data/gallica_tunisia_maps_osm.csv) |
 | **OSM rebuild report** | [`docs/OSM-REBUILD.md`](docs/OSM-REBUILD.md) |
 | **OSM layer crosswalk** | [`config/osm_crosswalk.json`](config/osm_crosswalk.json) |
@@ -360,6 +363,14 @@ That is not a map of where tribes were; it is a map of where a French compiler i
 that north-western corner.
 
 **645 of 663 records are coded `unknown`, and unknown means unknown, not no.**
+
+**How many people was a tribe?** No sheet says — a map gives location, never
+size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the
+sources that do carry numbers and what each of them counts: Pellissier's own 1853
+text, whose map is the one transcribed here, gives 21 of these tribes in souls
+and four more in horsemen; the 1931 census gives nine of them as caïdats. 33 of
+the 60 Tunisian-side tribes have a figure, 27 have none, and souls, tents,
+horsemen and taxpayers are four different things that must not be mixed.
 
 ## What can be rebuilt from OpenStreetMap
 

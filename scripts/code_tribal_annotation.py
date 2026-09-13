@@ -285,6 +285,7 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
     add("| Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |")
     add("| Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |")
     add("| Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |")
+    add("| How many people was a tribe? | [`docs/POPULATION-SOURCES.md`](POPULATION-SOURCES.md) |")
     add("")
     add("## The catalogue does not know")
     add("")

@@ -12,6 +12,7 @@ Which maps in this collection say where a tribe is, how each one says it, and wh
 | Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |
 | Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |
 | Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |
+| How many people was a tribe? | [`docs/POPULATION-SOURCES.md`](POPULATION-SOURCES.md) |
 
 ## The catalogue does not know
 
