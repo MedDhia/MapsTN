@@ -8,11 +8,12 @@
    "territory has no drawn boundary on any of these sheets - the name is spread",
    "across it in letterspaced capitals and that is the whole of the annotation.",
    "",
-   "So a coordinate here says 'the engraver centred this tribe's name here'. Six",
-   "labels measured on the tiles run 175 to 400 px, 14 to 32 km, so that is a",
-   "statement about the tribe's location to within a tribe's width and nothing",
-   "finer. Reading the same label twice from different tiles agreed to 3-5 px",
-   "(0.3 km), so the reading is not the limit; the annotation is."
+   "So a coordinate here says 'the engraver centred this tribe's name here'.",
+   "The printed names have since been measured end to end, 62 of the 69 on",
+   "the 1881 sheet: 5.7 to 48.1 km, median 16. A coordinate is therefore a",
+   "statement about the tribe's location to within a tribe's width and",
+   "nothing finer. Reading the same label twice from different tiles agreed",
+   "to 3-5 px (0.3 km), so the reading is not the limit; the annotation is."
   ],
   "control_points": [
    "Towns, not the printed graticule. The graticule is there and readable, but the",
@@ -106,485 +107,617 @@
      "marker": "Tribu des",
      "x": 2508,
      "y": 2498,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 155,
+     "extent_basis": "measured"
     },
     {
      "text": "Nefsa",
      "marker": "Tribu des",
      "x": 2733,
      "y": 2440,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 72,
+     "extent_basis": "measured"
     },
     {
      "text": "El Mogod",
      "marker": null,
      "x": 2820,
      "y": 2365,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 145,
+     "extent_basis": "measured"
     },
     {
      "text": "Djeladjela",
      "marker": "Tribu des",
      "x": 2808,
      "y": 2523,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 196,
+     "extent_basis": "measured"
     },
     {
      "text": "Kroumirs",
      "marker": "Territoire des",
      "x": 2417,
      "y": 2682,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_basis": "not_measured"
     },
     {
      "text": "Chehida",
      "marker": "Tribu des",
      "x": 2533,
      "y": 2807,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 159,
+     "extent_basis": "measured"
     },
     {
      "text": "Zouagha",
      "marker": "Tribu",
      "x": 2612,
      "y": 2916,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 152,
+     "extent_basis": "measured"
     },
     {
      "text": "Hezil",
      "marker": "Tribu",
      "x": 3175,
      "y": 2420,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 83,
+     "extent_basis": "measured"
     },
     {
      "text": "Makna",
      "marker": "Tribu",
      "x": 3367,
      "y": 2420,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 137,
+     "extent_basis": "measured"
     },
     {
      "text": "Trabelsi",
      "marker": "Tribu",
      "x": 3517,
      "y": 2615,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 219,
+     "extent_basis": "measured"
     },
     {
      "text": "Riah",
      "marker": "Tribu",
      "x": 3238,
      "y": 2900,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 88,
+     "extent_basis": "measured"
     },
     {
      "text": "Ghezoran",
      "marker": "Tribu",
      "x": 2358,
      "y": 2957,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 183,
+     "extent_basis": "measured"
     },
     {
      "text": "O. bou Salem",
      "marker": "Tribu",
      "x": 2658,
      "y": 2985,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 230,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Ali",
      "marker": "Tribu des",
      "x": 2275,
      "y": 2857,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_basis": "not_measured"
     },
     {
      "text": "Beni Mazer",
      "marker": "Tribu des",
      "x": 2255,
      "y": 2731,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_basis": "not_measured"
     },
     {
      "text": "Meressen",
      "marker": "Tribu",
      "x": 2067,
      "y": 2965,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 186,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouchtata Khezara",
      "marker": "Tribu",
      "x": 2083,
      "y": 2980,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_basis": "not_measured"
     },
     {
      "text": "O. Soltan",
      "marker": "Tribu",
      "x": 2200,
      "y": 2993,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 176,
+     "extent_basis": "measured_clipped"
     },
     {
      "text": "O. Sdira",
      "marker": "Tribu",
      "x": 1867,
      "y": 3102,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 132,
+     "extent_basis": "measured"
     },
     {
      "text": "Hakim",
      "marker": "Tribu",
      "x": 1950,
      "y": 3385,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 147,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouargha",
      "marker": "Tribu",
      "x": 2017,
      "y": 3593,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 196,
+     "extent_basis": "measured"
     },
     {
      "text": "Charen",
      "marker": null,
      "x": 2067,
      "y": 3777,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 167,
+     "extent_basis": "measured"
     },
     {
      "text": "O. Yakoub",
      "marker": "Tribu",
      "x": 2275,
      "y": 3898,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_basis": "not_measured"
     },
     {
      "text": "Khememsa et Doufan",
      "marker": "Tribus",
      "x": 2383,
      "y": 4052,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_basis": "not_measured"
     },
     {
      "text": "Ouartan",
      "marker": "Tribu",
      "x": 2433,
      "y": 4151,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 211,
+     "extent_basis": "measured"
     },
     {
      "text": "Zeghalma",
      "marker": "Tribu",
      "x": 2292,
      "y": 4197,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_basis": "not_measured"
     },
     {
      "text": "O. bou Ghanem",
      "marker": "Tribu",
      "x": 1796,
      "y": 4120,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 343,
+     "extent_basis": "measured"
     },
     {
      "text": "Mejers",
      "marker": "Tribu",
      "x": 2400,
      "y": 4430,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 167,
+     "extent_basis": "measured"
     },
     {
      "text": "Zlaas",
      "marker": "Tribu",
      "x": 3100,
      "y": 4427,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 172,
+     "extent_basis": "measured"
     },
     {
      "text": "Frechiche",
      "marker": "Tribu",
      "x": 2050,
      "y": 4610,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 294,
+     "extent_basis": "measured"
     },
     {
      "text": "Djendouba",
      "marker": "Tribu",
      "x": 2583,
      "y": 3127,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 235,
+     "extent_basis": "measured"
     },
     {
      "text": "Drid",
      "marker": "Tribu",
      "x": 3400,
      "y": 3118,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 88,
+     "extent_basis": "measured"
     },
     {
      "text": "O. Riah",
      "marker": "Tribu",
      "x": 3233,
      "y": 3518,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 206,
+     "extent_basis": "measured"
     },
     {
      "text": "O. Ayar",
      "marker": "Tribu",
      "x": 2808,
      "y": 3643,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 149,
+     "extent_basis": "measured"
     },
     {
      "text": "O. Aoun",
      "marker": "Tribu",
      "x": 3150,
      "y": 3785,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 176,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Saïd",
      "marker": "Tribu",
      "x": 4150,
      "y": 3468,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 292,
+     "extent_basis": "measured"
     },
     {
      "text": "Souassi",
      "marker": "Tribu",
      "x": 3933,
      "y": 3790,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 196,
+     "extent_basis": "measured"
     },
     {
      "text": "M'Talith",
      "marker": "Tribu",
      "x": 4125,
      "y": 4947,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 279,
+     "extent_basis": "measured"
     },
     {
      "text": "Hammama",
      "marker": "Tribu",
      "x": 3017,
      "y": 5513,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 319,
+     "extent_basis": "measured"
     },
     {
      "text": "Nefat",
      "marker": "Tribu",
      "x": 3650,
      "y": 5808,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 137,
+     "extent_basis": "measured"
     },
     {
      "text": "Mahadeba",
      "marker": "Tribu",
      "x": 3600,
      "y": 6200,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 348,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouergama",
      "marker": "Tribu",
      "x": 4292,
      "y": 7512,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 382,
+     "extent_basis": "measured"
     },
     {
      "text": "Beni Ourghine",
      "marker": null,
      "x": 1292,
      "y": 2690,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 250,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Dhiab",
      "marker": null,
      "x": 1500,
      "y": 2640,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 250,
+     "extent_basis": "measured"
     },
     {
      "text": "Braktia",
      "marker": null,
      "x": 1700,
      "y": 2603,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 172,
+     "extent_basis": "measured"
     },
     {
      "text": "Beni Ahmar",
      "marker": null,
      "x": 1567,
      "y": 2732,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 230,
+     "extent_basis": "measured"
     },
     {
      "text": "Sbetsa",
      "marker": null,
      "x": 1700,
      "y": 2815,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 113,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Ahmar ben Ali",
      "marker": null,
      "x": 1700,
      "y": 2910,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 319,
+     "extent_basis": "measured"
     },
     {
      "text": "Dra Menna",
      "marker": null,
      "x": 858,
      "y": 2910,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 265,
+     "extent_basis": "measured_clipped"
     },
     {
      "text": "Merdès",
      "marker": null,
      "x": 1292,
      "y": 2918,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 186,
+     "extent_basis": "measured"
     },
     {
      "text": "Cheefia",
      "marker": null,
      "x": 1517,
      "y": 2935,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 152,
+     "extent_basis": "measured"
     },
     {
      "text": "Chiebna",
      "marker": null,
      "x": 1542,
      "y": 3093,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 152,
+     "extent_basis": "measured"
     },
     {
      "text": "Beni Mezzeline",
      "marker": null,
      "x": 933,
      "y": 3072,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 235,
+     "extent_basis": "measured"
     },
     {
      "text": "Beni Salah",
      "marker": null,
      "x": 1200,
      "y": 3157,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 250,
+     "extent_basis": "measured"
     },
     {
      "text": "Nbails",
      "marker": null,
      "x": 967,
      "y": 3202,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 144,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Dean",
      "marker": null,
      "x": 875,
      "y": 3302,
-     "read_confidence": "medium"
+     "read_confidence": "medium",
+     "extent_px": 183,
+     "extent_basis": "measured"
     },
     {
      "text": "Sefia",
      "marker": null,
      "x": 1058,
      "y": 3352,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 196,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouillen",
      "marker": null,
      "x": 1617,
      "y": 3490,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 245,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Daoud",
      "marker": null,
      "x": 942,
      "y": 3585,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 250,
+     "extent_basis": "measured"
     },
     {
      "text": "Hanenchas",
      "marker": null,
      "x": 1400,
      "y": 3693,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 603,
+     "extent_basis": "measured"
     },
     {
      "text": "Mahatla",
      "marker": null,
      "x": 958,
      "y": 3773,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 255,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Khiar",
      "marker": null,
      "x": 1458,
      "y": 3888,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 436,
+     "extent_basis": "measured"
     },
     {
      "text": "Sellaouas",
      "marker": null,
      "x": 1025,
      "y": 4010,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 309,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Sidi Yaya ben Taleb",
      "marker": null,
      "x": 1408,
      "y": 4118,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 328,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Sedjera",
      "marker": null,
      "x": 1058,
      "y": 4297,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 488,
+     "extent_basis": "measured"
     },
     {
      "text": "Nemenchas",
      "marker": null,
      "x": 1058,
      "y": 4543,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 578,
+     "extent_basis": "measured"
     },
     {
      "text": "Allaounas",
      "marker": null,
      "x": 1067,
      "y": 4660,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 373,
+     "extent_basis": "measured"
     },
     {
      "text": "Ouled Sidi Abid",
      "marker": null,
      "x": 1450,
      "y": 4905,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 534,
+     "extent_basis": "measured"
     },
     {
      "text": "Brarchas",
      "marker": null,
      "x": 1058,
      "y": 5347,
-     "read_confidence": "high"
+     "read_confidence": "high",
+     "extent_px": 485,
+     "extent_basis": "measured"
     }
-   ]
+   ],
+   "_extents": "extent_px is the printed length of the name on the sheet, end to end, read by eye off contact sheets cropped from the full scan with a pixel ruler under each label. It is the one statement the map makes about how much ground a tribe covers, and it is what docs/img/tribal_spread.png draws. 'measured_clipped' means one end ran off the crop and the reading is a lower bound; 'not_measured' means the name could not be isolated, which happens where it runs into the sheet edge or into another name."
   },
   "btv1b53136235q": {
    "title": "Carte de la Régence de Tunis / par E. Pellissier",

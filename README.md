@@ -350,7 +350,8 @@ Two sheets were then transcribed label by label and placed on the ground: the
 read from the Kroumirie down to about 34°N. **114 labels** in
 [`data/tribal_territories.csv`](data/tribal_territories.csv), placed from control
 towns read off each sheet — leave-one-out RMS **6.2 km** for 1881 and **8.2 km**
-for 1853. The labels themselves run 14–32 km long, so a point locates a tribe to
+for 1853. The printed names themselves run 6 to 48 km long, median 16, so a
+point locates a tribe to
 within a tribe's width and no finer.
 
 ![Where two sheets put each tribe's name](docs/img/tribal_territories.png)
@@ -389,46 +390,44 @@ table had a southern figure sitting over a north-western taxpayer count as a
 result. Correcting it tightened the implied multiplier in Ganiage's article from
 3.82–5.21 to 3.82–4.33, median 4.06, against the flat four he states.
 
-**The spread of each tribe.** A tribe on these sheets is a name laid across
-country with no line around it, and
-[`scripts/map_tribal_spread.py`](scripts/map_tribal_spread.py) draws that as a
-field rather than an area: each sheet's names blurred by a Gaussian of 18 km and
-painted as a continuous surface, one hue per cartographer, with no contour line
-anywhere in it. Intensity is the distance to that sheet's nearest printed name,
-1 where a name sits and a half at 21 km, which is about one printed name away.
-**Nothing is clipped**: not to the imada, not to the gouvernorat, not to the
-modern border, which 34 of the 141 names ignore by sitting on ground that is now
-Algeria.
+**How much ground a name covers.** A tribe on these sheets is a name
+letterspaced across the country it holds, and how far the engraver spread it is
+the only statement the map makes about extent. So it was measured: every label
+on the 1881 Lasailly sheet cropped from the full scan into a strip with a pixel
+ruler under it and read end to end by eye. **62 of 69 labels** yielded a length.
+[`scripts/map_tribal_spread.py`](scripts/map_tribal_spread.py) draws each tribe
+as a circle of that diameter.
 
-![The spread of each tribe, as four cartographers had it](docs/img/tribal_spread.png)
+![How much ground a tribe's name covers, measured off the sheet](docs/img/tribal_spread.png)
 
-Two earlier versions are recorded in the repository because both are tempting
-and both are wrong. A dot per label is exact and answers nothing about extent.
-Filling administrative units answers it by inventing it: a filled polygon reads
-as territory whatever the caption says, and it confines a nineteenth-century
-tribe inside a 2022 administrative mesh. Scattering dots inside those same
-polygons is the same error with softer edges.
+**Why a circle and not an ellipse**: the sheet states one number, the length
+along the baseline. The across-name dimension is nowhere on the map and an
+ellipse would have to invent it. Nothing is clipped either, so a circle crosses
+the modern frontier wherever the name does.
 
-| Cartographer | Names | Tribes | Printed on what is now Algeria |
-| --- | --- | --- | --- |
-| 1853 Pellissier | 45 | 43 | 2 |
-| 1881 Lasailly | 69 | 67 | 29 |
-| 1881 Martel (1965) | 27 | 27 | 3 |
-| **All three, pooled** | **141** | **88** | **34** |
+| | |
+| --- | --- |
+| Shortest | Nefza, 5.7 km |
+| Longest | Hanencha, 48.1 km |
+| Median | 16 km |
 
-**Spread is measured, not just drawn.**
-[`data/tribal_spread.csv`](data/tribal_spread.csv) gives each tribe the widest
-gap between two of its own printed names, which is the one column that is purely
-evidence. 35 of the 88 tribes carry more than one name and the widest such gap
-is 201 km. The widest field belongs to the Riah, whose four names across three
-sheets disagree by up to 87 km, which is as much a statement about the
-compilers as about the Riah.
+**This corrects a figure quoted earlier here.** A sample of six labels had given
+14 to 32 km. With 62 measured the range is 6 to 48 and the median 16: the six
+had missed the small tribes at one end and the great frontier confederations at
+the other. Per-label results are in
+[`data/tribal_spread.csv`](data/tribal_spread.csv).
 
-The nearest-name index at imada level is kept as a table and no longer drawn:
+Three earlier ways of drawing this are recorded in the repository because each
+supplied the number the map does not: a dot per label (silent about extent),
+administrative units filled or sprinkled (invents extent, and confines a
+nineteenth-century tribe inside a 2022 mesh), and a Gaussian blur of the labels
+(looks measured, but the bandwidth was a choice, so every tribe came out the
+same size whatever the sheet said).
+
+The nearest-name index at imada level is kept as a table:
 [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv), each
-cartographer in his own column. It carries its own warning. **Of the 1,845
-imadas that two or three sheets reach, only 232, 12.6%, get the same tribe from
-all of them.**
+cartographer in his own column. **Of the 1,845 imadas that two or three sheets
+reach, only 232, 12.6%, get the same tribe from all of them.**
 
 **How many people was a tribe?** No sheet says — a map gives location, never
 size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the

@@ -12,7 +12,7 @@ Which maps in this collection say where a tribe is, how each one says it, and wh
 | Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |
 | Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |
 | Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |
-| The spread of each tribe | [`data/tribal_spread.csv`](../data/tribal_spread.csv) |
+| How much ground a name covers | [`data/tribal_spread.csv`](../data/tribal_spread.csv) |
 | Tribes on today's imadas | [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) |
 | Martel's 1881 sketch map, read | [`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv) |
 | How many people was a tribe? | [`docs/POPULATION-SOURCES.md`](POPULATION-SOURCES.md) |
@@ -95,7 +95,7 @@ Neither used the printed graticule, though both have one. On the 1881 sheet the 
 
 Where a town could *not* be found is a measurement too. On the 1853 sheet neither Gafsa nor Tozeur is within 300 px of where a fit on the other ten towns predicts it. The south-west is the part Pellissier had least survey for, and that is what the failure says.
 
-**The larger error is not positional at all.** Six labels measured across the tiles run 175 to 400 px — ZLAAS the shortest, OUERGAMA the longest — which at the 1881 sheet's scale is **14 to 32 km of ground**. The point records where the name is *centred*, so it locates the tribe to within a tribe's width and no finer. On the 1881 sheet, reading the same label twice from two overlapping tiles agreed to 3–5 px and the two towns read twice agreed to 3 px. On the 1853 sheet the same check gives 80 px for HAMEMA, and MADJER — which runs along an arc of some 1500 px from Sbiba round to Djilma — had its letters read at three points 1000 px apart before they resolved into one name. A `(Tribu)` tag tells you where a label ends. Without one, nothing does.
+**The larger error is not positional at all.** Every name on the 1881 sheet has now been measured end to end: 62 of the 69 run **5.7 to 48.1 km of ground, median 16**, NEFZA the shortest and HANENCHAS the longest, in [`data/tribal_spread.csv`](../data/tribal_spread.csv). An earlier figure of 14 to 32 km, quoted in this report and in the codebook, came from a sample of six and missed both ends. The point records where the name is *centred*, so it locates the tribe to within a tribe's width and no finer. On the 1881 sheet, reading the same label twice from two overlapping tiles agreed to 3–5 px and the two towns read twice agreed to 3 px. On the 1853 sheet the same check gives 80 px for HAMEMA, and MADJER — which runs along an arc of some 1500 px from Sbiba round to Djilma — had its letters read at three points 1000 px apart before they resolved into one name. A `(Tribu)` tag tells you where a label ends. Without one, nothing does.
 
 ### Do the two sheets agree?
 
@@ -139,30 +139,36 @@ By modern gouvernorat, for the sheet whose face was read in full:
 
 The north-west carries the annotation and the south barely does. Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels between them, while south of Sfax the entire country — the Jerid, the Nefzaoua, the Dahar, the Matmata — carries exactly one, the Ouerghemma. That is not a map of where tribes were. It is a map of where a French compiler in 1881 had names for them, and 1881 is the year of the Kroumir campaign in exactly that north-western corner. Over the same latitudes the 1853 sheet is less lopsided — its median label sits at 35.9°N against the 1881 sheet's 36.6°N, and seven of its labels fall south of 35°N against four — though part of that is simply that Pellissier names the fractions of the M'Talith and the Hamema where Lasailly names the parent.
 
-## The spread of each tribe
+## How much ground a name covers
 
-![The spread of each tribe, as four cartographers had it](img/tribal_spread.png)
+![How much ground a tribe's name covers, measured off the sheet](img/tribal_spread.png)
 
-A tribe on these sheets is a name laid across country with no line around it, and three ways of drawing that were tried here before this one. Recording the two that failed is cheaper than letting someone repeat them.
+A tribe on these sheets is a name letterspaced across the country it holds. How far the engraver spread it is the only statement the map makes about extent, so that is the thing to measure, and three earlier attempts to draw a tribe's spread are recorded here because each supplied the number the map does not.
 
-**A dot at each label** is exact and says almost nothing: it marks where an engraver centred a word and answers no question about extent. **Filling administrative units**, the imada being the finest published, answers the extent question by inventing it. A filled polygon reads as territory however the caption is worded, and it commits a second error underneath the first by confining a nineteenth-century tribe inside a 2022 mesh and stopping it at a frontier that did not exist: 34 of the 141 names are printed on ground that is now Algeria. Scattering dots inside those same polygons is the same error with softer edges.
+| Drawn as | What went wrong |
+| --- | --- |
+| A dot per label | Exact, and silent about extent. |
+| Administrative units, filled or sprinkled | Answers extent by inventing it, and confines a nineteenth-century tribe inside a 2022 mesh that stops at a frontier which did not exist. |
+| A Gaussian blur of the labels | Looks measured and is not: the bandwidth was a choice, so every tribe came out the same size whatever the sheet said. |
 
-**What is drawn instead is a field.** Each sheet's names are blurred by a Gaussian of 18 km and painted as a continuous surface, one hue per cartographer, with no contour line anywhere in it. Intensity is the distance to that sheet's nearest printed name: 1 where a name sits, a half at 21 km, fading to nothing beyond. Nothing is clipped, not to the imada, not to the gouvernorat, not to the modern border.
+The third was the worst because it flattened the signal. OUERGAMA is letterspaced 1.7 times wider per letter than MEKENA, and that difference is the map speaking about two tribes of very different reach.
 
-**The bandwidth is not a free parameter.** The six labels measured on the tiles run 14 to 32 km end to end, a median of about 22, and a Gaussian of this sigma falls to half at 21 km, so the surface halves about one printed name away from the engraving. The blur is the annotation's own grain, not an error bar: placement is 1881 6.17 km, 1853 8.17 km leave-one-out, comfortably inside it.
+**So the extents were measured.** Each label on the 1881 Lasailly sheet was cropped from the full scan into a contact strip with a pixel ruler under it and read end to end by eye. **62 of 69 labels** yielded a length; 7 run into a sheet edge or into another name and are left unmeasured. Every tribe is then drawn as a circle whose diameter is that printed length.
 
-| Cartographer | Names | Tribes | Printed on what is now Algeria |
-| --- | --- | --- | --- |
-| 1853 Pellissier | 45 | 43 | 2 |
-| 1881 Lasailly | 69 | 67 | 29 |
-| 1881 Martel (1965) | 27 | 27 | 3 |
-| **All three, pooled** | **141** | **88** | **34** |
+**Why a circle and not an ellipse.** The sheet states one number, the length of the name along its baseline. The across-name dimension appears nowhere on the map, so an ellipse would have to invent it, which is the mistake the figure exists to stop making. A circle adds no second parameter and no orientation. Nothing is clipped either, so a circle crosses the modern frontier wherever the name does.
 
-**Spread is measured, not just drawn.** [`data/tribal_spread.csv`](../data/tribal_spread.csv) gives each tribe its labels, the sheets that carry them, the widest gap between two of its own names, and the ground its field covers down to half peak. 35 of 88 tribes carry more than one name, and the widest gap between two names of a single tribe is 201 km. The median field is 1,418 km² and the widest is Riah at 5,462 km². A tribe named once gets a circle; a tribe named four times across three sheets gets the shape those four names make, which is as close to observed spread as this evidence goes.
+| | |
+| --- | --- |
+| Shortest name | Nefza (*Nefsa*), 5.7 km |
+| Longest | Hanencha (*Hanenchas*), 48.1 km |
+| Median | 16 km |
+| Mean | 19.0 km |
 
-**What the reader must not do with it.** The surface is not a territory and its fade is not a frontier. Two tribes overlap on this figure wherever their names sit within a name's length of each other, which happens because compilers disagreed, because tribes interleaved, or because one sheet names a fraction where another names the parent. The overlap is left to be seen rather than resolved.
+**This corrects a figure quoted earlier in this repository.** A sample of six labels had given 14 to 32 km, and that range was repeated in the codebook and in two scripts. With 62 measured the true range is 6 to 48 km and the median is 16, so the sample of six had missed the small tribes at one end and the great frontier confederations at the other. The Hanencha name runs 48 km of ground, the Nemencha 46, the Ouled Sidi Abid 43; the Nefza name runs 6.
 
-**The modern-unit index is kept as a table and no longer drawn.** [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) gives each of the 2,084 imadas the tribe whose nearest name is closest, out to 60 km, once per cartographer and once pooled. It answers a question about indexing rather than about where a tribe was, and it carries its own warning: of the 1,845 imadas that two or three sheets reach, only 232, **12.6%**, get the same tribe from all of them.
+Per-label results are in [`data/tribal_spread.csv`](../data/tribal_spread.csv).
+
+**What is not yet measured.** The 1853 Pellissier and 1965 Martel sheets. Both set their tribal names on long arcs and verticals rather than horizontal baselines, so the endpoints have to be read a different way; until that is done their labels appear on the figure as points and carry no circle. Saying so is cheaper than drawing them at a size nobody measured.
 
 ## Coding
 

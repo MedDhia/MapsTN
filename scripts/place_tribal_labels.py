@@ -10,7 +10,8 @@ so it emits **points, and calls them label anchors**, never territories with
 edges.
 
 What a point means, precisely: *the engraver centred this tribe's name here*.
-Six labels measured on the tiles run 175 to 400 px - 14 to 32 km of ground - so
+The printed names have since been measured end to end, 62 of the 69 on the
+1881 sheet: 5.7 to 48.1 km, median 16 (see scripts/map_tribal_spread.py), so
 the point locates the tribe to within a tribe's width. On the 1881 sheet, where
 a (Tribu) tag fixes where a label ends, reading the same label twice from two
 overlapping tiles agreed to 3-5 px. On the 1853 sheet, which marks nothing, the

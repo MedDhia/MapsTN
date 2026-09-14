@@ -105,7 +105,9 @@ Two error terms, both in [`data/tribal_fit.json`](../data/tribal_fit.json):
   is the figure that applies to a label the fit never saw, is **6.17 km** for 1881
   and **8.17 km** for 1853. Each contains the compilation's own error and the error
   in reading a printed dot, and does not separate them.
-* **Annotation.** Six labels measured run 175 to 400 px, 14 to 32 km. This is the
+* **Annotation.** The printed names have been measured end to end for the 1881
+  sheet: 62 of 69 run **5.7 to 48.1 km, median 16**, in
+  [`data/tribal_spread.csv`](../data/tribal_spread.csv). This is the
   larger term, it is irreducible, and it is a property of the map rather than of
   the method.
 * **Reading, on an unmarked sheet.** On the 1881 sheet, where `(Tribu)` fixes where
@@ -115,7 +117,8 @@ Two error terms, both in [`data/tribal_fit.json`](../data/tribal_fit.json):
   [`config/tribal_labels_read.json`](../config/tribal_labels_read.json).
 
 So: a label anchor is good to roughly 6 km of where the name is printed, and the
-name covers 14–32 km of ground. Do not join these points to modern boundaries and
+name covers a median 16 km of ground and up to 48. Do not join these points to
+modern boundaries and
 report the result as a tribe's extent. The `gouvernorat` column is there to make
 the points findable, not to assign a tribe to a governorate.
 
@@ -135,49 +138,44 @@ the points findable, not to assign a tribe to a governorate.
 | [`data/boundaries/neighbours_ne50m.geojson`](../data/boundaries/neighbours_ne50m.geojson) | Algeria, Libya and Sicily clipped to the map window, Natural Earth 1:50m, so the names printed west of the frontier sit on land. |
 | [`config/martel_1965_tribes.json`](../config/martel_1965_tribes.json), [`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv), [`data/martel_1965_fit.json`](../data/martel_1965_fit.json) | The third sheet, read and placed. See section E. |
 
-## D. The spread of each tribe
+## D. How much ground a name covers
 
-[`data/tribal_spread.csv`](../data/tribal_spread.csv), one row per tribe, 88
-rows. Built by [`map_tribal_spread.py`](../scripts/map_tribal_spread.py), which
-also draws [`docs/img/tribal_spread.png`](img/tribal_spread.png).
+[`data/tribal_spread.csv`](../data/tribal_spread.csv), one row per label on the
+1881 Lasailly sheet, 69 rows. Built by
+[`map_tribal_spread.py`](../scripts/map_tribal_spread.py), which also draws
+[`docs/img/tribal_spread.png`](img/tribal_spread.png).
 
 | Variable | Definition |
 | --- | --- |
-| `tribe` | The gazetteer's canonical name, or the printed name where the label resolves to no entry. |
-| `labels` | How many printed names across all three sheets resolve to this tribe. 53 tribes have one, 35 have more. |
-| `sources`, `sources_named` | How many of the three sheets name it, and which. |
-| `printed_as` | Every spelling it appears under: `Djelas \| Djelas Senrassin \| ZLASS \| Zlaas`. |
-| `lon`, `lat` | The mean of its label positions. **Not a territory centroid.** For a one-label tribe it is that label; for a four-label tribe it is the middle of four engravers' opinions. |
-| `widest_label_gap_km` | The greatest distance between two of this tribe's own names. **This is the observed spread**, and it is the only column here that is purely evidence. |
-| `field_sqkm_half_peak` | The ground the tribe's Gaussian field covers down to half its peak. Evidence plus bandwidth: a one-label tribe gets about 1,400 km² whatever it was, because that is what an 18 km blur of a single point covers. |
-| `labels_outside_modern_tunisia` | How many of its names are printed on ground that is now Algeria. |
+| `sheet` | `1881 Lasailly`. The only sheet measured so far. |
+| `label_as_printed`, `tribe` | The name as engraved, and the gazetteer name it resolves to. |
+| `lon`, `lat` | The middle of the printed name, from the sheet's affine. |
+| `extent_px` | **The measurement.** The length of the name on the scan, end to end, first letter to last. |
+| `extent_km` | The same at 0.0798 km per scan pixel, the fitted scale of this sheet. |
+| `extent_basis` | `measured`, `measured_clipped` (one end ran off the crop, so the figure is a lower bound), or `not_measured`. |
+| `inside_tunisia` | 1 if the label's centre falls inside the modern border. 29 of these labels do not. |
 
-**Read `widest_label_gap_km` before `field_sqkm_half_peak`.** The first is
-measured off the sheets. The second is the first convolved with a choice of
-bandwidth, so for the 53 single-label tribes it carries no information about the
-tribe at all: it is the area of one blur. The widest field, Riah at 5,462 km²,
-is wide because four names across three sheets disagree by up to 87 km, which is
-as much a statement about the compilers as about the Riah.
+**How it was read.** Each label was cropped from the full 5880 × 8853 scan into
+a horizontal strip with a pixel ruler drawn beneath it and the anchor marked,
+several strips to a contact sheet, and read by eye. An earlier attempt to chain
+glyph blobs automatically is recorded in the script as a failure: it worked on a
+clean label and ran away across the sheet on a crowded one.
 
-### The figure, and the two versions of it that were wrong
+**What the number is.** The engraver letterspaced a tribe's name across the
+country it holds, so the length of the name is the map's own statement of the
+tribe's reach. It is not an error bar and not a boundary. Two tribes of the same
+importance get names of the same size only if the compiler thought their ground
+was the same size, which is exactly the signal.
 
-The surface drawn is `exp(-d² / 2σ²)` for `d` the distance to the nearest
-printed name of that sheet, σ = 18 km, painted as a continuous alpha ramp with
-no contour line in it. Intensity is 1 where a name sits and a half at 21 km,
-which is about one printed name away.
+**Why the figure draws a circle.** The sheet gives one number, the length along
+the baseline. The across-name dimension is stated nowhere, so an ellipse would
+have to invent a second parameter and an orientation. The circle is centred on
+the middle of the name with that length as its diameter, and nothing is clipped
+to any boundary.
 
-Two earlier versions are recorded because both are tempting and both are wrong.
-**A dot per label** answers nothing about extent. **Filled or dotted
-administrative units** answer it by inventing it: a filled polygon reads as
-territory whatever the caption says, and it confines a nineteenth-century tribe
-inside a 2022 administrative mesh, stopping it at a frontier that did not exist
-when 34 of the 141 names were printed on what is now Algerian ground.
-
-**The bandwidth is not free and the fade is not a frontier.** σ is set from the
-six labels measured on the tiles, which run 14 to 32 km end to end. Placement
-error is 6.17 km and 8.17 km leave-one-out for the two Gallica sheets and
-12.61 km for Martel, all comfortably inside the blur, so the blur is the
-annotation's grain rather than an error bar.
+**What is not in the file.** The 1853 Pellissier and 1965 Martel sheets. Their
+names run on long arcs and verticals, not horizontal baselines, so the endpoints
+need a different reading. Their labels stay points on the figure.
 
 ## D2. The imada index
 

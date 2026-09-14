@@ -285,7 +285,7 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
     add("| Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |")
     add("| Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |")
     add("| Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |")
-    add("| The spread of each tribe | [`data/tribal_spread.csv`](../data/tribal_spread.csv) |")
+    add("| How much ground a name covers | [`data/tribal_spread.csv`](../data/tribal_spread.csv) |")
     add("| Tribes on today's imadas | [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) |")
     add("| Martel's 1881 sketch map, read | [`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv) |")
     add("| How many people was a tribe? | [`docs/POPULATION-SOURCES.md`](POPULATION-SOURCES.md) |")
@@ -469,11 +469,14 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
         "towns predicts it. The south-west is the part Pellissier had least survey "
         "for, and that is what the failure says.")
     add("")
-    add("**The larger error is not positional at all.** Six labels measured across the "
-        "tiles run 175 to 400 px — ZLAAS the shortest, OUERGAMA the longest — which at "
-        "the 1881 sheet's scale is **14 to 32 km of ground**. The point records where "
-        "the name is *centred*, so it locates the tribe to within a tribe's width and "
-        "no finer. On the 1881 sheet, reading the same label twice from two "
+    add("**The larger error is not positional at all.** Every name on the 1881 sheet "
+        "has now been measured end to end: 62 of the 69 run **5.7 to 48.1 km of "
+        "ground, median 16**, NEFZA the shortest and HANENCHAS the longest, in "
+        "[`data/tribal_spread.csv`](../data/tribal_spread.csv). An earlier figure of "
+        "14 to 32 km, quoted in this report and in the codebook, came from a sample "
+        "of six and missed both ends. The point records where the name is *centred*, "
+        "so it locates the tribe to within a tribe's width and no finer. On the 1881 "
+        "sheet, reading the same label twice from two "
         "overlapping tiles agreed to 3–5 px and the two towns read twice agreed to 3 "
         "px. On the 1853 sheet the same check gives 80 px for HAMEMA, and MADJER — "
         "which runs along an arc of some 1500 px from Sbiba round to Djilma — had its "
@@ -542,90 +545,77 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
     spread_path = REPO_ROOT / "data" / "tribal_spread_summary.json"
     if spread_path.exists():
         sp = json.loads(spread_path.read_text(encoding="utf-8"))
-        index = sp.get("imada_index", {})
-        add("## The spread of each tribe")
+        add("## How much ground a name covers")
         add("")
-        add("![The spread of each tribe, as four cartographers had it]"
+        add("![How much ground a tribe's name covers, measured off the sheet]"
             "(img/tribal_spread.png)")
         add("")
-        add("A tribe on these sheets is a name laid across country with no line "
-            "around it, and three ways of drawing that were tried here before "
-            "this one. Recording the two that failed is cheaper than letting "
-            "someone repeat them.")
+        add("A tribe on these sheets is a name letterspaced across the country "
+            "it holds. How far the engraver spread it is the only statement the "
+            "map makes about extent, so that is the thing to measure, and three "
+            "earlier attempts to draw a tribe's spread are recorded here because "
+            "each supplied the number the map does not.")
         add("")
-        add("**A dot at each label** is exact and says almost nothing: it marks "
-            "where an engraver centred a word and answers no question about "
-            "extent. **Filling administrative units**, the imada being the "
-            "finest published, answers the extent question by inventing it. A "
-            "filled polygon reads as territory however the caption is worded, "
-            "and it commits a second error underneath the first by confining a "
-            "nineteenth-century tribe inside a 2022 mesh and stopping it at a "
-            f"frontier that did not exist: {sp['points_outside_modern_tunisia']} "
-            f"of the {sp['points']} names are printed on ground that is now "
-            f"Algeria. Scattering dots inside those same polygons is the same "
-            f"error with softer edges.")
+        add("| Drawn as | What went wrong |")
+        add("| --- | --- |")
+        add("| A dot per label | Exact, and silent about extent. |")
+        add("| Administrative units, filled or sprinkled | Answers extent by "
+            "inventing it, and confines a nineteenth-century tribe inside a 2022 "
+            "mesh that stops at a frontier which did not exist. |")
+        add("| A Gaussian blur of the labels | Looks measured and is not: the "
+            "bandwidth was a choice, so every tribe came out the same size "
+            "whatever the sheet said. |")
         add("")
-        add(f"**What is drawn instead is a field.** Each sheet's names are "
-            f"blurred by a Gaussian of {sp['sigma_km']:.0f} km and painted as a "
-            f"continuous surface, one hue per cartographer, with no contour "
-            f"line anywhere in it. Intensity is the distance to that sheet's "
-            f"nearest printed name: 1 where a name sits, a half at "
-            f"{sp['half_peak_radius_km']:.0f} km, fading to nothing beyond. "
-            f"Nothing is clipped, not to the imada, not to the gouvernorat, not "
-            f"to the modern border.")
+        add("The third was the worst because it flattened the signal. OUERGAMA "
+            "is letterspaced 1.7 times wider per letter than MEKENA, and that "
+            "difference is the map speaking about two tribes of very different "
+            "reach.")
         add("")
-        add(f"**The bandwidth is not a free parameter.** The six labels "
-            f"measured on the tiles run 14 to 32 km end to end, a median of "
-            f"about 22, and a Gaussian of this sigma falls to half at "
-            f"{sp['half_peak_radius_km']:.0f} km, so the surface halves about "
-            f"one printed name away from the engraving. The blur is the "
-            f"annotation's own grain, not an error bar: placement is "
-            f"{sp['loo_rms']} leave-one-out, comfortably inside it.")
+        add(f"**So the extents were measured.** Each label on the "
+            f"{sp['sheet']} sheet was cropped from the full scan into a contact "
+            f"strip with a pixel ruler under it and read end to end by eye. "
+            f"**{sp['measured']} of {sp['labels']} labels** yielded a length; "
+            f"{sp['unmeasured']} run into a sheet edge or into another name and "
+            f"are left unmeasured. Every tribe is then drawn as a circle whose "
+            f"diameter is that printed length.")
         add("")
-        add("| Cartographer | Names | Tribes | Printed on what is now Algeria |")
-        add("| --- | --- | --- | --- |")
-        for key, count in sp["points_by_source"].items():
-            add(f"| {key} | {count} | {sp['tribes_by_source'][key]} | "
-                f"{sp['outside_by_source'][key]} |")
-        add(f"| **All three, pooled** | **{sp['points']}** | "
-            f"**{sp['tribes']}** | **{sp['points_outside_modern_tunisia']}** |")
+        add(f"**Why a circle and not an ellipse.** The sheet states one number, "
+            f"the length of the name along its baseline. The across-name "
+            f"dimension appears nowhere on the map, so an ellipse would have to "
+            f"invent it, which is the mistake the figure exists to stop making. "
+            f"A circle adds no second parameter and no orientation. Nothing is "
+            f"clipped either, so a circle crosses the modern frontier wherever "
+            f"the name does.")
         add("")
-        add(f"**Spread is measured, not just drawn.** "
-            f"[`data/tribal_spread.csv`](../data/tribal_spread.csv) gives each "
-            f"tribe its labels, the sheets that carry them, the widest gap "
-            f"between two of its own names, and the ground its field covers "
-            f"down to half peak. {sp['tribes_with_more_than_one_label']} of "
-            f"{sp['tribes']} tribes carry more than one name, and the widest "
-            f"gap between two names of a single tribe is "
-            f"{sp['widest_label_gap_km']:.0f} km. The median field is "
-            f"{sp['median_field_sqkm']:,} km² and the widest is "
-            f"{sp['widest_field_tribe']} at {sp['widest_field_sqkm']:,} km². "
-            f"A tribe named once gets a circle; a tribe named four times across "
-            f"three sheets gets the shape those four names make, which is as "
-            f"close to observed spread as this evidence goes.")
+        add("| | |")
+        add("| --- | --- |")
+        add(f"| Shortest name | {sp['narrowest']['tribe']} "
+            f"(*{sp['narrowest']['printed']}*), {sp['narrowest']['km']} km |")
+        add(f"| Longest | {sp['widest']['tribe']} "
+            f"(*{sp['widest']['printed']}*), {sp['widest']['km']} km |")
+        add(f"| Median | {sp['median_km']:.0f} km |")
+        add(f"| Mean | {sp['mean_km']} km |")
         add("")
-        add("**What the reader must not do with it.** The surface is not a "
-            "territory and its fade is not a frontier. Two tribes overlap on "
-            "this figure wherever their names sit within a name's length of "
-            "each other, which happens because compilers disagreed, because "
-            "tribes interleaved, or because one sheet names a fraction where "
-            "another names the parent. The overlap is left to be seen rather "
-            "than resolved.")
+        add(f"**This corrects a figure quoted earlier in this repository.** A "
+            f"sample of six labels had given 14 to 32 km, and that range was "
+            f"repeated in the codebook and in two scripts. With "
+            f"{sp['measured']} measured the true range is "
+            f"{sp['min_km']:.0f} to {sp['max_km']:.0f} km and the median is "
+            f"{sp['median_km']:.0f}, so the sample of six had missed the small "
+            f"tribes at one end and the great frontier confederations at the "
+            f"other. The Hanencha name runs 48 km of ground, the Nemencha 46, "
+            f"the Ouled Sidi Abid 43; the Nefza name runs 6.")
         add("")
-        if index:
-            add(f"**The modern-unit index is kept as a table and no longer "
-                f"drawn.** [`data/tribal_imada_assignment.csv`]"
-                f"(../data/tribal_imada_assignment.csv) gives each of the "
-                f"{index['imadas_total']:,} imadas the tribe whose nearest name "
-                f"is closest, out to {index['cutoff_km']:.0f} km, once per "
-                f"cartographer and once pooled. It answers a question about "
-                f"indexing rather than about where a tribe was, and it carries "
-                f"its own warning: of the "
-                f"{index['imadas_named_by_two_or_three']:,} imadas that two or "
-                f"three sheets reach, only {index['of_those_agreeing']:,}, "
-                f"**{index['agreement_pct']}%**, get the same tribe from all of "
-                f"them.")
-            add("")
+        add("Per-label results are in "
+            "[`data/tribal_spread.csv`](../data/tribal_spread.csv).")
+        add("")
+        add("**What is not yet measured.** The 1853 Pellissier and 1965 Martel "
+            "sheets. Both set their tribal names on long arcs and verticals "
+            "rather than horizontal baselines, so the endpoints have to be read "
+            "a different way; until that is done their labels appear on the "
+            "figure as points and carry no circle. Saying so is cheaper than "
+            "drawing them at a size nobody measured.")
+        add("")
     add("## Coding")
     add("")
     add("| `tribal_annotation` | n | Meaning |")
