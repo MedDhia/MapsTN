@@ -292,6 +292,31 @@ def main() -> int:
                  "FRACHICHE MERIDIONALE label. That was wrong. MERIDIONALE "
                  "belongs to the Ouazaz name; the missing label is the third, "
                  "vertical one."),
+             },
+            {"sheet": 1853, "tribe": "the south", "status": "closed",
+             "found": ("Finding one missed name asked what else the first "
+                       "reading had missed, so the whole face was swept in "
+                       "eighteen windows. The answer was the south: the face "
+                       "had been read to about 34 N and never below it."),
+             "what_is_printed": (
+                 "Six tribal names below that line, three of them gazetteer "
+                 "tribes: MATMATTA along the Matmata range, HAMERNA east of it, "
+                 "OUERGUEMMA down the Dahar, and BENI YACOUB, BENI ZID and "
+                 "NEFZAOUA about the chott."),
+             "fix": ("All six are in config/tribal_labels_read.json. The 1853 "
+                     "sheet goes from 46 labels to 52 and the collection from "
+                     "142 to 148. Ouerghemma gains a second placement, so the "
+                     "cross-sheet agreement table gains a 31st tribe and its "
+                     "first check in the far south: the two sheets put the "
+                     "Ouerghemma 35.1 km apart."),
+             "not_added": (
+                 "The sweep also found lineage names in the north and the "
+                 "Sahel set like tribes but small enough to be douars. They "
+                 "are listed under _sweep_candidates in "
+                 "config/tribal_labels_read.json with approximate positions, "
+                 "not added: on a sheet that marks nothing, telling a tribe "
+                 "from a douar is judgement, and a wrong call is worse than a "
+                 "gap."),
              }],
         "_overlays": (
             "The ellipses inverted back onto each Gallica scan in its own "

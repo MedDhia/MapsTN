@@ -430,12 +430,17 @@ an ellipse that cannot help covering its neighbours. **Ouled Khiar spans 287 km,
 Ouled Sdira 211, Souassi 126, Riah 119** — suspected name collisions rather than
 territories, drawn dashed and flagged in the table.
 
-The check also caught a name the first reading of the 1853 face had missed. The
-Frechiche ellipse stopped short of the engraving, so that ground was read again
-at 2.25×: three Frachiche names are printed there, not two, the third set
-vertically in light spaced capitals across open country with no settlement near
-it. It is now transcribed, the tribe's own spread goes from 40 to 57 km, and the
-ellipse encloses all three names.
+The check also caught a name the first reading of the 1853 face had missed, and
+that led to a bigger one. The Frechiche ellipse stopped short of the engraving,
+so that ground was read again: three Frachiche names are printed there, not two.
+Finding one missed name asked what else had been missed, so **the whole 1853
+face was swept in eighteen windows**, and the answer was the south. The face had
+been read to about 34°N and never below it, and below that line the sheet
+carries six tribal names: *MATMATTA*, *HAMERNA*, *OUERGUEMMA*, *BENI YACOUB*,
+*BENI ZID* and *NEFZAOUA*. All six are now transcribed, the 1853 sheet goes from
+45 labels to 52, and the Ouerghemma gain a second placement, so the cross-sheet
+agreement table gains a 31st tribe and its first check in the far south: the two
+sheets put them 35.1 km apart.
 
 The nearest-name index at imada level is kept as a table:
 [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv), each

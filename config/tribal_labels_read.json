@@ -1132,6 +1132,54 @@
      "y": 4875,
      "read_confidence": "medium",
      "note": "A third Frachiche name on this sheet, set vertically from about (2836, 4682) to (2991, 5068), east of and parallel to the FRACHICHE OULAD ALI arc. The word FRACHICHE is legible; the qualifier that follows it down the page is not, so only the first word is recorded and the anchor is the midpoint of that word. Found by scripts/check_tribal_spread.py, whose spot check showed the Frechiche ellipse stopping short of the ground this sheet gives the tribe."
+    },
+    {
+     "text": "Beni Yacoub",
+     "marker": null,
+     "x": 3675,
+     "y": 6772,
+     "read_confidence": "medium",
+     "note": "Spaced capitals on an arc from (3350, 6880) to (4000, 6665), across the country north of the chott. Not the Oulad Yacoub of the Tell and not the Nefzaoua Oulad Yacoub that Martel prints; left unmatched in the gazetteer."
+    },
+    {
+     "text": "Nefzaoua",
+     "marker": null,
+     "x": 3365,
+     "y": 7265,
+     "read_confidence": "medium",
+     "note": "Spaced italic from (3250, 7330) to (3480, 7200). Pellissier uses it for the oasis country south-west of the chott. Recorded because it is set like the tribal names around it, but it may be a regional name rather than a tribe, which is why it stays unmatched."
+    },
+    {
+     "text": "Beni Zid",
+     "marker": null,
+     "x": 4303,
+     "y": 7281,
+     "read_confidence": "medium",
+     "note": "Set vertically from (4277, 7128) to (4330, 7434), between the chott and Gabes. Martel prints BENI ZID in the same country in his 1881 sketch map, which is the only corroboration there is."
+    },
+    {
+     "text": "Matmatta",
+     "marker": null,
+     "x": 4090,
+     "y": 7788,
+     "read_confidence": "high",
+     "note": "Spaced, running from (3976, 7825) to (4203, 7751) along the Matmata range."
+    },
+    {
+     "text": "Hamerna",
+     "marker": null,
+     "x": 4670,
+     "y": 7840,
+     "read_confidence": "high",
+     "note": "Set vertically from about (4640, 7690) to (4700, 7990), east of the Matmata and north of the Ouerguemma."
+    },
+    {
+     "text": "Ouerguemma",
+     "marker": null,
+     "x": 4680,
+     "y": 8180,
+     "read_confidence": "high",
+     "note": "Spaced capitals running down the Dahar from about (4400, 8050) to (4960, 8310), the largest tribal name in the south of this sheet."
     }
    ],
    "transcribed_extent": {
@@ -1143,7 +1191,63 @@
     },
     "note": "Not the whole face. The tiles read cover the Tell, the Kroumirie, the steppe and the Sahel down to about latitude 34 - the country the 1881 sheet also labels. The Jerid, the Nefzaoua, the Dahar and the Matmata were not transcribed, so this sheet's label count is not comparable with the 1881 sheet's and the two must not be differenced as coverage. The Ouerghemma, visible on the overview in the far south-east, is one of the labels left unread."
    },
-   "_missed_on_the_first_reading": "The face was first read in 2560 px tiles and this name was missed: it is set vertically in light spaced capitals across open ground with no settlement near it, which is the hardest kind of label to see in a tile. The check script found it by drawing the tribe's ellipse back on the scan and noticing that the engraving ran outside it."
+   "_missed_on_the_first_reading": "The face was first read in 2560 px tiles and this name was missed: it is set vertically in light spaced capitals across open ground with no settlement near it, which is the hardest kind of label to see in a tile. The check script found it by drawing the tribe's ellipse back on the scan and noticing that the engraving ran outside it.",
+   "_southern_sweep": "The face was first read over the Tell, the steppe and the Sahel to about 34 N, and the ground below that was never read. A sweep of the whole sheet in eighteen windows found six tribal names there, three of them gazetteer tribes with population figures from Ganiage: Matmata, Hamerna and Ouerguemma. They are added here. The sweep also turned up lineage names in the north set like tribes but small enough to be villages, listed in data/tribal_spread_check.json as candidates rather than added, because telling a tribe from a douar on an unmarked sheet is judgement and a wrong call is worse than a gap.",
+   "_sweep_candidates": {
+    "_about": "Names the sweep saw and did not add. Each is set in spaced roman across open country, the way this sheet sets a tribe, but each is also small enough to be a douar or a djebel, and on a sheet that marks nothing the difference is judgement. Positions are approximate, read off the sweep windows rather than measured, and are here so the next reader starts from a list rather than from the whole face.",
+    "north": [
+     {
+      "text": "Oulad Sardan",
+      "x": 3866,
+      "y": 1690
+     },
+     {
+      "text": "Oulad Mendil",
+      "x": 3907,
+      "y": 2123
+     },
+     {
+      "text": "Oulad Mar",
+      "x": 3190,
+      "y": 2057
+     },
+     {
+      "text": "Bedjaoua",
+      "x": 3827,
+      "y": 1937,
+      "note": "Bejaoua is a fiscal circumscription in Ganiage's Annexe I, 2.425 taxpayers."
+     },
+     {
+      "text": "Beni Mazer",
+      "x": 2623,
+      "y": 2537,
+      "note": "The 1881 sheet carries Beni Mazer as a tribal label, so this is a tribe in this corpus; the position here is the rougher of the two."
+     }
+    ],
+    "tell_and_sahel": [
+     {
+      "text": "Oulad Abou Sefin",
+      "x": 3620,
+      "y": 3240
+     },
+     {
+      "text": "Oulad Yahia",
+      "x": 4033,
+      "y": 3573
+     },
+     {
+      "text": "Oulad Moussa",
+      "x": 5240,
+      "y": 4360
+     },
+     {
+      "text": "Oulad Tiba, Oulad Amer, Oulad Messaoud, Oulad Daoud, Oulad Aoun",
+      "x": 4600,
+      "y": 3500,
+      "note": "A cluster of hyphenated Oulad names across the Enfida plain, set smaller than the tribal names around them. Most likely fractions or villages."
+     }
+    ]
+   }
   }
  }
 }

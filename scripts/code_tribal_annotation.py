@@ -688,6 +688,35 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
                 "own spread goes from 40 to 57 km and the ellipse now encloses "
                 "all three printed names, which the spot check shows.")
             add("")
+            add("**Finding one missed name asked what else had been missed**, "
+                "so the whole 1853 face was swept in eighteen windows with the "
+                "labels already read marked on each. The answer was the south. "
+                "The face had been read over the Tell, the steppe and the Sahel "
+                "to about 34°N and never below that line, and below it the "
+                "sheet carries six tribal names: *MATMATTA* along the Matmata "
+                "range, *HAMERNA* east of it, *OUERGUEMMA* down the Dahar, and "
+                "*BENI YACOUB*, *BENI ZID* and *NEFZAOUA* about the chott. All "
+                "six are now transcribed.")
+            add("")
+            add("Three of them are gazetteer tribes, and two of those had no "
+                "placement on any sheet before. The Ouerghemma gain a second, "
+                "so the cross-sheet agreement table gains a 31st tribe and its "
+                "first check in the far south: **the two Gallica sheets put the "
+                "Ouerghemma 35.1 km apart**, which is inside the median for the "
+                "collection. The 1853 sheet goes from 46 labels to 52 and the "
+                "collection from 142 to 148.")
+            add("")
+            add("The sweep also found lineage names in the north and the Sahel "
+                "set like tribes but small enough to be douars: Oulad Sardan, "
+                "Oulad Mendil, Bedjaoua, Beni Mazer, Oulad Abou Sefin, Oulad "
+                "Yahia, Oulad Moussa and a cluster of hyphenated Oulad names "
+                "across the Enfida plain. They are listed under "
+                "`_sweep_candidates` in "
+                "[`config/tribal_labels_read.json`](../config/tribal_labels_read.json) "
+                "with approximate positions and **not added**. On a sheet that "
+                "marks nothing, telling a tribe from a douar is judgement, and "
+                "a wrong call is worse than a gap.")
+            add("")
             add("**A correction to the last run of this check.** It reported "
                 "the gap as a missing *FRACHICHE MÉRIDIONALE* label. That was "
                 "wrong: MÉRIDIONALE is a qualifier on the Ouazaz name, and the "

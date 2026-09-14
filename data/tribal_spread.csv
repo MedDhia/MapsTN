@@ -2,24 +2,28 @@ tribe,labels,sources,sources_named,printed_as,measured_names,own_spread_km,lon,l
 Gherib,1,1,1881 Martel (1965),GHERIB,0,8.0,8.014,33.342,122.7,122.7,0.0,11825,57.4,0,,Chaamba,61.4,0
 Zlass,4,3,1853 Pellissier | 1881 Lasailly | 1881 Martel (1965),Djelas | Djelas Senrassin | ZLASS | Zlaas,1,89.9,9.772,35.668,136.9,95.7,8.4,10285,23.5,0,,Ouled Aoun,51.4,0
 Adhara,1,1,1881 Martel (1965),ADHARA,0,8.0,8.97,33.113,100.1,100.1,0.0,7877,46.1,0,,Merazig,50.1,0
-Ouerghemma,2,2,1881 Lasailly | 1881 Martel (1965),OUERGHAMMA | Ouergama,1,66.4,10.626,33.323,121.1,74.2,-26.4,7054,27.4,0,,Hazem,55.8,0
 Ouled Sdira,3,2,1853 Pellissier | 1881 Lasailly,O. Sdira | Oulad Sedira | Ouled Sedjera,2,210.6,8.058,36.201,210.6,42.5,-129.9,7030,0.0,14,Beni Mtir | Charen | Ghezoran | Hakim | Hanencha | Kroumirs | Meressen | Ouchtata | Ouillen | Ouled Ali | Ouled Khiar | Ouled Sidi Yahia ben Taleb | Ouled Soltan | Sellaouas,Ouillen,10.0,0
 Riah,4,3,1853 Pellissier | 1881 Lasailly | 1881 Martel (1965),O. Riah | RIAH | Riah,2,119.3,9.558,36.591,119.3,64.0,-63.9,5997,0.0,5,Djeladjela | Drid | Nefza | Ouled Aoun | Trabelsi,Drid,17.2,0
 Frechiche,5,3,1853 Pellissier | 1881 Lasailly | 1881 Martel (1965),FRAICHICH | Frachiche | Frachiche Ouazaz | Frachiche Oulad Ali | Frechiche,1,56.8,8.546,35.33,88.3,77.1,-48.1,5349,15.8,0,,Mejers,38.7,0
-Hazem,1,1,1881 Martel (1965),HAZEM,0,8.0,10.198,33.682,82.1,82.1,0.0,5294,37.0,0,,Ouerghemma,41.0,0
-Merazig,1,1,1881 Martel (1965),MERAZIG,0,8.0,9.485,33.263,81.9,81.9,0.0,5264,36.9,0,,Oled Yacoub,40.9,0
 Troud,1,1,1881 Martel (1965),TROUD,0,8.0,7.39,33.644,81.7,81.7,0.0,5244,36.9,0,,Chaamba,40.9,0
 Chaamba,1,1,1881 Martel (1965),CHAAMBA,0,8.0,7.35,33.276,81.7,81.7,0.0,5244,36.9,0,,Troud,40.9,0
+Beni Yacoub,1,1,1853 Pellissier,Beni Yacoub,0,8.0,9.413,34.087,73.1,73.1,0.0,4193,32.5,0,,Hammama — Oulad Aziz,36.5,0
+Beni Zid,2,2,1853 Pellissier | 1881 Martel (1965),BENI ZID | Beni Zid,0,17.2,9.812,33.796,75.3,66.1,157.0,3911,29.0,0,,Hazem,37.7,0
 Brarchas,1,1,1881 Lasailly,Brarchas,1,38.7,7.575,34.949,82.8,52.1,0.0,3391,22.1,0,,Nemencha,26.7,0
-Beni Zid,1,1,1881 Martel (1965),BENI ZID,0,8.0,9.725,33.827,63.5,63.5,0.0,3165,27.7,0,,Oled Yacoub,31.7,0
-Oled Yacoub,1,1,1881 Martel (1965),OLED YACOUB,0,8.0,9.47,33.633,63.5,63.5,0.0,3165,27.7,0,,Beni Zid,31.7,0
+Nefzaoua,1,1,1853 Pellissier,Nefzaoua,0,8.0,9.174,33.787,64.1,64.1,0.0,3228,28.1,0,,Oled Yacoub,32.1,0
+Merazig,1,1,1881 Martel (1965),MERAZIG,0,8.0,9.485,33.263,62.7,62.7,0.0,3083,27.3,0,,Matmata,31.3,0
+Matmata,1,1,1853 Pellissier,Matmatta,0,8.0,9.735,33.456,62.4,62.4,0.0,3060,27.2,0,,Oled Yacoub,31.2,0
+Oled Yacoub,1,1,1881 Martel (1965),OLED YACOUB,0,8.0,9.47,33.633,62.4,62.4,0.0,3060,27.2,0,,Matmata,31.2,0
 M'Talith — Oulad Alia,1,1,1853 Pellissier,Methelith Oulad Alia,0,8.0,11.003,35.407,62.3,62.3,0.0,3044,27.1,0,,M'Talith — Oulad Zid,31.1,0
 Hammama — Oulad Aziz,1,1,1853 Pellissier,Hamema Oulad Aziz,0,8.0,9.491,34.411,61.9,61.9,0.0,3012,27.0,0,,Neffat,31.0,0
 Ouled Khiar,2,2,1853 Pellissier | 1881 Lasailly,Oulad Khiar | Ouled Khiar,1,286.9,8.643,36.189,286.9,12.3,17.9,2782,0.0,2,Drid | Sellaouas,Sellaouas,104.5,0
+Hazem,1,1,1881 Martel (1965),HAZEM,0,8.0,10.198,33.682,58.1,58.1,0.0,2651,25.0,0,,Beni Zid,29.0,0
 Hammama,3,3,1853 Pellissier | 1881 Lasailly | 1881 Martel (1965),HAMAMA | Hamema | Hammama,1,100.7,9.354,34.782,109.3,30.3,13.5,2600,4.3,0,,Ouled el Goussem,54.5,0
+Ouerghemma,3,3,1853 Pellissier | 1881 Lasailly | 1881 Martel (1965),OUERGHAMMA | Ouergama | Ouerguemma,1,92.8,10.517,33.294,92.8,33.6,-7.0,2447,0.0,1,Hamarna,Hamarna,33.6,0
 Nemencha,2,2,1881 Lasailly | 1881 Martel (1965),NEMEMCHA | Nemenchas,1,59.1,7.606,35.412,59.1,47.4,-35.6,2203,0.0,1,Allaounas,Allaounas,3.8,0
 Hanencha,2,2,1853 Pellissier | 1881 Lasailly,Hanecha | Hanenchas,1,64.6,7.987,36.138,87.5,30.9,-0.1,2125,11.5,0,,Ouled Khiar,15.8,0
 M'Talith — Nadjem,1,1,1853 Pellissier,Methelith Nadjem,0,8.0,10.704,34.949,50.3,50.3,0.0,1984,21.1,0,,M'Talith,25.1,0
+Hamarna,1,1,1853 Pellissier,Hamerna,0,8.0,10.182,33.417,46.5,46.5,0.0,1696,19.2,0,,Ouerghemma,23.2,0
 M'Talith,3,3,1853 Pellissier | 1881 Lasailly | 1881 Martel (1965),M'Talith | METHELITH | Methelith,1,74.3,10.364,35.13,74.3,29.0,-70.1,1691,0.0,1,Oulad Amer,Oulad Amer,26.5,0
 Sellaouas,1,1,1881 Lasailly,Sellaouas,1,24.7,7.555,35.91,55.3,38.6,0.0,1674,15.3,0,,Mahatla,19.7,0
 Ouled Sidi Abid,1,1,1881 Lasailly,Ouled Sidi Abid,1,42.6,7.934,35.268,65.5,30.9,0.0,1587,11.4,0,,Nemencha,27.3,0

@@ -58,10 +58,10 @@
     "Mahdia": 90.9,
     "Sfax": 118.3
    },
-   "labels": 46
+   "labels": 52
   },
   "_agreement": {
-   "tribes_on_two_sheets": 30,
+   "tribes_on_two_sheets": 31,
    "median_km": 23.0,
    "max_km": 197.3,
    "within_10_km": 7,
@@ -2827,6 +2827,150 @@
     "gouvernorat": "Kassérine",
     "inside_tunisia": 1,
     "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.413,
+     34.087
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Beni Yacoub",
+    "tribe": "Beni Yacoub",
+    "in_gazetteer": 0,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3675,
+    "y_px": 6772,
+    "gouvernorat": "Gabès",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.174,
+     33.787
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Nefzaoua",
+    "tribe": "Nefzaoua",
+    "in_gazetteer": 0,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3365,
+    "y_px": 7265,
+    "gouvernorat": "Kebili",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.898,
+     33.766
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Beni Zid",
+    "tribe": "Beni Zid",
+    "in_gazetteer": 0,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4303,
+    "y_px": 7281,
+    "gouvernorat": "Gabès",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.735,
+     33.456
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Matmatta",
+    "tribe": "Matmata",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4090,
+    "y_px": 7788,
+    "gouvernorat": "Gabès",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.182,
+     33.417
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Hamerna",
+    "tribe": "Hamarna",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4670,
+    "y_px": 7840,
+    "gouvernorat": "Gabès",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.19,
+     33.207
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Ouerguemma",
+    "tribe": "Ouerghemma",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4680,
+    "y_px": 8180,
+    "gouvernorat": "Médenine",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
    }
   }
  ]

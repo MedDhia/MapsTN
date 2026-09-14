@@ -8,16 +8,16 @@
   "_why_not_a_blur": "A Gaussian bandwidth is a number nobody measured, and it gives every tribe the same size whatever the sheet says.",
   "max_radius_km": 90.0,
   "min_semi_km": 4.0,
-  "tribes": 88,
-  "labels": 142,
+  "tribes": 92,
+  "labels": 148,
   "measured_names": 62,
   "labels_outside_modern_tunisia": 34,
-  "tribes_on_more_than_one_sheet": 35,
+  "tribes_on_more_than_one_sheet": 36,
   "at_max_radius": 0,
   "min_area_sqkm": 88,
-  "median_area_sqkm": 779.5,
+  "median_area_sqkm": 828.5,
   "max_area_sqkm": 11825,
-  "tribes_enclosing_a_neighbour": 18,
+  "tribes_enclosing_a_neighbour": 19,
   "_enclosing_comment": "Their own labels already cover a neighbour before the ellipse grows at all, so rule 2 cannot hold for them. That is a statement about the sources: a tribe whose compilers put its name 200 km apart is a name collision, not a territory. Drawn dashed.",
   "widest": [
     {
@@ -42,13 +42,6 @@
       "stopped_by": "Merazig"
     },
     {
-      "tribe": "Ouerghemma",
-      "area_sqkm": 7054,
-      "major_km": 121.1,
-      "minor_km": 74.2,
-      "stopped_by": "Hazem"
-    },
-    {
       "tribe": "Ouled Sdira",
       "area_sqkm": 7030,
       "major_km": 210.6,
@@ -61,6 +54,13 @@
       "major_km": 119.3,
       "minor_km": 64.0,
       "stopped_by": "Drid"
+    },
+    {
+      "tribe": "Frechiche",
+      "area_sqkm": 5349,
+      "major_km": 88.3,
+      "minor_km": 77.1,
+      "stopped_by": "Mejers"
     }
   ]
 }
