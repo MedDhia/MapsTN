@@ -159,30 +159,32 @@ The projection check matters more than the residual. An affine assumes a plain e
 
 ## Where the tribes were, on today's imadas
 
-![Tribal annotation of 1853 and 1881 assigned to the imadas of 2022](img/tribal_distribution_imada.png)
+![Where the tribes were, as four cartographers had it](img/tribal_distribution_imada.png)
 
-The finest published Tunisian administrative unit is the imada, the *secteur* below the delegation: **2084 of them** in the OCHA Common Operational Dataset. Every one of them is given the tribe whose nearest read name lies closest to it, out to a cutoff of 60 km beyond which nothing is assigned. That is a Voronoi tessellation evaluated at imada resolution, and it does what dots and discs could not: it fills the country, so the map can be read as a distribution rather than as a scatter of engravings.
+The finest published Tunisian administrative unit is the imada, the *secteur* below the delegation: **2084 of them** in the OCHA Common Operational Dataset. Every one of them is given the tribe whose nearest read name lies closest, out to a cutoff of 60 km. That is a Voronoi tessellation at imada resolution, run four times: once for each cartographer on his own names, and once on all three pooled.
 
-**The colours are a rule, not evidence, and the rule has to be said out loud.** No sheet draws a tribal boundary. Where two names sit 60 km apart the line between their colours falls at 30 km, because that is what nearest means and for no other reason. Three things keep that visible: the label points are drawn on top of the fill, the second panel gives the distance to the winning name, and every row of the table carries `distance_km` and the runner-up.
+**The assigned ground is drawn as dot density, not as fill.** One dot per 45 km², scattered at random inside the polygons from a fixed seed. Two earlier attempts are worth recording because they failed in opposite directions. A dot at each label is honest and shows nothing but where names were engraved, leaving the country between them blank. A filled choropleth fills that country, and then the fill reads as territory however loudly the caption denies it. A sprinkle carries extent through density and never closes into an edge, which is the one thing no sheet in this collection supports.
 
-| | |
-| --- | --- |
-| Label points | 141 from three sheets |
-| Imadas assigned | **1977 of 2084** (94.9%) |
-| Share of the country's area | 71.5% |
-| Median distance to the winning name | 19.5 km |
-| Assigned imadas with a name within 20 km | 51% |
-| Assigned imadas with a rival within 10 km of the winner | 64% |
-| Tribes given ground | 62 of 88 |
-| Widest | Ouerghemma, 9,751 km² |
+**Four panels, because the answer depends on whom you read.**
 
-**64% of assigned imadas have a rival name within 10 km of the winner**, which is the number to quote against anyone who reads the colours as territory. The median imada is 19.5 km from the name it was given, and the printed names themselves run 14 to 32 km long, so a typical assignment is about one label length of extrapolation.
+| Cartographer | Names | Imadas reached | Share of area | Median km to the nearest name |
+| --- | --- | --- | --- | --- |
+| 1853 Pellissier | 45 | 1,677 | 44.3% | 24 |
+| 1881 Lasailly | 69 | 1,747 | 49.0% | 29 |
+| 1881 Martel (1965) | 27 | 1,869 | 68.6% | 30 |
+| **All three, pooled** | **141** | **1,977** | **71.5%** | **20** |
 
-Per-imada results are in [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv), all 2,084 rows, with the winning tribe, the source it came from, the distance, and the runner-up and its distance.
+Read across the four and the argument needs no caption. Pellissier's sheet was transcribed only to about 34°N and Lasailly gives everything south of Sfax to one tribe, so the south belongs to Martel alone. The 27 names on a sketch map at 1:3 000 000 reach more of the country than the 69 read off a war-theatre map at 1:1 200 000, because they were spread to cover it rather than concentrated where an army was going.
 
-**What the cutoff leaves out.** 107 imadas have no name within 60 km, and they are the Grand Erg and the deep Dahar. That blank is now a real one: it is where none of the three sheets prints a tribe, not where nobody looked.
+**The number that should stop anyone reading a single panel as the answer: where two sheets both reach an imada, they put the same tribe on it only 12.6% of the time** (232 of 1,845). Some of that is grain rather than contradiction, since Pellissier names the fractions of the M'Talith and the Hammama where the others name the parent, and the gazetteer keeps fractions separate. The rest is real disagreement between compilers about where a tribe sat, and it is of a piece with the median 23 km between the two sheets' placements of the same name.
 
-**What the join can and cannot mean.** The imadas are of 2022 and the annotation is of 1853 and 1881, so the unit is being used to say *where*, not to claim that it existed then or that a tribe held it. Nothing here should be joined to a modern boundary and reported as a tribe's extent.
+**The assignment is a rule, not evidence.** No sheet draws a tribal boundary. Where two names sit 60 km apart the assignment changes hands at 30 km, because that is what nearest means and for no other reason. The label points are drawn over the sprinkle so the evidence is never hidden by what was derived from it, and every row of the table carries its distance and its runner-up.
+
+Per-imada results are in [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv), all 2,084 rows, with each cartographer in his own column, the pooled winner, the distance, and how many of the three name that imada at all.
+
+**What the cutoff leaves out.** 107 imadas have no name within 60 km even pooled, and they are the Grand Erg and the deep Dahar. That blank is a real one: it is where none of the three sheets prints a tribe, not where nobody looked.
+
+**What the join can and cannot mean.** The imadas are of 2022 and the annotation is of 1853 and 1881, so the unit is being used to say *where*, not to claim that it existed then or that a tribe held it. Nothing here should be dissolved by tribe and reported as a tribe's extent.
 
 ## Coding
 

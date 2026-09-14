@@ -592,66 +592,85 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
         add("")
         add("## Where the tribes were, on today's imadas")
         add("")
-        add("![Tribal annotation of 1853 and 1881 assigned to the imadas of 2022]"
+        add("![Where the tribes were, as four cartographers had it]"
             "(img/tribal_distribution_imada.png)")
         add("")
         add(f"The finest published Tunisian administrative unit is the imada, "
             f"the *secteur* below the delegation: **{imada['imadas_total']} of "
             f"them** in the OCHA Common Operational Dataset. Every one of them "
-            f"is given the tribe whose nearest read name lies closest to it, out "
-            f"to a cutoff of {imada['cutoff_km']:.0f} km beyond which nothing is "
-            f"assigned. That is a Voronoi tessellation evaluated at imada "
-            f"resolution, and it does what dots and discs could not: it fills "
-            f"the country, so the map can be read as a distribution rather than "
-            f"as a scatter of engravings.")
+            f"is given the tribe whose nearest read name lies closest, out to a "
+            f"cutoff of {imada['cutoff_km']:.0f} km. That is a Voronoi "
+            f"tessellation at imada resolution, run four times: once for each "
+            f"cartographer on his own names, and once on all three pooled.")
         add("")
-        add("**The colours are a rule, not evidence, and the rule has to be said "
-            "out loud.** No sheet draws a tribal boundary. Where two names sit "
-            "60 km apart the line between their colours falls at 30 km, because "
-            "that is what nearest means and for no other reason. Three things "
-            "keep that visible: the label points are drawn on top of the fill, "
-            "the second panel gives the distance to the winning name, and every "
-            "row of the table carries `distance_km` and the runner-up.")
+        add(f"**The assigned ground is drawn as dot density, not as fill.** One "
+            f"dot per {imada['km_per_dot']:.0f} km², scattered at random inside "
+            f"the polygons from a fixed seed. Two earlier attempts are worth "
+            f"recording because they failed in opposite directions. A dot at "
+            f"each label is honest and shows nothing but where names were "
+            f"engraved, leaving the country between them blank. A filled "
+            f"choropleth fills that country, and then the fill reads as "
+            f"territory however loudly the caption denies it. A sprinkle "
+            f"carries extent through density and never closes into an edge, "
+            f"which is the one thing no sheet in this collection supports.")
         add("")
-        add("| | |")
-        add("| --- | --- |")
-        add(f"| Label points | {imada['points']} from three sheets |")
-        add(f"| Imadas assigned | **{imada['assigned']} of "
-            f"{imada['imadas_total']}** ({imada['assigned_pct']}%) |")
-        add(f"| Share of the country's area | {imada['area_pct']}% |")
-        add(f"| Median distance to the winning name | "
-            f"{imada['median_distance_km']} km |")
-        add(f"| Assigned imadas with a name within 20 km | {imada['within_20']}% |")
-        add(f"| Assigned imadas with a rival within 10 km of the winner | "
-            f"{imada['contested']}% |")
-        add(f"| Tribes given ground | {imada['tribes_assigned_ground']} of "
-            f"{imada['tribes']} |")
-        add(f"| Widest | {imada['widest_tribe']}, "
-            f"{imada['widest_tribe_sqkm']:,} km² |")
+        add("**Four panels, because the answer depends on whom you read.**")
         add("")
-        add(f"**{imada['contested']}% of assigned imadas have a rival name "
-            f"within 10 km of the winner**, which is the number to quote against "
-            f"anyone who reads the colours as territory. The median imada is "
-            f"{imada['median_distance_km']} km from the name it was given, and "
-            f"the printed names themselves run 14 to 32 km long, so a typical "
-            f"assignment is about one label length of extrapolation.")
+        add("| Cartographer | Names | Imadas reached | Share of area | Median km to the nearest name |")
+        add("| --- | --- | --- | --- | --- |")
+        for key in ("1853 Pellissier", "1881 Lasailly", "1881 Martel (1965)"):
+            row = imada["per_source"][key]
+            add(f"| {key} | {row['points']} | {row['assigned']:,} | "
+                f"{row['area_pct']}% | {row['median_km']:.0f} |")
+        row = imada["pooled"]
+        add(f"| **All three, pooled** | **{row['points']}** | "
+            f"**{row['assigned']:,}** | **{row['area_pct']}%** | "
+            f"**{row['median_km']:.0f}** |")
+        add("")
+        add("Read across the four and the argument needs no caption. "
+            "Pellissier's sheet was transcribed only to about 34°N and "
+            "Lasailly gives everything south of Sfax to one tribe, so the south "
+            "belongs to Martel alone. The 27 names on a sketch map at "
+            "1:3 000 000 reach more of the country than the 69 read off a "
+            "war-theatre map at 1:1 200 000, because they were spread to cover "
+            "it rather than concentrated where an army was going.")
+        add("")
+        add(f"**The number that should stop anyone reading a single panel as "
+            f"the answer: where two sheets both reach an imada, they put the "
+            f"same tribe on it only {imada['agreement_pct']}% of the time** "
+            f"({imada['of_those_agreeing']:,} of "
+            f"{imada['imadas_named_by_two_or_three']:,}). Some of that is grain "
+            f"rather than contradiction, since Pellissier names the fractions "
+            f"of the M'Talith and the Hammama where the others name the parent, "
+            f"and the gazetteer keeps fractions separate. The rest is real "
+            f"disagreement between compilers about where a tribe sat, and it is "
+            f"of a piece with the median 23 km between the two sheets' "
+            f"placements of the same name.")
+        add("")
+        add("**The assignment is a rule, not evidence.** No sheet draws a "
+            "tribal boundary. Where two names sit 60 km apart the assignment "
+            "changes hands at 30 km, because that is what nearest means and "
+            "for no other reason. The label points are drawn over the sprinkle "
+            "so the evidence is never hidden by what was derived from it, and "
+            "every row of the table carries its distance and its runner-up.")
         add("")
         add("Per-imada results are in [`data/tribal_imada_assignment.csv`]"
-            "(../data/tribal_imada_assignment.csv), all 2,084 rows, with the "
-            "winning tribe, the source it came from, the distance, and the "
-            "runner-up and its distance.")
+            "(../data/tribal_imada_assignment.csv), all 2,084 rows, with each "
+            "cartographer in his own column, the pooled winner, the distance, "
+            "and how many of the three name that imada at all.")
         add("")
         add(f"**What the cutoff leaves out.** "
-            f"{imada['imadas_total'] - imada['assigned']} imadas have no name "
-            f"within {imada['cutoff_km']:.0f} km, and they are the Grand Erg and "
-            f"the deep Dahar. That blank is now a real one: it is where none of "
-            f"the three sheets prints a tribe, not where nobody looked.")
+            f"{imada['imadas_total'] - imada['pooled']['assigned']} imadas have "
+            f"no name within {imada['cutoff_km']:.0f} km even pooled, and they "
+            f"are the Grand Erg and the deep Dahar. That blank is a real one: "
+            f"it is where none of the three sheets prints a tribe, not where "
+            f"nobody looked.")
         add("")
         add("**What the join can and cannot mean.** The imadas are of 2022 and "
             "the annotation is of 1853 and 1881, so the unit is being used to "
-            "say *where*, not to claim that it existed then or that a tribe held "
-            "it. Nothing here should be joined to a modern boundary and reported "
-            "as a tribe's extent.")
+            "say *where*, not to claim that it existed then or that a tribe "
+            "held it. Nothing here should be dissolved by tribe and reported as "
+            "a tribe's extent.")
         add("")
     add("## Coding")
     add("")

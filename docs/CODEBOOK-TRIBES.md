@@ -135,38 +135,57 @@ the points findable, not to assign a tribe to a governorate.
 
 ## D. The imada assignment
 
-[`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) gives
-every contemporary imada the tribe whose nearest read label lies closest to it,
-out to a 60 km cutoff. Boundaries are the OCHA Common Operational Dataset, 2022,
-2,084 units. Built by
+[`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv), one
+row per contemporary imada, all 2,084 of them. Boundaries are the OCHA Common
+Operational Dataset, 2022. Built by
 [`map_tribes_on_imadas.py`](../scripts/map_tribes_on_imadas.py), which also
 draws [`docs/img/tribal_distribution_imada.png`](img/tribal_distribution_imada.png).
+
+The rule: an imada takes the tribe whose nearest read label lies closest to its
+representative point, out to a 60 km cutoff. It is applied four times, once per
+cartographer on his own names and once on all three pooled, so the columns can
+be read against each other.
 
 | Variable | Definition |
 | --- | --- |
 | `adm4_pcode`, `imada`, `delegation`, `gouvernorat` | The unit and its parents, verbatim from the COD. `adm4_pcode` joins back to the shapefile. |
 | `area_sqkm` | The COD's own area for the imada. |
-| `tribe` | The tribe whose nearest label point is closest to the imada's representative point. Empty where the nearest is beyond 60 km. |
-| `label_as_printed` | The engraved form of that winning name. |
-| `source` | Which sheet the winning label was read from: `1853 Pellissier`, `1881 Lasailly`, `1881 Martel (1965)`. The third is a secondary source. |
-| `distance_km` | How far the winning name is. The single most important column in the file. |
-| `runner_up`, `runner_up_km` | The nearest label belonging to a different tribe, and its distance. |
+| `tribe_1853_pellissier`, `km_1853` | What the 1853 sheet alone would put here, and how far its nearest name is. Empty beyond the cutoff. |
+| `tribe_1881_lasailly`, `km_1881` | The same for the 1881 Lasailly sheet. |
+| `tribe_1881_martel`, `km_martel` | The same for Martel's 1965 sketch map of 1881, a secondary source. |
+| `tribe_pooled`, `source_pooled`, `km_pooled` | The winner when all three sets of names compete, which sheet it came from, and its distance. |
+| `runner_up`, `runner_up_km` | The nearest label belonging to a different tribe, under the pooled rule, and its distance. |
+| `sources_naming` | How many of the three reach this imada at all, 0 to 3. |
+| `sources_agreeing` | How many of those name the same tribe as `tribe_pooled`. |
 
-**`tribe` is the output of a rule, not a reading off a map.** No sheet in this
-collection draws a tribal boundary. Where two names sit 60 km apart the
-assignment changes hands at 30 km, because that is what nearest means and for no
-other reason. Two columns are there so that no row has to be taken on trust:
-`distance_km` says how far the extrapolation ran, and `runner_up_km` says how
-close the decision was. **64% of assigned rows have a rival name within 10 km of
-the winner**, and the median assigned imada is 19.5 km from its name while the
-printed names themselves run 14 to 32 km long.
+**Every `tribe_*` column is the output of a rule, not a reading off a map.** No
+sheet in this collection draws a tribal boundary. Where two names sit 60 km
+apart the assignment changes hands at 30 km, because that is what nearest means
+and for no other reason. `km_pooled` says how far the extrapolation ran and
+`runner_up_km` says how close the decision was.
 
-Do not dissolve this table by `tribe` and publish the result as a map of tribal
-territory. It is an index of which name was nearest, at a stated resolution,
-under a stated rule.
+**The cross-cartographer columns are the point of the file.** Of the 1,845
+imadas that two or three sheets reach, **only 232 (12.6%) get the same tribe
+from all of them**. Part of that is grain rather than contradiction, since
+Pellissier names the fractions of the M'Talith and the Hammama where the others
+name the parent and the gazetteer keeps fractions separate; the rest is real
+disagreement between compilers. Anyone using one column alone is using one
+cartographer's opinion, and `sources_naming` and `sources_agreeing` say how
+lonely that opinion is.
 
-The 107 rows with an empty `tribe` are the Grand Erg and the deep Dahar, where
-none of the three sheets prints a name within 60 km.
+Do not dissolve this table by `tribe_pooled` and publish the result as a map of
+tribal territory. It is an index of which name was nearest, at a stated
+resolution, under a stated rule.
+
+The 107 rows with an empty `tribe_pooled` are the Grand Erg and the deep Dahar,
+where none of the three sheets prints a name within 60 km.
+
+**On the figure.** The assigned ground is drawn as dot density, one dot per
+45 km² scattered at random inside the polygons from a fixed seed, rather than as
+a filled choropleth. A fill would close into edges and read as territory however
+the caption were worded; a sprinkle carries the same extent and never draws a
+line. The dot positions are cosmetic and carry no information beyond the imada
+they fall in.
 
 ## E. Martel 1965, the third sheet
 

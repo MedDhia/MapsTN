@@ -388,25 +388,42 @@ table had a southern figure sitting over a north-western taxpayer count as a
 result. Correcting it tightened the implied multiplier in Ganiage's article from
 3.82–5.21 to 3.82–4.33, median 4.06, against the flat four he states.
 
-**Where the tribes were, on today's imadas.** The finest published Tunisian unit
-is the imada, 2,084 of them, and
+**Where the tribes were, on today's imadas.** The finest published Tunisian
+unit is the imada, 2,084 of them, and
 [`scripts/map_tribes_on_imadas.py`](scripts/map_tribes_on_imadas.py) gives each
-one the tribe whose nearest read name lies closest, out to 60 km. That is a
-Voronoi tessellation at imada resolution, and it fills the country where dots
-could not: **1,977 of 2,084 imadas assigned, 71% of the area**, 62 tribes given
-ground, the widest being the Ouerghemma at 9,751 km².
+one the tribe whose nearest read name lies closest, out to 60 km. The rule runs
+four times: once per cartographer on his own names, once on all three pooled.
 
-![Tribal annotation of 1853 and 1881 assigned to the imadas of 2022](docs/img/tribal_distribution_imada.png)
+![Where the tribes were, as four cartographers had it](docs/img/tribal_distribution_imada.png)
 
-**The colours are a rule, not evidence.** No sheet draws a tribal boundary;
-where two names sit 60 km apart the line between their colours falls at 30 km
-because that is what nearest means. The median assigned imada is 19.5 km from
-its name, the printed names run 14 to 32 km long, and **64% of assigned imadas
-have a rival name within 10 km of the winner** — which is the number to quote
-against anyone who reads the fill as territory. Every row of
-[`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) carries
-its own distance and runner-up, and the 107 unassigned imadas are the Grand Erg
-and the deep Dahar, where none of the three sheets prints a name.
+**The assigned ground is drawn as dot density, not as fill**, one dot per 45 km²
+scattered at random inside the polygons from a fixed seed. Two earlier versions
+failed in opposite directions: a dot at each label shows only where names were
+engraved and leaves the country between them blank, while a filled choropleth
+fills that country and then reads as territory however loudly the caption denies
+it. A sprinkle carries extent through density and never closes into an edge,
+which is the one thing no sheet here supports.
+
+| Cartographer | Names | Imadas reached | Share of area | Median km to the nearest name |
+| --- | --- | --- | --- | --- |
+| 1853 Pellissier | 45 | 1,677 | 44.3% | 24 |
+| 1881 Lasailly | 69 | 1,747 | 49.0% | 29 |
+| 1881 Martel (1965) | 27 | 1,869 | 68.6% | 30 |
+| **All three, pooled** | **141** | **1,977** | **71.5%** | **20** |
+
+Read across the four panels and the argument needs no caption. The south belongs
+to Martel alone, and his 27 names on a sketch map at 1:3 000 000 reach more of
+the country than the 69 read off a war-theatre map at 1:1 200 000, because they
+were spread to cover it rather than concentrated where an army was going.
+
+**Where two sheets both reach an imada they put the same tribe on it only 12.6%
+of the time** (232 of 1,845). Some of that is grain rather than contradiction,
+since Pellissier names fractions where the others name the parent, but it is the
+number to hold against any single panel: which cartographer you read changes the
+answer. Per-imada results, each cartographer in his own column, are in
+[`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv). The 107
+imadas with no name within 60 km even pooled are the Grand Erg and the deep
+Dahar, and that blank is a real one.
 
 **How many people was a tribe?** No sheet says — a map gives location, never
 size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the
