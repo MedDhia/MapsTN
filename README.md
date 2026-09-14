@@ -838,6 +838,41 @@ points already transcribed into
 [`config/tribal_labels_read.json`](config/tribal_labels_read.json). Run it before
 `code_tribal_annotation.py`, which folds its residuals into the report.
 
+### The scripts are checked by rerunning them
+
+[`.github/workflows/scripts-rerun.yml`](.github/workflows/scripts-rerun.yml)
+reruns the six tribal scripts on every pull request and fails if any committed
+table or document comes back different:
+
+```bash
+pip install -r requirements.txt
+python3 scripts/read_ganiage_annexe.py
+python3 scripts/place_martel_labels.py
+python3 scripts/place_tribal_labels.py
+python3 scripts/map_tribal_spread.py
+python3 scripts/code_tribal_annotation.py
+git diff --exit-code -- '*.csv' '*.json' '*.geojson' '*.md'
+```
+
+Each of these reads only files in the repository, so a clean checkout, a rerun
+and an empty diff is the whole test. It catches a script edited without
+regenerating what it produces, a config edited without rerunning the script that
+reads it, and an output hand-edited to say something no script would write.
+
+Two things it does not do. `fetch_boundaries.py` is left out because it
+downloads from OCHA and Natural Earth, which would make the check a test of
+someone else's uptime; its outputs are committed under `data/boundaries/`. And
+figures are reported without being gated, because PNG bytes depend on the
+freetype build under matplotlib and a runner image bump would fail the check
+while saying nothing about the data.
+
+`check_tribal_spread.py` runs last and is asserted on instead of diffed. It
+needs the full scans to draw its overlays and skips them when they are absent,
+so its JSON cannot be compared on a runner that has none. What it can do
+without them is test the two rules, and rule 1 is an invariant: a tribe's own
+label falling outside its own ellipse is a geometry bug, and the build fails on
+it.
+
 The georeferencing runs twice on purpose. The corner reader needs the neatline
 the first pass detects in order to know where in the margin to look, and the
 anchor then wants what the corner reader found; the second pass is arithmetic on

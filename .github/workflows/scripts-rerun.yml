@@ -1,0 +1,86 @@
+# Rerun the tribal-annotation scripts and fail if any of them would change a
+# committed output.
+#
+# Every script in this set reads only files in the repository and writes its
+# outputs back into data/ and docs/. So a clean checkout, a rerun and an empty
+# diff is the whole test: it catches a script edited without regenerating what
+# it produces, a config edited without rerunning the script that reads it, and
+# an output hand-edited to say something the script would never write.
+#
+# fetch_boundaries.py is deliberately not here. It downloads from OCHA and
+# Natural Earth, so it would make the check a test of someone else's uptime.
+# Its outputs are committed under data/boundaries/ and the scripts below read
+# them from there.
+
+name: scripts rerun clean
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  rerun:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install pinned dependencies
+        run: pip install -r requirements.txt
+
+      - name: Rerun every script that regenerates a committed output
+        run: |
+          set -eux
+          python3 scripts/read_ganiage_annexe.py
+          python3 scripts/place_martel_labels.py
+          python3 scripts/place_tribal_labels.py
+          python3 scripts/map_tribal_spread.py
+          python3 scripts/code_tribal_annotation.py
+
+      # The gate. Text outputs must come back byte for byte: CSV, JSON,
+      # GeoJSON and the generated Markdown.
+      - name: Fail if a rerun changed a committed table or document
+        run: |
+          if ! git diff --exit-code -- '*.csv' '*.json' '*.geojson' '*.md'; then
+            echo
+            echo "A script rewrote a committed output above."
+            echo "Rerun it locally and commit what it produces."
+            exit 1
+          fi
+
+      # Figures are reported and not gated. PNG bytes depend on the freetype
+      # and Agg build underneath matplotlib, which the pin in requirements.txt
+      # does not fix, so a byte comparison here would fail on a runner image
+      # bump and say nothing about the data.
+      - name: Report figure changes
+        run: |
+          if git diff --quiet -- '*.png' '*.jpg'; then
+            echo "Figures came back identical."
+          else
+            echo "Figures differ in bytes (not a failure):"
+            git diff --stat -- '*.png' '*.jpg'
+          fi
+
+      # check_tribal_spread.py needs the full IIIF scans to draw its overlays
+      # and skips them when they are absent, so its JSON cannot be diffed on a
+      # runner that has no scans. What it can do without them is test the two
+      # rules, and rule 1 is an invariant: a tribe's own label outside its own
+      # ellipse is a geometry bug. It exits 0 either way, so read the count.
+      - name: Every tribe contains its own labels
+        run: |
+          python3 scripts/check_tribal_spread.py
+          python3 - <<'PY'
+          import json, sys
+          report = json.load(open("data/tribal_spread_check.json"))
+          bad = report["rule_1_violations"]
+          print(f"rule 1 violations: {bad}")
+          if bad:
+              for row in report["rule_1_own_label_outside"]:
+                  print(" ", row)
+              sys.exit(1)
+          PY

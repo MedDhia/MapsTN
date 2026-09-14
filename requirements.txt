@@ -1,0 +1,9 @@
+# Pinned so that rerunning a script gives the same bytes it gave when the
+# outputs in data/ were committed. The scripts-rerun workflow installs exactly
+# this file; if a rerun starts producing a diff after a version bump here, that
+# is the bump talking and not the data.
+matplotlib==3.11.2
+numpy==2.4.6
+pyshp==3.1.6
+shapely==2.1.2
+pillow==12.3.0
