@@ -568,7 +568,9 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
             "territory. |")
         add("")
         add("**What is drawn now is the largest ellipse each tribe can have "
-            "before it reaches another tribe's name.** Two rules and no third:")
+            "before it reaches another tribe's name**, five times over: once "
+            "for each cartographer on his own names, once with the three laid "
+            "over each other, and once merged. Two rules and no third:")
         add("")
         add("1. It must contain all of that tribe's own evidence: every label "
             "centre on every sheet, and both ends of the name for the "
@@ -584,7 +586,38 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
             "lone label in an empty quarter. `stopped_by` in the table names "
             "the tribe that did it.")
         add("")
-        add("Evidence from all three sheets counts at once, so a tribe named by "
+        add("**The first three panels are each a statement about one "
+            "cartographer.** Both the evidence and the bound come from that "
+            "sheet alone, so they are not the same country carved up three "
+            "ways, and the difference between them is the point:")
+        add("")
+        add("| Sheet | Names | Tribes | Median ellipse | Ground covered |")
+        add("| --- | --- | --- | --- | --- |")
+        for key, row in sp["per_sheet"].items():
+            add(f"| {key} | {row['names']} | {row['tribes']} | "
+                f"{row['median_area_sqkm']:,.0f} km² | "
+                f"{row['area_covered_sqkm']:,} km² |")
+        add("")
+        add("**A compiler who names few tribes gives each of them more "
+            "ground.** Martel's 27 names carry a median ellipse of 5,244 km², "
+            "Lasailly's 69 a median of 827, and that is arithmetic rather than "
+            "ethnography: the bound on an ellipse is the next name along, so "
+            "the sparser the sheet the larger every tribe on it. Read the "
+            "fourth panel for where the three agree, and the fifth for the best "
+            "single answer they support together. Per-sheet figures are in "
+            "[`data/tribal_spread_by_sheet.csv`](../data/tribal_spread_by_sheet.csv).")
+        add("")
+        add(f"**{sp['branches']['n']} of the {sp['tribes']} are branches rather "
+            f"than tribes**, and the `parent` column says whose. Five are "
+            f"M'Talith *berada* that only the 1853 sheet maps separately. The "
+            f"other four are Hammama and Zlass fractions, and their parentage "
+            f"is not guesswork either: Ganiage's *Annexe I* footnote 2 gathers "
+            f"the Zlass fractions and footnote 5 the Hammama, which is what "
+            f"attributes Oulad Khalifa to the Zlass and Ouled Redouan and Ouled "
+            f"el Goussem to the Hammama.")
+        add("")
+        add("Evidence from all three sheets counts at once in the merged "
+            "panel, so a tribe named by "
             "Pellissier in 1853, by Lasailly in 1881 and by Martel in 1965 gets "
             "an ellipse stretched to cover all three, and that stretch is the "
             f"compilers disagreeing. {sp['tribes_on_more_than_one_sheet']} of "

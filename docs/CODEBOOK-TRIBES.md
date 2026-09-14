@@ -154,6 +154,7 @@ Each tribe gets the largest ellipse that satisfies two rules and nothing else:
 | Variable | Definition |
 | --- | --- |
 | `tribe` | The gazetteer's canonical name, or the printed name where the label resolves to no entry. |
+| `parent` | For a branch, the tribe it belongs to; empty for a tribe in its own right. Nine of the 92 are branches. Five are M'Talith *berada* the gazetteer names as `M'Talith — Oulad Alia` and so on. The other four are attributed from Ganiage's *Annexe I* footnotes rather than from the name: footnote 2 gathers the Zlass fractions, footnote 5 the Hammama, which puts Oulad Khalifa under the Zlass and Ouled Redouan and Ouled el Goussem under the Hammama. |
 | `labels`, `sources`, `sources_named` | How many names carry this tribe, across how many of the three sheets, and which. |
 | `printed_as` | Every spelling it appears under. |
 | `measured_names` | How many of its names have a measured printed length. Only the 1881 sheet has been measured. |
@@ -184,14 +185,37 @@ them ran. Not clipped either, so an ellipse crosses the modern frontier wherever
 the names do, which 34 of the 141 labels do. Do not publish these as tribal
 territories.
 
+### D1. One sheet at a time
+
+[`data/tribal_spread_by_sheet.csv`](../data/tribal_spread_by_sheet.csv) applies
+the same two rules to one sheet at a time: a tribe's ellipse is built from that
+sheet's labels and bounded by that sheet's own neighbours. Same columns as
+section D plus `sheet`. It is what the first three panels of the figure draw.
+
+**The three are not one country carved up three ways**, and comparing their
+medians is the quickest way to see it:
+
+| Sheet | Names | Tribes | Median ellipse | Ground covered |
+| --- | --- | --- | --- | --- |
+| 1853 Pellissier | 52 | 49 | 1,040 km² | 95,739 km² |
+| 1881 Lasailly | 69 | 67 | 827 km² | 148,757 km² |
+| 1881 Martel (1965) | 27 | 27 | 5,244 km² | 195,276 km² |
+
+A compiler who names few tribes gives each of them more ground, because the
+bound on an ellipse is the next name along. That is arithmetic, not ethnography,
+and it is the reason not to read Martel's panel as a claim that his tribes were
+larger.
+
 ### Checking it
 
 [`check_tribal_spread.py`](../scripts/check_tribal_spread.py) tests both rules
 and writes [`data/tribal_spread_check.json`](../data/tribal_spread_check.json).
 Rule 1 must hold for every tribe and currently does; a violation there is a bug.
-It also inverts each sheet's affine and redraws every ellipse on the scan it
-came from, whole-sheet and in four full-resolution crops per sheet, so the
-ellipses can be held against the engraved names rather than taken on trust. The
+It also inverts each sheet's affine and redraws **that sheet's own** ellipses
+on the scan they came from, whole-sheet and in four full-resolution crops, so
+they can be held against the engraved names rather than taken on trust. The
+per-sheet set is the right one to draw there: overlaying the merged ellipse on
+one sheet would be testing the other two as much as this one. The
 inverse reproduces the control towns to 3 km on the 1881 sheet and 5 km on the
 1853, well inside the ellipses, so the overlay tests the ellipses and not the
 transform.

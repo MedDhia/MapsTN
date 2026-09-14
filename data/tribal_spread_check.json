@@ -72,6 +72,7 @@
       "file": "docs/img/tribal_spread_check.jpg",
       "inverse_affine_residual_px": 38.6,
       "ellipses_drawn": 67,
+      "ellipses_used": "this sheet's own ellipses",
       "spot_check": "docs/img/tribal_spread_spot_1881.jpg"
     },
     "1853": {
@@ -79,6 +80,7 @@
       "file": "docs/img/tribal_spread_check_1853.jpg",
       "inverse_affine_residual_px": 70.8,
       "ellipses_drawn": 49,
+      "ellipses_used": "this sheet's own ellipses",
       "spot_check": "docs/img/tribal_spread_spot_1853.jpg"
     }
   },

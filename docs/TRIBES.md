@@ -152,14 +152,26 @@ A tribe on these sheets is a name letterspaced across its country with no line a
 | A Gaussian blur of the labels | Looks measured and is not: the bandwidth is a choice, so every tribe comes out the same size whatever the sheet says. |
 | A circle the length of the printed name | Honest and far too small. The engraver fits the name inside the country, usually well inside, so the length is a floor on the territory and not the territory. |
 
-**What is drawn now is the largest ellipse each tribe can have before it reaches another tribe's name.** Two rules and no third:
+**What is drawn now is the largest ellipse each tribe can have before it reaches another tribe's name**, five times over: once for each cartographer on his own names, once with the three laid over each other, and once merged. Two rules and no third:
 
 1. It must contain all of that tribe's own evidence: every label centre on every sheet, and both ends of the name for the 62 on the 1881 sheet whose printed length was measured.
 2. It must contain no other tribe's label.
 
 The first rule fixes the centre, the orientation and the floor. The second fixes the ceiling, and the ceiling is a neighbouring name rather than a constant anyone chose: **all 92 ellipses were stopped by a neighbour**, none by the 90 km guard the script carries against a lone label in an empty quarter. `stopped_by` in the table names the tribe that did it.
 
-Evidence from all three sheets counts at once, so a tribe named by Pellissier in 1853, by Lasailly in 1881 and by Martel in 1965 gets an ellipse stretched to cover all three, and that stretch is the compilers disagreeing. 36 of 92 tribes are named on more than one sheet.
+**The first three panels are each a statement about one cartographer.** Both the evidence and the bound come from that sheet alone, so they are not the same country carved up three ways, and the difference between them is the point:
+
+| Sheet | Names | Tribes | Median ellipse | Ground covered |
+| --- | --- | --- | --- | --- |
+| 1853 Pellissier | 52 | 49 | 1,040 km² | 95,739 km² |
+| 1881 Lasailly | 69 | 67 | 827 km² | 148,757 km² |
+| 1881 Martel (1965) | 27 | 27 | 5,244 km² | 195,276 km² |
+
+**A compiler who names few tribes gives each of them more ground.** Martel's 27 names carry a median ellipse of 5,244 km², Lasailly's 69 a median of 827, and that is arithmetic rather than ethnography: the bound on an ellipse is the next name along, so the sparser the sheet the larger every tribe on it. Read the fourth panel for where the three agree, and the fifth for the best single answer they support together. Per-sheet figures are in [`data/tribal_spread_by_sheet.csv`](../data/tribal_spread_by_sheet.csv).
+
+**9 of the 92 are branches rather than tribes**, and the `parent` column says whose. Five are M'Talith *berada* that only the 1853 sheet maps separately. The other four are Hammama and Zlass fractions, and their parentage is not guesswork either: Ganiage's *Annexe I* footnote 2 gathers the Zlass fractions and footnote 5 the Hammama, which is what attributes Oulad Khalifa to the Zlass and Ouled Redouan and Ouled el Goussem to the Hammama.
+
+Evidence from all three sheets counts at once in the merged panel, so a tribe named by Pellissier in 1853, by Lasailly in 1881 and by Martel in 1965 gets an ellipse stretched to cover all three, and that stretch is the compilers disagreeing. 36 of 92 tribes are named on more than one sheet.
 
 | | |
 | --- | --- |

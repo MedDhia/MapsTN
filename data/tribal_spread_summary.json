@@ -1,10 +1,11 @@
 {
   "_about": "One ellipse per tribe: the largest that contains all of its own labels and none of any other tribe's.",
   "_the_two_rules": [
-    "Contain every label of this tribe on every sheet, and both ends of the name wherever the printed length was measured.",
+    "Contain every label of this tribe, and both ends of the name wherever the printed length was measured.",
     "Contain no other tribe's label. The ellipse grows until it would."
   ],
-  "_why_not_smaller": "The printed name is a floor on a tribe's country, not the country: the engraver fits the name inside the ground it names. An earlier figure drew a circle the length of the name and understated every tribe on the sheet.",
+  "_per_sheet": "The same rules applied to one sheet at a time, in data/tribal_spread_by_sheet.csv. Evidence and bound both come from that sheet, so each is a statement about one cartographer rather than a share of a common carve-up.",
+  "_why_not_smaller": "The printed name is a floor on a tribe's country, not the country: the engraver fits the name inside the ground it names.",
   "_why_not_a_blur": "A Gaussian bandwidth is a number nobody measured, and it gives every tribe the same size whatever the sheet says.",
   "max_radius_km": 90.0,
   "min_semi_km": 4.0,
@@ -14,11 +15,57 @@
   "labels_outside_modern_tunisia": 34,
   "tribes_on_more_than_one_sheet": 36,
   "at_max_radius": 0,
+  "tribes_enclosing_a_neighbour": 19,
+  "_enclosing_comment": "Their own labels already cover a neighbour before the ellipse grows at all, so rule 2 cannot hold for them. That is a statement about the sources: a tribe whose compilers put its name 200 km apart is a name collision, not a territory. Drawn dashed.",
+  "branches": {
+    "n": 9,
+    "_about": "A fraction that at least one sheet maps apart from its parent. Either the gazetteer name says so, as in 'Hammama - Oulad Aziz', or Ganiage's Annexe I footnotes do: footnote 2 gathers the Zlass fractions and footnote 5 the Hammama. The parent column in the table names it and _annexe_attributions gives the footnote.",
+    "_annexe_attributions": {
+      "Oulad Khalifa": "Annexe I footnote 2, Tribu des Zlass",
+      "Ouled Redouan": "Annexe I footnote 5, Tribu des Hammama",
+      "Ouled el Goussem": "Annexe I footnote 5 covers the Hammama fractions; Pellissier maps this one apart"
+    },
+    "by_parent": {
+      "Hammama": [
+        "Hammama — Oulad Aziz",
+        "Ouled Redouan",
+        "Ouled el Goussem"
+      ],
+      "M'Talith": [
+        "M'Talith — Meraïah",
+        "M'Talith — Nadjem",
+        "M'Talith — Oulad Alia",
+        "M'Talith — Oulad Merab",
+        "M'Talith — Oulad Zid"
+      ],
+      "Zlass": [
+        "Oulad Khalifa"
+      ]
+    }
+  },
+  "per_sheet": {
+    "1853 Pellissier": {
+      "names": 52,
+      "tribes": 49,
+      "median_area_sqkm": 1040,
+      "area_covered_sqkm": 95739
+    },
+    "1881 Lasailly": {
+      "names": 69,
+      "tribes": 67,
+      "median_area_sqkm": 827,
+      "area_covered_sqkm": 148757
+    },
+    "1881 Martel (1965)": {
+      "names": 27,
+      "tribes": 27,
+      "median_area_sqkm": 5244,
+      "area_covered_sqkm": 195276
+    }
+  },
   "min_area_sqkm": 88,
   "median_area_sqkm": 828.5,
   "max_area_sqkm": 11825,
-  "tribes_enclosing_a_neighbour": 19,
-  "_enclosing_comment": "Their own labels already cover a neighbour before the ellipse grows at all, so rule 2 cannot hold for them. That is a statement about the sources: a tribe whose compilers put its name 200 km apart is a name collision, not a territory. Drawn dashed.",
   "widest": [
     {
       "tribe": "Gherib",

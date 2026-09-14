@@ -79,6 +79,7 @@ SHEET_1881 = "btv1b84389986"
 SOURCE_INK = {"1853 Pellissier": "#a5642a",
               "1881 Lasailly": "#2f5f8f",
               "1881 Martel (1965)": "#4a7c59"}
+SOURCES = list(SOURCE_INK)
 LAND = "#f7f5f1"
 ABROAD = "#efece6"
 LINE = "#c3bbae"
@@ -203,14 +204,55 @@ def grow(centre, axes_dir, base, others, max_radius):
     return lo
 
 
-def build(evidence: list[dict], max_radius: float) -> list[dict]:
+# Fractions the gazetteer holds under their own name, whose parent is stated by
+# Ganiage's Annexe I rather than by the name. The footnote is the authority and
+# is quoted here so the attribution is not mistaken for a guess.
+ANNEXE_PARENT = {
+    "Oulad Khalifa": ("Zlass", "Annexe I footnote 2, Tribu des Zlass"),
+    "Ouled Redouan": ("Hammama", "Annexe I footnote 5, Tribu des Hammama"),
+    "Ouled el Goussem": ("Hammama", "Annexe I footnote 5 covers the Hammama "
+                                    "fractions; Pellissier maps this one apart"),
+}
+
+
+def parent_of(tribe: str) -> str:
+    """Which tribe a branch belongs to.
+
+    Two authorities. A gazetteer name of the form 'Hammama - Oulad Aziz' says
+    so itself, the em dash being the gazetteer's own mark for a fraction. For
+    the fractions the gazetteer holds under a bare name, the parent comes from
+    Ganiage's Annexe I footnotes, which tie each fiscal circumscription to its
+    tribe.
+    """
+    for sep in ("\u2014", " - "):
+        if sep in tribe:
+            return tribe.split(sep)[0].strip()
+    if tribe in ANNEXE_PARENT:
+        return ANNEXE_PARENT[tribe][0]
+    return ""
+
+
+def build(evidence: list[dict], max_radius: float,
+          constraints: list[dict] | None = None) -> list[dict]:
+    """Ellipses from `evidence`, stopped by the labels in `constraints`.
+
+    Pass the same list for both and each tribe is bounded by every other tribe
+    in it. Pass one sheet's labels as evidence and that same sheet as
+    constraints, and the panel says what that cartographer alone says: his
+    tribes, bounded by his own neighbours, with nobody else's reading allowed
+    to shrink them.
+    """
     by_tribe: dict[str, list[dict]] = defaultdict(list)
     for label in evidence:
         by_tribe[label["tribe"]].append(label)
 
-    centres = {t: to_km([l["lon"] for l in v], [l["lat"] for l in v])
-               for t, v in by_tribe.items()}
-    all_centres = {t: np.column_stack(c) for t, c in centres.items()}
+    limit: dict[str, list[dict]] = defaultdict(list)
+    for label in (constraints if constraints is not None else evidence):
+        limit[label["tribe"]].append(label)
+
+    all_centres = {t: np.column_stack(to_km([l["lon"] for l in v],
+                                            [l["lat"] for l in v]))
+                   for t, v in limit.items()}
 
     out = []
     for tribe, labels in by_tribe.items():
@@ -228,8 +270,11 @@ def build(evidence: list[dict], max_radius: float) -> list[dict]:
             base = base * need
 
         others_by = {t: v for t, v in all_centres.items() if t != tribe}
-        others = np.vstack(list(others_by.values()))
-        margin = grow(centre, axes_dir, base, others, max_radius)
+        if others_by:
+            others = np.vstack(list(others_by.values()))
+            margin = grow(centre, axes_dir, base, others, max_radius)
+        else:
+            margin = max_radius
         a, b = base[0] + margin, base[1] + margin
 
         # Which name stopped the growth, and which names the tribe's own spread
@@ -257,6 +302,7 @@ def build(evidence: list[dict], max_radius: float) -> list[dict]:
         angle = math.degrees(math.atan2(axes_dir[1, 0], axes_dir[0, 0]))
         out.append({
             "tribe": tribe,
+            "parent": parent_of(tribe),
             "labels": len(labels),
             "sources": len({l["source"] for l in labels}),
             "sources_named": " | ".join(sorted({l["source"] for l in labels})),
@@ -303,7 +349,51 @@ def write_table(rows: list[dict], path: Path) -> None:
         writer.writerows(rows)
 
 
-def draw(rows, evidence, colours, path, stats, max_radius):
+def basemap(ax, tunisia, gouvernorats, neighbours):
+    for geom in neighbours:
+        for ring in exteriors(geom):
+            ax.fill(ring[:, 0], ring[:, 1], facecolor=ABROAD, edgecolor="none",
+                    zorder=0)
+            ax.plot(ring[:, 0], ring[:, 1], color=LINE, linewidth=0.35, zorder=1)
+    for ring in exteriors(tunisia):
+        ax.fill(ring[:, 0], ring[:, 1], facecolor=LAND, edgecolor="none", zorder=1)
+    for ring in gouvernorats:
+        ax.plot(ring[:, 0], ring[:, 1], color=LINE, linewidth=0.25, zorder=2)
+    for ring in exteriors(tunisia):
+        ax.plot(ring[:, 0], ring[:, 1], color=COAST, linewidth=0.6, zorder=3)
+    ax.set_xlim(6.6, 11.95)
+    ax.set_ylim(30.9, 38.0)
+    ax.set_aspect(1 / math.cos(math.radians(LAT0)))
+    ax.set_axis_off()
+
+
+def ellipse_patch(row, facecolor, edgecolor, alpha, lw, dashed=False):
+    lon, lat = to_deg(*row["_c"])
+    return Ellipse((lon, lat),
+                   2 * row["_a"] / KM_PER_DEG_LON,
+                   2 * row["_b"] / KM_PER_DEG_LON,
+                   angle=row["angle_deg"], facecolor=facecolor,
+                   edgecolor=edgecolor, alpha=alpha, linewidth=lw,
+                   linestyle=(0, (2, 1.5)) if dashed else "solid", zorder=5)
+
+
+def write_per_sheet(panels, path: Path) -> None:
+    """One row per tribe per sheet, so the panels can be read as numbers."""
+    fields = ["sheet", "tribe", "parent", "labels", "printed_as",
+              "own_spread_km", "lon", "lat", "major_km", "minor_km",
+              "angle_deg", "area_sqkm", "grew_by_km", "stopped_by",
+              "stopped_at_km", "encloses_other_tribes"]
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        writer = csv.DictWriter(fh, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        for source, rows in panels:
+            for row in sorted(rows, key=lambda r: -r["area_sqkm"]):
+                writer.writerow({**row, "sheet": source})
+
+
+def draw(panels, pooled_rows, colours, evidence, path, stats, max_radius):
+    """Five panels: one per cartographer, then all three superposed, then the
+    three merged into one reading."""
     reader0 = shapefile.Reader(str(BOUNDARIES / "tun_admin0.shp"))
     tunisia = shape(reader0.shapeRecords()[0].shape.__geo_interface__)
     reader2 = shapefile.Reader(str(BOUNDARIES / "tun_admin2.shp"))
@@ -315,121 +405,113 @@ def draw(rows, evidence, colours, path, stats, max_radius):
         neighbours = [shape(f["geometry"])
                       for f in json.loads(path_n.read_text())["features"]]
 
-    figure = plt.figure(figsize=(11.4, 8.4), dpi=200)
-    ax = figure.add_axes([0.01, 0.185, 0.63, 0.735])
+    figure = plt.figure(figsize=(16.4, 8.2), dpi=195)
+    width = 0.187
+    axes = [figure.add_axes([0.008 + i * (width + 0.006), 0.175, width, 0.735])
+            for i in range(5)]
 
-    for geom in neighbours:
-        for ring in exteriors(geom):
-            ax.fill(ring[:, 0], ring[:, 1], facecolor=ABROAD, edgecolor="none",
-                    zorder=0)
-            ax.plot(ring[:, 0], ring[:, 1], color=LINE, linewidth=0.4, zorder=1)
-    for ring in exteriors(tunisia):
-        ax.fill(ring[:, 0], ring[:, 1], facecolor=LAND, edgecolor="none", zorder=1)
-    for ring in gouvernorats:
-        ax.plot(ring[:, 0], ring[:, 1], color=LINE, linewidth=0.3, zorder=2)
-    for ring in exteriors(tunisia):
-        ax.plot(ring[:, 0], ring[:, 1], color=COAST, linewidth=0.7, zorder=3)
+    # 1 to 3: one cartographer each, his tribes bounded by his own neighbours.
+    for ax, (source, rows) in zip(axes, panels):
+        basemap(ax, tunisia, gouvernorats, neighbours)
+        for row in sorted(rows, key=lambda r: -r["area_sqkm"]):
+            ax.add_patch(ellipse_patch(row, SOURCE_INK[source], SOURCE_INK[source],
+                                       0.22, 0.5))
+        for label in evidence:
+            if label["source"] == source:
+                ax.plot([label["lon"]], [label["lat"]], marker="o", markersize=1.5,
+                        markerfacecolor=SOURCE_INK[source], markeredgecolor="white",
+                        markeredgewidth=0.3, zorder=8)
+        for row in sorted(rows, key=lambda r: -r["area_sqkm"])[:16]:
+            lon, lat = to_deg(*row["_c"])
+            ax.annotate(row["tribe"], (lon, lat), fontsize=3.8, ha="center",
+                        va="center", color="#23211d", zorder=9)
+        ax.set_title(source, fontsize=8.5, color="#26231e", loc="left", pad=5)
+        ax.text(0.0, 0.175,
+                f"{len(rows)} tribes\n{sum(1 for l in evidence if l['source'] == source)} names",
+                transform=ax.transAxes, fontsize=5.8, color="#57534a", va="top")
 
-    for row in sorted(rows, key=lambda r: -r["area_sqkm"]):
-        lon, lat = to_deg(*row["_c"])
-        # Both axes are divided by the same km-per-degree and the axes aspect
-        # does the rest: at this latitude a kilometre drawn vertically and one
-        # drawn horizontally differ by half a per cent, which is well inside
-        # everything else here.
+    # 4: the three superposed, so where they agree and where they do not is the
+    # picture rather than a number.
+    ax = axes[3]
+    basemap(ax, tunisia, gouvernorats, neighbours)
+    for source, rows in panels:
+        for row in rows:
+            ax.add_patch(ellipse_patch(row, "none", SOURCE_INK[source], 0.55, 0.55))
+    ax.set_title("All three, superposed", fontsize=8.5, color="#26231e",
+                 loc="left", pad=5)
+    ax.legend(handles=[Line2D([], [], color=SOURCE_INK[s], linewidth=1.1, label=s)
+                       for s, _ in panels],
+              loc="lower left", bbox_to_anchor=(0.0, 0.01), frameon=False,
+              fontsize=5.8)
+
+    # 5: one ellipse per tribe from all the evidence at once.
+    ax = axes[4]
+    basemap(ax, tunisia, gouvernorats, neighbours)
+    for row in sorted(pooled_rows, key=lambda r: -r["area_sqkm"]):
         flagged = row["encloses_other_tribes"] > 0
-        ell = Ellipse((lon, lat),
-                      2 * row["_a"] / KM_PER_DEG_LON,
-                      2 * row["_b"] / KM_PER_DEG_LON,
-                      angle=row["angle_deg"],
-                      facecolor=colours[row["tribe"]],
-                      edgecolor="#8c3b2a" if flagged else colours[row["tribe"]],
-                      alpha=0.30, linewidth=0.9 if flagged else 0.5,
-                      linestyle=(0, (2, 1.5)) if flagged else "solid", zorder=5)
-        ax.add_patch(ell)
-
+        ax.add_patch(ellipse_patch(
+            row, colours[row["tribe"]],
+            "#8c3b2a" if flagged else colours[row["tribe"]],
+            0.28, 0.9 if flagged else 0.5, dashed=flagged))
     for label in evidence:
-        ax.plot([label["lon"]], [label["lat"]], marker="o", markersize=1.7,
+        ax.plot([label["lon"]], [label["lat"]], marker="o", markersize=1.4,
                 markerfacecolor=SOURCE_INK[label["source"]],
-                markeredgecolor="white", markeredgewidth=0.3, zorder=8)
-
-    for row in sorted(rows, key=lambda r: -r["area_sqkm"])[:40]:
+                markeredgecolor="white", markeredgewidth=0.25, zorder=8)
+    for row in sorted(pooled_rows, key=lambda r: -r["area_sqkm"])[:24]:
         lon, lat = to_deg(*row["_c"])
-        ax.annotate(row["tribe"], (lon, lat), fontsize=4.3, ha="center",
+        ax.annotate(row["tribe"], (lon, lat), fontsize=3.8, ha="center",
                     va="center", color="#23211d", zorder=9)
+    ax.set_title("Merged across the three", fontsize=8.5, color="#26231e",
+                 loc="left", pad=5)
+    ax.text(0.0, 0.175,
+            f"{len(pooled_rows)} tribes\n{len(evidence)} names\n"
+            f"{stats['flagged']} dashed: own labels\nalready cover a neighbour",
+            transform=ax.transAxes, fontsize=5.8, color="#57534a", va="top")
 
-    ax.set_xlim(6.6, 11.95)
-    ax.set_ylim(31.1, 38.0)
-    ax.set_aspect(1 / math.cos(math.radians(LAT0)))
-    ax.set_axis_off()
-    ax.legend(handles=[Line2D([], [], marker="o", linestyle="none",
-                              color=SOURCE_INK[s], markersize=4, label=s)
-                       for s in SOURCE_INK]
-                      + [Line2D([], [], color="#8c3b2a", linewidth=1.2,
-                                linestyle=(0, (2, 1.5)),
-                                label="own labels already cover a neighbour")],
-              loc="lower left", bbox_to_anchor=(0.0, 0.02), frameon=False,
-              fontsize=6.2)
-
-    hx = figure.add_axes([0.70, 0.50, 0.28, 0.32])
-    areas = sorted(r["area_sqkm"] for r in rows)
-    hx.hist(areas, bins=np.logspace(2.3, 4.6, 22), color="#7d8fa8", alpha=0.8,
-            edgecolor="white", linewidth=0.4)
-    hx.set_xscale("log")
-    hx.axvline(statistics.median(areas), color="#8c3b2a", linewidth=1.0)
-    hx.text(statistics.median(areas) * 1.15, hx.get_ylim()[1] * 0.9,
-            f"median {statistics.median(areas):,.0f} km²", fontsize=6,
-            color="#8c3b2a")
-    hx.set_xlabel("ellipse area, km², log scale", fontsize=6.5)
-    hx.set_ylabel("tribes", fontsize=6.5)
-    hx.tick_params(labelsize=6)
-    for side in ("top", "right"):
-        hx.spines[side].set_visible(False)
-    hx.set_title(f"{len(rows)} tribes", fontsize=7.5, loc="left", color="#26231e")
-
-    figure.suptitle("The ground each tribe holds, bounded by the tribes next to it",
-                    fontsize=12.5, color="#26231e", x=0.02, ha="left", y=0.975)
-    figure.text(0.02, 0.937,
-                "Each ellipse is the largest one that contains all of a tribe's "
-                "own names and none of anybody else's.",
-                fontsize=7.8, color="#3a352d", va="top")
+    figure.suptitle("The ground each tribe holds, one cartographer at a time and "
+                    "then together",
+                    fontsize=13, color="#26231e", x=0.008, ha="left", y=0.975)
+    figure.text(0.008, 0.938,
+                "Each ellipse is the largest that contains all of a tribe's own "
+                "names on that sheet and none of its neighbours' on the same "
+                "sheet. The fourth panel lays the three over each other; the "
+                "fifth builds one ellipse per tribe from all the evidence at once.",
+                fontsize=7.6, color="#3a352d", va="top")
 
     caption = (
-        f"Two rules and no third. An ellipse must contain every one of that "
-        f"tribe's labels on every sheet, and, for the "
-        f"{stats['measured_names']} names on the 1881 sheet whose printed "
-        f"length was measured, both ends of the name. It then grows until it "
-        f"would swallow another tribe's label. The first rule fixes the centre, "
-        f"the orientation and the floor; the second fixes the ceiling, and the "
-        f"ceiling is always a neighbouring name rather than a constant anyone "
-        f"chose. Evidence from all three sheets counts at once, so a tribe "
-        f"named in 1853, 1881 and 1965 gets an ellipse stretched to cover all "
-        f"three, and that stretch is the compilers disagreeing."
+        f"Two rules and no third. An ellipse contains every one of that tribe's "
+        f"labels, and both ends of the name for the "
+        f"{stats['measured_names']} on the 1881 sheet whose printed length was "
+        f"measured; it then grows until it would swallow another tribe's label. "
+        f"In the first three panels both the evidence and the bound come from "
+        f"that sheet alone, so each is a statement about one cartographer, and "
+        f"the panels are not the same country carved up the same way: a "
+        f"compiler who names few tribes gives each of them more ground, which "
+        f"is why Martel's 27 names fill more of the map than Lasailly's 69."
     )
     warning = (
-        f"Areas run {min(areas):,} to {max(areas):,} km², median "
-        f"{statistics.median(areas):,.0f}. This is deliberately the largest "
-        f"reading the sheets will carry, not the smallest: the printed name is "
-        f"a floor on a tribe's country, since the engraver fits it inside, and "
-        f"an earlier version of this figure drew that floor as though it were "
-        f"the whole. What bounds an ellipse here is the next tribe along. "
-        f"Every one of the {stats['tribes']} ellipses was stopped by a "
-        f"neighbouring name rather than by the {max_radius:.0f} km guard, so "
-        f"nothing here is sized by a constant. Nothing is clipped to the modern "
-        f"frontier either, which {stats['outside']} of the labels sit west of. "
-        f"Ellipses overlap where the sheets disagree, and the overlap is left "
-        f"to be seen. The {stats['flagged']} ellipses drawn with a dashed red "
-        f"edge are the ones whose own labels already cover a neighbour before "
-        f"any growth: Ouled Sdira's three names stand 211 km apart and Ouled "
-        f"Khiar's two 287 km, which is not a territory but two groups sharing a "
-        f"name. scripts/check_tribal_spread.py tests both rules and redraws "
-        f"every ellipse on the 1881 scan to be compared against the engraving."
+        f"Read the fourth panel for disagreement. Where the three outlines "
+        f"nest, the sheets agree about a tribe and the merged ellipse is small; "
+        f"where they cross, they do not. Read the fifth for the best single "
+        f"answer the three together support, and read its dashed ellipses as "
+        f"warnings: {stats['flagged']} tribes have their own labels so far "
+        f"apart that no ellipse containing them can avoid covering a "
+        f"neighbour, and those are suspected name collisions rather than "
+        f"territories. Areas run {stats['min_area_sqkm']:,} to "
+        f"{stats['max_area_sqkm']:,} km\u00b2, median "
+        f"{stats['median_area_sqkm']:,.0f}. Nothing is clipped to the modern "
+        f"frontier, which {stats['outside']} of the "
+        f"{stats['labels']} labels sit west of. "
+        f"scripts/check_tribal_spread.py redraws every one of these on the scan "
+        f"it came from."
     )
-    figure.text(0.02, 0.145,
-                "\n".join(textwrap.wrap(caption, 185)
-                          + textwrap.wrap(warning, 185)),
+    figure.text(0.008, 0.135,
+                "\n".join(textwrap.wrap(caption, 265)
+                          + textwrap.wrap(warning, 265)),
                 fontsize=6.6, color="#57534a", va="top")
     figure.savefig(path, facecolor="white")
     plt.close(figure)
+
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -439,24 +521,37 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     evidence = read_evidence()
-    rows = build(evidence, args.max_radius_km)
-    colours = colour_by_overlap(rows)
-    write_table(rows, REPO_ROOT / "data" / "tribal_spread.csv")
+    pooled = build(evidence, args.max_radius_km)
+    colours = colour_by_overlap(pooled)
 
+    # One set per cartographer: his tribes, bounded by his own neighbours.
+    panels = []
+    for source in SOURCES:
+        subset = [e for e in evidence if e["source"] == source]
+        panels.append((source, build(subset, args.max_radius_km, subset)))
+
+    write_table(pooled, REPO_ROOT / "data" / "tribal_spread.csv")
+    write_per_sheet(panels, REPO_ROOT / "data" / "tribal_spread_by_sheet.csv")
+
+    rows = pooled
     areas = sorted(r["area_sqkm"] for r in rows)
+    branches = [r for r in rows if r["parent"]]
     stats = {
         "_about": ("One ellipse per tribe: the largest that contains all of its "
                    "own labels and none of any other tribe's."),
         "_the_two_rules": [
-            "Contain every label of this tribe on every sheet, and both ends of "
-            "the name wherever the printed length was measured.",
+            "Contain every label of this tribe, and both ends of the name "
+            "wherever the printed length was measured.",
             "Contain no other tribe's label. The ellipse grows until it would.",
         ],
+        "_per_sheet": (
+            "The same rules applied to one sheet at a time, in "
+            "data/tribal_spread_by_sheet.csv. Evidence and bound both come from "
+            "that sheet, so each is a statement about one cartographer rather "
+            "than a share of a common carve-up."),
         "_why_not_smaller": (
             "The printed name is a floor on a tribe's country, not the country: "
-            "the engraver fits the name inside the ground it names. An earlier "
-            "figure drew a circle the length of the name and understated every "
-            "tribe on the sheet."),
+            "the engraver fits the name inside the ground it names."),
         "_why_not_a_blur": (
             "A Gaussian bandwidth is a number nobody measured, and it gives "
             "every tribe the same size whatever the sheet says."),
@@ -468,9 +563,6 @@ def main(argv: list[str] | None = None) -> int:
         "labels_outside_modern_tunisia": sum(1 for e in evidence if not e["inside"]),
         "tribes_on_more_than_one_sheet": sum(1 for r in rows if r["sources"] > 1),
         "at_max_radius": sum(1 for r in rows if r["at_max_radius"]),
-        "min_area_sqkm": areas[0],
-        "median_area_sqkm": statistics.median(areas),
-        "max_area_sqkm": areas[-1],
         "tribes_enclosing_a_neighbour": sum(1 for r in rows
                                             if r["encloses_other_tribes"] > 0),
         "_enclosing_comment": (
@@ -478,20 +570,42 @@ def main(argv: list[str] | None = None) -> int:
             "grows at all, so rule 2 cannot hold for them. That is a statement "
             "about the sources: a tribe whose compilers put its name 200 km "
             "apart is a name collision, not a territory. Drawn dashed."),
+        "branches": {
+            "n": len(branches),
+            "_about": ("A fraction that at least one sheet maps apart from its "
+                       "parent. Either the gazetteer name says so, as in "
+                       "'Hammama - Oulad Aziz', or Ganiage's Annexe I footnotes "
+                       "do: footnote 2 gathers the Zlass fractions and footnote "
+                       "5 the Hammama. The parent column in the table names it "
+                       "and _annexe_attributions gives the footnote."),
+            "_annexe_attributions": {k: v[1] for k, v in ANNEXE_PARENT.items()},
+            "by_parent": {parent: sorted(r["tribe"] for r in branches
+                                         if r["parent"] == parent)
+                          for parent in sorted({r["parent"] for r in branches})},
+        },
+        "per_sheet": {source: {
+            "names": sum(1 for e in evidence if e["source"] == source),
+            "tribes": len(rws),
+            "median_area_sqkm": statistics.median([r["area_sqkm"] for r in rws]),
+            "area_covered_sqkm": round(sum(r["area_sqkm"] for r in rws)),
+        } for source, rws in panels},
+        "min_area_sqkm": areas[0],
+        "median_area_sqkm": statistics.median(areas),
+        "max_area_sqkm": areas[-1],
         "widest": [{"tribe": r["tribe"], "area_sqkm": r["area_sqkm"],
                     "major_km": r["major_km"], "minor_km": r["minor_km"],
                     "stopped_by": r["stopped_by"]} for r in rows[:6]],
     }
     stats["outside"] = stats["labels_outside_modern_tunisia"]
-    stats["flagged"] = stats["tribes_enclosing_a_neighbour"]
     stats["at_max"] = stats["at_max_radius"]
+    stats["flagged"] = stats["tribes_enclosing_a_neighbour"]
     (REPO_ROOT / "data" / "tribal_spread_summary.json").write_text(
         json.dumps({k: v for k, v in stats.items()
-                   if k not in ("outside", "at_max", "flagged")},
+                    if k not in ("outside", "at_max", "flagged")},
                    ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     if not args.no_figure:
-        draw(rows, evidence, colours,
+        draw(panels, pooled, colours, evidence,
              REPO_ROOT / "docs" / "img" / "tribal_spread.png", stats,
              args.max_radius_km)
 

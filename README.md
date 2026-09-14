@@ -400,11 +400,28 @@ other tribe's label.
 
 ![The ground each tribe holds, bounded by the tribes next to it](docs/img/tribal_spread.png)
 
-The first rule fixes the centre, the orientation and the floor. The second fixes
-the ceiling, and the ceiling is a neighbouring name rather than a constant
-anyone chose: **all 88 ellipses were stopped by a neighbour**, none by the 90 km
-guard the script carries against a lone label in an empty quarter. Areas run 88
-to 11,825 km², median 778.
+The rules run five times over: once for each cartographer on his own names, once
+with the three laid over each other, and once merged. The first rule fixes the
+centre, the orientation and the floor; the second fixes the ceiling, and the
+ceiling is a neighbouring name rather than a constant anyone chose. **All 92
+ellipses were stopped by a neighbour**, none by the 90 km guard. Areas run 88 to
+11,825 km², median 828.
+
+**The three sheets are not one country carved up three ways.**
+
+| Sheet | Names | Tribes | Median ellipse | Ground covered |
+| --- | --- | --- | --- | --- |
+| 1853 Pellissier | 52 | 49 | 1,040 km² | 95,739 km² |
+| 1881 Lasailly | 69 | 67 | 827 km² | 148,757 km² |
+| 1881 Martel (1965) | 27 | 27 | 5,244 km² | 195,276 km² |
+
+A compiler who names few tribes gives each of them more ground, because the
+bound on an ellipse is the next name along. That is arithmetic, not ethnography.
+Per-sheet figures are in
+[`data/tribal_spread_by_sheet.csv`](data/tribal_spread_by_sheet.csv), and nine
+of the 92 rows are branches rather than tribes, with `parent` naming whose:
+five M'Talith *berada*, and four Hammama and Zlass fractions attributed from
+Ganiage's Annexe I footnotes.
 
 Three earlier versions are recorded because each failed differently: a dot per
 label (silent about extent), administrative units filled or sprinkled (invents

@@ -43,11 +43,11 @@ SCRATCH = Path("/tmp/claude-0/-home-user-MapsTN/"
                "7114739d-3b6b-5354-b4f4-7fe6b8a6a8b0/scratchpad/iiif")
 SHEETS = [
     {"id": "btv1b84389986", "year": 1881, "scan": "FULL_theatre1881.jpg",
-     "scale": 0.22, "out": "tribal_spread_check.jpg",
-     "spot": "tribal_spread_spot_1881.jpg"},
+     "sheet": "1881 Lasailly", "scale": 0.22,
+     "out": "tribal_spread_check.jpg", "spot": "tribal_spread_spot_1881.jpg"},
     {"id": "btv1b53136235q", "year": 1853, "scan": "FULL_pellissier.jpg",
-     "scale": 0.18, "out": "tribal_spread_check_1853.jpg",
-     "spot": "tribal_spread_spot_1853.jpg"},
+     "sheet": "1853 Pellissier", "scale": 0.18,
+     "out": "tribal_spread_check_1853.jpg", "spot": "tribal_spread_spot_1853.jpg"},
 ]
 SHEET = SHEETS[0]["id"]
 KM_PER_DEG_LAT = 110.574
@@ -94,6 +94,22 @@ def rules() -> dict:
     return rows, own_out, foreign_in
 
 
+def sheet_rows(sheet: dict) -> list[dict]:
+    """That sheet's own ellipses, not the merged ones.
+
+    An overlay of the merged ellipse on one sheet would be testing the other
+    two sheets as much as this one. The per-sheet table is built from this
+    sheet's labels alone and bounded by this sheet's own neighbours, so drawing
+    it here asks the only question the scan can answer: does the ellipse sit on
+    the ground this engraver gave the tribe?
+    """
+    path = REPO_ROOT / "data" / "tribal_spread_by_sheet.csv"
+    if not path.exists():
+        return []
+    return [r for r in csv.DictReader(path.open(encoding="utf-8"))
+            if r["sheet"] == sheet["sheet"]]
+
+
 def overlay(rows, sheet: dict) -> bool:
     """Draw the ellipses back onto one sheet, in that sheet's own pixels."""
     scan = SCRATCH / sheet["scan"]
@@ -111,19 +127,12 @@ def overlay(rows, sheet: dict) -> bool:
     km_per_px = fits[sheet["id"]]["km_per_px"]
     factor = sheet["scale"]
 
-    on_sheet = set()
-    for row in csv.DictReader((REPO_ROOT / "data" / "tribal_territories.csv")
-                              .open(encoding="utf-8")):
-        if row["record_id"] == sheet["id"]:
-            on_sheet.add(row["tribe"] or row["label_as_printed"])
-
+    own = sheet_rows(sheet) or rows
     image = Image.open(scan).convert("RGB")
     image = image.resize((int(image.width * factor), int(image.height * factor)),
                          Image.LANCZOS)
     draw = ImageDraw.Draw(image, "RGBA")
-    for row in rows:
-        if row["tribe"] not in on_sheet:
-            continue
+    for row in own:
         cx, cy = (np.array([float(row["lon"]), float(row["lat"]), 1.0])
                   @ inverse) * factor
         a = float(row["major_km"]) / 2 / km_per_px * factor
@@ -146,7 +155,9 @@ def overlay(rows, sheet: dict) -> bool:
     image.save(REPO_ROOT / "docs" / "img" / sheet["out"], quality=82,
                optimize=True)
     sheet["residual_px"] = round(residual, 1)
-    sheet["tribes_drawn"] = sum(1 for r in rows if r["tribe"] in on_sheet)
+    sheet["tribes_drawn"] = len(own)
+    sheet["used"] = ("this sheet's own ellipses" if sheet_rows(sheet)
+                     else "the merged ellipses")
     return True
 
 
@@ -172,7 +183,7 @@ def spot_check(rows, sheet: dict, zoom: float = 0.45) -> bool:
     inverse, *_ = np.linalg.lstsq(design, target, rcond=None)
     km_per_px = json.loads((REPO_ROOT / "data" / "tribal_fit.json")
                            .read_text())[sheet["id"]]["km_per_px"]
-    by_tribe = {r["tribe"]: r for r in rows}
+    by_tribe = {r["tribe"]: r for r in (sheet_rows(sheet) or rows)}
     image = Image.open(scan).convert("RGB")
 
     panels = []
@@ -230,6 +241,7 @@ def main() -> int:
             "file": f"docs/img/{sheet['out']}",
             "inverse_affine_residual_px": sheet.get("residual_px"),
             "ellipses_drawn": sheet.get("tribes_drawn"),
+            "ellipses_used": sheet.get("used"),
             "spot_check": (f"docs/img/{sheet['spot']}"
                            if spot_check(rows, sheet) else None),
         }
