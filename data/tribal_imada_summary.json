@@ -1,0 +1,21 @@
+{
+  "_about": "Tribal annotation read off two sheets, put onto the 2022 imadas. Each tribe is a disc of the given radius centred on where its name is printed.",
+  "radius_km": 11.0,
+  "_radius_basis": "Half the median of six labels measured end to end on the tiles, which ran 14 to 32 km. The disc is the annotation's own grain, not a positional error.",
+  "labels": 114,
+  "tribes": 80,
+  "tribes_on_two_sheets": 30,
+  "imadas_total": 2084,
+  "imadas_touched": 677,
+  "imadas_touched_pct": 32.5,
+  "area_pct": 23.9,
+  "imadas_with_two_or_more": 274,
+  "max_tribes_on_one_imada": 7,
+  "gouvernorats_reached": 17,
+  "busiest_imada": "Selloul",
+  "busiest_gouvernorat": "Jendouba",
+  "median_imadas_per_tribe": 15,
+  "labels_outside_modern_tunisia": 31,
+  "loo_rms": "1881 6.17 km, 1853 8.17 km",
+  "_coverage_comment": "A disc reaching an imada is not the tribe holding it, and a blank imada is not empty ground. Two thirds of the country's imadas are blank here for three different reasons that this table cannot tell apart: the 1853 sheet was transcribed only to about 34 N, the 1881 sheet gives everything south of Sfax to one tribe, and the two sheets between them name 80 groups where the country had more."
+}

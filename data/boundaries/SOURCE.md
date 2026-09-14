@@ -16,9 +16,12 @@ Humanitarian Data Exchange.
 | admin1 | grandes régions | 5 |
 | admin2 | gouvernorats | 5 |
 | admin3 | délégations | 5 |
+| admin4 | secteurs / imadas | 5 |
 
-Level 4 exists in the source and is not kept: 15 MB of geometry.
-`--levels 0 1 2 3 4` fetches it if needed.
+This table lists the levels the run that wrote it fetched, not
+necessarily everything in `data/boundaries/`. Level 4 is 15 MB of
+geometry and was added when the tribal annotation needed a unit finer
+than the délégation; `--levels` selects any subset.
 
 The level numbering is the source's own and does not follow the usual
 ADM0/1/2 convention — admin1 is the six *grandes régions*, not the

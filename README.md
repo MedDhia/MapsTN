@@ -27,6 +27,7 @@ a relevance score.
 | **Tribal variable definitions** | [`docs/CODEBOOK-TRIBES.md`](docs/CODEBOOK-TRIBES.md) |
 | **Tribe names placed on the ground** | [`data/tribal_territories.csv`](data/tribal_territories.csv), [`.geojson`](data/tribal_territories.geojson) |
 | **Do two sheets agree on where a tribe is?** | [`data/tribal_map_agreement.csv`](data/tribal_map_agreement.csv) |
+| **Tribes on today's imadas** | [`data/tribal_imada_coverage.csv`](data/tribal_imada_coverage.csv) |
 | **Who counted the tribes, and how many** | [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) |
 | **Population figures, with their sources** | [`data/tribal_population_sources.csv`](data/tribal_population_sources.csv) |
 | **1931 census, by caïdat** | [`data/census_1931_caidats.csv`](data/census_1931_caidats.csv) |
@@ -365,6 +366,25 @@ That is not a map of where tribes were; it is a map of where a French compiler i
 that north-western corner.
 
 **645 of 663 records are coded `unknown`, and unknown means unknown, not no.**
+
+**The annotation, put on today's map.** The finest published Tunisian unit is
+the imada, 2,084 of them, and
+[`scripts/map_tribes_on_imadas.py`](scripts/map_tribes_on_imadas.py) puts the
+transcribed labels on that mesh. A tribe is drawn as a disc rather than a
+polygon because a disc is what the evidence supports: no sheet draws a tribal
+boundary, and the six labels measured run 14 to 32 km end to end, so each
+reading gets a disc of 11 km radius around where its name is printed. The discs
+reach **677 of the 2,084 imadas, 24% of the country's area**, with 274 reached
+by two tribes or more and seven tribes meeting on one imada in the Kroumirie.
+Per-imada results are in
+[`data/tribal_imada_coverage.csv`](data/tribal_imada_coverage.csv).
+
+![Tribal annotation of 1853 and 1881 on the imadas of 2022](docs/img/tribal_distribution_imada.png)
+
+Two thirds of the imadas are blank, and the blank means three different things
+the table cannot separate: the 1853 sheet was transcribed only to about 34°N,
+the 1881 sheet gives everything south of Sfax to one tribe, and the two sheets
+between them name 80 groups where the country held more.
 
 **How many people was a tribe?** No sheet says — a map gives location, never
 size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the

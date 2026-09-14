@@ -12,6 +12,7 @@ Which maps in this collection say where a tribe is, how each one says it, and wh
 | Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |
 | Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |
 | Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |
+| Tribes on today's imadas | [`data/tribal_imada_coverage.csv`](../data/tribal_imada_coverage.csv) |
 | How many people was a tribe? | [`docs/POPULATION-SOURCES.md`](POPULATION-SOURCES.md) |
 
 ## The catalogue does not know
@@ -135,6 +136,31 @@ By modern gouvernorat, for the sheet whose face was read in full:
 | *west of the frontier* | 29 |
 
 The north-west carries the annotation and the south barely does. Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels between them, while south of Sfax the entire country — the Jerid, the Nefzaoua, the Dahar, the Matmata — carries exactly one, the Ouerghemma. That is not a map of where tribes were. It is a map of where a French compiler in 1881 had names for them, and 1881 is the year of the Kroumir campaign in exactly that north-western corner. Over the same latitudes the 1853 sheet is less lopsided — its median label sits at 35.9°N against the 1881 sheet's 36.6°N, and seven of its labels fall south of 35°N against four — though part of that is simply that Pellissier names the fractions of the M'Talith and the Hamema where Lasailly names the parent.
+
+## The same annotation on today's imadas
+
+![Tribal annotation of 1853 and 1881 on the imadas of 2022](img/tribal_distribution_imada.png)
+
+The finest published Tunisian administrative unit is the imada, the *secteur* below the delegation: **2084 of them** in the OCHA Common Operational Dataset, averaging about 78 km². Putting the annotation on that mesh is the only way to say where a tribe was in units anybody uses today, and it takes one decision that has to be argued rather than assumed.
+
+**A tribe is drawn as a disc, not a polygon, because a disc is what the evidence supports.** No sheet here draws a tribal boundary, so there is no polygon to take. What there is, is the ground the name covers: six labels measured on the tiles run 14 to 32 km end to end, a median of about 22 km, so each reading gets a disc of **11 km radius** centred on where the name is printed. The disc is not an error bar. Placement error is 1881 6.17 km, 1853 8.17 km leave-one-out, comfortably inside it; the disc is the annotation's own grain, and no better transform would shrink it.
+
+A tribe named on both sheets keeps both discs rather than an average of them, because the 30 such tribes sit a median 23.0 km apart and averaging would hide the one cross-sheet check this repository has.
+
+| | |
+| --- | --- |
+| Imadas a disc reaches | **677 of 2084** (32.5%) |
+| Share of the country's area | 23.9% |
+| Imadas reached by two tribes or more | 274 |
+| Most tribes on one imada | 7 (Selloul) |
+| Gouvernorats reached | 17 of 24 |
+| Median imadas per tribe | 15 |
+
+Per-imada results are in [`data/tribal_imada_coverage.csv`](../data/tribal_imada_coverage.csv), one row per imada reached, with the tribes that reach it.
+
+**Two thirds of the country's imadas are blank, and the blank means three different things this table cannot separate.** The 1853 sheet was transcribed only to about 34°N. The 1881 sheet gives everything south of Sfax to a single tribe. And the two sheets between them name 80 groups where the country held more. Only the third of those is about the tribes; the other two are about the reading and about the map.
+
+**What the join can and cannot mean.** The imadas are of 2022 and the annotation is of 1853 and 1881, so the unit is being used to say *where*, not to claim that it existed then or that a tribe held it. Selloul, in the Kroumirie, is reached by 7 tribes at once, which says that 7 names were printed within 11 km of each other, not that 7 tribes shared one valley. The densest corner of this map is the corner the 1881 compiler knew best.
 
 ## Coding
 

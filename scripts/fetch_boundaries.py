@@ -14,9 +14,10 @@ step out - the counts are what settle it:
 
 Levels 0 to 3 are kept by default, because gouvernorat and delegation are the
 units Tunisian statistics are published at, and so the levels at which anything
-extracted from the 1930s sheets can be set beside a modern number. Level 4 is
-available with --levels but is not kept: 15 MB of geometry is a poor trade for a
-join nobody has asked for yet.
+extracted from the 1930s sheets can be set beside a modern number. Level 4, the
+imada, is 15 MB of geometry and was left out until there was a join that needed
+a unit finer than the delegation; scripts/map_tribes_on_imadas.py is that join,
+so it is now fetched by default.
 
 Two sources were tried first and both failed, which is worth recording so nobody
 repeats the attempt:
@@ -99,7 +100,7 @@ def fetch(url: str, retries: int = 3, timeout: int = 300) -> bytes | None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--levels", nargs="*", type=int, default=[0, 1, 2, 3])
+    parser.add_argument("--levels", nargs="*", type=int, default=[0, 1, 2, 3, 4])
     parser.add_argument("--out", type=Path,
                         default=REPO_ROOT / "data" / "boundaries")
     args = parser.parse_args()
@@ -166,8 +167,10 @@ def main() -> int:
                      f"{len(written[level])} |")
     lines += [
         "",
-        "Level 4 exists in the source and is not kept: 15 MB of geometry.",
-        "`--levels 0 1 2 3 4` fetches it if needed.",
+        "This table lists the levels the run that wrote it fetched, not",
+        "necessarily everything in `data/boundaries/`. Level 4 is 15 MB of",
+        "geometry and was added when the tribal annotation needed a unit finer",
+        "than the délégation; `--levels` selects any subset.",
         "",
         "The level numbering is the source's own and does not follow the usual",
         "ADM0/1/2 convention — admin1 is the six *grandes régions*, not the",

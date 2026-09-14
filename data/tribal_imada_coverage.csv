@@ -1,0 +1,678 @@
+adm4_pcode,imada,delegation,gouvernorat,area_sqkm,tribes_n,tribes
+TN225558,Selloul,Aïn Draham,Jendouba,39.73,7,Beni Mtir | Ghezoran | Kroumirs | Meressen | Ouchtata | Ouled Ali | Ouled Soltan
+TN225656,Beni M'Tir,Fernana,Jendouba,7.84,6,Beni Mtir | Ghezoran | Kroumirs | Meressen | Ouled Ali | Ouled Soltan
+TN225557,Khemairia,Aïn Draham,Jendouba,58.15,6,Beni Mtir | Kroumirs | Meressen | Ouchtata | Ouled Ali | Ouled Soltan
+TN225562,Oued Ezzan,Aïn Draham,Jendouba,49.57,6,Beni Mtir | Chehida | Ghezoran | Kroumirs | Nefza | Ouled Ali
+TN215458,Bellif,Nefza,Béja,24.31,5,Djeladjela | Mekena | Mogod | Nefza | Riah
+TN225662,Ain El Beya,Fernana,Jendouba,18.71,5,Ghezoran | Meressen | Ouchtata | Ouled Ali | Ouled Soltan
+TN225561,Ain Salam,Aïn Draham,Jendouba,42.34,5,Beni Mtir | Chehida | Ghezoran | Kroumirs | Ouled Ali
+TN225660,El Adhar,Fernana,Jendouba,29.87,5,Ghezoran | Meressen | Ouchtata | Ouled Ali | Ouled Soltan
+TN225655,El Gouaidia,Fernana,Jendouba,33.28,5,Ghezoran | Kroumirs | Meressen | Ouled Ali | Ouled Soltan
+TN225555,El Homrane,Aïn Draham,Jendouba,57.6,5,Chehida | Ghezoran | Kroumirs | Nefza | Ouled Ali
+TN225556,Etbainia,Aïn Draham,Jendouba,44.15,5,Beni Mtir | Ghezoran | Kroumirs | Ouled Ali | Ouled Soltan
+TN225659,Hedhil,Fernana,Jendouba,12.11,5,Ghezoran | Meressen | Ouchtata | Ouled Ali | Ouled Soltan
+TN225652,Oued Ghrib,Fernana,Jendouba,38.43,5,Ghezoran | Meressen | Ouchtata | Ouled Ali | Ouled Soltan
+TN175551,Ouled Ghanem,Joumine,Bizerte,63.2,4,Djeladjela | Hezil | Mogod | Riah
+TN175451,Sedjnane,Sejnane,Bizerte,54.06,4,Djeladjela | Mogod | Nefza | Riah
+TN175455,Sehabna,Sejnane,Bizerte,81.11,4,Djeladjela | Mogod | Nefza | Riah
+TN175557,Touajnia,Joumine,Bizerte,47.75,4,Djeladjela | Mogod | Nefza | Riah
+TN215456,Bou-Zenna,Nefza,Béja,29.3,4,Djeladjela | Mogod | Nefza | Riah
+TN215466,Dehiret,Nefza,Béja,20.31,4,Djeladjela | Mogod | Nefza | Riah
+TN215459,Djebel Ediss,Nefza,Béja,49.03,4,Djeladjela | Mogod | Nefza | Riah
+TN215354,El Ghorfa,Amdoun,Béja,18.26,4,Chehida | Kroumirs | Nefza | Zouagha
+TN215461,Ghayadha,Nefza,Béja,31.09,4,Djeladjela | Mogod | Nefza | Riah
+TN215454,Kap Negro,Nefza,Béja,81.71,4,Djeladjela | Mogod | Nefza | Riah
+TN215451,Nefza Est,Nefza,Béja,10.91,4,Djeladjela | Mogod | Nefza | Riah
+TN215452,Nefza Ouest,Nefza,Béja,27.22,4,Djeladjela | Mekena | Nefza | Riah
+TN225552,Ain Draham Banlieue,Aïn Draham,Jendouba,16.84,4,Beni Mtir | Ghezoran | Kroumirs | Ouled Ali
+TN225953,El Aouaoudha,Balta Bou Aouane,Jendouba,35.74,4,Chehida | Ghezoran | Ouled bou Salem | Zouagha
+TN225554,El Atatfa,Aïn Draham,Jendouba,37.24,4,Beni Mtir | Kroumirs | Nefza | Ouled Ali
+TN225354,El Brahmi,Bousalem,Jendouba,46.76,4,Djendouba | Ghezoran | Ouled bou Salem | Zouagha
+TN225454,El Hammam,Tabarka,Jendouba,48.96,4,Beni Mtir | Kroumirs | Mekena | Nefza
+TN225651,Fernana,Fernana,Jendouba,33.61,4,Ghezoran | Meressen | Ouled Ali | Ouled Soltan
+TN225657,Gloub Ethirane,Fernana,Jendouba,20.05,4,Ghezoran | Meressen | Ouchtata | Ouled Soltan
+TN225658,Gloub Ethirane Nord,Fernana,Jendouba,36.0,4,Ghezoran | Meressen | Ouchtata | Ouled Soltan
+TN225456,Nadhour,Tabarka,Jendouba,63.7,4,Chehida | Kroumirs | Mekena | Nefza
+TN225665,Sidi Ammar,Fernana,Jendouba,28.53,4,Ghezoran | Meressen | Ouled Ali | Ouled Soltan
+TN225957,Somrane,Balta Bou Aouane,Jendouba,29.41,4,Chehida | Djendouba | Ouled bou Salem | Zouagha
+TN225257,Zatfoura,Jendouba Nord,Jendouba,36.1,4,Ghezoran | Hakim | Meressen | Ouled Soltan
+TN235453,Ain Mazer,Sakiet Sidi Youssef,Le Kef,89.42,4,Charen | Hakim | Ouargha | Ouled Sdira
+TN235554,Cite Bourguiba,Tajerouine,Le Kef,74.84,4,Charen | Doufan | Ouled Yakoub | Ouled bou Ghanem
+TN236056,Ebba,Dahmani,Le Kef,103.26,4,Khememsa | Ouartan | Ouled Yakoub | Zeghalma
+TN235562,Garn Halfaia,Tajerouine,Le Kef,90.9,4,Charen | Doufan | Ouartan | Ouled bou Ghanem
+TN235152,Oued Remel Sud,Kef Ouest,Le Kef,141.16,4,Charen | Ouargha | Ouartan | Ouled Yakoub
+TN235557,Sidi Abdelbasset,Tajerouine,Le Kef,92.3,4,Charen | Ouartan | Ouled Yakoub | Ouled bou Ghanem
+TN175558,Bazina,Joumine,Bizerte,17.47,3,Djeladjela | Mogod | Riah
+TN175458,Mechargua,Sejnane,Bizerte,49.17,3,Mogod | Nefza | Riah
+TN215653,Ain Ed-Defali,Thibar,Béja,30.18,3,Djendouba | Ouled bou Salem | Zouagha
+TN215465,Djamila,Nefza,Béja,26.93,3,Djeladjela | Nefza | Riah
+TN215353,El Fraijia,Amdoun,Béja,13.16,3,Chehida | Nefza | Zouagha
+TN215363,El Goussa,Amdoun,Béja,23.84,3,Chehida | Ouled bou Salem | Zouagha
+TN215962,El Mouatiss,Mejez El Bab,Béja,19.92,3,Drid | Riah | Trabelsi
+TN215654,En-Nechima,Thibar,Béja,19.08,3,Djendouba | Ouled bou Salem | Zouagha
+TN215460,Fatnassa,Nefza,Béja,26.03,3,Djeladjela | Mogod | Riah
+TN215963,Guerich El Ouedi,Mejez El Bab,Béja,42.88,3,Drid | Riah | Trabelsi
+TN215356,Maghraoua,Amdoun,Béja,10.73,3,Chehida | Nefza | Zouagha
+TN215951,Medjez El Bab Ville,Mejez El Bab,Béja,14.38,3,Drid | Riah | Trabelsi
+TN215964,Sidi Erraies,Mejez El Bab,Béja,36.47,3,Drid | Riah | Trabelsi
+TN215257,Sidi Es-Shili,Béja Sud,Béja,45.65,3,Djendouba | Ouled bou Salem | Zouagha
+TN215651,Tibar,Thibar,Béja,30.9,3,Djendouba | Ouled bou Salem | Zouagha
+TN225959,Abdeljaber,Balta Bou Aouane,Jendouba,11.9,3,Chehida | Ouled bou Salem | Zouagha
+TN225551,Ain Drahem Ville,Aïn Draham,Jendouba,2.89,3,Beni Mtir | Kroumirs | Ouled Ali
+TN225458,Ain Es-Snoussi,Tabarka,Jendouba,59.29,3,Chehida | Kroumirs | Nefza
+TN225455,Ain Es-Sobh,Tabarka,Jendouba,69.65,3,Kroumirs | Mekena | Nefza
+TN225951,Assila,Balta Bou Aouane,Jendouba,22.74,3,Djendouba | Ouled bou Salem | Zouagha
+TN225958,Balta,Balta Bou Aouane,Jendouba,12.24,3,Chehida | Ouled bou Salem | Zouagha
+TN225956,Beni M'Hamed,Balta Bou Aouane,Jendouba,24.34,3,Chehida | Nefza | Zouagha
+TN225356,Bir Lakhdar,Bousalem,Jendouba,28.52,3,Djendouba | Ouled bou Salem | Zouagha
+TN225960,Bou Aouane,Balta Bou Aouane,Jendouba,22.21,3,Chehida | Ouled bou Salem | Zouagha
+TN225663,Bou Hertma,Fernana,Jendouba,33.62,3,Ghezoran | Kroumirs | Ouled Ali
+TN225351,Bou Salem Nord,Bousalem,Jendouba,6.49,3,Djendouba | Ouled bou Salem | Zouagha
+TN225352,Bou Salem Sud,Bousalem,Jendouba,1.65,3,Djendouba | Ouled bou Salem | Zouagha
+TN225256,Bulla-Regja,Jendouba Nord,Jendouba,37.01,3,Djendouba | Ghezoran | Hakim
+TN225853,Dkhailia,Oued Mliz,Jendouba,43.31,3,Meressen | Ouchtata | Ouled Sdira
+TN225757,Ed-Daoura,Ghardimaou,Jendouba,32.58,3,Hakim | Ouchtata | Ouled Sdira
+TN225259,Ed-Dir,Jendouba Nord,Jendouba,23.91,3,Meressen | Ouchtata | Ouled Soltan
+TN225954,El Baldia,Balta Bou Aouane,Jendouba,21.5,3,Chehida | Ghezoran | Zouagha
+TN225762,El Galaa,Ghardimaou,Jendouba,60.55,3,Meressen | Ouchtata | Ouled Sdira
+TN225453,El Hamdia,Tabarka,Jendouba,31.07,3,Beni Mtir | Kroumirs | Nefza
+TN225357,El Koudia,Bousalem,Jendouba,42.32,3,Djendouba | Ouled bou Salem | Zouagha
+TN225753,El Maaden,Ghardimaou,Jendouba,34.34,3,Meressen | Ouchtata | Ouled Sdira
+TN225155,El Malga,Jendouba Sud,Jendouba,32.11,3,Djendouba | Hakim | Ouled bou Salem
+TN225358,El Msanghouche,Bousalem,Jendouba,44.43,3,Djendouba | Ouled bou Salem | Zouagha
+TN225754,Er-Rakha,Ghardimaou,Jendouba,54.99,3,Hakim | Ouchtata | Ouled Sdira
+TN225559,Er-Rouii,Aïn Draham,Jendouba,39.86,3,Meressen | Ouchtata | Ouled Soltan
+TN225353,Erroumani,Bousalem,Jendouba,29.7,3,Djendouba | Ouled bou Salem | Zouagha
+TN225758,Es-Sraia,Ghardimaou,Jendouba,66.07,3,Hakim | Ouchtata | Ouled Sdira
+TN225253,Ezzouhour,Jendouba Nord,Jendouba,34.11,3,Djendouba | Ghezoran | Ouled bou Salem
+TN225760,Fej Hassine,Ghardimaou,Jendouba,62.64,3,Charen | Hakim | Ouled Sdira
+TN225752,Ghardimaou Nord,Ghardimaou,Jendouba,2.26,3,Hakim | Ouchtata | Ouled Sdira
+TN225664,Halima,Fernana,Jendouba,32.3,3,Meressen | Ouchtata | Ouled Soltan
+TN225661,Jaouaouada,Fernana,Jendouba,16.11,3,Meressen | Ouchtata | Ouled Soltan
+TN225961,Oued Kesseb,Balta Bou Aouane,Jendouba,31.06,3,Chehida | Ouled bou Salem | Zouagha
+TN225654,Ouled Mefada,Fernana,Jendouba,24.07,3,Meressen | Ouchtata | Ouled Soltan
+TN225553,Ouled Sedra,Aïn Draham,Jendouba,69.35,3,Beni Mtir | Kroumirs | Ouled Ali
+TN225653,Rabiaa,Fernana,Jendouba,33.35,3,Ghezoran | Hakim | Ouled Soltan
+TN225452,Raihane,Tabarka,Jendouba,50.02,3,Beni Mtir | Kroumirs | Nefza
+TN225359,Sidi Abid,Bousalem,Jendouba,46.88,3,Djendouba | Ouled bou Salem | Zouagha
+TN225260,Souk Djemaa,Jendouba Nord,Jendouba,24.62,3,Meressen | Ouchtata | Ouled Soltan
+TN225560,Tegma,Aïn Draham,Jendouba,31.59,3,Meressen | Ouchtata | Ouled Soltan
+TN416054,Cheraitia Sud,Chrarda,Kairouan,72.84,3,M'Talith | Oulad Khalifa | Ouled Redouan
+TN425961,Sidi M'Hammed,Thala,Kassérine,72.29,3,Mejers | Ouartan | Zeghalma
+TN236055,Abida,Dahmani,Le Kef,82.3,3,Khememsa | Ouartan | Ouled Yakoub
+TN235553,Ain El Abar,Tajerouine,Le Kef,75.47,3,Doufan | Ouled bou Ghanem | Zeghalma
+TN235952,Ain El Ksiba,Ksour,Le Kef,80.98,3,Khememsa | Ouartan | Zeghalma
+TN235953,Banou,Ksour,Le Kef,73.16,3,Khememsa | Ouartan | Ouled Yakoub
+TN235454,Djeradou,Sakiet Sidi Youssef,Le Kef,137.16,3,Charen | Hakim | Ouargha
+TN235951,El Ksour,Ksour,Le Kef,25.59,3,Khememsa | Ouartan | Ouled Yakoub
+TN236057,El Medeina,Dahmani,Le Kef,71.23,3,Khememsa | Ouartan | Ouled Yakoub
+TN235556,Ennajet,Tajerouine,Le Kef,37.03,3,Charen | Ouartan | Ouled Yakoub
+TN235452,Es-Sefeia,Sakiet Sidi Youssef,Le Kef,43.07,3,Charen | Hakim | Ouargha
+TN235855,Fej Ettameur,Jerissa,Le Kef,99.54,3,Khememsa | Ouartan | Zeghalma
+TN235455,Forchane,Sakiet Sidi Youssef,Le Kef,160.09,3,Charen | Ouargha | Ouartan
+TN235558,Jezza,Tajerouine,Le Kef,77.61,3,Charen | Ouartan | Ouled Yakoub
+TN235651,Kalaat Snan,Kalaat Senan,Le Kef,30.46,3,Doufan | Ouled bou Ghanem | Zeghalma
+TN235656,Sed El Khir,Kalaat Senan,Le Kef,104.33,3,Doufan | Ouled bou Ghanem | Zeghalma
+TN236058,Sidi Baraket Nord,Dahmani,Le Kef,46.25,3,Khememsa | Ouartan | Zeghalma
+TN236059,Sidi Baraket Sud,Dahmani,Le Kef,42.26,3,Khememsa | Ouartan | Zeghalma
+TN235555,Sidi M'Tir,Tajerouine,Le Kef,64.16,3,Charen | Ouartan | Ouled Yakoub
+TN335554,Ech-Chahda Ouest,Hbira,Mahdia,65.79,3,M'Talith | Oulad Amer | Oulad Khalifa
+TN335555,El Maherza Sud,Hbira,Mahdia,131.08,3,M'Talith | Oulad Amer | Oulad Khalifa
+TN336060,En-Nozha,Sidi Alouane,Mahdia,22.67,3,M'Talith — Meraïah | M'Talith — Oulad Merab | M'Talith — Oulad Zid
+TN336059,Zalba Ouest,Sidi Alouane,Mahdia,37.55,3,M'Talith — Meraïah | M'Talith — Oulad Merab | M'Talith — Oulad Zid
+TN345853,Baltech,Jebeniana,Sfax,39.18,3,M'Talith — Meraïah | M'Talith — Oulad Merab | M'Talith — Oulad Zid
+TN345856,El Ajengna,Jebeniana,Sfax,46.72,3,M'Talith — Meraïah | M'Talith — Oulad Merab | M'Talith — Oulad Zid
+TN436156,Erradhaa,Regueb,Sidi Bou Zid,54.58,3,Hammama | Neffat | Taïfa
+TN436157,Erradhaa Est,Regueb,Sidi Bou Zid,38.97,3,Hammama | Neffat | Taïfa
+TN175658,Arab Majour,Mateur,Bizerte,123.0,2,Makna | Trabelsi
+TN175652,Banlieue De Mateur,Mateur,Bizerte,47.1,2,Hezil | Makna
+TN175659,Behaya,Mateur,Bizerte,118.99,2,Hezil | Makna
+TN175660,Boumkhila,Mateur,Bizerte,57.07,2,Hezil | Makna
+TN175654,Cite En Nasr,Mateur,Bizerte,26.83,2,Hezil | Makna
+TN175452,El Maalia,Sejnane,Bizerte,59.91,2,Djeladjela | Mogod
+TN175751,Ghezala,Ghazala,Bizerte,61.75,2,Hezil | Makna
+TN175754,Hached,Ghazala,Bizerte,32.29,2,Hezil | Makna
+TN175559,Rouaha,Joumine,Bizerte,41.42,2,Djeladjela | Riah
+TN175456,Sidi Mechrek,Sejnane,Bizerte,77.37,2,Mogod | Nefza
+TN175657,Targuellache,Mateur,Bizerte,105.27,2,Makna | Trabelsi
+TN215858,Cheikh El Ouediane,Goubellat,Béja,29.86,2,Drid | Trabelsi
+TN215652,Djebba,Thibar,Béja,34.25,2,Djendouba | Zouagha
+TN215854,Dour Esmail,Goubellat,Béja,86.55,2,Drid | Trabelsi
+TN215364,El Djouza,Amdoun,Béja,21.59,2,Chehida | Nefza
+TN215852,El Gammarthi,Goubellat,Béja,24.3,2,Drid | Trabelsi
+TN215163,El Ghraba,Béja Nord,Béja,41.68,2,Djeladjela | Riah
+TN215158,El Ghriria,Béja Nord,Béja,31.81,2,Ouled bou Salem | Zouagha
+TN215960,El Gueriaat,Mejez El Bab,Béja,35.04,2,Drid | Trabelsi
+TN215955,El Heri,Mejez El Bab,Béja,46.29,2,Riah | Trabelsi
+TN215757,Es-Slouguia,Testour,Béja,83.94,2,Drid | Trabelsi
+TN215455,Ezzouaraa,Nefza,Béja,61.0,2,Mekena | Nefza
+TN215851,Goubellat,Goubellat,Béja,30.41,2,Drid | Trabelsi
+TN215853,Guerram,Goubellat,Béja,74.48,2,Drid | Trabelsi
+TN215254,Hammam Siala,Béja Sud,Béja,67.12,2,Ouled bou Salem | Zouagha
+TN215857,Khacheb,Goubellat,Béja,84.56,2,Drid | Trabelsi
+TN215457,Maktaa Hadid,Nefza,Béja,63.34,2,Mekena | Nefza
+TN215361,Malek,Amdoun,Béja,19.72,2,Chehida | Zouagha
+TN215952,Medjez El Bab Sud,Mejez El Bab,Béja,18.02,2,Riah | Trabelsi
+TN215453,Ouachtata,Nefza,Béja,27.67,2,Mekena | Nefza
+TN215355,Romadhnia,Amdoun,Béja,15.21,2,Chehida | Zouagha
+TN215953,Sidi Medien,Mejez El Bab,Béja,32.54,2,Drid | Trabelsi
+TN215958,Sidi Nasr,Mejez El Bab,Béja,29.0,2,Riah | Trabelsi
+TN215255,Sidi Smail,Béja Sud,Béja,62.94,2,Ouled bou Salem | Zouagha
+TN215362,Tarhouni,Amdoun,Béja,25.47,2,Ouled bou Salem | Zouagha
+TN215463,Tebaba,Nefza,Béja,44.83,2,Djeladjela | Riah
+TN215462,Zaga,Nefza,Béja,34.16,2,Mekena | Nefza
+TN215352,Zahret Medien Sud,Amdoun,Béja,18.67,2,Ouled bou Salem | Zouagha
+TN215258,Zouagha,Béja Sud,Béja,33.11,2,Ouled bou Salem | Zouagha
+TN225159,Ain Karima,Jendouba Sud,Jendouba,25.53,2,Djendouba | Hakim
+TN225755,Ain Soltane,Ghardimaou,Jendouba,59.13,2,Ouchtata | Ouled Sdira
+TN225258,Chemtou,Jendouba Nord,Jendouba,37.14,2,Ouled Sdira | Ouled Soltan
+TN225955,Cheouaoula,Balta Bou Aouane,Jendouba,17.96,2,Chehida | Ghezoran
+TN225158,El Aitha,Jendouba Sud,Jendouba,16.09,2,Djendouba | Ouled bou Salem
+TN225162,El Azima,Jendouba Sud,Jendouba,20.71,2,Djendouba | Ouled bou Salem
+TN225355,El Marja,Bousalem,Jendouba,49.81,2,Djendouba | Ouled bou Salem
+TN225255,Es-Souani,Jendouba Nord,Jendouba,38.88,2,Hakim | Ouled Soltan
+TN225156,Ettataouer,Jendouba Sud,Jendouba,16.34,2,Djendouba | Hakim
+TN225759,Forgassen,Ghardimaou,Jendouba,44.06,2,Ouchtata | Ouled Sdira
+TN225751,Ghardimaou,Ghardimaou,Jendouba,1.86,2,Hakim | Ouled Sdira
+TN225952,Ghezala,Balta Bou Aouane,Jendouba,29.04,2,Ghezoran | Zouagha
+TN225854,Hakim Nord,Oued Mliz,Jendouba,21.92,2,Hakim | Ouled Sdira
+TN225855,Hakim Sud,Oued Mliz,Jendouba,58.32,2,Hakim | Ouled Sdira
+TN225160,Maalla,Jendouba Sud,Jendouba,34.03,2,Djendouba | Hakim
+TN225457,Melloula,Tabarka,Jendouba,39.3,2,Beni Mtir | Kroumirs
+TN225761,Mrassen,Ghardimaou,Jendouba,39.0,2,Ouchtata | Ouled Sdira
+TN225756,Ouechtata,Ghardimaou,Jendouba,61.06,2,Ouchtata | Ouled Sdira
+TN225851,Oued Meliz Est,Oued Mliz,Jendouba,41.75,2,Hakim | Ouled Sdira
+TN225852,Oued Meliz Ouest,Oued Mliz,Jendouba,33.06,2,Hakim | Ouled Sdira
+TN225157,Souk Es-Sebt,Jendouba Sud,Jendouba,28.23,2,Djendouba | Ouled bou Salem
+TN225451,Tabarka,Tabarka,Jendouba,14.36,2,Beni Mtir | Kroumirs
+TN416151,Bouhajla Centre,Bouhajla,Kairouan,32.18,2,Oulad Khalifa | Zlass
+TN416152,Bouhajla El Ahouez,Bouhajla,Kairouan,33.07,2,Oulad Khalifa | Zlass
+TN416157,El Fatah,Bouhajla,Kairouan,56.3,2,Oulad Khalifa | Zlass
+TN415457,El Gfi,Sbikha,Kairouan,64.75,2,Ouled Saïd | Souassi
+TN416156,Ouled Achour,Bouhajla,Kairouan,55.35,2,M'Talith | Oulad Khalifa
+TN416158,Ouled Fardjallah Nord,Bouhajla,Kairouan,55.98,2,M'Talith | Oulad Khalifa
+TN416053,Ouled Farjallah Sud,Chrarda,Kairouan,53.61,2,M'Talith | Oulad Khalifa
+TN425954,Ain Aj-Jadeida,Thala,Kassérine,41.76,2,Mejers | Zeghalma
+TN425955,Barmajna,Thala,Kassérine,66.19,2,Mejers | Zeghalma
+TN425960,Boulahnech,Thala,Kassérine,36.05,2,Mejers | Zeghalma
+TN425752,Fej Terbah,Jedeliane,Kassérine,85.58,2,Mejers | Ouartan
+TN425962,Ouljet Edhel,Thala,Kassérine,82.63,2,Ouartan | Zeghalma
+TN235456,Ain El Karma,Sakiet Sidi Youssef,Le Kef,105.92,2,Charen | Ouargha
+TN235657,Ain Snan,Kalaat Senan,Le Kef,48.27,2,Doufan | Zeghalma
+TN235854,Besseriana,Jerissa,Le Kef,35.91,2,Doufan | Zeghalma
+TN235561,Borj Eddiouana,Tajerouine,Le Kef,70.17,2,Doufan | Ouled bou Ghanem
+TN235652,Bou Jabeur,Kalaat Senan,Le Kef,45.05,2,Ouled bou Ghanem | Zeghalma
+TN236051,Dahmani,Dahmani,Le Kef,3.71,2,Khememsa | Ouled Yakoub
+TN235658,El Hamaima,Kalaat Senan,Le Kef,68.23,2,Doufan | Ouled bou Ghanem
+TN235559,El Houdh,Tajerouine,Le Kef,87.2,2,Khememsa | Ouled Yakoub
+TN235659,El Mahjouba,Kalaat Senan,Le Kef,48.0,2,Doufan | Zeghalma
+TN235754,En-Nadhour,Kalaa Khesba,Le Kef,85.14,2,Doufan | Zeghalma
+TN235458,Et-Tabia,Sakiet Sidi Youssef,Le Kef,108.3,2,Charen | Ouled bou Ghanem
+TN235956,Ezzitouna,Ksour,Le Kef,100.05,2,Ouartan | Ouled Yakoub
+TN235654,Mzita,Kalaat Senan,Le Kef,50.03,2,Doufan | Zeghalma
+TN235363,Oueljet Essedra,Nebeur,Le Kef,41.54,2,Hakim | Ouled Sdira
+TN235451,Sakiet Sidi Youssef,Sakiet Sidi Youssef,Le Kef,12.03,2,Charen | Ouargha
+TN235753,Sidi Ahmed Essalah,Kalaa Khesba,Le Kef,78.83,2,Doufan | Zeghalma
+TN235457,Sidi Rabeh,Sakiet Sidi Youssef,Le Kef,74.73,2,Charen | Ouled bou Ghanem
+TN235551,Tajerouine Nord,Tajerouine,Le Kef,27.61,2,Ouled Yakoub | Ouled bou Ghanem
+TN235353,Tel El Ghozlane,Nebeur,Le Kef,53.5,2,Djendouba | Ouled bou Salem
+TN236053,Zouarine,Dahmani,Le Kef,117.13,2,Khememsa | Ouled Yakoub
+TN335954,Ben Hssine,Melloulech,Mahdia,41.91,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN335451,Chorbane,Chorbane,Mahdia,58.14,2,M'Talith | Oulad Amer
+TN335454,Ech-Chahda Est,Chorbane,Mahdia,38.8,2,M'Talith | Oulad Amer
+TN335453,Ech-Chahda Sud,Chorbane,Mahdia,54.04,2,M'Talith | Oulad Amer
+TN335953,El Mansoura,Melloulech,Mahdia,34.4,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN335658,Ez-Zairat,Souassi,Mahdia,11.89,2,M'Talith | Oulad Amer
+TN335951,Melloulech,Melloulech,Mahdia,44.14,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN335460,Ouled El Hannachi,Chorbane,Mahdia,28.49,2,M'Talith | Oulad Amer
+TN335660,Ouled Moulahem Ouest,Souassi,Mahdia,23.17,2,M'Talith | Oulad Amer
+TN335955,Sidi Abdellaziz,Melloulech,Mahdia,18.33,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN336058,Zalba Est,Sidi Alouane,Mahdia,56.15,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN345852,Batria,Jebeniana,Sfax,26.95,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN346055,Bir Chaaba,Hencha,Sfax,27.63,2,M'Talith — Nadjem | M'Talith — Oulad Merab
+TN346156,Bou-Thadi,Menzel Chaker,Sfax,173.19,2,M'Talith | Ouled Redouan
+TN345851,Djebeniana,Jebeniana,Sfax,19.68,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN346051,El Hencha,Hencha,Sfax,105.9,2,M'Talith — Meraïah | M'Talith — Oulad Merab
+TN345858,El Houdh,Jebeniana,Sfax,42.94,2,M'Talith — Meraïah | M'Talith — Oulad Merab
+TN345855,El Kalelja,Jebeniana,Sfax,40.91,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN345854,Hazeg,Jebeniana,Sfax,21.98,2,M'Talith — Meraïah | M'Talith — Oulad Zid
+TN346059,Jouaouda,Hencha,Sfax,29.34,2,M'Talith — Meraïah | M'Talith — Nadjem
+TN346056,Merkez Mosbah,Hencha,Sfax,71.47,2,M'Talith — Nadjem | M'Talith — Oulad Merab
+TN346352,Sidi Dhaher,Bir Ali Ben Khélifa,Sfax,129.14,2,Ouled Redouan | Ouled el Goussem
+TN346053,Sidi Hassen Belhaj,Hencha,Sfax,94.51,2,M'Talith — Meraïah | M'Talith — Oulad Merab
+TN436054,El Gheris Est,Mazzouna,Sidi Bou Zid,74.01,2,Neffat | Taïfa
+TN436162,Essekba,Regueb,Sidi Bou Zid,92.01,2,Hammama | Taïfa
+TN435857,Ezzouaraa,Meknassi,Sidi Bou Zid,46.86,2,Hammama | Taïfa
+TN436166,Ferch Gharib,Regueb,Sidi Bou Zid,37.0,2,Hammama | Ouled el Goussem
+TN435852,Gheris Ouest,Meknassi,Sidi Bou Zid,90.03,2,Neffat | Taïfa
+TN436160,Gobrar,Regueb,Sidi Bou Zid,49.2,2,Hammama | Ouled el Goussem
+TN436155,Gouleb,Regueb,Sidi Bou Zid,89.54,2,Hammama | Taïfa
+TN436163,Khechem Est,Regueb,Sidi Bou Zid,61.92,2,Ouled Redouan | Ouled el Goussem
+TN436154,Ksar El Hammam Est,Regueb,Sidi Bou Zid,66.2,2,Hammama | Ouled el Goussem
+TN436159,Ksar El Hammam Ouest,Regueb,Sidi Bou Zid,81.39,2,Hammama | Ouled el Goussem
+TN436167,Ouled Ayouni,Regueb,Sidi Bou Zid,41.61,2,Hammama | Ouled el Goussem
+TN436161,Rihana,Regueb,Sidi Bou Zid,106.06,2,Hammama | Taïfa
+TN246055,Ain Fourna,Bargou,Siliana,58.3,2,Ouled Aoun | Riah
+TN245454,Ain Zerig,Gaafour,Siliana,142.97,2,Ouled Aoun | Riah
+TN246052,Banlieue Bargou,Bargou,Siliana,86.94,2,Ouled Aoun | Riah
+TN245455,El Ahouez Nord,Gaafour,Siliana,84.72,2,Ouled Aoun | Riah
+TN246151,El Aroussa,Laroussa,Siliana,110.17,2,Ouled Aoun | Riah
+TN246153,Er Remil,Laroussa,Siliana,89.41,2,Ouled Aoun | Riah
+TN245554,Hammam Biadha Nord,El Krib,Siliana,54.44,2,Djendouba | Ouled bou Salem
+TN245354,Henchir Er-Roman,Bouarada,Siliana,89.97,2,Ouled Aoun | Riah
+TN245154,Jema,Siliana Nord,Siliana,113.29,2,Ouled Aoun | Ouled Ayar
+TN246154,Mousrata,Laroussa,Siliana,42.8,2,Ouled Aoun | Riah
+TN245355,Sidi Abdennour,Bouarada,Siliana,67.56,2,Ouled Aoun | Riah
+TN316052,El Frada,Enfidha,Sousse,36.32,2,Ouled Saïd | Souassi
+TN316059,El Garci,Enfidha,Sousse,19.07,2,Ouled Saïd | Souassi
+TN316053,Gerimet Est,Enfidha,Sousse,17.6,2,Ouled Saïd | Souassi
+TN316054,Gerimet Ouest,Enfidha,Sousse,21.17,2,Ouled Saïd | Souassi
+TN316061,Hicher,Enfidha,Sousse,30.59,2,Ouled Saïd | Souassi
+TN316063,M'Rabet Hached,Enfidha,Sousse,22.25,2,Ouled Saïd | Souassi
+TN316062,Menzel Dar Belouar,Enfidha,Sousse,23.86,2,Ouled Saïd | Souassi
+TN316058,Menzel Fateh,Enfidha,Sousse,10.76,2,Ouled Saïd | Souassi
+TN165653,El Hamira,Saouaf,Zaghouan,60.92,2,Ouled Saïd | Souassi
+TN165652,Saouef Ouest,Saouaf,Zaghouan,61.26,2,Ouled Saïd | Souassi
+TN136259,El Gounna,Mornag,Ben Arous,23.7,1,Ouled Khiar
+TN136253,Khelidia,Mornag,Ben Arous,23.41,1,Ouled Khiar
+TN136263,Oudna,Mornag,Ben Arous,31.72,1,Ouled Khiar
+TN136055,Sidi Frej,M'Hamdia,Ben Arous,72.64,1,Ouled Khiar
+TN176056,Ain Ghelal,Utique,Bizerte,45.07,1,Trabelsi
+TN175457,Amaden,Sejnane,Bizerte,145.76,1,Mogod
+TN175556,Berraies,Joumine,Bizerte,113.55,1,Riah
+TN175758,Bou Jerir,Ghazala,Bizerte,24.86,1,Hezil
+TN175857,Chelagmia,Menzel Bourguiba,Bizerte,7.06,1,Makna
+TN175656,Cite Essadaka,Mateur,Bizerte,0.98,1,Makna
+TN175753,Dheouaouda,Ghazala,Bizerte,42.43,1,Hezil
+TN175752,El Arab,Ghazala,Bizerte,52.77,1,Hezil
+TN175454,El Hachachna,Sejnane,Bizerte,56.3,1,Mogod
+TN176055,El Mabtouh,Utique,Bizerte,99.22,1,Trabelsi
+TN175855,En-Najah (2),Menzel Bourguiba,Bizerte,1.99,1,Makna
+TN175953,Ez-Zarour,Tinja,Bizerte,49.79,1,Makna
+TN175853,Gabtna (2),Menzel Bourguiba,Bizerte,60.1,1,Makna
+TN175555,Kef Ghrab,Joumine,Bizerte,98.69,1,Riah
+TN175651,Mateur,Mateur,Bizerte,8.34,1,Makna
+TN175653,Mateur Sud,Mateur,Bizerte,0.26,1,Makna
+TN175655,Nefat,Mateur,Bizerte,76.55,1,Makna
+TN175755,Ouled El May,Ghazala,Bizerte,62.2,1,Hezil
+TN175757,Rakb,Ghazala,Bizerte,48.08,1,Hezil
+TN175756,Sidi Aissa,Ghazala,Bizerte,39.12,1,Hezil
+TN175759,Sidi Mansour,Ghazala,Bizerte,46.27,1,Hezil
+TN176057,Sidi Othman,Utique,Bizerte,26.67,1,Trabelsi
+TN175554,Tahent,Joumine,Bizerte,84.22,1,Hezil
+TN175951,Tinja,Tinja,Bizerte,6.96,1,Makna
+TN215552,Ain El Karma,Téboursouk,Béja,8.71,1,Zouagha
+TN215556,Ain El Melliti,Téboursouk,Béja,48.76,1,Zouagha
+TN215855,Bir El Euch,Goubellat,Béja,51.89,1,Drid
+TN215560,Bir Ettouta,Téboursouk,Béja,59.24,1,Zouagha
+TN215957,Chaouach,Mejez El Bab,Béja,21.79,1,Riah
+TN215954,El Ksar,Mejez El Bab,Béja,64.92,1,Riah
+TN215358,El Mejaless,Amdoun,Béja,13.08,1,Chehida
+TN215553,El Menchia,Téboursouk,Béja,17.96,1,Zouagha
+TN215961,Hidouss,Mejez El Bab,Béja,49.38,1,Riah
+TN215856,Kheniguet Ed-Dahane,Goubellat,Béja,33.53,1,Drid
+TN215259,Mestouta,Béja Sud,Béja,39.69,1,Zouagha
+TN215555,Rihana,Téboursouk,Béja,49.65,1,Zouagha
+TN215357,Sabah,Amdoun,Béja,10.34,1,Zouagha
+TN215761,Sidi Abdelaziz,Testour,Béja,86.87,1,Riah
+TN215959,Sidi Ahmed El Jedidi,Mejez El Bab,Béja,21.52,1,Riah
+TN215762,Sidi Ameur,Testour,Béja,96.65,1,Riah
+TN215956,Tokaber,Mejez El Bab,Béja,27.91,1,Riah
+TN215351,Zahret Medien,Amdoun,Béja,9.54,1,Zouagha
+TN215755,Zeldou,Testour,Béja,72.97,1,Zouagha
+TN616052,Belkhir,Belkhir,Gafsa,175.99,1,Hammama — Oulad Aziz
+TN616053,Et-Talh Est,Belkhir,Gafsa,154.83,1,Hammama — Oulad Aziz
+TN616054,Et-Talh Ouest,Belkhir,Gafsa,136.44,1,Hammama — Oulad Aziz
+TN616055,Jbilet Ouest,Belkhir,Gafsa,80.06,1,Hammama — Oulad Aziz
+TN225962,Boulaaba,Balta Bou Aouane,Jendouba,31.02,1,Ghezoran
+TN225251,El Ferdous,Jendouba Nord,Jendouba,20.81,1,Hakim
+TN225252,El Hedi Ben Hassine,Jendouba Nord,Jendouba,5.39,1,Hakim
+TN225254,El Khadhra,Jendouba Nord,Jendouba,31.49,1,Hakim
+TN225161,El-Jerif,Jendouba Sud,Jendouba,38.53,1,Hakim
+TN225153,En-Nour,Jendouba Sud,Jendouba,0.92,1,Hakim
+TN225154,Es-Saada,Jendouba Sud,Jendouba,37.78,1,Hakim
+TN225151,Ezzeghaida,Jendouba Sud,Jendouba,1.81,1,Hakim
+TN225152,Jendouba Sud,Jendouba Sud,Jendouba,2.2,1,Hakim
+TN415355,Abida,Chebika,Kairouan,73.15,1,Zlass
+TN415559,Ain Djeloula,Oueslatia,Kairouan,95.3,1,Zlass
+TN415265,Beriket El Argoub,Kairouan Sud,Kairouan,19.82,1,Zlass
+TN416052,Bir El Helou,Chrarda,Kairouan,63.15,1,Ouled Redouan
+TN416160,Bir Msikine,Bouhajla,Kairouan,40.82,1,Zlass
+TN415853,Chaouachi,Hajeb El Ayoun,Kairouan,87.59,1,Zlass
+TN416163,Cheraitia Nord,Bouhajla,Kairouan,71.58,1,Oulad Khalifa
+TN415656,Cherichira,Haffouz,Kairouan,120.6,1,Zlass
+TN415463,Chogafia,Sbikha,Kairouan,90.4,1,Zlass
+TN416164,Chouamekh,Bouhajla,Kairouan,34.64,1,Zlass
+TN415558,Djebel Erreihane,Oueslatia,Kairouan,71.94,1,Zlass
+TN415557,Djebel Oouestat,Oueslatia,Kairouan,100.44,1,Zlass
+TN415462,Ech-Chorfa,Sbikha,Kairouan,85.44,1,Zlass
+TN416051,Echrarda,Chrarda,Kairouan,74.47,1,Ouled Redouan
+TN415456,Ed-Dheriaat,Sbikha,Kairouan,106.95,1,Souassi
+TN415751,El Alaa,Alaa,Kairouan,23.68,1,Zlass
+TN415460,El Aouitha,Sbikha,Kairouan,52.99,1,Souassi
+TN415753,El Guettar,Alaa,Kairouan,19.38,1,Zlass
+TN415264,El Hammam,Kairouan Sud,Kairouan,37.13,1,Zlass
+TN416155,El Ketitir,Bouhajla,Kairouan,48.84,1,Oulad Khalifa
+TN415263,El Khadra,Kairouan Sud,Kairouan,22.51,1,Zlass
+TN416055,El Ksour,Chrarda,Kairouan,65.83,1,Oulad Khalifa
+TN415260,El Makhsouma,Kairouan Sud,Kairouan,42.42,1,Zlass
+TN415752,El Messaid,Alaa,Kairouan,49.34,1,Zlass
+TN416161,El Mouisset,Bouhajla,Kairouan,37.21,1,Zlass
+TN415261,El Nebech,Kairouan Sud,Kairouan,44.64,1,Zlass
+TN416159,Ennasr,Bouhajla,Kairouan,111.54,1,Zlass
+TN415354,Errouisset,Chebika,Kairouan,119.43,1,Zlass
+TN415854,Esserja,Hajeb El Ayoun,Kairouan,50.9,1,Zlass
+TN415357,Hammed,Chebika,Kairouan,44.8,1,Zlass
+TN415352,Jaouaouda,Chebika,Kairouan,64.9,1,Zlass
+TN416153,Jehina Sud,Bouhajla,Kairouan,29.94,1,Oulad Khalifa
+TN415754,Messiouta El Hanachir,Alaa,Kairouan,33.77,1,Zlass
+TN415755,Messiouta Ennaguaz,Alaa,Kairouan,43.08,1,Zlass
+TN415465,Oued El Khraouia,Sbikha,Kairouan,33.39,1,Souassi
+TN415758,Ouled Amor,Alaa,Kairouan,25.33,1,Zlass
+TN415255,Rakada,Kairouan Sud,Kairouan,28.94,1,Zlass
+TN415756,Sayada Nord,Alaa,Kairouan,60.01,1,Zlass
+TN415757,Sayada Sud,Alaa,Kairouan,52.84,1,Zlass
+TN415356,Sidi Ali Ben Salem,Chebika,Kairouan,30.32,1,Zlass
+TN415461,Sisseb,Sbikha,Kairouan,53.61,1,Souassi
+TN415759,Tarza Nord,Alaa,Kairouan,53.87,1,Zlass
+TN415262,Zaafrana,Kairouan Sud,Kairouan,113.57,1,Zlass
+TN415556,Zaghdoud,Oueslatia,Kairouan,176.33,1,Zlass
+TN426262,Abdeladhim,Feriana,Kassérine,119.67,1,Frechiche
+TN426156,Afrane,Foussana,Kassérine,104.2,1,Frechiche
+TN425753,Ain El Hamadna,Jedeliane,Kassérine,44.53,1,Mejers
+TN426162,Ain El Jinene,Foussana,Kassérine,71.6,1,Frechiche
+TN425856,Ain Esselsela,Ayoun,Kassérine,58.33,1,Mejers
+TN425755,Ain Oum El Jedour,Jedeliane,Kassérine,62.86,1,Mejers
+TN425655,Ain Zaiene,Sbiba,Kassérine,47.48,1,Mejers
+TN426258,Bouchebka,Feriana,Kassérine,128.56,1,Frechiche
+TN426161,Bouderiass,Foussana,Kassérine,81.09,1,Frechiche
+TN426260,Bouhaya,Feriana,Kassérine,76.37,1,Frechiche
+TN425552,Cite Essourour,Sbeitla,Kassérine,2.39,1,Mejers
+TN425963,Ech-Chaffai,Thala,Kassérine,75.23,1,Frechiche
+TN425557,Ech-Charaya,Sbeitla,Kassérine,69.14,1,Mejers
+TN425953,Eddachra,Thala,Kassérine,70.07,1,Zeghalma
+TN425556,Eddouleb,Sbeitla,Kassérine,104.66,1,Mejers
+TN426158,El Aadhira,Foussana,Kassérine,65.31,1,Frechiche
+TN425561,El Athar,Sbeitla,Kassérine,117.46,1,Mejers
+TN425851,El Ayoun,Ayoun,Kassérine,70.45,1,Mejers
+TN425854,El Baouajer,Ayoun,Kassérine,69.23,1,Mejers
+TN425555,El Gounna,Sbeitla,Kassérine,103.18,1,Mejers
+TN426159,El Hazza,Foussana,Kassérine,102.65,1,Frechiche
+TN425957,El Joua,Thala,Kassérine,93.36,1,Mejers
+TN425560,El Khadhra,Sbeitla,Kassérine,84.65,1,Mejers
+TN425564,El Ksar,Sbeitla,Kassérine,27.15,1,Mejers
+TN426053,El Mekimen,Hidra,Kassérine,97.16,1,Zeghalma
+TN426157,El Meziraa,Foussana,Kassérine,72.15,1,Frechiche
+TN426055,Es-Sray,Hidra,Kassérine,71.85,1,Frechiche
+TN426151,Foussana,Foussana,Kassérine,21.96,1,Frechiche
+TN426152,Foussana Lahouaz,Foussana,Kassérine,81.5,1,Frechiche
+TN426257,Garet En-Naam,Feriana,Kassérine,120.21,1,Frechiche
+TN426051,Hidra,Hidra,Kassérine,106.85,1,Frechiche
+TN426054,Lajrad,Hidra,Kassérine,120.72,1,Frechiche
+TN425558,Machrek Ech-Chams,Sbeitla,Kassérine,103.03,1,Mejers
+TN425754,Mehrza,Jedeliane,Kassérine,35.25,1,Mejers
+TN426259,Om Ali,Feriana,Kassérine,127.69,1,Frechiche
+TN425559,Ouassaia,Sbeitla,Kassérine,142.25,1,Mejers
+TN426155,Ouled Mahfoudh,Foussana,Kassérine,98.78,1,Frechiche
+TN425551,Sbeitla,Sbeitla,Kassérine,6.57,1,Mejers
+TN426052,T'Baga,Hidra,Kassérine,74.13,1,Frechiche
+TN235955,Ain Fedhil,Ksour,Le Kef,136.01,1,Ouled Yakoub
+TN236154,Bousliaa,Es Sers,Le Kef,72.11,1,Ouled Yakoub
+TN235362,Chetatla,Nebeur,Le Kef,34.66,1,Djendouba
+TN236052,Dahmani Nord,Dahmani,Le Kef,1.8,1,Khememsa
+TN235851,Djerissa Centre,Jerissa,Le Kef,1.77,1,Zeghalma
+TN235852,Djerissa Nord,Jerissa,Le Kef,1.85,1,Zeghalma
+TN235853,Djerissa Sud,Jerissa,Le Kef,1.68,1,Zeghalma
+TN236158,El Abar Est,Es Sers,Le Kef,24.01,1,Ouled Ayar
+TN235655,El Falta,Kalaat Senan,Le Kef,51.9,1,Ouled bou Ghanem
+TN235361,El Ksar,Nebeur,Le Kef,39.41,1,Hakim
+TN236156,El Marja,Es Sers,Le Kef,39.92,1,Ouled Yakoub
+TN236159,Elles,Es Sers,Le Kef,56.57,1,Ouled Yakoub
+TN235856,Enneayem,Jerissa,Le Kef,35.63,1,Zeghalma
+TN236151,Es-Sers Nord,Es Sers,Le Kef,70.22,1,Ouled Ayar
+TN236152,Es-Sers Sud,Es Sers,Le Kef,37.61,1,Ouled Ayar
+TN235153,Haouareth Sud,Kef Ouest,Le Kef,3.11,1,Ouartan
+TN235356,Ledhieb,Nebeur,Le Kef,43.6,1,Hakim
+TN235355,Mellala,Nebeur,Le Kef,70.23,1,Hakim
+TN235560,Menzel Salem,Tajerouine,Le Kef,2.48,1,Doufan
+TN235151,Oued Remel Nord,Kef Ouest,Le Kef,66.44,1,Ouartan
+TN235653,Safsaf,Kalaat Senan,Le Kef,69.23,1,Zeghalma
+TN235354,Sidi Khiar,Nebeur,Le Kef,68.09,1,Hakim
+TN235552,Tajerouine Sud,Tajerouine,Le Kef,22.5,1,Doufan
+TN236054,Thermda,Dahmani,Le Kef,82.44,1,Ouled Yakoub
+TN235254,Zaafrane,Kef Est,Le Kef,117.75,1,Ouartan
+TN335357,Bou Slim,Ouled Chamekh,Mahdia,32.23,1,Oulad Amer
+TN335851,Chebba Nord,Chebba,Mahdia,39.79,1,M'Talith — Oulad Zid
+TN335852,Chebba Sud,Chebba,Mahdia,48.79,1,M'Talith — Oulad Zid
+TN335354,Chehimet Nord,Ouled Chamekh,Mahdia,27.13,1,Oulad Amer
+TN335156,Chiba,Mahdia,Mahdia,19.25,1,M'Talith — Oulad Alia
+TN335661,Ech-Chahimet Sud,Souassi,Mahdia,63.14,1,Oulad Amer
+TN335457,Ech-Charaf,Chorbane,Mahdia,46.92,1,M'Talith
+TN335760,El Achaba,El Jem,Mahdia,46.52,1,M'Talith — Oulad Merab
+TN335754,El Aitha,El Jem,Mahdia,43.97,1,M'Talith — Oulad Merab
+TN335952,El Aitha,Melloulech,Mahdia,21.54,1,M'Talith — Oulad Zid
+TN335355,El Ajilet,Ouled Chamekh,Mahdia,52.99,1,Oulad Amer
+TN336055,El Bassatine,Sidi Alouane,Mahdia,7.4,1,M'Talith — Oulad Alia
+TN336162,El Bradaa Nord,Ksour Essef,Mahdia,22.07,1,M'Talith — Oulad Alia
+TN336161,El Bradaa Sud,Ksour Essef,Mahdia,29.07,1,M'Talith — Oulad Alia
+TN335455,El Gouacem Ouest,Chorbane,Mahdia,51.2,1,M'Talith
+TN335459,El Gradha Est,Chorbane,Mahdia,34.83,1,M'Talith
+TN335458,El Gradha Ouest,Chorbane,Mahdia,26.67,1,M'Talith
+TN335163,El Hekaima Est,Mahdia,Mahdia,10.79,1,M'Talith — Oulad Alia
+TN336160,El Hessinet,Ksour Essef,Mahdia,14.26,1,M'Talith — Oulad Alia
+TN336151,El Ksar,Ksour Essef,Mahdia,7.91,1,M'Talith — Oulad Alia
+TN336153,El Ktanine,Ksour Essef,Mahdia,21.16,1,M'Talith — Oulad Alia
+TN335452,El Maati,Chorbane,Mahdia,26.59,1,M'Talith
+TN335157,Es-Saad,Mahdia,Mahdia,25.5,1,M'Talith — Oulad Alia
+TN335356,Es-Somra,Ouled Chamekh,Mahdia,36.3,1,Oulad Amer
+TN335751,Es-Zaouia,El Jem,Mahdia,12.11,1,M'Talith — Oulad Merab
+TN335159,Ez-Zahra,Mahdia,Mahdia,18.22,1,M'Talith — Oulad Alia
+TN336156,Ghedabna,Ksour Essef,Mahdia,21.64,1,M'Talith — Oulad Alia
+TN335551,Hebira,Hbira,Mahdia,51.66,1,M'Talith
+TN336154,Ksour Essaf Ettakaddoum,Ksour Essef,Mahdia,25.44,1,M'Talith — Oulad Alia
+TN336152,Ksour Essaf Riadh,Ksour Essef,Mahdia,2.92,1,M'Talith — Oulad Alia
+TN335358,Meharza Nord,Ouled Chamekh,Mahdia,48.75,1,Oulad Amer
+TN335552,Menzel Hached,Hbira,Mahdia,38.02,1,M'Talith
+TN335353,Ouled Amor,Ouled Chamekh,Mahdia,42.05,1,Oulad Amer
+TN335351,Ouled Chamekh Sud,Ouled Chamekh,Mahdia,61.39,1,Oulad Amer
+TN335659,Ouled Moulahem Nord,Souassi,Mahdia,27.37,1,Oulad Amer
+TN336157,Ouled Salah,Ksour Essef,Mahdia,15.52,1,M'Talith — Oulad Alia
+TN336159,Recharcha,Ksour Essef,Mahdia,21.96,1,M'Talith — Oulad Alia
+TN335553,Regaigua,Hbira,Mahdia,29.27,1,M'Talith
+TN335154,Rejiche,Mahdia,Mahdia,8.38,1,M'Talith — Oulad Alia
+TN335155,Rejiche Sud,Mahdia,Mahdia,7.04,1,M'Talith — Oulad Alia
+TN336054,Sakiet El Khadem,Sidi Alouane,Mahdia,15.23,1,M'Talith — Oulad Alia
+TN336155,Salakta,Ksour Essef,Mahdia,25.87,1,M'Talith — Oulad Alia
+TN336052,Sidi Alouane Est,Sidi Alouane,Mahdia,9.03,1,M'Talith — Oulad Alia
+TN336051,Sidi Alouane Ouest,Sidi Alouane,Mahdia,17.41,1,M'Talith — Oulad Alia
+TN336158,Sidi Assaker Ouest,Ksour Essef,Mahdia,12.64,1,M'Talith — Oulad Alia
+TN335160,Zegana,Mahdia,Mahdia,17.67,1,M'Talith — Oulad Alia
+TN335756,Zeghabna,El Jem,Mahdia,46.56,1,M'Talith — Oulad Merab
+TN336053,Zorda,Sidi Alouane,Mahdia,32.72,1,M'Talith — Oulad Alia
+TN335153,Zouila Sud,Mahdia,Mahdia,2.32,1,M'Talith — Oulad Alia
+TN145755,Banlieue De Tebourba,Tebourba,Manubah,7.7,1,Trabelsi
+TN145553,Borj Ennour,Borj El Amri,Manubah,38.4,1,Trabelsi
+TN145852,Borj Ettoumi,El Battan,Manubah,60.82,1,Riah
+TN145653,Chaouat,Jedaida,Manubah,81.95,1,Trabelsi
+TN145651,Djedaida,Jedaida,Manubah,9.71,1,Trabelsi
+TN145652,Djedaida Hached,Jedaida,Manubah,31.24,1,Trabelsi
+TN145757,Ech-Chouigui,Tebourba,Manubah,122.2,1,Trabelsi
+TN145753,Edkhila,Tebourba,Manubah,41.51,1,Trabelsi
+TN145851,El Battane,El Battan,Manubah,36.99,1,Trabelsi
+TN145454,El Fejja,Mornaguia,Manubah,124.28,1,Ouled Khiar
+TN145754,El Mellaha,Tebourba,Manubah,42.59,1,Riah
+TN145756,Er-Raja,Tebourba,Manubah,18.77,1,Trabelsi
+TN145456,Hmaiem,Mornaguia,Manubah,58.2,1,Ouled Khiar
+TN145552,Menzel Habib,Borj El Amri,Manubah,68.43,1,Trabelsi
+TN145751,Tebourba,Tebourba,Manubah,5.81,1,Trabelsi
+TN525152,02 Mai,Médenine Nord,Médenine,3.59,1,Ouerghemma
+TN525154,20 Mars,Médenine Nord,Médenine,5.44,1,Ouerghemma
+TN525956,Amra,Sidi Makhlouf,Médenine,61.85,1,Ouerghemma
+TN525955,Bedoui,Sidi Makhlouf,Médenine,134.68,1,Ouerghemma
+TN525151,Beni Ghezail,Médenine Nord,Médenine,65.32,1,Ouerghemma
+TN525257,Darghoulia,Médenine Sud,Médenine,107.61,1,Ouerghemma
+TN525959,El Ghabai,Sidi Makhlouf,Médenine,27.89,1,Ouerghemma
+TN525253,El Labba,Médenine Sud,Médenine,99.65,1,Ouerghemma
+TN525957,Er Ragouba Est,Sidi Makhlouf,Médenine,37.21,1,Ouerghemma
+TN525958,Er Ragouba Ouest,Sidi Makhlouf,Médenine,47.0,1,Ouerghemma
+TN525254,Hessi Amor,Médenine Sud,Médenine,68.62,1,Ouerghemma
+TN525256,Hessi Mednine,Médenine Sud,Médenine,67.14,1,Ouerghemma
+TN525158,Koutine,Médenine Nord,Médenine,49.54,1,Ouerghemma
+TN525252,Mednine Est,Médenine Sud,Médenine,6.76,1,Ouerghemma
+TN525155,Mednine Nord,Médenine Nord,Médenine,15.36,1,Ouerghemma
+TN525153,Mednine Ouest,Médenine Nord,Médenine,4.14,1,Ouerghemma
+TN525251,Mednine Sud,Médenine Sud,Médenine,11.34,1,Ouerghemma
+TN525259,Nouvelle Amra,Médenine Sud,Médenine,41.77,1,Ouerghemma
+TN525157,Oum Ettameur Est,Médenine Nord,Médenine,46.88,1,Ouerghemma
+TN525156,Oum Ettameur Ouest,Médenine Nord,Médenine,144.01,1,Ouerghemma
+TN525951,Sidi Makhlouf,Sidi Makhlouf,Médenine,38.59,1,Ouerghemma
+TN156651,Sidi Djedidi,Hammamet,Nabeul,146.71,1,Ouled Saïd
+TN156659,Yasmin Hammamet,Hammamet,Nabeul,7.52,1,Ouled Saïd
+TN345751,Agareb,Agareb,Sfax,40.03,1,Aguerba
+TN346555,Aithet Chelaia,Mahres,Sfax,86.41,1,Aguerba
+TN345557,Ayoun El Mayel,Sfax Sud,Sfax,61.29,1,M'Talith — Nadjem
+TN345454,Bedarna,Sakiet Eddaier,Sfax,76.31,1,M'Talith — Nadjem
+TN345756,Ben Sahloun,Agareb,Sfax,118.02,1,Aguerba
+TN346057,Bir Salah,Hencha,Sfax,37.95,1,M'Talith — Oulad Merab
+TN345956,Bou Derbala,El Amra,Sfax,49.63,1,M'Talith — Nadjem
+TN346152,Bou Jarboue,Menzel Chaker,Sfax,110.31,1,M'Talith — Nadjem
+TN346354,Bou Slim,Bir Ali Ben Khélifa,Sfax,140.37,1,Aguerba
+TN345753,Bouledhieb,Agareb,Sfax,85.88,1,Aguerba
+TN345955,Dherra Beni Ziad,El Amra,Sfax,49.54,1,M'Talith — Nadjem
+TN346054,Dokhane,Hencha,Sfax,34.2,1,M'Talith — Nadjem
+TN346355,El Abraj,Bir Ali Ben Khélifa,Sfax,83.99,1,Aguerba
+TN345556,El Aouabed,Sfax Sud,Sfax,33.06,1,M'Talith — Nadjem
+TN346157,El Bokaa El Bidha,Menzel Chaker,Sfax,123.37,1,M'Talith — Nadjem
+TN346358,El Gandoul,Bir Ali Ben Khélifa,Sfax,74.25,1,Neffat
+TN346161,El Hadj Kacem,Menzel Chaker,Sfax,256.82,1,Ouled Redouan
+TN346058,El Hajjara,Hencha,Sfax,42.0,1,M'Talith — Oulad Merab
+TN346457,El Hammada,Skhira,Sfax,142.44,1,Mehadhba
+TN346455,El Kenitra,Skhira,Sfax,68.07,1,Mehadhba
+TN346452,El Khadhra,Skhira,Sfax,148.7,1,Mehadhba
+TN345857,El Louza,Jebeniana,Sfax,14.98,1,M'Talith — Oulad Zid
+TN345754,El Mahrouka,Agareb,Sfax,115.1,1,Aguerba
+TN345953,El Mesatria,El Amra,Sfax,20.39,1,M'Talith — Meraïah
+TN346362,En-Nadhour,Bir Ali Ben Khélifa,Sfax,175.75,1,Ouled el Goussem
+TN346052,En-Nasr,Hencha,Sfax,83.76,1,M'Talith — Nadjem
+TN345954,Es Salam,El Amra,Sfax,23.88,1,M'Talith — Nadjem
+TN345755,Ettorba,Agareb,Sfax,134.08,1,Aguerba
+TN345752,Gargour,Agareb,Sfax,91.12,1,Aguerba
+TN346552,Mahres Sud,Mahres,Sfax,119.62,1,Aguerba
+TN346153,Majel Edarj,Menzel Chaker,Sfax,70.43,1,M'Talith — Nadjem
+TN346453,Naoual,Skhira,Sfax,168.98,1,Mehadhba
+TN346361,Ouadrane Nord,Bir Ali Ben Khélifa,Sfax,88.51,1,Neffat
+TN346360,Ouadrane Sud,Bir Ali Ben Khélifa,Sfax,136.56,1,Neffat
+TN346359,Oued Ech-Cheikh,Bir Ali Ben Khélifa,Sfax,74.3,1,Neffat
+TN346451,Sbih,Skhira,Sfax,53.39,1,Mehadhba
+TN346456,Sidi Mohamed,Skhira,Sfax,126.67,1,Mehadhba
+TN345356,Sidi Salah,Sakiet Ezzit,Sfax,63.44,1,M'Talith — Nadjem
+TN346454,Skhira,Skhira,Sfax,201.05,1,Mehadhba
+TN346159,Telil El Ajla,Menzel Chaker,Sfax,156.29,1,Ouled Redouan
+TN435554,Bir Amama,Bir El Hfay,Sidi Bou Zid,51.56,1,Hammama
+TN435957,Bir Badr,Souk Jedid,Sidi Bou Zid,65.89,1,Hammama
+TN435559,Bir Bousbiaa,Bir El Hfay,Sidi Bou Zid,34.28,1,Hammama
+TN436053,Bou Hedma,Mazzouna,Sidi Bou Zid,159.11,1,Hammama — Oulad Aziz
+TN436158,Boudinar,Regueb,Sidi Bou Zid,73.3,1,Hammama
+TN436252,Dheouibet Sud,Ouled Haffouz,Sidi Bou Zid,59.95,1,Ouled Redouan
+TN435455,El Ayoun,Sabalat Ouled Asker,Sidi Bou Zid,72.52,1,Mejers
+TN436058,El Besbes,Mazzouna,Sidi Bou Zid,232.2,1,Mehadhba
+TN436052,El Founi,Mazzouna,Sidi Bou Zid,74.52,1,Neffat
+TN435155,El Friou,Sidi Bouzid Ouest,Sidi Bou Zid,47.98,1,Hammama
+TN435154,El Hichria,Sidi Bouzid Ouest,Sidi Bou Zid,71.4,1,Hammama
+TN435851,El Jebbes,Meknassi,Sidi Bou Zid,90.8,1,Taïfa
+TN436057,El Khaoui,Mazzouna,Sidi Bou Zid,44.66,1,Neffat
+TN435754,El Khorchef,Menzel Bouzaiene,Sidi Bou Zid,94.07,1,Hammama
+TN435553,El Ksar,Bir El Hfay,Sidi Bou Zid,66.81,1,Hammama
+TN435555,El Mezara,Bir El Hfay,Sidi Bou Zid,66.71,1,Hammama
+TN435757,El Omrane,Menzel Bouzaiene,Sidi Bou Zid,112.26,1,Hammama — Oulad Aziz
+TN435652,Errabta,Sidi Ali Ben Aoun,Sidi Bou Zid,154.76,1,Hammama
+TN436165,Essaida Est,Regueb,Sidi Bou Zid,57.37,1,Ouled el Goussem
+TN436153,Essaida Nord,Regueb,Sidi Bou Zid,84.77,1,Ouled el Goussem
+TN436164,Essaida Sud,Regueb,Sidi Bou Zid,55.29,1,Ouled el Goussem
+TN435556,Essalama,Bir El Hfay,Sidi Bou Zid,39.25,1,Hammama
+TN435956,Ezzafzaf,Souk Jedid,Sidi Bou Zid,60.45,1,Hammama
+TN435262,Ezzitouna,Sidi Bouzid Est,Sidi Bou Zid,64.31,1,Hammama
+TN435753,Kallel,Menzel Bouzaiene,Sidi Bou Zid,92.36,1,Hammama
+TN436152,Khechem Ouest,Regueb,Sidi Bou Zid,33.97,1,Ouled el Goussem
+TN436055,Khobna,Mazzouna,Sidi Bou Zid,228.3,1,Hammama — Oulad Aziz
+TN435853,Mech,Meknassi,Sidi Bou Zid,63.01,1,Hammama — Oulad Aziz
+TN435454,Meghila,Sabalat Ouled Asker,Sidi Bou Zid,69.26,1,Mejers
+TN435854,Meknassy Est,Meknassi,Sidi Bou Zid,68.8,1,Taïfa
+TN435856,Meknassy Nord,Meknassi,Sidi Bou Zid,41.76,1,Taïfa
+TN436051,Mezzouna,Mazzouna,Sidi Bou Zid,79.96,1,Neffat
+TN435557,Ourgha,Bir El Hfay,Sidi Bou Zid,50.02,1,Hammama
+TN435558,Rahal,Bir El Hfay,Sidi Bou Zid,63.82,1,Hammama
+TN436151,Regueb,Regueb,Sidi Bou Zid,11.93,1,Hammama
+TN435354,Selta,Jelma,Sidi Bou Zid,80.59,1,Mejers
+TN245655,Ain Achour,Bourouis,Siliana,66.92,1,Ouled Ayar
+TN246056,Ain Bous Saadia,Bargou,Siliana,56.3,1,Ouled Aoun
+TN245351,Banlieue De Bouarada,Bouarada,Siliana,66.21,1,Riah
+TN246051,Bargou,Bargou,Siliana,1.17,1,Ouled Aoun
+TN245352,Bouarada,Bouarada,Siliana,5.5,1,Riah
+TN245651,Bourouis Nord,Bourouis,Siliana,6.55,1,Ouled Ayar
+TN245652,Bourouis Sud,Bourouis,Siliana,79.38,1,Ouled Ayar
+TN245654,El Abbassi,Bourouis,Siliana,60.81,1,Ouled Ayar
+TN245456,El Ahouez Sud,Gaafour,Siliana,81.82,1,Ouled Aoun
+TN245457,El Aksab,Gaafour,Siliana,82.1,1,Ouled Ayar
+TN245153,El Arab,Siliana Nord,Siliana,76.87,1,Ouled Aoun
+TN246058,El Behirin,Bargou,Siliana,43.07,1,Ouled Aoun
+TN245958,El Foudhoul,Kesra,Siliana,56.25,1,Zlass
+TN245851,El Hababsa Nord,Rouhia,Siliana,138.11,1,Zlass
+TN245852,El Hababsa Sud,Rouhia,Siliana,98.98,1,Zlass
+TN245853,El Jamilet,Rouhia,Siliana,77.43,1,Zlass
+TN245156,El Jouii,Siliana Nord,Siliana,67.34,1,Ouled Ayar
+TN245259,El Kabel,Siliana Sud,Siliana,71.72,1,Ouled Aoun
+TN245453,El Khouat,Gaafour,Siliana,32.3,1,Ouled Ayar
+TN245656,El Krib Gare,Bourouis,Siliana,23.06,1,Ouled Ayar
+TN245552,El Krib Sud,El Krib,Siliana,67.26,1,Ouled Ayar
+TN245653,Ettricha,Bourouis,Siliana,37.7,1,Ouled Ayar
+TN245353,Fatis,Bouarada,Siliana,88.42,1,Drid
+TN245451,Gaafour Est,Gaafour,Siliana,14.2,1,Ouled Aoun
+TN245452,Gaafour Ouest,Gaafour,Siliana,22.99,1,Ouled Aoun
+TN246053,Ouled Fredj,Bargou,Siliana,66.59,1,Ouled Aoun
+TN245258,Ouled Zenag,Siliana Sud,Siliana,58.4,1,Ouled Aoun
+TN245257,Sejja,Siliana Sud,Siliana,58.87,1,Ouled Aoun
+TN246155,Sidi Ayed,Laroussa,Siliana,51.9,1,Ouled Aoun
+TN245256,Sidi Hmada,Siliana Sud,Siliana,39.81,1,Ouled Aoun
+TN245255,Sidi Mansour,Siliana Sud,Siliana,59.16,1,Ouled Aoun
+TN245254,Sidi Morched,Siliana Sud,Siliana,63.18,1,Ouled Aoun
+TN246054,Sidi Said,Bargou,Siliana,71.07,1,Riah
+TN245152,Siliana Nord,Siliana Nord,Siliana,9.54,1,Ouled Aoun
+TN245251,Siliana Sud,Siliana Sud,Siliana,2.19,1,Ouled Aoun
+TN245151,Siliana Ville,Siliana Nord,Siliana,1.99,1,Ouled Aoun
+TN245356,Tarf Ech-Chena,Bouarada,Siliana,59.1,1,Riah
+TN316156,Ain Errahma,Bouficha,Sousse,50.94,1,Ouled Saïd
+TN316060,Ain Medhaker,Enfidha,Sousse,50.34,1,Ouled Saïd
+TN316151,Bouficha,Bouficha,Sousse,15.62,1,Ouled Saïd
+TN316055,Chegarnia,Enfidha,Sousse,44.62,1,Ouled Saïd
+TN316157,El Methalit,Bouficha,Sousse,10.08,1,Ouled Saïd
+TN316051,Enfidha,Enfidha,Sousse,83.99,1,Ouled Saïd
+TN316154,Essafha,Bouficha,Sousse,40.01,1,Ouled Saïd
+TN316158,Esselloum,Bouficha,Sousse,21.37,1,Ouled Saïd
+TN316152,Oued El Kharroub,Bouficha,Sousse,17.9,1,Ouled Saïd
+TN316056,Ouled Abdellah,Enfidha,Sousse,14.95,1,Ouled Saïd
+TN316257,Ouled Ameur,Kondar,Sousse,14.01,1,Souassi
+TN316255,Ouled El Abed,Kondar,Sousse,31.03,1,Souassi
+TN316153,Sidi Khalifa,Bouficha,Sousse,31.65,1,Ouled Saïd
+TN316159,Sidi M'Tir,Bouficha,Sousse,28.1,1,Ouled Saïd
+TN316155,Sidi Said,Bouficha,Sousse,45.54,1,Ouled Saïd
+TN316057,Takrouna,Enfidha,Sousse,2.35,1,Ouled Saïd
+TN165358,Ain Asker,Bir Mchergua,Zaghouan,73.89,1,Ouled Khiar
+TN165258,Ain El Batria,Zriba,Zaghouan,49.05,1,Ouled Saïd
+TN165356,Ain Essafsaf,Bir Mchergua,Zaghouan,37.56,1,Ouled Khiar
+TN165351,Bir M'Chergua,Bir Mchergua,Zaghouan,49.5,1,Ouled Khiar
+TN165352,Bir M'Chergua Gare,Bir Mchergua,Zaghouan,43.7,1,Ouled Khiar
+TN165256,Bou Achir,Zriba,Zaghouan,39.4,1,Ouled Saïd
+TN165357,Boucha,Bir Mchergua,Zaghouan,61.1,1,Drid
+TN165654,Deghafla Est,Saouaf,Zaghouan,30.56,1,Souassi
+TN165458,El Ghrifet,Fahs,Zaghouan,165.01,1,Drid
+TN165551,En Nadhour,Nadhour,Zaghouan,59.85,1,Souassi
+TN165255,Ez-Zeriba Village,Zriba,Zaghouan,29.43,1,Ouled Saïd
+TN165254,Ez-Zriba Hammam Nord,Zriba,Zaghouan,39.39,1,Ouled Saïd
+TN165355,Jebel Oust,Bir Mchergua,Zaghouan,118.09,1,Ouled Khiar
+TN165257,Jeradou,Zriba,Zaghouan,59.36,1,Ouled Saïd
+TN165155,Mograne,Zaghouan,Zaghouan,73.1,1,Ouled Khiar
+TN165158,Oued Erremel,Zaghouan,Zaghouan,62.81,1,Ouled Saïd
+TN165159,Oued Ezzit,Zaghouan,Zaghouan,78.11,1,Ouled Saïd
+TN165354,Smenja,Bir Mchergua,Zaghouan,75.73,1,Ouled Khiar
+TN165463,Telil Essalhi,Fahs,Zaghouan,83.25,1,Riah

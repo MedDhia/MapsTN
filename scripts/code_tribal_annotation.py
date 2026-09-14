@@ -285,6 +285,7 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
     add("| Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |")
     add("| Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |")
     add("| Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |")
+    add("| Tribes on today's imadas | [`data/tribal_imada_coverage.csv`](../data/tribal_imada_coverage.csv) |")
     add("| How many people was a tribe? | [`docs/POPULATION-SOURCES.md`](POPULATION-SOURCES.md) |")
     add("")
     add("## The catalogue does not know")
@@ -536,6 +537,70 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
         f"four — though part of that is simply that Pellissier names the fractions "
         f"of the M'Talith and the Hamema where Lasailly names the parent.")
     add("")
+    imada_path = REPO_ROOT / "data" / "tribal_imada_summary.json"
+    if imada_path.exists():
+        imada = json.loads(imada_path.read_text(encoding="utf-8"))
+        add("## The same annotation on today's imadas")
+        add("")
+        add("![Tribal annotation of 1853 and 1881 on the imadas of 2022]"
+            "(img/tribal_distribution_imada.png)")
+        add("")
+        add(f"The finest published Tunisian administrative unit is the imada, the "
+            f"*secteur* below the delegation: **{imada['imadas_total']} of them** in "
+            f"the OCHA Common Operational Dataset, averaging about 78 km². Putting "
+            f"the annotation on that mesh is the only way to say where a tribe was "
+            f"in units anybody uses today, and it takes one decision that has to be "
+            f"argued rather than assumed.")
+        add("")
+        add(f"**A tribe is drawn as a disc, not a polygon, because a disc is what "
+            f"the evidence supports.** No sheet here draws a tribal boundary, so "
+            f"there is no polygon to take. What there is, is the ground the name "
+            f"covers: six labels measured on the tiles run 14 to 32 km end to end, "
+            f"a median of about 22 km, so each reading gets a disc of "
+            f"**{imada['radius_km']:.0f} km radius** centred on where the name is "
+            f"printed. The disc is not an error bar. Placement error is "
+            f"{imada['loo_rms']} leave-one-out, comfortably inside it; the disc is "
+            f"the annotation's own grain, and no better transform would shrink it.")
+        add("")
+        add(f"A tribe named on both sheets keeps both discs rather than an average "
+            f"of them, because the {imada['tribes_on_two_sheets']} such tribes sit a "
+            f"median {summary_agree.get('median_km', 0)} km apart and averaging "
+            f"would hide the one cross-sheet check this repository has.")
+        add("")
+        add("| | |")
+        add("| --- | --- |")
+        add(f"| Imadas a disc reaches | **{imada['imadas_touched']} of "
+            f"{imada['imadas_total']}** ({imada['imadas_touched_pct']}%) |")
+        add(f"| Share of the country's area | {imada['area_pct']}% |")
+        add(f"| Imadas reached by two tribes or more | "
+            f"{imada['imadas_with_two_or_more']} |")
+        add(f"| Most tribes on one imada | {imada['max_tribes_on_one_imada']} "
+            f"({imada['busiest_imada']}) |")
+        add(f"| Gouvernorats reached | {imada['gouvernorats_reached']} of 24 |")
+        add(f"| Median imadas per tribe | {imada['median_imadas_per_tribe']} |")
+        add("")
+        add("Per-imada results are in [`data/tribal_imada_coverage.csv`]"
+            "(../data/tribal_imada_coverage.csv), one row per imada reached, with "
+            "the tribes that reach it.")
+        add("")
+        add(f"**Two thirds of the country's imadas are blank, and the blank means "
+            f"three different things this table cannot separate.** The 1853 sheet "
+            f"was transcribed only to about 34°N. The 1881 sheet gives everything "
+            f"south of Sfax to a single tribe. And the two sheets between them name "
+            f"{imada['tribes']} groups where the country held more. Only the third "
+            f"of those is about the tribes; the other two are about the reading and "
+            f"about the map.")
+        add("")
+        add(f"**What the join can and cannot mean.** The imadas are of 2022 and the "
+            f"annotation is of 1853 and 1881, so the unit is being used to say "
+            f"*where*, not to claim that it existed then or that a tribe held it. "
+            f"{imada['busiest_imada']}, in the Kroumirie, is reached by "
+            f"{imada['max_tribes_on_one_imada']} tribes at once, which says that "
+            f"{imada['max_tribes_on_one_imada']} names were printed within "
+            f"{imada['radius_km']:.0f} km of each other, not that "
+            f"{imada['max_tribes_on_one_imada']} tribes shared one valley. The "
+            f"densest corner of this map is the corner the 1881 compiler knew best.")
+        add("")
     add("## Coding")
     add("")
     add("| `tribal_annotation` | n | Meaning |")

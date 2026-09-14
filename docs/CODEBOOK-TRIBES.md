@@ -129,3 +129,30 @@ the points findable, not to assign a tribe to a governorate.
 | [`data/tribal_fit.json`](../data/tribal_fit.json) | Per-map transform coefficients, px per degree, RMS and leave-one-out RMS, and the residual at each control town. |
 | [`data/tribal_annotation_summary.json`](../data/tribal_annotation_summary.json) | Distributions of every coded variable, and the forms by decade. |
 | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) | The 30 tribes named on both transcribed sheets, and how far apart the two sheets put each one. Median 23 km, which is about one label length. The 197 km outlier, Ouled Khiar, is two different groups sharing a name. |
+| [`data/tribal_imada_coverage.csv`](../data/tribal_imada_coverage.csv) | One row per contemporary imada that a tribe's disc reaches, 677 of 2,084. See section D. |
+| [`data/tribal_imada_summary.json`](../data/tribal_imada_summary.json) | The counts behind that table, and the disc radius with its basis. |
+
+## D. The imada join
+
+[`data/tribal_imada_coverage.csv`](../data/tribal_imada_coverage.csv) puts the
+label points onto the finest published contemporary unit, the imada, drawn from
+the OCHA Common Operational Dataset (2022 boundaries, 2,084 units). Built by
+[`map_tribes_on_imadas.py`](../scripts/map_tribes_on_imadas.py), which also
+draws [`docs/img/tribal_distribution_imada.png`](img/tribal_distribution_imada.png).
+
+| Variable | Definition |
+| --- | --- |
+| `adm4_pcode`, `imada`, `delegation`, `gouvernorat` | The unit and its parents, verbatim from the COD. `adm4_pcode` joins back to the shapefile. |
+| `area_sqkm` | The COD's own area for the imada. |
+| `tribes_n`, `tribes` | How many distinct tribes reach this imada, and which. A tribe reaches an imada when a disc of 11 km radius around any of its label points intersects the polygon. |
+
+**A tribe's disc is not its territory, and `tribes_n` is not a count of who
+lived there.** The radius is half the median length of the six labels measured
+on the tiles, which ran 14 to 32 km: it is the grain of the annotation, not an
+error bar and not a boundary. Two tribes sharing an imada here means two names
+were printed within 22 km of each other on a nineteenth-century sheet.
+
+Rows are only written for imadas a disc reaches. The 1,407 with no row are not
+recorded as empty: the 1853 sheet was transcribed only to about 34°N and the
+1881 sheet gives everything south of Sfax to one tribe, so most of the blank is
+about the reading and the map rather than about the ground.
