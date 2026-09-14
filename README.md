@@ -873,6 +873,23 @@ without them is test the two rules, and rule 1 is an invariant: a tribe's own
 label falling outside its own ellipse is a geometry bug, and the build fails on
 it.
 
+The scans are 0.7 GB and are not committed, so that script takes where to find
+them, in this order:
+
+```bash
+python3 scripts/check_tribal_spread.py --scans ~/iiif   # an explicit directory
+MAPSTN_SCANS=~/iiif python3 scripts/check_tribal_spread.py   # the environment
+python3 scripts/check_tribal_spread.py                  # else scratch/iiif
+```
+
+It expects the filenames in the script's `SHEETS` table, currently
+`FULL_theatre1881.jpg` and `FULL_pellissier.jpg`; the URLs are in
+[`data/sheet_images.json`](data/sheet_images.json). Without them the rules
+still run and the overlays are skipped, which is what happens in CI. The report
+records where the run looked, as a path relative to the checkout or as the bare
+fact that it was somewhere else, so the committed file says the same thing on
+every machine.
+
 The georeferencing runs twice on purpose. The corner reader needs the neatline
 the first pass detects in order to know where in the margin to look, and the
 anchor then wants what the corner reader found; the second pass is arithmetic on

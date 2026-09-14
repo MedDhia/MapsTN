@@ -105,5 +105,6 @@
       "not_added": "The sweep also found lineage names in the north and the Sahel set like tribes but small enough to be douars. They are listed under _sweep_candidates in config/tribal_labels_read.json with approximate positions, not added: on a sheet that marks nothing, telling a tribe from a douar is judgement, and a wrong call is worse than a gap."
     }
   ],
-  "_overlays": "The ellipses inverted back onto each Gallica scan in its own pixels, so they can be held against the engraved names. Only the tribes that sheet names are drawn on it. Flagged tribes are in red. inverse_affine_residual_px is how well the lon/lat to pixel transform reproduces the control towns, and it has to be small or the overlay would be testing the transform rather than the ellipses. Needs the full scans in the scratch directory and is skipped when they are absent."
+  "_overlays": "The ellipses inverted back onto each Gallica scan in its own pixels, so they can be held against the engraved names. Only the tribes that sheet names are drawn on it. Flagged tribes are in red. inverse_affine_residual_px is how well the lon/lat to pixel transform reproduces the control towns, and it has to be small or the overlay would be testing the transform rather than the ellipses. Needs the full scans, which are too large to commit: pass --scans DIR, or set $MAPSTN_SCANS, or put them in scratch/iiif beside the checkout. Skipped when they are absent, and scans_dir records where this run looked.",
+  "scans_dir": "a directory outside the checkout, given by --scans or $MAPSTN_SCANS"
 }

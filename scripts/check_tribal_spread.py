@@ -19,19 +19,29 @@ compilers put its name 200 km apart has an ellipse that cannot help covering
 its neighbours, and those are exactly the tribes whose identity is in doubt.
 They are flagged in data/tribal_spread.csv as encloses_other_tribes.
 
+The rules need nothing but the repository. The overlays need the full IIIF
+scans, which are too large to commit, so they are looked for in a directory
+given by --scans, else $MAPSTN_SCANS, else scratch/iiif beside this checkout.
+When they are not there the rules still run and the overlays are skipped, and
+the report says so rather than failing.
+
 Outputs:
     docs/img/tribal_spread_check.png
     data/tribal_spread_check.json
 
 Usage:
     python3 scripts/check_tribal_spread.py
+    python3 scripts/check_tribal_spread.py --scans ~/iiif
+    MAPSTN_SCANS=~/iiif python3 scripts/check_tribal_spread.py
 """
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import math
+import os
 from pathlib import Path
 
 import numpy as np
@@ -39,8 +49,32 @@ from PIL import Image, ImageDraw
 
 Image.MAX_IMAGE_PIXELS = None
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SCRATCH = Path("/tmp/claude-0/-home-user-MapsTN/"
-               "7114739d-3b6b-5354-b4f4-7fe6b8a6a8b0/scratchpad/iiif")
+# The scans are 0.7 GB and are not in the repository. Look where the caller
+# says, then at the environment, then at scratch/iiif beside the checkout.
+DEFAULT_SCANS = REPO_ROOT / "scratch" / "iiif"
+
+
+def scans_dir(arg: str | None) -> Path:
+    if arg:
+        return Path(arg).expanduser()
+    env = os.environ.get("MAPSTN_SCANS")
+    if env:
+        return Path(env).expanduser()
+    return DEFAULT_SCANS
+
+
+def scans_label(scans: Path) -> str:
+    """Where this run looked, said in a way that is the same on any machine.
+
+    The absolute path is somebody's home directory or scratch mount, which is
+    noise in a committed file and different for every reader. Inside the
+    checkout it is worth naming; outside it, only the fact is.
+    """
+    try:
+        return str(scans.relative_to(REPO_ROOT))
+    except ValueError:
+        return "a directory outside the checkout, given by --scans or $MAPSTN_SCANS"
+
 SHEETS = [
     {"id": "btv1b84389986", "year": 1881, "scan": "FULL_theatre1881.jpg",
      "sheet": "1881 Lasailly", "scale": 0.22,
@@ -110,9 +144,9 @@ def sheet_rows(sheet: dict) -> list[dict]:
             if r["sheet"] == sheet["sheet"]]
 
 
-def overlay(rows, sheet: dict) -> bool:
+def overlay(rows, sheet: dict, scans: Path) -> bool:
     """Draw the ellipses back onto one sheet, in that sheet's own pixels."""
-    scan = SCRATCH / sheet["scan"]
+    scan = scans / sheet["scan"]
     if not scan.exists():
         return False
     config = json.loads((REPO_ROOT / "config" / "tribal_labels_read.json")
@@ -165,14 +199,14 @@ SPOT = {"btv1b84389986": ["Hammama", "Zlass", "Souassi", "Frechiche"],
         "btv1b53136235q": ["Hammama", "Zlass", "Frechiche", "Mejers"]}
 
 
-def spot_check(rows, sheet: dict, zoom: float = 0.45) -> bool:
+def spot_check(rows, sheet: dict, scans: Path, zoom: float = 0.45) -> bool:
     """A few ellipses at full scan resolution, to be held against the engraving.
 
     The whole-sheet overlay shows that nothing is grossly misplaced. It is too
     small to show whether an ellipse actually sits over its name, which is the
     question, so these crops are the ones to look at.
     """
-    scan = SCRATCH / sheet["scan"]
+    scan = scans / sheet["scan"]
     if not scan.exists():
         return False
     config = json.loads((REPO_ROOT / "config" / "tribal_labels_read.json")
@@ -230,6 +264,16 @@ def spot_check(rows, sheet: dict, zoom: float = 0.45) -> bool:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument(
+        "--scans", metavar="DIR",
+        help="directory holding the full IIIF scans named in SHEETS. "
+             "Falls back to $MAPSTN_SCANS, then to scratch/iiif beside the "
+             "checkout. Without them the rules still run and the overlays "
+             "are skipped.")
+    args = parser.parse_args()
+    scans = scans_dir(args.scans)
+
     rows, own_out, foreign_in = rules()
     flagged = [r for r in rows if int(r["encloses_other_tribes"]) > 0]
     flagged.sort(key=lambda r: -float(r["own_spread_km"]))
@@ -237,13 +281,13 @@ def main() -> int:
     drawn = {}
     for sheet in SHEETS:
         drawn[str(sheet["year"])] = {
-            "written": overlay(rows, sheet),
+            "written": overlay(rows, sheet, scans),
             "file": f"docs/img/{sheet['out']}",
             "inverse_affine_residual_px": sheet.get("residual_px"),
             "ellipses_drawn": sheet.get("tribes_drawn"),
             "ellipses_used": sheet.get("used"),
             "spot_check": (f"docs/img/{sheet['spot']}"
-                           if spot_check(rows, sheet) else None),
+                           if spot_check(rows, sheet, scans) else None),
         }
 
     report = {
@@ -337,8 +381,11 @@ def main() -> int:
             "red. inverse_affine_residual_px is how well the lon/lat to pixel "
             "transform reproduces the control towns, and it has to be small or "
             "the overlay would be testing the transform rather than the "
-            "ellipses. Needs the full scans in the scratch directory and is "
-            "skipped when they are absent."),
+            "ellipses. Needs the full scans, which are too large to commit: "
+            "pass --scans DIR, or set $MAPSTN_SCANS, or put them in "
+            "scratch/iiif beside the checkout. Skipped when they are absent, "
+            "and scans_dir records where this run looked."),
+        "scans_dir": scans_label(scans),
     }
     (REPO_ROOT / "data" / "tribal_spread_check.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -357,7 +404,7 @@ def main() -> int:
             print(f"overlay {year}: {info['ellipses_drawn']} ellipses, "
                   f"inverse affine residual {info['inverse_affine_residual_px']} px")
         else:
-            print(f"overlay {year}: skipped, scan not in scratch")
+            print(f"overlay {year}: skipped, no scan in {scans}")
     return 0
 
 

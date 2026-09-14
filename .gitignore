@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+
+# The default place check_tribal_spread.py looks for the full IIIF scans.
+# They are 0.7 GB and are fetched, not committed.
+scratch/
