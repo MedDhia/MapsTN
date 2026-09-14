@@ -138,44 +138,49 @@ the points findable, not to assign a tribe to a governorate.
 | [`data/boundaries/neighbours_ne50m.geojson`](../data/boundaries/neighbours_ne50m.geojson) | Algeria, Libya and Sicily clipped to the map window, Natural Earth 1:50m, so the names printed west of the frontier sit on land. |
 | [`config/martel_1965_tribes.json`](../config/martel_1965_tribes.json), [`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv), [`data/martel_1965_fit.json`](../data/martel_1965_fit.json) | The third sheet, read and placed. See section E. |
 
-## D. How much ground a name covers
+## D. The ground each tribe holds
 
-[`data/tribal_spread.csv`](../data/tribal_spread.csv), one row per label on the
-1881 Lasailly sheet, 69 rows. Built by
-[`map_tribal_spread.py`](../scripts/map_tribal_spread.py), which also draws
-[`docs/img/tribal_spread.png`](img/tribal_spread.png).
+[`data/tribal_spread.csv`](../data/tribal_spread.csv), one row per tribe, 88
+rows. Built by [`map_tribal_spread.py`](../scripts/map_tribal_spread.py), which
+also draws [`docs/img/tribal_spread.png`](img/tribal_spread.png).
+
+Each tribe gets the largest ellipse that satisfies two rules and nothing else:
+
+1. it contains all of that tribe's own evidence — every label centre on every
+   sheet, and both ends of the name for the 62 labels on the 1881 sheet whose
+   printed length was measured;
+2. it contains no other tribe's label.
 
 | Variable | Definition |
 | --- | --- |
-| `sheet` | `1881 Lasailly`. The only sheet measured so far. |
-| `label_as_printed`, `tribe` | The name as engraved, and the gazetteer name it resolves to. |
-| `lon`, `lat` | The middle of the printed name, from the sheet's affine. |
-| `extent_px` | **The measurement.** The length of the name on the scan, end to end, first letter to last. |
-| `extent_km` | The same at 0.0798 km per scan pixel, the fitted scale of this sheet. |
-| `extent_basis` | `measured`, `measured_clipped` (one end ran off the crop, so the figure is a lower bound), or `not_measured`. |
-| `inside_tunisia` | 1 if the label's centre falls inside the modern border. 29 of these labels do not. |
+| `tribe` | The gazetteer's canonical name, or the printed name where the label resolves to no entry. |
+| `labels`, `sources`, `sources_named` | How many names carry this tribe, across how many of the three sheets, and which. |
+| `printed_as` | Every spelling it appears under. |
+| `measured_names` | How many of its names have a measured printed length. Only the 1881 sheet has been measured. |
+| `own_spread_km` | The extent of the tribe's own evidence along the ellipse's major axis, before any growth. **This is the purely observational column.** |
+| `lon`, `lat` | The centre of that evidence. Not a territory centroid. |
+| `major_km`, `minor_km`, `angle_deg` | The ellipse. The angle is the principal axis of the tribe's own labels, measured anticlockwise from east. |
+| `area_sqkm` | Its area. |
+| `grew_by_km` | How far the ellipse grew beyond the evidence before a neighbour stopped it. |
+| `stopped_by`, `stopped_at_km` | Which tribe's name ended the growth, and how far away it is. |
+| `at_max_radius` | 1 if the 90 km guard stopped it instead of a neighbour. **Currently 0 for every row**, so no ellipse on the figure is sized by a constant. |
 
-**How it was read.** Each label was cropped from the full 5880 × 8853 scan into
-a horizontal strip with a pixel ruler drawn beneath it and the anchor marked,
-several strips to a contact sheet, and read by eye. An earlier attempt to chain
-glyph blobs automatically is recorded in the script as a failure: it worked on a
-clean label and ran away across the sheet on a crowded one.
+**Read `own_spread_km` and `major_km` as two different things.** The first is
+what the sheets say directly. The second is that plus however far the tribe
+could expand before meeting a neighbour, so it is a claim about the gaps between
+names as much as about the names.
 
-**What the number is.** The engraver letterspaced a tribe's name across the
-country it holds, so the length of the name is the map's own statement of the
-tribe's reach. It is not an error bar and not a boundary. Two tribes of the same
-importance get names of the same size only if the compiler thought their ground
-was the same size, which is exactly the signal.
+**Why this is deliberately the largest reading.** The printed name is a floor on
+a tribe's country, since the engraver fits the name inside the ground it names.
+An earlier version of this figure drew a circle the length of the name and
+understated every tribe on the sheet. What bounds an ellipse here is the next
+tribe along, which is the only bound the maps supply.
 
-**Why the figure draws a circle.** The sheet gives one number, the length along
-the baseline. The across-name dimension is stated nowhere, so an ellipse would
-have to invent a second parameter and an orientation. The circle is centred on
-the middle of the name with that length as its diameter, and nothing is clipped
-to any boundary.
-
-**What is not in the file.** The 1853 Pellissier and 1965 Martel sheets. Their
-names run on long arcs and verticals, not horizontal baselines, so the endpoints
-need a different reading. Their labels stay points on the figure.
+**What it is not.** Not a boundary: no sheet in this collection draws one, and
+where two ellipses overlap the maps say nothing about where the line between
+them ran. Not clipped either, so an ellipse crosses the modern frontier wherever
+the names do, which 34 of the 141 labels do. Do not publish these as tribal
+territories.
 
 ## D2. The imada index
 

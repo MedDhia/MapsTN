@@ -139,36 +139,41 @@ By modern gouvernorat, for the sheet whose face was read in full:
 
 The north-west carries the annotation and the south barely does. Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels between them, while south of Sfax the entire country — the Jerid, the Nefzaoua, the Dahar, the Matmata — carries exactly one, the Ouerghemma. That is not a map of where tribes were. It is a map of where a French compiler in 1881 had names for them, and 1881 is the year of the Kroumir campaign in exactly that north-western corner. Over the same latitudes the 1853 sheet is less lopsided — its median label sits at 35.9°N against the 1881 sheet's 36.6°N, and seven of its labels fall south of 35°N against four — though part of that is simply that Pellissier names the fractions of the M'Talith and the Hamema where Lasailly names the parent.
 
-## How much ground a name covers
+## The ground each tribe holds
 
-![How much ground a tribe's name covers, measured off the sheet](img/tribal_spread.png)
+![The ground each tribe holds, bounded by the tribes next to it](img/tribal_spread.png)
 
-A tribe on these sheets is a name letterspaced across the country it holds. How far the engraver spread it is the only statement the map makes about extent, so that is the thing to measure, and three earlier attempts to draw a tribe's spread are recorded here because each supplied the number the map does not.
+A tribe on these sheets is a name letterspaced across its country with no line around it. Four ways of drawing that have been tried here and the first three are kept because each failed differently.
 
 | Drawn as | What went wrong |
 | --- | --- |
 | A dot per label | Exact, and silent about extent. |
-| Administrative units, filled or sprinkled | Answers extent by inventing it, and confines a nineteenth-century tribe inside a 2022 mesh that stops at a frontier which did not exist. |
-| A Gaussian blur of the labels | Looks measured and is not: the bandwidth was a choice, so every tribe came out the same size whatever the sheet said. |
+| Administrative units, filled or sprinkled | Invents the extent, and confines a nineteenth-century tribe inside a 2022 mesh. |
+| A Gaussian blur of the labels | Looks measured and is not: the bandwidth is a choice, so every tribe comes out the same size whatever the sheet says. |
+| A circle the length of the printed name | Honest and far too small. The engraver fits the name inside the country, usually well inside, so the length is a floor on the territory and not the territory. |
 
-The third was the worst because it flattened the signal. OUERGAMA is letterspaced 1.7 times wider per letter than MEKENA, and that difference is the map speaking about two tribes of very different reach.
+**What is drawn now is the largest ellipse each tribe can have before it reaches another tribe's name.** Two rules and no third:
 
-**So the extents were measured.** Each label on the 1881 Lasailly sheet was cropped from the full scan into a contact strip with a pixel ruler under it and read end to end by eye. **62 of 69 labels** yielded a length; 7 run into a sheet edge or into another name and are left unmeasured. Every tribe is then drawn as a circle whose diameter is that printed length.
+1. It must contain all of that tribe's own evidence: every label centre on every sheet, and both ends of the name for the 62 on the 1881 sheet whose printed length was measured.
+2. It must contain no other tribe's label.
 
-**Why a circle and not an ellipse.** The sheet states one number, the length of the name along its baseline. The across-name dimension appears nowhere on the map, so an ellipse would have to invent it, which is the mistake the figure exists to stop making. A circle adds no second parameter and no orientation. Nothing is clipped either, so a circle crosses the modern frontier wherever the name does.
+The first rule fixes the centre, the orientation and the floor. The second fixes the ceiling, and the ceiling is a neighbouring name rather than a constant anyone chose: **all 88 ellipses were stopped by a neighbour**, none by the 90 km guard the script carries against a lone label in an empty quarter. `stopped_by` in the table names the tribe that did it.
+
+Evidence from all three sheets counts at once, so a tribe named by Pellissier in 1853, by Lasailly in 1881 and by Martel in 1965 gets an ellipse stretched to cover all three, and that stretch is the compilers disagreeing. 35 of 88 tribes are named on more than one sheet.
 
 | | |
 | --- | --- |
-| Shortest name | Nefza (*Nefsa*), 5.7 km |
-| Longest | Hanencha (*Hanenchas*), 48.1 km |
-| Median | 16 km |
-| Mean | 19.0 km |
+| Smallest | 88 km² |
+| Median | 778 km² |
+| Largest | 11,825 km² |
+| Gherib | 123 × 123 km, 11,825 km², stopped by the Chaamba |
+| Zlass | 132 × 96 km, 9,968 km², stopped by the Ouled Aoun |
+| Adhara | 100 × 100 km, 7,877 km², stopped by the Merazig |
+| Ouerghemma | 120 × 77 km, 7,251 km², stopped by the Hazem |
 
-**This corrects a figure quoted earlier in this repository.** A sample of six labels had given 14 to 32 km, and that range was repeated in the codebook and in two scripts. With 62 measured the true range is 6 to 48 km and the median is 16, so the sample of six had missed the small tribes at one end and the great frontier confederations at the other. The Hanencha name runs 48 km of ground, the Nemencha 46, the Ouled Sidi Abid 43; the Nefza name runs 6.
+**This is deliberately the largest reading the sheets will carry.** Nothing is clipped to the modern frontier, which 34 of the 141 labels sit west of. Ellipses overlap where the sheets disagree or where tribes interleaved, and the overlap is left to be seen rather than resolved, because no sheet in this collection says where one tribe stopped and the next began.
 
-Per-label results are in [`data/tribal_spread.csv`](../data/tribal_spread.csv).
-
-**What is not yet measured.** The 1853 Pellissier and 1965 Martel sheets. Both set their tribal names on long arcs and verticals rather than horizontal baselines, so the endpoints have to be read a different way; until that is done their labels appear on the figure as points and carry no circle. Saying so is cheaper than drawing them at a size nobody measured.
+Per-tribe results are in [`data/tribal_spread.csv`](../data/tribal_spread.csv), with the axes, the area, how far the ellipse grew and what stopped it.
 
 ## Coding
 

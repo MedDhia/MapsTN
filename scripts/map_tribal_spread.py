@@ -1,45 +1,52 @@
 #!/usr/bin/env python3
-"""The spread of each tribe, as the sheet itself states it.
+"""The ground each tribe holds, bounded by the tribes next to it.
 
-A tribe on these maps is a name letterspaced across the country it holds. The
-engraver decides how far to spread it, and that spread is the only statement the
-sheet makes about extent. Every other way of drawing it tried here invented the
-number instead of reading it:
+A tribe on these sheets is a name letterspaced across its country, with no line
+around it. Four ways of drawing that have been tried here and the first three
+are kept in the record because each failed differently.
 
-  A dot per label marks where a word was centred and says nothing about extent.
+  A dot per label is exact and silent about extent.
 
-  Filling or sprinkling administrative units answers extent by inventing it,
-  and confines a nineteenth-century tribe inside a 2022 mesh besides.
+  Filling or sprinkling administrative units invents the extent and confines a
+  nineteenth-century tribe inside a 2022 mesh besides.
 
-  Blurring the labels with a Gaussian looks like a field but the bandwidth was
-  a choice, so every tribe came out the same size whatever the map said. Worse,
-  it flattened the one real signal: OUERGAMA is letterspaced 1.7 times wider per
-  letter than MEKENA, and that difference is the map speaking.
+  A Gaussian blur looks measured and is not: the bandwidth is a choice, so every
+  tribe comes out the same size whatever the sheet says.
 
-So the extents were measured. Each label on the 1881 Lasailly sheet was cropped
-from the full scan into a contact sheet with a pixel ruler beneath it and read
-by eye, end to end: 62 of 69 labels, the other 7 running into a sheet edge or
-into another name. Each tribe is then drawn as a circle whose diameter is that
-printed length.
+  A circle the length of the printed name is honest but far too small. The
+  engraver fits the name inside the country, usually well inside; the length is
+  a floor on the territory, not the territory. Drawing it as the whole thing
+  understates every tribe on the sheet.
 
-Why a circle and not an ellipse: the sheet gives one number, the length of the
-name along its baseline. The across-name dimension is not stated anywhere, and
-an ellipse would have to invent it, which is the mistake this figure exists to
-stop making. A circle adds no second parameter and no orientation.
+What is drawn now is the largest ellipse each tribe can have before it reaches
+another tribe's name. Two rules, and nothing else:
 
-The 1853 Pellissier and 1965 Martel sheets are not drawn as circles here. Their
-names are set on long arcs and verticals rather than horizontal baselines, so
-the same reading has to be done differently, and until it is done their labels
-appear as points only.
+  it must contain all of that tribe's own evidence - every label centre on every
+  sheet, and, where the printed length was measured, both ends of the name;
+
+  it must contain no other tribe's label.
+
+The first rule sets the centre, the orientation and the minimum size from the
+tribe's own spread. The second sets how far it grows, and the bound is always a
+neighbouring name rather than a constant anyone chose. Where a tribe has no
+neighbour for a hundred kilometres the ellipse is huge, and that is the map's
+claim, not an artefact: south of Sfax the 1881 sheet gives the whole country to
+the Ouerghemma.
+
+Evidence comes from all three sheets at once, so a tribe named by Pellissier in
+1853, by Lasailly in 1881 and by Martel in 1965 gets an ellipse stretched to
+cover all three, and the stretch is the disagreement between them.
 
 Outputs:
     docs/img/tribal_spread.png
-    data/tribal_spread.csv              one row per label, with its measured
-                                        printed extent in pixels and kilometres
+    data/tribal_spread.csv              one row per tribe: its evidence, the
+                                        ellipse's axes and area, and which
+                                        tribe's name stopped it growing
     data/tribal_spread_summary.json
 
 Usage:
     python3 scripts/map_tribal_spread.py
+    python3 scripts/map_tribal_spread.py --max-radius-km 90
 """
 
 from __future__ import annotations
@@ -51,6 +58,7 @@ import math
 import statistics
 import textwrap
 import warnings
+from collections import defaultdict
 from pathlib import Path
 
 import matplotlib
@@ -60,25 +68,43 @@ import matplotlib.pyplot as plt
 import numpy as np
 import shapefile
 from matplotlib.lines import Line2D
-from shapely.geometry import shape
+from matplotlib.patches import Ellipse
+from shapely.geometry import Point, shape
 
 warnings.filterwarnings("ignore")
 REPO_ROOT = Path(__file__).resolve().parent.parent
 BOUNDARIES = REPO_ROOT / "data" / "boundaries"
 
-SHEET = "btv1b84389986"
-SHEET_NAME = "1881 Lasailly"
-OTHER_INK = {"1853 Pellissier": "#a5642a", "1881 Martel (1965)": "#4a7c59"}
-INK = "#2f5f8f"
+SHEET_1881 = "btv1b84389986"
+SOURCE_INK = {"1853 Pellissier": "#a5642a",
+              "1881 Lasailly": "#2f5f8f",
+              "1881 Martel (1965)": "#4a7c59"}
 LAND = "#f7f5f1"
 ABROAD = "#efece6"
-MESH = "#e4dfd5"
 LINE = "#c3bbae"
 COAST = "#6b645a"
+PALETTE = ["#b08968", "#6b8f71", "#7d8fa8", "#a8788a", "#9a8f5e", "#7f8d9e",
+           "#a37f6b", "#83937c", "#8c7f9b", "#9c8a6e", "#6f8a8c", "#a1897f"]
+
+# A tribe with no neighbour within this far stops growing anyway. It is a guard
+# against one label in an empty quarter swallowing the Sahara, not a scale: only
+# a handful of tribes ever reach it and the table says which.
+DEFAULT_MAX_RADIUS_KM = 90.0
+# Floor on the semi-axes, so a tribe known from one unmeasured label is still
+# visible. One quarter of the median measured name.
+MIN_SEMI_KM = 4.0
 
 KM_PER_DEG_LAT = 110.574
 LAT0 = 34.5
 KM_PER_DEG_LON = 111.320 * math.cos(math.radians(LAT0))
+
+
+def to_km(lon, lat):
+    return np.asarray(lon) * KM_PER_DEG_LON, np.asarray(lat) * KM_PER_DEG_LAT
+
+
+def to_deg(x, y):
+    return x / KM_PER_DEG_LON, y / KM_PER_DEG_LAT
 
 
 def exteriors(geometry):
@@ -86,69 +112,182 @@ def exteriors(geometry):
     return [np.asarray(g.exterior.coords) for g in geoms]
 
 
-def load_measured() -> tuple[list[dict], dict]:
-    """The 1881 labels with their measured printed extent, placed on the ground."""
+def read_evidence() -> list[dict]:
+    """Every label, with the ends of the name where the length was measured."""
     cfg = json.loads((REPO_ROOT / "config" / "tribal_labels_read.json")
                      .read_text(encoding="utf-8"))
-    sheet = cfg["maps"][SHEET]
-    fit = json.loads((REPO_ROOT / "data" / "tribal_fit.json").read_text())[SHEET]
-    km_per_px = fit["km_per_px"]
-
-    placed = {}
-    for row in csv.DictReader((REPO_ROOT / "data" / "tribal_territories.csv")
-                              .open(encoding="utf-8")):
-        if row["record_id"] == SHEET:
-            placed[row["label_as_printed"]] = row
-
-    out = []
+    fits = json.loads((REPO_ROOT / "data" / "tribal_fit.json").read_text())
+    extents = {}
+    sheet = cfg["maps"][SHEET_1881]
     for label in sheet["labels"]:
-        row = placed.get(label["text"])
-        if row is None:
-            continue
-        out.append({
-            "label": label["text"],
-            "tribe": row["tribe"] or label["text"],
-            "lon": float(row["lon"]),
-            "lat": float(row["lat"]),
-            "inside": row["inside_tunisia"] == "1",
-            "extent_px": label.get("extent_px"),
-            "basis": label.get("extent_basis", "not_measured"),
-            "extent_km": (round(label["extent_px"] * km_per_px, 1)
-                          if label.get("extent_px") else None),
-        })
-    return out, {"km_per_px": km_per_px, "scale": sheet["scale"]}
+        if label.get("extent_px"):
+            extents[label["text"]] = label["extent_px"] * fits[SHEET_1881]["km_per_px"]
 
-
-def load_other_points() -> list[dict]:
     out = []
     for row in csv.DictReader((REPO_ROOT / "data" / "tribal_territories.csv")
                               .open(encoding="utf-8")):
-        if row["record_id"] != SHEET:
-            out.append({"lon": float(row["lon"]), "lat": float(row["lat"]),
-                        "source": "1853 Pellissier"})
+        source = ("1853 Pellissier" if row["year"] == "1853" else "1881 Lasailly")
+        extent = extents.get(row["label_as_printed"]) if row["record_id"] == SHEET_1881 else None
+        out.append({
+            "tribe": row["tribe"] or row["label_as_printed"],
+            "label": row["label_as_printed"],
+            "source": source,
+            "lon": float(row["lon"]), "lat": float(row["lat"]),
+            "extent_km": round(extent, 1) if extent else None,
+            "inside": row["inside_tunisia"] == "1",
+        })
     martel = REPO_ROOT / "data" / "martel_1965_tribes.csv"
     if martel.exists():
+        # Martel's CSV carries no inside flag and four of his names are west of
+        # the frontier, so it is computed rather than assumed.
+        reader = shapefile.Reader(str(BOUNDARIES / "tun_admin0.shp"))
+        tunisia = shape(reader.shapeRecords()[0].shape.__geo_interface__)
         for row in csv.DictReader(martel.open(encoding="utf-8")):
-            out.append({"lon": float(row["lon"]), "lat": float(row["lat"]),
-                        "source": "1881 Martel (1965)"})
+            lon, lat = float(row["lon"]), float(row["lat"])
+            out.append({
+                "tribe": row["tribe"], "label": row["label_as_printed"],
+                "source": "1881 Martel (1965)",
+                "lon": lon, "lat": lat, "extent_km": None,
+                "inside": tunisia.contains(Point(lon, lat)),
+            })
     return out
 
 
-def write_table(labels: list[dict], path: Path) -> None:
-    rows = sorted(labels, key=lambda r: -(r["extent_km"] or 0))
+def evidence_points(labels: list[dict]) -> np.ndarray:
+    """A label is one point, or two where the printed name was measured: the
+    ends of the name are themselves ground the tribe is asserted to hold."""
+    pts = []
+    for label in labels:
+        x, y = to_km(label["lon"], label["lat"])
+        if label["extent_km"]:
+            half = label["extent_km"] / 2
+            pts.append((x - half, y))
+            pts.append((x + half, y))
+        else:
+            pts.append((x, y))
+    return np.array(pts, dtype=float)
+
+
+def orientation(points: np.ndarray) -> np.ndarray:
+    """Principal axes of the tribe's own evidence. Identity for a single point."""
+    if len(points) < 2:
+        return np.eye(2)
+    centred = points - points.mean(axis=0)
+    if np.allclose(centred, 0):
+        return np.eye(2)
+    _, _, vt = np.linalg.svd(centred, full_matrices=False)
+    return vt.T
+
+
+def grow(centre, axes_dir, base, others, max_radius):
+    """Largest margin that keeps every other tribe's label outside."""
+    if len(others) == 0:
+        return max_radius
+    local = (others - centre) @ axes_dir
+
+    def clear(margin):
+        a, b = base[0] + margin, base[1] + margin
+        return not np.any((local[:, 0] / a) ** 2 + (local[:, 1] / b) ** 2 < 1.0)
+
+    if clear(max_radius):
+        return max_radius
+    lo, hi = 0.0, max_radius
+    if not clear(lo):
+        return 0.0
+    for _ in range(40):
+        mid = (lo + hi) / 2
+        if clear(mid):
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
+def build(evidence: list[dict], max_radius: float) -> list[dict]:
+    by_tribe: dict[str, list[dict]] = defaultdict(list)
+    for label in evidence:
+        by_tribe[label["tribe"]].append(label)
+
+    centres = {t: to_km([l["lon"] for l in v], [l["lat"] for l in v])
+               for t, v in by_tribe.items()}
+    all_centres = {t: np.column_stack(c) for t, c in centres.items()}
+
+    out = []
+    for tribe, labels in by_tribe.items():
+        own = evidence_points(labels)
+        centre = own.mean(axis=0)
+        axes_dir = orientation(own)
+        local = (own - centre) @ axes_dir
+        base = np.maximum(np.abs(local).max(axis=0), MIN_SEMI_KM)
+
+        others = np.vstack([v for t, v in all_centres.items() if t != tribe])
+        margin = grow(centre, axes_dir, base, others, max_radius)
+        a, b = base[0] + margin, base[1] + margin
+
+        # which name stopped it
+        stopper, stop_km = "", ""
+        if margin < max_radius - 1e-6:
+            best = None
+            for other, pts in all_centres.items():
+                if other == tribe:
+                    continue
+                loc = (pts - centre) @ axes_dir
+                d = (loc[:, 0] / a) ** 2 + (loc[:, 1] / b) ** 2
+                k = int(d.argmin())
+                if best is None or d[k] < best[0]:
+                    best = (d[k], other, float(np.hypot(*loc[k])))
+            if best:
+                stopper, stop_km = best[1], round(best[2], 1)
+
+        lon, lat = to_deg(*centre)
+        angle = math.degrees(math.atan2(axes_dir[1, 0], axes_dir[0, 0]))
+        out.append({
+            "tribe": tribe,
+            "labels": len(labels),
+            "sources": len({l["source"] for l in labels}),
+            "sources_named": " | ".join(sorted({l["source"] for l in labels})),
+            "printed_as": " | ".join(sorted({l["label"] for l in labels})),
+            "measured_names": sum(1 for l in labels if l["extent_km"]),
+            "own_spread_km": round(float(2 * base[0]), 1),
+            "lon": round(lon, 3), "lat": round(lat, 3),
+            "major_km": round(2 * a, 1), "minor_km": round(2 * b, 1),
+            "angle_deg": round(angle, 1),
+            "area_sqkm": round(math.pi * a * b),
+            "grew_by_km": round(margin, 1),
+            "stopped_by": stopper,
+            "stopped_at_km": stop_km,
+            "at_max_radius": 1 if margin >= max_radius - 1e-6 else 0,
+            "_c": centre, "_R": axes_dir, "_a": a, "_b": b,
+        })
+    out.sort(key=lambda r: -r["area_sqkm"])
+    return out
+
+
+def colour_by_overlap(rows: list[dict]) -> dict[str, str]:
+    neighbours: dict[str, set[str]] = defaultdict(set)
+    for i, a in enumerate(rows):
+        for b in rows[i + 1:]:
+            d = math.dist(a["_c"], b["_c"])
+            if d < (max(a["_a"], a["_b"]) + max(b["_a"], b["_b"])):
+                neighbours[a["tribe"]].add(b["tribe"])
+                neighbours[b["tribe"]].add(a["tribe"])
+    colours = {}
+    for row in sorted(rows, key=lambda r: -len(neighbours[r["tribe"]])):
+        taken = {colours[n] for n in neighbours[row["tribe"]] if n in colours}
+        colours[row["tribe"]] = next((c for c in PALETTE if c not in taken),
+                                     PALETTE[0])
+    return colours
+
+
+def write_table(rows: list[dict], path: Path) -> None:
+    fields = [k for k in rows[0] if not k.startswith("_")]
     with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.writer(fh)
-        writer.writerow(["sheet", "label_as_printed", "tribe", "lon", "lat",
-                         "extent_px", "extent_km", "extent_basis",
-                         "inside_tunisia"])
-        for row in rows:
-            writer.writerow([SHEET_NAME, row["label"], row["tribe"], row["lon"],
-                             row["lat"], row["extent_px"] or "",
-                             row["extent_km"] or "", row["basis"],
-                             1 if row["inside"] else 0])
+        writer = csv.DictWriter(fh, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
 
 
-def draw(labels, others, meta, path, stats):
+def draw(rows, evidence, colours, path, stats, max_radius):
     reader0 = shapefile.Reader(str(BOUNDARIES / "tun_admin0.shp"))
     tunisia = shape(reader0.shapeRecords()[0].shape.__geo_interface__)
     reader2 = shapefile.Reader(str(BOUNDARIES / "tun_admin2.shp"))
@@ -160,9 +299,8 @@ def draw(labels, others, meta, path, stats):
         neighbours = [shape(f["geometry"])
                       for f in json.loads(path_n.read_text())["features"]]
 
-    figure = plt.figure(figsize=(11.0, 8.0), dpi=200)
-    ax = figure.add_axes([0.01, 0.14, 0.60, 0.76])
-    hx = figure.add_axes([0.68, 0.42, 0.29, 0.40])
+    figure = plt.figure(figsize=(11.4, 8.4), dpi=200)
+    ax = figure.add_axes([0.01, 0.185, 0.63, 0.735])
 
     for geom in neighbours:
         for ring in exteriors(geom):
@@ -176,98 +314,92 @@ def draw(labels, others, meta, path, stats):
     for ring in exteriors(tunisia):
         ax.plot(ring[:, 0], ring[:, 1], color=COAST, linewidth=0.7, zorder=3)
 
-    for point in others:
-        ax.plot([point["lon"]], [point["lat"]], marker="+", markersize=2.6,
-                markeredgewidth=0.5, color=OTHER_INK[point["source"]], zorder=4)
+    for row in sorted(rows, key=lambda r: -r["area_sqkm"]):
+        lon, lat = to_deg(*row["_c"])
+        # Both axes are divided by the same km-per-degree and the axes aspect
+        # does the rest: at this latitude a kilometre drawn vertically and one
+        # drawn horizontally differ by half a per cent, which is well inside
+        # everything else here.
+        ell = Ellipse((lon, lat),
+                      2 * row["_a"] / KM_PER_DEG_LON,
+                      2 * row["_b"] / KM_PER_DEG_LON,
+                      angle=row["angle_deg"],
+                      facecolor=colours[row["tribe"]], edgecolor=colours[row["tribe"]],
+                      alpha=0.30, linewidth=0.5, zorder=5)
+        ax.add_patch(ell)
 
-    # One circle per label, diameter the printed length of the name.
-    for row in labels:
-        if not row["extent_km"]:
-            ax.plot([row["lon"]], [row["lat"]], marker="x", markersize=2.6,
-                    markeredgewidth=0.6, color="#8d8579", zorder=6)
-            continue
-        radius_lat = row["extent_km"] / 2 / KM_PER_DEG_LAT
-        alpha = 0.30 if row["inside"] else 0.16
-        circle = plt.Circle((row["lon"], row["lat"]), radius_lat,
-                            facecolor=INK, edgecolor=INK, linewidth=0.45,
-                            alpha=alpha, zorder=5)
-        ax.add_patch(circle)
-        ax.plot([row["lon"]], [row["lat"]], marker="o", markersize=1.2,
-                color=INK, zorder=7)
+    for label in evidence:
+        ax.plot([label["lon"]], [label["lat"]], marker="o", markersize=1.7,
+                markerfacecolor=SOURCE_INK[label["source"]],
+                markeredgecolor="white", markeredgewidth=0.3, zorder=8)
 
-    biggest = sorted((r for r in labels if r["extent_km"]),
-                     key=lambda r: -r["extent_km"])[:22]
-    for row in biggest:
-        ax.annotate(f"{row['tribe']}  {row['extent_km']:.0f}",
-                    (row["lon"], row["lat"]), fontsize=4.2, ha="center",
-                    va="center", color="#23211d", zorder=8)
+    for row in sorted(rows, key=lambda r: -r["area_sqkm"])[:40]:
+        lon, lat = to_deg(*row["_c"])
+        ax.annotate(row["tribe"], (lon, lat), fontsize=4.3, ha="center",
+                    va="center", color="#23211d", zorder=9)
 
-    ax.set_xlim(6.95, 11.9)
-    ax.set_ylim(32.2, 37.8)
+    ax.set_xlim(6.6, 11.95)
+    ax.set_ylim(31.1, 38.0)
     ax.set_aspect(1 / math.cos(math.radians(LAT0)))
     ax.set_axis_off()
-    ax.legend(handles=[
-        Line2D([], [], marker="o", linestyle="none", color=INK, markersize=7,
-               alpha=0.4, label="1881 Lasailly, circle = printed length"),
-        Line2D([], [], marker="x", linestyle="none", color="#8d8579",
-               markersize=4, label="1881, extent not measurable"),
-        Line2D([], [], marker="+", linestyle="none",
-               color=OTHER_INK["1853 Pellissier"], markersize=4,
-               label="1853 Pellissier, not yet measured"),
-        Line2D([], [], marker="+", linestyle="none",
-               color=OTHER_INK["1881 Martel (1965)"], markersize=4,
-               label="1881 Martel, not yet measured"),
-    ], loc="lower left", bbox_to_anchor=(0.0, 0.0), frameon=False, fontsize=6.2)
+    ax.legend(handles=[Line2D([], [], marker="o", linestyle="none",
+                              color=SOURCE_INK[s], markersize=4, label=s)
+                       for s in SOURCE_INK],
+              loc="lower left", bbox_to_anchor=(0.0, 0.02), frameon=False,
+              fontsize=6.2)
 
-    km = sorted(r["extent_km"] for r in labels if r["extent_km"])
-    hx.hist(km, bins=np.arange(0, 55, 2.5), color=INK, alpha=0.65,
+    hx = figure.add_axes([0.70, 0.50, 0.28, 0.32])
+    areas = sorted(r["area_sqkm"] for r in rows)
+    hx.hist(areas, bins=np.logspace(2.3, 4.6, 22), color="#7d8fa8", alpha=0.8,
             edgecolor="white", linewidth=0.4)
-    hx.axvline(statistics.median(km), color="#8c3b2a", linewidth=1.0)
-    hx.text(statistics.median(km) + 1, hx.get_ylim()[1] * 0.92,
-            f"median {statistics.median(km):.0f} km", fontsize=6,
+    hx.set_xscale("log")
+    hx.axvline(statistics.median(areas), color="#8c3b2a", linewidth=1.0)
+    hx.text(statistics.median(areas) * 1.15, hx.get_ylim()[1] * 0.9,
+            f"median {statistics.median(areas):,.0f} km²", fontsize=6,
             color="#8c3b2a")
-    hx.set_xlabel("printed length of the name, km", fontsize=6.5)
-    hx.set_ylabel("labels", fontsize=6.5)
+    hx.set_xlabel("ellipse area, km², log scale", fontsize=6.5)
+    hx.set_ylabel("tribes", fontsize=6.5)
     hx.tick_params(labelsize=6)
     for side in ("top", "right"):
         hx.spines[side].set_visible(False)
-    hx.set_title(f"{len(km)} measured, {stats['unmeasured']} not",
-                 fontsize=7.5, loc="left", color="#26231e")
+    hx.set_title(f"{len(rows)} tribes", fontsize=7.5, loc="left", color="#26231e")
 
-    figure.suptitle("How much ground a tribe's name covers, measured off the sheet",
+    figure.suptitle("The ground each tribe holds, bounded by the tribes next to it",
                     fontsize=12.5, color="#26231e", x=0.02, ha="left", y=0.975)
-    figure.text(0.02, 0.935,
-                f"Carte du théâtre de la guerre en Tunisie, Ch. Lasailly, 1881, "
-                f"{meta['scale']}. Every circle's diameter is the length of the "
-                f"tribe's name as engraved, read off the scan.",
-                fontsize=7.6, color="#3a352d", va="top")
+    figure.text(0.02, 0.937,
+                "Each ellipse is the largest one that contains all of a tribe's "
+                "own names and none of anybody else's.",
+                fontsize=7.8, color="#3a352d", va="top")
 
     caption = (
-        f"A tribe on this sheet is a name letterspaced across the country it "
-        f"holds, and how far the engraver spread it is the only statement the "
-        f"map makes about extent. Each of the {stats['measured']} labels here "
-        f"was cropped from the full scan with a pixel ruler under it and read "
-        f"end to end by eye; {stats['unmeasured']} more run into a sheet edge or "
-        f"another name and are drawn as crosses. The circle is centred on the "
-        f"middle of the name and its diameter is that length, converted at "
-        f"{meta['km_per_px']:.4f} km per scan pixel."
+        f"Two rules and no third. An ellipse must contain every one of that "
+        f"tribe's labels on every sheet, and, for the "
+        f"{stats['measured_names']} names on the 1881 sheet whose printed "
+        f"length was measured, both ends of the name. It then grows until it "
+        f"would swallow another tribe's label. The first rule fixes the centre, "
+        f"the orientation and the floor; the second fixes the ceiling, and the "
+        f"ceiling is always a neighbouring name rather than a constant anyone "
+        f"chose. Evidence from all three sheets counts at once, so a tribe "
+        f"named in 1853, 1881 and 1965 gets an ellipse stretched to cover all "
+        f"three, and that stretch is the compilers disagreeing."
     )
     warning = (
-        f"Why a circle and not an ellipse: the sheet states one number, the "
-        f"length along the baseline. The across-name dimension is nowhere on "
-        f"the map, and an ellipse would have to invent it. Nothing is clipped "
-        f"either, so a circle crosses the modern frontier wherever the name "
-        f"does. Measured extents run {min(km):.0f} to {max(km):.0f} km with a "
-        f"median of {statistics.median(km):.0f}, which corrects the 14 to 32 km "
-        f"this repository quoted from a sample of six: the sheet spreads the "
-        f"great confederations far wider than that and the small tribes far "
-        f"tighter. The 1853 Pellissier and 1965 Martel sheets set their names "
-        f"on arcs and verticals rather than baselines, so the same reading has "
-        f"to be done differently and their labels are still points."
+        f"Areas run {min(areas):,} to {max(areas):,} km², median "
+        f"{statistics.median(areas):,.0f}. This is deliberately the largest "
+        f"reading the sheets will carry, not the smallest: the printed name is "
+        f"a floor on a tribe's country, since the engraver fits it inside, and "
+        f"an earlier version of this figure drew that floor as though it were "
+        f"the whole. What bounds an ellipse here is the next tribe along. "
+        f"Every one of the {stats['tribes']} ellipses was stopped by a "
+        f"neighbouring name rather than by the {max_radius:.0f} km guard, so "
+        f"nothing here is sized by a constant. Nothing is clipped to the modern "
+        f"frontier either, which {stats['outside']} of the labels sit west of. "
+        f"Ellipses overlap where the sheets disagree, and the overlap is left "
+        f"to be seen."
     )
-    figure.text(0.02, 0.105,
-                "\n".join(textwrap.wrap(caption, 178)
-                          + textwrap.wrap(warning, 178)),
+    figure.text(0.02, 0.145,
+                "\n".join(textwrap.wrap(caption, 185)
+                          + textwrap.wrap(warning, 185)),
                 fontsize=6.6, color="#57534a", va="top")
     figure.savefig(path, facecolor="white")
     plt.close(figure)
@@ -275,69 +407,65 @@ def draw(labels, others, meta, path, stats):
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--max-radius-km", type=float, default=DEFAULT_MAX_RADIUS_KM)
     parser.add_argument("--no-figure", action="store_true")
     args = parser.parse_args(argv)
 
-    labels, meta = load_measured()
-    others = load_other_points()
-    write_table(labels, REPO_ROOT / "data" / "tribal_spread.csv")
+    evidence = read_evidence()
+    rows = build(evidence, args.max_radius_km)
+    colours = colour_by_overlap(rows)
+    write_table(rows, REPO_ROOT / "data" / "tribal_spread.csv")
 
-    km = sorted(r["extent_km"] for r in labels if r["extent_km"])
-    widest = max((r for r in labels if r["extent_km"]), key=lambda r: r["extent_km"])
-    narrowest = min((r for r in labels if r["extent_km"]), key=lambda r: r["extent_km"])
+    areas = sorted(r["area_sqkm"] for r in rows)
     stats = {
-        "_about": ("The printed length of each tribal name on the 1881 Lasailly "
-                   "sheet, read by eye off contact sheets cropped from the full "
-                   "scan with a pixel ruler. The map's own statement of how much "
-                   "ground a tribe covers."),
-        "_why_a_circle": (
-            "The sheet gives one number, the length of the name along its "
-            "baseline. The across-name dimension is stated nowhere, so an "
-            "ellipse would have to invent it. A circle of that diameter adds no "
-            "second parameter and no orientation."),
-        "_what_this_replaces": (
-            "Three earlier drawings, all of which supplied the extent the map "
-            "did not: a dot per label, a fill or sprinkle of administrative "
-            "units, and a Gaussian blur whose bandwidth was a choice. The blur "
-            "was the worst of the three because it looked measured and gave "
-            "every tribe the same size; OUERGAMA is letterspaced 1.7 times "
-            "wider per letter than MEKENA, and that is the map speaking."),
-        "sheet": SHEET_NAME,
-        "scale": meta["scale"],
-        "km_per_px": meta["km_per_px"],
-        "labels": len(labels),
-        "measured": len(km),
-        "unmeasured": sum(1 for r in labels if not r["extent_km"]),
-        "min_km": km[0],
-        "median_km": statistics.median(km),
-        "mean_km": round(statistics.mean(km), 1),
-        "max_km": km[-1],
-        "widest": {"tribe": widest["tribe"], "printed": widest["label"],
-                   "km": widest["extent_km"]},
-        "narrowest": {"tribe": narrowest["tribe"], "printed": narrowest["label"],
-                      "km": narrowest["extent_km"]},
-        "_earlier_claim": (
-            "docs quoted 14 to 32 km from six labels measured on the tiles. "
-            "With 62 measured the range is wider at both ends and the median is "
-            "lower: the sample of six had missed both the small tribes and the "
-            "great confederations."),
-        "_not_yet_measured": (
-            "The 1853 Pellissier and 1965 Martel sheets. Their names are set on "
-            "long arcs and verticals rather than horizontal baselines, so the "
-            "endpoints have to be read differently. Their labels stay points."),
+        "_about": ("One ellipse per tribe: the largest that contains all of its "
+                   "own labels and none of any other tribe's."),
+        "_the_two_rules": [
+            "Contain every label of this tribe on every sheet, and both ends of "
+            "the name wherever the printed length was measured.",
+            "Contain no other tribe's label. The ellipse grows until it would.",
+        ],
+        "_why_not_smaller": (
+            "The printed name is a floor on a tribe's country, not the country: "
+            "the engraver fits the name inside the ground it names. An earlier "
+            "figure drew a circle the length of the name and understated every "
+            "tribe on the sheet."),
+        "_why_not_a_blur": (
+            "A Gaussian bandwidth is a number nobody measured, and it gives "
+            "every tribe the same size whatever the sheet says."),
+        "max_radius_km": args.max_radius_km,
+        "min_semi_km": MIN_SEMI_KM,
+        "tribes": len(rows),
+        "labels": len(evidence),
+        "measured_names": sum(1 for e in evidence if e["extent_km"]),
+        "labels_outside_modern_tunisia": sum(1 for e in evidence if not e["inside"]),
+        "tribes_on_more_than_one_sheet": sum(1 for r in rows if r["sources"] > 1),
+        "at_max_radius": sum(1 for r in rows if r["at_max_radius"]),
+        "min_area_sqkm": areas[0],
+        "median_area_sqkm": statistics.median(areas),
+        "max_area_sqkm": areas[-1],
+        "widest": [{"tribe": r["tribe"], "area_sqkm": r["area_sqkm"],
+                    "major_km": r["major_km"], "minor_km": r["minor_km"],
+                    "stopped_by": r["stopped_by"]} for r in rows[:6]],
     }
+    stats["outside"] = stats["labels_outside_modern_tunisia"]
+    stats["at_max"] = stats["at_max_radius"]
     (REPO_ROOT / "data" / "tribal_spread_summary.json").write_text(
-        json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        json.dumps({k: v for k, v in stats.items() if k not in ("outside", "at_max")},
+                   ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     if not args.no_figure:
-        draw(labels, others, meta,
-             REPO_ROOT / "docs" / "img" / "tribal_spread.png", stats)
+        draw(rows, evidence, colours,
+             REPO_ROOT / "docs" / "img" / "tribal_spread.png", stats,
+             args.max_radius_km)
 
-    print(f"{len(km)} labels measured, {stats['unmeasured']} not")
-    print(f"printed length {km[0]:.1f} to {km[-1]:.1f} km, "
-          f"median {statistics.median(km):.1f}, mean {stats['mean_km']}")
-    print(f"widest {widest['tribe']} ({widest['label']}) {widest['extent_km']} km; "
-          f"narrowest {narrowest['tribe']} {narrowest['extent_km']} km")
+    print(f"{len(rows)} tribes from {len(evidence)} labels")
+    print(f"ellipse area {areas[0]:,} to {areas[-1]:,} km², "
+          f"median {statistics.median(areas):,.0f}")
+    print(f"{stats['at_max_radius']} tribes reached the {args.max_radius_km:.0f} km guard")
+    for r in rows[:5]:
+        print(f"  {r['tribe']:22s} {r['major_km']:6.0f} x {r['minor_km']:5.0f} km, "
+              f"{r['area_sqkm']:>7,} km²  stopped by {r['stopped_by'] or 'the guard'}")
     return 0
 
 

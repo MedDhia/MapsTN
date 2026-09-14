@@ -390,39 +390,36 @@ table had a southern figure sitting over a north-western taxpayer count as a
 result. Correcting it tightened the implied multiplier in Ganiage's article from
 3.82–5.21 to 3.82–4.33, median 4.06, against the flat four he states.
 
-**How much ground a name covers.** A tribe on these sheets is a name
-letterspaced across the country it holds, and how far the engraver spread it is
-the only statement the map makes about extent. So it was measured: every label
-on the 1881 Lasailly sheet cropped from the full scan into a strip with a pixel
-ruler under it and read end to end by eye. **62 of 69 labels** yielded a length.
-[`scripts/map_tribal_spread.py`](scripts/map_tribal_spread.py) draws each tribe
-as a circle of that diameter.
+**The ground each tribe holds.** A tribe on these sheets is a name letterspaced
+across its country with no line around it.
+[`scripts/map_tribal_spread.py`](scripts/map_tribal_spread.py) gives each one
+the largest ellipse that satisfies two rules and nothing else: it contains all
+of that tribe's own evidence, every label centre on every sheet plus both ends
+of the name for the 62 whose printed length was measured, and it contains no
+other tribe's label.
 
-![How much ground a tribe's name covers, measured off the sheet](docs/img/tribal_spread.png)
+![The ground each tribe holds, bounded by the tribes next to it](docs/img/tribal_spread.png)
 
-**Why a circle and not an ellipse**: the sheet states one number, the length
-along the baseline. The across-name dimension is nowhere on the map and an
-ellipse would have to invent it. Nothing is clipped either, so a circle crosses
-the modern frontier wherever the name does.
+The first rule fixes the centre, the orientation and the floor. The second fixes
+the ceiling, and the ceiling is a neighbouring name rather than a constant
+anyone chose: **all 88 ellipses were stopped by a neighbour**, none by the 90 km
+guard the script carries against a lone label in an empty quarter. Areas run 88
+to 11,825 km², median 778.
 
-| | |
-| --- | --- |
-| Shortest | Nefza, 5.7 km |
-| Longest | Hanencha, 48.1 km |
-| Median | 16 km |
+Three earlier versions are recorded because each failed differently: a dot per
+label (silent about extent), administrative units filled or sprinkled (invents
+the extent, and confines a nineteenth-century tribe inside a 2022 mesh), and a
+Gaussian blur (looks measured, but the bandwidth is a choice, so every tribe
+came out the same size whatever the sheet said). A fourth, a circle the length
+of the printed name, was honest and far too small: the engraver fits the name
+inside the country, so its length is a floor on the territory and not the
+territory.
 
-**This corrects a figure quoted earlier here.** A sample of six labels had given
-14 to 32 km. With 62 measured the range is 6 to 48 and the median 16: the six
-had missed the small tribes at one end and the great frontier confederations at
-the other. Per-label results are in
+**This is deliberately the largest reading the sheets will carry.** Nothing is
+clipped to the modern frontier, which 34 of the 141 labels sit west of, and
+ellipses overlap where the sheets disagree. Per-tribe axes, areas and what
+stopped each one are in
 [`data/tribal_spread.csv`](data/tribal_spread.csv).
-
-Three earlier ways of drawing this are recorded in the repository because each
-supplied the number the map does not: a dot per label (silent about extent),
-administrative units filled or sprinkled (invents extent, and confines a
-nineteenth-century tribe inside a 2022 mesh), and a Gaussian blur of the labels
-(looks measured, but the bandwidth was a choice, so every tribe came out the
-same size whatever the sheet said).
 
 The nearest-name index at imada level is kept as a table:
 [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv), each

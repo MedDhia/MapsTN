@@ -1,27 +1,64 @@
 {
-  "_about": "The printed length of each tribal name on the 1881 Lasailly sheet, read by eye off contact sheets cropped from the full scan with a pixel ruler. The map's own statement of how much ground a tribe covers.",
-  "_why_a_circle": "The sheet gives one number, the length of the name along its baseline. The across-name dimension is stated nowhere, so an ellipse would have to invent it. A circle of that diameter adds no second parameter and no orientation.",
-  "_what_this_replaces": "Three earlier drawings, all of which supplied the extent the map did not: a dot per label, a fill or sprinkle of administrative units, and a Gaussian blur whose bandwidth was a choice. The blur was the worst of the three because it looked measured and gave every tribe the same size; OUERGAMA is letterspaced 1.7 times wider per letter than MEKENA, and that is the map speaking.",
-  "sheet": "1881 Lasailly",
-  "scale": "1:1 200 000",
-  "km_per_px": 0.0798,
-  "labels": 69,
-  "measured": 62,
-  "unmeasured": 7,
-  "min_km": 5.7,
-  "median_km": 16.0,
-  "mean_km": 19.0,
-  "max_km": 48.1,
-  "widest": {
-    "tribe": "Hanencha",
-    "printed": "Hanenchas",
-    "km": 48.1
-  },
-  "narrowest": {
-    "tribe": "Nefza",
-    "printed": "Nefsa",
-    "km": 5.7
-  },
-  "_earlier_claim": "docs quoted 14 to 32 km from six labels measured on the tiles. With 62 measured the range is wider at both ends and the median is lower: the sample of six had missed both the small tribes and the great confederations.",
-  "_not_yet_measured": "The 1853 Pellissier and 1965 Martel sheets. Their names are set on long arcs and verticals rather than horizontal baselines, so the endpoints have to be read differently. Their labels stay points."
+  "_about": "One ellipse per tribe: the largest that contains all of its own labels and none of any other tribe's.",
+  "_the_two_rules": [
+    "Contain every label of this tribe on every sheet, and both ends of the name wherever the printed length was measured.",
+    "Contain no other tribe's label. The ellipse grows until it would."
+  ],
+  "_why_not_smaller": "The printed name is a floor on a tribe's country, not the country: the engraver fits the name inside the ground it names. An earlier figure drew a circle the length of the name and understated every tribe on the sheet.",
+  "_why_not_a_blur": "A Gaussian bandwidth is a number nobody measured, and it gives every tribe the same size whatever the sheet says.",
+  "max_radius_km": 90.0,
+  "min_semi_km": 4.0,
+  "tribes": 88,
+  "labels": 141,
+  "measured_names": 62,
+  "labels_outside_modern_tunisia": 34,
+  "tribes_on_more_than_one_sheet": 35,
+  "at_max_radius": 0,
+  "min_area_sqkm": 88,
+  "median_area_sqkm": 778.0,
+  "max_area_sqkm": 11825,
+  "widest": [
+    {
+      "tribe": "Gherib",
+      "area_sqkm": 11825,
+      "major_km": 122.7,
+      "minor_km": 122.7,
+      "stopped_by": "Chaamba"
+    },
+    {
+      "tribe": "Zlass",
+      "area_sqkm": 9968,
+      "major_km": 131.7,
+      "minor_km": 96.3,
+      "stopped_by": "Ouled Aoun"
+    },
+    {
+      "tribe": "Adhara",
+      "area_sqkm": 7877,
+      "major_km": 100.1,
+      "minor_km": 100.1,
+      "stopped_by": "Merazig"
+    },
+    {
+      "tribe": "Ouerghemma",
+      "area_sqkm": 7251,
+      "major_km": 119.7,
+      "minor_km": 77.1,
+      "stopped_by": "Hazem"
+    },
+    {
+      "tribe": "Hazem",
+      "area_sqkm": 5294,
+      "major_km": 82.1,
+      "minor_km": 82.1,
+      "stopped_by": "Ouerghemma"
+    },
+    {
+      "tribe": "Merazig",
+      "area_sqkm": 5264,
+      "major_km": 81.9,
+      "minor_km": 81.9,
+      "stopped_by": "Oled Yacoub"
+    }
+  ]
 }
