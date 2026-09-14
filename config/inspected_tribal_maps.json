@@ -1,0 +1,358 @@
+{
+ "_comment": [
+  "Maps examined directly through the scan for tribal annotation, recording what",
+  "is actually printed on the face. This file exists because the catalogue is",
+  "silent: across 663 records the Dublin Core names a tribe in three, and two of",
+  "those three are 1:50 000 sheets that happen to be named after the district",
+  "they cover. Whether a map annotates tribes can only be settled by looking.",
+  "",
+  "Sampling rule, so that a 'no' means something: each map was read in at least",
+  "one window of the interior - the Tell, the steppe, or the south, never the",
+  "coast alone - at full scan resolution, plus its legend where it has one. The",
+  "windows are recorded. A map coded no_annotation_seen is a map whose recorded",
+  "windows carried none; on a large sheet that is weaker evidence than a yes,",
+  "and `windows_read` is there so the next person can see how weak.",
+  "",
+  "annotation_forms vocabulary:",
+  "  territory_label      a tribe's name in letterspaced capitals across the",
+  "                       country it holds, with no boundary drawn",
+  "  marked_tribe         a territory label carrying an explicit marker, (Tribu),",
+  "                       (Tribu des), (Tribus), TERRITOIRE DES",
+  "  caidat_label         the caidat - the administrative unit built on the",
+  "                       tribe - named across its ground, abbreviated Kt des X",
+  "  douar_toponym        a settlement printed Dr / Douar + a lineage name",
+  "  lineage_toponym      any place name carrying Ouled / Oulad / Beni / ben",
+  "  smala                a settlement named as a tribe's smala",
+  "  glossary             a legend panel translating the tribal and settlement",
+  "                       vocabulary the map uses",
+  "  thematic_distribution  the map's subject is the distribution of a mode of",
+  "                       habitation or population, mapped as areas",
+  "  admin_limit          drawn limits of caidats, controles civils, annexes,",
+  "                       or the territoire militaire",
+  "",
+  "A correction worth keeping: the 1889 'Kt des X' labels were first read as",
+  "Ksour des X, the tribe named through its granaries. They are caidats. What",
+  "settles it is that they tile the whole country rather than the south - Kt",
+  "des Riah, Kt des Ouled Yahia, Kt des Ouled Khalifa, Kt de Sfax - and that",
+  "one of them is Kt des Arrouch en Sendjac, arch being the Arabic for tribe."
+ ],
+ "maps": {
+  "btv1b53136235q": {
+   "title": "Carte de la Régence de Tunis / par E. Pellissier",
+   "year": "1853",
+   "scale": "1:800 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "territory_label",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "full/1600 overview",
+    "2700,4200,1900,1500",
+    "4200,2400,1900,1500",
+    "3800,6600,2200,1700",
+    "then a tiling pass: 1750x1400 tiles at 0.58 over x 1900-6720, y 1680-6920"
+   ],
+   "tribes_seen": [
+    "Madjer",
+    "Hamema",
+    "Frachiche Ouled Ali",
+    "Djelass",
+    "Methelith and five of its fractions",
+    "Oulad Sidi Yahia ben Taleb",
+    "Mahedeba",
+    "Ouerghemma",
+    "Kroumirs (Khemir)",
+    "El Mogod"
+   ],
+   "note": "The densest tribal annotation in the collection, and the earliest that is systematic. Names run in letterspaced capitals across the steppe and the Dahar; no boundary is drawn anywhere on the sheet. Pellissier wrote the Description de la Régence de Tunis as a member of the Commission scientifique d'Algérie, and the map is its plate.",
+   "transcribed": "45 labels, in config/tribal_labels_read.json - the Tell, the Kroumirie, the steppe and the Sahel; the Jerid, the Nefzaoua and the Dahar were not read."
+  },
+  "btv1b531797046": {
+   "title": "Carte de la régence de Tunis, dressée au Dépôt de la guerre / d'après Falbe et Pricot de Sainte-Marie",
+   "year": "1857",
+   "scale": "1:400 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "territory_label",
+    "douar_toponym",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "full/1300 overview",
+    "3400,4400,2600,1900"
+   ],
+   "tribes_seen": [
+    "Ouled Trabersi",
+    "Ouled Riahh",
+    "Ouled Arfa",
+    "Ouled Sahel",
+    "Ouled Aoun",
+    "Fahs er Riha"
+   ],
+   "note": "Prints 'DOUARS OULED ARFA' as a label in its own right - the tribe located through its camps rather than by name alone - and scatters 'Douar' as a settlement class across the Tell."
+  },
+  "btv1b53179703r": {
+   "title": "Carte de la Régence de Tunis dressée au Dépôt général de la guerre",
+   "year": "1842",
+   "scale": "1:400 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "territory_label",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "pct:35,32,26,22"
+   ],
+   "tribes_seen": [
+    "Dakhela",
+    "Ouled Zemlass (reading uncertain)",
+    "Beni Khiar"
+   ],
+   "note": "The earliest tribal annotation seen in this collection. Sparser than 1853 and concentrated on the Cap Bon in the window read."
+  },
+  "btv1b84389986": {
+   "title": "Carte du théâtre de la guerre en Tunisie / dressée par Ch. Lasailly",
+   "year": "1881",
+   "scale": "1:1 200 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "marked_tribe",
+    "territory_label"
+   ],
+   "windows_read": [
+    "whole map face, 20 tiles"
+   ],
+   "tribes_seen": "see config/tribal_labels_read.json - 69 labels transcribed with pixels",
+   "note": "The exemplar, and the reason it is the one transcribed in full: it marks tribes explicitly with (Tribu) under the name, so the class is legible without inference. Published for the French public during the 1881 invasion, at 1:1 200 000 - a scale at which the tribe is one of the few things the sheet has room to say.",
+   "transcribed": "69 labels, the whole face in 20 tiles, in config/tribal_labels_read.json."
+  },
+  "btv1b84446578": {
+   "title": "Carte du Voltaire. Expédition contre les Kroumirs",
+   "year": "1881",
+   "scale": "",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "territory_label",
+    "glossary",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "full/1600 overview"
+   ],
+   "tribes_seen": [
+    "Pays des Kroumirs",
+    "Ouled Trabersi",
+    "Ouled Menrha (reading uncertain)",
+    "Mogod",
+    "Fahs er Riha"
+   ],
+   "note": "Carries 'Principaux noms indigènes employés dans cette carte' in three columns - noms arabes and noms kabyles with their meanings, Douar = cercle de tentes, Dechra = village, Bled = pays - so the sheet teaches its reader the vocabulary of the country it is invading. The only map in the collection to do so at this length."
+  },
+  "btv1b53021186j": {
+   "title": "Carte de la Régence de Tunis (Garnier Frères)",
+   "year": "1881",
+   "scale": "1:500 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "territory_label",
+    "douar_toponym",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "pct:38,35,24,20"
+   ],
+   "tribes_seen": [
+    "Ouled Trabersi",
+    "Ouled Riahh",
+    "Ouled Arfa",
+    "Fahs er Riha"
+   ],
+   "note": "The same labels as the 1857 Dépôt de la guerre sheet, in the same places, down to 'DOUARS OULED ARFA'. A commercial reprint of military work; the annotation is inherited, not observed."
+  },
+  "btv1b53024975r": {
+   "title": "Carte de la Tunisie, dressée au service géographique de l'armée",
+   "year": "1889",
+   "scale": "1:800 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "caidat_label",
+    "admin_limit",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "pct:38,35,24,20",
+    "2600,2300,2400,1500",
+    "3250,3000,750,550",
+    "4700,6650,1000,560"
+   ],
+   "tribes_seen": [
+    "Kt des Riah",
+    "Kt des Ouled Yahia",
+    "Kt des Ouled Khalifa",
+    "Kt des Arrouch en Sendjac",
+    "Kt des Ouled Saïd",
+    "Kt des Neffet",
+    "Kt des Aguerba",
+    "Kt des Mahedba",
+    "Kt des Hamerna",
+    "Kt des Mehabel",
+    "Kt des Acara",
+    "Kt de Sfax"
+   ],
+   "note": "The administrative form, and eight years into the protectorate. Every label is K(t) des X - caidat of X - and they tile the whole country, most of them named for the tribe the caidat was built on. This sheet also does what no earlier one does: it draws the limits, as dotted lines. The tribe is not bounded anywhere in this collection; the caidat named after the tribe is bounded from 1889.\n\nFirst read as 'Ksour des X', the tribe named through its granaries, which was wrong. Three things settle it: the labels tile the Tell as well as the south, one of them is Kt de Sfax, which has no ksour, and one is Kt des Arrouch en Sendjac - arch is the Arabic for tribe."
+  },
+  "btv1b530647344": {
+   "title": "Nouvelle carte de la Tunisie (Taride)",
+   "year": "1920",
+   "scale": "1:900 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "territory_label",
+    "smala",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "pct:38,35,24,20"
+   ],
+   "tribes_seen": [
+    "Souassi",
+    "Metellith",
+    "Neffet",
+    "Aguerba",
+    "Mahedba",
+    "Iddir",
+    "Regab",
+    "Ouled Chaba"
+   ],
+   "note": "A commercial tourist map, and still carrying tribal country names in spaced type forty years into the protectorate. 'Smala des Souassi' near El Djem names a settlement for the tribe that founded it."
+  },
+  "btv1b8442159r": {
+   "title": "Carte routière de la Tunisie / Touring Club de France",
+   "year": "1900",
+   "scale": "1:1 000 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "territory_label",
+    "smala",
+    "admin_limit"
+   ],
+   "windows_read": [
+    "pct:38,35,24,20"
+   ],
+   "tribes_seen": [
+    "M'Talith",
+    "Souassi (Smala des Souassi)",
+    "Beni Khraltoun"
+   ],
+   "note": "Tribal names survive but are set so widely spaced that a letter can sit 8 km from its neighbour, and the green dashed administrative limits are printed more strongly than the names."
+  },
+  "btv1b53179710t": {
+   "title": "Tunisie au 500.000e / Service géographique de l'armée",
+   "year": "1943",
+   "scale": "1:500 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "caidat_label",
+    "admin_limit",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "pct:38,35,24,20"
+   ],
+   "tribes_seen": [
+    "Caïdat de Souk el Khemis",
+    "Caïdat de Teboursouk",
+    "Caïdat de Medjez el Bab",
+    "Caïdat des Ouled Yahia (reading uncertain)"
+   ],
+   "note": "The end state. The letterspaced capitals across the Tell are still there and still name a native unit, but the unit is now the caidat, and most caidats are named for their market town rather than for a tribe."
+  },
+  "btv1b53213307c": {
+   "title": "Habitation rurale des indigènes (Atlas d'Algérie et de Tunisie)",
+   "year": "1930",
+   "scale": "1:1 500 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "thematic_distribution",
+    "admin_limit"
+   ],
+   "windows_read": [
+    "full/1600 overview"
+   ],
+   "tribes_seen": [],
+   "note": "The only thematic ethnographic map in the collection. Six area classes - tentes, gourbis, maisons à terrasse, maisons à toit de tuiles, maisons à l'européenne, grottes et ghorfas - drawn as colour over Algeria and Tunisia, with the limits of the communes mixtes and contrôles civils. It maps how people live rather than which tribe they belong to, and the tent zone is the nomadic south; the ghorfa zone is the Matmata and Ouerghemma country."
+  },
+  "btv1b8445503p": {
+   "title": "Environs de Medenine / Service géographique de l'Armée",
+   "year": "1911",
+   "scale": "1:50 000",
+   "provenance": "Gallica",
+   "annotation_forms": [
+    "territory_label",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "pct:35,30,30,26"
+   ],
+   "tribes_seen": [
+    "a letterspaced capital label cut by the window edge, reading ...A T"
+   ],
+   "note": "Already coded tribes in config/inspected_sheets.json. The window read carries henchir and lineage names densely; the territory label itself was clipped."
+  },
+  "btv1b53022873s": {
+   "title": "Carte des itinéraires de la Tunisie, 1:800 000",
+   "year": "1886",
+   "scale": "1:800 000",
+   "provenance": "Gallica",
+   "annotation_forms": [],
+   "windows_read": [
+    "pct:38,35,24,20"
+   ],
+   "tribes_seen": [],
+   "note": "No tribal annotation in the window read, which covers the central steppe - the country of the Hammama and the Frechiche on every other sheet of the period. What it carries instead is wells, and each well graded (E.B.) for water quality. An itinerary map answers a marching column's question, and the column's question was water."
+  },
+  "btv1b8439078n": {
+   "title": "Etude sur la frontière de la Tunisie / par le général Lewal",
+   "year": "1881",
+   "scale": "1:800 000",
+   "provenance": "Gallica",
+   "annotation_forms": [],
+   "windows_read": [
+    "pct:38,35,26,22"
+   ],
+   "tribes_seen": [],
+   "note": "No tribal annotation in the window read. Place names are doubled with their Roman equivalents - Bulla Regia, Sicca Veneria, Musti, Narragara - which is the antiquarian register, not the ethnographic one."
+  },
+  "oai:u-bordeaux-montaigne.fr:340491": {
+   "title": "Tunisie Flle. Pichon, 1:50 000",
+   "year": "",
+   "scale": "1:50 000",
+   "provenance": "partner",
+   "annotation_forms": [
+    "douar_toponym",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "2900,2400,1500,1800 of the partner scan"
+   ],
+   "tribes_seen": [],
+   "note": "No tribe is named on the face. What the sheet carries is the grain below the tribe: Dr Zouamela and Dr el Abaida - the douar as a mapped settlement - and Hr Ouled el Hadj, Bir Ouled Ali. The letterspaced capitals that on a 1:800 000 sheet would be a tribe are here physical: KEF MAZIL, BLED EL..., GARAET EL ATEUCH."
+  },
+  "oai:u-bordeaux-montaigne.fr:340528": {
+   "title": "Tunisie Flle. Chorbane, 1:50 000",
+   "year": "",
+   "scale": "1:50 000",
+   "provenance": "partner",
+   "annotation_forms": [
+    "douar_toponym",
+    "lineage_toponym"
+   ],
+   "windows_read": [
+    "2500,2200,2600,2000 of the partner scan"
+   ],
+   "tribes_seen": [],
+   "note": "Same pattern in Souassi and M'Talith country, where the 1881 and 1920 small-scale sheets both print a tribe: Dr en Nouilia, Dr Krelifa b. Slimane, Dr Belkassem b. Amor, Bir Oulad Achour, Bled el Azilik. The tribe is present as its lineages and absent as itself."
+  }
+ }
+}

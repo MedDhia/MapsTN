@@ -1,0 +1,79 @@
+order,column,name_as_printed,taxpayers,share_of_printed_total,footnote,footnote_text,tribe,attribution_basis,also_gazetteer,joint_line,note
+1,left,Aradh,21938,0.0990,,,,none,,,"The Aradh is the whole south-eastern region, not a tribe. Ganiage breaks it down on pp. 880-881; the Ouerghemma, Accara, Hamarna and Matmata figures in the CSV come from that discussion, not from this line."
+2,left,Sousse,9417,0.0425,,,,none,,,
+3,left,Sfax,3909,0.0176,,,,none,,,
+4,left,Monastir,9003,0.0406,,,,none,,,
+5,left,Outhan el Kabli,8501,0.0384,1,nom traditionnel du district du Cap Bon,,none,,,"Footnote 1: the traditional name of the Cap Bon district. A district, not a tribe."
+6,left,Le Kef,3219,0.0145,,,,none,,,
+7,left,Béja,3227,0.0146,,,,none,,,
+8,left,Tribus de Béja,2723,0.0123,,,,none,,,
+9,left,Kooub et Gouazine,1765,0.0080,2,Tribu des Zlass,Zlass,footnote,,,Footnote 2: Zlass.
+10,left,Ouled Khalifa,3618,0.0163,2,Tribu des Zlass,Zlass,footnote,Oulad Khalifa,,Footnote 2: Zlass.
+11,left,Ouled Iddir,5242,0.0236,2,Tribu des Zlass,Zlass,footnote,,,"Footnote 2 puts this line among the Zlass. The gazetteer Iddir entry, read in the Sahel, is kept separate."
+12,left,Gafsa,2354,0.0106,,,,none,,,
+13,left,Tozeur,1204,0.0054,,,,none,,,
+14,left,Nefta,2041,0.0092,,,,none,,,
+15,left,El Oudiane,848,0.0038,3,groupe d'oasis du Djerid a l'est de Tozeur,,none,,,Footnote 3: the Djerid oasis group east of Tozeur.
+16,left,El Hamma,201,0.0009,,,,none,,,
+17,left,"Tamerza, Chebika",177,0.0008,4,"petites oasis de montagne de la frontiere, a 65 km au nord de Tozeur",,none,,,Footnote 4: small frontier mountain oases about 65 km north of Tozeur.
+18,left,Nefzaoua,891,0.0040,,,,none,,,"The oasis group south-west of the chott, distinct from the Nefza of the north that the gazetteer holds."
+19,left,Ouled Aziz,3847,0.0174,5,Tribu des Hammama,Hammama,footnote,Hammama — Oulad Aziz,,
+20,left,Ouled Redouane,5132,0.0232,5,Tribu des Hammama,Hammama,footnote,Ouled Redouan,,
+21,left,Ouled Maameur,3334,0.0150,5,Tribu des Hammama,Hammama,footnote,,,
+22,left,Beit ech-Chéria,51,0.0002,6,tribu fixee autour de Gafsa,,none,,,Footnote 6: a tribe settled around Gafsa. 51 taxpayers is the smallest line on the page.
+23,left,Ouled Tlil,1000,0.0045,7,"Ouled Sidi Tlil, groupe rattache aux Frechich",Frechiche,footnote,,,"Footnote 7 reads ""Ouled Sidi Tlil, groupe rattache aux Frechich"". Ganiage adds them to the Frechich in the text (p. 877-878), so the group total below includes them and the line is attributed to the Frechiche."
+24,left,Ouled Sidi Abid,1500,0.0068,8,tribu nomadisant au nord du Djerid entre Tozeur et Tamerza,Ouled Sidi Abid,name,,,
+25,left,Ouled Ouzzaz,4774,0.0215,9,Tribu des Frechich,Frechiche,footnote,,,
+26,left,Ouled Ali,3271,0.0148,9,Tribu des Frechich,Frechiche,footnote,,,"Footnote 9 puts this line among the Frechich. The gazetteer also holds an Ouled Ali in the north-west, read off the 1881 sheet; the two are different groups sharing a name and this line is not that one."
+27,left,Ouled Naji,2012,0.0091,9,Tribu des Frechich,Frechiche,footnote,,,
+28,left,Ouled Mehanna,4780,0.0216,10,Tribu des Majeur,Mejers,footnote,,,
+29,left,Fouad,2616,0.0118,10,Tribu des Majeur,Mejers,footnote,,,
+30,left,Ouled Yahia,343,0.0015,11,tribu rattachee au caidat de la Kessera,,none,,,Footnote 11: attached to the caidat of la Kessera.
+31,left,Jendouba,2674,0.0121,,,Djendouba,name,,,
+32,left,Ouled b. Salem,1040,0.0047,,,Ouled bou Salem,name,,,
+33,left,Ouartane,3953,0.0178,,,Ouartan,name,,,
+34,left,Charen,2164,0.0098,12,tribus du nord-ouest de la ligue des Ounifa,Charen,name,,,
+35,left,Touabine,751,0.0034,,,,none,,,
+36,left,Souassi,4955,0.0224,,,Souassi,name,,,
+37,left,Tayache,522,0.0024,,,,none,,,
+38,left,Methellith,6411,0.0289,,,M'Talith,name,,,
+39,left,Mateur,3541,0.0160,,,,none,,,
+40,left,Teboursouk,1032,0.0047,,,,none,,,
+41,right,Bejaoua,2425,0.0109,,,,none,,,
+42,right,Kabtna et Ayache,1917,0.0086,,,,none,,,
+43,right,Ariana,348,0.0016,,,,none,,,
+44,right,Mekta Tihfa,73,0.0003,,,,none,,,
+45,right,Kalaat es-Senam,157,0.0007,,,,none,,,
+46,right,Ouled Khiar,266,0.0012,,,Ouled Khiar,name,,,
+47,right,"Mornag, Radès",66,0.0003,,,,none,,,
+48,right,Arouch aghât de Kairouan,1216,0.0055,13,tribu de service,,none,,,"Footnote 13: tribu de service. ""Arouch"" is the plural of arch, tribe."
+49,right,Chaktma,1844,0.0083,10,Tribu des Majeur,Mejers,footnote,,,
+50,right,El Ksour,143,0.0006,,,,none,,,
+51,right,Ouled Abdallah,101,0.0005,,,,none,,,
+52,right,Ghammadia,348,0.0016,,,,none,,,
+53,right,Ksar Niya,143,0.0006,,,,none,,,
+54,right,Arouch es sandjak de Kairouan,518,0.0023,13,tribu de service,,none,,,Footnote 13: tribu de service.
+55,right,"Riah, Testour, Medjez el Bab, Zaghouan",3078,0.0139,,,,none,,,The composite circumscription Ganiage names on p. 878 as the reason he cannot count the Riah. Not split here either.
+56,right,"Bizerte, Porto-Farina",3612,0.0163,,,,none,,,
+57,right,Rekba,3000,0.0135,,,,none,,,
+58,right,La Kessera,408,0.0018,,,,none,,,
+59,right,O. Manès — Ousseltia,2643,0.0119,,,,none,,,
+60,right,Djerba,5381,0.0243,,,,none,,,
+61,right,Ouled Sendassen,5081,0.0229,2,Tribu des Zlass,Zlass,footnote,,,Footnote 2: Zlass.
+62,right,Arouch er Rekkak,4168,0.0188,,,,none,,,
+63,right,Ouled Aoun,2769,0.0125,,,Ouled Aoun,name,,,
+64,right,Ouergha,1480,0.0067,12,tribus du nord-ouest de la ligue des Ounifa,Ouargha,name,,,
+65,right,Ouled bou Ghanem,2930,0.0132,12,tribus du nord-ouest de la ligue des Ounifa,Ouled bou Ghanem,name,,,
+66,right,Zeghalma,1393,0.0063,12,tribus du nord-ouest de la ligue des Ounifa,Zeghalma,name,,,
+67,right,Khamemsa et Doufane,2200,0.0099,,,,none,Khememsa | Doufan,1,Two gazetteer tribes assessed on one line. Not split.
+68,right,Ouled Yacoub,863,0.0039,12,tribus du nord-ouest de la ligue des Ounifa,Ouled Yakoub,name,,,
+69,right,Ouled Saïd,1185,0.0053,,,Ouled Saïd,name,,,
+70,right,Trabelsia,3883,0.0175,14,Tripolitains fixes dans la basse vallee de la Medjerda,Trabelsi,name,,,"Footnote 14: Tripolitans settled in the lower Medjerda valley. The gazetteer Trabelsi entry, read on the 1881 sheet, is the same population."
+71,right,Ouled Ayar,5797,0.0262,,,Ouled Ayar,name,,,
+72,right,Neffat,1287,0.0058,,,Neffat,name,,,
+73,right,Drid,11131,0.0502,,,Drid,name,,,"Ganiage p. 877 note: 11.131 taxpayers among the Drid, budget of 1277. Matches this line."
+74,right,Arab Majour,1944,0.0088,,,Drid,name,,,"Ganiage p. 877 note: 11.131 taxpayers among the Drid and 1.944 among the Arab Majour, budget of 1277. Both numbers are on this page, which checks the reading against his own citation of it."
+75,right,La Marsa,408,0.0018,,,,none,,,
+76,right,Troud et Siline,673,0.0030,14,Tripolitains fixes dans la basse vallee de la Medjerda,,none,,,Footnote 14: Tripolitans settled in the lower Medjerda valley.
+77,right,Tebourba,500,0.0023,,,,none,,,
+78,right,Algériens,247,0.0011,,,,none,,,"Algerians resident in the Regency, assessed as a body. The one line on the page that is a nationality rather than a place or a tribe."

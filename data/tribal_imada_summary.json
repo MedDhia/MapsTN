@@ -1,0 +1,25 @@
+{
+  "_about": "Every imada given the tribe whose nearest read label is closest to it, out to a cutoff. A Voronoi tessellation at imada resolution, not a map of tribal boundaries.",
+  "_the_rule_is_not_evidence": "No sheet in this collection draws a tribal boundary. The line between two colours falls halfway between two printed names because that is what nearest means, and nothing on any sheet says a tribe stopped there. distance_km and runner_up_km are in the table so that every row carries its own warning.",
+  "cutoff_km": 60.0,
+  "points": 141,
+  "points_by_source": {
+    "1853 Pellissier": 45,
+    "1881 Lasailly": 69,
+    "1881 Martel (1965)": 27
+  },
+  "tribes": 88,
+  "tribes_assigned_ground": 62,
+  "imadas_total": 2084,
+  "assigned": 1977,
+  "assigned_pct": 94.9,
+  "area_pct": 71.5,
+  "within_20": 51,
+  "contested": 64,
+  "median_distance_km": 19.5,
+  "widest_tribe": "Ouerghemma",
+  "widest_tribe_sqkm": 9751,
+  "loo_rms": "1881 6.17 km, 1853 8.17 km",
+  "martel_loo_rms_km": 12.61,
+  "_martel_note": "Martel 1965 is a historian's sketch map, not a sheet in the Gallica collection, and it is the only one of the three that covers the whole country. Without it the Nefzaoua, the Djerid and the Dahar have no name at all and the south goes blank."
+}

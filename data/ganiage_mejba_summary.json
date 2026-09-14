@@ -1,0 +1,25 @@
+{
+  "_about": "Annexe I of Ganiage 1966, p. 882: 'Les impositions a la mejba (d'apres le budget de 1277)'. Every fiscal unit of the Regency with the number of men assessed to the mejba poll tax, read off the page image by eye. 1277 AH runs from July 1860 to July 1861.",
+  "lines": 78,
+  "sum_of_printed_lines": 215607,
+  "printed_total": 221664,
+  "difference": 6057,
+  "difference_pct": 2.73,
+  "_difference_comment": "The printed TOTAL exceeds the sum of the printed lines by 6.057, or 2.7 per cent. The lines were verified twice and the total three times, so the gap is in the source rather than in the reading. Tunis itself is absent from the list, which is one candidate for what the total counts and the lines do not; the annexe does not say. Reported, not reconciled.",
+  "lines_attributed_to_a_gazetteer_tribe": 33,
+  "gazetteer_tribes_reached": 22,
+  "gazetteer_fractions_reached": 5,
+  "taxpayers_in_attributed_lines": 105941,
+  "largest_line": "Aradh",
+  "smallest_line": "Beit ech-Chéria",
+  "ganiage_stated_rate": 4,
+  "implied_rate_from_his_own_tribe_figures": {
+    "n": 9,
+    "min": 3.82,
+    "median": 4.06,
+    "max": 4.33
+  },
+  "printed_total_at_his_rate": 886656,
+  "his_estimate_for_the_regency": 1100000,
+  "_coverage_comment": "221.664 taxpayers at his own rate of four give 886.656, against the 1.100.000 he puts on the Regency. The gap is in the annexe, not in the arithmetic: he says on p. 864 that the 1277 table leaves out the mass of exemptions and that his documents tell him nothing about the Kroumirs nor about Tunis, Kairouan and Sfax, to which he allots 110.000 between them. The annexe is a tax roll, and a tax roll is a list of who paid."
+}

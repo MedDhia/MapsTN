@@ -1,0 +1,2809 @@
+{
+ "type": "FeatureCollection",
+ "name": "tribal_label_anchors",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "note": "Points are where a tribe's name is centred on the sheet, not territory centroids; no sheet in this collection draws a tribal boundary. Positional accuracy is in data/tribal_fit.json.",
+ "fit": {
+  "btv1b84389986": {
+   "title": "Carte du théâtre de la guerre en Tunisie / dressée par Ch. Lasailly",
+   "year": 1881,
+   "scale": "1:1 200 000",
+   "control_points": 7,
+   "px_per_degree_lon": 1104.2,
+   "px_per_degree_lat": 1390.9,
+   "km_per_px": 0.0798,
+   "rms_px": 39.6,
+   "rms_km": 3.16,
+   "max_px": 55.6,
+   "loo_rms_px": 77.3,
+   "loo_rms_km": 6.17,
+   "per_town": {
+    "Tunis": 44.0,
+    "Bizerte": 26.1,
+    "Le Kef": 32.7,
+    "Kairouan": 36.3,
+    "Sousse": 55.6,
+    "Sfax": 39.7,
+    "Gafsa": 36.0
+   },
+   "labels": 69
+  },
+  "btv1b53136235q": {
+   "title": "Carte de la Régence de Tunis / par E. Pellissier",
+   "year": 1853,
+   "scale": "1:800 000",
+   "control_points": 10,
+   "px_per_degree_lon": 1296.0,
+   "px_per_degree_lat": 1621.6,
+   "km_per_px": 0.0685,
+   "rms_px": 84.7,
+   "rms_km": 5.8,
+   "max_px": 167.4,
+   "loo_rms_px": 119.4,
+   "loo_rms_km": 8.17,
+   "per_town": {
+    "Tunis": 44.3,
+    "Bizerte": 48.0,
+    "Tabarka": 30.5,
+    "Béja": 167.4,
+    "Le Kef": 105.5,
+    "Tébessa": 16.5,
+    "Kairouan": 66.8,
+    "Sousse": 19.2,
+    "Mahdia": 90.9,
+    "Sfax": 118.3
+   },
+   "labels": 45
+  },
+  "_agreement": {
+   "tribes_on_two_sheets": 30,
+   "median_km": 23.0,
+   "max_km": 197.3,
+   "within_10_km": 7,
+   "within_20_km": 12
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.909,
+     37.001
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Mekena",
+    "tribe": "Mekena",
+    "in_gazetteer": 1,
+    "marker": "Tribu des",
+    "marked_tribe": 1,
+    "x_px": 2508,
+    "y_px": 2498,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.113,
+     37.043
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Nefsa",
+    "tribe": "Nefza",
+    "in_gazetteer": 1,
+    "marker": "Tribu des",
+    "marked_tribe": 1,
+    "x_px": 2733,
+    "y_px": 2440,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.193,
+     37.097
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "El Mogod",
+    "tribe": "Mogod",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2820,
+    "y_px": 2365,
+    "gouvernorat": "Bizerte",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.181,
+     36.984
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Djeladjela",
+    "tribe": "Djeladjela",
+    "in_gazetteer": 1,
+    "marker": "Tribu des",
+    "marked_tribe": 1,
+    "x_px": 2808,
+    "y_px": 2523,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.825,
+     36.868
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Kroumirs",
+    "tribe": "Kroumirs",
+    "in_gazetteer": 1,
+    "marker": "Territoire des",
+    "marked_tribe": 1,
+    "x_px": 2417,
+    "y_px": 2682,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.929,
+     36.779
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Chehida",
+    "tribe": "Chehida",
+    "in_gazetteer": 1,
+    "marker": "Tribu des",
+    "marked_tribe": 1,
+    "x_px": 2533,
+    "y_px": 2807,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.0,
+     36.701
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Zouagha",
+    "tribe": "Zouagha",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2612,
+    "y_px": 2916,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.514,
+     37.058
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Hezil",
+    "tribe": "Hezil",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3175,
+    "y_px": 2420,
+    "gouvernorat": "Bizerte",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.688,
+     37.059
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Makna",
+    "tribe": "Makna",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3367,
+    "y_px": 2420,
+    "gouvernorat": "Bizerte",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.822,
+     36.919
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Trabelsi",
+    "tribe": "Trabelsi",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3517,
+    "y_px": 2615,
+    "gouvernorat": "Manubah",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.567,
+     36.713
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Riah",
+    "tribe": "Riah",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3238,
+    "y_px": 2900,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.77,
+     36.671
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ghezoran",
+    "tribe": "Ghezoran",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2358,
+    "y_px": 2957,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.041,
+     36.651
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "O. bou Salem",
+    "tribe": "Ouled bou Salem",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2658,
+    "y_px": 2985,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.695,
+     36.742
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Ali",
+    "tribe": "Ouled Ali",
+    "in_gazetteer": 1,
+    "marker": "Tribu des",
+    "marked_tribe": 1,
+    "x_px": 2275,
+    "y_px": 2857,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.678,
+     36.833
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Beni Mazer",
+    "tribe": "Beni Mtir",
+    "in_gazetteer": 1,
+    "marker": "Tribu des",
+    "marked_tribe": 1,
+    "x_px": 2255,
+    "y_px": 2731,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.506,
+     36.664
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Meressen",
+    "tribe": "Meressen",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2067,
+    "y_px": 2965,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.521,
+     36.653
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouchtata Khezara",
+    "tribe": "Ouchtata",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2083,
+    "y_px": 2980,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.627,
+     36.644
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "O. Soltan",
+    "tribe": "Ouled Soltan",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2200,
+    "y_px": 2993,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.324,
+     36.565
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "O. Sdira",
+    "tribe": "Ouled Sdira",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 1867,
+    "y_px": 3102,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.397,
+     36.362
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Hakim",
+    "tribe": "Hakim",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 1950,
+    "y_px": 3385,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.456,
+     36.213
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouargha",
+    "tribe": "Ouargha",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2017,
+    "y_px": 3593,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.5,
+     36.08
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Charen",
+    "tribe": "Charen",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2067,
+    "y_px": 3777,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.688,
+     35.994
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "O. Yakoub",
+    "tribe": "Ouled Yakoub",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2275,
+    "y_px": 3898,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.785,
+     35.883
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Khememsa et Doufan",
+    "tribe": "Khememsa",
+    "in_gazetteer": 1,
+    "marker": "Tribus",
+    "marked_tribe": 1,
+    "x_px": 2383,
+    "y_px": 4052,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.829,
+     35.812
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouartan",
+    "tribe": "Ouartan",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2433,
+    "y_px": 4151,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.701,
+     35.779
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Zeghalma",
+    "tribe": "Zeghalma",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2292,
+    "y_px": 4197,
+    "gouvernorat": "Kassérine",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.253,
+     35.833
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "O. bou Ghanem",
+    "tribe": "Ouled bou Ghanem",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 1796,
+    "y_px": 4120,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.797,
+     35.612
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Mejers",
+    "tribe": "Mejers",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2400,
+    "y_px": 4430,
+    "gouvernorat": "Kassérine",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.431,
+     35.615
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Zlaas",
+    "tribe": "Zlass",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3100,
+    "y_px": 4427,
+    "gouvernorat": "Kairouan",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.479,
+     35.481
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Frechiche",
+    "tribe": "Frechiche",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2050,
+    "y_px": 4610,
+    "gouvernorat": "Kassérine",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.972,
+     36.549
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Djendouba",
+    "tribe": "Djendouba",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2583,
+    "y_px": 3127,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.712,
+     36.557
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Drid",
+    "tribe": "Drid",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3400,
+    "y_px": 3118,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.558,
+     36.269
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "O. Riah",
+    "tribe": "Riah",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3233,
+    "y_px": 3518,
+    "gouvernorat": "Siliana",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.173,
+     36.178
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "O. Ayar",
+    "tribe": "Ouled Ayar",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 2808,
+    "y_px": 3643,
+    "gouvernorat": "Siliana",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.481,
+     36.077
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "O. Aoun",
+    "tribe": "Ouled Aoun",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3150,
+    "y_px": 3785,
+    "gouvernorat": "Siliana",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.389,
+     36.307
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Saïd",
+    "tribe": "Ouled Saïd",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 4150,
+    "y_px": 3468,
+    "gouvernorat": "Sousse",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.19,
+     36.075
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Souassi",
+    "tribe": "Souassi",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3933,
+    "y_px": 3790,
+    "gouvernorat": "Kairouan",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.356,
+     35.244
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "M'Talith",
+    "tribe": "M'Talith",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 4125,
+    "y_px": 4947,
+    "gouvernorat": "Mahdia",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.348,
+     34.834
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Hammama",
+    "tribe": "Hammama",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3017,
+    "y_px": 5513,
+    "gouvernorat": "Sidi Bou Zid",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.92,
+     34.624
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Nefat",
+    "tribe": "Neffat",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3650,
+    "y_px": 5808,
+    "gouvernorat": "Sfax",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.872,
+     34.342
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Mahadeba",
+    "tribe": "Mehadhba",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 3600,
+    "y_px": 6200,
+    "gouvernorat": "Sfax",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.489,
+     33.4
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouergama",
+    "tribe": "Ouerghemma",
+    "in_gazetteer": 1,
+    "marker": "Tribu",
+    "marked_tribe": 1,
+    "x_px": 4292,
+    "y_px": 7512,
+    "gouvernorat": "Médenine",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.806,
+     36.86
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Beni Ourghine",
+    "tribe": "Beni Ourghine",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1292,
+    "y_px": 2690,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.995,
+     36.897
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Dhiab",
+    "tribe": "Ouled Dhiab",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1500,
+    "y_px": 2640,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.176,
+     36.924
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Braktia",
+    "tribe": "Braktia",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1700,
+    "y_px": 2603,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.055,
+     36.831
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Beni Ahmar",
+    "tribe": "Beni Ahmar",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1567,
+    "y_px": 2732,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.175,
+     36.771
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Sbetsa",
+    "tribe": "Sbetsa",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1700,
+    "y_px": 2815,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.174,
+     36.703
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Ahmar ben Ali",
+    "tribe": "Ouled Ahmar ben Ali",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1700,
+    "y_px": 2910,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.412,
+     36.701
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Dra Menna",
+    "tribe": "Dra Menna",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 858,
+    "y_px": 2910,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.805,
+     36.696
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Merdès",
+    "tribe": "Merdès",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1292,
+    "y_px": 2918,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.008,
+     36.685
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Cheefia",
+    "tribe": "Cheefia",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1517,
+    "y_px": 2935,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.03,
+     36.571
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Chiebna",
+    "tribe": "Chiebna",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1542,
+    "y_px": 3093,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.478,
+     36.585
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Beni Mezzeline",
+    "tribe": "Beni Mezzeline",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 933,
+    "y_px": 3072,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.72,
+     36.524
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Beni Salah",
+    "tribe": "Beni Salah",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1200,
+    "y_px": 3157,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.508,
+     36.491
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Nbails",
+    "tribe": "Nbails",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 967,
+    "y_px": 3202,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.424,
+     36.419
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Dean",
+    "tribe": "Ouled Dean",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 875,
+    "y_px": 3302,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.59,
+     36.384
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Sefia",
+    "tribe": "Sefia",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1058,
+    "y_px": 3352,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.095,
+     36.286
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouillen",
+    "tribe": "Ouillen",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1617,
+    "y_px": 3490,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.483,
+     36.216
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Daoud",
+    "tribe": "Ouled Daoud",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 942,
+    "y_px": 3585,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.897,
+     36.139
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Hanenchas",
+    "tribe": "Hanencha",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1400,
+    "y_px": 3693,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.496,
+     36.081
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Mahatla",
+    "tribe": "Mahatla",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 958,
+    "y_px": 3773,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.948,
+     35.999
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Khiar",
+    "tribe": "Ouled Khiar",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1458,
+    "y_px": 3888,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.555,
+     35.91
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Sellaouas",
+    "tribe": "Sellaouas",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1025,
+    "y_px": 4010,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.901,
+     35.834
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Sidi Yaya ben Taleb",
+    "tribe": "Ouled Sidi Yahia ben Taleb",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1408,
+    "y_px": 4118,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.583,
+     35.704
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Sedjera",
+    "tribe": "Ouled Sdira",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1058,
+    "y_px": 4297,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.581,
+     35.527
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Nemenchas",
+    "tribe": "Nemencha",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1058,
+    "y_px": 4543,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.588,
+     35.443
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Allaounas",
+    "tribe": "Allaounas",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1067,
+    "y_px": 4660,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.934,
+     35.268
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Ouled Sidi Abid",
+    "tribe": "Ouled Sidi Abid",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1450,
+    "y_px": 4905,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.575,
+     34.949
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b84389986",
+    "year": 1881,
+    "label_as_printed": "Brarchas",
+    "tribe": "Brarchas",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 1058,
+    "y_px": 5347,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.196,
+     37.037
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "El Mogod",
+    "tribe": "Mogod",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3400,
+    "y_px": 1994,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.737,
+     36.801
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Khemir",
+    "tribe": "Kroumirs",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2805,
+    "y_px": 2387,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.877,
+     36.874
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Nefza",
+    "tribe": "Nefza",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2986,
+    "y_px": 2266,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.585,
+     36.663
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Merassen",
+    "tribe": "Meressen",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2607,
+    "y_px": 2614,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.326,
+     36.499
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Ouchtata",
+    "tribe": "Ouchtata",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2271,
+    "y_px": 2887,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.478,
+     36.465
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad Sedira",
+    "tribe": "Ouled Sdira",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2469,
+    "y_px": 2939,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.711,
+     36.461
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Hakim",
+    "tribe": "Hakim",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2770,
+    "y_px": 2939,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.958,
+     36.538
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad bou Salem",
+    "tribe": "Ouled bou Salem",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3090,
+    "y_px": 2809,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.924,
+     36.501
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Djendouba",
+    "tribe": "Djendouba",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3047,
+    "y_px": 2870,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.137,
+     36.542
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Zouaka",
+    "tribe": "Zouagha",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3322,
+    "y_px": 2797,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.724,
+     36.661
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Grezouani",
+    "tribe": "Ghezoran",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2788,
+    "y_px": 2614,
+    "gouvernorat": "Jendouba",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.176,
+     36.994
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Riah",
+    "tribe": "Riah",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3374,
+    "y_px": 2063,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.706,
+     36.612
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Trabelsia",
+    "tribe": "Trabelsi",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4060,
+    "y_px": 2671,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.713,
+     36.505
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Drid et autres Arabes melés",
+    "tribe": "Drid",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4069,
+    "y_px": 2844,
+    "gouvernorat": "Béja",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.033,
+     36.569
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad Khiar",
+    "tribe": "Ouled Khiar",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4483,
+    "y_px": 2732,
+    "gouvernorat": "Zaghouan",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.405,
+     36.288
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Charen",
+    "tribe": "Charen",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2374,
+    "y_px": 3227,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.166,
+     36.137
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Hanecha",
+    "tribe": "Hanencha",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2064,
+    "y_px": 3477,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.439,
+     35.974
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad bou Ghanem",
+    "tribe": "Ouled bou Ghanem",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2417,
+    "y_px": 3736,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.612,
+     36.088
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Ouartan",
+    "tribe": "Ouartan",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2641,
+    "y_px": 3546,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.439,
+     35.856
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad Doufan",
+    "tribe": "Doufan",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2417,
+    "y_px": 3926,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.14,
+     35.776
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Yahia bou Taleb",
+    "tribe": "Ouled Sidi Yahia ben Taleb",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2029,
+    "y_px": 4063,
+    "gouvernorat": "",
+    "inside_tunisia": 0,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.959,
+     35.966
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad Yacoub",
+    "tribe": "Ouled Yakoub",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3090,
+    "y_px": 3736,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.393,
+     35.762
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Zeralma",
+    "tribe": "Zeghalma",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2357,
+    "y_px": 4081,
+    "gouvernorat": "Le Kef",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.421,
+     36.278
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad Aoun",
+    "tribe": "Ouled Aoun",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3690,
+    "y_px": 3219,
+    "gouvernorat": "Siliana",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.3,
+     36.153
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad Said",
+    "tribe": "Ouled Saïd",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4828,
+    "y_px": 3400,
+    "gouvernorat": "Sousse",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.801,
+     35.794
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Djelas",
+    "tribe": "Zlass",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4181,
+    "y_px": 3994,
+    "gouvernorat": "Kairouan",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.507,
+     35.38
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Frachiche Oulad Ali",
+    "tribe": "Frechiche",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2503,
+    "y_px": 4697,
+    "gouvernorat": "Kassérine",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.441,
+     35.163
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Frachiche Ouazaz",
+    "tribe": "Frechiche",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2417,
+    "y_px": 5050,
+    "gouvernorat": "Kassérine",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.122,
+     35.32
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Madjer",
+    "tribe": "Mejers",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3300,
+    "y_px": 4780,
+    "gouvernorat": "Kassérine",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.261,
+     35.216
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Methelith",
+    "tribe": "M'Talith",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4776,
+    "y_px": 4921,
+    "gouvernorat": "Mahdia",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.779,
+     34.82
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Hamema",
+    "tribe": "Hammama",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4151,
+    "y_px": 5574,
+    "gouvernorat": "Sidi Bou Zid",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.929,
+     34.907
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad el Goussem",
+    "tribe": "Ouled el Goussem",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4345,
+    "y_px": 5430,
+    "gouvernorat": "Sidi Bou Zid",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.114,
+     35.298
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad Khalifa",
+    "tribe": "Oulad Khalifa",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4586,
+    "y_px": 4792,
+    "gouvernorat": "Kairouan",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.334,
+     35.369
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Oulad Amer",
+    "tribe": "Oulad Amer",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4871,
+    "y_px": 4671,
+    "gouvernorat": "Mahdia",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.102,
+     35.032
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Redouan",
+    "tribe": "Ouled Redouan",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4569,
+    "y_px": 5223,
+    "gouvernorat": "Sfax",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.054,
+     35.511
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Djelas Senrassin",
+    "tribe": "Zlass",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4509,
+    "y_px": 4447,
+    "gouvernorat": "Kairouan",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.003,
+     35.407
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Methelith Oulad Alia",
+    "tribe": "M'Talith — Oulad Alia",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 5738,
+    "y_px": 4593,
+    "gouvernorat": "Mahdia",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.744,
+     35.182
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Methelith Oulad Merab",
+    "tribe": "M'Talith — Oulad Merab",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 5402,
+    "y_px": 4964,
+    "gouvernorat": "Sfax",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.877,
+     35.127
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Methelith Meraïah",
+    "tribe": "M'Talith — Meraïah",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 5574,
+    "y_px": 5050,
+    "gouvernorat": "Sfax",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.983,
+     35.126
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Methelith Oulad Zid",
+    "tribe": "M'Talith — Oulad Zid",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 5712,
+    "y_px": 5050,
+    "gouvernorat": "Mahdia",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.704,
+     34.949
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Methelith Nadjem",
+    "tribe": "M'Talith — Nadjem",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 5350,
+    "y_px": 5343,
+    "gouvernorat": "Sfax",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.943,
+     34.341
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Mahedeba",
+    "tribe": "Mehadhba",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4362,
+    "y_px": 6348,
+    "gouvernorat": "Sfax",
+    "inside_tunisia": 1,
+    "read_confidence": "high"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.402,
+     34.696
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Agherba",
+    "tribe": "Aguerba",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4957,
+    "y_px": 5761,
+    "gouvernorat": "Sfax",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.763,
+     34.694
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Taïfa",
+    "tribe": "Taïfa",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 4129,
+    "y_px": 5779,
+    "gouvernorat": "Sidi Bou Zid",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.491,
+     34.411
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Hamema Oulad Aziz",
+    "tribe": "Hammama — Oulad Aziz",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 3776,
+    "y_px": 6244,
+    "gouvernorat": "Gafsa",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  }
+ ]
+}

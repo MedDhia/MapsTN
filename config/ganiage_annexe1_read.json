@@ -1,0 +1,781 @@
+{
+  "_about": "Annexe I of Ganiage 1966, p. 882: 'Les impositions a la mejba (d'apres le budget de 1277)'. Every fiscal unit of the Regency with the number of men assessed to the mejba poll tax, read off the page image by eye. 1277 AH runs from July 1860 to July 1861.",
+  "_source": {
+    "citation": "Jean Ganiage, 'La population de la Tunisie vers 1860. Essai d'evaluation d'apres les registres fiscaux', Population, 21e annee, n. 5, 1966, pp. 857-886",
+    "doi": "10.2307/1528138",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1966_num_21_5_13406",
+    "page": 882,
+    "page_image": "https://www.persee.fr/renderPage/pop_0032-4663_1966_num_21_5_13406/pop_0032-4663_1966_num_21_5_T1_0882_0000_1400.jpg",
+    "unit": "men assessed to the mejba, not souls and not households"
+  },
+  "_how_read": "Persee's per-page text endpoint interleaves the two printed columns, so the name-to-number pairing it returns cannot be trusted and was not used. The page image was fetched at 1148 px wide and read by eye, left column top to bottom then right column, then every line was read a second time in four crops enlarged 2.6x. The TOTAL row was read a third time at 4x. The annexe is printed entirely on p. 882; p. 883 carries Annexe II and was not needed.",
+  "_arithmetic": {
+    "lines": 78,
+    "lines_left_column": 40,
+    "lines_right_column": 38,
+    "sum_of_printed_lines": 215607,
+    "printed_total": 221664,
+    "difference": 6057,
+    "_comment": "The printed TOTAL exceeds the sum of the printed lines by 6.057, or 2.7 per cent. The lines were verified twice and the total three times, so the gap is in the source rather than in the reading. Tunis itself is absent from the list, which is one candidate for what the total counts and the lines do not; the annexe does not say. Reported, not reconciled."
+  },
+  "_attribution": "'tribe' carries the gazetteer name only where the source says so. basis 'footnote' means one of Ganiage's fourteen footnotes ties the fiscal unit to a tribe; basis 'name' means the printed name is a gazetteer tribe on its own; basis 'none' means the line is a town, a district, an oasis group, a service corps or a tribe the gazetteer does not hold, and it is left unattributed. 'also_gazetteer' names a finer gazetteer entry the line matches on its own, and 'joint' marks a line whose figure covers two entries together.",
+  "footnotes": {
+    "1": "nom traditionnel du district du Cap Bon",
+    "2": "Tribu des Zlass",
+    "3": "groupe d'oasis du Djerid a l'est de Tozeur",
+    "4": "petites oasis de montagne de la frontiere, a 65 km au nord de Tozeur",
+    "5": "Tribu des Hammama",
+    "6": "tribu fixee autour de Gafsa",
+    "7": "Ouled Sidi Tlil, groupe rattache aux Frechich",
+    "8": "tribu nomadisant au nord du Djerid entre Tozeur et Tamerza",
+    "9": "Tribu des Frechich",
+    "10": "Tribu des Majeur",
+    "11": "tribu rattachee au caidat de la Kessera",
+    "12": "tribus du nord-ouest de la ligue des Ounifa",
+    "13": "tribu de service",
+    "14": "Tripolitains fixes dans la basse vallee de la Medjerda"
+  },
+  "lines": [
+    {
+      "order": 1,
+      "column": "left",
+      "name_as_printed": "Aradh",
+      "taxpayers": 21938,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "The Aradh is the whole south-eastern region, not a tribe. Ganiage breaks it down on pp. 880-881; the Ouerghemma, Accara, Hamarna and Matmata figures in the CSV come from that discussion, not from this line."
+    },
+    {
+      "order": 2,
+      "column": "left",
+      "name_as_printed": "Sousse",
+      "taxpayers": 9417,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 3,
+      "column": "left",
+      "name_as_printed": "Sfax",
+      "taxpayers": 3909,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 4,
+      "column": "left",
+      "name_as_printed": "Monastir",
+      "taxpayers": 9003,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 5,
+      "column": "left",
+      "name_as_printed": "Outhan el Kabli",
+      "taxpayers": 8501,
+      "footnote": 1,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Footnote 1: the traditional name of the Cap Bon district. A district, not a tribe."
+    },
+    {
+      "order": 6,
+      "column": "left",
+      "name_as_printed": "Le Kef",
+      "taxpayers": 3219,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 7,
+      "column": "left",
+      "name_as_printed": "Béja",
+      "taxpayers": 3227,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 8,
+      "column": "left",
+      "name_as_printed": "Tribus de Béja",
+      "taxpayers": 2723,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 9,
+      "column": "left",
+      "name_as_printed": "Kooub et Gouazine",
+      "taxpayers": 1765,
+      "footnote": 2,
+      "tribe": "Zlass",
+      "attribution_basis": "footnote",
+      "note": "Footnote 2: Zlass."
+    },
+    {
+      "order": 10,
+      "column": "left",
+      "name_as_printed": "Ouled Khalifa",
+      "taxpayers": 3618,
+      "footnote": 2,
+      "tribe": "Zlass",
+      "attribution_basis": "footnote",
+      "also_gazetteer": [
+        "Oulad Khalifa"
+      ],
+      "joint": false,
+      "note": "Footnote 2: Zlass."
+    },
+    {
+      "order": 11,
+      "column": "left",
+      "name_as_printed": "Ouled Iddir",
+      "taxpayers": 5242,
+      "footnote": 2,
+      "tribe": "Zlass",
+      "attribution_basis": "footnote",
+      "note": "Footnote 2 puts this line among the Zlass. The gazetteer Iddir entry, read in the Sahel, is kept separate."
+    },
+    {
+      "order": 12,
+      "column": "left",
+      "name_as_printed": "Gafsa",
+      "taxpayers": 2354,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 13,
+      "column": "left",
+      "name_as_printed": "Tozeur",
+      "taxpayers": 1204,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 14,
+      "column": "left",
+      "name_as_printed": "Nefta",
+      "taxpayers": 2041,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 15,
+      "column": "left",
+      "name_as_printed": "El Oudiane",
+      "taxpayers": 848,
+      "footnote": 3,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Footnote 3: the Djerid oasis group east of Tozeur."
+    },
+    {
+      "order": 16,
+      "column": "left",
+      "name_as_printed": "El Hamma",
+      "taxpayers": 201,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 17,
+      "column": "left",
+      "name_as_printed": "Tamerza, Chebika",
+      "taxpayers": 177,
+      "footnote": 4,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Footnote 4: small frontier mountain oases about 65 km north of Tozeur."
+    },
+    {
+      "order": 18,
+      "column": "left",
+      "name_as_printed": "Nefzaoua",
+      "taxpayers": 891,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "The oasis group south-west of the chott, distinct from the Nefza of the north that the gazetteer holds."
+    },
+    {
+      "order": 19,
+      "column": "left",
+      "name_as_printed": "Ouled Aziz",
+      "taxpayers": 3847,
+      "footnote": 5,
+      "tribe": "Hammama",
+      "attribution_basis": "footnote",
+      "also_gazetteer": [
+        "Hammama — Oulad Aziz"
+      ],
+      "joint": false
+    },
+    {
+      "order": 20,
+      "column": "left",
+      "name_as_printed": "Ouled Redouane",
+      "taxpayers": 5132,
+      "footnote": 5,
+      "tribe": "Hammama",
+      "attribution_basis": "footnote",
+      "also_gazetteer": [
+        "Ouled Redouan"
+      ],
+      "joint": false
+    },
+    {
+      "order": 21,
+      "column": "left",
+      "name_as_printed": "Ouled Maameur",
+      "taxpayers": 3334,
+      "footnote": 5,
+      "tribe": "Hammama",
+      "attribution_basis": "footnote"
+    },
+    {
+      "order": 22,
+      "column": "left",
+      "name_as_printed": "Beit ech-Chéria",
+      "taxpayers": 51,
+      "footnote": 6,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Footnote 6: a tribe settled around Gafsa. 51 taxpayers is the smallest line on the page."
+    },
+    {
+      "order": 23,
+      "column": "left",
+      "name_as_printed": "Ouled Tlil",
+      "taxpayers": 1000,
+      "footnote": 7,
+      "tribe": "Frechiche",
+      "attribution_basis": "footnote",
+      "note": "Footnote 7 reads \"Ouled Sidi Tlil, groupe rattache aux Frechich\". Ganiage adds them to the Frechich in the text (p. 877-878), so the group total below includes them and the line is attributed to the Frechiche."
+    },
+    {
+      "order": 24,
+      "column": "left",
+      "name_as_printed": "Ouled Sidi Abid",
+      "taxpayers": 1500,
+      "footnote": 8,
+      "tribe": "Ouled Sidi Abid",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 25,
+      "column": "left",
+      "name_as_printed": "Ouled Ouzzaz",
+      "taxpayers": 4774,
+      "footnote": 9,
+      "tribe": "Frechiche",
+      "attribution_basis": "footnote"
+    },
+    {
+      "order": 26,
+      "column": "left",
+      "name_as_printed": "Ouled Ali",
+      "taxpayers": 3271,
+      "footnote": 9,
+      "tribe": "Frechiche",
+      "attribution_basis": "footnote",
+      "note": "Footnote 9 puts this line among the Frechich. The gazetteer also holds an Ouled Ali in the north-west, read off the 1881 sheet; the two are different groups sharing a name and this line is not that one."
+    },
+    {
+      "order": 27,
+      "column": "left",
+      "name_as_printed": "Ouled Naji",
+      "taxpayers": 2012,
+      "footnote": 9,
+      "tribe": "Frechiche",
+      "attribution_basis": "footnote"
+    },
+    {
+      "order": 28,
+      "column": "left",
+      "name_as_printed": "Ouled Mehanna",
+      "taxpayers": 4780,
+      "footnote": 10,
+      "tribe": "Mejers",
+      "attribution_basis": "footnote"
+    },
+    {
+      "order": 29,
+      "column": "left",
+      "name_as_printed": "Fouad",
+      "taxpayers": 2616,
+      "footnote": 10,
+      "tribe": "Mejers",
+      "attribution_basis": "footnote"
+    },
+    {
+      "order": 30,
+      "column": "left",
+      "name_as_printed": "Ouled Yahia",
+      "taxpayers": 343,
+      "footnote": 11,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Footnote 11: attached to the caidat of la Kessera."
+    },
+    {
+      "order": 31,
+      "column": "left",
+      "name_as_printed": "Jendouba",
+      "taxpayers": 2674,
+      "footnote": null,
+      "tribe": "Djendouba",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 32,
+      "column": "left",
+      "name_as_printed": "Ouled b. Salem",
+      "taxpayers": 1040,
+      "footnote": null,
+      "tribe": "Ouled bou Salem",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 33,
+      "column": "left",
+      "name_as_printed": "Ouartane",
+      "taxpayers": 3953,
+      "footnote": null,
+      "tribe": "Ouartan",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 34,
+      "column": "left",
+      "name_as_printed": "Charen",
+      "taxpayers": 2164,
+      "footnote": 12,
+      "tribe": "Charen",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 35,
+      "column": "left",
+      "name_as_printed": "Touabine",
+      "taxpayers": 751,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 36,
+      "column": "left",
+      "name_as_printed": "Souassi",
+      "taxpayers": 4955,
+      "footnote": null,
+      "tribe": "Souassi",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 37,
+      "column": "left",
+      "name_as_printed": "Tayache",
+      "taxpayers": 522,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 38,
+      "column": "left",
+      "name_as_printed": "Methellith",
+      "taxpayers": 6411,
+      "footnote": null,
+      "tribe": "M'Talith",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 39,
+      "column": "left",
+      "name_as_printed": "Mateur",
+      "taxpayers": 3541,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 40,
+      "column": "left",
+      "name_as_printed": "Teboursouk",
+      "taxpayers": 1032,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 41,
+      "column": "right",
+      "name_as_printed": "Bejaoua",
+      "taxpayers": 2425,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 42,
+      "column": "right",
+      "name_as_printed": "Kabtna et Ayache",
+      "taxpayers": 1917,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 43,
+      "column": "right",
+      "name_as_printed": "Ariana",
+      "taxpayers": 348,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 44,
+      "column": "right",
+      "name_as_printed": "Mekta Tihfa",
+      "taxpayers": 73,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 45,
+      "column": "right",
+      "name_as_printed": "Kalaat es-Senam",
+      "taxpayers": 157,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 46,
+      "column": "right",
+      "name_as_printed": "Ouled Khiar",
+      "taxpayers": 266,
+      "footnote": null,
+      "tribe": "Ouled Khiar",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 47,
+      "column": "right",
+      "name_as_printed": "Mornag, Radès",
+      "taxpayers": 66,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 48,
+      "column": "right",
+      "name_as_printed": "Arouch aghât de Kairouan",
+      "taxpayers": 1216,
+      "footnote": 13,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Footnote 13: tribu de service. \"Arouch\" is the plural of arch, tribe."
+    },
+    {
+      "order": 49,
+      "column": "right",
+      "name_as_printed": "Chaktma",
+      "taxpayers": 1844,
+      "footnote": 10,
+      "tribe": "Mejers",
+      "attribution_basis": "footnote"
+    },
+    {
+      "order": 50,
+      "column": "right",
+      "name_as_printed": "El Ksour",
+      "taxpayers": 143,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 51,
+      "column": "right",
+      "name_as_printed": "Ouled Abdallah",
+      "taxpayers": 101,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 52,
+      "column": "right",
+      "name_as_printed": "Ghammadia",
+      "taxpayers": 348,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 53,
+      "column": "right",
+      "name_as_printed": "Ksar Niya",
+      "taxpayers": 143,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 54,
+      "column": "right",
+      "name_as_printed": "Arouch es sandjak de Kairouan",
+      "taxpayers": 518,
+      "footnote": 13,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Footnote 13: tribu de service."
+    },
+    {
+      "order": 55,
+      "column": "right",
+      "name_as_printed": "Riah, Testour, Medjez el Bab, Zaghouan",
+      "taxpayers": 3078,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "The composite circumscription Ganiage names on p. 878 as the reason he cannot count the Riah. Not split here either."
+    },
+    {
+      "order": 56,
+      "column": "right",
+      "name_as_printed": "Bizerte, Porto-Farina",
+      "taxpayers": 3612,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 57,
+      "column": "right",
+      "name_as_printed": "Rekba",
+      "taxpayers": 3000,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 58,
+      "column": "right",
+      "name_as_printed": "La Kessera",
+      "taxpayers": 408,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 59,
+      "column": "right",
+      "name_as_printed": "O. Manès — Ousseltia",
+      "taxpayers": 2643,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 60,
+      "column": "right",
+      "name_as_printed": "Djerba",
+      "taxpayers": 5381,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 61,
+      "column": "right",
+      "name_as_printed": "Ouled Sendassen",
+      "taxpayers": 5081,
+      "footnote": 2,
+      "tribe": "Zlass",
+      "attribution_basis": "footnote",
+      "note": "Footnote 2: Zlass."
+    },
+    {
+      "order": 62,
+      "column": "right",
+      "name_as_printed": "Arouch er Rekkak",
+      "taxpayers": 4168,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 63,
+      "column": "right",
+      "name_as_printed": "Ouled Aoun",
+      "taxpayers": 2769,
+      "footnote": null,
+      "tribe": "Ouled Aoun",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 64,
+      "column": "right",
+      "name_as_printed": "Ouergha",
+      "taxpayers": 1480,
+      "footnote": 12,
+      "tribe": "Ouargha",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 65,
+      "column": "right",
+      "name_as_printed": "Ouled bou Ghanem",
+      "taxpayers": 2930,
+      "footnote": 12,
+      "tribe": "Ouled bou Ghanem",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 66,
+      "column": "right",
+      "name_as_printed": "Zeghalma",
+      "taxpayers": 1393,
+      "footnote": 12,
+      "tribe": "Zeghalma",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 67,
+      "column": "right",
+      "name_as_printed": "Khamemsa et Doufane",
+      "taxpayers": 2200,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none",
+      "also_gazetteer": [
+        "Khememsa",
+        "Doufan"
+      ],
+      "joint": true,
+      "note": "Two gazetteer tribes assessed on one line. Not split."
+    },
+    {
+      "order": 68,
+      "column": "right",
+      "name_as_printed": "Ouled Yacoub",
+      "taxpayers": 863,
+      "footnote": 12,
+      "tribe": "Ouled Yakoub",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 69,
+      "column": "right",
+      "name_as_printed": "Ouled Saïd",
+      "taxpayers": 1185,
+      "footnote": null,
+      "tribe": "Ouled Saïd",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 70,
+      "column": "right",
+      "name_as_printed": "Trabelsia",
+      "taxpayers": 3883,
+      "footnote": 14,
+      "tribe": "Trabelsi",
+      "attribution_basis": "name",
+      "note": "Footnote 14: Tripolitans settled in the lower Medjerda valley. The gazetteer Trabelsi entry, read on the 1881 sheet, is the same population."
+    },
+    {
+      "order": 71,
+      "column": "right",
+      "name_as_printed": "Ouled Ayar",
+      "taxpayers": 5797,
+      "footnote": null,
+      "tribe": "Ouled Ayar",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 72,
+      "column": "right",
+      "name_as_printed": "Neffat",
+      "taxpayers": 1287,
+      "footnote": null,
+      "tribe": "Neffat",
+      "attribution_basis": "name"
+    },
+    {
+      "order": 73,
+      "column": "right",
+      "name_as_printed": "Drid",
+      "taxpayers": 11131,
+      "footnote": null,
+      "tribe": "Drid",
+      "attribution_basis": "name",
+      "note": "Ganiage p. 877 note: 11.131 taxpayers among the Drid, budget of 1277. Matches this line."
+    },
+    {
+      "order": 74,
+      "column": "right",
+      "name_as_printed": "Arab Majour",
+      "taxpayers": 1944,
+      "footnote": null,
+      "tribe": "Drid",
+      "attribution_basis": "name",
+      "note": "Ganiage p. 877 note: 11.131 taxpayers among the Drid and 1.944 among the Arab Majour, budget of 1277. Both numbers are on this page, which checks the reading against his own citation of it."
+    },
+    {
+      "order": 75,
+      "column": "right",
+      "name_as_printed": "La Marsa",
+      "taxpayers": 408,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 76,
+      "column": "right",
+      "name_as_printed": "Troud et Siline",
+      "taxpayers": 673,
+      "footnote": 14,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Footnote 14: Tripolitans settled in the lower Medjerda valley."
+    },
+    {
+      "order": 77,
+      "column": "right",
+      "name_as_printed": "Tebourba",
+      "taxpayers": 500,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none"
+    },
+    {
+      "order": 78,
+      "column": "right",
+      "name_as_printed": "Algériens",
+      "taxpayers": 247,
+      "footnote": null,
+      "tribe": "",
+      "attribution_basis": "none",
+      "note": "Algerians resident in the Regency, assessed as a body. The one line on the page that is a nationality rather than a place or a tribe."
+    }
+  ]
+}

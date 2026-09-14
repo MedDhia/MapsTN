@@ -22,6 +22,18 @@ a relevance score.
 | **Feature / region coding (CSV)** | [`data/gallica_tunisia_maps_features.csv`](data/gallica_tunisia_maps_features.csv) |
 | **Feature / region report** | [`docs/FEATURES-REGIONS.md`](docs/FEATURES-REGIONS.md) |
 | **Feature variable definitions** | [`docs/CODEBOOK-FEATURES.md`](docs/CODEBOOK-FEATURES.md) |
+| **Tribal annotation coding (CSV)** | [`data/gallica_tunisia_maps_tribes.csv`](data/gallica_tunisia_maps_tribes.csv) |
+| **Tribal annotation report** | [`docs/TRIBES.md`](docs/TRIBES.md) |
+| **Tribal variable definitions** | [`docs/CODEBOOK-TRIBES.md`](docs/CODEBOOK-TRIBES.md) |
+| **Tribe names placed on the ground** | [`data/tribal_territories.csv`](data/tribal_territories.csv), [`.geojson`](data/tribal_territories.geojson) |
+| **Do two sheets agree on where a tribe is?** | [`data/tribal_map_agreement.csv`](data/tribal_map_agreement.csv) |
+| **Tribes on today's imadas** | [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) |
+| **Martel's 1881 sketch map, read** | [`data/martel_1965_tribes.csv`](data/martel_1965_tribes.csv) |
+| **Who counted the tribes, and how many** | [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) |
+| **Population figures, with their sources** | [`data/tribal_population_sources.csv`](data/tribal_population_sources.csv) |
+| **1931 census, by caïdat** | [`data/census_1931_caidats.csv`](data/census_1931_caidats.csv) |
+| **The 1277 mejba tax schedule, line by line** | [`data/ganiage_mejba_1277.csv`](data/ganiage_mejba_1277.csv) |
+| **The same, gathered into tribes** | [`data/ganiage_mejba_groups.csv`](data/ganiage_mejba_groups.csv) |
 | **OSM rebuild coding (CSV)** | [`data/gallica_tunisia_maps_osm.csv`](data/gallica_tunisia_maps_osm.csv) |
 | **OSM rebuild report** | [`docs/OSM-REBUILD.md`](docs/OSM-REBUILD.md) |
 | **OSM layer crosswalk** | [`config/osm_crosswalk.json`](config/osm_crosswalk.json) |
@@ -297,6 +309,134 @@ and 1892 — so sorting by catalogue year puts them in the wrong order. One titl
 is wrong too: the record catalogued *Carte des itinéraires* (1896) is physically
 the *Carte de la Tunisie* of 1895. **Read the date off the sheet before using
 these as a series.**
+
+## Maps that annotate tribes
+
+The feature coding above says the catalogue names tribes in 0 records out of 663,
+and that is exactly right: across every Dublin Core field, every BnF catalogue
+notice and every partner item page, the word *tribu* occurs **zero** times. A
+gazetteer of 75 tribe names read off these maps matches three records, two of
+which are 1:50 000 sheets titled *Nefza* and *Ouargha* after the districts they
+cover.
+
+So the question was settled by opening scans. **16 maps read directly, 14 of them
+carry tribal annotation**, coded in
+[`data/gallica_tunisia_maps_tribes.csv`](data/gallica_tunisia_maps_tribes.csv)
+with what was seen recorded in
+[`config/inspected_tribal_maps.json`](config/inspected_tribal_maps.json). Full
+argument in [`docs/TRIBES.md`](docs/TRIBES.md).
+
+**No sheet draws a tribal boundary.** Not one, at any scale or date. What they
+print is the tribe's name in letterspaced capitals laid across the country it
+holds, and where the name stops the annotation stops — which is a more honest map
+of a pastoral society than a boundary would have been, and a harder one to turn
+into data. What does get a boundary is the **caïdat**: from 1889 the Service
+géographique draws dotted limits around units named for the tribes. A tribe is a
+name without edges; a caïdat is a name with them.
+
+What changes across a century is the grain, not the presence:
+
+| Period | Form | Example |
+| --- | --- | --- |
+| 1842–1881 | The tribe as a country | `MADJER`, `HAMEMA`, `OULED TRABERSI`, and on the 1857 Dépôt de la guerre sheet `DOUARS OULED ARFA` |
+| 1881 | The tribe marked explicitly | Lasailly's war-theatre map prints `(Tribu)` under each name |
+| 1889 | The tribe becomes the caïdat, and acquires an edge | `Kt des Riah`, `Kt des Ouled Yahia`, `Kt des Arrouch` — caïdats named for tribes, with their limits drawn as dotted lines |
+| 1900–1943 | The caïdat's name detaches from the people | `CAÏDAT DE TEBOURSOUK` in the same letterspaced capitals across the same Tell, now named for the market town |
+| any date, 1:50 000 | Neither — the grain below the tribe | `Dr en Nouilia`, `Hr Ouled el Hadj`, `Bir Oulad Achour` |
+
+Two sheets were then transcribed label by label and placed on the ground: the
+1881 Lasailly, whose face was read whole in 20 tiles, and the 1853 Pellissier,
+read from the Kroumirie down to about 34°N. **114 labels** in
+[`data/tribal_territories.csv`](data/tribal_territories.csv), placed from control
+towns read off each sheet — leave-one-out RMS **6.2 km** for 1881 and **8.2 km**
+for 1853. The labels themselves run 14–32 km long, so a point locates a tribe to
+within a tribe's width and no finer.
+
+![Where two sheets put each tribe's name](docs/img/tribal_territories.png)
+
+**Thirty tribes are named on both sheets, and the two placements sit a median of
+23 km apart** — about one label length, which is as close to agreement as this
+kind of annotation can come. The outlier is instructive: Ouled Khiar is 197 km
+apart because the two sheets are naming different people, Pellissier's by
+Zaghouan and Lasailly's in the Constantine province.
+
+On the 1881 sheet Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels
+between them, while south of Sfax the entire country carries one, the Ouerghemma.
+That is not a map of where tribes were; it is a map of where a French compiler in
+1881 had names for them, and 1881 is the year of the Kroumir campaign in exactly
+that north-western corner.
+
+**645 of 663 records are coded `unknown`, and unknown means unknown, not no.**
+
+**A third sheet, and the whole country.** The two Gallica sheets leave the south
+blank, and that blank was an artefact of what had been read. André Martel's *Les
+Confins saharo-tripolitains de la Tunisie (1881-1911)* (P.U.F., 1965) prints a
+sketch map, *Villes et tribus tunisiennes 1881*, that covers the country end to
+end. It is **not** a sheet in this collection and is kept apart in its own
+config, CSV and colour: it is a historian's synthesis, a secondary source beside
+two primary ones. 27 names read, 19 matching the gazetteer, placed to 12.6 km
+leave-one-out on 20 control towns, with a projection check that confirms the
+affine is the right model (257 px per degree of longitude against 315 per degree
+of latitude, ratio 0.800, against cos 35°N of 0.819).
+
+Eight of its names have no gazetteer entry and all eight are southern: Beni Zid,
+Merazig, Adhara and a southern Ouled Yacoub in the Nefzaoua, Hazem toward Gabès,
+Gherib and Troud about the Djerid, the Chaamba of the Algerian Sahara. **Two of
+them are name collisions that were doing damage.** Martel's Nefzaoua Ouled
+Yacoub is not the gazetteer's north-western Ouled Yakoub, and the population
+table had a southern figure sitting over a north-western taxpayer count as a
+result. Correcting it tightened the implied multiplier in Ganiage's article from
+3.82–5.21 to 3.82–4.33, median 4.06, against the flat four he states.
+
+**Where the tribes were, on today's imadas.** The finest published Tunisian unit
+is the imada, 2,084 of them, and
+[`scripts/map_tribes_on_imadas.py`](scripts/map_tribes_on_imadas.py) gives each
+one the tribe whose nearest read name lies closest, out to 60 km. That is a
+Voronoi tessellation at imada resolution, and it fills the country where dots
+could not: **1,977 of 2,084 imadas assigned, 71% of the area**, 62 tribes given
+ground, the widest being the Ouerghemma at 9,751 km².
+
+![Tribal annotation of 1853 and 1881 assigned to the imadas of 2022](docs/img/tribal_distribution_imada.png)
+
+**The colours are a rule, not evidence.** No sheet draws a tribal boundary;
+where two names sit 60 km apart the line between their colours falls at 30 km
+because that is what nearest means. The median assigned imada is 19.5 km from
+its name, the printed names run 14 to 32 km long, and **64% of assigned imadas
+have a rival name within 10 km of the winner** — which is the number to quote
+against anyone who reads the fill as territory. Every row of
+[`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) carries
+its own distance and runner-up, and the 107 unassigned imadas are the Grand Erg
+and the deep Dahar, where none of the three sheets prints a name.
+
+**How many people was a tribe?** No sheet says — a map gives location, never
+size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the
+sources that do carry numbers and what each of them counts. Three have been read
+rather than cited: Pellissier's own 1853 text, whose map is the one transcribed
+here; Ganiage's reconstruction from the *mejba* tax registers of c. 1860; and the
+1931 census by caïdat. **40 of the 60 Tunisian-side tribes have a figure, 20 have
+none**, and souls, tents, horsemen and taxpayers are four different things that
+must not be mixed.
+
+**The tax schedule behind Ganiage's article is transcribed.** *Annexe I* of his
+1966 paper, p. 882, is the mejba assessment of every fiscal circumscription in
+the Regency's first regular budget, for the fiscal year 1277, July 1860 to July
+1861. Its 78 lines were read off the page image by eye, twice, and are in
+[`data/ganiage_mejba_1277.csv`](data/ganiage_mejba_1277.csv); his own fourteen
+footnotes gather them into 22 gazetteer tribes in
+[`data/ganiage_mejba_groups.csv`](data/ganiage_mejba_groups.csv). Two results
+worth stating on their own. **The printed lines do not add to the printed
+total**: 215,607 against 221,664, a gap of 2.7% that is in the source and is not
+reconciled here. And setting the taxpayer counts against the population figures
+Ganiage publishes recovers the multiplier he used, tribe by tribe: **3.82 to
+4.33 individuals per taxpayer, median 4.06**, against the rate of four he states
+on p. 864. The convention is not hidden, but it is a convention.
+
+The two nineteenth-century sources disagree by a factor of four on the steppe.
+Pellissier counts warriors and multiplies by five, a rule he states himself;
+Ganiage counts taxpayers and calls the older estimates *« dénuées de fondement »*
+for the centre and south. For the four great steppe tribes together that is
+50,000 people against about 196,000 — and it is Ganiage's order of magnitude, not
+Pellissier's, that the 1931 census finds in the same places.
 
 ## What can be rebuilt from OpenStreetMap
 
@@ -588,6 +728,7 @@ python3 scripts/build_inventory.py           # regenerate docs/INVENTORY.md
 python3 scripts/code_quality.py              # regenerate the quality coding
 python3 scripts/code_geospatial.py           # regenerate the geo/thematic coding
 python3 scripts/code_features_regions.py     # regenerate the feature/region coding
+python3 scripts/code_tribal_annotation.py    # regenerate the tribal annotation coding
 python3 scripts/fetch_sheet_images.py        # locate the full-resolution scans
 ```
 
@@ -624,6 +765,7 @@ python3 scripts/separate_ink_plates.py --images <dir> \
     --demo <record_id> --window 3300 2400 3900 2800   # trace one window
 python3 scripts/fetch_boundaries.py                     # modern shapefiles
 python3 scripts/map_objects.py                          # join + render the map
+python3 scripts/place_tribal_labels.py                  # tribe names -> lon/lat + figure
 ```
 
 `difference_editions.py` needs no scans and no arguments — the early-edition
@@ -632,8 +774,13 @@ only renders the credit-block figure.
 
 `georeference_sheets.py` needs `pyproj`, `extract_symbols.py` and
 `read_corner_coordinates.py` need `scipy`, `separate_ink_plates.py` needs
-`scikit-image` and `pytesseract`, and `map_objects.py` needs `pyshp`, `shapely`
-and `matplotlib`.
+`scikit-image` and `pytesseract`, and `map_objects.py` and
+`place_tribal_labels.py` need `pyshp`, `shapely` and `matplotlib`.
+
+`place_tribal_labels.py` needs no scans: it works from the labels and control
+points already transcribed into
+[`config/tribal_labels_read.json`](config/tribal_labels_read.json). Run it before
+`code_tribal_annotation.py`, which folds its residuals into the report.
 
 The georeferencing runs twice on purpose. The corner reader needs the neatline
 the first pass detects in order to know where in the margin to look, and the
