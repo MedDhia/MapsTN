@@ -164,16 +164,43 @@ Evidence from all three sheets counts at once, so a tribe named by Pellissier in
 | | |
 | --- | --- |
 | Smallest | 88 km² |
-| Median | 778 km² |
+| Median | 780 km² |
 | Largest | 11,825 km² |
 | Gherib | 123 × 123 km, 11,825 km², stopped by the Chaamba |
-| Zlass | 132 × 96 km, 9,968 km², stopped by the Ouled Aoun |
+| Zlass | 137 × 96 km, 10,285 km², stopped by the Ouled Aoun |
 | Adhara | 100 × 100 km, 7,877 km², stopped by the Merazig |
-| Ouerghemma | 120 × 77 km, 7,251 km², stopped by the Hazem |
+| Ouerghemma | 121 × 74 km, 7,054 km², stopped by the Hazem |
 
 **This is deliberately the largest reading the sheets will carry.** Nothing is clipped to the modern frontier, which 34 of the 141 labels sit west of. Ellipses overlap where the sheets disagree or where tribes interleaved, and the overlap is left to be seen rather than resolved, because no sheet in this collection says where one tribe stopped and the next began.
 
 Per-tribe results are in [`data/tribal_spread.csv`](../data/tribal_spread.csv), with the axes, the area, how far the ellipse grew and what stopped it.
+
+### Checking them against the sheets
+
+![The ellipses drawn back onto the 1881 scan](img/tribal_spread_check.jpg)
+
+An ellipse drawn over a modern basemap is easy to believe and hard to check, so [`check_tribal_spread.py`](../scripts/check_tribal_spread.py) inverts each sheet's own affine and draws every ellipse back onto the scan in that sheet's pixels. The inverse reproduces the control towns to 38.6 px on the 1881 sheet and 70.8 px on the 1853, about 3 and 5 km, so the overlay is testing the ellipses and not the transform.
+
+Held against the engraving, the ellipses sit on their names. The Hammama ellipse lies along *HAMMAMA (Tribu)* across the steppe, the Zlass over *ZLAAS* and the Kairouan country, the Frechiche over *FRÉCHICHE (Tribu)* at Kasserine, the Ouerghemma over *OUERGAMA* in the south-east. The same holds on the 1853 sheet, where the Zlass ellipse covers both *DJELAS OU KOUAIB* and *DJELAS SERRASSIN* and the Mejers ellipse follows the *MADJER* arc. Four crops per sheet at full resolution are in [`tribal_spread_spot_1881.jpg`](img/tribal_spread_spot_1881.jpg) and [`tribal_spread_spot_1853.jpg`](img/tribal_spread_spot_1853.jpg).
+
+The two rules are tested rather than trusted. **Rule 1 holds for all 88**: no tribe has a label outside its own ellipse. Rule 2 fails 45 times across 18 tribes, and those failures are the useful part.
+
+**A tribe whose own ellipse swallows a neighbour is a tribe whose compilers disagreed about where it was.** The ellipse has to contain all its own labels, so if two sheets put the name 200 km apart it cannot avoid covering whatever lies between. Read the top of this list as suspected name collisions rather than as territories:
+
+| Tribe | Labels | Sheets | Own labels span | Covers |
+| --- | --- | --- | --- | --- |
+| Ouled Khiar | 2 | 2 | 287 km | Drid, Sellaouas |
+| Ouled Sdira | 3 | 2 | 211 km | Beni Mtir, Charen, Ghezoran, Hakim, Hanencha, Kroumirs, Me |
+| Souassi | 2 | 2 | 126 km | Ouled Saïd |
+| Riah | 4 | 3 | 119 km | Djeladjela, Drid, Nefza, Ouled Aoun, Trabelsi |
+| M'Talith | 3 | 3 | 74 km | Oulad Amer |
+| Mogod | 3 | 3 | 59 km | Nefza |
+
+**The spot check settles what the flag is for.** Souassi's ellipse is a 126 by 16 km splinter running from Enfida down past Sousse, because Lasailly prints SOUASSI by Enfida while Pellissier and Martel put it in the Sahel. That is two placements joined by a line, not a territory, and no reader should take it for one.
+
+**And it found a gap in the transcription.** The 1853 sheet prints *FRACHICHE MÉRIDIONALE* as well as *FRACHICHE OULAD ALI* and *FRACHICHE OUAZAZ*, and only the last two were transcribed, so the Frechiche ellipse stops short of the ground that sheet gives the tribe, out towards Tebessa. Recorded in [`data/tribal_spread_check.json`](../data/tribal_spread_check.json) as a known gap rather than patched with a coordinate nobody read.
+
+Ouled Khiar was already known to be two groups sharing a name, 197 km apart on the two Gallica sheets and 287 km once Martel's placement joins them. **Ouled Sdira at 211 km is the new one**, and Souassi at 126 km and Riah at 119 km are the next candidates. None of them is split in the gazetteer, because splitting would be a claim about the tribes rather than about the maps; they are flagged instead, drawn dashed on the figure and counted in `encloses_other_tribes`.
 
 ## Coding
 

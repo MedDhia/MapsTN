@@ -176,11 +176,30 @@ An earlier version of this figure drew a circle the length of the name and
 understated every tribe on the sheet. What bounds an ellipse here is the next
 tribe along, which is the only bound the maps supply.
 
+| `encloses_other_tribes`, `encloses` | How many other tribes' labels fall inside this ellipse, and which. **Not a failure of the method.** The ellipse must contain all of a tribe's own labels, so where two sheets put a name 200 km apart it cannot avoid covering whatever lies between. 18 rows are flagged and they are the suspected name collisions: Ouled Khiar at 287 km, Ouled Sdira at 211, Souassi at 126, Riah at 119. Drawn dashed on the figure. |
+
 **What it is not.** Not a boundary: no sheet in this collection draws one, and
 where two ellipses overlap the maps say nothing about where the line between
 them ran. Not clipped either, so an ellipse crosses the modern frontier wherever
 the names do, which 34 of the 141 labels do. Do not publish these as tribal
 territories.
+
+### Checking it
+
+[`check_tribal_spread.py`](../scripts/check_tribal_spread.py) tests both rules
+and writes [`data/tribal_spread_check.json`](../data/tribal_spread_check.json).
+Rule 1 must hold for every tribe and currently does; a violation there is a bug.
+It also inverts each sheet's affine and redraws every ellipse on the scan it
+came from, whole-sheet and in four full-resolution crops per sheet, so the
+ellipses can be held against the engraved names rather than taken on trust. The
+inverse reproduces the control towns to 3 km on the 1881 sheet and 5 km on the
+1853, well inside the ellipses, so the overlay tests the ellipses and not the
+transform.
+
+The check also records known gaps it finds. One so far: the 1853 sheet prints
+*FRACHICHE MÉRIDIONALE* alongside the two Frachiche names that were
+transcribed, so the Frechiche ellipse stops short of the ground that sheet gives
+the tribe.
 
 ## D2. The imada index
 

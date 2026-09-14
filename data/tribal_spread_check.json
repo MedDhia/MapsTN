@@ -1,0 +1,94 @@
+{
+  "_about": "Tests the two rules the ellipses are built on, and redraws them on the 1881 scan so they can be compared against the engraved names.",
+  "tribes": 88,
+  "rule_1_own_label_outside": [],
+  "rule_1_violations": 0,
+  "_rule_1": "Every label of a tribe must lie inside that tribe's ellipse. A violation here is a bug, not a finding.",
+  "rule_2_foreign_label_inside": 45,
+  "_rule_2": "No other tribe's label should lie inside. Where it does, the tribe's own labels are already spread across its neighbours and no ellipse containing them can avoid it. That is a statement about the sources, not about the method.",
+  "tribes_enclosing_a_neighbour": 18,
+  "worst": [
+    {
+      "tribe": "Ouled Khiar",
+      "labels": 2,
+      "sheets": 2,
+      "own_spread_km": 286.9,
+      "covers": "Drid | Sellaouas"
+    },
+    {
+      "tribe": "Ouled Sdira",
+      "labels": 3,
+      "sheets": 2,
+      "own_spread_km": 210.6,
+      "covers": "Beni Mtir | Charen | Ghezoran | Hakim | Hanencha | Kroumirs | Meressen | Ouchtata | Ouillen | Ouled Ali | Ouled Khiar | Ouled Sidi Yahia ben Taleb | Ouled Soltan | Sellaouas"
+    },
+    {
+      "tribe": "Souassi",
+      "labels": 2,
+      "sheets": 2,
+      "own_spread_km": 125.5,
+      "covers": "Ouled Saïd"
+    },
+    {
+      "tribe": "Riah",
+      "labels": 4,
+      "sheets": 3,
+      "own_spread_km": 119.3,
+      "covers": "Djeladjela | Drid | Nefza | Ouled Aoun | Trabelsi"
+    },
+    {
+      "tribe": "M'Talith",
+      "labels": 3,
+      "sheets": 3,
+      "own_spread_km": 74.3,
+      "covers": "Oulad Amer"
+    },
+    {
+      "tribe": "Mogod",
+      "labels": 3,
+      "sheets": 3,
+      "own_spread_km": 59.4,
+      "covers": "Nefza"
+    },
+    {
+      "tribe": "Nemencha",
+      "labels": 2,
+      "sheets": 2,
+      "own_spread_km": 59.1,
+      "covers": "Allaounas"
+    },
+    {
+      "tribe": "Ouartan",
+      "labels": 2,
+      "sheets": 2,
+      "own_spread_km": 50.4,
+      "covers": "Khememsa | Ouled Yakoub"
+    }
+  ],
+  "_worst_comment": "Read the top of this list as a list of suspected name collisions. Ouled Sdira at 211 km and Ouled Khiar at 287 km are almost certainly two different groups sharing a name, which the report already says of Ouled Khiar on other grounds; Souassi at 126 km and Riah at 119 km are the next candidates.",
+  "overlays": {
+    "1881": {
+      "written": true,
+      "file": "docs/img/tribal_spread_check.jpg",
+      "inverse_affine_residual_px": 38.6,
+      "ellipses_drawn": 67,
+      "spot_check": "docs/img/tribal_spread_spot_1881.jpg"
+    },
+    "1853": {
+      "written": true,
+      "file": "docs/img/tribal_spread_check_1853.jpg",
+      "inverse_affine_residual_px": 70.8,
+      "ellipses_drawn": 43,
+      "spot_check": "docs/img/tribal_spread_spot_1853.jpg"
+    }
+  },
+  "_what_the_overlays_show": "Held against the engraving, the ellipses sit on their names. The Hammama ellipse lies along HAMMAMA (Tribu) across the steppe, the Zlass over ZLAAS and the Kairouan country, the Frechiche over FRECHICHE (Tribu) at Kasserine. The flagged ones do not: Souassi is a 126 by 16 km splinter running from Enfida to past Sousse, which is two placements joined rather than a territory, and that is what the flag is for.",
+  "known_gaps": [
+    {
+      "sheet": 1853,
+      "tribe": "Frechiche",
+      "gap": "The sheet prints FRACHICHE MERIDIONALE as well as FRACHICHE OULAD ALI and FRACHICHE OUAZAZ, and only the last two are transcribed. The ellipse therefore stops short of the ground the 1853 sheet gives the tribe, to the south-west around Tebessa. Found by the spot check, not yet fixed."
+    }
+  ],
+  "_overlays": "The ellipses inverted back onto each Gallica scan in its own pixels, so they can be held against the engraved names. Only the tribes that sheet names are drawn on it. Flagged tribes are in red. inverse_affine_residual_px is how well the lon/lat to pixel transform reproduces the control towns, and it has to be small or the overlay would be testing the transform rather than the ellipses. Needs the full scans in the scratch directory and is skipped when they are absent."
+}

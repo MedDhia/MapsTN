@@ -421,6 +421,18 @@ ellipses overlap where the sheets disagree. Per-tribe axes, areas and what
 stopped each one are in
 [`data/tribal_spread.csv`](data/tribal_spread.csv).
 
+**And they are checked against the sheets rather than taken on trust.**
+[`scripts/check_tribal_spread.py`](scripts/check_tribal_spread.py) inverts each
+sheet's affine and redraws every ellipse back onto the scan it came from, then
+tests both rules. Rule 1 holds for all 88. Rule 2 fails for 18, and those
+failures are the finding: a tribe whose compilers put its name 200 km apart has
+an ellipse that cannot help covering its neighbours. **Ouled Khiar spans 287 km,
+Ouled Sdira 211, Souassi 126, Riah 119** — suspected name collisions rather than
+territories, drawn dashed and flagged in the table. The check also caught a gap
+in the transcription: the 1853 sheet prints *FRACHICHE MÉRIDIONALE* alongside
+the two Frachiche names that were read, so that ellipse stops short of the
+ground the sheet gives the tribe.
+
 The nearest-name index at imada level is kept as a table:
 [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv), each
 cartographer in his own column. **Of the 1,845 imadas that two or three sheets

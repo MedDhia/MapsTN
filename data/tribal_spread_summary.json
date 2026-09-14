@@ -15,8 +15,10 @@
   "tribes_on_more_than_one_sheet": 35,
   "at_max_radius": 0,
   "min_area_sqkm": 88,
-  "median_area_sqkm": 778.0,
+  "median_area_sqkm": 779.5,
   "max_area_sqkm": 11825,
+  "tribes_enclosing_a_neighbour": 18,
+  "_enclosing_comment": "Their own labels already cover a neighbour before the ellipse grows at all, so rule 2 cannot hold for them. That is a statement about the sources: a tribe whose compilers put its name 200 km apart is a name collision, not a territory. Drawn dashed.",
   "widest": [
     {
       "tribe": "Gherib",
@@ -27,9 +29,9 @@
     },
     {
       "tribe": "Zlass",
-      "area_sqkm": 9968,
-      "major_km": 131.7,
-      "minor_km": 96.3,
+      "area_sqkm": 10285,
+      "major_km": 136.9,
+      "minor_km": 95.7,
       "stopped_by": "Ouled Aoun"
     },
     {
@@ -41,24 +43,24 @@
     },
     {
       "tribe": "Ouerghemma",
-      "area_sqkm": 7251,
-      "major_km": 119.7,
-      "minor_km": 77.1,
+      "area_sqkm": 7054,
+      "major_km": 121.1,
+      "minor_km": 74.2,
       "stopped_by": "Hazem"
     },
     {
-      "tribe": "Hazem",
-      "area_sqkm": 5294,
-      "major_km": 82.1,
-      "minor_km": 82.1,
-      "stopped_by": "Ouerghemma"
+      "tribe": "Ouled Sdira",
+      "area_sqkm": 7030,
+      "major_km": 210.6,
+      "minor_km": 42.5,
+      "stopped_by": "Ouillen"
     },
     {
-      "tribe": "Merazig",
-      "area_sqkm": 5264,
-      "major_km": 81.9,
-      "minor_km": 81.9,
-      "stopped_by": "Oled Yacoub"
+      "tribe": "Riah",
+      "area_sqkm": 5997,
+      "major_km": 119.3,
+      "minor_km": 64.0,
+      "stopped_by": "Drid"
     }
   ]
 }

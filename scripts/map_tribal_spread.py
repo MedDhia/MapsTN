@@ -219,25 +219,39 @@ def build(evidence: list[dict], max_radius: float) -> list[dict]:
         axes_dir = orientation(own)
         local = (own - centre) @ axes_dir
         base = np.maximum(np.abs(local).max(axis=0), MIN_SEMI_KM)
+        # The half-extents of the bounding box do not make an ellipse that
+        # contains the box: a point at (a, b) sits at 2 in ellipse units, not 1.
+        # Scale until every one of the tribe's own points is inside, or rule 1
+        # is violated by construction for every tribe with more than one label.
+        need = np.sqrt(((local / base) ** 2).sum(axis=1)).max()
+        if need > 1:
+            base = base * need
 
-        others = np.vstack([v for t, v in all_centres.items() if t != tribe])
+        others_by = {t: v for t, v in all_centres.items() if t != tribe}
+        others = np.vstack(list(others_by.values()))
         margin = grow(centre, axes_dir, base, others, max_radius)
         a, b = base[0] + margin, base[1] + margin
 
-        # which name stopped it
+        # Which name stopped the growth, and which names the tribe's own spread
+        # already swallowed before it could grow at all. The second list is not
+        # a failure of the method but a finding about the sheets: a tribe whose
+        # compilers put its name 90 km apart cannot help covering its
+        # neighbours, and those are the tribes whose identity is in doubt.
+        encloses = []
+        for other, pts in others_by.items():
+            loc = (pts - centre) @ axes_dir
+            if np.any((loc[:, 0] / a) ** 2 + (loc[:, 1] / b) ** 2 < 1.0 - 1e-9):
+                encloses.append(other)
         stopper, stop_km = "", ""
-        if margin < max_radius - 1e-6:
-            best = None
-            for other, pts in all_centres.items():
-                if other == tribe:
-                    continue
-                loc = (pts - centre) @ axes_dir
-                d = (loc[:, 0] / a) ** 2 + (loc[:, 1] / b) ** 2
-                k = int(d.argmin())
-                if best is None or d[k] < best[0]:
-                    best = (d[k], other, float(np.hypot(*loc[k])))
-            if best:
-                stopper, stop_km = best[1], round(best[2], 1)
+        best = None
+        for other, pts in others_by.items():
+            loc = (pts - centre) @ axes_dir
+            d = (loc[:, 0] / a) ** 2 + (loc[:, 1] / b) ** 2
+            k = int(d.argmin())
+            if best is None or d[k] < best[0]:
+                best = (d[k], other, float(np.hypot(*loc[k])))
+        if best and margin < max_radius - 1e-6:
+            stopper, stop_km = best[1], round(best[2], 1)
 
         lon, lat = to_deg(*centre)
         angle = math.degrees(math.atan2(axes_dir[1, 0], axes_dir[0, 0]))
@@ -254,6 +268,8 @@ def build(evidence: list[dict], max_radius: float) -> list[dict]:
             "angle_deg": round(angle, 1),
             "area_sqkm": round(math.pi * a * b),
             "grew_by_km": round(margin, 1),
+            "encloses_other_tribes": len(encloses),
+            "encloses": " | ".join(sorted(encloses)),
             "stopped_by": stopper,
             "stopped_at_km": stop_km,
             "at_max_radius": 1 if margin >= max_radius - 1e-6 else 0,
@@ -320,12 +336,15 @@ def draw(rows, evidence, colours, path, stats, max_radius):
         # does the rest: at this latitude a kilometre drawn vertically and one
         # drawn horizontally differ by half a per cent, which is well inside
         # everything else here.
+        flagged = row["encloses_other_tribes"] > 0
         ell = Ellipse((lon, lat),
                       2 * row["_a"] / KM_PER_DEG_LON,
                       2 * row["_b"] / KM_PER_DEG_LON,
                       angle=row["angle_deg"],
-                      facecolor=colours[row["tribe"]], edgecolor=colours[row["tribe"]],
-                      alpha=0.30, linewidth=0.5, zorder=5)
+                      facecolor=colours[row["tribe"]],
+                      edgecolor="#8c3b2a" if flagged else colours[row["tribe"]],
+                      alpha=0.30, linewidth=0.9 if flagged else 0.5,
+                      linestyle=(0, (2, 1.5)) if flagged else "solid", zorder=5)
         ax.add_patch(ell)
 
     for label in evidence:
@@ -344,7 +363,10 @@ def draw(rows, evidence, colours, path, stats, max_radius):
     ax.set_axis_off()
     ax.legend(handles=[Line2D([], [], marker="o", linestyle="none",
                               color=SOURCE_INK[s], markersize=4, label=s)
-                       for s in SOURCE_INK],
+                       for s in SOURCE_INK]
+                      + [Line2D([], [], color="#8c3b2a", linewidth=1.2,
+                                linestyle=(0, (2, 1.5)),
+                                label="own labels already cover a neighbour")],
               loc="lower left", bbox_to_anchor=(0.0, 0.02), frameon=False,
               fontsize=6.2)
 
@@ -395,7 +417,12 @@ def draw(rows, evidence, colours, path, stats, max_radius):
         f"nothing here is sized by a constant. Nothing is clipped to the modern "
         f"frontier either, which {stats['outside']} of the labels sit west of. "
         f"Ellipses overlap where the sheets disagree, and the overlap is left "
-        f"to be seen."
+        f"to be seen. The {stats['flagged']} ellipses drawn with a dashed red "
+        f"edge are the ones whose own labels already cover a neighbour before "
+        f"any growth: Ouled Sdira's three names stand 211 km apart and Ouled "
+        f"Khiar's two 287 km, which is not a territory but two groups sharing a "
+        f"name. scripts/check_tribal_spread.py tests both rules and redraws "
+        f"every ellipse on the 1881 scan to be compared against the engraving."
     )
     figure.text(0.02, 0.145,
                 "\n".join(textwrap.wrap(caption, 185)
@@ -444,14 +471,23 @@ def main(argv: list[str] | None = None) -> int:
         "min_area_sqkm": areas[0],
         "median_area_sqkm": statistics.median(areas),
         "max_area_sqkm": areas[-1],
+        "tribes_enclosing_a_neighbour": sum(1 for r in rows
+                                            if r["encloses_other_tribes"] > 0),
+        "_enclosing_comment": (
+            "Their own labels already cover a neighbour before the ellipse "
+            "grows at all, so rule 2 cannot hold for them. That is a statement "
+            "about the sources: a tribe whose compilers put its name 200 km "
+            "apart is a name collision, not a territory. Drawn dashed."),
         "widest": [{"tribe": r["tribe"], "area_sqkm": r["area_sqkm"],
                     "major_km": r["major_km"], "minor_km": r["minor_km"],
                     "stopped_by": r["stopped_by"]} for r in rows[:6]],
     }
     stats["outside"] = stats["labels_outside_modern_tunisia"]
+    stats["flagged"] = stats["tribes_enclosing_a_neighbour"]
     stats["at_max"] = stats["at_max_radius"]
     (REPO_ROOT / "data" / "tribal_spread_summary.json").write_text(
-        json.dumps({k: v for k, v in stats.items() if k not in ("outside", "at_max")},
+        json.dumps({k: v for k, v in stats.items()
+                   if k not in ("outside", "at_max", "flagged")},
                    ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     if not args.no_figure:
