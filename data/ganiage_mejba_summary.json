@@ -14,10 +14,10 @@
   "smallest_line": "Beit ech-Chéria",
   "ganiage_stated_rate": 4,
   "implied_rate_from_his_own_tribe_figures": {
-    "n": 10,
+    "n": 9,
     "min": 3.82,
-    "median": 4.14,
-    "max": 5.21
+    "median": 4.06,
+    "max": 4.33
   },
   "printed_total_at_his_rate": 886656,
   "his_estimate_for_the_regency": 1100000,

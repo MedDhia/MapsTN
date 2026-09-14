@@ -27,7 +27,8 @@ a relevance score.
 | **Tribal variable definitions** | [`docs/CODEBOOK-TRIBES.md`](docs/CODEBOOK-TRIBES.md) |
 | **Tribe names placed on the ground** | [`data/tribal_territories.csv`](data/tribal_territories.csv), [`.geojson`](data/tribal_territories.geojson) |
 | **Do two sheets agree on where a tribe is?** | [`data/tribal_map_agreement.csv`](data/tribal_map_agreement.csv) |
-| **Tribes on today's imadas** | [`data/tribal_imada_coverage.csv`](data/tribal_imada_coverage.csv) |
+| **Tribes on today's imadas** | [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) |
+| **Martel's 1881 sketch map, read** | [`data/martel_1965_tribes.csv`](data/martel_1965_tribes.csv) |
 | **Who counted the tribes, and how many** | [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) |
 | **Population figures, with their sources** | [`data/tribal_population_sources.csv`](data/tribal_population_sources.csv) |
 | **1931 census, by caïdat** | [`data/census_1931_caidats.csv`](data/census_1931_caidats.csv) |
@@ -367,24 +368,45 @@ that north-western corner.
 
 **645 of 663 records are coded `unknown`, and unknown means unknown, not no.**
 
-**The annotation, put on today's map.** The finest published Tunisian unit is
-the imada, 2,084 of them, and
-[`scripts/map_tribes_on_imadas.py`](scripts/map_tribes_on_imadas.py) puts the
-transcribed labels on that mesh. A tribe is drawn as a disc rather than a
-polygon because a disc is what the evidence supports: no sheet draws a tribal
-boundary, and the six labels measured run 14 to 32 km end to end, so each
-reading gets a disc of 11 km radius around where its name is printed. The discs
-reach **677 of the 2,084 imadas, 24% of the country's area**, with 274 reached
-by two tribes or more and seven tribes meeting on one imada in the Kroumirie.
-Per-imada results are in
-[`data/tribal_imada_coverage.csv`](data/tribal_imada_coverage.csv).
+**A third sheet, and the whole country.** The two Gallica sheets leave the south
+blank, and that blank was an artefact of what had been read. André Martel's *Les
+Confins saharo-tripolitains de la Tunisie (1881-1911)* (P.U.F., 1965) prints a
+sketch map, *Villes et tribus tunisiennes 1881*, that covers the country end to
+end. It is **not** a sheet in this collection and is kept apart in its own
+config, CSV and colour: it is a historian's synthesis, a secondary source beside
+two primary ones. 27 names read, 19 matching the gazetteer, placed to 12.6 km
+leave-one-out on 20 control towns, with a projection check that confirms the
+affine is the right model (257 px per degree of longitude against 315 per degree
+of latitude, ratio 0.800, against cos 35°N of 0.819).
 
-![Tribal annotation of 1853 and 1881 on the imadas of 2022](docs/img/tribal_distribution_imada.png)
+Eight of its names have no gazetteer entry and all eight are southern: Beni Zid,
+Merazig, Adhara and a southern Ouled Yacoub in the Nefzaoua, Hazem toward Gabès,
+Gherib and Troud about the Djerid, the Chaamba of the Algerian Sahara. **Two of
+them are name collisions that were doing damage.** Martel's Nefzaoua Ouled
+Yacoub is not the gazetteer's north-western Ouled Yakoub, and the population
+table had a southern figure sitting over a north-western taxpayer count as a
+result. Correcting it tightened the implied multiplier in Ganiage's article from
+3.82–5.21 to 3.82–4.33, median 4.06, against the flat four he states.
 
-Two thirds of the imadas are blank, and the blank means three different things
-the table cannot separate: the 1853 sheet was transcribed only to about 34°N,
-the 1881 sheet gives everything south of Sfax to one tribe, and the two sheets
-between them name 80 groups where the country held more.
+**Where the tribes were, on today's imadas.** The finest published Tunisian unit
+is the imada, 2,084 of them, and
+[`scripts/map_tribes_on_imadas.py`](scripts/map_tribes_on_imadas.py) gives each
+one the tribe whose nearest read name lies closest, out to 60 km. That is a
+Voronoi tessellation at imada resolution, and it fills the country where dots
+could not: **1,977 of 2,084 imadas assigned, 71% of the area**, 62 tribes given
+ground, the widest being the Ouerghemma at 9,751 km².
+
+![Tribal annotation of 1853 and 1881 assigned to the imadas of 2022](docs/img/tribal_distribution_imada.png)
+
+**The colours are a rule, not evidence.** No sheet draws a tribal boundary;
+where two names sit 60 km apart the line between their colours falls at 30 km
+because that is what nearest means. The median assigned imada is 19.5 km from
+its name, the printed names run 14 to 32 km long, and **64% of assigned imadas
+have a rival name within 10 km of the winner** — which is the number to quote
+against anyone who reads the fill as territory. Every row of
+[`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) carries
+its own distance and runner-up, and the 107 unassigned imadas are the Grand Erg
+and the deep Dahar, where none of the three sheets prints a name.
 
 **How many people was a tribe?** No sheet says — a map gives location, never
 size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the
@@ -405,9 +427,9 @@ footnotes gather them into 22 gazetteer tribes in
 worth stating on their own. **The printed lines do not add to the printed
 total**: 215,607 against 221,664, a gap of 2.7% that is in the source and is not
 reconciled here. And setting the taxpayer counts against the population figures
-Ganiage publishes recovers the multiplier he used, tribe by tribe: **3.8 to 5.2
-individuals per taxpayer, median 4.1**, against the rate of four he states on
-p. 864. The convention is not hidden, but it is a convention.
+Ganiage publishes recovers the multiplier he used, tribe by tribe: **3.82 to
+4.33 individuals per taxpayer, median 4.06**, against the rate of four he states
+on p. 864. The convention is not hidden, but it is a convention.
 
 The two nineteenth-century sources disagree by a factor of four on the steppe.
 Pellissier counts warriors and multiplies by five, a rule he states himself;

@@ -22,6 +22,7 @@ is what makes the disagreements below legible.
 | [*Dénombrement de la population civile indigène*, 22 mars 1931](https://gallica.bnf.fr/ark:/12148/bpt6k994559s) | 1931 | Census, Tableau II by caïdat, Tableau III by cheikhat | souls, split Muslim/Jewish and by nationality | Caïdat, then cheikhat | Page images on Gallica, free |
 | [*Nomenclature et répartition des tribus de Tunisie*](https://gallica.bnf.fr/ark:/12148/bpt6k6212793n) | 1900 | **Nothing.** Structure only | — | Caïdat → cheikhat → fraction → sous-fraction → campsite | Page images on Gallica, free |
 | [Ganiage, *La population de la Tunisie vers 1860*](https://www.persee.fr/doc/pop_0032-4663_1966_num_21_5_13406) | 1966, on c. 1858–61 data | Reconstruction from the *mejba* poll-tax registers in Dar el Bey | taxpayers, converted to individuals | Tribe, and fraction in the annexe | Full text free, page by page |
+| André Martel, *Les Confins saharo-tripolitains de la Tunisie (1881-1911)*, Paris, P.U.F., 1965 | 1965, on 1881 | **No population figures.** A sketch map of where the tribes were | — | Tribe | Its map is read in [`docs/TRIBES.md`](TRIBES.md). It is listed here because it settles which tribe a figure belongs to, which is not a small thing: it caught two names held by two groups each |
 | [FR MAE 1TU/600, *Notices de tribus*](https://archivesdiplomatiques.diplomatie.gouv.fr/media/20150bd1-ac87-4f49-bc76-af37a54b2dd8.pdf) | 1881–1956 | Officer monographs, one per tribe | whatever the officer counted | Tribe and fraction | Nantes, on site; finding aid online |
 | [Guérin, *Voyage archéologique dans la Régence de Tunis*](https://archive.org/details/voyagearchologiq00guri) | 1862 | Camps he slept in | tents | One douar at a time | Full text, free |
 | Monchicourt, *La région du Haut Tell en Tunisie* (Paris, A. Colin, 487 p.) — [review by A. Bernard, 1914](https://www.persee.fr/doc/geo_0003-4010_1914_num_23_128_8148) | 1913 | Regional monograph, Kef–Téboursouk–Maktar–Thala | not checked | Tribe, in that region only | Book not consulted here; the review is open |
@@ -234,7 +235,7 @@ that authority the 78 lines reach 22 gazetteer tribes, in
 | Neffat | 1,287 | 1 | not stated | |
 | Ouled Saïd | 1,185 | 1 | not stated | |
 | Ouled bou Salem | 1,040 | 1 | not stated | |
-| Ouled Yakoub | 863 | 1 | about 4,500 | 5.21 |
+| Ouled Yakoub | 863 | 1 | not stated | |
 | Ouled Khiar | 266 | 1 | not stated | |
 
 Four lines name a gazetteer entry finer than the tribe above them and so get
@@ -255,9 +256,21 @@ defect of the reading.
 states his rate on p. 864, note 4: *« En règle générale, nous avons retenu le
 taux de quatre habitants pour un imposé à la mejba, toutes dispenses
 comprises. »* Setting his published tribe totals against the taxpayer counts
-recovers what he actually used, tribe by tribe: 3.82 to 5.21, median 4.14. The
-convention is visible, it is roughly four, and it is a convention: the same
+recovers what he actually used, tribe by tribe: 3.82 to 4.33, median 4.06,
+across the nine tribes where he publishes both. The convention is visible, it is
+his stated four to within a fifth of a person, and it is a convention: the same
 kind of multiplier as Pellissier's ×5 on warriors, applied to a better base.
+
+That range used to read 3.82 to 5.21. The 5.21 was the Ouled Yakoub, and it was
+an artefact of two groups sharing a name. Ganiage's 4 or 5,000 on p. 881 is
+argued alongside the Ouerghamma and the Hamerna of the Aradh, so it is the
+southern Ouled Yacoub, whom Martel's 1881 sketch map prints in the Nefzaoua; the
+863 taxpayers on the annexe line carry footnote 12, which puts that
+circumscription in the Ounifa league of the north-west. Dividing one by the
+other compared two different tribes. No ratio is taken for that name now, both
+rows carry the warning, and the correction tightened the result rather than
+loosening it: the outlier was the only figure that sat outside Ganiage's own
+rate.
 
 **The annexe is a tax roll, not a census, and Ganiage says so.** On p. 864 he
 calls the 1277 table *« en définitive peu utilisable »*: it mixes figures that

@@ -129,14 +129,16 @@ the points findable, not to assign a tribe to a governorate.
 | [`data/tribal_fit.json`](../data/tribal_fit.json) | Per-map transform coefficients, px per degree, RMS and leave-one-out RMS, and the residual at each control town. |
 | [`data/tribal_annotation_summary.json`](../data/tribal_annotation_summary.json) | Distributions of every coded variable, and the forms by decade. |
 | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) | The 30 tribes named on both transcribed sheets, and how far apart the two sheets put each one. Median 23 km, which is about one label length. The 197 km outlier, Ouled Khiar, is two different groups sharing a name. |
-| [`data/tribal_imada_coverage.csv`](../data/tribal_imada_coverage.csv) | One row per contemporary imada that a tribe's disc reaches, 677 of 2,084. See section D. |
-| [`data/tribal_imada_summary.json`](../data/tribal_imada_summary.json) | The counts behind that table, and the disc radius with its basis. |
+| [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) | One row per contemporary imada, all 2,084, with the tribe it is assigned to. See section D. |
+| [`data/tribal_imada_summary.json`](../data/tribal_imada_summary.json) | The counts behind that table, and the rule it rests on. |
+| [`config/martel_1965_tribes.json`](../config/martel_1965_tribes.json), [`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv), [`data/martel_1965_fit.json`](../data/martel_1965_fit.json) | The third sheet, read and placed. See section E. |
 
-## D. The imada join
+## D. The imada assignment
 
-[`data/tribal_imada_coverage.csv`](../data/tribal_imada_coverage.csv) puts the
-label points onto the finest published contemporary unit, the imada, drawn from
-the OCHA Common Operational Dataset (2022 boundaries, 2,084 units). Built by
+[`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) gives
+every contemporary imada the tribe whose nearest read label lies closest to it,
+out to a 60 km cutoff. Boundaries are the OCHA Common Operational Dataset, 2022,
+2,084 units. Built by
 [`map_tribes_on_imadas.py`](../scripts/map_tribes_on_imadas.py), which also
 draws [`docs/img/tribal_distribution_imada.png`](img/tribal_distribution_imada.png).
 
@@ -144,15 +146,56 @@ draws [`docs/img/tribal_distribution_imada.png`](img/tribal_distribution_imada.p
 | --- | --- |
 | `adm4_pcode`, `imada`, `delegation`, `gouvernorat` | The unit and its parents, verbatim from the COD. `adm4_pcode` joins back to the shapefile. |
 | `area_sqkm` | The COD's own area for the imada. |
-| `tribes_n`, `tribes` | How many distinct tribes reach this imada, and which. A tribe reaches an imada when a disc of 11 km radius around any of its label points intersects the polygon. |
+| `tribe` | The tribe whose nearest label point is closest to the imada's representative point. Empty where the nearest is beyond 60 km. |
+| `label_as_printed` | The engraved form of that winning name. |
+| `source` | Which sheet the winning label was read from: `1853 Pellissier`, `1881 Lasailly`, `1881 Martel (1965)`. The third is a secondary source. |
+| `distance_km` | How far the winning name is. The single most important column in the file. |
+| `runner_up`, `runner_up_km` | The nearest label belonging to a different tribe, and its distance. |
 
-**A tribe's disc is not its territory, and `tribes_n` is not a count of who
-lived there.** The radius is half the median length of the six labels measured
-on the tiles, which ran 14 to 32 km: it is the grain of the annotation, not an
-error bar and not a boundary. Two tribes sharing an imada here means two names
-were printed within 22 km of each other on a nineteenth-century sheet.
+**`tribe` is the output of a rule, not a reading off a map.** No sheet in this
+collection draws a tribal boundary. Where two names sit 60 km apart the
+assignment changes hands at 30 km, because that is what nearest means and for no
+other reason. Two columns are there so that no row has to be taken on trust:
+`distance_km` says how far the extrapolation ran, and `runner_up_km` says how
+close the decision was. **64% of assigned rows have a rival name within 10 km of
+the winner**, and the median assigned imada is 19.5 km from its name while the
+printed names themselves run 14 to 32 km long.
 
-Rows are only written for imadas a disc reaches. The 1,407 with no row are not
-recorded as empty: the 1853 sheet was transcribed only to about 34°N and the
-1881 sheet gives everything south of Sfax to one tribe, so most of the blank is
-about the reading and the map rather than about the ground.
+Do not dissolve this table by `tribe` and publish the result as a map of tribal
+territory. It is an index of which name was nearest, at a stated resolution,
+under a stated rule.
+
+The 107 rows with an empty `tribe` are the Grand Erg and the deep Dahar, where
+none of the three sheets prints a name within 60 km.
+
+## E. Martel 1965, the third sheet
+
+[`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv), 27 rows, one
+per tribe name on the sketch map *Villes et tribus tunisiennes 1881* in André
+Martel, *Les Confins saharo-tripolitains de la Tunisie (1881-1911)* (Paris,
+P.U.F., 1965). Read and placed by
+[`place_martel_labels.py`](../scripts/place_martel_labels.py).
+
+| Variable | Definition |
+| --- | --- |
+| `source`, `year` | `martel_1965`, and 1881, which is the date the map depicts rather than the date it was drawn. |
+| `label_as_printed` | The name as set on the sketch map: `OLED AYAR`, `FRAICHICH`, `OUERGHAMMA`. |
+| `tribe` | The gazetteer's canonical name where the label resolves to one, otherwise the printed name title-cased. |
+| `in_gazetteer` | 1 for the 19 that resolve, 0 for the 8 that do not. |
+| `x_px`, `y_px` | Where the name sits on the reproduction read, 1,200 px across. |
+| `lon`, `lat` | WGS84, from a 20-town affine. RMS 10.9 km, leave-one-out 12.6 km, in [`data/martel_1965_fit.json`](../data/martel_1965_fit.json). |
+| `note` | Why a label is unmatched, or how an arc-set name was anchored. |
+
+**This is a secondary source and the file exists to keep it one.** Martel is a
+historian writing in 1965 from French military and archival material, not an
+1881 engraver. The two Gallica sheets are evidence of what a nineteenth-century
+compiler put on paper; Martel is evidence of what a modern scholar concluded.
+They are kept in separate files, given separate colours on the figure, and
+counted separately in every summary. `source` in the assignment table says which
+of the three won each imada.
+
+The 8 unmatched names are all southern, and two of them are name collisions with
+gazetteer entries that belong to different groups: the Nefzaoua Ouled Yacoub
+against the north-western Ouled Yakoub, and the Djerid Troud against the Troud
+of the lower Medjerda in Ganiage's annexe. Both are left unmatched rather than
+merged.

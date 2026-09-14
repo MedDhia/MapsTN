@@ -42,11 +42,20 @@ STATED = {
     "Ouled Ayar": (24000, "~", "p. 877, twice the Ouled Aoun"),
     "Souassi": (20000, "=", "p. 878, 20.000"),
     "Ouled Aoun": (12000, "~", "p. 877, a dozen thousand"),
-    "Ouled Yakoub": (4500, "~", "p. 881, 4 or 5.000"),
 }
 
 # Ganiage's own rate, stated on p. 864 note 4.
 GANIAGE_RATE = 4
+
+# Ouled Yakoub is deliberately absent from STATED. Ganiage's 4 or 5.000 on
+# p. 881 is the southern group, argued alongside the Ouerghamma and the Hamerna
+# of the Aradh; the 863 taxpayers on the annexe line carry footnote 12, which
+# puts that circumscription in the Ounifa league of the north-west. Two groups
+# share the name. Dividing one by the other gave 5.21 individuals per taxpayer,
+# the highest ratio in the table and the only one outside Ganiage's own rate of
+# four; it was an artefact of the collision, and it is why the ratio is no
+# longer computed for this tribe. Martel's 1881 sketch map, which prints OLED
+# YACOUB in the Nefzaoua, is what made the collision visible.
 
 
 def fold(s):
@@ -204,6 +213,14 @@ def main():
             else "The fiscal unit is printed under the tribe's own name."
         )
         note = basis
+        if r["tribe"] == "Ouled Yakoub":
+            note += (
+                " Footnote 12 puts this circumscription in the Ounifa league of "
+                "the north-west. It is not the Ouled Yacoub of p. 881, whom "
+                "Ganiage argues alongside the Ouerghamma of the Aradh and whom "
+                "Martel's 1881 map prints in the Nefzaoua: two groups, one name, "
+                "and no ratio is taken between them."
+            )
         if r["ganiage_individuals"]:
             stated = f"{r['ganiage_individuals']:,}".replace(",", ".")
             note += (
