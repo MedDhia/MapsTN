@@ -129,63 +129,81 @@ the points findable, not to assign a tribe to a governorate.
 | [`data/tribal_fit.json`](../data/tribal_fit.json) | Per-map transform coefficients, px per degree, RMS and leave-one-out RMS, and the residual at each control town. |
 | [`data/tribal_annotation_summary.json`](../data/tribal_annotation_summary.json) | Distributions of every coded variable, and the forms by decade. |
 | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) | The 30 tribes named on both transcribed sheets, and how far apart the two sheets put each one. Median 23 km, which is about one label length. The 197 km outlier, Ouled Khiar, is two different groups sharing a name. |
-| [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) | One row per contemporary imada, all 2,084, with the tribe it is assigned to. See section D. |
-| [`data/tribal_imada_summary.json`](../data/tribal_imada_summary.json) | The counts behind that table, and the rule it rests on. |
+| [`data/tribal_spread.csv`](../data/tribal_spread.csv) | One row per tribe: how many names carry it, how far apart they stand, how much ground its field covers. See section D. |
+| [`data/tribal_spread_summary.json`](../data/tribal_spread_summary.json) | The counts behind the figure, the bandwidth and why it is that. |
+| [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) | One row per contemporary imada, all 2,084. See section D2. |
+| [`data/boundaries/neighbours_ne50m.geojson`](../data/boundaries/neighbours_ne50m.geojson) | Algeria, Libya and Sicily clipped to the map window, Natural Earth 1:50m, so the names printed west of the frontier sit on land. |
 | [`config/martel_1965_tribes.json`](../config/martel_1965_tribes.json), [`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv), [`data/martel_1965_fit.json`](../data/martel_1965_fit.json) | The third sheet, read and placed. See section E. |
 
-## D. The imada assignment
+## D. The spread of each tribe
 
-[`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv), one
-row per contemporary imada, all 2,084 of them. Boundaries are the OCHA Common
-Operational Dataset, 2022. Built by
-[`map_tribes_on_imadas.py`](../scripts/map_tribes_on_imadas.py), which also
-draws [`docs/img/tribal_distribution_imada.png`](img/tribal_distribution_imada.png).
-
-The rule: an imada takes the tribe whose nearest read label lies closest to its
-representative point, out to a 60 km cutoff. It is applied four times, once per
-cartographer on his own names and once on all three pooled, so the columns can
-be read against each other.
+[`data/tribal_spread.csv`](../data/tribal_spread.csv), one row per tribe, 88
+rows. Built by [`map_tribal_spread.py`](../scripts/map_tribal_spread.py), which
+also draws [`docs/img/tribal_spread.png`](img/tribal_spread.png).
 
 | Variable | Definition |
 | --- | --- |
-| `adm4_pcode`, `imada`, `delegation`, `gouvernorat` | The unit and its parents, verbatim from the COD. `adm4_pcode` joins back to the shapefile. |
-| `area_sqkm` | The COD's own area for the imada. |
+| `tribe` | The gazetteer's canonical name, or the printed name where the label resolves to no entry. |
+| `labels` | How many printed names across all three sheets resolve to this tribe. 53 tribes have one, 35 have more. |
+| `sources`, `sources_named` | How many of the three sheets name it, and which. |
+| `printed_as` | Every spelling it appears under: `Djelas \| Djelas Senrassin \| ZLASS \| Zlaas`. |
+| `lon`, `lat` | The mean of its label positions. **Not a territory centroid.** For a one-label tribe it is that label; for a four-label tribe it is the middle of four engravers' opinions. |
+| `widest_label_gap_km` | The greatest distance between two of this tribe's own names. **This is the observed spread**, and it is the only column here that is purely evidence. |
+| `field_sqkm_half_peak` | The ground the tribe's Gaussian field covers down to half its peak. Evidence plus bandwidth: a one-label tribe gets about 1,400 km² whatever it was, because that is what an 18 km blur of a single point covers. |
+| `labels_outside_modern_tunisia` | How many of its names are printed on ground that is now Algeria. |
+
+**Read `widest_label_gap_km` before `field_sqkm_half_peak`.** The first is
+measured off the sheets. The second is the first convolved with a choice of
+bandwidth, so for the 53 single-label tribes it carries no information about the
+tribe at all: it is the area of one blur. The widest field, Riah at 5,462 km²,
+is wide because four names across three sheets disagree by up to 87 km, which is
+as much a statement about the compilers as about the Riah.
+
+### The figure, and the two versions of it that were wrong
+
+The surface drawn is `exp(-d² / 2σ²)` for `d` the distance to the nearest
+printed name of that sheet, σ = 18 km, painted as a continuous alpha ramp with
+no contour line in it. Intensity is 1 where a name sits and a half at 21 km,
+which is about one printed name away.
+
+Two earlier versions are recorded because both are tempting and both are wrong.
+**A dot per label** answers nothing about extent. **Filled or dotted
+administrative units** answer it by inventing it: a filled polygon reads as
+territory whatever the caption says, and it confines a nineteenth-century tribe
+inside a 2022 administrative mesh, stopping it at a frontier that did not exist
+when 34 of the 141 names were printed on what is now Algerian ground.
+
+**The bandwidth is not free and the fade is not a frontier.** σ is set from the
+six labels measured on the tiles, which run 14 to 32 km end to end. Placement
+error is 6.17 km and 8.17 km leave-one-out for the two Gallica sheets and
+12.61 km for Martel, all comfortably inside the blur, so the blur is the
+annotation's grain rather than an error bar.
+
+## D2. The imada index
+
+[`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv), one
+row per contemporary imada, all 2,084, from the OCHA Common Operational Dataset
+2022. Kept as a table and no longer drawn. The rule: an imada takes the tribe
+whose nearest read label lies closest to its representative point, out to a
+60 km cutoff, applied once per cartographer and once pooled.
+
+| Variable | Definition |
+| --- | --- |
+| `adm4_pcode`, `imada`, `delegation`, `gouvernorat`, `area_sqkm` | The unit and its parents, verbatim from the COD. |
 | `tribe_1853_pellissier`, `km_1853` | What the 1853 sheet alone would put here, and how far its nearest name is. Empty beyond the cutoff. |
 | `tribe_1881_lasailly`, `km_1881` | The same for the 1881 Lasailly sheet. |
-| `tribe_1881_martel`, `km_martel` | The same for Martel's 1965 sketch map of 1881, a secondary source. |
-| `tribe_pooled`, `source_pooled`, `km_pooled` | The winner when all three sets of names compete, which sheet it came from, and its distance. |
-| `runner_up`, `runner_up_km` | The nearest label belonging to a different tribe, under the pooled rule, and its distance. |
-| `sources_naming` | How many of the three reach this imada at all, 0 to 3. |
-| `sources_agreeing` | How many of those name the same tribe as `tribe_pooled`. |
+| `tribe_1881_martel`, `km_martel` | The same for Martel's 1965 sketch map, a secondary source. |
+| `tribe_pooled`, `source_pooled`, `km_pooled` | The winner with all three competing, which sheet it came from, its distance. |
+| `runner_up`, `runner_up_km` | The nearest label of a different tribe, pooled, and its distance. |
+| `sources_naming`, `sources_agreeing` | How many of the three reach this imada, and how many name the same tribe as `tribe_pooled`. |
 
-**Every `tribe_*` column is the output of a rule, not a reading off a map.** No
-sheet in this collection draws a tribal boundary. Where two names sit 60 km
-apart the assignment changes hands at 30 km, because that is what nearest means
-and for no other reason. `km_pooled` says how far the extrapolation ran and
-`runner_up_km` says how close the decision was.
-
-**The cross-cartographer columns are the point of the file.** Of the 1,845
-imadas that two or three sheets reach, **only 232 (12.6%) get the same tribe
-from all of them**. Part of that is grain rather than contradiction, since
-Pellissier names the fractions of the M'Talith and the Hammama where the others
-name the parent and the gazetteer keeps fractions separate; the rest is real
-disagreement between compilers. Anyone using one column alone is using one
-cartographer's opinion, and `sources_naming` and `sources_agreeing` say how
-lonely that opinion is.
-
-Do not dissolve this table by `tribe_pooled` and publish the result as a map of
-tribal territory. It is an index of which name was nearest, at a stated
-resolution, under a stated rule.
-
-The 107 rows with an empty `tribe_pooled` are the Grand Erg and the deep Dahar,
-where none of the three sheets prints a name within 60 km.
-
-**On the figure.** The assigned ground is drawn as dot density, one dot per
-45 km² scattered at random inside the polygons from a fixed seed, rather than as
-a filled choropleth. A fill would close into edges and read as territory however
-the caption were worded; a sprinkle carries the same extent and never draws a
-line. The dot positions are cosmetic and carry no information beyond the imada
-they fall in.
+**This table answers a question about indexing, not about where a tribe was**,
+and it carries its own warning: of the 1,845 imadas that two or three sheets
+reach, only 232, **12.6%**, get the same tribe from all of them. Part is grain
+rather than contradiction, since Pellissier names fractions where the others
+name the parent. Do not dissolve the table by `tribe_pooled` and publish the
+result as tribal territory. The 107 rows with an empty `tribe_pooled` are the
+Grand Erg and the deep Dahar.
 
 ## E. Martel 1965, the third sheet
 

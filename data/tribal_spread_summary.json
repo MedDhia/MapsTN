@@ -1,0 +1,43 @@
+{
+  "_about": "Each tribe's printed names convolved with a Gaussian and painted as a continuous surface, one hue per cartographer. A field, not an area: no contour, and clipped to nothing.",
+  "_why_not_an_area": "No sheet in this collection draws a tribal boundary, so a filled polygon would be an invention. Filling administrative units adds a second error on top, confining a nineteenth-century tribe inside a 2022 mesh and stopping it at a frontier that did not exist: 34 of the labels are printed on ground that is now Algeria.",
+  "sigma_km": 18.0,
+  "_sigma_basis": "Six labels measured on the tiles run 14 to 32 km end to end, a median of about 22. A Gaussian of this sigma has its half-peak point at 1.177 sigma, so the surface falls to half about one printed name away from the engraving.",
+  "half_peak_radius_km": 21.2,
+  "peak_alpha": 0.72,
+  "gamma": 1.5,
+  "points": 141,
+  "points_by_source": {
+    "1853 Pellissier": 45,
+    "1881 Lasailly": 69,
+    "1881 Martel (1965)": 27
+  },
+  "tribes_by_source": {
+    "1853 Pellissier": 43,
+    "1881 Lasailly": 67,
+    "1881 Martel (1965)": 27
+  },
+  "outside_by_source": {
+    "1853 Pellissier": 2,
+    "1881 Lasailly": 29,
+    "1881 Martel (1965)": 3
+  },
+  "points_outside_modern_tunisia": 34,
+  "tribes": 88,
+  "tribes_with_more_than_one_label": 35,
+  "widest_label_gap_km": 201.4,
+  "widest_field_tribe": "Riah",
+  "widest_field_sqkm": 5462,
+  "median_field_sqkm": 1418,
+  "loo_rms": "1881 6.17 km, 1853 8.17 km",
+  "martel_loo_rms_km": 12.61,
+  "imada_index": {
+    "cutoff_km": 60.0,
+    "imadas_total": 2084,
+    "imadas_assigned_pooled": 1977,
+    "imadas_named_by_two_or_three": 1845,
+    "of_those_agreeing": 232,
+    "agreement_pct": 12.6,
+    "_comment": "The nearest-name index, kept as a table and no longer drawn. It answers which tribe's name is closest to a 2022 unit, which is a question about indexing, not about where a tribe was."
+  }
+}

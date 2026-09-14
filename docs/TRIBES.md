@@ -12,6 +12,7 @@ Which maps in this collection say where a tribe is, how each one says it, and wh
 | Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |
 | Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |
 | Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |
+| The spread of each tribe | [`data/tribal_spread.csv`](../data/tribal_spread.csv) |
 | Tribes on today's imadas | [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) |
 | Martel's 1881 sketch map, read | [`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv) |
 | How many people was a tribe? | [`docs/POPULATION-SOURCES.md`](POPULATION-SOURCES.md) |
@@ -138,53 +139,30 @@ By modern gouvernorat, for the sheet whose face was read in full:
 
 The north-west carries the annotation and the south barely does. Jendouba, Béja and Le Kef hold 22 of the 40 Tunisian labels between them, while south of Sfax the entire country — the Jerid, the Nefzaoua, the Dahar, the Matmata — carries exactly one, the Ouerghemma. That is not a map of where tribes were. It is a map of where a French compiler in 1881 had names for them, and 1881 is the year of the Kroumir campaign in exactly that north-western corner. Over the same latitudes the 1853 sheet is less lopsided — its median label sits at 35.9°N against the 1881 sheet's 36.6°N, and seven of its labels fall south of 35°N against four — though part of that is simply that Pellissier names the fractions of the M'Talith and the Hamema where Lasailly names the parent.
 
-## A third sheet, and the whole country
+## The spread of each tribe
 
-The two sheets above leave the south blank, and that blank was an artefact of what had been read rather than of what was mapped. André Martel's *Les Confins saharo-tripolitains de la Tunisie (1881-1911)* (Paris, P.U.F., 1965) prints a sketch map, *Villes et tribus tunisiennes 1881*, at about 1:3 000 000, and it covers the country end to end.
+![The spread of each tribe, as four cartographers had it](img/tribal_spread.png)
 
-**It is not a sheet in this collection and is kept apart.** The Gallica corpus holds no map of Martel's; this is a figure from a monograph, a historian's synthesis drawn from French military and archival material. It has its own config, its own CSV, its own colour on the figure and its own row in every count, so that a secondary source is never silently pooled with two primary ones.
+A tribe on these sheets is a name laid across country with no line around it, and three ways of drawing that were tried here before this one. Recording the two that failed is cheaper than letting someone repeat them.
 
-| | |
-| --- | --- |
-| Names read | 27, of which 19 match the gazetteer |
-| Control towns | 20 |
-| Placement, leave-one-out | 12.6 km |
-| Projection check | 257 px per degree of longitude against 315 per degree of latitude, a ratio of 0.800 where cos(35°N) is 0.819 |
+**A dot at each label** is exact and says almost nothing: it marks where an engraver centred a word and answers no question about extent. **Filling administrative units**, the imada being the finest published, answers the extent question by inventing it. A filled polygon reads as territory however the caption is worded, and it commits a second error underneath the first by confining a nineteenth-century tribe inside a 2022 mesh and stopping it at a frontier that did not exist: 34 of the 141 names are printed on ground that is now Algeria. Scattering dots inside those same polygons is the same error with softer edges.
 
-The projection check matters more than the residual. An affine assumes a plain equirectangular sheet, and the two fitted scales stand in the ratio of the cosine of the middle latitude, so that is what the sheet is: the 12.6 km is reading error, not a projection being forced. It is twice the 1881 Lasailly figure, which is what a single screen reproduction about 1,200 px across buys against twenty full-resolution tiles, and it is still well inside the length of the names themselves.
+**What is drawn instead is a field.** Each sheet's names are blurred by a Gaussian of 18 km and painted as a continuous surface, one hue per cartographer, with no contour line anywhere in it. Intensity is the distance to that sheet's nearest printed name: 1 where a name sits, a half at 21 km, fading to nothing beyond. Nothing is clipped, not to the imada, not to the gouvernorat, not to the modern border.
 
-**Eight of Martel's names have no gazetteer entry**, and all eight are southern: Beni Zid, Merazig, Adhara and the southern Ouled Yacoub in the Nefzaoua, Hazem toward Gabès, Gherib and Troud about the Djerid, and the Chaamba of the Algerian Sahara. Not one sheet in this collection names any of them. That is the measure of what the corpus does not carry.
+**The bandwidth is not a free parameter.** The six labels measured on the tiles run 14 to 32 km end to end, a median of about 22, and a Gaussian of this sigma falls to half at 21 km, so the surface halves about one printed name away from the engraving. The blur is the annotation's own grain, not an error bar: placement is 1881 6.17 km, 1853 8.17 km leave-one-out, comfortably inside it.
 
-**Two of them are name collisions, and both were doing damage.** Martel prints OLED YACOUB in the Nefzaoua, while the gazetteer's Ouled Yakoub, read off the sheets, is in the north-west; `docs/POPULATION-SOURCES.md` had a southern population figure sitting over a north-western taxpayer count as a result, and the ratio it produced was the one outlier in that table. Martel's TROUD is in the Djerid, while the Troud of Ganiage's annexe are Tripolitans settled in the lower Medjerda. Both are left unmatched and flagged.
+| Cartographer | Names | Tribes | Printed on what is now Algeria |
+| --- | --- | --- | --- |
+| 1853 Pellissier | 45 | 43 | 2 |
+| 1881 Lasailly | 69 | 67 | 29 |
+| 1881 Martel (1965) | 27 | 27 | 3 |
+| **All three, pooled** | **141** | **88** | **34** |
 
-## Where the tribes were, on today's imadas
+**Spread is measured, not just drawn.** [`data/tribal_spread.csv`](../data/tribal_spread.csv) gives each tribe its labels, the sheets that carry them, the widest gap between two of its own names, and the ground its field covers down to half peak. 35 of 88 tribes carry more than one name, and the widest gap between two names of a single tribe is 201 km. The median field is 1,418 km² and the widest is Riah at 5,462 km². A tribe named once gets a circle; a tribe named four times across three sheets gets the shape those four names make, which is as close to observed spread as this evidence goes.
 
-![Where the tribes were, as four cartographers had it](img/tribal_distribution_imada.png)
+**What the reader must not do with it.** The surface is not a territory and its fade is not a frontier. Two tribes overlap on this figure wherever their names sit within a name's length of each other, which happens because compilers disagreed, because tribes interleaved, or because one sheet names a fraction where another names the parent. The overlap is left to be seen rather than resolved.
 
-The finest published Tunisian administrative unit is the imada, the *secteur* below the delegation: **2084 of them** in the OCHA Common Operational Dataset. Every one of them is given the tribe whose nearest read name lies closest, out to a cutoff of 60 km. That is a Voronoi tessellation at imada resolution, run four times: once for each cartographer on his own names, and once on all three pooled.
-
-**The assigned ground is drawn as dot density, not as fill.** One dot per 45 km², scattered at random inside the polygons from a fixed seed. Two earlier attempts are worth recording because they failed in opposite directions. A dot at each label is honest and shows nothing but where names were engraved, leaving the country between them blank. A filled choropleth fills that country, and then the fill reads as territory however loudly the caption denies it. A sprinkle carries extent through density and never closes into an edge, which is the one thing no sheet in this collection supports.
-
-**Four panels, because the answer depends on whom you read.**
-
-| Cartographer | Names | Imadas reached | Share of area | Median km to the nearest name |
-| --- | --- | --- | --- | --- |
-| 1853 Pellissier | 45 | 1,677 | 44.3% | 24 |
-| 1881 Lasailly | 69 | 1,747 | 49.0% | 29 |
-| 1881 Martel (1965) | 27 | 1,869 | 68.6% | 30 |
-| **All three, pooled** | **141** | **1,977** | **71.5%** | **20** |
-
-Read across the four and the argument needs no caption. Pellissier's sheet was transcribed only to about 34°N and Lasailly gives everything south of Sfax to one tribe, so the south belongs to Martel alone. The 27 names on a sketch map at 1:3 000 000 reach more of the country than the 69 read off a war-theatre map at 1:1 200 000, because they were spread to cover it rather than concentrated where an army was going.
-
-**The number that should stop anyone reading a single panel as the answer: where two sheets both reach an imada, they put the same tribe on it only 12.6% of the time** (232 of 1,845). Some of that is grain rather than contradiction, since Pellissier names the fractions of the M'Talith and the Hammama where the others name the parent, and the gazetteer keeps fractions separate. The rest is real disagreement between compilers about where a tribe sat, and it is of a piece with the median 23 km between the two sheets' placements of the same name.
-
-**The assignment is a rule, not evidence.** No sheet draws a tribal boundary. Where two names sit 60 km apart the assignment changes hands at 30 km, because that is what nearest means and for no other reason. The label points are drawn over the sprinkle so the evidence is never hidden by what was derived from it, and every row of the table carries its distance and its runner-up.
-
-Per-imada results are in [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv), all 2,084 rows, with each cartographer in his own column, the pooled winner, the distance, and how many of the three name that imada at all.
-
-**What the cutoff leaves out.** 107 imadas have no name within 60 km even pooled, and they are the Grand Erg and the deep Dahar. That blank is a real one: it is where none of the three sheets prints a tribe, not where nobody looked.
-
-**What the join can and cannot mean.** The imadas are of 2022 and the annotation is of 1853 and 1881, so the unit is being used to say *where*, not to claim that it existed then or that a tribe held it. Nothing here should be dissolved by tribe and reported as a tribe's extent.
+**The modern-unit index is kept as a table and no longer drawn.** [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) gives each of the 2,084 imadas the tribe whose nearest name is closest, out to 60 km, once per cartographer and once pooled. It answers a question about indexing rather than about where a tribe was, and it carries its own warning: of the 1,845 imadas that two or three sheets reach, only 232, **12.6%**, get the same tribe from all of them.
 
 ## Coding
 

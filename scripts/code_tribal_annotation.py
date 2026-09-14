@@ -285,6 +285,7 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
     add("| Labels placed on the ground | [`data/tribal_territories.csv`](../data/tribal_territories.csv), [`.geojson`](../data/tribal_territories.geojson) |")
     add("| Transform and residuals | [`data/tribal_fit.json`](../data/tribal_fit.json) |")
     add("| Do two sheets agree? | [`data/tribal_map_agreement.csv`](../data/tribal_map_agreement.csv) |")
+    add("| The spread of each tribe | [`data/tribal_spread.csv`](../data/tribal_spread.csv) |")
     add("| Tribes on today's imadas | [`data/tribal_imada_assignment.csv`](../data/tribal_imada_assignment.csv) |")
     add("| Martel's 1881 sketch map, read | [`data/martel_1965_tribes.csv`](../data/martel_1965_tribes.csv) |")
     add("| How many people was a tribe? | [`docs/POPULATION-SOURCES.md`](POPULATION-SOURCES.md) |")
@@ -538,140 +539,93 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
         f"four — though part of that is simply that Pellissier names the fractions "
         f"of the M'Talith and the Hamema where Lasailly names the parent.")
     add("")
-    imada_path = REPO_ROOT / "data" / "tribal_imada_summary.json"
-    if imada_path.exists():
-        imada = json.loads(imada_path.read_text(encoding="utf-8"))
-        add("## A third sheet, and the whole country")
+    spread_path = REPO_ROOT / "data" / "tribal_spread_summary.json"
+    if spread_path.exists():
+        sp = json.loads(spread_path.read_text(encoding="utf-8"))
+        index = sp.get("imada_index", {})
+        add("## The spread of each tribe")
         add("")
-        add("The two sheets above leave the south blank, and that blank was an "
-            "artefact of what had been read rather than of what was mapped. "
-            "André Martel's *Les Confins saharo-tripolitains de la Tunisie "
-            "(1881-1911)* (Paris, P.U.F., 1965) prints a sketch map, *Villes et "
-            "tribus tunisiennes 1881*, at about 1:3 000 000, and it covers the "
-            "country end to end.")
+        add("![The spread of each tribe, as four cartographers had it]"
+            "(img/tribal_spread.png)")
         add("")
-        add("**It is not a sheet in this collection and is kept apart.** The "
-            "Gallica corpus holds no map of Martel's; this is a figure from a "
-            "monograph, a historian's synthesis drawn from French military and "
-            "archival material. It has its own config, its own CSV, its own "
-            "colour on the figure and its own row in every count, so that a "
-            "secondary source is never silently pooled with two primary ones.")
+        add("A tribe on these sheets is a name laid across country with no line "
+            "around it, and three ways of drawing that were tried here before "
+            "this one. Recording the two that failed is cheaper than letting "
+            "someone repeat them.")
         add("")
-        add("| | |")
-        add("| --- | --- |")
-        add("| Names read | 27, of which 19 match the gazetteer |")
-        add("| Control towns | 20 |")
-        add("| Placement, leave-one-out | 12.6 km |")
-        add("| Projection check | 257 px per degree of longitude against 315 "
-            "per degree of latitude, a ratio of 0.800 where cos(35°N) is 0.819 |")
+        add("**A dot at each label** is exact and says almost nothing: it marks "
+            "where an engraver centred a word and answers no question about "
+            "extent. **Filling administrative units**, the imada being the "
+            "finest published, answers the extent question by inventing it. A "
+            "filled polygon reads as territory however the caption is worded, "
+            "and it commits a second error underneath the first by confining a "
+            "nineteenth-century tribe inside a 2022 mesh and stopping it at a "
+            f"frontier that did not exist: {sp['points_outside_modern_tunisia']} "
+            f"of the {sp['points']} names are printed on ground that is now "
+            f"Algeria. Scattering dots inside those same polygons is the same "
+            f"error with softer edges.")
         add("")
-        add("The projection check matters more than the residual. An affine "
-            "assumes a plain equirectangular sheet, and the two fitted scales "
-            "stand in the ratio of the cosine of the middle latitude, so that "
-            "is what the sheet is: the 12.6 km is reading error, not a "
-            "projection being forced. It is twice the 1881 Lasailly figure, "
-            "which is what a single screen reproduction about 1,200 px across "
-            "buys against twenty full-resolution tiles, and it is still well "
-            "inside the length of the names themselves.")
+        add(f"**What is drawn instead is a field.** Each sheet's names are "
+            f"blurred by a Gaussian of {sp['sigma_km']:.0f} km and painted as a "
+            f"continuous surface, one hue per cartographer, with no contour "
+            f"line anywhere in it. Intensity is the distance to that sheet's "
+            f"nearest printed name: 1 where a name sits, a half at "
+            f"{sp['half_peak_radius_km']:.0f} km, fading to nothing beyond. "
+            f"Nothing is clipped, not to the imada, not to the gouvernorat, not "
+            f"to the modern border.")
         add("")
-        add("**Eight of Martel's names have no gazetteer entry**, and all eight "
-            "are southern: Beni Zid, Merazig, Adhara and the southern Ouled "
-            "Yacoub in the Nefzaoua, Hazem toward Gabès, Gherib and Troud about "
-            "the Djerid, and the Chaamba of the Algerian Sahara. Not one sheet "
-            "in this collection names any of them. That is the measure of what "
-            "the corpus does not carry.")
+        add(f"**The bandwidth is not a free parameter.** The six labels "
+            f"measured on the tiles run 14 to 32 km end to end, a median of "
+            f"about 22, and a Gaussian of this sigma falls to half at "
+            f"{sp['half_peak_radius_km']:.0f} km, so the surface halves about "
+            f"one printed name away from the engraving. The blur is the "
+            f"annotation's own grain, not an error bar: placement is "
+            f"{sp['loo_rms']} leave-one-out, comfortably inside it.")
         add("")
-        add("**Two of them are name collisions, and both were doing damage.** "
-            "Martel prints OLED YACOUB in the Nefzaoua, while the gazetteer's "
-            "Ouled Yakoub, read off the sheets, is in the north-west; "
-            "`docs/POPULATION-SOURCES.md` had a southern population figure sitting "
-            "over a north-western taxpayer count as a result, and the ratio it "
-            "produced was the one outlier in that table. Martel's TROUD is in "
-            "the Djerid, while the Troud of Ganiage's annexe are Tripolitans "
-            "settled in the lower Medjerda. Both are left unmatched and flagged.")
+        add("| Cartographer | Names | Tribes | Printed on what is now Algeria |")
+        add("| --- | --- | --- | --- |")
+        for key, count in sp["points_by_source"].items():
+            add(f"| {key} | {count} | {sp['tribes_by_source'][key]} | "
+                f"{sp['outside_by_source'][key]} |")
+        add(f"| **All three, pooled** | **{sp['points']}** | "
+            f"**{sp['tribes']}** | **{sp['points_outside_modern_tunisia']}** |")
         add("")
-        add("## Where the tribes were, on today's imadas")
+        add(f"**Spread is measured, not just drawn.** "
+            f"[`data/tribal_spread.csv`](../data/tribal_spread.csv) gives each "
+            f"tribe its labels, the sheets that carry them, the widest gap "
+            f"between two of its own names, and the ground its field covers "
+            f"down to half peak. {sp['tribes_with_more_than_one_label']} of "
+            f"{sp['tribes']} tribes carry more than one name, and the widest "
+            f"gap between two names of a single tribe is "
+            f"{sp['widest_label_gap_km']:.0f} km. The median field is "
+            f"{sp['median_field_sqkm']:,} km² and the widest is "
+            f"{sp['widest_field_tribe']} at {sp['widest_field_sqkm']:,} km². "
+            f"A tribe named once gets a circle; a tribe named four times across "
+            f"three sheets gets the shape those four names make, which is as "
+            f"close to observed spread as this evidence goes.")
         add("")
-        add("![Where the tribes were, as four cartographers had it]"
-            "(img/tribal_distribution_imada.png)")
+        add("**What the reader must not do with it.** The surface is not a "
+            "territory and its fade is not a frontier. Two tribes overlap on "
+            "this figure wherever their names sit within a name's length of "
+            "each other, which happens because compilers disagreed, because "
+            "tribes interleaved, or because one sheet names a fraction where "
+            "another names the parent. The overlap is left to be seen rather "
+            "than resolved.")
         add("")
-        add(f"The finest published Tunisian administrative unit is the imada, "
-            f"the *secteur* below the delegation: **{imada['imadas_total']} of "
-            f"them** in the OCHA Common Operational Dataset. Every one of them "
-            f"is given the tribe whose nearest read name lies closest, out to a "
-            f"cutoff of {imada['cutoff_km']:.0f} km. That is a Voronoi "
-            f"tessellation at imada resolution, run four times: once for each "
-            f"cartographer on his own names, and once on all three pooled.")
-        add("")
-        add(f"**The assigned ground is drawn as dot density, not as fill.** One "
-            f"dot per {imada['km_per_dot']:.0f} km², scattered at random inside "
-            f"the polygons from a fixed seed. Two earlier attempts are worth "
-            f"recording because they failed in opposite directions. A dot at "
-            f"each label is honest and shows nothing but where names were "
-            f"engraved, leaving the country between them blank. A filled "
-            f"choropleth fills that country, and then the fill reads as "
-            f"territory however loudly the caption denies it. A sprinkle "
-            f"carries extent through density and never closes into an edge, "
-            f"which is the one thing no sheet in this collection supports.")
-        add("")
-        add("**Four panels, because the answer depends on whom you read.**")
-        add("")
-        add("| Cartographer | Names | Imadas reached | Share of area | Median km to the nearest name |")
-        add("| --- | --- | --- | --- | --- |")
-        for key in ("1853 Pellissier", "1881 Lasailly", "1881 Martel (1965)"):
-            row = imada["per_source"][key]
-            add(f"| {key} | {row['points']} | {row['assigned']:,} | "
-                f"{row['area_pct']}% | {row['median_km']:.0f} |")
-        row = imada["pooled"]
-        add(f"| **All three, pooled** | **{row['points']}** | "
-            f"**{row['assigned']:,}** | **{row['area_pct']}%** | "
-            f"**{row['median_km']:.0f}** |")
-        add("")
-        add("Read across the four and the argument needs no caption. "
-            "Pellissier's sheet was transcribed only to about 34°N and "
-            "Lasailly gives everything south of Sfax to one tribe, so the south "
-            "belongs to Martel alone. The 27 names on a sketch map at "
-            "1:3 000 000 reach more of the country than the 69 read off a "
-            "war-theatre map at 1:1 200 000, because they were spread to cover "
-            "it rather than concentrated where an army was going.")
-        add("")
-        add(f"**The number that should stop anyone reading a single panel as "
-            f"the answer: where two sheets both reach an imada, they put the "
-            f"same tribe on it only {imada['agreement_pct']}% of the time** "
-            f"({imada['of_those_agreeing']:,} of "
-            f"{imada['imadas_named_by_two_or_three']:,}). Some of that is grain "
-            f"rather than contradiction, since Pellissier names the fractions "
-            f"of the M'Talith and the Hammama where the others name the parent, "
-            f"and the gazetteer keeps fractions separate. The rest is real "
-            f"disagreement between compilers about where a tribe sat, and it is "
-            f"of a piece with the median 23 km between the two sheets' "
-            f"placements of the same name.")
-        add("")
-        add("**The assignment is a rule, not evidence.** No sheet draws a "
-            "tribal boundary. Where two names sit 60 km apart the assignment "
-            "changes hands at 30 km, because that is what nearest means and "
-            "for no other reason. The label points are drawn over the sprinkle "
-            "so the evidence is never hidden by what was derived from it, and "
-            "every row of the table carries its distance and its runner-up.")
-        add("")
-        add("Per-imada results are in [`data/tribal_imada_assignment.csv`]"
-            "(../data/tribal_imada_assignment.csv), all 2,084 rows, with each "
-            "cartographer in his own column, the pooled winner, the distance, "
-            "and how many of the three name that imada at all.")
-        add("")
-        add(f"**What the cutoff leaves out.** "
-            f"{imada['imadas_total'] - imada['pooled']['assigned']} imadas have "
-            f"no name within {imada['cutoff_km']:.0f} km even pooled, and they "
-            f"are the Grand Erg and the deep Dahar. That blank is a real one: "
-            f"it is where none of the three sheets prints a tribe, not where "
-            f"nobody looked.")
-        add("")
-        add("**What the join can and cannot mean.** The imadas are of 2022 and "
-            "the annotation is of 1853 and 1881, so the unit is being used to "
-            "say *where*, not to claim that it existed then or that a tribe "
-            "held it. Nothing here should be dissolved by tribe and reported as "
-            "a tribe's extent.")
-        add("")
+        if index:
+            add(f"**The modern-unit index is kept as a table and no longer "
+                f"drawn.** [`data/tribal_imada_assignment.csv`]"
+                f"(../data/tribal_imada_assignment.csv) gives each of the "
+                f"{index['imadas_total']:,} imadas the tribe whose nearest name "
+                f"is closest, out to {index['cutoff_km']:.0f} km, once per "
+                f"cartographer and once pooled. It answers a question about "
+                f"indexing rather than about where a tribe was, and it carries "
+                f"its own warning: of the "
+                f"{index['imadas_named_by_two_or_three']:,} imadas that two or "
+                f"three sheets reach, only {index['of_those_agreeing']:,}, "
+                f"**{index['agreement_pct']}%**, get the same tribe from all of "
+                f"them.")
+            add("")
     add("## Coding")
     add("")
     add("| `tribal_annotation` | n | Meaning |")

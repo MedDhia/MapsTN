@@ -27,6 +27,7 @@ a relevance score.
 | **Tribal variable definitions** | [`docs/CODEBOOK-TRIBES.md`](docs/CODEBOOK-TRIBES.md) |
 | **Tribe names placed on the ground** | [`data/tribal_territories.csv`](data/tribal_territories.csv), [`.geojson`](data/tribal_territories.geojson) |
 | **Do two sheets agree on where a tribe is?** | [`data/tribal_map_agreement.csv`](data/tribal_map_agreement.csv) |
+| **The spread of each tribe** | [`data/tribal_spread.csv`](data/tribal_spread.csv) |
 | **Tribes on today's imadas** | [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) |
 | **Martel's 1881 sketch map, read** | [`data/martel_1965_tribes.csv`](data/martel_1965_tribes.csv) |
 | **Who counted the tribes, and how many** | [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) |
@@ -388,42 +389,46 @@ table had a southern figure sitting over a north-western taxpayer count as a
 result. Correcting it tightened the implied multiplier in Ganiage's article from
 3.82–5.21 to 3.82–4.33, median 4.06, against the flat four he states.
 
-**Where the tribes were, on today's imadas.** The finest published Tunisian
-unit is the imada, 2,084 of them, and
-[`scripts/map_tribes_on_imadas.py`](scripts/map_tribes_on_imadas.py) gives each
-one the tribe whose nearest read name lies closest, out to 60 km. The rule runs
-four times: once per cartographer on his own names, once on all three pooled.
+**The spread of each tribe.** A tribe on these sheets is a name laid across
+country with no line around it, and
+[`scripts/map_tribal_spread.py`](scripts/map_tribal_spread.py) draws that as a
+field rather than an area: each sheet's names blurred by a Gaussian of 18 km and
+painted as a continuous surface, one hue per cartographer, with no contour line
+anywhere in it. Intensity is the distance to that sheet's nearest printed name,
+1 where a name sits and a half at 21 km, which is about one printed name away.
+**Nothing is clipped**: not to the imada, not to the gouvernorat, not to the
+modern border, which 34 of the 141 names ignore by sitting on ground that is now
+Algeria.
 
-![Where the tribes were, as four cartographers had it](docs/img/tribal_distribution_imada.png)
+![The spread of each tribe, as four cartographers had it](docs/img/tribal_spread.png)
 
-**The assigned ground is drawn as dot density, not as fill**, one dot per 45 km²
-scattered at random inside the polygons from a fixed seed. Two earlier versions
-failed in opposite directions: a dot at each label shows only where names were
-engraved and leaves the country between them blank, while a filled choropleth
-fills that country and then reads as territory however loudly the caption denies
-it. A sprinkle carries extent through density and never closes into an edge,
-which is the one thing no sheet here supports.
+Two earlier versions are recorded in the repository because both are tempting
+and both are wrong. A dot per label is exact and answers nothing about extent.
+Filling administrative units answers it by inventing it: a filled polygon reads
+as territory whatever the caption says, and it confines a nineteenth-century
+tribe inside a 2022 administrative mesh. Scattering dots inside those same
+polygons is the same error with softer edges.
 
-| Cartographer | Names | Imadas reached | Share of area | Median km to the nearest name |
-| --- | --- | --- | --- | --- |
-| 1853 Pellissier | 45 | 1,677 | 44.3% | 24 |
-| 1881 Lasailly | 69 | 1,747 | 49.0% | 29 |
-| 1881 Martel (1965) | 27 | 1,869 | 68.6% | 30 |
-| **All three, pooled** | **141** | **1,977** | **71.5%** | **20** |
+| Cartographer | Names | Tribes | Printed on what is now Algeria |
+| --- | --- | --- | --- |
+| 1853 Pellissier | 45 | 43 | 2 |
+| 1881 Lasailly | 69 | 67 | 29 |
+| 1881 Martel (1965) | 27 | 27 | 3 |
+| **All three, pooled** | **141** | **88** | **34** |
 
-Read across the four panels and the argument needs no caption. The south belongs
-to Martel alone, and his 27 names on a sketch map at 1:3 000 000 reach more of
-the country than the 69 read off a war-theatre map at 1:1 200 000, because they
-were spread to cover it rather than concentrated where an army was going.
+**Spread is measured, not just drawn.**
+[`data/tribal_spread.csv`](data/tribal_spread.csv) gives each tribe the widest
+gap between two of its own printed names, which is the one column that is purely
+evidence. 35 of the 88 tribes carry more than one name and the widest such gap
+is 201 km. The widest field belongs to the Riah, whose four names across three
+sheets disagree by up to 87 km, which is as much a statement about the
+compilers as about the Riah.
 
-**Where two sheets both reach an imada they put the same tribe on it only 12.6%
-of the time** (232 of 1,845). Some of that is grain rather than contradiction,
-since Pellissier names fractions where the others name the parent, but it is the
-number to hold against any single panel: which cartographer you read changes the
-answer. Per-imada results, each cartographer in his own column, are in
-[`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv). The 107
-imadas with no name within 60 km even pooled are the Grand Erg and the deep
-Dahar, and that blank is a real one.
+The nearest-name index at imada level is kept as a table and no longer drawn:
+[`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv), each
+cartographer in his own column. It carries its own warning. **Of the 1,845
+imadas that two or three sheets reach, only 232, 12.6%, get the same tribe from
+all of them.**
 
 **How many people was a tribe?** No sheet says — a map gives location, never
 size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the
