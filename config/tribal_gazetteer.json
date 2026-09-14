@@ -432,10 +432,11 @@
   {
    "name": "Ouerghemma",
    "variants": [
-    "ouerghemma",
     "ouergama",
-    "ourghamma",
     "ouergamma",
+    "ouerghemma",
+    "ouerguemma",
+    "ourghamma",
     "werghemma"
    ],
    "region": "sud_est",
@@ -470,7 +471,8 @@
    "name": "Matmata",
    "variants": [
     "matmata",
-    "matmatas"
+    "matmatas",
+    "matmatta"
    ],
    "region": "sud_est"
   },

@@ -16,7 +16,7 @@ Levels 0 to 3 are kept by default, because gouvernorat and delegation are the
 units Tunisian statistics are published at, and so the levels at which anything
 extracted from the 1930s sheets can be set beside a modern number. Level 4, the
 imada, is 15 MB of geometry and was left out until there was a join that needed
-a unit finer than the delegation; scripts/map_tribes_on_imadas.py is that join,
+a unit finer than the delegation; scripts/map_tribal_spread.py is that join,
 so it is now fetched by default.
 
 Two sources were tried first and both failed, which is worth recording so nobody

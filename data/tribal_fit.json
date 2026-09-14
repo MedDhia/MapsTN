@@ -48,10 +48,10 @@
    "Mahdia": 90.9,
    "Sfax": 118.3
   },
-  "labels": 45
+  "labels": 52
  },
  "_agreement": {
-  "tribes_on_two_sheets": 30,
+  "tribes_on_two_sheets": 31,
   "median_km": 23.0,
   "max_km": 197.3,
   "within_10_km": 7,

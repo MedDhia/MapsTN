@@ -27,6 +27,7 @@ a relevance score.
 | **Tribal variable definitions** | [`docs/CODEBOOK-TRIBES.md`](docs/CODEBOOK-TRIBES.md) |
 | **Tribe names placed on the ground** | [`data/tribal_territories.csv`](data/tribal_territories.csv), [`.geojson`](data/tribal_territories.geojson) |
 | **Do two sheets agree on where a tribe is?** | [`data/tribal_map_agreement.csv`](data/tribal_map_agreement.csv) |
+| **The spread of each tribe** | [`data/tribal_spread.csv`](data/tribal_spread.csv) |
 | **Tribes on today's imadas** | [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) |
 | **Martel's 1881 sketch map, read** | [`data/martel_1965_tribes.csv`](data/martel_1965_tribes.csv) |
 | **Who counted the tribes, and how many** | [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) |
@@ -349,7 +350,8 @@ Two sheets were then transcribed label by label and placed on the ground: the
 read from the Kroumirie down to about 34°N. **114 labels** in
 [`data/tribal_territories.csv`](data/tribal_territories.csv), placed from control
 towns read off each sheet — leave-one-out RMS **6.2 km** for 1881 and **8.2 km**
-for 1853. The labels themselves run 14–32 km long, so a point locates a tribe to
+for 1853. The printed names themselves run 6 to 48 km long, median 16, so a
+point locates a tribe to
 within a tribe's width and no finer.
 
 ![Where two sheets put each tribe's name](docs/img/tribal_territories.png)
@@ -388,25 +390,79 @@ table had a southern figure sitting over a north-western taxpayer count as a
 result. Correcting it tightened the implied multiplier in Ganiage's article from
 3.82–5.21 to 3.82–4.33, median 4.06, against the flat four he states.
 
-**Where the tribes were, on today's imadas.** The finest published Tunisian unit
-is the imada, 2,084 of them, and
-[`scripts/map_tribes_on_imadas.py`](scripts/map_tribes_on_imadas.py) gives each
-one the tribe whose nearest read name lies closest, out to 60 km. That is a
-Voronoi tessellation at imada resolution, and it fills the country where dots
-could not: **1,977 of 2,084 imadas assigned, 71% of the area**, 62 tribes given
-ground, the widest being the Ouerghemma at 9,751 km².
+**The ground each tribe holds.** A tribe on these sheets is a name letterspaced
+across its country with no line around it.
+[`scripts/map_tribal_spread.py`](scripts/map_tribal_spread.py) gives each one
+the largest ellipse that satisfies two rules and nothing else: it contains all
+of that tribe's own evidence, every label centre on every sheet plus both ends
+of the name for the 62 whose printed length was measured, and it contains no
+other tribe's label.
 
-![Tribal annotation of 1853 and 1881 assigned to the imadas of 2022](docs/img/tribal_distribution_imada.png)
+![The ground each tribe holds, bounded by the tribes next to it](docs/img/tribal_spread.png)
 
-**The colours are a rule, not evidence.** No sheet draws a tribal boundary;
-where two names sit 60 km apart the line between their colours falls at 30 km
-because that is what nearest means. The median assigned imada is 19.5 km from
-its name, the printed names run 14 to 32 km long, and **64% of assigned imadas
-have a rival name within 10 km of the winner** — which is the number to quote
-against anyone who reads the fill as territory. Every row of
-[`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) carries
-its own distance and runner-up, and the 107 unassigned imadas are the Grand Erg
-and the deep Dahar, where none of the three sheets prints a name.
+The rules run five times over: once for each cartographer on his own names, once
+with the three laid over each other, and once merged. The first rule fixes the
+centre, the orientation and the floor; the second fixes the ceiling, and the
+ceiling is a neighbouring name rather than a constant anyone chose. **All 92
+ellipses were stopped by a neighbour**, none by the 90 km guard. Areas run 88 to
+11,825 km², median 828.
+
+**The three sheets are not one country carved up three ways.**
+
+| Sheet | Names | Tribes | Median ellipse | Ground covered |
+| --- | --- | --- | --- | --- |
+| 1853 Pellissier | 52 | 49 | 1,040 km² | 95,739 km² |
+| 1881 Lasailly | 69 | 67 | 827 km² | 148,757 km² |
+| 1881 Martel (1965) | 27 | 27 | 5,244 km² | 195,276 km² |
+
+A compiler who names few tribes gives each of them more ground, because the
+bound on an ellipse is the next name along. That is arithmetic, not ethnography.
+Per-sheet figures are in
+[`data/tribal_spread_by_sheet.csv`](data/tribal_spread_by_sheet.csv), and nine
+of the 92 rows are branches rather than tribes, with `parent` naming whose:
+five M'Talith *berada*, and four Hammama and Zlass fractions attributed from
+Ganiage's Annexe I footnotes.
+
+Three earlier versions are recorded because each failed differently: a dot per
+label (silent about extent), administrative units filled or sprinkled (invents
+the extent, and confines a nineteenth-century tribe inside a 2022 mesh), and a
+Gaussian blur (looks measured, but the bandwidth is a choice, so every tribe
+came out the same size whatever the sheet said). A fourth, a circle the length
+of the printed name, was honest and far too small: the engraver fits the name
+inside the country, so its length is a floor on the territory and not the
+territory.
+
+**This is deliberately the largest reading the sheets will carry.** Nothing is
+clipped to the modern frontier, which 34 of the 141 labels sit west of, and
+ellipses overlap where the sheets disagree. Per-tribe axes, areas and what
+stopped each one are in
+[`data/tribal_spread.csv`](data/tribal_spread.csv).
+
+**And they are checked against the sheets rather than taken on trust.**
+[`scripts/check_tribal_spread.py`](scripts/check_tribal_spread.py) inverts each
+sheet's affine and redraws every ellipse back onto the scan it came from, then
+tests both rules. Rule 1 holds for all 88. Rule 2 fails for 18, and those
+failures are the finding: a tribe whose compilers put its name 200 km apart has
+an ellipse that cannot help covering its neighbours. **Ouled Khiar spans 287 km,
+Ouled Sdira 211, Souassi 126, Riah 119** — suspected name collisions rather than
+territories, drawn dashed and flagged in the table.
+
+The check also caught a name the first reading of the 1853 face had missed, and
+that led to a bigger one. The Frechiche ellipse stopped short of the engraving,
+so that ground was read again: three Frachiche names are printed there, not two.
+Finding one missed name asked what else had been missed, so **the whole 1853
+face was swept in eighteen windows**, and the answer was the south. The face had
+been read to about 34°N and never below it, and below that line the sheet
+carries six tribal names: *MATMATTA*, *HAMERNA*, *OUERGUEMMA*, *BENI YACOUB*,
+*BENI ZID* and *NEFZAOUA*. All six are now transcribed, the 1853 sheet goes from
+45 labels to 52, and the Ouerghemma gain a second placement, so the cross-sheet
+agreement table gains a 31st tribe and its first check in the far south: the two
+sheets put them 35.1 km apart.
+
+The nearest-name index at imada level is kept as a table:
+[`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv), each
+cartographer in his own column. **Of the 1,845 imadas that two or three sheets
+reach, only 232, 12.6%, get the same tribe from all of them.**
 
 **How many people was a tribe?** No sheet says — a map gives location, never
 size. [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) reviews the
@@ -781,6 +837,58 @@ only renders the credit-block figure.
 points already transcribed into
 [`config/tribal_labels_read.json`](config/tribal_labels_read.json). Run it before
 `code_tribal_annotation.py`, which folds its residuals into the report.
+
+### The scripts are checked by rerunning them
+
+[`.github/workflows/scripts-rerun.yml`](.github/workflows/scripts-rerun.yml)
+reruns the six tribal scripts on every pull request and fails if any committed
+table or document comes back different:
+
+```bash
+pip install -r requirements.txt
+python3 scripts/read_ganiage_annexe.py
+python3 scripts/place_martel_labels.py
+python3 scripts/place_tribal_labels.py
+python3 scripts/map_tribal_spread.py
+python3 scripts/code_tribal_annotation.py
+git diff --exit-code -- '*.csv' '*.json' '*.geojson' '*.md'
+```
+
+Each of these reads only files in the repository, so a clean checkout, a rerun
+and an empty diff is the whole test. It catches a script edited without
+regenerating what it produces, a config edited without rerunning the script that
+reads it, and an output hand-edited to say something no script would write.
+
+Two things it does not do. `fetch_boundaries.py` is left out because it
+downloads from OCHA and Natural Earth, which would make the check a test of
+someone else's uptime; its outputs are committed under `data/boundaries/`. And
+figures are reported without being gated, because PNG bytes depend on the
+freetype build under matplotlib and a runner image bump would fail the check
+while saying nothing about the data.
+
+`check_tribal_spread.py` runs last and is asserted on instead of diffed. It
+needs the full scans to draw its overlays and skips them when they are absent,
+so its JSON cannot be compared on a runner that has none. What it can do
+without them is test the two rules, and rule 1 is an invariant: a tribe's own
+label falling outside its own ellipse is a geometry bug, and the build fails on
+it.
+
+The scans are 0.7 GB and are not committed, so that script takes where to find
+them, in this order:
+
+```bash
+python3 scripts/check_tribal_spread.py --scans ~/iiif   # an explicit directory
+MAPSTN_SCANS=~/iiif python3 scripts/check_tribal_spread.py   # the environment
+python3 scripts/check_tribal_spread.py                  # else scratch/iiif
+```
+
+It expects the filenames in the script's `SHEETS` table, currently
+`FULL_theatre1881.jpg` and `FULL_pellissier.jpg`; the URLs are in
+[`data/sheet_images.json`](data/sheet_images.json). Without them the rules
+still run and the overlays are skipped, which is what happens in CI. The report
+records where the run looked, as a path relative to the checkout or as the bare
+fact that it was somewhere else, so the committed file says the same thing on
+every machine.
 
 The georeferencing runs twice on purpose. The corner reader needs the neatline
 the first pass detects in order to know where in the margin to look, and the
