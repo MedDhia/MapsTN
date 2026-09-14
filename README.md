@@ -428,10 +428,14 @@ tests both rules. Rule 1 holds for all 88. Rule 2 fails for 18, and those
 failures are the finding: a tribe whose compilers put its name 200 km apart has
 an ellipse that cannot help covering its neighbours. **Ouled Khiar spans 287 km,
 Ouled Sdira 211, Souassi 126, Riah 119** — suspected name collisions rather than
-territories, drawn dashed and flagged in the table. The check also caught a gap
-in the transcription: the 1853 sheet prints *FRACHICHE MÉRIDIONALE* alongside
-the two Frachiche names that were read, so that ellipse stops short of the
-ground the sheet gives the tribe.
+territories, drawn dashed and flagged in the table.
+
+The check also caught a name the first reading of the 1853 face had missed. The
+Frechiche ellipse stopped short of the engraving, so that ground was read again
+at 2.25×: three Frachiche names are printed there, not two, the third set
+vertically in light spaced capitals across open country with no settlement near
+it. It is now transcribed, the tribe's own spread goes from 40 to 57 km, and the
+ellipse encloses all three names.
 
 The nearest-name index at imada level is kept as a table:
 [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv), each

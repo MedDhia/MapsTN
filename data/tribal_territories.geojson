@@ -58,7 +58,7 @@
     "Mahdia": 90.9,
     "Sfax": 118.3
    },
-   "labels": 45
+   "labels": 46
   },
   "_agreement": {
    "tribes_on_two_sheets": 30,
@@ -2801,6 +2801,30 @@
     "x_px": 3776,
     "y_px": 6244,
     "gouvernorat": "Gafsa",
+    "inside_tunisia": 1,
+    "read_confidence": "medium"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.823,
+     35.266
+    ]
+   },
+   "properties": {
+    "record_id": "btv1b53136235q",
+    "year": 1853,
+    "label_as_printed": "Frachiche",
+    "tribe": "Frechiche",
+    "in_gazetteer": 1,
+    "marker": "",
+    "marked_tribe": 0,
+    "x_px": 2913,
+    "y_px": 4875,
+    "gouvernorat": "Kassérine",
     "inside_tunisia": 1,
     "read_confidence": "medium"
    }

@@ -1124,6 +1124,14 @@
      "x": 3776,
      "y": 6244,
      "read_confidence": "medium"
+    },
+    {
+     "text": "Frachiche",
+     "marker": null,
+     "x": 2913,
+     "y": 4875,
+     "read_confidence": "medium",
+     "note": "A third Frachiche name on this sheet, set vertically from about (2836, 4682) to (2991, 5068), east of and parallel to the FRACHICHE OULAD ALI arc. The word FRACHICHE is legible; the qualifier that follows it down the page is not, so only the first word is recorded and the anchor is the midpoint of that word. Found by scripts/check_tribal_spread.py, whose spot check showed the Frechiche ellipse stopping short of the ground this sheet gives the tribe."
     }
    ],
    "transcribed_extent": {
@@ -1134,7 +1142,8 @@
      "bottom": 6920
     },
     "note": "Not the whole face. The tiles read cover the Tell, the Kroumirie, the steppe and the Sahel down to about latitude 34 - the country the 1881 sheet also labels. The Jerid, the Nefzaoua, the Dahar and the Matmata were not transcribed, so this sheet's label count is not comparable with the 1881 sheet's and the two must not be differenced as coverage. The Ouerghemma, visible on the overview in the far south-east, is one of the labels left unread."
-   }
+   },
+   "_missed_on_the_first_reading": "The face was first read in 2560 px tiles and this name was missed: it is set vertically in light spaced capitals across open ground with no settlement near it, which is the hardest kind of label to see in a tile. The check script found it by drawing the tribe's ellipse back on the scan and noticing that the engraving ran outside it."
   }
  }
 }

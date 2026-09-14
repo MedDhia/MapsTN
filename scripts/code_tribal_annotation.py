@@ -669,14 +669,29 @@ def write_doc(rows: list[dict], summary: dict, inspected: dict, fits: dict,
                 "placements joined by a line, not a territory, and no reader "
                 "should take it for one.")
             add("")
-            add("**And it found a gap in the transcription.** The 1853 sheet "
-                "prints *FRACHICHE MÉRIDIONALE* as well as *FRACHICHE OULAD "
-                "ALI* and *FRACHICHE OUAZAZ*, and only the last two were "
-                "transcribed, so the Frechiche ellipse stops short of the "
-                "ground that sheet gives the tribe, out towards Tebessa. "
-                "Recorded in [`data/tribal_spread_check.json`]"
-                "(../data/tribal_spread_check.json) as a known gap rather than "
-                "patched with a coordinate nobody read.")
+            add("**And it found a name the first reading of the 1853 face had "
+                "missed.** The Frechiche ellipse stopped short of the "
+                "engraving, so that ground was read again at 2.25×. Three "
+                "Frachiche names are printed there, not two: *FRACHICHE OULAD "
+                "ALI* on an arc, *Frachiche Ouazaz* on a second arc with "
+                "*MÉRIDIONALE* set as a second line beneath it, and a third "
+                "*FRACHICHE* set vertically to the east, which the tiled "
+                "reading had passed over. It is light spaced capitals across "
+                "open ground with no settlement near it, which is the hardest "
+                "kind of label to see in a tile.")
+            add("")
+            add("The third name is now in "
+                "[`config/tribal_labels_read.json`](../config/tribal_labels_read.json) "
+                "at the midpoint of the word, confidence medium. Only "
+                "*FRACHICHE* is recorded: the qualifier running down the page "
+                "after it is not legible enough to name. With it the tribe's "
+                "own spread goes from 40 to 57 km and the ellipse now encloses "
+                "all three printed names, which the spot check shows.")
+            add("")
+            add("**A correction to the last run of this check.** It reported "
+                "the gap as a missing *FRACHICHE MÉRIDIONALE* label. That was "
+                "wrong: MÉRIDIONALE is a qualifier on the Ouazaz name, and the "
+                "label actually missing was the third, vertical one.")
             add("")
             add("Ouled Khiar was already known to be two groups sharing a name, "
                 "197 km apart on the two Gallica sheets and 287 km once "

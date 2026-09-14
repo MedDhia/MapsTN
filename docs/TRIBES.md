@@ -76,13 +76,13 @@ One map does something else entirely. *Habitation rurale des indigènes* (1930),
 
 ## Two sheets, transcribed
 
-Two of the inspected maps were read label by label and every tribe name given a coordinate: the 1881 Lasailly war-theatre sheet, because it marks its tribes with `(Tribu)` and so needs no judgement, and the 1853 Pellissier, because it is the densest tribal annotation in the collection and the earliest that is systematic. 114 labels in total, 83 of them inside modern Tunisia.
+Two of the inspected maps were read label by label and every tribe name given a coordinate: the 1881 Lasailly war-theatre sheet, because it marks its tribes with `(Tribu)` and so needs no judgement, and the 1853 Pellissier, because it is the densest tribal annotation in the collection and the earliest that is systematic. 115 labels in total, 84 of them inside modern Tunisia.
 
 **The two transcriptions do not cover the same ground.** The 1881 face was read whole, in 20 tiles. The 1853 was read over the Tell, the Kroumirie, the steppe and the Sahel down to about latitude 34 — the country the other sheet also labels — and the Jerid, the Nefzaoua and the Dahar were left unread, the Ouerghemma among them. So the label counts below are not a measure of how much each sheet annotates, and differencing them as coverage would be differencing my reading, not the maps.
 
 | Sheet | Labels | Marked `(Tribu)` | Control towns | In-sample RMS | Leave-one-out RMS |
 | --- | --- | --- | --- | --- | --- |
-| 1853 Carte de la Régence de Tunis / par E. Pellis | 45 | 0 | 10 | 84.7 px (5.8 km) | 119.4 px (8.17 km) |
+| 1853 Carte de la Régence de Tunis / par E. Pellis | 46 | 0 | 10 | 84.7 px (5.8 km) | 119.4 px (8.17 km) |
 | 1881 Carte du théâtre de la guerre en Tunisie / d | 69 | 40 | 7 | 39.6 px (3.16 km) | 77.3 px (6.17 km) |
 
 ![Where two sheets put each tribe's name](img/tribal_territories.png)
@@ -171,7 +171,7 @@ Evidence from all three sheets counts at once, so a tribe named by Pellissier in
 | Adhara | 100 × 100 km, 7,877 km², stopped by the Merazig |
 | Ouerghemma | 121 × 74 km, 7,054 km², stopped by the Hazem |
 
-**This is deliberately the largest reading the sheets will carry.** Nothing is clipped to the modern frontier, which 34 of the 141 labels sit west of. Ellipses overlap where the sheets disagree or where tribes interleaved, and the overlap is left to be seen rather than resolved, because no sheet in this collection says where one tribe stopped and the next began.
+**This is deliberately the largest reading the sheets will carry.** Nothing is clipped to the modern frontier, which 34 of the 142 labels sit west of. Ellipses overlap where the sheets disagree or where tribes interleaved, and the overlap is left to be seen rather than resolved, because no sheet in this collection says where one tribe stopped and the next began.
 
 Per-tribe results are in [`data/tribal_spread.csv`](../data/tribal_spread.csv), with the axes, the area, how far the ellipse grew and what stopped it.
 
@@ -198,7 +198,11 @@ The two rules are tested rather than trusted. **Rule 1 holds for all 88**: no tr
 
 **The spot check settles what the flag is for.** Souassi's ellipse is a 126 by 16 km splinter running from Enfida down past Sousse, because Lasailly prints SOUASSI by Enfida while Pellissier and Martel put it in the Sahel. That is two placements joined by a line, not a territory, and no reader should take it for one.
 
-**And it found a gap in the transcription.** The 1853 sheet prints *FRACHICHE MÉRIDIONALE* as well as *FRACHICHE OULAD ALI* and *FRACHICHE OUAZAZ*, and only the last two were transcribed, so the Frechiche ellipse stops short of the ground that sheet gives the tribe, out towards Tebessa. Recorded in [`data/tribal_spread_check.json`](../data/tribal_spread_check.json) as a known gap rather than patched with a coordinate nobody read.
+**And it found a name the first reading of the 1853 face had missed.** The Frechiche ellipse stopped short of the engraving, so that ground was read again at 2.25×. Three Frachiche names are printed there, not two: *FRACHICHE OULAD ALI* on an arc, *Frachiche Ouazaz* on a second arc with *MÉRIDIONALE* set as a second line beneath it, and a third *FRACHICHE* set vertically to the east, which the tiled reading had passed over. It is light spaced capitals across open ground with no settlement near it, which is the hardest kind of label to see in a tile.
+
+The third name is now in [`config/tribal_labels_read.json`](../config/tribal_labels_read.json) at the midpoint of the word, confidence medium. Only *FRACHICHE* is recorded: the qualifier running down the page after it is not legible enough to name. With it the tribe's own spread goes from 40 to 57 km and the ellipse now encloses all three printed names, which the spot check shows.
+
+**A correction to the last run of this check.** It reported the gap as a missing *FRACHICHE MÉRIDIONALE* label. That was wrong: MÉRIDIONALE is a qualifier on the Ouazaz name, and the label actually missing was the third, vertical one.
 
 Ouled Khiar was already known to be two groups sharing a name, 197 km apart on the two Gallica sheets and 287 km once Martel's placement joins them. **Ouled Sdira at 211 km is the new one**, and Souassi at 126 km and Riah at 119 km are the next candidates. None of them is split in the gazetteer, because splitting would be a claim about the tribes rather than about the maps; they are flagged instead, drawn dashed on the figure and counted in `encloses_other_tribes`.
 

@@ -269,14 +269,29 @@ def main() -> int:
             "is a 126 by 16 km splinter running from Enfida to past Sousse, "
             "which is two placements joined rather than a territory, and that "
             "is what the flag is for."),
-        "known_gaps": [
-            {"sheet": 1853, "tribe": "Frechiche",
-             "gap": ("The sheet prints FRACHICHE MERIDIONALE as well as "
-                     "FRACHICHE OULAD ALI and FRACHICHE OUAZAZ, and only the "
-                     "last two are transcribed. The ellipse therefore stops "
-                     "short of the ground the 1853 sheet gives the tribe, to "
-                     "the south-west around Tebessa. Found by the spot check, "
-                     "not yet fixed."),
+        "gaps_found_and_closed": [
+            {"sheet": 1853, "tribe": "Frechiche", "status": "closed",
+             "found": ("The spot check showed the Frechiche ellipse stopping "
+                       "short of the engraving. Reading the ground at 2.25x "
+                       "settled what is actually printed there: three Frachiche "
+                       "names, not two."),
+             "what_is_printed": (
+                 "FRACHICHE OULAD ALI on an arc from (2239, 4363) to (2767, "
+                 "5018); Frachiche Ouazaz on a second arc from (2203, 4912) to "
+                 "(2681, 5206) with MERIDIONALE set as a second line beneath "
+                 "it, so MERIDIONALE is a qualifier on that same name and not a "
+                 "label of its own; and a third FRACHICHE set vertically from "
+                 "(2836, 4682) to (2991, 5068), which the first reading of the "
+                 "face missed."),
+             "fix": ("The third name is now in config/tribal_labels_read.json "
+                     "at its midpoint (2913, 4875), confidence medium. Only the "
+                     "word FRACHICHE is recorded: the qualifier running down "
+                     "the page after it is not legible enough to name."),
+             "correction": (
+                 "An earlier run of this check reported the gap as a missing "
+                 "FRACHICHE MERIDIONALE label. That was wrong. MERIDIONALE "
+                 "belongs to the Ouazaz name; the missing label is the third, "
+                 "vertical one."),
              }],
         "_overlays": (
             "The ellipses inverted back onto each Gallica scan in its own "
