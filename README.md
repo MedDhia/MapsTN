@@ -30,6 +30,7 @@ a relevance score.
 | **The spread of each tribe** | [`data/tribal_spread.csv`](data/tribal_spread.csv) |
 | **Tribes on today's imadas** | [`data/tribal_imada_assignment.csv`](data/tribal_imada_assignment.csv) |
 | **Martel's 1881 sketch map, read** | [`data/martel_1965_tribes.csv`](data/martel_1965_tribes.csv) |
+| **The names today, against the ground** | [ElectionsTN `maps/tribes/`](https://github.com/MedDhia/ElectionsTN/tree/main/maps/tribes), from the 2024 voter register; see [`docs/TRIBES.md`](docs/TRIBES.md) |
 | **Who counted the tribes, and how many** | [`docs/POPULATION-SOURCES.md`](docs/POPULATION-SOURCES.md) |
 | **Population figures, with their sources** | [`data/tribal_population_sources.csv`](data/tribal_population_sources.csv) |
 | **1931 census, by caïdat** | [`data/census_1931_caidats.csv`](data/census_1931_caidats.csv) |

@@ -224,6 +224,12 @@ The sweep also found lineage names in the north and the Sahel set like tribes bu
 
 Ouled Khiar was already known to be two groups sharing a name, 197 km apart on the two Gallica sheets and 287 km once Martel's placement joins them. **Ouled Sdira at 211 km is the new one**, and Souassi at 126 km and Riah at 119 km are the next candidates. None of them is split in the gazetteer, because splitting would be a claim about the tribes rather than about the maps; they are flagged instead, drawn dashed on the figure and counted in `encloses_other_tribes`.
 
+## The names today: the register against the ground
+
+The sibling repository [ElectionsTN](https://github.com/MedDhia/ElectionsTN) carries the 2024 ISIE voter register, which counts every registered voter's family name by imada, and a Tunisian family name is very often the nisba of a tribe: Hammama gives همامي (Hammami), Zlass جلاصي (Jlassi), Ouled Ayar عياري (Ayari). Its `tools/make_tribal_mobility.py` takes the four tables here (`tribal_territories.csv`, `martel_1965_tribes.csv`, `tribal_spread.csv`, `tribal_spread_by_sheet.csv`), pairs 43 of the tribes with their nisba in a graded crosswalk, and draws every voter bearing the name against the tribe's ellipse, with arrows to where the name is concentrated today. The figures are in ElectionsTN's `maps/tribes/`, documented in `maps/tribes/README.md`, and the numbers in `data/tribal_mobility.csv`.
+
+What they say bears on how the ellipses here should be read. The median share of a name registered inside its tribe's ground is 1.5%, and Greater Tunis holds 42.7% of everyone bearing one of the 43 names. The great steppe confederations are the extreme case (Hammami 0.7% inside, Mejri 0.3%, Methlouthi 0.2%): on its own ground a confederation's name is rare, because the people there carry the names of fractions and lineages, which is what the 1:50 000 sheets print where the 1:800 000 sheets print the tribe. The small tribes of the north-west, whose ground is hemmed in by neighbouring names, keep theirs at home: Sdiri 41% inside, Riahi 27%. A nisba is a name and not a membership, and the ellipse is the largest reading the sheets support and not a territory; both caveats are printed on every figure.
+
 ## Coding
 
 | `tribal_annotation` | n | Meaning |
